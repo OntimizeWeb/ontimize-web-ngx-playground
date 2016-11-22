@@ -1,0 +1,20 @@
+
+@import 'my-custom-app-theme.scss';
+
+@import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
+@include o-material-theme($theme);
+
+.container-title {
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.section-title {
+  padding-left: 12px;
+  padding-top: 3px;
+}

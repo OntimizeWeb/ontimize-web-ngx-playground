@@ -1,0 +1,32 @@
+<div layout="column" layout-align="center top" layout-margin>
+
+  <o-form show-header="no">
+
+    <section class="md-whiteframe-4dp">
+      <h1 class="section-title">Read only mode</h1>
+      <div layout="row" layout-padding layout-fill>
+          <o-combo attr="combo" label="o-combo (read-only)"  layout-padding
+            [static-data]="getComboData()" [data]="getComboValue()" value-column="key"
+            columns="key;value" visible-columns="value" query-on-init="no" query-on-bind="no"></o-combo>
+          <o-combo attr="combo-disabled" label="o-combo-disabled (read-only)" enabled="no" layout-padding
+            [static-data]="getComboData()" [data]="getComboValue()" value-column="key"
+            columns="key;value" visible-columns="value" query-on-init="no" query-on-bind="no"></o-combo>
+      </div>
+    </section>
+
+    <section class="md-whiteframe-4dp">
+      <h1  class="section-title">Edit mode</h1>
+      <div layout="row" layout-padding layout-fill>
+         <o-combo #combo attr="combo1" label="o-combo" layout-padding style="min-width:200px;"
+          [static-data]="getComboData()" [data]="getComboValue()" value-column="key"
+            columns="key;value" visible-columns="value" query-on-init="no" query-on-bind="no"></o-combo>
+        <o-combo #combo1 attr="combo1_disabled" label="o-combo disabled" enabled="no" layout-padding style="min-width:200px;"
+          [static-data]="getComboData()" [data]="getComboValue()" value-column="key"
+            columns="key;value" visible-columns="value" query-on-init="no" query-on-bind="no"></o-combo>
+      </div>
+    </section>
+
+
+  </o-form>
+
+</div>

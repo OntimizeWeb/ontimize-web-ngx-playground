@@ -1,0 +1,33 @@
+<div layout="column" layout-align="center top" layout-margin>
+
+
+  <section class="md-whiteframe-4dp">
+    <h1 class="section-title">Rows</h1>
+    <div layout="column" layout-padding layout-fill>
+
+      <div layout="row" layout-align="space-around stretch" layout-fill>
+        <o-row attr="row1" [title-label]="title.value" layout-align="space-between center"
+          [elevation]="elevation.value" flex="60" style="height: 200px; min-height: 200px;">
+          <div layout-padding style="background-color:coral;" flex="15"> One </div>
+          <div layout-padding style="background-color:cornflowerblue;" flex="60"> Two </div>
+          <div layout-padding style="background-color:burlywood;" flex="15"> Three </div>
+        </o-row>
+        <div layout="column" flex="35" layout-padding>
+          <md-input #title placeholder="{{ 'TITLE' | translate }}" value="Row title"></md-input>
+          <md-input #elevation placeholder="{{ 'ELEVATION' | translate }}" value="1"></md-input>
+        </div>
+      </div>
+
+      <md-tab-group layout-fill>
+
+        <md-tab label="{{ 'DESCRIPTION' | oTranslate }}">
+        </md-tab>
+        <md-tab label="{{ 'SOURCE' | oTranslate }}">
+        </md-tab>
+      </md-tab-group>
+
+    </div>
+  </section>
+
+
+</div>
