@@ -28,6 +28,8 @@ module.exports = function(defaults) {
       'datatables.net-select/js/dataTables.select.js',
       'colresizable/*.js',
 
+      'angular2-highlight-js/lib/**/*.+(js|js.map|css|css.map|scss)',
+
       'ontimize-web-ng2/**/*.css'
     ]
   });

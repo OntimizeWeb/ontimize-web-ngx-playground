@@ -61,6 +61,7 @@ cliSystemConfigPackages['colresizable'] = { main: 'colResizable-1.6.min' };
 cliSystemConfigPackages['pdfmake'] = { main: 'build/pdfmake.min' };
 cliSystemConfigPackages['ng2-translate'] = { main: 'ng2-translate' };
 cliSystemConfigPackages['ontimize-web-ng2'] = { main: 'ontimize' };
+cliSystemConfigPackages['angular2-highlight-js'] = { main: 'highlight-js.module', defaultExtension: 'js' };
 
 /** Type declaration for ambient System. */
 declare var System: any;
@@ -80,6 +81,7 @@ System.config({
     'pdfmake': 'vendor/pdfmake',
     'ng2-translate': 'vendor/ng2-translate',
     'ontimize-web-ng2': 'vendor/ontimize-web-ng2',
+    'angular2-highlight-js': 'vendor/angular2-highlight-js/lib'
   },
   packages: cliSystemConfigPackages
 });

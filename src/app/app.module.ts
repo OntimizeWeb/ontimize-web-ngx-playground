@@ -10,6 +10,8 @@ import { AppComponent }  from './app.component';
 import { routing } from './app.routes';
 import { APP_DIRECTIVES } from './app.directives';
 
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+
 // Standard providers...
 let standardProviders = ontimizeProviders({
   'config': CONFIG
@@ -19,7 +21,7 @@ let standardProviders = ontimizeProviders({
 // ];
 
 @NgModule({
-  imports: [ ONTIMIZE_MODULES, routing],
+  imports: [ ONTIMIZE_MODULES, routing, HighlightJsModule],
   declarations: [
     AppComponent,
     ONTIMIZE_DIRECTIVES,
@@ -27,7 +29,8 @@ let standardProviders = ontimizeProviders({
   ],
   bootstrap: [ AppComponent ],
   providers: [
-    ...standardProviders
+    ...standardProviders,
+    HighlightJsService
     // ...customProviders
   ]
 })

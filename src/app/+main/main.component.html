@@ -1,5 +1,20 @@
 <side-menu></side-menu>
 
-<div class="main-container">
+<!--<div class="main-container">
   <router-outlet></router-outlet>
-</div>
+</div>-->
+
+
+<md-sidenav-layout layout-fill>
+  <md-sidenav mode="side" opened="true" #start (open)="closeStartButton.focus()">
+    <a class="md-list-item" [routerLink]="[ '/main/buttons' ]">
+      <div class="o-side-menu-item-title">{{ 'BUTTONS' | oTranslate }}</div>
+    </a>
+    <br>
+    <button md-button #closeStartButton (click)="start.close()">Close</button>
+  </md-sidenav>
+
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-layout>

@@ -1,20 +1,20 @@
 <div layout="column" layout-align="center top" layout-margin>
 
-  <o-form show-header="no">
-
-    <section class="md-whiteframe-4dp">
-      <h1 class="section-title">Text input</h1>
-      <div layout="row" layout-padding layout-fill>
-          <o-text-input attr="input" label="o-input (read-only)"  layout-padding
-            [data]="getInputValue()"></o-text-input>
-          <!--<o-text-input #input attr="input2" label="o-input (edit mode)"  layout-padding
-            [data]="getInputValue()"></o-text-input>
-          <o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
-            [data]="getInputValue()"></o-text-input>-->
-
-      </div>
-    </section>
-
-  </o-form>
+  <example-comp [comp-name]="getComponentId()" [files]="getFiles()" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-text-input attr="input" label="o-input (read-only)" layout-padding
+                  [data]="getInputValue()"></o-text-input>
+                <o-text-input #input attr="input2" label="o-input (edit mode)"  layout-padding
+                  [data]="getInputValue()"></o-text-input>
+                <o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
+                  [data]="getInputValue()"></o-text-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
 
 </div>

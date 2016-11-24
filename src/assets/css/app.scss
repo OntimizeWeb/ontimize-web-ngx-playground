@@ -1,4 +1,4 @@
-
+@import 'documentation.scss';
 @import 'my-custom-app-theme.scss';
 
 @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
@@ -17,4 +17,8 @@
 .section-title {
   padding-left: 12px;
   padding-top: 3px;
+}
+
+o-form form.inner-form{
+  position: initial !important;
 }

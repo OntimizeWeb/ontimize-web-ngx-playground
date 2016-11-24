@@ -1,9 +1,14 @@
 import {
-  SideMenuComponent
+  SideMenuComponent,
+  ExampleComponent,
+  HighlightComponent
 } from '../shared';
 
+
 export const SHARED_DIRECTIVES: any = [
-  SideMenuComponent
+  SideMenuComponent,
+  ExampleComponent,
+  HighlightComponent
 ];
 
 
