@@ -1,37 +1,62 @@
 <div layout="column" layout-align="center top" layout-margin>
 
 
-  <section class="md-whiteframe-4dp">
-    <h1 class="section-title">Rows</h1>
-    <div layout="column" layout-padding layout-fill>
+  <div layout-padding>
+    <h3>Overview</h3>
+    <p>
+      According to layout of the container (row or column) the children could be distributed using the <code>layout-align</code> directive.
+    </p>
+    <p>
+    The <code>layout-align</code> directive takes two words.
+    The first word says how the children will be aligned in the layout's direction, and the second word says how the children will be aligned perpendicular to the layout's direction.</p>
+  </div>
+
+
+  <div layout="row" layout-padding layout-align="start center">
+    <span>Select container layout direction: </span>
+    <md-radio-group layout-padding (change)="onLayoutChange($event)">
+      <md-radio-button value="column"> {{ 'COLUMN' | oTranslate }}</md-radio-button>
+      <md-radio-button value="row" checked="true"> {{'ROW' | oTranslate }}</md-radio-button>
+    </md-radio-group>
+  </div>
+
+
+  <example-comp [comp-name]="getComponentId()" [files]="getFiles()" layout-fill>
 
       <div layout="row" layout-align="space-around stretch" layout-fill>
-        <o-row attr="row1" [title-label]="title.value" [layout-align]="getLayoutAlign()"
-          [elevation]="elevation.value" flex="60" style="height: 200px; min-height: 200px;">
+        <o-row *ngIf="layout === 'row'" attr="row1" [title-label]="title.value" [layout-align]="getLayoutAlign()"
+          [elevation]="elevation.value" flex="60" >
           <div layout-padding style="background-color:#3498db;" > One </div>
           <div layout-padding style="background-color:#e74c3c;" > Two </div>
           <div layout-padding style="background-color:#f9c922;"> Three </div>
         </o-row>
 
-        <o-column attr="conf" title-label="Row configuration" elevation="4" flex="35" layout-padding>
-          <md-input #title placeholder="{{ 'TITLE' | translate }}" value="Row title" layout-fill></md-input>
-          <md-input #elevation placeholder="{{ 'ELEVATION' | translate }}" type="number" value="0" min="0" max="12"></md-input>
+        <o-column *ngIf="layout === 'column'" attr="col1" [title-label]="title.value" [layout-align]="getLayoutAlign()"
+          [elevation]="elevation.value" flex="60" >
+          <div layout-padding style="background-color:#3498db;" > One </div>
+          <div layout-padding style="background-color:#e74c3c;" > Two </div>
+          <div layout-padding style="background-color:#f9c922;"> Three </div>
+        </o-column>
 
-          <span layout-padding>Layout-align: {{ getLayoutAlign() }}</span>
+        <o-column attr="conf" title-label="Configuration" elevation="0" flex="35" layout-padding>
+          <md-input #title placeholder="{{ 'TITLE' | translate }}" value="Title" layout-fill></md-input>
+          <md-input #elevation placeholder="{{ 'ELEVATION' | translate }}" type="number" value="1" min="0" max="12"></md-input>
+
+          <span class="alignment" layout-padding>Layout-align: {{ getLayoutAlign() }}</span>
 
           <div layout="row" layout-align="space-around stretch">
-            <div layout="column">
+            <div layout="column" layout-padding>
               <span class="alignment-label">Alignment in Layout Direction (horizontal)</span>
-              <md-radio-group #layHor (change)="onLayoutHorizontalChange($event)" >
+              <md-radio-group class="radio-group-vertical" #layHor (change)="onLayoutHorizontalChange($event)" >
                 <md-radio-button *ngFor="let d of dataHorizontal" [value]="d.value" [checked]="d.checked">
                   {{d.label}}
                 </md-radio-button>
               </md-radio-group>
             </div>
 
-            <div layout="column">
+            <div layout="column" layout-padding>
               <span class="alignment-label">Alignment in Perpendicular Direction (vertical)</span>
-              <md-radio-group #layVer (change)="onLayoutVerticalChange($event)" >
+              <md-radio-group  class="radio-group-vertical" #layVer (change)="onLayoutVerticalChange($event)" >
                 <md-radio-button *ngFor="let d of dataVertical" [value]="d.value" [checked]="d.checked">
                   {{d.label}}
                 </md-radio-button>
@@ -41,17 +66,7 @@
         </o-column>
 
       </div>
-
-      <md-tab-group layout-fill>
-
-        <md-tab label="{{ 'DESCRIPTION' | oTranslate }}">
-        </md-tab>
-        <md-tab label="{{ 'SOURCE' | oTranslate }}">
-        </md-tab>
-      </md-tab-group>
-
-    </div>
-  </section>
+  </example-comp>
 
 
 </div>

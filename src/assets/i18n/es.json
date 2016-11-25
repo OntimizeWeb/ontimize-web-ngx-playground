@@ -6,6 +6,11 @@
   "CHECKBOX" : "Checkbox",
   "COMBO" : "Combo",
   "CONTAINERS" : "Contenedores",
-  "TEXT_INPUTS" : "Campos texto"
+  "TEXT_INPUTS" : "Campos texto",
+
+  "COLUMN" : "Columna",
+  "ROW" : "Fila",
+  "TITLE" : "Título",
+  "ELEVATION" : "Elevación"
 
 }

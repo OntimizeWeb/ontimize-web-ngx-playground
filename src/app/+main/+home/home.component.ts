@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute} from '@angular/router';
+
+import { NavigationBarService } from '../../shared';
 
 @Component({
   moduleId: module.id,
@@ -9,15 +10,12 @@ import { Router, ActivatedRoute} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router,
-    private actRoute: ActivatedRoute) {
+  constructor(protected navigationService: NavigationBarService) {
   }
 
   ngOnInit() {
+     this.navigationService.setTitle('Introduction')
   }
 
-  navigate() {
-    this.router.navigate([ '../', 'login'], {relativeTo: this.actRoute});
-  }
 
 }

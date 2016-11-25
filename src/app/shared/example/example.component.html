@@ -1,10 +1,10 @@
 <div layout="column" layout-align="center top" layout-fill>
 
-    <h1 class="section-title"> {{ compName }}</h1>
     <div layout="column" layout-padding layout-fill>
       <section class="playground-container md-whiteframe-4dp"
         [class.show-source]= "showSource">
         <md-toolbar class="playground-toolbar" color="primary">
+          <span> {{ compName }}</span>
           <span flex></span>
           <button md-icon-button
                   aria-label="View Source"

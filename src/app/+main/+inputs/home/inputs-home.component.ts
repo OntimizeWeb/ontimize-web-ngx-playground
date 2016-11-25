@@ -1,6 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { OTextInputComponent } from 'ontimize-web-ng2/ontimize';
+import {
+  OTextInputComponent,
+  ODateInputComponent,
+  OIntegerInputComponent,
+  ORealInputComponent,
+  OPercentInputComponent,
+  OCurrencyInputComponent,
+  ONIFInputComponent,
+  OEmailInputComponent,
+  OPasswordInputComponent,
+  OTextareaInputComponent,
+  OListPickerComponent
+} from 'ontimize-web-ng2/ontimize';
+
+import { NavigationBarService } from '../../../shared';
+import { InputUtils } from './inputs-utils';
 
 @Component({
   selector: 'inputs-home',
@@ -11,79 +26,108 @@ import { OTextInputComponent } from 'ontimize-web-ng2/ontimize';
 export class InputsHomeComponent {
 
   @ViewChild('input') input: OTextInputComponent;
+  @ViewChild('date') date: ODateInputComponent;
+  @ViewChild('integer') integer: OIntegerInputComponent;
+  @ViewChild('real') real: ORealInputComponent;
+  @ViewChild('percent') percent: OPercentInputComponent;
+  @ViewChild('currency') currency: OCurrencyInputComponent;
+  @ViewChild('nif') nif: ONIFInputComponent;
+  @ViewChild('email') email: OEmailInputComponent;
+  @ViewChild('password') password: OPasswordInputComponent;
+  @ViewChild('textarea') textarea: OTextareaInputComponent;
+  @ViewChild('listpicker') listpicker: OListPickerComponent;
 
-  constructor() {
+  constructor(protected navigationService: NavigationBarService) {
+  }
+
+  ngOnInit() {
+    this.navigationService.setTitle('Components > Inputs')
   }
 
   ngAfterViewInit() {
-    if (this.input) {
-      this.input.isReadOnly = false;
-    }
+    this.input.isReadOnly = false;
+    this.date.isReadOnly = false;
+    this.integer.isReadOnly = false;
+    this.real.isReadOnly = false;
+    this.percent.isReadOnly = false;
+    this.currency.isReadOnly = false;
+    this.nif.isReadOnly = false;
+    this.email.isReadOnly = false;
+    this.password.isReadOnly = false;
+    this.textarea.isReadOnly = false;
+    this.listpicker.isReadOnly = false;
   }
 
   getInputValue() {
     return 'John Doe';
   }
 
-  getComponentId() {
-    return 'Text Inputs';
+  getDateValue() {
+    return '';
   }
 
-  getFiles() {
-    return [
-      {
-        'type': 'html',
-        'data': HTML_DATA
-      },
-      {
-        'type': 'scss',
-        'data': ''
-      },
-      {
-        'type': 'typescript',
-        'data':TYPESCRIPT_DATA
-      }
-    ]
+  getIntegerValue() {
+    return 1;
   }
 
+  getRealValue() {
+    return 33.45;
+  }
+
+  getPercentValue() {
+    return 52.55;
+  }
+
+  getCurrencyValue() {
+    return 2574.99;
+  }
+
+  getNIFValue() {
+    return '00000000T';
+  }
+
+  getEmailValue() {
+    return 'john.doe@ontimize.com';
+  }
+
+  getPasswordValue() {
+    return 'password';
+  }
+
+  getTextareaValue() {
+    return `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor porta arcu, ut ultricies magna sodales egestas. Mauris et tempus lacus. Nunc gravida sodales ipsum, a convallis arcu placerat rhoncus. Suspendisse in sollicitudin leo. Nam efficitur dolor vitae tortor commodo tincidunt. Suspendisse ornare scelerisque lectus, nec interdum turpis mattis ut. Morbi congue, diam quis varius tincidunt, ante quam vulputate arcu, sit amet faucibus tortor dui et erat. Cras eget erat at erat ultrices varius. Phasellus interdum enim sagittis tortor consequat lobortis. Fusce tortor risus, pharetra eget diam mollis, rutrum mollis sem. Nullam pellentesque risus id suscipit malesuada. Etiam non sem cursus libero faucibus congue. Sed arcu lorem, scelerisque sit amet porttitor sed, vehicula consectetur lacus. Vestibulum suscipit ante quis condimentum laoreet. Ut quis volutpat neque.
+    `;
+  }
+
+  getListPickerData() {
+    let array: Array<Object> = [];
+    array.push({
+      'CUSTOMERTYPEID': 1,
+      'DESCRIPTION': 'VIP'
+    });
+    array.push({
+      'CUSTOMERTYPEID': 2,
+      'DESCRIPTION': 'Normal'
+    });
+    array.push({
+      'CUSTOMERTYPEID': 3,
+      'DESCRIPTION': 'Other'
+    });
+    return array;
+  }
+
+  getListPickerValue() {
+    return 2;
+  }
+
+  getComponentId(key: string) {
+    return InputUtils.getComponentId(key);
+  }
+
+  getFiles(key: string) {
+    return InputUtils.getFiles(key);
+  }
 
 }
 
-const HTML_DATA = `
-<o-text-input attr="input" label="o-input (read-only)" layout-padding
-  [data]="getInputValue()"></o-text-input>
-
-<o-text-input #input attr="input2" label="o-input (edit mode)"  layout-padding
-  [data]="getInputValue()"></o-text-input>
-
-<o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
-  [data]="getInputValue()"></o-text-input>`;
-
-const TYPESCRIPT_DATA = `
-import { Component, ViewChild } from '@angular/core';
-
-import { OTextInputComponent } from 'ontimize-web-ng2/ontimize';
-
-@Component({
-  selector: 'inputs-home',
-  moduleId: module.id,
-  styleUrls: ['inputs-home.component.css'],
-  templateUrl: 'inputs-home.component.html'
-})
-export class InputsHomeComponent {
-
-  @ViewChild('input') input: OTextInputComponent;
-
-  constructor() {
-  }
-
-  ngAfterViewInit() {
-    if (this.input) {
-      this.input.isReadOnly = false;
-    }
-  }
-
-  getInputValue() {
-    return 'John Doe';
-  }
-}`;

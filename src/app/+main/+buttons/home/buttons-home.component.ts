@@ -1,5 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 
+import { NavigationBarService } from '../../../shared';
+
 @Component({
   selector: 'buttons-home',
   moduleId: module.id,
@@ -8,7 +10,11 @@ import { Component, ElementRef } from '@angular/core';
 })
 export class ButtonsHomeComponent {
 
-  constructor() {
+  constructor(protected navigationService: NavigationBarService) {
+  }
+
+  ngOnInit() {
+     this.navigationService.setTitle('Components > Buttons')
   }
 
   getComponentId() {

@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 
 import { OComboComponent } from 'ontimize-web-ng2/ontimize';
 
+import { NavigationBarService } from '../../../shared';
+
 @Component({
   selector: 'combo-home',
   moduleId: module.id,
@@ -13,7 +15,12 @@ export class ComboHomeComponent {
   @ViewChild('combo') combo: OComboComponent;
   @ViewChild('combo1') combo1: OComboComponent;
 
-  constructor() {
+  constructor(protected navigationService: NavigationBarService) {
+  }
+
+
+  ngOnInit() {
+     this.navigationService.setTitle('Components > Combos')
   }
 
   ngAfterViewInit() {

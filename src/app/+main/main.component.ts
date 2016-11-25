@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+
+import { NavigationBarService } from '../shared';
 
 @Component({
   moduleId: module.id,
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() {}
+  protected sectionTitle: string = '';
+
+  constructor(protected navigationService: NavigationBarService) {
+
+  }
 
   ngOnInit() {
+    this.navigationService.onTitleChange((title) => {
+      this.sectionTitle = title;
+    });
   }
 
 }

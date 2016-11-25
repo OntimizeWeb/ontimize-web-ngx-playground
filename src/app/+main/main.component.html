@@ -1,4 +1,4 @@
-<side-menu></side-menu>
+<!--<side-menu></side-menu>-->
 
 <!--<div class="main-container">
   <router-outlet></router-outlet>
@@ -6,15 +6,22 @@
 
 
 <md-sidenav-layout layout-fill>
-  <md-sidenav mode="side" opened="true" #start (open)="closeStartButton.focus()">
-    <a class="md-list-item" [routerLink]="[ '/main/buttons' ]">
-      <div class="o-side-menu-item-title">{{ 'BUTTONS' | oTranslate }}</div>
-    </a>
-    <br>
-    <button md-button #closeStartButton (click)="start.close()">Close</button>
+  <md-sidenav mode="side" opened="true" class="main-sidenav">
+    <side-menu></side-menu>
   </md-sidenav>
 
 
-  <router-outlet></router-outlet>
+  <md-toolbar class="navigation-toolbar">
+    {{ sectionTitle }}
+    <span flex></span>
+    <a href="https://github.com/OntimizeWeb/ontimize-web-ng2/tree/1.1.0"
+      title="View Source on Github"
+      aria-label="View Source on Github" target="_blank">
+      <md-icon svgSrc="./assets/images/github.svg"></md-icon>
+    </a>
+  </md-toolbar>
+  <div class="main-container">
+    <router-outlet></router-outlet>
+  </div>
 
 </md-sidenav-layout>

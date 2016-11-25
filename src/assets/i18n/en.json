@@ -1,10 +1,15 @@
 {
-  "APP_TITLE" : "Quickstart",
+  "APP_TITLE" : "Playground",
 
   "HOME" : "Home",
   "BUTTONS" : "Buttons",
   "CHECKBOX" : "Checkbox",
   "COMBO" : "Combo",
   "CONTAINERS" : "Containers",
-  "TEXT_INPUTS" : "Input text"
+  "TEXT_INPUTS" : "Input text",
+
+  "COLUMN" : "Column",
+  "ROW" : "Row",
+  "TITLE" : "Title",
+  "ELEVATION" : "Elevation"
 }

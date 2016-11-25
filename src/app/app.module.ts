@@ -9,6 +9,7 @@ import { CONFIG } from './app.config';
 import { AppComponent }  from './app.component';
 import { routing } from './app.routes';
 import { APP_DIRECTIVES } from './app.directives';
+import { NavigationBarService } from './shared/navigation-bar.service';
 
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
@@ -17,8 +18,9 @@ let standardProviders = ontimizeProviders({
   'config': CONFIG
 });
 // Defining custom providers (if needed)...
-// let customProviders = [
-// ];
+let customProviders = [
+    NavigationBarService
+];
 
 @NgModule({
   imports: [ ONTIMIZE_MODULES, routing, HighlightJsModule],
@@ -30,8 +32,8 @@ let standardProviders = ontimizeProviders({
   bootstrap: [ AppComponent ],
   providers: [
     ...standardProviders,
-    HighlightJsService
-    // ...customProviders
+    HighlightJsService,
+    ...customProviders
   ]
 })
 export class AppModule { }
