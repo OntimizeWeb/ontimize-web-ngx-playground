@@ -1,0 +1,196 @@
+<div layout="column" layout-align="center top" layout-margin>
+
+  <example-comp [comp-name]="getComponentId('text')" [files]="getFiles('text')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-text-input attr="input" label="o-input (read-only)" layout-padding
+                  [data]="getInputValue()"></o-text-input>
+                <o-text-input #input attr="input2" label="o-input (edit mode)"  layout-padding
+                  [data]="getInputValue()"></o-text-input>
+                <o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
+                  [data]="getInputValue()"></o-text-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('date')" [files]="getFiles('date')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-date-input attr="date" label="o-date (read-only)" layout-padding
+                  [data]="getDateValue()"></o-date-input>
+                <o-date-input #date attr="date2" label="o-date (edit mode)"  layout-padding
+                  [data]="getDateValue()"></o-date-input>
+                <o-date-input attr="date3" label="o-date disabled" enabled="no"  layout-padding
+                  [data]="getDateValue()"></o-date-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('listpicker')" [files]="getFiles('listpicker')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-list-picker attr="listpicker" label="o-list-picker (read-only)" [static-data]="getListPickerData()" [data]="getListPickerValue()"
+                  enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
+                  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
+                <o-list-picker #listpicker attr="listpicker2" label="o-list-picker (read-only)" [static-data]="getListPickerData()" [data]="getListPickerValue()"
+                  enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
+                  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
+                <o-list-picker attr="listpicker3" label="o-list-picker (read-only)" [static-data]="getListPickerData()" [data]="getListPickerValue()"
+                  enabled="no" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
+                  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('integer')" [files]="getFiles('integer')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-integer-input attr="integer" label="o-integer (read-only)" layout-padding
+                  [data]="getIntegerValue()" min="0" max="10"></o-integer-input>
+                <o-integer-input #integer attr="integer2" label="o-integer (edit mode)"  layout-padding
+                  [data]="getIntegerValue()" min="0" max="10"></o-integer-input>
+                <o-integer-input attr="integer3" label="o-integer disabled" enabled="no"  layout-padding
+                  [data]="getIntegerValue()" min="0" max="10"></o-integer-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('real')" [files]="getFiles('real')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-real-input attr="real" label="o-real (read-only)" layout-padding
+                  [data]="getRealValue()" decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4"
+                   min="30" max="40.0"></o-real-input>
+                <o-real-input #real attr="real2" label="o-real (edit mode)"  layout-padding
+                  [data]="getRealValue()" decimal-digits="3"  min-decimal-digits="2" max-decimal-digits="4"
+                   min="30" max="40.0"></o-real-input>
+                <o-real-input attr="real3" label="o-real disabled" enabled="no"  layout-padding
+                  [data]="getRealValue()" decimal-digits="3"  min-decimal-digits="2" max-decimal-digits="4"
+                   min="30" max="40.0"></o-real-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('percent')" [files]="getFiles('percent')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-percent-input attr="percent" label="o-percent (read-only)" layout-padding
+                  [data]="getPercentValue()"></o-percent-input>
+                <o-percent-input #percent attr="percent2" label="o-percent (edit mode)"  layout-padding
+                  [data]="getPercentValue()"></o-percent-input>
+                <o-percent-input attr="percent3" label="o-percent disabled" enabled="no"  layout-padding
+                  [data]="getPercentValue()"></o-percent-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('currency')" [files]="getFiles('currency')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-currency-input attr="currency" label="o-currency (read-only)" layout-padding
+                  [data]="getCurrencyValue()" decimal-digits="2"  min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+                <o-currency-input #currency attr="currency2" label="o-currency (edit mode)"  layout-padding
+                  [data]="getCurrencyValue()" decimal-digits="2"  min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+                <o-currency-input attr="currency3" label="o-currency disabled" enabled="no"  layout-padding
+                  [data]="getCurrencyValue()" decimal-digits="2"  min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('nif')" [files]="getFiles('nif')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-nif-input attr="nif" label="o-nif (read-only)" layout-padding
+                  [data]="getNIFValue()"></o-nif-input>
+                <o-nif-input #nif attr="nif2" label="o-nif (edit mode)"  layout-padding
+                  [data]="getNIFValue()"></o-nif-input>
+                <o-nif-input attr="nif3" label="o-nif disabled" enabled="no"  layout-padding
+                  [data]="getNIFValue()"></o-nif-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('email')" [files]="getFiles('email')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-email-input attr="email" label="o-email (read-only)" layout-padding
+                  [data]="getEmailValue()"></o-email-input>
+                <o-email-input #email attr="email2" label="o-email (edit mode)"  layout-padding
+                  [data]="getEmailValue()"></o-email-input>
+                <o-email-input attr="email3" label="o-email disabled" enabled="no"  layout-padding
+                  [data]="getEmailValue()"></o-email-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('password')" [files]="getFiles('password')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="row" layout-padding layout-fill>
+                <o-password-input attr="password" label="o-password (read-only)" layout-padding
+                  [data]="getPasswordValue()"></o-password-input>
+                <o-password-input #password attr="password2" label="o-password (edit mode)"  layout-padding
+                  [data]="getPasswordValue()"></o-password-input>
+                <o-password-input attr="password3" label="o-password disabled" enabled="no"  layout-padding
+                  [data]="getPasswordValue()"></o-password-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+  <example-comp [comp-name]="getComponentId('textarea')" [files]="getFiles('textarea')" layout-fill>
+    <div flex="grow">
+      <o-form show-header="no" layout-fill>
+        <div layout="column" layout-fill layout-padding>
+            <div layout="column" layout-padding layout-fill>
+                <o-textarea-input attr="textarea" label="o-textarea (read-only)" layout-padding
+                  [data]="getTextareaValue()"></o-textarea-input>
+                <o-textarea-input #textarea attr="textarea2" label="o-textarea (edit mode)"  layout-padding
+                  [data]="getTextareaValue()"></o-textarea-input>
+                <o-textarea-input attr="textarea3" label="o-textarea disabled" enabled="no"  layout-padding
+                  [data]="getTextareaValue()"></o-textarea-input>
+            </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
+</div>
