@@ -1,12 +1,17 @@
 {
   "APP_TITLE" : "Playground",
 
+  "INTRODUCTION": "Introducción",
+  "FIELDS" : "Campos",
+  "LAYOUT" : "Layout",
+
   "HOME" : "Inicio",
   "BUTTONS" : "Botones",
   "CHECKBOX" : "Checkbox",
   "COMBO" : "Combo",
+  "INPUTS" : "Campos de entrada",
+
   "CONTAINERS" : "Contenedores",
-  "TEXT_INPUTS" : "Campos texto",
 
   "COLUMN" : "Columna",
   "ROW" : "Fila",

@@ -35,12 +35,15 @@ p.body-text{
 }
 
 code:not(.highlight) {
-    color: #106CC8;
-    margin-left: 1px;
-    margin-right: 1px;
-    -webkit-font-smoothing: auto;
-    padding: 0.125em 0.35em;
-    border-radius: 2px;
+  color: #106CC8;
+  margin-left: 1px;
+  margin-right: 1px;
+  -webkit-font-smoothing: auto;
+  padding: 0.125em 0.35em;
+  border-radius: 2px;
+}
+a{
+ color: #106CC8;
 }
 
 o-side-menu h3 {

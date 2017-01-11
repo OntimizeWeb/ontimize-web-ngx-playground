@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { OCheckboxComponent } from 'ontimize-web-ng2/ontimize';
+import { OCheckboxComponent, OTranslateService } from 'ontimize-web-ng2/ontimize';
 
 import { NavigationBarService } from '../../../shared';
 
@@ -14,11 +14,16 @@ export class CheckboxHomeComponent {
 
   @ViewChild('checkbox') checkBox: OCheckboxComponent;
 
-  constructor(protected navigationService: NavigationBarService) {
+  constructor(
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
   }
 
   ngOnInit() {
-     this.navigationService.setTitle('Components > Checkbox')
+    let title = '';
+    title += this.translateService.get('FIELDS');
+    title = title + ' > ' + this.translateService.get('CHECKBOX');
+    this.navigationService.setTitle(title);
   }
 
   ngAfterViewInit() {

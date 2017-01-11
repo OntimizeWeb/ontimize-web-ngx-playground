@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { OTranslateService } from 'ontimize-web-ng2/ontimize';
+
 import { NavigationBarService } from '../../shared';
 
 @Component({
@@ -10,11 +12,15 @@ import { NavigationBarService } from '../../shared';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(protected navigationService: NavigationBarService) {
+  constructor(
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
   }
 
   ngOnInit() {
-     this.navigationService.setTitle('Introduction')
+    let title = '';
+    title = this.translateService.get('INTRODUCTION');
+    this.navigationService.setTitle(title);
   }
 
 

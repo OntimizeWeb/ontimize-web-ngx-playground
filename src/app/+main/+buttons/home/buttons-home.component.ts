@@ -1,5 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 
+import { OTranslateService } from 'ontimize-web-ng2/ontimize';
+
 import { NavigationBarService } from '../../../shared';
 
 @Component({
@@ -10,11 +12,16 @@ import { NavigationBarService } from '../../../shared';
 })
 export class ButtonsHomeComponent {
 
-  constructor(protected navigationService: NavigationBarService) {
+  constructor(
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
   }
 
   ngOnInit() {
-     this.navigationService.setTitle('Components > Buttons')
+    let title = '';
+    title += this.translateService.get('FIELDS');
+    title = title + ' > ' + this.translateService.get('BUTTONS');
+    this.navigationService.setTitle(title);
   }
 
   getComponentId() {

@@ -11,7 +11,8 @@ import {
   OEmailInputComponent,
   OPasswordInputComponent,
   OTextareaInputComponent,
-  OListPickerComponent
+  OListPickerComponent,
+  OTranslateService
 } from 'ontimize-web-ng2/ontimize';
 
 import { NavigationBarService } from '../../../shared';
@@ -37,11 +38,16 @@ export class InputsHomeComponent {
   @ViewChild('textarea') textarea: OTextareaInputComponent;
   @ViewChild('listpicker') listpicker: OListPickerComponent;
 
-  constructor(protected navigationService: NavigationBarService) {
+  constructor(
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService ) {
   }
 
   ngOnInit() {
-    this.navigationService.setTitle('Components > Inputs')
+    let title = '';
+    title += this.translateService.get('FIELDS');
+    title = title + ' > ' + this.translateService.get('INPUTS');
+    this.navigationService.setTitle(title);
   }
 
   ngAfterViewInit() {

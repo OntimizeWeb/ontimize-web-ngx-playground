@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { OComboComponent } from 'ontimize-web-ng2/ontimize';
+import { OComboComponent, OTranslateService } from 'ontimize-web-ng2/ontimize';
 
 import { NavigationBarService } from '../../../shared';
 
@@ -15,12 +15,17 @@ export class ComboHomeComponent {
   @ViewChild('combo') combo: OComboComponent;
   @ViewChild('combo1') combo1: OComboComponent;
 
-  constructor(protected navigationService: NavigationBarService) {
+  constructor(
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
   }
 
 
   ngOnInit() {
-     this.navigationService.setTitle('Components > Combos')
+    let title = '';
+    title += this.translateService.get('FIELDS');
+    title = title + ' > ' + this.translateService.get('COMBO');
+    this.navigationService.setTitle(title);
   }
 
   ngAfterViewInit() {
