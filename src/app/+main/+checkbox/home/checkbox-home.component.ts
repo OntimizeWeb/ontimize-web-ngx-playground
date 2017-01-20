@@ -30,6 +30,10 @@ export class CheckboxHomeComponent {
     this.checkBox.isReadOnly = false;
   }
 
+  getCheckboxValue() {
+    return true;
+  }
+
   getComponentId() {
     return 'Checkbox';
   }

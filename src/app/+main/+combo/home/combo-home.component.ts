@@ -31,6 +31,10 @@ export class ComboHomeComponent {
   ngAfterViewInit() {
     if (this.combo) {
       this.combo.isReadOnly = false;
+      // var self = this;
+      // window.setTimeout(() => {
+      //   self.combo.setValue(1);
+      // },1000);
     }
     if (this.combo1) {
       this.combo1.isReadOnly = false;

@@ -2,8 +2,12 @@
   "APP_TITLE" : "Playground",
 
   "INTRODUCTION": "Introducción",
-  "FIELDS" : "Campos",
+  "INPUT" : "Campos",
+  "BUTTON" : "Botones",
+  "DATA" : "Datos",
+  "MEDIA" : "Media",
   "LAYOUT" : "Layout",
+  "MENU" : "Menú",
 
   "HOME" : "Inicio",
   "BUTTONS" : "Botones",

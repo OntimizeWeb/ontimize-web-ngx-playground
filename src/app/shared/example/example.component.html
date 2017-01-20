@@ -16,8 +16,8 @@
         <!-- Source views -->
         <md-tab-group *ngIf="showSource">
           <md-tab *ngFor="let file of orderedFiles" label="{{ file?.type | oTranslate }}">
-              <div md-scroll-y class="playground-source-container">
-                <highlight-comp [template-content]="file.data" [template-type]="file.type" ></highlight-comp>
+              <div class="playground-source-container">
+                <!--<highlight-comp [template-content]="file.data" [template-type]="file.type" ></highlight-comp>-->
               </div>
           </md-tab>
         </md-tab-group>

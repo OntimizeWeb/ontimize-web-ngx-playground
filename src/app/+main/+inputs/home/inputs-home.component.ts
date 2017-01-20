@@ -38,6 +38,8 @@ export class InputsHomeComponent {
   @ViewChild('textarea') textarea: OTextareaInputComponent;
   @ViewChild('listpicker') listpicker: OListPickerComponent;
 
+  protected dateValue: Date;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService ) {
@@ -48,6 +50,8 @@ export class InputsHomeComponent {
     title += this.translateService.get('FIELDS');
     title = title + ' > ' + this.translateService.get('INPUTS');
     this.navigationService.setTitle(title);
+
+    this.dateValue = new Date("October 13, 2016 11:13:00");
   }
 
   ngAfterViewInit() {
@@ -62,6 +66,12 @@ export class InputsHomeComponent {
     this.password.isReadOnly = false;
     this.textarea.isReadOnly = false;
     this.listpicker.isReadOnly = false;
+
+    var self = this;
+    window.setTimeout(() => {
+      self.input.data = 'Pepito';
+    }, 1000)
+
   }
 
   getInputValue() {
@@ -69,7 +79,8 @@ export class InputsHomeComponent {
   }
 
   getDateValue() {
-    return '';
+    return this.dateValue.getTime();
+    // return '';
   }
 
   getIntegerValue() {
