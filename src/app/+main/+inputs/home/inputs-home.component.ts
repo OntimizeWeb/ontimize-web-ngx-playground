@@ -66,12 +66,6 @@ export class InputsHomeComponent {
     this.password.isReadOnly = false;
     this.textarea.isReadOnly = false;
     this.listpicker.isReadOnly = false;
-
-    var self = this;
-    window.setTimeout(() => {
-      self.input.data = 'Pepito';
-    }, 1000)
-
   }
 
   getInputValue() {
@@ -80,7 +74,6 @@ export class InputsHomeComponent {
 
   getDateValue() {
     return this.dateValue.getTime();
-    // return '';
   }
 
   getIntegerValue() {

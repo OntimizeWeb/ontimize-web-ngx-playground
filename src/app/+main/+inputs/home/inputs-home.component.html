@@ -8,7 +8,7 @@
                 <o-text-input attr="input" label="o-input (read-only)" layout-padding
                   [data]="getInputValue()"></o-text-input>
                 <o-text-input #input attr="input2" label="o-input (edit mode)"  layout-padding
-                  tooltip="This is an awesome tooltip!!!!"></o-text-input>
+                  [data]="getInputValue()" tooltip="This is an awesome tooltip!!!!"></o-text-input>
                 <o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
                   [data]="getInputValue()"></o-text-input>
             </div>
