@@ -34,6 +34,7 @@ const barrels: string[] = [
   'app/+main/+checkbox',
   'app/+main/+combo',
   'app/+main/+containers',
+  'app/+main/+dialogs',
   'app/+main/+inputs',
   'app/+main/+home',
   'app/+main'

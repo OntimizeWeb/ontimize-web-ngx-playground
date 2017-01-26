@@ -15,10 +15,19 @@
 
         <!-- Source views -->
         <md-tab-group *ngIf="showSource">
-          <md-tab *ngFor="let file of orderedFiles" label="{{ file?.type | oTranslate }}">
+          <!--<md-tab *ngFor="let file of orderedFiles" label="{{ file?.type | oTranslate }}">
               <div class="playground-source-container">
-                <!--<highlight-comp [template-content]="file.data" [template-type]="file.type" ></highlight-comp>-->
+                <highlight-comp [template-content]="file.data" [template-type]="file.type" ></highlight-comp>
               </div>
+          </md-tab>-->
+          <md-tab label="{{ 'html' | uppercase }}">
+            <highlight-comp [template-content]="getTplData('html')" [template-type]="html" ></highlight-comp>
+          </md-tab>
+          <md-tab label="{{ 'scss' | uppercase }}">
+            <highlight-comp [template-content]="getTplData('scss')" [template-type]="scss" ></highlight-comp>
+          </md-tab>
+          <md-tab label="{{ 'typescript' | uppercase }}">
+            <highlight-comp [template-content]="getTplData('typescript')" [template-type]="typescript" ></highlight-comp>
           </md-tab>
         </md-tab-group>
 

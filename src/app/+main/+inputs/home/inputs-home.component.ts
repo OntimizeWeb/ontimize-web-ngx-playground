@@ -47,7 +47,7 @@ export class InputsHomeComponent {
 
   ngOnInit() {
     let title = '';
-    title += this.translateService.get('FIELDS');
+    title += this.translateService.get('INPUTS');
     title = title + ' > ' + this.translateService.get('INPUTS');
     this.navigationService.setTitle(title);
 
