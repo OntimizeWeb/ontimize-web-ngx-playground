@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
+import { InputConverter } from 'ontimize-web-ng2/ontimize';
+
 
 @Component({
   selector: 'example-comp',
@@ -7,7 +9,9 @@ import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
   templateUrl: 'example.component.html',
   inputs: [
     'compName: comp-name',
-    'orderedFiles: files'
+    'orderedFiles: files',
+    'collapsible',
+    'collapsed'
   ],
   encapsulation: ViewEncapsulation.None
 })
@@ -16,7 +20,10 @@ export class ExampleComponent {
   public showSource: boolean = false;
   protected compName: string = '';
   protected orderedFiles: Array<string>;
-
+  @InputConverter()
+  collapsible: boolean = false;
+  @InputConverter()
+  collapsed: boolean = false;
 
   private tplData: Object;
 
@@ -30,7 +37,7 @@ export class ExampleComponent {
     this.tplData['typescript'] = this.initializeData('typescript');
   }
 
-  initializeData(type:string) {
+  initializeData(type: string) {
     let tpl = '';
     if (this.orderedFiles && this.orderedFiles.length > -1) {
       this.orderedFiles.forEach((item) => {
@@ -42,7 +49,7 @@ export class ExampleComponent {
     return tpl;
   }
 
-  getTplData(type:string) {
+  getTplData(type: string) {
     let tpl = this.tplData[type];
     return tpl ? tpl : '';
   }

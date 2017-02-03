@@ -1,0 +1,196 @@
+<div layout="column" layout-align="center top" layout-margin>
+
+  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-text)" layout-fill>
+    <div flex="grow">
+      <div layout="row" layout-align="center start" layout-padding layout-fill>
+        <div layout="row" layout-padding layout-align="start" flex="30">
+          <div layout="column" layout-padding layout-align="start" flex="50">
+            <md-slide-toggle #quickFilterToggle checked="true">
+              quick-filter
+            </md-slide-toggle>
+
+            <md-slide-toggle #refreshButtonToggle [checked]="true">
+              refresh-button
+            </md-slide-toggle>
+
+            <md-slide-toggle #insertButtonToggle>
+              insert-button
+            </md-slide-toggle>
+
+            <md-slide-toggle #iconToggle>
+              icon
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!iconToggle.checked">
+              <input md-input #itemIcon placeholder="item-icon" value="mood">
+            </md-input-container>
+
+            <span *ngIf="iconToggle.checked">icon-position</span>
+
+            <md-radio-group *ngIf="iconToggle.checked" layout-padding [value]="list3iconPosition" (change)="list3iconPosition = $event.value">
+              <md-radio-button value="left"> left </md-radio-button>
+              <md-radio-button value="right"> right </md-radio-button>
+            </md-radio-group>
+          </div>
+
+          <div layout="column" layout-padding layout-align="start" flex="50">
+
+            <md-slide-toggle #denseToggle [checked]="list3.dense">
+              dense
+            </md-slide-toggle>
+
+            <md-slide-toggle #selectableToggle>
+              selectable
+            </md-slide-toggle>
+
+            <md-slide-toggle #editButtonInRowToggle>
+              edit-button-in-row
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!editButtonInRowToggle.checked">
+              <input md-input #editButtonInRowIconInput placeholder="edit-button-in-row-icon" value="edit">
+            </md-input-container>
+
+            <md-slide-toggle #detailButtonInRowToggle>
+              detail-button-in-row
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!detailButtonInRowToggle.checked">
+              <input md-input #detailButtonInRowIconInput placeholder="detail-button-in-row-icon" value="chevron_right">
+            </md-input-container>
+
+          </div>
+
+        </div>
+
+        <o-list #list3 flex="35" layout-fill attr="list3" title="LIST" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
+          query-on-init="true" pageable="no" [static-data]="getListData(5)" [quick-filter]="quickFilterToggle.checked" [refresh-button]="refreshButtonToggle.checked"
+          [insert-button]="insertButtonToggle.checked" [selectable]="selectableToggle.checked" [dense]="denseToggle.checked"
+          [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
+          [edit-button-in-row]="editButtonInRowToggle.checked" [edit-button-in-row-icon]="editButtonInRowIconInput.value">
+
+          <o-list-item *ngFor="let row of list3.dataArray">
+            <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="list3iconPosition" (icon-action)="addToFavorites(row, item)"
+              title="{{row.username}}" secondary-text="{{ row.body }}"></o-list-item-text>
+          </o-list-item>
+
+          </o-list>
+      </div>
+    </div>
+  </example-comp>
+
+
+  <example-comp collapsible="no" collapsed="yes" comp-name="Customizable list (o-list-item-avatar)" layout-fill>
+    <div flex="grow">
+
+      <div layout="row" layout-align="center start" layout-padding layout-fill>
+
+        <div layout="row" layout-padding layout-align="start" flex="30">
+          <div layout="column" layout-padding layout-align="start" flex="50">
+            <md-slide-toggle #quickFilterToggle2 checked="true">
+              quick-filter
+            </md-slide-toggle>
+
+            <md-slide-toggle #refreshButtonToggle2 [checked]="true">
+              refresh-button
+            </md-slide-toggle>
+
+            <md-slide-toggle #insertButtonToggle2>
+              insert-button
+            </md-slide-toggle>
+
+            <md-slide-toggle #iconToggle2>
+              icon
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!iconToggle2.checked">
+              <input md-input #itemIcon placeholder="item-icon" value="mood">
+            </md-input-container>
+
+          </div>
+
+          <div layout="column" layout-padding layout-align="start" flex="50">
+
+            <md-slide-toggle #denseToggle2 [checked]="list9.dense">
+              dense
+            </md-slide-toggle>
+
+            <md-slide-toggle #selectableToggle2>
+              selectable
+            </md-slide-toggle>
+
+            <md-slide-toggle #editButtonInRowToggle2>
+              edit-button-in-row
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!editButtonInRowToggle2.checked">
+              <input md-input #editButtonInRowIconInput2 placeholder="edit-button-in-row-icon" value="edit">
+            </md-input-container>
+
+            <md-slide-toggle #detailButtonInRowToggle2>
+              detail-button-in-row
+            </md-slide-toggle>
+
+            <md-input-container [hidden]="!detailButtonInRowToggle2.checked">
+              <input md-input #detailButtonInRowIconInput2 placeholder="detail-button-in-row-icon" value="chevron_right">
+            </md-input-container>
+
+          </div>
+
+        </div>
+
+        <o-list #list9 flex="35" layout-fill attr="list9" title="LIST" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
+          query-on-init="true" pageable="no" [static-data]="getListData(5)" [quick-filter]="quickFilterToggle2.checked" [refresh-button]="refreshButtonToggle2.checked"
+          [insert-button]="insertButtonToggle2.checked" [selectable]="selectableToggle2.checked" [dense]="denseToggle2.checked"
+          [detail-button-in-row]="detailButtonInRowToggle2.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput2.value"
+          [edit-button-in-row]="editButtonInRowToggle2.checked" [edit-button-in-row-icon]="editButtonInRowIconInput2.value">
+
+          <o-list-item *ngFor="let row of list9.dataArray">
+            <o-list-item-avatar #avatarItem avatar="{{row.thumbnailUrl}}" title="{{row.name}}" secondary-text="{{ row.body }}" [icon]="iconToggle2.checked ? itemIcon.value : undefined"
+              (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
+          </o-list-item>
+          </o-list>
+
+      </div>
+
+    </div>
+  </example-comp>
+
+  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-card)" layout-fill>
+    <div flex="grow">
+      <div layout="row" layout-align="center start" layout-padding layout-fill>
+
+        <div layout="row" layout-padding layout-align="start" flex="30">
+          <div layout="column" layout-padding layout-align="start" flex="50">
+
+            <md-slide-toggle #insertButtonToggle3>
+              insert-button
+            </md-slide-toggle>
+
+
+            <span>row-height</span>
+            <md-radio-group #rowHeight2 layout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
+              <md-radio-button value="small"> small </md-radio-button>
+              <md-radio-button value="medium"> medium </md-radio-button>
+              <md-radio-button value="large"> large </md-radio-button>
+            </md-radio-group>
+
+          </div>
+
+        </div>
+        <o-list #cardList flex="35" layout-fill attr="cardList" title="List" columns="id;name;username;email;street;phone" keys="id"
+          quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getListData()" quick-filter="no"
+          refresh-button="no" selectable="no" detail-button-in-row="no" edit-button-in-row="no" row-height="large" [insert-button]="insertButtonToggle3.checked">
+
+          <o-list-item *ngFor="let row of cardList.dataArray">
+            <o-list-item-card #itemCard title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" avatar="{{ row.thumbnailUrl }}"
+              image="{{ row.image }}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()">
+              </o-list-item-card>
+          </o-list-item>
+          </o-list>
+      </div>
+    </div>
+  </example-comp>
+
+
+</div>
