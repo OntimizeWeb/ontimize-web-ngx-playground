@@ -37,6 +37,8 @@ const barrels: string[] = [
   'app/+main/+dialogs',
   'app/+main/+inputs',
   'app/+main/+home',
+  'app/+main/+lists',
+  // 'app/+main/+tables',
   'app/+main'
   /** @cli-barrel */
 ];
