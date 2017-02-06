@@ -178,12 +178,12 @@
         <o-row elevation="1" flex="35" layout-align="center" attr="listcardrow">
           <o-list #cardList layout-fill attr="cardList" [title]="cardListTitle.value" columns="id;name;username;email;street;phone"
             keys="id" quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getListData()"
-            quick-filter="no" refresh-button="no" selectable="no" detail-button-in-row="no" edit-button-in-row="no" row-height="large"
-            [insert-button]="insertButtonToggle3.checked">
+            [quick-filter]="quickFilterToggle3.checked" [refresh-button]="refreshButtonToggle3.checked" selectable="no" detail-button-in-row="no"
+            edit-button-in-row="no" row-height="large" [insert-button]="insertButtonToggle3.checked">
 
             <o-list-item *ngFor="let row of cardList.dataArray">
-              <o-list-item-card #itemCard title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" avatar="{{ row.thumbnailUrl }}"
-                image="{{ row.image }}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()">
+              <o-list-item-card #itemCard title="{{row.username}}" subtitle="{{row.name}}" image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : ''"
+                [action-2-text]="action2Toggle.checked ? actionText2.value : ''" (action-1)="onAction1()" (action-2)="onAction2()">
                 </o-list-item-card>
             </o-list-item>
             </o-list>
@@ -196,12 +196,140 @@
           <div layout="row" layout-padding layout-align="start">
             <div layout="column" layout-padding layout-align="start" flex="50">
 
+              <md-slide-toggle #quickFilterToggle3>
+                quick-filter
+              </md-slide-toggle>
+
+              <md-slide-toggle #refreshButtonToggle3>
+                refresh-button
+              </md-slide-toggle>
+
               <md-slide-toggle #insertButtonToggle3>
                 insert-button
               </md-slide-toggle>
 
+            </div>
+
+            <div layout="column" layout-padding layout-align="start" flex="50">
+
+              <md-slide-toggle #action1Toggle checked="true">
+                action 1
+              </md-slide-toggle>
+
+              <md-input-container [hidden]="!action1Toggle.checked">
+                <input md-input #actionText1 placeholder="action-1-text" value="ACTION 1">
+              </md-input-container>
+
+              <md-slide-toggle #action2Toggle checked="true">
+                action 2
+              </md-slide-toggle>
+
+              <md-input-container [hidden]="!action2Toggle.checked">
+                <input md-input #actionText2 placeholder="action-2-text" value="ACTION 2">
+              </md-input-container>
+
               <span>row-height</span>
               <md-radio-group #rowHeight2 layout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
+                <md-radio-button value="small"> small </md-radio-button>
+                <md-radio-button value="medium"> medium </md-radio-button>
+                <md-radio-button value="large"> large </md-radio-button>
+              </md-radio-group>
+            </div>
+
+          </div>
+        </o-column>
+      </div>
+    </div>
+  </example-comp>
+
+
+
+  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-card-image)" layout-fill>
+    <div flex="grow">
+      <div layout="row" layout-align="center start" layout-padding layout-fill>
+
+        <o-row elevation="1" flex="35" layout-align="center" attr="listcardrow">
+          <o-list #cardImgList layout-fill attr="cardImgList" [title]="cardImgListTitle.value" columns="id;name;username;email;street;phone"
+            keys="id" quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getListData(1)"
+            [quick-filter]="quickFilterToggle4.checked" [refresh-button]="refreshButtonToggle4.checked" selectable="no" detail-button-in-row="no"
+            edit-button-in-row="no" row-height="large" [insert-button]="insertButtonToggle4.checked">
+
+            <o-list-item *ngFor="let row of cardImgList.dataArray">
+              <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined"
+                [image]="imageToggle.checked ? row.image : undefined" [action-1-text]="action1Toggle2.checked ? actionText12.value : ''" [action-2-text]="action2Toggle2.checked ? actionText22.value : ''"
+                (action-1)="onAction1()" (action-2)="onAction2()" [icon]="iconToggle4.checked ? icon4.value : ''" (icon-action)="onIconAction()"
+                [collapsible]="collapsibleToggle.checked" [collapsed]="collapsedToggle.checked">
+                </o-list-item-card-image>
+            </o-list-item>
+            </o-list>
+        </o-row>
+
+        <o-column attr="conf3" title-label="Configuration" elevation="0" flex="30" layout-padding layout-align="center">
+          <div layout="row" layout-padding layout-align="center" layout-fill>
+            <md-input #cardImgListTitle placeholder="{{ 'TITLE' | translate }}" value="List" flex="75"></md-input>
+          </div>
+          <div layout="row" layout-padding layout-align="start">
+
+            <div layout="column" layout-padding layout-align="start" flex="50">
+
+              <md-slide-toggle #quickFilterToggle4>
+                quick-filter
+              </md-slide-toggle>
+
+              <md-slide-toggle #refreshButtonToggle4>
+                refresh-button
+              </md-slide-toggle>
+
+              <md-slide-toggle #insertButtonToggle4>
+                insert-button
+              </md-slide-toggle>
+
+              <md-slide-toggle #action1Toggle2 checked="true">
+                action 1
+              </md-slide-toggle>
+
+              <md-input-container [hidden]="!action1Toggle2.checked">
+                <input md-input #actionText12 placeholder="action-1-text" value="ACTION 1">
+              </md-input-container>
+
+              <md-slide-toggle #action2Toggle2 checked="true">
+                action 2
+              </md-slide-toggle>
+
+              <md-input-container [hidden]="!action2Toggle2.checked">
+                <input md-input #actionText22 placeholder="action-2-text" value="ACTION 2">
+              </md-input-container>
+
+            </div>
+
+            <div layout="column" layout-padding layout-align="start" flex="50">
+
+              <md-slide-toggle #imageToggle checked="true">
+                image
+              </md-slide-toggle>
+
+              <md-slide-toggle #avatarToggle>
+                avatar
+              </md-slide-toggle>
+
+              <md-slide-toggle #collapsibleToggle>
+                collapsible
+              </md-slide-toggle>
+
+              <md-slide-toggle #collapsedToggle checked="true">
+                collapsed
+              </md-slide-toggle>
+
+              <md-slide-toggle #iconToggle4>
+                icon
+              </md-slide-toggle>
+
+              <md-input-container [hidden]="!iconToggle4.checked">
+                <input md-input #icon4 placeholder="icon" value="share">
+              </md-input-container>
+
+              <span>row-height</span>
+              <md-radio-group layout="column" layout-padding [value]="cardImgList.rowHeight" (change)="cardImgList.rowHeight = $event.value">
                 <md-radio-button value="small"> small </md-radio-button>
                 <md-radio-button value="medium"> medium </md-radio-button>
                 <md-radio-button value="large"> large </md-radio-button>

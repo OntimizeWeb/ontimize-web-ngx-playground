@@ -36,6 +36,10 @@ export class ListsHomeComponent {
     alert('onAction2');
   }
 
+  onIconAction() {
+    alert('onIconAction');
+  }
+
   addToFavorites(itemData, avatarItem) {
     if (avatarItem.icon === 'star') {
       avatarItem.icon = 'star_border';
