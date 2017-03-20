@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ng2/ontimize';
 
 
@@ -13,6 +13,9 @@ import { InputConverter } from 'ontimize-web-ng2/ontimize';
     'collapsible',
     'collapsed'
   ],
+  outputs: [
+    'onShowSource : showSource'
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class ExampleComponent {
@@ -24,11 +27,21 @@ export class ExampleComponent {
   collapsible: boolean = false;
   @InputConverter()
   collapsed: boolean = false;
+  protected html: string = undefined;
+
+  onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
 
   constructor(protected elRef: ElementRef) {
     this.tplData = {};
+  }
+
+  toggleShowSource() {
+    this.showSource = !this.showSource;
+    if (this.showSource) {
+      this.onShowSource.emit();
+    }
   }
 
   ngOnInit() {
@@ -47,6 +60,14 @@ export class ExampleComponent {
       });
     }
     return tpl;
+  }
+
+  hasTplData(type: string) {
+    let tpl = this.tplData[type];
+    if (type === 'html' && this.html !== undefined) {
+      return true;
+    }
+    return tpl ? tpl.length > 0 : false;
   }
 
   getTplData(type: string) {
