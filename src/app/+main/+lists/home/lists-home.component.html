@@ -1,6 +1,9 @@
 <div layout="column" layout-align="center top" layout-margin>
 
-  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-text)" layout-fill>
+  <example-comp #ex1 collapsible="no" collapsed="no" layout-fill
+    [comp-name]="getComponentId('o-list-item-text')" [files]="getFiles('o-list-item-text', list3)"
+    (showSource)="onShowSource('o-list-item-text', list3, ex1)">
+
     <div flex="grow">
       <div layout="row" layout-align="center start" layout-padding layout-fill>
 
@@ -16,79 +19,92 @@
                 title="{{row.username}}" secondary-text="{{ row.body }}"></o-list-item-text>
             </o-list-item>
 
-            </o-list>
+          </o-list>
         </o-row>
 
-        <o-column attr="conf" title-label="Configuration" elevation="0" flex="30" layout-padding layout-align="center">
+        <o-column attr="conf" title-label="{{ 'LIST_CONFIGURATION' | translate }}" elevation="0" flex="30" layout-padding layout-align="center">
 
           <div layout="row" layout-padding layout-align="center" layout-fill>
-            <md-input #list3Title placeholder="{{ 'TITLE' | translate }}" value="List" flex="75"></md-input>
+            <md-input #list3Title placeholder="{{ 'TITLE' | translate }}" value="List" flex="95"></md-input>
           </div>
           <div layout="row" layout-padding layout-align="start">
             <div layout="column" layout-padding layout-align="start" flex="50">
               <md-slide-toggle #quickFilterToggle checked="true">
-                quick-filter
+                {{ 'QUICK_FILTER' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #refreshButtonToggle [checked]="true">
-                refresh-button
+                {{ 'REFRESH_BUTTON' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #insertButtonToggle>
-                insert-button
+                {{ 'INSERT_BUTTON' | translate }}
               </md-slide-toggle>
 
-              <md-slide-toggle #iconToggle>
-                icon
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!iconToggle.checked">
-                <input md-input #itemIcon placeholder="item-icon" value="mood">
-              </md-input-container>
-
-              <span *ngIf="iconToggle.checked">icon-position</span>
-
-              <md-radio-group *ngIf="iconToggle.checked" layout-padding [value]="list3iconPosition" (change)="list3iconPosition = $event.value">
-                <md-radio-button value="left"> left </md-radio-button>
-                <md-radio-button value="right"> right </md-radio-button>
-              </md-radio-group>
             </div>
 
             <div layout="column" layout-padding layout-align="start" flex="50">
 
               <md-slide-toggle #denseToggle [checked]="list3.dense">
-                dense
+                {{ 'DENSE' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #selectableToggle>
-                selectable
+                {{ 'SELECTABLE' | translate }}
               </md-slide-toggle>
-
-              <md-slide-toggle #editButtonInRowToggle>
-                edit-button-in-row
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!editButtonInRowToggle.checked">
-                <input md-input #editButtonInRowIconInput placeholder="edit-button-in-row-icon" value="edit">
-              </md-input-container>
-
-              <md-slide-toggle #detailButtonInRowToggle>
-                detail-button-in-row
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!detailButtonInRowToggle.checked">
-                <input md-input #detailButtonInRowIconInput placeholder="detail-button-in-row-icon" value="chevron_right">
-              </md-input-container>
 
             </div>
           </div>
+          <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | translate }}" elevation="0">
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-slide-toggle #editButtonInRowToggle>
+                {{ 'EDIT_BUTTON_IN_ROW' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #detailButtonInRowToggle>
+                {{ 'DETAIL_BUTTON_IN_ROW' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #iconToggle>
+                {{ 'SHOW_ICON' | translate }}
+              </md-slide-toggle>
+
+              <span *ngIf="iconToggle.checked">
+                {{ 'ICON_POSITION' | translate }}
+              </span>
+
+              <md-radio-group *ngIf="iconToggle.checked" layout-padding [value]="list3iconPosition" (change)="list3iconPosition = $event.value">
+                <md-radio-button value="left">
+                  {{ 'LEFT' | translate }}
+                </md-radio-button>
+                <md-radio-button value="right">
+                  {{ 'RIGHT' | translate }}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-input-container class="padding-3" [hidden]="!editButtonInRowToggle.checked">
+                <input md-input #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | translate }}" value="edit">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!detailButtonInRowToggle.checked">
+                <input md-input #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | translate }}" value="chevron_right">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!iconToggle.checked">
+                <input md-input #itemIcon placeholder="{{ 'ICON' | translate }}" value="mood">
+              </md-input-container>
+            </div>
+          </o-row>
         </o-column>
       </div>
     </div>
   </example-comp>
 
+  <example-comp #ex2 collapsible="no" collapsed="no" layout-fill
+    [comp-name]="getComponentId('o-list-item-avatar')" [files]="getFiles('o-list-item-avatar', list9)"
+    (showSource)="onShowSource('o-list-item-avatar', list9, ex2)">
 
-  <example-comp collapsible="no" collapsed="yes" comp-name="Customizable list (o-list-item-avatar)" layout-fill>
     <div flex="grow">
 
       <div layout="row" layout-align="center start" layout-padding layout-fill>
@@ -101,69 +117,73 @@
             [edit-button-in-row]="editButtonInRowToggle2.checked" [edit-button-in-row-icon]="editButtonInRowIconInput2.value">
 
             <o-list-item *ngFor="let row of list9.dataArray">
-              <o-list-item-avatar #avatarItem avatar="{{row.thumbnailUrl}}" title="{{row.name}}" secondary-text="{{ row.body }}" [icon]="iconToggle2.checked ? itemIcon.value : undefined"
+              <o-list-item-avatar #avatarItem avatar="{{row.thumbnailUrl}}" title="{{row.name}}" secondary-text="{{ row.body }}" [icon]="iconToggle2.checked ? itemIcon2.value : undefined"
                 (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
             </o-list-item>
-            </o-list>
+          </o-list>
         </o-row>
 
-        <o-column attr="conf2" title-label="Configuration" elevation="0" flex="30" layout-padding layout-align="center">
+        <o-column attr="conf2" title-label="{{ 'LIST_CONFIGURATION' | translate }}" elevation="0" flex="30" layout-padding layout-align="center">
           <div layout="row" layout-padding layout-align="center" layout-fill>
-            <md-input #list9Title placeholder="{{ 'TITLE' | translate }}" value="List" flex="75"></md-input>
+            <md-input #list9Title placeholder="{{ 'TITLE' | translate }}" value="List" flex="95"></md-input>
           </div>
           <div layout="row" layout-padding layout-align="start">
             <div layout="column" layout-padding layout-align="start" flex="50">
               <md-slide-toggle #quickFilterToggle2 checked="true">
-                quick-filter
+                {{ 'QUICK_FILTER' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #refreshButtonToggle2 [checked]="true">
-                refresh-button
+                {{ 'REFRESH_BUTTON' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #insertButtonToggle2>
-                insert-button
+                {{ 'INSERT_BUTTON' | translate }}
               </md-slide-toggle>
-
-              <md-slide-toggle #iconToggle2>
-                icon
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!iconToggle2.checked">
-                <input md-input #itemIcon placeholder="item-icon" value="mood">
-              </md-input-container>
 
             </div>
 
             <div layout="column" layout-padding layout-align="start" flex="50">
 
               <md-slide-toggle #denseToggle2 [checked]="list9.dense">
-                dense
+                {{ 'DENSE' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #selectableToggle2>
-                selectable
+                {{ 'SELECTABLE' | translate }}
               </md-slide-toggle>
-
-              <md-slide-toggle #editButtonInRowToggle2>
-                edit-button-in-row
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!editButtonInRowToggle2.checked">
-                <input md-input #editButtonInRowIconInput2 placeholder="edit-button-in-row-icon" value="edit">
-              </md-input-container>
-
-              <md-slide-toggle #detailButtonInRowToggle2>
-                detail-button-in-row
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!detailButtonInRowToggle2.checked">
-                <input md-input #detailButtonInRowIconInput2 placeholder="detail-button-in-row-icon" value="chevron_right">
-              </md-input-container>
 
             </div>
-
           </div>
+          <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | translate }}" elevation="0">
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-slide-toggle #editButtonInRowToggle2>
+                {{ 'EDIT_BUTTON_IN_ROW' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #detailButtonInRowToggle2>
+                {{ 'DETAIL_BUTTON_IN_ROW' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #iconToggle2>
+                {{ 'SHOW_ICON' | translate }}
+              </md-slide-toggle>
+
+            </div>
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-input-container class="padding-3" [hidden]="!editButtonInRowToggle2.checked">
+                <input md-input #editButtonInRowIconInput2 placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | translate }}" value="edit">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!detailButtonInRowToggle2.checked">
+                <input md-input #detailButtonInRowIconInput2 placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | translate }}" value="chevron_right">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!iconToggle2.checked">
+                <input md-input #itemIcon2 placeholder="{{ 'ICON' | translate }}" value="mood">
+              </md-input-container>
+            </div>
+          </o-row>
         </o-column>
 
       </div>
@@ -171,7 +191,9 @@
     </div>
   </example-comp>
 
-  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-card)" layout-fill>
+  <example-comp #ex3 collapsible="no" collapsed="no" layout-fill
+    [comp-name]="getComponentId('o-list-item-card')" [files]="getFiles('o-list-item-card', cardList)"
+    (showSource)="onShowSource('o-list-item-card', cardList, ex3)">
     <div flex="grow">
       <div layout="row" layout-align="center start" layout-padding layout-fill>
 
@@ -184,67 +206,77 @@
             <o-list-item *ngFor="let row of cardList.dataArray">
               <o-list-item-card #itemCard title="{{row.username}}" subtitle="{{row.name}}" image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : ''"
                 [action-2-text]="action2Toggle.checked ? actionText2.value : ''" (action-1)="onAction1()" (action-2)="onAction2()">
-                </o-list-item-card>
+              </o-list-item-card>
             </o-list-item>
-            </o-list>
+          </o-list>
         </o-row>
 
-        <o-column attr="conf3" title-label="Configuration" elevation="0" flex="30" layout-padding layout-align="center">
+        <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | translate }}" elevation="0" flex="30" layout-padding layout-align="center">
           <div layout="row" layout-padding layout-align="center" layout-fill>
-            <md-input #cardListTitle placeholder="{{ 'TITLE' | translate }}" value="List" flex="75"></md-input>
+            <md-input #cardListTitle placeholder="{{ 'TITLE' | translate }}" value="List" flex="95"></md-input>
           </div>
           <div layout="row" layout-padding layout-align="start">
             <div layout="column" layout-padding layout-align="start" flex="50">
 
               <md-slide-toggle #quickFilterToggle3>
-                quick-filter
-              </md-slide-toggle>
-
-              <md-slide-toggle #refreshButtonToggle3>
-                refresh-button
+                {{ 'QUICK_FILTER' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #insertButtonToggle3>
-                insert-button
+                {{ 'INSERT_BUTTON' | translate }}
               </md-slide-toggle>
-
             </div>
 
             <div layout="column" layout-padding layout-align="start" flex="50">
-
+              <md-slide-toggle #refreshButtonToggle3>
+                {{ 'REFRESH_BUTTON' | translate }}
+              </md-slide-toggle>
+            </div>
+          </div>
+          <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | translate }}" elevation="0">
+            <div layout="column" layout-padding layout-align="start" flex="50">
               <md-slide-toggle #action1Toggle checked="true">
-                action 1
+                {{ 'ACTION_1' | translate }}
               </md-slide-toggle>
 
-              <md-input-container [hidden]="!action1Toggle.checked">
+              <md-slide-toggle #action2Toggle checked="true">
+                {{ 'ACTION_2' | translate }}
+              </md-slide-toggle>
+
+              <span>
+                {{ 'ROW_HEIGHT' | translate }}
+              </span>
+              <md-radio-group #rowHeight2 layout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
+                <md-radio-button value="small">
+                  {{ 'SMALL' | translate }}
+                </md-radio-button>
+                <md-radio-button value="medium">
+                  {{ 'MEDIUM' | translate }}
+                </md-radio-button>
+                <md-radio-button value="large">
+                  {{ 'LARGE' | translate }}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-input-container class="padding-3" [hidden]="!action1Toggle.checked">
                 <input md-input #actionText1 placeholder="action-1-text" value="ACTION 1">
               </md-input-container>
 
-              <md-slide-toggle #action2Toggle checked="true">
-                action 2
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!action2Toggle.checked">
+              <md-input-container class="padding-3" [hidden]="!action2Toggle.checked">
                 <input md-input #actionText2 placeholder="action-2-text" value="ACTION 2">
               </md-input-container>
-
-              <span>row-height</span>
-              <md-radio-group #rowHeight2 layout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
-                <md-radio-button value="small"> small </md-radio-button>
-                <md-radio-button value="medium"> medium </md-radio-button>
-                <md-radio-button value="large"> large </md-radio-button>
-              </md-radio-group>
             </div>
-
-          </div>
+          </o-row>
         </o-column>
       </div>
     </div>
   </example-comp>
 
+  <example-comp #ex4 collapsible="no" collapsed="no" layout-fill
+    [comp-name]="getComponentId('o-list-item-card-image')" [files]="getFiles('o-list-item-card-image', cardImgList)"
+    (showSource)="onShowSource('o-list-item-card-image', cardImgList, ex4)">
 
-
-  <example-comp collapsible="no" collapsed="no" comp-name="Customizable list (o-list-item-card-image)" layout-fill>
     <div flex="grow">
       <div layout="row" layout-align="center start" layout-padding layout-fill>
 
@@ -256,92 +288,105 @@
 
             <o-list-item *ngFor="let row of cardImgList.dataArray">
               <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined"
-                [image]="imageToggle.checked ? row.image : undefined" [action-1-text]="action1Toggle2.checked ? actionText12.value : ''" [action-2-text]="action2Toggle2.checked ? actionText22.value : ''"
-                (action-1)="onAction1()" (action-2)="onAction2()" [icon]="iconToggle4.checked ? icon4.value : ''" (icon-action)="onIconAction()"
-                [collapsible]="collapsibleToggle.checked" [collapsed]="collapsedToggle.checked">
-                </o-list-item-card-image>
+                [image]="imageToggle.checked ? row.image : undefined" [action-1-text]="action1Toggle2.checked ? actionText12.value : ''"
+                [action-2-text]="action2Toggle2.checked ? actionText22.value : ''" (action-1)="onAction1()" (action-2)="onAction2()"
+                [icon]="iconToggle4.checked ? icon4.value : ''" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
+                [collapsed]="collapsedToggle.checked">
+              </o-list-item-card-image>
             </o-list-item>
-            </o-list>
+          </o-list>
         </o-row>
 
-        <o-column attr="conf3" title-label="Configuration" elevation="0" flex="30" layout-padding layout-align="center">
+        <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | translate }}" elevation="0" flex="30" layout-padding layout-align="center">
           <div layout="row" layout-padding layout-align="center" layout-fill>
-            <md-input #cardImgListTitle placeholder="{{ 'TITLE' | translate }}" value="List" flex="75"></md-input>
+            <md-input #cardImgListTitle placeholder="{{ 'TITLE' | translate }}" value="List" flex="95"></md-input>
           </div>
           <div layout="row" layout-padding layout-align="start">
 
             <div layout="column" layout-padding layout-align="start" flex="50">
 
               <md-slide-toggle #quickFilterToggle4>
-                quick-filter
+                {{ 'QUICK_FILTER' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #refreshButtonToggle4>
-                refresh-button
+                {{ 'REFRESH_BUTTON' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #insertButtonToggle4>
-                insert-button
+                {{ 'INSERT_BUTTON' | translate }}
               </md-slide-toggle>
-
-              <md-slide-toggle #action1Toggle2 checked="true">
-                action 1
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!action1Toggle2.checked">
-                <input md-input #actionText12 placeholder="action-1-text" value="ACTION 1">
-              </md-input-container>
-
-              <md-slide-toggle #action2Toggle2 checked="true">
-                action 2
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!action2Toggle2.checked">
-                <input md-input #actionText22 placeholder="action-2-text" value="ACTION 2">
-              </md-input-container>
 
             </div>
 
             <div layout="column" layout-padding layout-align="start" flex="50">
 
               <md-slide-toggle #imageToggle checked="true">
-                image
+                {{ 'IMAGE' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #avatarToggle>
-                avatar
+                {{ 'AVATAR' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #collapsibleToggle>
-                collapsible
+                {{ 'COLLAPSIBLE' | translate }}
               </md-slide-toggle>
 
               <md-slide-toggle #collapsedToggle checked="true">
-                collapsed
+                {{ 'COLLAPSED' | translate }}
               </md-slide-toggle>
-
-              <md-slide-toggle #iconToggle4>
-                icon
-              </md-slide-toggle>
-
-              <md-input-container [hidden]="!iconToggle4.checked">
-                <input md-input #icon4 placeholder="icon" value="share">
-              </md-input-container>
-
-              <span>row-height</span>
-              <md-radio-group layout="column" layout-padding [value]="cardImgList.rowHeight" (change)="cardImgList.rowHeight = $event.value">
-                <md-radio-button value="small"> small </md-radio-button>
-                <md-radio-button value="medium"> medium </md-radio-button>
-                <md-radio-button value="large"> large </md-radio-button>
-              </md-radio-group>
 
             </div>
 
           </div>
+
+          <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | translate }}" elevation="0">
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-slide-toggle #action1Toggle2 checked="true">
+                {{ 'ACTION_1' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #action2Toggle2 checked="true">
+                {{ 'ACTION_2' | translate }}
+              </md-slide-toggle>
+
+              <md-slide-toggle #iconToggle4>
+                {{ 'SHOW_ICON' | translate }}
+              </md-slide-toggle>
+
+              <span>
+                {{ 'ROW_HEIGHT' | translate }}
+              </span>
+              <md-radio-group layout="column" layout-padding [value]="cardImgList.rowHeight" (change)="cardImgList.rowHeight = $event.value">
+                <md-radio-button value="small">
+                  {{ 'SMALL' | translate }}
+                </md-radio-button>
+                <md-radio-button value="medium">
+                  {{ 'MEDIUM' | translate }}
+                </md-radio-button>
+                <md-radio-button value="large">
+                  {{ 'LARGE' | translate }}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column" layout-padding layout-align="start" flex="50">
+              <md-input-container class="padding-3" [hidden]="!action1Toggle2.checked">
+                <input md-input #actionText12 placeholder="action-1-text" value="ACTION 1">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!action2Toggle2.checked">
+                <input md-input #actionText22 placeholder="action-2-text" value="ACTION 2">
+              </md-input-container>
+
+              <md-input-container class="padding-3" [hidden]="!iconToggle4.checked">
+                <input md-input #icon4 placeholder="icon" value="share">
+              </md-input-container>
+            </div>
+          </o-row>
         </o-column>
       </div>
     </div>
   </example-comp>
-
 
 </div>
