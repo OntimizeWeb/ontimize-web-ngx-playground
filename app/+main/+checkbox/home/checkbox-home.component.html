@@ -3,8 +3,9 @@
   <example-comp [comp-name]="getComponentId()" [files]="getFiles()" layout-fill>
     <o-form show-header="no">
       <div layout="row" layout-padding layout-fill>
-        <o-checkbox attr="check" label="O-checkbox (read-only)" layout-padding></o-checkbox>
-        <o-checkbox #checkbox attr="check1" label="O-checkbox (edit mode)"  layout-padding></o-checkbox>
+        <o-checkbox attr="check" label="O-checkbox (read-only)" [data]="getCheckboxValue()" layout-padding></o-checkbox>
+        <o-checkbox #checkbox attr="check1" label="O-checkbox (edit mode)" [data]="getCheckboxValue()" layout-padding
+          tooltip="This is an awesome tooltip!!!!"></o-checkbox>
         <o-checkbox attr="check2" label="O-checkbox disabled" enabled="no"  layout-padding></o-checkbox>
       </div>
     </o-form>
