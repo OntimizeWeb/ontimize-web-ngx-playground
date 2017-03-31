@@ -13,7 +13,6 @@ import { NavigationBarService } from '../../../shared';
 export class ComboHomeComponent {
 
   @ViewChild('combo') combo: OComboComponent;
-  @ViewChild('combo1') combo1: OComboComponent;
 
   constructor(
     protected navigationService: NavigationBarService,
@@ -23,7 +22,7 @@ export class ComboHomeComponent {
 
   ngOnInit() {
     let title = '';
-    title += this.translateService.get('FIELDS');
+    title += this.translateService.get('INPUTS');
     title = title + ' > ' + this.translateService.get('COMBO');
     this.navigationService.setTitle(title);
   }
@@ -31,9 +30,6 @@ export class ComboHomeComponent {
   ngAfterViewInit() {
     if (this.combo) {
       this.combo.isReadOnly = false;
-    }
-    if (this.combo1) {
-      this.combo1.isReadOnly = false;
     }
   }
 

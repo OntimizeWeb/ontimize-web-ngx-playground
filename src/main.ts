@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+// import { enableProdMode } from '@angular/core';
 import { ontimizeBootstrap } from 'ontimize-web-ng2/ontimize/MainLauncher';
 import { AppModule, CONFIG } from './app/';
 

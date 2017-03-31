@@ -21,13 +21,17 @@ export class CheckboxHomeComponent {
 
   ngOnInit() {
     let title = '';
-    title += this.translateService.get('FIELDS');
+    title += this.translateService.get('INPUTS');
     title = title + ' > ' + this.translateService.get('CHECKBOX');
     this.navigationService.setTitle(title);
   }
 
   ngAfterViewInit() {
     this.checkBox.isReadOnly = false;
+  }
+
+  getCheckboxValue() {
+    return true;
   }
 
   getComponentId() {

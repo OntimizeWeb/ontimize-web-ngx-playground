@@ -38,6 +38,8 @@ export class InputsHomeComponent {
   @ViewChild('textarea') textarea: OTextareaInputComponent;
   @ViewChild('listpicker') listpicker: OListPickerComponent;
 
+  protected dateValue: Date;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService ) {
@@ -45,9 +47,11 @@ export class InputsHomeComponent {
 
   ngOnInit() {
     let title = '';
-    title += this.translateService.get('FIELDS');
+    title += this.translateService.get('INPUTS');
     title = title + ' > ' + this.translateService.get('INPUTS');
     this.navigationService.setTitle(title);
+
+    this.dateValue = new Date("October 13, 2016 11:13:00");
   }
 
   ngAfterViewInit() {
@@ -69,7 +73,7 @@ export class InputsHomeComponent {
   }
 
   getDateValue() {
-    return '';
+    return this.dateValue.getTime();
   }
 
   getIntegerValue() {

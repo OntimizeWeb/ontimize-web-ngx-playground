@@ -18,9 +18,7 @@ export class ButtonsHomeComponent {
   }
 
   ngOnInit() {
-    let title = '';
-    title += this.translateService.get('FIELDS');
-    title = title + ' > ' + this.translateService.get('BUTTONS');
+    let title = this.translateService.get('BUTTONS');
     this.navigationService.setTitle(title);
   }
 

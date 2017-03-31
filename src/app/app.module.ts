@@ -3,7 +3,9 @@ import { NgModule }      from '@angular/core';
 import {
   ONTIMIZE_MODULES,
   ONTIMIZE_DIRECTIVES,
-  ontimizeProviders } from 'ontimize-web-ng2/ontimize';
+  ontimizeProviders,
+  ODialogComponent
+} from 'ontimize-web-ng2/ontimize';
 
 import { CONFIG } from './app.config';
 import { AppComponent }  from './app.component';
@@ -28,6 +30,9 @@ let customProviders = [
     AppComponent,
     ONTIMIZE_DIRECTIVES,
     ...APP_DIRECTIVES
+  ],
+  entryComponents: [
+    ODialogComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [
