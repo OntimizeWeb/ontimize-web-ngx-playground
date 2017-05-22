@@ -1,45 +1,45 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {
-  ONTIMIZE_MODULES,
-  ONTIMIZE_DIRECTIVES,
-  ontimizeProviders,
-  ODialogComponent
-} from 'ontimize-web-ng2/ontimize';
-
+import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
-import { AppComponent }  from './app.component';
-import { routing } from './app.routes';
-import { APP_DIRECTIVES } from './app.directives';
-import { NavigationBarService } from './shared/navigation-bar.service';
+import { ontimizeProviders } from 'ontimize-web-ng2';
 
+import { NavigationBarService } from './shared/navigation-bar.service';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
-// Standard providers...
-let standardProviders = ontimizeProviders({
-  'config': CONFIG
+import { AppRoutingModule } from './app-routing.module';
+
+import { SharedModule } from './shared/shared.module';
+import { LoginModule } from './login/login.module';
+import { MAIN_MODULES } from './main';
+
+const standardProviders = ontimizeProviders({
+  config: CONFIG
 });
-// Defining custom providers (if needed)...
-let customProviders = [
-    NavigationBarService
+
+// Defining custom providers (if needed)
+const customProviders = [
+  HighlightJsService,
+  NavigationBarService
 ];
 
+import { MdSidenavModule } from '@angular/material';
+
 @NgModule({
-  imports: [ ONTIMIZE_MODULES, routing, HighlightJsModule],
+  imports: [
+    SharedModule,
+    LoginModule,
+    MAIN_MODULES,
+    AppRoutingModule,
+    HighlightJsModule
+  ],
   declarations: [
-    AppComponent,
-    ONTIMIZE_DIRECTIVES,
-    ...APP_DIRECTIVES
+    AppComponent
   ],
-  entryComponents: [
-    ODialogComponent
-  ],
-  bootstrap: [ AppComponent ],
   providers: [
     ...standardProviders,
-    HighlightJsService,
     ...customProviders
-  ]
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-

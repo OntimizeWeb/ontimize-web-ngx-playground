@@ -1,11 +1,11 @@
-import { Component, ElementRef, ViewEncapsulation, EventEmitter } from '@angular/core';
-import { InputConverter } from 'ontimize-web-ng2/ontimize';
+import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit } from '@angular/core';
+import { InputConverter } from 'ontimize-web-ng2';
 
 
 @Component({
   selector: 'example-comp',
   moduleId: module.id,
-  styleUrls: ['example.component.css'],
+  styleUrls: ['example.component.scss'],
   templateUrl: 'example.component.html',
   inputs: [
     'compName: comp-name',
@@ -18,10 +18,10 @@ import { InputConverter } from 'ontimize-web-ng2/ontimize';
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class ExampleComponent {
+export class ExampleComponent implements OnInit {
 
-  public showSource: boolean = false;
-  protected compName: string = '';
+  public showSource = false;
+  protected compName = '';
   protected orderedFiles: Array<string>;
   @InputConverter()
   collapsible: boolean = false;
@@ -63,7 +63,7 @@ export class ExampleComponent {
   }
 
   hasTplData(type: string) {
-    let tpl = this.tplData[type];
+    const tpl = this.tplData[type];
     if (type === 'html' && this.html !== undefined) {
       return true;
     }
@@ -71,7 +71,7 @@ export class ExampleComponent {
   }
 
   getTplData(type: string) {
-    let tpl = this.tplData[type];
+    const tpl = this.tplData[type];
     return tpl ? tpl : '';
   }
 

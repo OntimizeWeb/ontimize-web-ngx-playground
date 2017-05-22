@@ -1,13 +1,27 @@
-import {Component, OnInit, NgZone, Inject, ViewChild} from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import {
+  Component,
+  OnInit,
+  NgZone,
+  Inject,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {
+  Router,
+  ActivatedRoute
+} from '@angular/router';
 
-import {DialogService, OSideMenuComponent} from 'ontimize-web-ng2/ontimize';
+import {
+  DialogService,
+  OSideMenuComponent
+} from 'ontimize-web-ng2';
 
 @Component({
   moduleId: module.id,
   selector: 'side-menu',
   templateUrl: 'side-menu.component.html',
-  styleUrls: ['side-menu.component.css']
+  styleUrls: ['side-menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SideMenuComponent implements OnInit {
 
@@ -18,8 +32,12 @@ export class SideMenuComponent implements OnInit {
 
   public showVersionCallback: Function;
 
-  constructor(private router: Router, private actRoute: ActivatedRoute,
-      private zone: NgZone, @Inject(DialogService) dialogService: DialogService) {
+  constructor(
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private zone: NgZone,
+    @Inject(DialogService) dialogService: DialogService
+  ) {
     this.dialogService = dialogService;
     this.showVersionCallback = this.showVersion.bind(this);
   }
@@ -34,7 +52,6 @@ export class SideMenuComponent implements OnInit {
   }
 
   public showVersion() {
-    this.dialogService.alert('VERSION', '0.0.1');
+    this.dialogService.alert('VERSION', '2.0.0');
   }
-
 }
