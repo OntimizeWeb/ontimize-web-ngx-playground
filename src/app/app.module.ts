@@ -1,45 +1,46 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import {
+  APP_CONFIG,
   ONTIMIZE_MODULES,
-  ONTIMIZE_DIRECTIVES,
-  ontimizeProviders,
-  ODialogComponent
-} from 'ontimize-web-ng2/ontimize';
+  ONTIMIZE_PROVIDERS,
+  OntimizeWebModule
+} from 'ontimize-web-ng2';
 
 import { CONFIG } from './app.config';
-import { AppComponent }  from './app.component';
-import { routing } from './app.routes';
-import { APP_DIRECTIVES } from './app.directives';
-import { NavigationBarService } from './shared/navigation-bar.service';
+import { AppComponent } from './app.component';
 
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+import { AppRoutingModule } from './app-routing.module';
+import { MainModule } from './main/main.module';
+
+// import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+
 
 // Standard providers...
-let standardProviders = ontimizeProviders({
-  'config': CONFIG
-});
 // Defining custom providers (if needed)...
-let customProviders = [
-    NavigationBarService
+export const customProviders: any = [
+  // HighlightJsService
 ];
 
 @NgModule({
-  imports: [ ONTIMIZE_MODULES, routing, HighlightJsModule],
+  imports: [
+    ONTIMIZE_MODULES,
+    MainModule,
+    AppRoutingModule
+    // ,
+    // HighlightJsModule
+  ],
   declarations: [
-    AppComponent,
-    ONTIMIZE_DIRECTIVES,
-    ...APP_DIRECTIVES
+    AppComponent
   ],
-  entryComponents: [
-    ODialogComponent
+  bootstrap: [
+    AppComponent
   ],
-  bootstrap: [ AppComponent ],
   providers: [
-    ...standardProviders,
-    HighlightJsService,
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ]
+  ],
 })
 export class AppModule { }
 
