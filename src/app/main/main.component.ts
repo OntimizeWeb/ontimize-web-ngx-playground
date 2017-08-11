@@ -1,15 +1,16 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ViewEncapsulation
 } from '@angular/core';
 
-import { NavigationBarService } from '../shared';
+import { NavigationBarService } from '../shared/navigation-bar.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-main',
-  templateUrl: 'main.component.html',
-  styleUrls: ['main.component.scss']
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainComponent implements OnInit {
 
@@ -24,5 +25,4 @@ export class MainComponent implements OnInit {
       this.sectionTitle = title;
     });
   }
-
 }

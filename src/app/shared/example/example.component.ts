@@ -16,7 +16,10 @@ import { InputConverter } from 'ontimize-web-ng2';
   outputs: [
     'onShowSource : showSource'
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.example-comp]': 'true'
+  }
 })
 export class ExampleComponent implements OnInit {
 

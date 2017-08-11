@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 
-// import { NavigationBarService } from './navigation-bar.service';
-import { SideMenuComponent } from './menu/side-menu.component';
+import { NavigationBarService } from './navigation-bar.service';
 import { ExampleComponent } from './example/example.component';
 import { HighlightComponent } from './highlight/highlight.component';
+
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import {
   OntimizeWebModule
@@ -11,18 +12,21 @@ import {
 
 @NgModule({
   imports: [
-    OntimizeWebModule
+    OntimizeWebModule,
+    HighlightJsModule
   ],
   declarations: [
-    SideMenuComponent,
     ExampleComponent,
     HighlightComponent
   ],
   exports: [
     OntimizeWebModule,
-    SideMenuComponent,
     ExampleComponent,
     HighlightComponent
+  ],
+  providers: [
+    HighlightJsService,
+    NavigationBarService
   ]
 })
 export class SharedModule { }

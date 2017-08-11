@@ -15,7 +15,7 @@ import {
   OTranslateService
 } from 'ontimize-web-ng2';
 
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';;
 import { InputUtils } from './inputs-utils';
 
 @Component({

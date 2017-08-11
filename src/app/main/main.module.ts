@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
+import { OntimizeWebModule } from 'ontimize-web-ng2';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
-
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     SharedModule,
+    OntimizeWebModule,
     MainRoutingModule
-  ],
-  exports: [
-    MainComponent
   ],
   declarations: [
     MainComponent

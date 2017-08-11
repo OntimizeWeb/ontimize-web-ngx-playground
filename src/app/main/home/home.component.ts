@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 import { OTranslateService } from 'ontimize-web-ng2';
-
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'home',
-  templateUrl: 'home.component.html',
-  styleUrls: ['home.component.scss']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +19,4 @@ export class HomeComponent implements OnInit {
     title = this.translateService.get('INTRODUCTION');
     this.navigationService.setTitle(title);
   }
-
-
 }

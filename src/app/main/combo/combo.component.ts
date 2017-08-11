@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { OComboComponent, OTranslateService } from 'ontimize-web-ng2';
 
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
 <o-combo attr="combo" label="o-combo (read-only)" layout-padding [static-data]="getComboData()"

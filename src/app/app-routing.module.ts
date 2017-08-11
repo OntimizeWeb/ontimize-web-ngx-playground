@@ -1,19 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactory } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainModule } from './main/main.module';
-import { LoginModule } from './login/login.module';
-import { AppComponent } from './app.component';
-
-const routes: Routes = [
-  {
-    path: 'main',
-    loadChildren: () => MainModule
-  },
-  {
-    path: 'login',
-    loadChildren: () => LoginModule
-  },
+export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'prefix' }
 ];
 

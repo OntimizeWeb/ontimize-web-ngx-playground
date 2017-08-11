@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ng2';
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
 <o-button attr="flat" type="FLAT" label="FLAT" layout-padding></o-button>

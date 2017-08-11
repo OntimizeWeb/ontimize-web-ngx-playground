@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ng2';
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
 import { ListsUtils } from './lists-utils';
 
 @Component({
@@ -44,9 +44,12 @@ export class ListsComponent implements OnInit {
 
   list3iconPosition: String = 'right';
 
+  staticListData: Array<any>;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService) {
+    this.staticListData = this.getListData(5);
   }
 
   ngOnInit() {
@@ -76,7 +79,7 @@ export class ListsComponent implements OnInit {
     }
   }
 
-  getListData(itemNumber?: number) {
+  getListData(itemNumber?: number): Array<any> {
     const result = [];
     const arrayLength = itemNumber || 3;
     const USERS_LIST = ListsUtils.getUsers();

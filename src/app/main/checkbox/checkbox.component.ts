@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { OCheckboxComponent, OTranslateService } from 'ontimize-web-ng2';
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
 <o-checkbox attr="check" label="O-checkbox (read-only)"></o-checkbox>

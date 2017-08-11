@@ -1,50 +1,50 @@
+/*
+******* @angular/material predefined themes. *****
+
+* Choose one of the following imports
+*/
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/indigo-pink.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/deeppurple-amber.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/pink-bluegrey.scss';
+// @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/purple-green.scss';
+
+
+/*
+* Import custom theme
+*/
 @import 'my-custom-app-theme.scss';
 
+
+/*
+* After define theme, it is necessary to transfer color to Ontimize Web framework
+*/
 @import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
+@import 'theme.scss';
+@include o-test-theme($theme);
+
+/*
+* Propagate theme to screen styles definition.
+*/
 @import '../../app/main/main-theme.scss';
 @include main-theme($theme);
 
-.container-title {
-    color: rgba(0, 0, 0, 0.54);
-    font-weight: 700;
-    font-size: 18px;
-}
+
+/*
+* Other app styles
+*/
 
 .no-padding {
   padding: 0px !important;
 }
 
-.section-title {
-  padding-left: 12px;
-  padding-top: 3px;
-}
+.customer-picture {
+  .input-image {
 
-o-form form.inner-form{
-  position: initial !important;
-}
-
-p.body-text{
-  text-align: justify;
-  font-weight: 400;
-  letter-spacing: 0.010em;
-  line-height: 1.6em;
-  margin: 0.8em 0 1.6em;
-}
-
-code:not(.highlight) {
-  color: #106CC8;
-  margin-left: 1px;
-  margin-right: 1px;
-  -webkit-font-smoothing: auto;
-  padding: 0.125em 0.35em;
-  border-radius: 2px;
-}
-a{
- color: #106CC8;
-}
-
-o-side-menu h3 {
-  display: none;
+    .input-image-preview {
+      width: 200px;
+      height: 200px;
+    }
+  }
 }

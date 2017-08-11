@@ -1,45 +1,46 @@
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { CONFIG } from './app.config';
-import { ontimizeProviders } from 'ontimize-web-ng2';
+import {
+  APP_CONFIG,
+  ONTIMIZE_MODULES,
+  ONTIMIZE_PROVIDERS,
+  OntimizeWebModule
+} from 'ontimize-web-ng2';
 
-import { NavigationBarService } from './shared/navigation-bar.service';
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+import { CONFIG } from './app.config';
+import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MainModule } from './main/main.module';
 
-import { SharedModule } from './shared/shared.module';
-import { LoginModule } from './login/login.module';
-import { MAIN_MODULES } from './main';
+// import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
-const standardProviders = ontimizeProviders({
-  config: CONFIG
-});
 
-// Defining custom providers (if needed)
-const customProviders = [
-  HighlightJsService,
-  NavigationBarService
+// Standard providers...
+// Defining custom providers (if needed)...
+export const customProviders: any = [
+  // HighlightJsService
 ];
-
-import { MdSidenavModule } from '@angular/material';
 
 @NgModule({
   imports: [
-    SharedModule,
-    LoginModule,
-    MAIN_MODULES,
-    AppRoutingModule,
-    HighlightJsModule
+    ONTIMIZE_MODULES,
+    MainModule,
+    AppRoutingModule
+    // ,
+    // HighlightJsModule
   ],
   declarations: [
     AppComponent
   ],
+  bootstrap: [
+    AppComponent
+  ],
   providers: [
-    ...standardProviders,
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS,
     ...customProviders
   ],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -207,7 +207,7 @@ export class ListsUtils {
 }
 
 const LIST1_HTML_DATA = `
-<o-list #list layout-fill keys="id" query-on-init="true" pageable="no"
+<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
   columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
   [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
   refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
@@ -226,7 +226,7 @@ const LIST1_HTML_DATA = `
 `;
 
 const LIST2_HTML_DATA = `
-<o-list #list layout-fill keys="id" query-on-init="true" pageable="no"
+<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
   columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
   [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
   refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
@@ -245,7 +245,7 @@ const LIST2_HTML_DATA = `
 `;
 
 const LIST3_HTML_DATA = `
-<o-list #list layout-fill keys="id" query-on-init="true" pageable="no"
+<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
   columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
   [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
   refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"
@@ -266,7 +266,7 @@ const LIST3_HTML_DATA = `
 `;
 
 const LIST4_HTML_DATA = `
-<o-list #list layout-fill keys="id" query-on-init="true" pageable="no"
+<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
   columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
   [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
   refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"

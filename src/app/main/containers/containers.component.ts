@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdRadioGroup } from '@angular/material';
 
-import { NavigationBarService } from '../../shared';
+import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_ROW_DATA = `
 <o-row attr="row1" title-label="Row title" layout-align="start stretch"
