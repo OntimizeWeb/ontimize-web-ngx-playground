@@ -13,13 +13,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainModule } from './main/main.module';
 
-// import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
-
-
-// Standard providers...
 // Defining custom providers (if needed)...
 export const customProviders: any = [
-  // HighlightJsService
 ];
 
 @NgModule({
@@ -27,8 +22,6 @@ export const customProviders: any = [
     ONTIMIZE_MODULES,
     MainModule,
     AppRoutingModule
-    // ,
-    // HighlightJsModule
   ],
   declarations: [
     AppComponent

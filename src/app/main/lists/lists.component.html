@@ -288,7 +288,7 @@
             <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined"
               [image]="imageToggle.checked ? row.image : undefined" [action-1-text]="action1Toggle2.checked ? actionText12.value : ''"
               [action-2-text]="action2Toggle2.checked ? actionText22.value : ''" (action-1)="onAction1()" (action-2)="onAction2()"
-              [icon]="iconToggle4.checked ? icon4.value : ''" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
+              [icon]="iconToggle4.checked ? icon4.value : undefined" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
               [collapsed]="collapsedToggle.checked">
             </o-list-item-card-image>
           </o-list-item>
