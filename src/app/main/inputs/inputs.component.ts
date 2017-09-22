@@ -72,7 +72,7 @@ export class InputsComponent implements OnInit, AfterViewInit {
   }
 
   getDateValue() {
-    return this.dateValue.getTime();
+    return this.dateValue;
   }
 
   getIntegerValue() {
