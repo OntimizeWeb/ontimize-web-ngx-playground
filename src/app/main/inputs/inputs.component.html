@@ -21,7 +21,7 @@
           <div fxLayout="row" fxFill>
             <o-date-input attr="date" label="o-date (read-only)" layout-padding [data]="getDateValue()"></o-date-input>
             <o-date-input #date attr="date2" label="o-date (edit mode)" layout-padding tooltip="This is an awesome tooltip!!!!" [data]="getDateValue()"
-              required="true"></o-date-input>
+              required="true" min="01/01/1980" max="01/01/2020"></o-date-input>
             <o-date-input attr="date3" label="o-date disabled" enabled="no" layout-padding [data]="getDateValue()"></o-date-input>
           </div>
         </div>
