@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rimraf dist",
-    "production": "npm run clean && ng build --aot=false --target -prod"
+    "production": "npm run clean && ng build --aot=false --target --base-href /ontimize-web-ngx-playground/"
   },
   "private": true,
   "dependencies": {
