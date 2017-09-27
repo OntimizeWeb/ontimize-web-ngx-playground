@@ -13,7 +13,7 @@ import {
   OTextareaInputComponent,
   OListPickerComponent,
   OTranslateService
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 import { InputUtils } from './inputs-utils';
@@ -72,7 +72,7 @@ export class InputsComponent implements OnInit, AfterViewInit {
   }
 
   getDateValue() {
-    return this.dateValue.getTime();
+    return this.dateValue;
   }
 
   getIntegerValue() {

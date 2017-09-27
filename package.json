@@ -1,5 +1,5 @@
 {
-  "name": "ontimize-web-ng2-playground",
+  "name": "ontimize-web-ngx-playground",
   "version": "2.0.0-rc.1",
   "license": "MIT",
   "angular-cli": {},
@@ -11,9 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rimraf dist",
-    "production": "npm run clean && ng build --aot=false --target -prod",
-    "install-ng2": "rimraf node_modules/ontimize-web-ng2 && npm install",
-    "xxx": "npm run install-ng2 && npm start"
+    "production": "npm run clean && ng build --aot=false --target -prod"
   },
   "private": true,
   "dependencies": {
@@ -36,7 +34,8 @@
     "angular2-highlight-js": "5.0.1",
     "core-js": "^2.4.1",
     "flag-icon-css": "^2.8.0",
-    "ontimize-web-ng2": "ontimize-web-ng2-2.0.0-rc.8.tgz",
+    "ontimize-web-ngx": "2.0.0",
+    "ontimize-web-ngx-theming": "1.0.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "^5.4.1",
     "typescript": "2.3.4",

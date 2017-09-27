@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ng2';
+import { OTranslateService } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 import { ListsUtils } from './lists-utils';
 

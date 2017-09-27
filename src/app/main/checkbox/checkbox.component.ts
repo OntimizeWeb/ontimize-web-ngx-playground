@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
-import { OCheckboxComponent, OTranslateService } from 'ontimize-web-ng2';
+import { OCheckboxComponent, OTranslateService } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
@@ -13,7 +13,7 @@ const HTML_DATA = `
 const TYPESCRIPT_DATA = `
 import { Component, ViewChild } from '@angular/core';
 
-import { OCheckboxComponent } from 'ontimize-web-ng2';
+import { OCheckboxComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'checkbox-home',

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ng2';
+import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { CheckboxComponent } from './checkbox.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CheckboxRoutingModule } from './checkbox-routing.module';

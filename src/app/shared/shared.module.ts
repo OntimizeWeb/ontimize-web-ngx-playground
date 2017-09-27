@@ -8,7 +8,7 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import {
   OntimizeWebModule
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 
 @NgModule({
   imports: [
