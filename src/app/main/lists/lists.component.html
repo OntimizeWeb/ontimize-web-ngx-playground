@@ -5,8 +5,9 @@
 
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-      <o-row elevation="1" fxFlex="35" layout-align="center" attr="listColumn">
-        <o-list #list3 fxFill attr="list3" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
+      <o-column elevation="1" fxFlex="40" layout-align="center" attr="listColumn">
+  
+        <o-list #list3  attr="list3" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
           query-on-init="true" pageable="no" [static-data]="getListData(5)" [title]="list3Title.value" [refresh-button]="refreshButtonToggle.checked"
           [insert-button]="insertButtonToggle.checked" [selectable]="selectableToggle.checked" [dense]="denseToggle.checked"
           [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
@@ -14,13 +15,13 @@
 
           <o-list-item *ngFor="let row of list3.dataArray">
             <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="list3iconPosition" (icon-action)="addToFavorites(row, item)"
-              title="{{row.username}}" secondary-text="{{ row.body }}"></o-list-item-text>
+              title="{{row.username}}" secondary-text="{{ row.body }}" ></o-list-item-text>
           </o-list-item>
 
         </o-list>
-      </o-row>
+      </o-column>
 
-      <o-column attr="conf" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="30" layout-padding layout-align="center">
+      <o-column attr="conf" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
 
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
           <md-input-container fxFlex="95">
@@ -104,10 +105,9 @@
     (showSource)="onShowSource('o-list-item-avatar', list9, ex2)">
 
 
-
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-      <o-row elevation="1" fxFlex="35" layout-align="center" attr="list9row">
+      <o-column elevation="1" fxFlex="40" layout-align="center" attr="list9row">
         <o-list #list9 fxFill attr="list9" [title]="list9Title.value" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
           query-on-init="true" pageable="no" [static-data]="getListData(5)" [quick-filter]="quickFilterToggle2.checked" [refresh-button]="refreshButtonToggle2.checked"
           [insert-button]="insertButtonToggle2.checked" [selectable]="selectableToggle2.checked" [dense]="denseToggle2.checked"
@@ -119,9 +119,9 @@
               (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
           </o-list-item>
         </o-list>
-      </o-row>
+      </o-column>
 
-      <o-column attr="conf2" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="30" layout-padding layout-align="center">
+      <o-column attr="conf2" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
           <md-input-container fxFlex="95">
             <input mdInput #list9Title placeholder="{{ 'TITLE' | oTranslate }}" value="List">
@@ -195,7 +195,7 @@
     (showSource)="onShowSource('o-list-item-card', cardList, ex3)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-      <o-row elevation="1" fxFlex="35" layout-align="center" attr="listcardrow">
+      <o-column elevation="1" fxFlex="40" layout-align="center" attr="listcardrow">
         <o-list #cardList fxFill attr="cardList" [title]="cardListTitle.value" columns="id;name;username;email;street;phone" keys="id"
           quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getListData()" [refresh-button]="refreshButtonToggle3.checked"
           selectable="no" detail-button-in-row="no" edit-button-in-row="no" row-height="large" [insert-button]="insertButtonToggle3.checked"
@@ -207,9 +207,9 @@
             </o-list-item-card>
           </o-list-item>
         </o-list>
-      </o-row>
+      </o-column>
 
-      <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="30" layout-padding layout-align="center">
+      <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
           <md-input-container fxFlex="95">
             <input mdInput #cardListTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
@@ -278,7 +278,7 @@
 
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-      <o-row elevation="1" fxFlex="35" layout-align="center" attr="listcardrow">
+      <o-column elevation="1" fxFlex="40" layout-align="center" attr="listcardrow">
         <o-list #cardImgList fxFill attr="cardImgList" [title]="cardImgListTitle.value" columns="id;name;username;email;street;phone"
           keys="id" quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getListData(1)"
           [quick-filter]="quickFilterToggle4.checked" [refresh-button]="refreshButtonToggle4.checked" selectable="no" detail-button-in-row="no"
@@ -293,9 +293,9 @@
             </o-list-item-card-image>
           </o-list-item>
         </o-list>
-      </o-row>
+      </o-column>
 
-      <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="30" layout-padding layout-align="center">
+      <o-column attr="conf3" title-label="{{ 'LIST_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
 
           <md-input-container fxFlex="95">
