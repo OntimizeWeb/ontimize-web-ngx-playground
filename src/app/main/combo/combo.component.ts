@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { OComboComponent, OTranslateService } from 'ontimize-web-ng2';
+import { OComboComponent, OTranslateService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
@@ -23,7 +23,7 @@ const HTML_DATA = `
 const TYPESCRIPT_DATA = `
 import { Component, ViewChild } from '@angular/core';
 
-import { OComboComponent } from 'ontimize-web-ng2';
+import { OComboComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'combo-home',

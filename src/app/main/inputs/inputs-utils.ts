@@ -213,13 +213,13 @@ const TEXT_HTML_DATA = `
 
 const DATE_HTML_DATA = `
 <o-date-input attr="date" label="o-date (read-only)" layout-padding
-  [data]="getDateValue()"></o-date-input>
+  [data]="getDate()"></o-date-input>
 
 <o-date-input #date attr="date2" label="o-date (edit mode)"  layout-padding
-  [data]="getDateValue()"></o-date-input>
+  [data]="getDate()" min="01/01/1980" max="01/01/2020"></o-date-input>
 
 <o-date-input attr="date3" label="o-date disabled" enabled="no"  layout-padding
-  [data]="getDateValue()"></o-date-input>`;
+  [data]="getDate()"></o-date-input>`;
 
 const TEXTAREA_HTML_DATA = `
 <o-textarea-input attr="textarea" label="o-textarea (read-only)" layout-padding

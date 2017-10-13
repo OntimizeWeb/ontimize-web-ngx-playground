@@ -3,7 +3,7 @@ import {
   OTranslateService,
   DialogService,
   ODialogConfig
-} from 'ontimize-web-ng2';
+} from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `

@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit } from '@angular/core';
-import { InputConverter } from 'ontimize-web-ng2';
+import { InputConverter } from 'ontimize-web-ngx';
 
 
 @Component({
@@ -24,8 +24,8 @@ import { InputConverter } from 'ontimize-web-ng2';
 export class ExampleComponent implements OnInit {
 
   public showSource = false;
-  protected compName = '';
-  protected orderedFiles: Array<string>;
+  compName = '';
+  orderedFiles: Array<string>;
   @InputConverter()
   collapsible: boolean = false;
   @InputConverter()

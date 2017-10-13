@@ -30,12 +30,12 @@ const TYPESCRIPT_DATA = ``;
 })
 export class ContainersComponent implements OnInit {
 
-  protected layout = 'row';
+  layout = 'row';
   protected layoutHorizontal = 'start';
   protected layoutVertical = 'stretch';
 
-  protected dataHorizontal: Array<Object> = [];
-  protected dataVertical: Array<Object> = [];
+  dataHorizontal: Array<Object> = [];
+  dataVertical: Array<Object> = [];
   protected files: Array<Object> = [];
 
   constructor(protected navigationService: NavigationBarService) {
@@ -74,14 +74,14 @@ export class ContainersComponent implements OnInit {
     }, 0);
   }
 
-  onLayoutHorizontalChange(evt, layHor: MdRadioGroup) {
+  onLayoutHorizontalChange(evt) {
     const self = this;
     window.setTimeout(() => {
       self.layoutHorizontal = evt.value;
     }, 0);
   }
 
-  onLayoutVerticalChange(evt, layHor: MdRadioGroup) {
+  onLayoutVerticalChange(evt) {
     const self = this;
     window.setTimeout(() => {
       self.layoutVertical = evt.value;
