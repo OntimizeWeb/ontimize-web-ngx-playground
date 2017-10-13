@@ -95,7 +95,7 @@ export class ListsUtils {
       'data': ''
     }, {
       'type': 'typescript',
-      'data': this.getTypescript(key)
+      'data': ListsUtils.getTypescript(key)
     }];
   }
 
