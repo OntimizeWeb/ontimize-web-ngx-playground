@@ -78,6 +78,9 @@ export class InputUtils {
       case 'textarea':
         tpl = TEXTAREA_HTML_DATA;
         break;
+      case 'file':
+        tpl = FILE_HTML_DATA;
+        break;
       default:
         break;
     }
@@ -231,3 +234,9 @@ const TEXTAREA_HTML_DATA = `
 <o-textarea-input attr="textarea3" label="o-textarea disabled" enabled="no"  layout-padding
   [data]="getTextareaValue()"></o-textarea-input>
 `;
+
+const FILE_HTML_DATA = `
+<o-file-input #file attr="file2" label="o-file-input (edit mode)" layout-padding tooltip="This is an awesome tooltip!!!!"
+  required="yes" accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes"></o-file-input>
+
+<o-file-input attr="file3" label="o-file-input disabled" enabled="no" layout-padding></o-file-input>`;

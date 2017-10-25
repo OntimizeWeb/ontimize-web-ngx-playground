@@ -176,4 +176,18 @@
     </div>
   </example-comp>
 
+  <example-comp [comp-name]="getComponentId('file')" [files]="getFiles('file')" fxFill>
+    <div fxFlex="grow">
+      <o-form show-header="no" fxFill>
+        <div fxLayout="column" fxFill layout-padding>
+          <div fxLayout="column" layout-padding fxFill>
+            <o-file-input #file attr="file2" label="o-file-input (edit mode)" layout-padding tooltip="This is an awesome tooltip!!!!"
+              required="yes" accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes"></o-file-input>
+            <o-file-input attr="file3" label="o-file-input disabled" enabled="no" layout-padding></o-file-input>
+          </div>
+        </div>
+      </o-form>
+    </div>
+  </example-comp>
+
 </div>
