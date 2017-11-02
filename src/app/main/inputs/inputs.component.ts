@@ -12,7 +12,8 @@ import {
   OPasswordInputComponent,
   OTextareaInputComponent,
   OListPickerComponent,
-  OTranslateService
+  OTranslateService,
+  OFileInputComponent
 } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
@@ -36,6 +37,7 @@ export class InputsComponent implements OnInit, AfterViewInit {
   @ViewChild('password') password: OPasswordInputComponent;
   @ViewChild('textarea') textarea: OTextareaInputComponent;
   @ViewChild('listpicker') listpicker: OListPickerComponent;
+  @ViewChild('file') file: OFileInputComponent;
 
   protected dateValue: Date;
 
@@ -65,6 +67,7 @@ export class InputsComponent implements OnInit, AfterViewInit {
     this.textarea.isReadOnly = false;
     this.date.isReadOnly = false;
     this.listpicker.isReadOnly = false;
+    this.file.isReadOnly = false;
   }
 
   getInputValue() {

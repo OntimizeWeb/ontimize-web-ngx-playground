@@ -32,7 +32,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: 'storage',
     opened: false,
     items: [
-      { id: 'list', name: 'LIST', route: '/main/lists', icon: 'list' }
+      { id: 'list', name: 'LIST', route: '/main/lists', icon: 'list' },
+      { id: 'table', name: 'TABLE', route: '/main/table', icon: 'storage' }
     ]
   },
   {
