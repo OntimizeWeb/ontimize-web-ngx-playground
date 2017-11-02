@@ -27,6 +27,7 @@
   "TITLE": "Título",
   "ELEVATION": "Elevación",
   "LIST_CONFIGURATION": "Configuración de la lista",
+  "TABLE_CONFIGURATION" : "Configuración de la tabla",
   "ITEM_CONFIGURATION": "Configuración del item",
   "QUICK_FILTER": "Filtro",
   "REFRESH_BUTTON": "Botón para recargar",
