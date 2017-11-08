@@ -19,6 +19,9 @@ export class TableComponent implements OnInit {
   @ViewChild('filterCaseSensitive')
   filterCaseSensitive: any;
 
+  @ViewChild('groupingIntegerToggle')
+  groupingIntegerToggle:any;
+
   @ViewChild('tableTitle')
   tableTitle: any;
 
@@ -66,8 +69,26 @@ export class TableComponent implements OnInit {
     return result;
   }
 
+  getTableData2(itemNumber?: number): Array<any> {
+    const result = [];
+
+    let data: Array<any> = TableUtils.getCustomers();
+    for (let i = 0; i < data.length; i++) {
+      result.push(data[i]);
+    }
+
+    return result;
+  }
+
   getComponentId(key: string) {
-    return 'Table';
+    switch(key){
+      case 'o-table':
+       return 'Table';
+      case 'o-table-renderers':
+        return 'Ejemplo de renderes básicos';
+    }
+
+    
   }
 
 
@@ -82,8 +103,8 @@ export class TableComponent implements OnInit {
   }
 
 
-  getFiles() {
-    return TableUtils.getFiles();
+  getFiles(key:string) {
+    return TableUtils.getFiles(key);
   }
 
 }
