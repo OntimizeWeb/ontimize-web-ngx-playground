@@ -20,13 +20,17 @@ const FAKE_CUSTOMERS = [
     , { 'CUSTOMERID': 10622, 'NAME': 'C. Jonhson', SURNAME: 'Buttercup', PHOTO: '', LATITUDE: 51.5001524, ADDRESS: '2 The Piazza, London' }];
 
 const HTML_DATA = `
-<o-table #table2 attr='accounts' fxFill  columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
-visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME"  title='{title}' [static-data]='getTableData()'
- query-on-init='false' quick-filter='{quickFilter}' pageable='no' filter-case-sensitive='{filterCaseSensitive}'>
-    <o-table-column attr="PHOTO" orderable="no" searchable="no">
-        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
-    </o-table-column>
-    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
+<o-table #table2 fxFlex attr="table2" title="{title}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" quick-filter='{quickFilter}'
+[static-data]="getTableData2()" insert-button="{buttonAddToggle}" export-button= "{exportButtonToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
+select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" >
+
+<o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+<o-table-column attr="PHOTO" orderable="no" searchable="no">
+  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+</o-table-column>
+<o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
+
 </o-table>
 `;
 const HTML_DATA_RENDERER = `
@@ -54,7 +58,12 @@ const TYPESCRIPT_DATA = `
     getTableData() {
             return ${JSON.stringify(FAKE_CUSTOMERS)}
           }
-        `;
+    
+    onAction1() {
+    alert('onAction1');
+    }
+        
+    `;
 
 const TYPESCRIPT_DATA_RENDERERS = `
         
@@ -79,8 +88,18 @@ export class TableUtils {
             tpl = tpl.replace('{title}', data.title || '')
                 .replace('{quickFilter}', data.filter)
                 .replace('{filterCaseSensitive}', data.filterCaseSensitive)
+                .replace('{exportButtonToggle}', data.exportButtonToggle)
+                .replace('{selectMultipleToggle}', data.selectMultipleToggle)
+                .replace('{buttonAddToggle}', data.buttonAddToggle)
+                .replace('{buttonRemoveToggle}', data.buttonRemoveToggle)
+                .replace('{buttonRefreshToggle}', data.buttonRefreshToggle)
+                .replace('{showTextToggle}', data.showTextToggle);
+        
+        
         }
 
+        console.log('itemData', data);
+        console.log('tpl', tpl);
         return tpl;
     }
 

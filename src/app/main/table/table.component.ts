@@ -16,11 +16,26 @@ export class TableComponent implements OnInit {
   @ViewChild('quickFilterToggle')
   quickFilterToggle: any;
 
-  @ViewChild('filterCaseSensitive')
+  @ViewChild('filterCaseSensitiveToggle')
   filterCaseSensitive: any;
 
-  @ViewChild('groupingIntegerToggle')
-  groupingIntegerToggle:any;
+  @ViewChild('buttonAddToggle')
+  buttonAddToggle: any;
+
+  @ViewChild('buttonRemoveToggle')
+  buttonRemoveToggle: any;
+
+  @ViewChild('buttonRefreshToggle')
+  buttonRefreshToggle: any;
+
+  @ViewChild('selectMultipleToggle')
+  selectMultipleToggle: any;
+
+  @ViewChild('exportButtonToggle')
+  exportButtonToggle: any;
+
+  @ViewChild('showTextToggle')
+  showTextToggle: any;
 
   @ViewChild('tableTitle')
   tableTitle: any;
@@ -81,14 +96,14 @@ export class TableComponent implements OnInit {
   }
 
   getComponentId(key: string) {
-    switch(key){
+    switch (key) {
       case 'o-table':
-       return 'Table';
+        return 'Table';
       case 'o-table-renderers':
         return 'Ejemplo de renderes básicos';
     }
 
-    
+
   }
 
 
@@ -96,14 +111,20 @@ export class TableComponent implements OnInit {
     const itemData: any = {
       filter: this.quickFilterToggle.checked,
       filterCaseSensitive: this.filterCaseSensitive.checked,
-      title:this.tableTitle.nativeElement.value
+      title: this.tableTitle.nativeElement.value,
+      exportButtonToggle: this.exportButtonToggle.checked,
+      selectMultipleToggle: this.selectMultipleToggle.checked,
+      buttonAddToggle: this.buttonAddToggle.checked,
+      buttonRemoveToggle: this.buttonRemoveToggle.checked,
+      buttonRefreshToggle: this.buttonRefreshToggle.checked,
+      showTextToggle: this.showTextToggle.checked
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
 
   }
 
 
-  getFiles(key:string) {
+  getFiles(key: string) {
     return TableUtils.getFiles(key);
   }
 

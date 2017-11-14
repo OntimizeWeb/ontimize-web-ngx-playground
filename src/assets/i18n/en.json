@@ -52,5 +52,24 @@
   "COLLAPSIBLE": "Collapsible",
   "COLLAPSED": "Collapsed",
   "ACTION_1" : "Button 1",
-  "ACTION_2" : "Button 2"
+  "ACTION_2" : "Button 2",
+  "TABLE.BUTTON.ADD":"Insert button",
+  "TABLE.BUTTON.REFRESH":"Refresh button",
+  "TABLE.BUTTON.REMOVE":"Remove button",
+  "TABLE.BUTTON.OPTIONAL":"Optional button",
+  "TABLE.FILTER": "Filter",
+  "TABLE.FILTER_CASE_SENSITIVE": "Filter case sensitive",
+  "TABLE.BUTTON.SHOW_TEXT":"Show text",
+  "TABLE.MENU":"Menu",
+  "TABLE.SELECT_BUTTON":"Option select...",
+  "TABLE.EXPORT_BUTTON":"Option export",
+  "NAME": "Name",
+  "SURNAME": "Suername",
+  "STARTDATE": "Start date",
+  "ACCOUNTS": "Account",
+  "BALANCE": "Balace",
+  "NUMCARDS": "Num. Cards",
+  "COMMISSION":"Commision",
+  "INTERESRATE":"Rate"
+
 }

@@ -29,7 +29,7 @@
   "LIST_CONFIGURATION": "Configuración de la lista",
   "TABLE_CONFIGURATION" : "Configuración de la tabla",
   "ITEM_CONFIGURATION": "Configuración del item",
-  "QUICK_FILTER": "Filtro",
+  "QUICK_FILTER": "Filter",
   "REFRESH_BUTTON": "Botón para recargar",
   "INSERT_BUTTON": "Botón para insertar",
   "SHOW_ICON": "Mostrar icono del item",
@@ -52,5 +52,25 @@
   "COLLAPSIBLE": "Plegable",
   "COLLAPSED": "Plegado",
   "ACTION_1" : "Botón 1",
-  "ACTION_2" : "Botón 2"
+  "ACTION_2" : "Botón 2",
+  "TABLE.BUTTON.ADD":"Botón para añadir",
+  "TABLE.BUTTON.REFRESH":"Botón para recargar",
+  "TABLE.BUTTON.REMOVE":"Botón para borrar",
+  "TABLE.BUTTON.OPTIONAL":"Botón opcional",
+  "TABLE.FILTER": "Filtro",
+  "TABLE.FILTER_CASE_SENSITIVE": "Filtro sensible a mayúsculas",
+  "TABLE.BUTTON.SHOW_TEXT":"Mostrar texto",
+  "TABLE.MENU":"Menú",
+  "TABLE.SELECT_BUTTON":"Opción seleccionar...",
+  "TABLE.EXPORT_BUTTON":"Opción exportar",
+
+  "NAME": "Nombre",
+  "SURNAME": "Apellidos",
+  "STARTDATE": "Fecha inicio",
+  "ACCOUNTS": "Cuentas",
+  "BALANCE": "Saldo",
+  "NUMCARDS": "Saldo",
+  "COMMISSION":"Comisión",
+  "INTERESRATE":"Interés"
 }
+  

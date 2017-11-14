@@ -5,10 +5,13 @@
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
       <o-column elevation="1" fxFlex="60" layout-align="center">
-
         <o-table #table2 fxFlex attr="table2" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
           visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
-          [static-data]="getTableData2()">
+          [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked"
+          [export-button]= "exportButtonToggle.checked"  [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
+          [select-all-checkbox]="selectMultipleToggle.checked" [show-table-buttons-text]="showTextToggle.checked" >
+        
+          <o-table-button  (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
           <o-table-column attr="PHOTO" orderable="no" searchable="no">
             <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
           </o-table-column>
@@ -16,40 +19,61 @@
 
         </o-table>
 
-
-
       </o-column>
 
-      <o-column attr="conf" title-label="{{ 'Rendereres' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+      <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
 
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
           <md-input-container fxFlex="95">
             <input mdInput #tableTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
           </md-input-container>
         </div>
-        <div fxLayout="row" layout-padding fxLayoutAlign="start">
-          <div fxLayout="column" layout-padding fxLayoutAlign="start">
-            <md-slide-toggle #quickFilterToggle checked="true">
-              {{ 'QUICK_FILTER' | oTranslate }}
-            </md-slide-toggle>
+        <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
 
-          </div>
-          <div fxLayout="column" layout-padding fxLayoutAlign="start">
-            <md-slide-toggle #filterCaseSensitive checked="true">
-              {{ 'FILTER_CASE_SENSITIVE' | oTranslate }}
-            </md-slide-toggle>
-          </div>
-        </div>
+          <md-slide-toggle #quickFilterToggle checked="true">
+            {{ 'TABLE.FILTER' | oTranslate }}
+          </md-slide-toggle>
 
+          <md-slide-toggle #filterCaseSensitiveToggle checked="true">
+            {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+          </md-slide-toggle>
+        </o-column>
+        <o-column title-label="{{'TABLE.MENU' | oTranslate}}">
+          <md-slide-toggle #selectMultipleToggle checked="false">
+            {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
+          </md-slide-toggle>
+
+          <md-slide-toggle #exportButtonToggle checked="true">
+            {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+          </md-slide-toggle>
+         
+        </o-column>
+        <o-column title-label="{{'BUTTONS' | oTranslate}}">
+          <md-slide-toggle #buttonAddToggle checked="true">
+            {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+          </md-slide-toggle>
+          <md-slide-toggle #buttonRefreshToggle checked="true">
+            {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+          </md-slide-toggle>
+
+          <md-slide-toggle #buttonRemoveToggle checked="true">
+            {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+          </md-slide-toggle>
+          <md-slide-toggle #showTextToggle checked="true">
+            {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+            </md-slide-toggle>
+        </o-column>
       </o-column>
     </div>
+
   </example-comp>
   <example-comp #ex2 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-renderers')" [files]="getFiles('o-table-renderer')"
     (showSource)="onShowSource('o-table', table2, ex1)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
       <o-table fxFill #table1 attr="table1" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
         visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" layout-padding attr="accounts"
-        title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes">
+        title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
+        insert-button="no" delete-button="no" refresh-button="no">
         <o-table-column attr="PHOTO" orderable="no" searchable="no">
           <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
         </o-table-column>
