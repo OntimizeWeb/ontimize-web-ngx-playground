@@ -49,14 +49,14 @@
          
         </o-column>
         <o-column title-label="{{'BUTTONS' | oTranslate}}">
-          <md-slide-toggle #buttonAddToggle checked="true">
+          <md-slide-toggle #buttonAddToggle [checked]="false">
             {{ 'TABLE.BUTTON.ADD' | oTranslate }}
           </md-slide-toggle>
-          <md-slide-toggle #buttonRefreshToggle checked="true">
+          <md-slide-toggle #buttonRefreshToggle [checked]="false">
             {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
           </md-slide-toggle>
 
-          <md-slide-toggle #buttonRemoveToggle checked="true">
+          <md-slide-toggle #buttonRemoveToggle [checked]="false">
             {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
           </md-slide-toggle>
           <md-slide-toggle #showTextToggle checked="true">
