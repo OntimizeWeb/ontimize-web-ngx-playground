@@ -1,41 +1,92 @@
-<example-comp #ex1 collapsible="no" collapsed="no" fxFill [comp-name]="getComponentId('o-table')" [files]="getFiles()"
-  (showSource)="onShowSource('o-table', table1, ex1)">
+<div fxLayout="column" fxLayoutAlign="center top" layout-margin>
+  <example-comp #ex1 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table')" [files]="getFiles('o-table')"
+    (showSource)="onShowSource('o-table', table2, ex1)">
 
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-    <o-column elevation="1" fxFlex="40" layout-align="center">
+      <o-column elevation="1" fxFlex="60" layout-align="center">
+        <o-table #table2 fxFlex attr="table2" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+          visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
+          [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked"
+          [export-button]= "exportButtonToggle.checked"  [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
+          [select-all-checkbox]="selectMultipleToggle.checked" [show-table-buttons-text]="showTextToggle.checked" >
+        
+          <o-table-button  (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+          <o-table-column attr="PHOTO" orderable="no" searchable="no">
+            <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+          </o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
 
-      <o-table #table1 attr="table1" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-        visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"  layout-padding attr="accounts" title="ACCOUNTS" [static-data]="getTableData()"
-        sort-columns="ANID:DESC" query-on-init="false" [quick-filter]="quickFilterToggle.checked" pageable="no" [filter-case-sensitive]="filterCaseSensitive.checked">
-        <o-table-column attr="ENTITYID" title="ENTITYID" searchable="no"></o-table-column>
-        <o-table-column attr="OFFICEID" title="OFFICEID" orderable="no"></o-table-column>
+        </o-table>
 
-      </o-table>
-    </o-column>
+      </o-column>
 
-    <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+      <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
 
-      <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
-        <md-input-container fxFlex="95">
-          <input mdInput #tableTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
-        </md-input-container>
-      </div>
-      <div fxLayout="row" layout-padding fxLayoutAlign="start">
-        <div fxLayout="column" layout-padding fxLayoutAlign="start" >
+        <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
+          <md-input-container fxFlex="95">
+            <input mdInput #tableTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
+          </md-input-container>
+        </div>
+        <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
+
           <md-slide-toggle #quickFilterToggle checked="true">
-            {{ 'QUICK_FILTER' | oTranslate }}
+            {{ 'TABLE.FILTER' | oTranslate }}
           </md-slide-toggle>
 
-        </div>
-        <div fxLayout="column" layout-padding fxLayoutAlign="start">
-          <md-slide-toggle #filterCaseSensitive checked="true">
-            {{ 'FILTER_CASE_SENSITIVE' | oTranslate }}
+          <md-slide-toggle #filterCaseSensitiveToggle checked="true">
+            {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+          </md-slide-toggle>
+        </o-column>
+        <o-column title-label="{{'TABLE.MENU' | oTranslate}}">
+          <md-slide-toggle #selectMultipleToggle checked="false">
+            {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
           </md-slide-toggle>
 
-        </div>
+          <md-slide-toggle #exportButtonToggle checked="true">
+            {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+          </md-slide-toggle>
+         
+        </o-column>
+        <o-column title-label="{{'BUTTONS' | oTranslate}}">
+          <md-slide-toggle #buttonAddToggle [checked]="false">
+            {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+          </md-slide-toggle>
+          <md-slide-toggle #buttonRefreshToggle [checked]="false">
+            {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+          </md-slide-toggle>
 
-      </div>
-    </o-column>
-  </div>
-</example-comp>
+          <md-slide-toggle #buttonRemoveToggle [checked]="false">
+            {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+          </md-slide-toggle>
+          <md-slide-toggle #showTextToggle checked="true">
+            {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+            </md-slide-toggle>
+        </o-column>
+      </o-column>
+    </div>
+
+  </example-comp>
+  <example-comp #ex2 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-renderers')" [files]="getFiles('o-table-renderer')"
+    (showSource)="onShowSource('o-table', table2, ex1)">
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+      <o-table fxFill #table1 attr="table1" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+        visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" layout-padding attr="accounts"
+        title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
+        insert-button="no" delete-button="no" refresh-button="no">
+        <o-table-column attr="PHOTO" orderable="no" searchable="no">
+          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+        </o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right"></o-table-column>
+        <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" decimal-separator="," decimal-digits="4"></o-table-column>
+        <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
+        <o-table-column attr="COMMISSION" title="COMMISSION">
+          <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
+            boolean-type="string"></o-table-cell-renderer-boolean>
+        </o-table-column>
+      </o-table>
+    </div>
+  </example-comp>
+</div>
