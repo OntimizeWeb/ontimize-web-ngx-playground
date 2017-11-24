@@ -53,9 +53,9 @@
   "COLLAPSED": "Plegado",
   "ACTION_1" : "Botón 1",
   "ACTION_2" : "Botón 2",
-  "TABLE.BUTTON.ADD":"Botón para añadir",
-  "TABLE.BUTTON.REFRESH":"Botón para recargar",
-  "TABLE.BUTTON.REMOVE":"Botón para borrar",
+  "TABLE.BUTTON.ADD":"Botón añadir",
+  "TABLE.BUTTON.REFRESH":"Botón recargar",
+  "TABLE.BUTTON.REMOVE":"Botón borrar",
   "TABLE.BUTTON.OPTIONAL":"Botón opcional",
   "TABLE.FILTER": "Filtro",
   "TABLE.FILTER_CASE_SENSITIVE": "Filtro sensible a mayúsculas",
@@ -63,14 +63,19 @@
   "TABLE.MENU":"Menú",
   "TABLE.SELECT_BUTTON":"Opción seleccionar...",
   "TABLE.EXPORT_BUTTON":"Opción exportar",
-
+  "TABLE.PAGINATION":"Paginación",
+  "TABLE.SHOW_PAGINATION":"Mostrar paginación",
   "NAME": "Nombre",
   "SURNAME": "Apellidos",
   "STARTDATE": "Fecha inicio",
-  "ACCOUNTS": "Cuentas",
+  "ACCOUNT": "Cuentas",
   "BALANCE": "Saldo",
   "NUMCARDS": "Saldo",
   "COMMISSION":"Comisión",
-  "INTERESRATE":"Interés"
+  "INTERESRATE":"Interés",
+  "PRODUCTNAME":"Producto",
+  "UNITPRICE":"Precio",
+  "UNITSINORDER":"Unidades compradas",
+  "UNITSINSTOCK":"Stock"
 }
   

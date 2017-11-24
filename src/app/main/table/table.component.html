@@ -7,11 +7,11 @@
       <o-column elevation="1" fxFlex="60" layout-align="center">
         <o-table #table2 fxFlex attr="table2" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
           visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
-          [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked"
-          [export-button]= "exportButtonToggle.checked"  [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
-          [select-all-checkbox]="selectMultipleToggle.checked" [show-table-buttons-text]="showTextToggle.checked" >
-        
-          <o-table-button  (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+          [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked" [export-button]="exportButtonToggle.checked"
+          [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
+          [show-table-buttons-text]="showTextToggle.checked" [pagination-controls]="paginationToggle.checked">
+
+          <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
           <o-table-column attr="PHOTO" orderable="no" searchable="no">
             <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
           </o-table-column>
@@ -46,22 +46,32 @@
           <md-slide-toggle #exportButtonToggle checked="true">
             {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
           </md-slide-toggle>
-         
+
         </o-column>
         <o-column title-label="{{'BUTTONS' | oTranslate}}">
-          <md-slide-toggle #buttonAddToggle [checked]="false">
-            {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+          <o-row>
+            <div fxFlex="50">
+              <md-slide-toggle #buttonAddToggle [checked]="false">
+                {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+              </md-slide-toggle>
+              <md-slide-toggle #buttonRefreshToggle [checked]="false">
+                {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+              </md-slide-toggle>
+            </div>
+            <div fxFlex="50">
+              <md-slide-toggle #buttonRemoveToggle [checked]="false">
+                {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+              </md-slide-toggle>
+              <md-slide-toggle #showTextToggle checked="true">
+                {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+              </md-slide-toggle>
+            </div>
+          </o-row>
+        </o-column>
+        <o-column title-label="{{'TABLE.PAGINATION' | oTranslate}}">
+          <md-slide-toggle #paginationToggle checked="true">
+            {{ 'TABLE.SHOW_PAGINATION' | oTranslate }}
           </md-slide-toggle>
-          <md-slide-toggle #buttonRefreshToggle [checked]="false">
-            {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
-          </md-slide-toggle>
-
-          <md-slide-toggle #buttonRemoveToggle [checked]="false">
-            {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
-          </md-slide-toggle>
-          <md-slide-toggle #showTextToggle checked="true">
-            {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
-            </md-slide-toggle>
         </o-column>
       </o-column>
     </div>
@@ -89,4 +99,25 @@
       </o-table>
     </div>
   </example-comp>
+  <example-comp #ex3 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-aggregate')" [files]="getFiles('o-table-aggregate')"
+    (showSource)="onShowSource('o-table-aggregate', table3, ex3)">
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+      <o-table fxFill #table3 attr="table3" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
+        layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
+        insert-button="no" refresh-button="no" pagination-controls="no">
+
+        <o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right">
+        </o-table-column>
+        <o-table-column attr="UNITSINORDER" title="UNITSINORDER" type="integer"></o-table-column>
+        <o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+
+        
+        <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINORDER" aggregate="avg"  title="(Avg)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min"  title="(Min)"></o-table-column-aggregate>
+      </o-table>
+    </div>
+  </example-comp>
+
 </div>

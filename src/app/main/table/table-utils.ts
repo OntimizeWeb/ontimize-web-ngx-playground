@@ -19,11 +19,19 @@ const FAKE_CUSTOMERS = [
     , { 'CUSTOMERID': 106010, 'NAME': 'ButterCup', SURNAME: 'Buendía Lorente', PHOTO: '', EMAIL: '', LATITUDE: 37.6061384, ADDRESS: 'C/ Carlos III, 63 - 7.a A, 30203 Cartagena (Murcia)' }
     , { 'CUSTOMERID': 10622, 'NAME': 'C. Jonhson', SURNAME: 'Buttercup', PHOTO: '', LATITUDE: 51.5001524, ADDRESS: '2 The Piazza, London' }];
 
+const FAKE_PRODUCTS = [
+    { PRODUCTID: 1, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 1 },
+    { PRODUCTID: 2, 'PRODUCTNAME': 'Gorgonzola Telino', UNITPRICE: 12.5, UNITSINORDER: 70, UNITSINSTOCK: 2 },
+    { PRODUCTID: 3, 'PRODUCTNAME': 'Louisiana Hot Spiced Okra', UNITPRICE: 17, UNITSINORDER: 100, UNITSINSTOCK: 4 },
+    { PRODUCTID: 4, 'PRODUCTNAME': 'Sir Rodney Scones', UNITPRICE: 10, UNITSINORDER: 40, UNITSINSTOCK: 3 },
+    { PRODUCTID: 5, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 0 }
+];
+
 const HTML_DATA = `
 <o-table #table2 fxFlex attr="table2" title="{title}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
 visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" quick-filter='{quickFilter}'
 [static-data]="getTableData2()" insert-button="{buttonAddToggle}" export-button= "{exportButtonToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" >
+select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" pagination-controls="{paginationToggle}">
 
 <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
 <o-table-column attr="PHOTO" orderable="no" searchable="no">
@@ -52,6 +60,24 @@ title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" quer
 </o-table>;
 `
 
+const HTML_DATA_AGGREGATE = `
+<o-table fxFill #table3 attr="table3" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
+layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
+insert-button="no" refresh-button="no" pagination-controls="no">
+
+<o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+  currency-symbol-position="right">
+</o-table-column>
+
+<o-table-column attr="UNITSINORDER" title="UNITSINORDER" type="integer"></o-table-column>
+<o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+
+<o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
+<o-table-column-aggregate attr="UNITSINORDER" aggregate="avg"  title="(Avg)"></o-table-column-aggregate>
+<o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min"  title="(Min)"></o-table-column-aggregate>
+</o-table>
+`;
+
 
 const TYPESCRIPT_DATA = `
 
@@ -72,6 +98,12 @@ const TYPESCRIPT_DATA_RENDERERS = `
                   }
                 `;
 
+const TYPESCRIPT_DATA_AGGREGATE = `
+                
+        getTableData() {
+            return ${JSON.stringify(FAKE_PRODUCTS)}
+                }
+            `;
 export class TableUtils {
     public static getAccounts(): Array<any> {
         return FAKE_ACCOUNTS_TABLE;
@@ -81,9 +113,26 @@ export class TableUtils {
         return FAKE_CUSTOMERS;
     }
 
-    public static getHtml(key: string, table: any, data: any) {
-        let tpl = HTML_DATA;
+    public static getProducts(): Array<any> {
+        return FAKE_PRODUCTS;
+    }
 
+
+
+    public static getHtml(key: string, table: any, data: any) {
+
+        let tpl = '';
+        switch (key) {
+            case 'o-table':
+                tpl = HTML_DATA;
+                break;
+            case 'o-table-renderer':
+                tpl = HTML_DATA_RENDERER;
+                break;
+            case 'o-table-aggregate':
+                tpl = HTML_DATA_AGGREGATE;
+                break;
+        }
         if (table) {
             tpl = tpl.replace('{title}', data.title || '')
                 .replace('{quickFilter}', data.filter)
@@ -93,13 +142,12 @@ export class TableUtils {
                 .replace('{buttonAddToggle}', data.buttonAddToggle)
                 .replace('{buttonRemoveToggle}', data.buttonRemoveToggle)
                 .replace('{buttonRefreshToggle}', data.buttonRefreshToggle)
-                .replace('{showTextToggle}', data.showTextToggle);
-        
-        
+                .replace('{showTextToggle}', data.showTextToggle)
+                .replace('{paginationToggle}', data.paginationToggle);
+
+
         }
 
-        console.log('itemData', data);
-        console.log('tpl', tpl);
         return tpl;
     }
 
@@ -129,6 +177,9 @@ export class TableUtils {
             case 'o-table-renderer':
                 typescriptCode = TYPESCRIPT_DATA_RENDERERS;
                 break;
+            case 'o-table-aggregate':
+                typescriptCode = TYPESCRIPT_DATA_AGGREGATE;
+                break;
         }
         return typescriptCode;
     }
@@ -142,6 +193,9 @@ export class TableUtils {
                 break;
             case 'o-table-renderer':
                 typescriptCode = HTML_DATA_RENDERER;
+                break;
+            case 'o-table-aggregate':
+                typescriptCode = HTML_DATA_AGGREGATE;
                 break;
         }
         return typescriptCode;
