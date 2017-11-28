@@ -52,7 +52,7 @@ export class SnackBarComponent implements OnInit {
   }
 
   showSnackBar(e: Event): void {
-    this.snackBarService.open('SNACKBAR.TEXT', 'SNACKBAR.ACTION', 120000, 'android', 'left');
+    this.snackBarService.open('SNACKBAR.TEXT', 'SNACKBAR.ACTION', 500, 'android', 'left');
   }
 
 }
