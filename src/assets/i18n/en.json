@@ -63,15 +63,20 @@
   "TABLE.MENU": "Menu",
   "TABLE.SELECT_BUTTON": "Option select...",
   "TABLE.EXPORT_BUTTON": "Option export",
+  "TABLE.PAGINATION": "Pagination",
+  "TABLE.SHOW_PAGINATION": "Show paginación",
   "SNACKBAR": "SnackBar",
   "SNACKBAR.TEXT": "SnackBar text",
   "SNACKBAR.ACTION": "Done",
   "NAME": "Name",
   "SURNAME": "Suername",
   "STARTDATE": "Start date",
-  "ACCOUNTS": "Account",
+  "ACCOUNT": "Account",
   "BALANCE": "Balace",
   "NUMCARDS": "Num. Cards",
-  "COMMISSION": "Commision",
-  "INTERESRATE": "Rate"
+  "INTERESRATE": "Rate",
+  "PRODUCTNAME": "Product",
+  "UNITPRICE": "Price",
+  "UNITSINORDER": "Units order",
+  "UNITSINSTOCK": "Units stock"
 }

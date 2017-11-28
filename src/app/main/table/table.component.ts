@@ -37,6 +37,10 @@ export class TableComponent implements OnInit {
   @ViewChild('showTextToggle')
   showTextToggle: any;
 
+  @ViewChild('paginationToggle')
+  paginationToggle: any;
+
+
   @ViewChild('tableTitle')
   tableTitle: any;
 
@@ -95,12 +99,26 @@ export class TableComponent implements OnInit {
     return result;
   }
 
+  getTableData3() {
+    const result = [];
+
+    const data: Array<any> = TableUtils.getProducts();
+    for (let i = 0; i < data.length; i++) {
+      result.push(data[i]);
+    }
+
+    return result;
+  }
+
   getComponentId(key: string) {
     switch (key) {
       case 'o-table':
         return 'Table';
       case 'o-table-renderers':
         return 'Ejemplo de renderes básicos';
+
+      case 'o-table-aggregate':
+        return 'Ejemplo de tabla de totales';
     }
 
 
@@ -117,7 +135,9 @@ export class TableComponent implements OnInit {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked
+      showTextToggle: this.showTextToggle.checked,
+      paginationToggle: this.paginationToggle.checked
+
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
 
