@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="center top" layout-margin>
+
+  <example-comp [comp-name]="getComponentId()" [files]="getFiles()" fxFill>
+
+    <div fxLayout="row" layout-padding fxFill>
+      <o-button attr="snackbar" type="raised" label="SNACKBAR" layout-padding (click)="showSnackBar($event)"></o-button>
+    </div>
+
+  </example-comp>
+
+</div>

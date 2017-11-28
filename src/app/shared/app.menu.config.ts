@@ -51,10 +51,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: 'crop_landscape',
     opened: false,
     items: [
-      { id: 'dialogs', name: 'DIALOGS', route: '/main/dialogs', icon: 'mode_comment' }
+      { id: 'dialogs', name: 'DIALOGS', route: '/main/dialogs', icon: 'mode_comment' },
+      { id: 'snackbar', name: 'SNACKBAR', route: '/main/snackbar', icon: 'mode_comment' }
     ]
   }
 ];
-
-
-
