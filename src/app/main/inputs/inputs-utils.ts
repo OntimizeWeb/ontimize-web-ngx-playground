@@ -44,6 +44,7 @@ export class InputUtils {
 
   public static getFiles(key: string) {
     let tpl = '';
+    let ts = '';
     switch (key) {
       case 'currency':
         tpl = CURRENCY_HTML_DATA;
@@ -84,6 +85,47 @@ export class InputUtils {
       default:
         break;
     }
+
+    switch (key) {
+      case 'currency':
+        ts = CURRENCY_TS_DATA;
+        break;
+      case 'date':
+        ts = DATE_TS_DATA;
+        break;
+      case 'email':
+        ts = EMAIL_TS_DATA;
+        break;
+      case 'integer':
+        ts = INTEGER_TS_DATA;
+        break;
+      case 'listpicker':
+        ts = LISTPICKER_HTML_DATA;
+        break;
+      case 'nif':
+        ts = NIF_TS_DATA;
+        break;
+      case 'password':
+        ts = PASSWORD_TS_DATA;
+        break;
+      case 'percent':
+        ts = PERCENT_TS_DATA
+        break;
+      case 'real':
+        ts = REAL_TS_DATA;
+        break;
+      case 'text':
+        ts = TEXT_TS_DATA;
+        break;
+      case 'textarea':
+        ts = TEXTAREA_TS_DATA;
+        break;
+      case 'file':
+        ts = '';
+        break;
+      default:
+        break;
+    }
     return [
       {
         'type': 'html',
@@ -95,7 +137,7 @@ export class InputUtils {
       },
       {
         'type': 'typescript',
-        'data': ''
+        'data': ts
       }
     ];
   }
@@ -117,6 +159,7 @@ const CURRENCY_HTML_DATA = `
   [data]="getCurrencyValue()" decimal-digits="2"
   min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
 `;
+
 
 const EMAIL_HTML_DATA = `
 <o-email-input attr="email" label="o-email (read-only)" layout-padding
@@ -214,6 +257,58 @@ const TEXT_HTML_DATA = `
 <o-text-input attr="input3" label="o-input disabled" enabled="no"  layout-padding
   [data]="getInputValue()"></o-text-input>`;
 
+
+const TEXT_TS_DATA = `
+  getInputValue() {
+    return 'John Doe';
+  }
+`;
+
+const DATE_TS_DATA = `
+  getDateValue() {
+    return this.dateValue;
+  }
+`;
+
+const INTEGER_TS_DATA = `
+  getIntegerValue() {
+    return 1;
+  }
+`;
+
+const REAL_TS_DATA = `
+  getRealValue() {
+    return 33.45;
+  }
+`;
+
+const PERCENT_TS_DATA = `
+  getPercentValue() {
+    return 52.55;
+  }
+`;
+
+const CURRENCY_TS_DATA = `
+  getCurrencyValue() {
+    return 2574.99;
+  }
+`;
+
+const NIF_TS_DATA = `
+  getNIFValue() {
+    return '00000000T';
+  }`;
+
+const EMAIL_TS_DATA = `
+  getEmailValue() {
+    return 'john.doe@ontimize.com';
+  }
+`;
+const PASSWORD_TS_DATA = `
+  getPasswordValue() {
+    return 'password';
+  }
+`;
 const DATE_HTML_DATA = `
 <o-date-input attr="date" label="o-date (read-only)" layout-padding
   [data]="getDate()"></o-date-input>
@@ -240,3 +335,45 @@ const FILE_HTML_DATA = `
   required="yes" accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes"></o-file-input>
 
 <o-file-input attr="file3" label="o-file-input disabled" enabled="no" layout-padding></o-file-input>`;
+
+
+const TEXTAREA_TS_DATA = `
+getTextareaValue() {
+  return '
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempor porta arcu,
+   ut ultricies magna sodales egestas. Mauris et tempus lacus. Nunc gravida sodales
+   ipsum, a convallis arcu placerat rhoncus. Suspendisse in sollicitudin leo. Nam
+   efficitur dolor vitae tortor commodo tincidunt. Suspendisse ornare scelerisque
+   lectus, nec interdum turpis mattis ut. Morbi congue, diam quis varius tincidunt,
+   ante quam vulputate arcu, sit amet faucibus tortor dui et erat. Cras eget erat
+   at erat ultrices varius. Phasellus interdum enim sagittis tortor consequat lobortis.
+   Fusce tortor risus, pharetra eget diam mollis, rutrum mollis sem. Nullam pellentesque
+   risus id suscipit malesuada. Etiam non sem cursus libero faucibus congue.
+   Sed arcu lorem, scelerisque sit amet porttitor sed, vehicula consectetur lacus.
+   Vestibulum suscipit ante quis condimentum laoreet. Ut quis volutpat neque.
+  ';
+}
+`;
+
+const FILE_HTML_LISTPICKER = `
+getListPickerData() {
+  const array: Array<Object> = [];
+  array.push({
+    'CUSTOMERTYPEID': 1,
+    'DESCRIPTION': 'VIP'
+  });
+  array.push({
+    'CUSTOMERTYPEID': 2,
+    'DESCRIPTION': 'Normal'
+  });
+  array.push({
+    'CUSTOMERTYPEID': 3,
+    'DESCRIPTION': 'Other'
+  });
+  return array;
+}
+
+getListPickerValue() {
+  return 2;
+}
+`;

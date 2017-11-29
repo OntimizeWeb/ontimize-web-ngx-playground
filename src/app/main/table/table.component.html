@@ -9,7 +9,7 @@
           visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
           [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked" [export-button]="exportButtonToggle.checked"
           [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-          [show-table-buttons-text]="showTextToggle.checked">
+          [show-table-buttons-text]="showTextToggle.checked" pagination-controls="no">
 
           <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
           <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
@@ -123,8 +123,9 @@
       </o-table>
     </div>
   </example-comp>
+  
   <example-comp #ex4 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-paginator')" [files]="getFiles('o-table-paginator')"
-    (showSource)="onShowSource('o-table', table4, ex4)">
+    (showSource)="onShowSource('o-table-paginator', table4, ex4)">
     <o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
       pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
       insert-button="no" refresh-button="no" 
