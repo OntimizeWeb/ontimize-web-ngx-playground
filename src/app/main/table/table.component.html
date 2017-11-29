@@ -9,7 +9,7 @@
           visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
           [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked" [export-button]="exportButtonToggle.checked"
           [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-          [show-table-buttons-text]="showTextToggle.checked" [pagination-controls]="paginationToggle.checked">
+          [show-table-buttons-text]="showTextToggle.checked">
 
           <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
           <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
@@ -17,7 +17,6 @@
             <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
           </o-table-column>
           <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
-
         </o-table>
 
       </o-column>
@@ -69,11 +68,10 @@
             </div>
           </o-row>
         </o-column>
-        <o-column title-label="{{'TABLE.PAGINATION' | oTranslate}}">
-          <md-slide-toggle #paginationToggle checked="true">
+         <!-- <md-slide-toggle #paginationToggle checked="true">
             {{ 'TABLE.SHOW_PAGINATION' | oTranslate }}
           </md-slide-toggle>
-        </o-column>
+        </o-column>-->
       </o-column>
     </div>
 
@@ -84,7 +82,7 @@
       <o-table fxFill #table1 attr="table1" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
         visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" layout-padding attr="accounts"
         title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
-        insert-button="no" delete-button="no" refresh-button="no">
+        insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no">
 
         <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION"></o-table-columns-filter>
 
@@ -120,10 +118,21 @@
 
 
         <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
-        <o-table-column-aggregate attr="UNITSINORDER" aggregate="avg"  title="(Avg)"></o-table-column-aggregate>
-        <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min"  title="(Min)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINORDER" aggregate="avg" title="(Avg)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min" title="(Min)"></o-table-column-aggregate>
       </o-table>
     </div>
+  </example-comp>
+  <example-comp #ex4 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-paginator')" [files]="getFiles('o-table-paginator')"
+    (showSource)="onShowSource('o-table', table4, ex4)">
+    <o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
+      pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
+      insert-button="no" refresh-button="no" 
+      [static-data]="getTableData4()">
+      <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" ></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
+      <o-table-paginator page-size="5"></o-table-paginator>
+    </o-table>
   </example-comp>
 
 </div>

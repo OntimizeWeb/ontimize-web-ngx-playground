@@ -78,50 +78,46 @@ export class TableComponent implements OnInit {
   }
 
   getTableData(itemNumber?: number): Array<any> {
-    const result = [];
-
-    let data: Array<any> = TableUtils.getAccounts();
-    for (let i = 0; i < data.length; i++) {
-      result.push(data[i]);
-    }
-
-    return result;
+    const data: Array<any> = TableUtils.getAccounts();
+    return this.getData(data);
   }
 
   getTableData2(itemNumber?: number): Array<any> {
-    const result = [];
-
-    let data: Array<any> = TableUtils.getCustomers();
-    for (let i = 0; i < data.length; i++) {
-      result.push(data[i]);
-    }
-
-    return result;
+    const data: Array<any> = TableUtils.getCustomers();
+    return this.getData(data);
   }
 
   getTableData3() {
-    const result = [];
-
     const data: Array<any> = TableUtils.getProducts();
+    return this.getData(data);
+  }
+
+  getTableData4() {
+    const data: Array<any> = TableUtils.getBranches();
+    return this.getData(data);
+  }
+
+
+
+  private getData(data: any[]) {
+    const result = [];
     for (let i = 0; i < data.length; i++) {
       result.push(data[i]);
     }
-
     return result;
   }
 
   getComponentId(key: string) {
     switch (key) {
       case 'o-table':
-        return 'Table';
+        return this.translateService.get('TABLE');
       case 'o-table-renderers':
-        return 'Ejemplo de renderes básicos';
-
+        return this.translateService.get('TABLE.EXAMPLE_RENDER');
       case 'o-table-aggregate':
-        return 'Ejemplo de tabla de totales';
+        return this.translateService.get('TABLE.EXAMPLE_AGGRETATE');
+      case 'o-table-paginator':
+        return this.translateService.get('TABLE.EXAMPLE_PAGINACION');
     }
-
-
   }
 
 
@@ -135,8 +131,8 @@ export class TableComponent implements OnInit {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked,
-      paginationToggle: this.paginationToggle.checked
+      showTextToggle: this.showTextToggle.checked
+      //,paginationToggle: this.paginationToggle.checked
 
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);

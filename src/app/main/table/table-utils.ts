@@ -26,67 +26,85 @@ const FAKE_PRODUCTS = [
     { PRODUCTID: 4, 'PRODUCTNAME': 'Sir Rodney Scones', UNITPRICE: 10, UNITSINORDER: 40, UNITSINSTOCK: 3 },
     { PRODUCTID: 5, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 0 }
 ];
+const FAKE_BRANCHES =
+    [{ 'OFFICEID': '0000', 'ADDRESS': 'AVDA. GARCIA BARBON, 1  9(36201) VIGO', 'NAME': 'MAIN BRANCH', 'STARTDATE': 670802400000 }, { 'OFFICEID': '0001', 'ADDRESS': 'MERCATOR PLACE, WILSONIA INDUSTRIAL, EAST LONDON, EASTERN CAPE', 'NAME': 'BCM MARKET SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0002', 'ADDRESS': 'DONKIN ST', 'NAME': 'BEDFORD EASTERN CAPE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0003', 'ADDRESS': 'PRIORITY HOUSE 5 IRIS ROAD BEDFORDVIEW GAUTENG', 'NAME': 'BEDFORDVIEW PRIV BNKG SUITE SC', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0004', 'ADDRESS': 'PRESIDENT SWART STREET BULTFONTEIN', 'NAME': 'BULTFONTEIN SERVICE CENTRE', 'STARTDATE': 765496800000 }, { 'OFFICEID': '0070', 'ADDRESS': 'SHOP 69 WESTRIDGE PARK SC', 'NAME': 'WESTRIDGE PARK SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0101', 'ADDRESS': 'CENTRO CITY 11 TRUMP ST', 'NAME': 'JOZI POD CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0102', 'ADDRESS': 'STA. MARIA DE LA CABEZA, ESQ. DR. CALERO   2822', 'NAME': 'MAJADAHONDA ', 'STARTDATE': 797032800000 }, { 'OFFICEID': '0103', 'ADDRESS': 'PL. MAYOR, 10   (28850) TORREJON DE ARDOZ', 'NAME': 'TORREJON', 'STARTDATE': 828655200000 }, { 'OFFICEID': '1471', 'ADDRESS': 'Edificio Citexvi, Fonte das Abelleiras, s/n · Local 27, 36310 Vigo, Pontevedra', 'NAME': 'ImatiaBank Innovation', 'STARTDATE': 1480546800000 }, { 'OFFICEID': '9999', 'ADDRESS': 'Calle Test', 'NAME': 'Banco Test', 'STARTDATE': 1504994400000 }];
+
 
 const HTML_DATA = `
-<o-table #table2 fxFlex attr="table2" title="{title}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
-visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" quick-filter='{quickFilter}'
-[static-data]="getTableData2()" insert-button="{buttonAddToggle}" export-button= "{exportButtonToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" pagination-controls="{paginationToggle}">
+<o-table #table2 fxFlex attr='table2' title='{title}' keys='CUSTOMERID' columns='CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL'
+visible-columns='PHOTO;NAME;SURNAME;STARTDATE' sort-columns='SURNAME' query-on-init='false' quick-filter='{quickFilter}'
+[static-data]='getTableData2()' insert-button='{buttonAddToggle}' export-button= '{exportButtonToggle}' delete-button='{buttonRemoveToggle}' refresh-button='{buttonRefreshToggle}'
+select-all-checkbox='{selectMultipleToggle}' show-table-buttons-text='{showTextToggle}' pagination-controls='{paginationToggle}'>
 
-<o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
-<o-table-column attr="PHOTO" orderable="no" searchable="no">
-  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
-</o-table-column>
-<o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
+    <!--custom definition button-->
+    <o-table-button (onClick)='onAction1()' label='Action1' icon='alarm'></o-table-button>
+    
+    <!--custom definition columns-->
+    <o-table-column attr='PHOTO' orderable='no' searchable='no'>
+        <o-table-cell-renderer-image image-type='base64' empty-image='assets/images/no-image.png' avatar='yes'> </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr='STARTDATE' title='STARTDATE' type='date' format='LL'> </o-table-column>
 
 </o-table>
 `;
 const HTML_DATA_RENDERER = `
-<o-table fxFill #table1 attr="table1" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" layout-padding attr="accounts"
-title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes">
-    <o-table-column attr="PHOTO" orderable="no" searchable="no">
-        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+<o-table fxFill #table1 attr='table1' columns='PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED'
+visible-columns='PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION' layout-padding attr='accounts'
+title='ACCOUNTS' [static-data]='getTableData()' sort-columns='ACCOUNT:DESC' query-on-init='false' quick-filter='yes'>
+    <!--custom definition columns-->
+    <o-table-column attr='PHOTO' orderable='no' searchable='no'>
+        <o-table-cell-renderer-image image-type='base64' empty-image='assets/images/no-image.png' avatar='yes'> </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
-    <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-    currency-symbol-position="right"></o-table-column>
-    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator=","></o-table-column>
-    <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
-    <o-table-column attr="COMMISSION" title="COMMISSION">
-        <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
-        boolean-type="string"></o-table-cell-renderer-boolean>
+    <o-table-column attr='STARTDATE' title='STARTDATE' type='date'> </o-table-column>
+    <o-table-column attr='BALANCE' title='BALANCE' type='currency' thousand-separator='.' decimal-separator=',' currency-symbol='€'
+    currency-symbol-position='right'></o-table-column>
+    <o-table-column attr='INTERESRATE' title='INTERESRATE' type='percentage' decimal-separator=','></o-table-column>
+    <o-table-column attr='NUMCARDS' title='NUMCARDS' type='integer'></o-table-column>
+    <o-table-column attr='COMMISSION' title='COMMISSION'>
+        <o-table-cell-renderer-boolean true-value='check_circle' false-value='highlight_off' true-value-type='icon' false-value-type='icon'
+        boolean-type='string'></o-table-cell-renderer-boolean>
     </o-table-column>
 </o-table>;
 `
 
 const HTML_DATA_AGGREGATE = `
-<o-table fxFill #table3 attr="table3" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
-layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
-insert-button="no" refresh-button="no" pagination-controls="no">
+<o-table fxFill #table3 attr='table3' columns='PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK' visible-columns='PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK'
+layout-padding attr='products' title='PRODUCTOS' [static-data]='getTableData3()' query-on-init='false' quick-filter='yes'
+insert-button='no' refresh-button='no' pagination-controls='no'>
+    <!--custom definition columns-->
+    <o-table-column attr='UNITPRICE' title='UNITPRICE' type='currency' thousand-separator='.' decimal-separator=','     currency-symbol='€'  currency-symbol-position='right'> </o-table-column>
 
-<o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-  currency-symbol-position="right">
-</o-table-column>
+    <o-table-column attr='UNITSINORDER' title='UNITSINORDER' type='integer'></o-table-column>
+    <o-table-column attr='UNITSINSTOCK' title='UNITSINSTOCK' type='integer'></o-table-column>
 
-<o-table-column attr="UNITSINORDER" title="UNITSINORDER" type="integer"></o-table-column>
-<o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+    <!-- o-table-column-aggregate-->
+    <o-table-column-aggregate attr='UNITPRICE' title='(Total)'></o-table-column-aggregate>
+    <o-table-column-aggregate attr='UNITSINORDER' aggregate='avg'  title='(Avg)'></o-table-column-aggregate>
+    <o-table-column-aggregate attr='UNITSINSTOCK' aggregate='min'  title='(Min)'></o-table-column-aggregate>
+</o-table>
+`;
+const HTML_DATA_PAGINATOR = `
+<o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
+pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
+[static-data]="getTableData4()"  insert-button="no" refresh-button="no" >
+    <!--custom definition columns-->
+    <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" ></o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
 
-<o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
-<o-table-column-aggregate attr="UNITSINORDER" aggregate="avg"  title="(Avg)"></o-table-column-aggregate>
-<o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min"  title="(Min)"></o-table-column-aggregate>
+    <!-- o-table-paginator-->
+    <o-table-paginator pageSize="10"></o-table-paginator>
 </o-table>
 `;
 
 
 const TYPESCRIPT_DATA = `
 
-    getTableData() {
-            return ${JSON.stringify(FAKE_CUSTOMERS)}
-          }
+    getTableData2() {
+        return ${JSON.stringify(FAKE_CUSTOMERS)}
+    }
     
     onAction1() {
-    alert('onAction1');
+        alert('onAction1');
     }
         
     `;
@@ -100,10 +118,16 @@ const TYPESCRIPT_DATA_RENDERERS = `
 
 const TYPESCRIPT_DATA_AGGREGATE = `
                 
-        getTableData() {
+        getTableData3() {
             return ${JSON.stringify(FAKE_PRODUCTS)}
                 }
             `;
+const TYPESCRIPT_DATA_PAGINATOR = `
+            
+    getTableData3() {
+        return ${JSON.stringify(FAKE_BRANCHES)}
+            }
+        `;
 export class TableUtils {
     public static getAccounts(): Array<any> {
         return FAKE_ACCOUNTS_TABLE;
@@ -117,7 +141,9 @@ export class TableUtils {
         return FAKE_PRODUCTS;
     }
 
-
+    public static getBranches(): Array<any> {
+        return FAKE_BRANCHES;
+    }
 
     public static getHtml(key: string, table: any, data: any) {
 
@@ -130,6 +156,9 @@ export class TableUtils {
                 tpl = HTML_DATA_RENDERER;
                 break;
             case 'o-table-aggregate':
+                tpl = HTML_DATA_AGGREGATE;
+                break;
+            case 'o-table-paginator':
                 tpl = HTML_DATA_AGGREGATE;
                 break;
         }
@@ -180,6 +209,9 @@ export class TableUtils {
             case 'o-table-aggregate':
                 typescriptCode = TYPESCRIPT_DATA_AGGREGATE;
                 break;
+            case 'o-table-paginator':
+                typescriptCode = TYPESCRIPT_DATA_PAGINATOR;
+                break;
         }
         return typescriptCode;
     }
@@ -196,6 +228,9 @@ export class TableUtils {
                 break;
             case 'o-table-aggregate':
                 typescriptCode = HTML_DATA_AGGREGATE;
+                break;
+            case 'o-table-paginator':
+                typescriptCode = HTML_DATA_PAGINATOR;
                 break;
         }
         return typescriptCode;

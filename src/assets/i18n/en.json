@@ -76,6 +76,11 @@
   "PRODUCTNAME":"Product",
   "UNITPRICE":"Price",
   "UNITSINORDER":"Units order",
-  "UNITSINSTOCK":"Units stock"
+  "UNITSINSTOCK":"Units stock",
+  "OFFICEID":"Office",
+  "ADDRESS":"Address",
+  "TABLE.EXAMPLE_RENDER":"Example of predefined renders in the table",
+  "TABLE.EXAMPLE_AGGRETATE":"Example of totals in the table",
+  "TABLE.EXAMPLE_PAGINACION":"Example of pagination in the table"
 
 }
