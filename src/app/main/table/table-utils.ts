@@ -34,7 +34,7 @@ const HTML_DATA = `
 <o-table #table2 fxFlex attr='table2' title='{title}' keys='CUSTOMERID' columns='CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL'
 visible-columns='PHOTO;NAME;SURNAME;STARTDATE' sort-columns='SURNAME' query-on-init='false' quick-filter='{quickFilter}'
 [static-data]='getTableData2()' insert-button='{buttonAddToggle}' export-button= '{exportButtonToggle}' delete-button='{buttonRemoveToggle}' refresh-button='{buttonRefreshToggle}'
-select-all-checkbox='{selectMultipleToggle}' show-table-buttons-text='{showTextToggle}' pagination-controls='{paginationToggle}'>
+select-all-checkbox='{selectMultipleToggle}' show-table-buttons-text='{showTextToggle}' pagination-controls='no'>
 
     <!--custom definition button-->
     <o-table-button (onClick)='onAction1()' label='Action1' icon='alarm'></o-table-button>
@@ -50,7 +50,7 @@ select-all-checkbox='{selectMultipleToggle}' show-table-buttons-text='{showTextT
 const HTML_DATA_RENDERER = `
 <o-table fxFill #table1 attr='table1' columns='PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED'
 visible-columns='PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION' layout-padding attr='accounts'
-title='ACCOUNTS' [static-data]='getTableData()' sort-columns='ACCOUNT:DESC' query-on-init='false' quick-filter='yes'>
+title='ACCOUNTS' [static-data]='getTableData()' sort-columns='ACCOUNT:DESC' query-on-init='false' quick-filter='yes' pagination-controls="no">
     <!--custom definition columns-->
     <o-table-column attr='PHOTO' orderable='no' searchable='no'>
         <o-table-cell-renderer-image image-type='base64' empty-image='assets/images/no-image.png' avatar='yes'> </o-table-cell-renderer-image>

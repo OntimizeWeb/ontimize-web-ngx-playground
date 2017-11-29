@@ -9,7 +9,7 @@
           visible-columns="PHOTO;NAME;SURNAME;STARTDATE" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
           [static-data]="getTableData2()" [insert-button]="buttonAddToggle.checked" [export-button]="exportButtonToggle.checked"
           [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-          [show-table-buttons-text]="showTextToggle.checked">
+          [show-table-buttons-text]="showTextToggle.checked" pagination-controls="no">
 
           <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
           <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
