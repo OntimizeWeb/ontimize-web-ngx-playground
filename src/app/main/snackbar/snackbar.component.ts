@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OTranslateService, SnackBarService } from 'ontimize-web-ngx';
+import { OTranslateService, SnackBarService, OSnackBarConfig } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 
 const HTML_DATA = `
@@ -8,7 +8,13 @@ const HTML_DATA = `
 
 const TYPESCRIPT_DATA = `
   showSnackBar(e: Event): void {
-    this.snackBarService.open('SNACKBAR.TEXT', 'SNACKBAR.ACTION', 500, 'android', 'left');
+    const config: OSnackBarConfig = {
+      action: 'SNACKBAR.ACTION',
+      milliseconds: 5000,
+      icon: 'android',
+      iconPosition: 'left'
+    };
+    this.snackBarService.open('SNACKBAR.TEXT', config);
   }
 `;
 
@@ -52,7 +58,13 @@ export class SnackBarComponent implements OnInit {
   }
 
   showSnackBar(e: Event): void {
-    this.snackBarService.open('SNACKBAR.TEXT', 'SNACKBAR.ACTION', 500, 'android', 'left');
+    const config: OSnackBarConfig = {
+      action: 'SNACKBAR.ACTION',
+      milliseconds: 5000,
+      icon: 'android',
+      iconPosition: 'left'
+    };
+    this.snackBarService.open('SNACKBAR.TEXT', config);
   }
 
 }
