@@ -1,0 +1,8 @@
+<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
+    {{rowvalue['SURNAME'] | uppercase}}, {{rowvalue['NAME']}}
+    <!--<ng-container *ngFor="let item of generateArray(rowvalue)">
+            {{item.key}}: {{item.value}}
+        
+    </ng-container>-->
+</ng-template>
+

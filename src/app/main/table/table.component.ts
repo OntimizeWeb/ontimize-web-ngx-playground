@@ -97,6 +97,10 @@ export class TableComponent implements OnInit {
     return this.getData(data);
   }
 
+  getTableData5() {
+    const data: Array<any> = TableUtils.getCards();
+    return this.getData(data);
+  }
 
 
   private getData(data: any[]) {
@@ -117,6 +121,8 @@ export class TableComponent implements OnInit {
         return this.translateService.get('TABLE.EXAMPLE_AGGRETATE');
       case 'o-table-paginator':
         return this.translateService.get('TABLE.EXAMPLE_PAGINACION');
+      case 'o-table-renderer-advance':
+      return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
     }
   }
 

@@ -1,0 +1,9 @@
+<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">      
+        <md-progress-bar
+        [mdTooltip]="rowvalue['TOTALREADY']"
+        mode="determinate"
+        [value]="rowvalue['TOTALREADY']"
+        [bufferValue]="rowvalue['TOTALCREDIT']">
+    </md-progress-bar>
+</ng-template>
+

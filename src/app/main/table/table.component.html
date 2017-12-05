@@ -68,7 +68,7 @@
             </div>
           </o-row>
         </o-column>
-         <!-- <md-slide-toggle #paginationToggle checked="true">
+        <!-- <md-slide-toggle #paginationToggle checked="true">
             {{ 'TABLE.SHOW_PAGINATION' | oTranslate }}
           </md-slide-toggle>
         </o-column>-->
@@ -101,6 +101,30 @@
       </o-table>
     </div>
   </example-comp>
+  <example-comp #ex5 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-renderer-advance')" [files]="getFiles('o-table-renderer-advance')"
+    (showSource)="onShowSource('o-table-renderer-advance', table5, ex5)">
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+      <o-table fxFill #table5 attr="table5" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
+        layout-padding attr="accounts" title="ACCOUNTS" [static-data]="getTableData5()" sort-columns="ACCOUNT:DESC" query-on-init="false"
+        quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no">
+        <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
+        <o-table-column attr="NUMCARD" title="NUMCARD">
+          <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
+        </o-table-column>
+        <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right"></o-table-column>
+        <o-table-column attr="TOTALREADY" title="TOTALREADY">
+          <o-table-column-renderer-totalready></o-table-column-renderer-totalready>
+        </o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE">
+          <o-table-column-renderer-balance></o-table-column-renderer-balance>
+        </o-table-column>
+       
+      </o-table>
+    </div>
+  </example-comp>
+
+
   <example-comp #ex3 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-aggregate')" [files]="getFiles('o-table-aggregate')"
     (showSource)="onShowSource('o-table-aggregate', table3, ex3)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
@@ -123,14 +147,13 @@
       </o-table>
     </div>
   </example-comp>
-  
+
   <example-comp #ex4 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-paginator')" [files]="getFiles('o-table-paginator')"
     (showSource)="onShowSource('o-table-paginator', table4, ex4)">
-    <o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-      pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID"
-      insert-button="no" refresh-button="no" 
+    <o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
+      visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no"
       [static-data]="getTableData4()">
-      <o-table-column attr="OFFICEID" title="OFFICEID" width="15%" ></o-table-column>
+      <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
       <o-table-paginator page-size="5"></o-table-paginator>
     </o-table>

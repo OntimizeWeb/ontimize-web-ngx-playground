@@ -26,6 +26,15 @@ const FAKE_PRODUCTS = [
     { PRODUCTID: 4, 'PRODUCTNAME': 'Sir Rodney Scones', UNITPRICE: 10, UNITSINORDER: 40, UNITSINSTOCK: 3 },
     { PRODUCTID: 5, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 0 }
 ];
+const FAKE_CARDS = [
+
+    { CARDID: 1, CARDTYPE: 'VISA', NUMCARD: '4759 3256 32 1200123456', 'TOTALCREDIT': 600, 'TOTALREADY': 0, 'BALANCE': 3002.33 },
+    {
+        CARDID: 2, CARDTYPE: 'MASTERCARD', NUMCARD: '2800 2580 12 5698123125', 'TOTALCREDIT': 200, 'TOTALREADY': 300, 'BALANCE': 502.33
+    },
+    { CARDID: 3, CARDTYPE: 'AMERICAN-EXPRESS', NUMCARD: '6259 3698 12 1234567890', 'TOTALCREDIT': 1200, 'TOTALREADY': 50, 'BALANCE': -1202.52 },
+
+];
 const FAKE_BRANCHES =
     [{ 'OFFICEID': '0000', 'ADDRESS': 'AVDA. GARCIA BARBON, 1  9(36201) VIGO', 'NAME': 'MAIN BRANCH', 'STARTDATE': 670802400000 }, { 'OFFICEID': '0001', 'ADDRESS': 'MERCATOR PLACE, WILSONIA INDUSTRIAL, EAST LONDON, EASTERN CAPE', 'NAME': 'BCM MARKET SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0002', 'ADDRESS': 'DONKIN ST', 'NAME': 'BEDFORD EASTERN CAPE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0003', 'ADDRESS': 'PRIORITY HOUSE 5 IRIS ROAD BEDFORDVIEW GAUTENG', 'NAME': 'BEDFORDVIEW PRIV BNKG SUITE SC', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0004', 'ADDRESS': 'PRESIDENT SWART STREET BULTFONTEIN', 'NAME': 'BULTFONTEIN SERVICE CENTRE', 'STARTDATE': 765496800000 }, { 'OFFICEID': '0070', 'ADDRESS': 'SHOP 69 WESTRIDGE PARK SC', 'NAME': 'WESTRIDGE PARK SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0101', 'ADDRESS': 'CENTRO CITY 11 TRUMP ST', 'NAME': 'JOZI POD CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0102', 'ADDRESS': 'STA. MARIA DE LA CABEZA, ESQ. DR. CALERO   2822', 'NAME': 'MAJADAHONDA ', 'STARTDATE': 797032800000 }, { 'OFFICEID': '0103', 'ADDRESS': 'PL. MAYOR, 10   (28850) TORREJON DE ARDOZ', 'NAME': 'TORREJON', 'STARTDATE': 828655200000 }, { 'OFFICEID': '1471', 'ADDRESS': 'Edificio Citexvi, Fonte das Abelleiras, s/n · Local 27, 36310 Vigo, Pontevedra', 'NAME': 'ImatiaBank Innovation', 'STARTDATE': 1480546800000 }, { 'OFFICEID': '9999', 'ADDRESS': 'Calle Test', 'NAME': 'Banco Test', 'STARTDATE': 1504994400000 }];
 
@@ -69,7 +78,29 @@ title='ACCOUNTS' [static-data]='getTableData()' sort-columns='ACCOUNT:DESC' quer
         boolean-type='string'></o-table-cell-renderer-boolean>
     </o-table-column>
 </o-table>;
-`
+`;
+const HTML_DATA_RENDER_CUSTOM = `
+<o-table fxFill #table5 attr="table5" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
+layout-padding attr="accounts" title="ACCOUNTS" [static-data]="getTableData5()" sort-columns="ACCOUNT:DESC" query-on-init="false"
+quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no">
+    <!--FILTER COLUMNS-->
+    <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
+
+    <!--custom definition columns-->
+    <o-table-column attr="NUMCARD" title="NUMCARD">
+        <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
+    </o-table-column>
+    <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator="," currency-symbol="€"
+    currency-symbol-position="right"></o-table-column>
+    <o-table-column attr="TOTALREADY" title="TOTALREADY">
+        <o-table-column-renderer-totalready></o-table-column-renderer-totalready>
+    </o-table-column>
+    <o-table-column attr="BALANCE" title="BALANCE">
+        <o-table-column-renderer-balance></o-table-column-renderer-balance>
+    </o-table-column>
+
+</o-table>
+`;
 
 const HTML_DATA_AGGREGATE = `
 <o-table fxFill #table3 attr='table3' columns='PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK' visible-columns='PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK'
@@ -132,6 +163,29 @@ const TYPESCRIPT_DATA_PAGINATOR = `
         return ${JSON.stringify(FAKE_BRANCHES)}
             }
         `;
+const  TYPESCRIPT_DATA_RENDERERS_ADVANCE = `
+    getTableData5() {
+        return ${JSON.stringify(FAKE_CARDS)}
+    }
+    
+    <!-- important!!!! add renderers to the declaration -->
+    
+    @NgModule({
+        imports: [
+          SharedModule,
+          OntimizeWebModule,
+          TableRoutingModule
+        ],
+        declarations: [
+          TableComponent,
+          OTableColumnRendererCardTypeComponent,
+          OTableColumnRendererBalanceComponent,
+          OTableColumnRendererTotalReadyComponent
+      
+        ]
+      })
+`;
+
 export class TableUtils {
     public static getAccounts(): Array<any> {
         return FAKE_ACCOUNTS_TABLE;
@@ -147,6 +201,10 @@ export class TableUtils {
 
     public static getBranches(): Array<any> {
         return FAKE_BRANCHES;
+    }
+
+    public static getCards(): Array<any> {
+        return FAKE_CARDS;
     }
 
     public static getHtml(key: string, table: any, data: any) {
@@ -185,18 +243,50 @@ export class TableUtils {
     }
 
     public static getFiles(key: string) {
-        return [
+        let files = [
             {
                 'type': 'html',
                 'data': TableUtils.getTypeHtml(key)
             },
             {
-                'type': 'scss',
-                'data': ''
-            }, {
                 'type': 'typescript',
                 'data': TableUtils.getTypescript(key)
+            },
+            {
+                'type': 'scss',
+                'data': ''
             }];
+        if (key === 'o-table-renderer-advance') {
+          
+            files.push({
+                'type': 'o-table-column-renderer-cardtype.component.html',
+                'data': TableUtils.getHtmlRendererCardType()
+            });
+            files.push({
+                'type': 'o-table-column-renderer-cardtype.component.ts',
+                'data': TableUtils.getTypescriptRendererCardType()
+            });
+
+            files.push({
+                'type': 'o-table-column-cell-balance.component.html',
+                'data': TableUtils.getHtmlRendererBalance()
+            });
+            files.push({
+                'type': 'o-table-column-cell-balance.component.ts',
+                'data': TableUtils.getTypescriptRendererBalance()
+            });
+
+            files.push({
+                'type': 'o-table-column-renderer-totalready.component.html',
+                'data': TableUtils.getHtmlRendererTotalReady()
+            });
+            files.push({
+                'type': 'o-table-column-renderer-totalready.component.ts',
+                'data': TableUtils.getTypescriptRendererTotalReady()
+            });
+        }
+
+        return files;
     }
 
 
@@ -215,6 +305,9 @@ export class TableUtils {
                 break;
             case 'o-table-paginator':
                 typescriptCode = TYPESCRIPT_DATA_PAGINATOR;
+                break;
+            case 'o-table-renderer-advance':
+                typescriptCode = TYPESCRIPT_DATA_RENDERERS_ADVANCE;
                 break;
         }
         return typescriptCode;
@@ -236,7 +329,141 @@ export class TableUtils {
             case 'o-table-paginator':
                 typescriptCode = HTML_DATA_PAGINATOR;
                 break;
+            case 'o-table-renderer-advance':
+                typescriptCode = HTML_DATA_RENDER_CUSTOM;
+                
         }
         return typescriptCode;
+    }
+    public static getHtmlRendererBalance(){
+        return `
+        <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
+            <span *ngIf="cellvalue<0" style="color:red;" fxLayoutAlign="end center" > 
+                <md-icon>arrow_drop_down</md-icon> {{getCellData(cellvalue)}}
+            </span>
+            <span *ngIf="cellvalue>=0" style="color:green" fxLayoutAlign="end center" >
+                <md-icon>arrow_drop_up</md-icon>  {{getCellData(cellvalue)}}
+            </span>
+        </ng-template>
+        `
+    }
+
+    public static getTypescriptRendererBalance(){
+        return `
+        import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+        
+        import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
+        
+        
+        @Component({
+            selector: 'o-table-column-renderer-balance',
+            templateUrl: './o-table-column-renderer-balance.component.html',
+            host: { 'o-mat-column-currency':'true'}
+        })
+        
+        export class OTableColumnRendererBalanceComponent extends OBaseTableCellRenderer {
+        
+            @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+        
+            constructor(protected injector: Injector) {
+        
+                super(injector);
+                this.initialize();
+                this.setComponentPipe();
+            }
+        
+            setComponentPipe() {
+                this.componentPipe = new OCurrencyPipe(this.injector);
+            }
+        
+            ngOnInit() {
+                this.pipeArguments = {
+                    currencySimbol: '€',
+                    currencySymbolPosition: 'right',
+                    decimalDigits: 2,
+                    decimalSeparator: ',',
+                    grouping: true,
+                    thousandSeparator: '.'
+                };
+        
+                this.initialize();
+            }
+                
+            getCellData(value: any) {
+                let parsedValue: string;
+                if (this.componentPipe && typeof this.pipeArguments !== 'undefined' && value !== undefined) {
+        
+                    parsedValue = this.componentPipe.transform(value, this.pipeArguments);
+                }
+                return parsedValue;
+            }
+        }
+        
+        `
+    }
+    public static getHtmlRendererCardType(){
+        return `
+        <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">    
+            <span fxLayoutAlign="space-around center" >
+                <img src="assets/images/{{rowvalue['CARDTYPE'] | lowercase}}.png" width="24" height="24"> {{rowvalue['NUMCARD']}}
+            </span>
+        </ng-template>
+    `;
+    }
+    public static getTypescriptRendererCardType(){
+        return `
+        import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+        import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
+        
+        @Component({
+            selector: 'o-table-column-renderer-cardtype',
+            templateUrl: './o-table-column-renderer-cardtype.component.html'
+        })
+        
+        export class OTableColumnRendererCardTypeComponent extends OBaseTableCellRenderer {
+        
+            @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+        
+            constructor(protected injector: Injector) {
+                super(injector);
+                this.initialize();
+            }        
+        }
+        
+    `;
+    }
+    public static getHtmlRendererTotalReady(){
+        return `
+        <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">      
+            <md-progress-bar
+                mode="determinate"
+                [value]="rowvalue['TOTALREADY']"
+                [bufferValue]="rowvalue['TOTALCREDIT']">
+            </md-progress-bar>
+        </ng-template>
+        `;
+    }
+    public static getTypescriptRendererTotalReady(){
+        return `
+        
+        import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+        import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
+        
+        @Component({
+            selector: 'o-table-column-renderer-totalready',
+            templateUrl: './o-table-column-renderer-totalready.component.html'
+        })
+        
+        export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRenderer {
+        
+            @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+        
+            constructor(protected injector: Injector) {
+                super(injector);
+                this.initialize();
+            }
+        
+        }
+        `;
     }
 }

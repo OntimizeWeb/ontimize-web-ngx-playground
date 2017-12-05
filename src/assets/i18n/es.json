@@ -74,6 +74,9 @@
   "ACCOUNT": "Cuentas",
   "BALANCE": "Saldo",
   "NUMCARDS": "Tarjetas",
+  "NUMCARD": "Tarjeta",
+  "TOTALCREDIT":"Total crédito",
+  "TOTALREADY":"Total disponible",
   "COMMISSION": "Comisión",
   "INTERESRATE": "Interés",
   "PRODUCTNAME": "Producto",
@@ -84,5 +87,9 @@
   "ADDRESS": "Dirección",
   "TABLE.EXAMPLE_RENDER": "Ejemplo de renderes básicos",
   "TABLE.EXAMPLE_AGGRETATE": "Ejemplo de totales de la tabla",
-  "TABLE.EXAMPLE_PAGINACION": "Ejemplo de paginación de la tabla"
+  "TABLE.EXAMPLE_PAGINACION": "Ejemplo de paginación de la tabla",
+  "TABLE.EXAMPLE_RENDER_ADVANCE":"Ejemplo de renderes customizados"
+  
+  
+  
 }
