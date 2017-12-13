@@ -2,8 +2,6 @@ import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit } from '
 import { InputConverter } from 'ontimize-web-ngx';
 import { Console } from '@angular/core/src/console';
 
-
-
 @Component({
   selector: 'example-comp',
   moduleId: module.id,
@@ -36,7 +34,7 @@ export class ExampleComponent implements OnInit {
 
   @InputConverter()
   collapsed: boolean = false;
-  protected html: string = undefined;
+  // protected html: string = undefined;
 
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
@@ -59,7 +57,7 @@ export class ExampleComponent implements OnInit {
   }
 
   initilizeData() {
-    if(this.orderedFiles){
+    if (this.orderedFiles) {
       this.orderedFiles.map(x => {
         if (x.type !== '' && x.data !== '') {
           const item = {};
@@ -71,5 +69,12 @@ export class ExampleComponent implements OnInit {
       });
     }
   };
+  set html(value: string) {
+    for (const tab of this.tabs) {
+      if (tab.type === 'html') {
+        tab.data = value;
+      }
+    }
+  }
 }
 
