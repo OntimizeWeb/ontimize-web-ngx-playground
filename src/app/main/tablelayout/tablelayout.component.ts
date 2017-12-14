@@ -47,8 +47,8 @@ export class TableLayoutComponent implements OnInit {
     }
 
 
-    getFiles(key: string) {
-        return TableLayoutUtils.getFiles(key);
+    getFiles() {
+        return TableLayoutUtils.getFiles();
     }
 
     onShowSource(exampleComp?: any) {

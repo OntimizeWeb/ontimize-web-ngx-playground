@@ -43,7 +43,7 @@ export class TableLayoutUtils {
     public static getAccounts(): Array<any> {
         return FAKE_ACCOUNTS_TABLE;
     }
-    public static getFiles(key: string) {
+    public static getFiles() {
         const files = [
             {
                 'type': 'html',
@@ -76,7 +76,7 @@ export class TableLayoutUtils {
 
         tpl = tpl.replace('{title}', data.title || '')
             .replace('{fixed-header}', data.fixedHeader)
-            .replace('{ngStyle}', '{\'height\':' + data.height + '}');
+            .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
         return tpl;
     }
 

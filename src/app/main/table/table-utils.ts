@@ -223,6 +223,9 @@ export class TableUtils {
             case 'o-table-paginator':
                 tpl = HTML_DATA_PAGINATOR;
                 break;
+            case 'o-table-renderer-advance':
+                tpl = HTML_DATA_RENDER_CUSTOM;
+                break;
         }
         if (table) {
             tpl = tpl.replace('{title}', data.title || '')

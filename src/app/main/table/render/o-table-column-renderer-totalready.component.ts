@@ -1,4 +1,4 @@
-import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Injector, ViewChild, TemplateRef, OnInit } from '@angular/core';
 import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
 
 @Component({
@@ -6,14 +6,14 @@ import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
     templateUrl: './o-table-column-renderer-totalready.component.html'
 })
 
-export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRenderer {
+export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRenderer implements OnInit {
 
     @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
     constructor(protected injector: Injector) {
 
         super(injector);
-        this.initialize();  this.setComponentPipe();
+        this.initialize(); this.setComponentPipe();
     }
 
     setComponentPipe() {
@@ -30,10 +30,6 @@ export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRende
             thousandSeparator: '.'
         };
 
-    }
-
-    generateArray(obj) {
-        return Object.keys(obj).map((key) => { return { key: key, value: obj[key] } });
     }
 
     getCellData(value: any) {
