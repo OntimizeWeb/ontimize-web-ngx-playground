@@ -75,8 +75,8 @@
   "BALANCE": "Saldo",
   "NUMCARDS": "Tarjetas",
   "NUMCARD": "Tarjeta",
-  "TOTALCREDIT":"Total crédito",
-  "TOTALREADY":"Total disponible",
+  "TOTALCREDIT": "Total crédito",
+  "TOTALREADY": "Total disponible",
   "COMMISSION": "Comisión",
   "INTERESRATE": "Interés",
   "PRODUCTNAME": "Producto",
@@ -88,11 +88,10 @@
   "TABLE.EXAMPLE_RENDER": "Ejemplo de renderes básicos",
   "TABLE.EXAMPLE_AGGRETATE": "Ejemplo de totales de la tabla",
   "TABLE.EXAMPLE_PAGINACION": "Ejemplo de paginación de la tabla",
-  "TABLE.EXAMPLE_RENDER_ADVANCE":"Ejemplo de renderes customizados",
-  "ENTITYID":"Entidad",
-  "CDID":"Control",
-  "ANID":"Cuenta",
-  "ACCOUNTTYP":"Tipo"
-  
-  
+  "TABLE.EXAMPLE_RENDER_ADVANCE": "Ejemplo de renderes customizados",
+  "TABLE.EXAMPLE_CONTEXT_MENU": "Ejemplo de menú contextual",
+  "ENTITYID": "Entidad",
+  "CDID": "Control",
+  "ANID": "Cuenta",
+  "ACCOUNTTYP": "Tipo"
 }

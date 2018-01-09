@@ -75,8 +75,8 @@
   "BALANCE": "Balace",
   "NUMCARDS": "Num. Cards",
   "NUMCARD": "Num. Card",
-  "TOTALCREDIT":"Total crédit",
-  "TOTALREADY":"Total ready",
+  "TOTALCREDIT": "Total crédit",
+  "TOTALREADY": "Total ready",
   "COMMISSION": "Commision",
   "INTERESRATE": "Rate",
   "PRODUCTNAME": "Product",
@@ -88,9 +88,10 @@
   "TABLE.EXAMPLE_RENDER": "Example of predefined renders in the table",
   "TABLE.EXAMPLE_AGGRETATE": "Example of totals in the table",
   "TABLE.EXAMPLE_PAGINACION": "Example of pagination in the table",
-  "TABLE.EXAMPLE_RENDER_ADVANCE":"Example of customized renders",
-  "ENTITYID":"Entity",
-  "CDID":"Control",
-  "ANID":"Account",
-  "ACCOUNTTYP":"Type"
+  "TABLE.EXAMPLE_RENDER_ADVANCE": "Example of customized renders",
+  "TABLE.EXAMPLE_CONTEXT_MENU": "Example of context menu",
+  "ENTITYID": "Entity",
+  "CDID": "Control",
+  "ANID": "Account",
+  "ACCOUNTTYP": "Type"
 }

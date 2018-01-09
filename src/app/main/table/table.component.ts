@@ -122,10 +122,11 @@ export class TableComponent implements OnInit {
       case 'o-table-paginator':
         return this.translateService.get('TABLE.EXAMPLE_PAGINACION');
       case 'o-table-renderer-advance':
-      return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
+        return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
+      case 'o-table-context-menu':
+        return this.translateService.get('TABLE.EXAMPLE_CONTEXT_MENU');
     }
   }
-
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     const itemData: any = {
@@ -138,16 +139,17 @@ export class TableComponent implements OnInit {
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
       showTextToggle: this.showTextToggle.checked
-      //,paginationToggle: this.paginationToggle.checked
-
+      // ,paginationToggle: this.paginationToggle.checked
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
-
   }
-
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
+  }
+
+  onExecute(text: string, event: any) {
+    alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
   }
 
 }
