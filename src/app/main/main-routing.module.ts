@@ -8,6 +8,7 @@ import { ComboModule } from './combo/combo.module';
 import { ContainersModule } from './containers/containers.module';
 import { DialogsModule } from './dialogs/dialogs.module';
 import { SnackBarModule } from './snackbar/snackbar.module';
+import { ContextMenuModule } from './contextmenu/context-menu.module';
 import { HomeModule } from './home/home.module';
 import { InputsModule } from './inputs/inputs.module';
 import { ListsModule } from './lists/lists.module';
@@ -20,6 +21,7 @@ export function loadComboModule() { return ComboModule; }
 export function loadContainersModule() { return ContainersModule; }
 export function loadDialogsModule() { return DialogsModule; }
 export function loadSnackBarModule() { return SnackBarModule; }
+export function loadContextMenuModule() { return ContextMenuModule; }
 export function loadHomeModule() { return HomeModule; }
 export function loadInputsModule() { return InputsModule; }
 export function loadListsModule() { return ListsModule; }
@@ -37,6 +39,7 @@ export const routes: Routes = [
       { path: 'containers', loadChildren: loadContainersModule },
       { path: 'dialogs', loadChildren: loadDialogsModule },
       { path: 'snackbar', loadChildren: loadSnackBarModule },
+      { path: 'contextmenu', loadChildren: loadContextMenuModule },
       { path: 'home', loadChildren: loadHomeModule },
       { path: 'inputs', loadChildren: loadInputsModule },
       { path: 'lists', loadChildren: loadListsModule },

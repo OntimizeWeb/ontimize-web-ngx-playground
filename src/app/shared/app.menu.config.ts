@@ -53,7 +53,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     opened: false,
     items: [
       { id: 'dialogs', name: 'DIALOGS', route: '/main/dialogs', icon: 'mode_comment' },
-      { id: 'snackbar', name: 'SNACKBAR', route: '/main/snackbar', icon: 'announcement' }
+      { id: 'snackbar', name: 'SNACKBAR', route: '/main/snackbar', icon: 'announcement' },
+      { id: 'contextmenu', name: 'CONTEXTMENU', route: '/main/contextmenu', icon: 'menu' }
     ]
   }
 ];

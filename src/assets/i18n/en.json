@@ -68,6 +68,8 @@
   "SNACKBAR": "SnackBar",
   "SNACKBAR.TEXT": "SnackBar text",
   "SNACKBAR.ACTION": "Done",
+  "CONTEXTMENU": "Context menu",
+  "CONTEXT_MENU_CLICKABLE_AREA": "Right click me!",
   "NAME": "Name",
   "SURNAME": "Suername",
   "STARTDATE": "Start date",

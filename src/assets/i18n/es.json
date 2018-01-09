@@ -68,6 +68,8 @@
   "SNACKBAR": "SnackBar",
   "SNACKBAR.TEXT": "Texto SnackBar",
   "SNACKBAR.ACTION": "Hecho",
+  "CONTEXTMENU": "Menú contextual",
+  "CONTEXT_MENU_CLICKABLE_AREA": "¡Haz click derecho aquí!",
   "NAME": "Nombre",
   "SURNAME": "Apellidos",
   "STARTDATE": "Fecha inicio",
