@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { OTranslateService, Util } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 import { TableUtils } from './table-utils';
 
@@ -150,6 +150,11 @@ export class TableComponent implements OnInit {
 
   onExecute(text: string, event: any) {
     alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
+  }
+
+  getVisible(data: any): boolean {
+    console.log(data);
+    return Util.parseBoolean(data.COMMISSION);
   }
 
 }

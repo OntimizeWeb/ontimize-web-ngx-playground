@@ -149,7 +149,7 @@ const HTML_DATA_CONTEXT_MENU = `
 <o-context-menu #contextMenu>
   <o-context-menu-item icon="grade" label="Item 1" (execute)="onExecute('Item 1', $event)"></o-context-menu-item>
   <o-context-menu-item icon="grade" label="Item 2" enabled="no"></o-context-menu-item>
-  <o-context-menu-item label="Item 3" (execute)="onExecute('Item 3', $event)"></o-context-menu-item>
+  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute('Item 3', $event)"></o-context-menu-item>
 </o-context-menu>
 `;
 
@@ -210,6 +210,10 @@ const TYPESCRIPT_DATA_RENDERERS_ADVANCE = `
 const TYPESCRIPT_DATA_CONTEXT_MENU = `
   onExecute(text: string, event: any) {
     alert('Clicked menu element: ' + text + '\\n' + event.data.NAME);
+  }
+
+  getVisible(data: any): boolean {
+    return data.COMMISSION;
   }
 `;
 
