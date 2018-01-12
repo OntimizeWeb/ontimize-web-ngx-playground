@@ -153,6 +153,37 @@ const HTML_DATA_CONTEXT_MENU = `
 </o-context-menu>
 `;
 
+const HTML_DATA_CALCULATED_COLUMN = ` 
+<o-table fxFill #table6 attr="table6" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE"
+       visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
+        layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
+        insert-button="no" refresh-button="no" pagination-controls="no">
+
+        <!--FILTER COLUMNS-->
+        <o-table-columns-filter columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"></o-table-columns-filter>
+
+        <!--DEFINITION COLUMNS-->
+        <o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+        <o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right">
+        </o-table-column>
+
+        <!--COLUMN CALCULATED-->
+        <o-table-column-calculated attr="TOTALSTOCK" title="TOTALSTOCK" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
+
+        <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [function-operation]="profitability">
+          <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
+            boolean-type="string"></o-table-cell-renderer-boolean>
+        </o-table-column-calculated>
+
+        <!--COLUMN AGGREGATE-->
+        <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="avg" title="(Avg)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="TOTALSTOCK" title="(Total of the stock)"></o-table-column-aggregate>
+      </o-table>
+`;
+
 const TYPESCRIPT_DATA = `
 
     getTableData2() {
@@ -217,6 +248,15 @@ const TYPESCRIPT_DATA_CONTEXT_MENU = `
   }
 `;
 
+const TYPESCRIPT_DATA_CALCULATED_COLUMN = ` 
+
+profitability(row) {
+  return (row['TOTALSTOCK'] > 0 ? true : false);
+}
+
+`;
+
+
 export class TableUtils {
   public static getAccounts(): Array<any> {
     return FAKE_ACCOUNTS_TABLE;
@@ -258,6 +298,9 @@ export class TableUtils {
         break;
       case 'o-table-context-menu':
         tpl = HTML_DATA_CONTEXT_MENU;
+        break;
+      case 'o-table-column-calculated':
+        tpl = HTML_DATA_CALCULATED_COLUMN;
         break;
     }
     if (table) {
@@ -343,6 +386,9 @@ export class TableUtils {
       case 'o-table-context-menu':
         typescriptCode = TYPESCRIPT_DATA_CONTEXT_MENU;
         break;
+      case 'o-table-column-calculated':
+        typescriptCode = TYPESCRIPT_DATA_CALCULATED_COLUMN;
+        break;
     }
     return typescriptCode;
   }
@@ -367,6 +413,9 @@ export class TableUtils {
         break;
       case 'o-table-context-menu':
         typescriptCode = HTML_DATA_CONTEXT_MENU;
+        break;
+      case 'o-table-column-calculated':
+        typescriptCode = HTML_DATA_CALCULATED_COLUMN;
         break;
     }
     return typescriptCode;

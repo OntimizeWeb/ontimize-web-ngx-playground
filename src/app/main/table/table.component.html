@@ -148,6 +148,36 @@
     </div>
   </example-comp>
 
+  <example-comp #ex6 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-column-calculated')" [files]="getFiles('o-table-column-calculated')"
+    (showSource)="onShowSource('o-table-column-calculated', table6, ex6)">
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+      <o-table fxFill #table6 attr="table6" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE"
+       visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
+        layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
+        insert-button="no" refresh-button="no" pagination-controls="no">
+
+        <o-table-columns-filter columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"></o-table-columns-filter>
+
+        <o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+        <o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right">
+        </o-table-column>
+
+        <o-table-column-calculated attr="TOTALSTOCK" title="TOTALSTOCK" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+          currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
+
+        <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [function-operation]="profitability">
+          <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
+            boolean-type="string"></o-table-cell-renderer-boolean>
+        </o-table-column-calculated>
+
+        <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="avg" title="(Avg)"></o-table-column-aggregate>
+        <o-table-column-aggregate attr="TOTALSTOCK" title="(Total of the stock)"></o-table-column-aggregate>
+      </o-table>
+    </div>
+  </example-comp>
+
   <example-comp #ex4 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-paginator')" [files]="getFiles('o-table-paginator')"
     (showSource)="onShowSource('o-table-paginator', table4, ex4)">
     <o-table #table4 layout-padding attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"

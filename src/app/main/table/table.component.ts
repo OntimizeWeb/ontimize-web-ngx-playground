@@ -102,6 +102,9 @@ export class TableComponent implements OnInit {
     return this.getData(data);
   }
 
+  profitability(row) {
+    return (row['TOTALSTOCK'] > 0 ? true : false);
+  }
 
   private getData(data: any[]) {
     const result = [];
@@ -125,6 +128,8 @@ export class TableComponent implements OnInit {
         return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
       case 'o-table-context-menu':
         return this.translateService.get('TABLE.EXAMPLE_CONTEXT_MENU');
+      case 'o-table-column-calculated':
+        return this.translateService.get('TABLE.EXAMPLE_COLUMN_CALCULATED');
     }
   }
 
