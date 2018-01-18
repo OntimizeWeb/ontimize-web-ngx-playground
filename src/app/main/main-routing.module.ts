@@ -13,7 +13,6 @@ import { HomeModule } from './home/home.module';
 import { InputsModule } from './inputs/inputs.module';
 import { ListsModule } from './lists/lists.module';
 import { TableModule } from './table/table.module';
-import { TableLayoutModule } from './tablelayout/tablelayout.module';
 
 export function loadButtonsModule() { return ButtonsModule; }
 export function loadCheckboxModule() { return CheckboxModule; }
@@ -26,7 +25,6 @@ export function loadHomeModule() { return HomeModule; }
 export function loadInputsModule() { return InputsModule; }
 export function loadListsModule() { return ListsModule; }
 export function loadTableModule() { return TableModule; }
-export function loadTableLayoutModule() { return TableLayoutModule; }
 
 export const routes: Routes = [
   {
@@ -44,7 +42,6 @@ export const routes: Routes = [
       { path: 'inputs', loadChildren: loadInputsModule },
       { path: 'lists', loadChildren: loadListsModule },
       { path: 'table', loadChildren: loadTableModule },
-      { path: 'tablelayout', loadChildren: loadTableLayoutModule },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   }

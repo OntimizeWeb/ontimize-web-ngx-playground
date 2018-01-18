@@ -76,6 +76,48 @@
     </div>
 
   </example-comp>
+
+  <example-comp #ex7 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-fixed')" [files]="getFiles('o-table-fixed')" 
+  (showSource)="onShowSource('o-table-fixed',table7,ex7)">
+
+    <div fxLayout="row" fxLayoutAlign="space-around stretch" fxFill>
+
+      <o-column attr="col1" fxFlex="65">
+        <o-table #table7 [fixed-header]="fixedHeaderToggle.checked" [static-data]="getTableData7()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+          visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" attr="table7" title="ACCOUNTS" layout-padding sort-columns="ANID"
+          query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no"
+          [ngStyle]="{'height':height.value === 0 ? '100%' : height.value+'px'}">
+          <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
+          <o-table-column attr="OFFICEID" title="OFFICEID" width="14%" ></o-table-column>
+          <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
+          <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator="," width="18%">
+          </o-table-column>
+          <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
+        </o-table>
+      </o-column>
+
+      <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex="30" layout-padding>
+
+        <md-input-container fxFill>
+          <input mdInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
+        </md-input-container>
+
+        <md-input-container fxFill>
+          <input mdInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
+        </md-input-container>
+
+
+        <div fxLayout="row" fxLayoutAlign="space-around stretch">
+          <md-slide-toggle #fixedHeaderToggle>
+            {{ 'Fixed (header & footer)' | oTranslate }}
+          </md-slide-toggle>
+
+        </div>
+      </o-column>
+
+    </div>
+  </example-comp>
   <example-comp #ex2 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-renderers')" [files]="getFiles('o-table-renderer')"
     (showSource)="onShowSource('o-table', table2, ex1)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
@@ -151,8 +193,7 @@
   <example-comp #ex6 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-column-calculated')" [files]="getFiles('o-table-column-calculated')"
     (showSource)="onShowSource('o-table-column-calculated', table6, ex6)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-      <o-table fxFill #table6 attr="table6" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE"
-       visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
+      <o-table fxFill #table6 attr="table6" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE" visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
         layout-padding attr="products" title="PRODUCTOS" [static-data]="getTableData3()" query-on-init="false" quick-filter="yes"
         insert-button="no" refresh-button="no" pagination-controls="no">
 
@@ -163,8 +204,8 @@
           currency-symbol-position="right">
         </o-table-column>
 
-        <o-table-column-calculated attr="TOTALSTOCK" title="TOTALSTOCK" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-          currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
+        <o-table-column-calculated attr="TOTALSTOCK" title="TOTALSTOCK" type="currency" thousand-separator="." decimal-separator=","
+          currency-symbol="€" currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
 
         <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [operation-function]="profitability">
           <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"

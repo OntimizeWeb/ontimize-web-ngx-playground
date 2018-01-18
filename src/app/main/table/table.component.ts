@@ -44,6 +44,12 @@ export class TableComponent implements OnInit {
   @ViewChild('tableTitle')
   tableTitle: any;
 
+  @ViewChild('fixedHeaderToggle')
+  fixedHeaderToggle: any = true;
+
+  @ViewChild('height')
+  tableHeight: any;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService) {
@@ -102,6 +108,10 @@ export class TableComponent implements OnInit {
     return this.getData(data);
   }
 
+  getTableData7() {
+    const data: Array<any> = TableUtils.getAccountsTableFixed();
+    return this.getData(data);
+  }
   profitability(row) {
     return (row['TOTALSTOCK'] > 0 ? true : false);
   }
@@ -130,6 +140,8 @@ export class TableComponent implements OnInit {
         return this.translateService.get('TABLE.EXAMPLE_CONTEXT_MENU');
       case 'o-table-column-calculated':
         return this.translateService.get('TABLE.EXAMPLE_COLUMN_CALCULATED');
+      case 'o-table-fixed':
+        return this.translateService.get('TABLE.EXAMPLE_TABLE_FIXED');
     }
   }
 
@@ -143,8 +155,9 @@ export class TableComponent implements OnInit {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked
-      // ,paginationToggle: this.paginationToggle.checked
+      showTextToggle: this.showTextToggle.checked,
+      fixedHeader: this.fixedHeaderToggle.checked,
+      height: this.tableHeight.nativeElement.value,
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }
