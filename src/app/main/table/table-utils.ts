@@ -172,7 +172,7 @@ const HTML_DATA_CALCULATED_COLUMN = `
         <o-table-column-calculated attr="TOTALSTOCK" title="TOTALSTOCK" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
           currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
 
-        <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [function-operation]="profitability">
+        <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [operation-function]="profitability">
           <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
             boolean-type="string"></o-table-cell-renderer-boolean>
         </o-table-column-calculated>
