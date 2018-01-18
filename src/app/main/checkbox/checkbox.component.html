@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center top" layout-margin>
 
   <example-comp [comp-name]="getComponentId()" [files]="getFiles()" fxFill>
-    <o-form show-header="no">
+    <o-form editable-detail="false" show-header="no">
       <div fxLayout="row" layout-padding fxFill>
         <o-checkbox attr="check" label="O-checkbox (read-only)" [data]="getCheckboxValue()" layout-padding></o-checkbox>
         <o-checkbox #checkbox attr="check1" label="O-checkbox (edit mode)" [data]="getCheckboxValue()" layout-padding

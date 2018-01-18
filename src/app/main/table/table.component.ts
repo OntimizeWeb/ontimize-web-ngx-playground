@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { OTranslateService, Util } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 import { TableUtils } from './table-utils';
 
@@ -37,8 +37,18 @@ export class TableComponent implements OnInit {
   @ViewChild('showTextToggle')
   showTextToggle: any;
 
+  @ViewChild('paginationToggle')
+  paginationToggle: any;
+
+
   @ViewChild('tableTitle')
   tableTitle: any;
+
+  @ViewChild('fixedHeaderToggle')
+  fixedHeaderToggle: any = true;
+
+  @ViewChild('height')
+  tableHeight: any;
 
   constructor(
     protected navigationService: NavigationBarService,
@@ -74,38 +84,66 @@ export class TableComponent implements OnInit {
   }
 
   getTableData(itemNumber?: number): Array<any> {
-    const result = [];
-
-    let data: Array<any> = TableUtils.getAccounts();
-    for (let i = 0; i < data.length; i++) {
-      result.push(data[i]);
-    }
-
-    return result;
+    const data: Array<any> = TableUtils.getAccounts();
+    return this.getData(data);
   }
 
   getTableData2(itemNumber?: number): Array<any> {
-    const result = [];
+    const data: Array<any> = TableUtils.getCustomers();
+    return this.getData(data);
+  }
 
-    let data: Array<any> = TableUtils.getCustomers();
+  getTableData3() {
+    const data: Array<any> = TableUtils.getProducts();
+    return this.getData(data);
+  }
+
+  getTableData4() {
+    const data: Array<any> = TableUtils.getBranches();
+    return this.getData(data);
+  }
+
+  getTableData5() {
+    const data: Array<any> = TableUtils.getCards();
+    return this.getData(data);
+  }
+
+  getTableData7() {
+    const data: Array<any> = TableUtils.getAccountsTableFixed();
+    return this.getData(data);
+  }
+  profitability(row) {
+    return (row['TOTALSTOCK'] > 0 ? true : false);
+  }
+
+  private getData(data: any[]) {
+    const result = [];
     for (let i = 0; i < data.length; i++) {
       result.push(data[i]);
     }
-
     return result;
   }
 
   getComponentId(key: string) {
     switch (key) {
       case 'o-table':
-        return 'Table';
+        return this.translateService.get('TABLE');
       case 'o-table-renderers':
-        return 'Ejemplo de renderes básicos';
+        return this.translateService.get('TABLE.EXAMPLE_RENDER');
+      case 'o-table-aggregate':
+        return this.translateService.get('TABLE.EXAMPLE_AGGRETATE');
+      case 'o-table-paginator':
+        return this.translateService.get('TABLE.EXAMPLE_PAGINACION');
+      case 'o-table-renderer-advance':
+        return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
+      case 'o-table-context-menu':
+        return this.translateService.get('TABLE.EXAMPLE_CONTEXT_MENU');
+      case 'o-table-column-calculated':
+        return this.translateService.get('TABLE.EXAMPLE_COLUMN_CALCULATED');
+      case 'o-table-fixed':
+        return this.translateService.get('TABLE.EXAMPLE_TABLE_FIXED');
     }
-
-
   }
-
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     const itemData: any = {
@@ -117,15 +155,24 @@ export class TableComponent implements OnInit {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked
+      showTextToggle: this.showTextToggle.checked,
+      fixedHeader: this.fixedHeaderToggle.checked,
+      height: this.tableHeight.nativeElement.value,
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
-
   }
-
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
+  }
+
+  onExecute(text: string, event: any) {
+    alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
+  }
+
+  getVisible(data: any): boolean {
+    console.log(data);
+    return Util.parseBoolean(data.COMMISSION);
   }
 
 }

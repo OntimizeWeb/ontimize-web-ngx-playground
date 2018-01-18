@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
-
+import { Console } from '@angular/core/src/console';
 
 @Component({
   selector: 'example-comp',
@@ -25,12 +25,16 @@ export class ExampleComponent implements OnInit {
 
   public showSource = false;
   compName = '';
-  orderedFiles: Array<string>;
+  orderedFiles: Array<any>;
+
+  tabs: any[] = [];
+
   @InputConverter()
   collapsible: boolean = false;
+
   @InputConverter()
   collapsed: boolean = false;
-  protected html: string = undefined;
+  // protected html: string = undefined;
 
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
@@ -48,34 +52,29 @@ export class ExampleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tplData['html'] = this.initializeData('html');
-    this.tplData['scss'] = this.initializeData('scss');
-    this.tplData['typescript'] = this.initializeData('typescript');
+    this.initilizeData();
+
   }
 
-  initializeData(type: string) {
-    let tpl = '';
-    if (this.orderedFiles && this.orderedFiles.length > -1) {
-      this.orderedFiles.forEach((item) => {
-        if (item['type'] === type) {
-          tpl = item['data'];
+  initilizeData() {
+    if (this.orderedFiles) {
+      this.orderedFiles.map(x => {
+        if (x.type !== '' && x.data !== '') {
+          const item = {};
+          item['type'] = x.type;
+          item['data'] = x.data;
+
+          this.tabs.push(item);
         }
       });
     }
-    return tpl;
-  }
-
-  hasTplData(type: string) {
-    const tpl = this.tplData[type];
-    if (type === 'html' && this.html !== undefined) {
-      return true;
+  };
+  set html(value: string) {
+    for (const tab of this.tabs) {
+      if (tab.type === 'html') {
+        tab.data = value;
+      }
     }
-    return tpl ? tpl.length > 0 : false;
   }
-
-  getTplData(type: string) {
-    const tpl = this.tplData[type];
-    return tpl ? tpl : '';
-  }
-
 }
+
