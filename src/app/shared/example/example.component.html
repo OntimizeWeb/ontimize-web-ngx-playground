@@ -6,7 +6,8 @@
         <span> {{ compName }}</span>
         <span fxFlex></span>
 
-        <button *ngIf="!collapsed && (orderedFiles !== undefined) && (orderedFiles.length > 0)" md-icon-button aria-label="View Source" (click)="toggleShowSource()">
+        <button *ngIf="!collapsed && (orderedFiles !== undefined) && (orderedFiles.length > 0)" md-icon-button aria-label="View Source"
+          (click)="toggleShowSource()">
           <md-icon class="mat-24">code</md-icon>
         </button>
 
@@ -19,12 +20,11 @@
 
       <!-- Source views -->
       <md-tab-group *ngIf="showSource">
-        
-    
-         <md-tab  *ngFor="let file of tabs" [label]="file.type" >
-           <highlight-comp [template-content]="file.data" [template-type]="file.type" ></highlight-comp>
-          
-          </md-tab>
+
+
+        <md-tab *ngFor="let file of tabs" [label]="file.type">
+          <highlight-comp [template-content]="file.data" [template-type]="file.type"></highlight-comp>
+        </md-tab>
 
         <!--<md-tab label="{{ 'html' | uppercase }}" *ngIf="hasTplData('html')">
           <highlight-comp [template-content]="html ? html : getTplData('html')" [template-type]="html"></highlight-comp>

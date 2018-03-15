@@ -6,7 +6,7 @@
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
       <o-column elevation="1" fxFlex="40" layout-align="center" attr="listColumn">
-  
+
         <o-list #list3  attr="list3" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
           query-on-init="true" pageable="no" [static-data]="getListData(5)" [title]="list3Title.value" [refresh-button]="refreshButtonToggle.checked"
           [insert-button]="insertButtonToggle.checked" [selectable]="selectableToggle.checked" [dense]="denseToggle.checked"

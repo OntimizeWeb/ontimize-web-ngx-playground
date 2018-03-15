@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MdRadioGroup } from '@angular/material';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
@@ -26,7 +26,11 @@ const TYPESCRIPT_DATA = ``;
 @Component({
   selector: 'app-containers',
   templateUrl: './containers.component.html',
-  styleUrls: ['./containers.component.scss']
+  styleUrls: ['./containers.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.app-containers]': 'true'
+  }
 })
 export class ContainersComponent implements OnInit {
 

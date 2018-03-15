@@ -1,15 +1,21 @@
-.radio-group-vertical{
-  md-radio-button{
-    display: block;
+.app-containers {
+  .radio-group-vertical{
+    md-radio-button{
+      display: block;
+    }
   }
-}
 
-.alignment-label {
-  font-size: 0.75em;
-  color: #aaa;
-}
+  .alignment-label {
+    font-size: 0.75em;
+    color: #aaa;
+  }
 
-.alignment {
-  font-weight: bold;
-  font-size: 1.1em;
-}
+  .alignment {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .container-content {
+    height: calc(100% - 32px);
+  }
+  }
