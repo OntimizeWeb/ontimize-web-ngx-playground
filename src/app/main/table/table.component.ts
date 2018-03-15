@@ -130,12 +130,16 @@ export class TableComponent implements OnInit {
         return this.translateService.get('TABLE');
       case 'o-table-renderers':
         return this.translateService.get('TABLE.EXAMPLE_RENDER');
+      case 'o-table-editors':
+        return this.translateService.get('TABLE.EXAMPLE_EDITOR');
       case 'o-table-aggregate':
         return this.translateService.get('TABLE.EXAMPLE_AGGRETATE');
       case 'o-table-paginator':
         return this.translateService.get('TABLE.EXAMPLE_PAGINACION');
       case 'o-table-renderer-advance':
         return this.translateService.get('TABLE.EXAMPLE_RENDER_ADVANCE');
+      case 'o-table-editors-advance':
+        return this.translateService.get('TABLE.EXAMPLE_EDITOR_ADVANCE');
       case 'o-table-context-menu':
         return this.translateService.get('TABLE.EXAMPLE_CONTEXT_MENU');
       case 'o-table-column-calculated':
@@ -173,6 +177,21 @@ export class TableComponent implements OnInit {
   getVisible(data: any): boolean {
     console.log(data);
     return Util.parseBoolean(data.COMMISSION);
+  }
+
+  editionStarted(arg) {
+    console.log('editionStarted');
+    console.log(arg);
+  }
+
+  editionCancelled(arg) {
+    console.log('editionCancelled');
+    console.log(arg);
+  }
+
+  editionCommitted(arg) {
+    console.log('editionCommitted');
+    console.log(arg);
   }
 
 }
