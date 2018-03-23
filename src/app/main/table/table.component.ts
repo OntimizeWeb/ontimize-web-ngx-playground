@@ -194,4 +194,8 @@ export class TableComponent implements OnInit {
     console.log(arg);
   }
 
+  actionClick() {
+    console.log('actionClick');
+  }
+
 }

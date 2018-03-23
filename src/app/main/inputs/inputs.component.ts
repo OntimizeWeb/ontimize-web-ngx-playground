@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   OTextInputComponent,
@@ -22,7 +22,8 @@ import { InputUtils } from './inputs-utils';
 @Component({
   selector: 'app-inputs',
   templateUrl: './inputs.component.html',
-  styleUrls: ['./inputs.component.scss']
+  styleUrls: ['./inputs.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputsComponent implements OnInit, AfterViewInit {
 
@@ -56,18 +57,22 @@ export class InputsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.input.isReadOnly = false;
-    this.integer.isReadOnly = false;
-    this.real.isReadOnly = false;
-    this.percent.isReadOnly = false;
-    this.currency.isReadOnly = false;
-    this.nif.isReadOnly = false;
-    this.email.isReadOnly = false;
-    this.password.isReadOnly = false;
-    this.textarea.isReadOnly = false;
-    this.date.isReadOnly = false;
-    this.listpicker.isReadOnly = false;
-    this.file.isReadOnly = false;
+    try {
+      this.input.isReadOnly = false;
+      this.listpicker.isReadOnly = false;
+      this.integer.isReadOnly = false;
+      this.real.isReadOnly = false;
+      this.percent.isReadOnly = false;
+      this.currency.isReadOnly = false;
+      this.nif.isReadOnly = false;
+      this.email.isReadOnly = false;
+      this.password.isReadOnly = false;
+      this.textarea.isReadOnly = false;
+      this.date.isReadOnly = false;
+      this.file.isReadOnly = false;
+    } catch (e) {
+      console.log('A component is undefined');
+    }
   }
 
   getInputValue() {

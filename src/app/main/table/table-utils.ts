@@ -480,10 +480,10 @@ export class TableUtils {
     return `
         <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
             <span *ngIf="cellvalue<0" style="color:red;" fxLayoutAlign="end center" >
-                <md-icon>arrow_drop_down</md-icon> {{getCellData(cellvalue)}}
+                <mat-icon>arrow_drop_down</mat-icon> {{getCellData(cellvalue)}}
             </span>
             <span *ngIf="cellvalue>=0" style="color:green" fxLayoutAlign="end center" >
-                <md-icon>arrow_drop_up</md-icon>  {{getCellData(cellvalue)}}
+                <mat-icon>arrow_drop_up</mat-icon>  {{getCellData(cellvalue)}}
             </span>
         </ng-template>
         `;
@@ -576,11 +576,11 @@ export class TableUtils {
   public static getHtmlRendererTotalReady() {
     return `
         <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-            <md-progress-bar
+            <mat-progress-bar
                 mode="determinate"
                 [value]="rowvalue['TOTALREADY']"
                 [bufferValue]="rowvalue['TOTALCREDIT']">
-            </md-progress-bar>
+            </mat-progress-bar>
         </ng-template>
         `;
   }

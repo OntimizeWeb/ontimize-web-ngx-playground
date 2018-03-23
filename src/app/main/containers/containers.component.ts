@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MdRadioGroup } from '@angular/material';
+// import { MdRadioGroup } from '@angular/material';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
@@ -52,7 +52,8 @@ export class ContainersComponent implements OnInit {
       { 'value': 'center', 'label': 'center', 'checked': false },
       { 'value': 'end', 'label': 'end', 'checked': false },
       { 'value': 'space-around', 'label': 'space-around', 'checked': false },
-      { 'value': 'space-between', 'label': 'space-between', 'checked': false }
+      { 'value': 'space-between', 'label': 'space-between', 'checked': false },
+      { 'value': 'space-evenly', 'label': 'space-evenly', 'checked': false }
     ];
     this.dataVertical = [
       { 'value': 'none', 'label': 'none', 'checked': false },
