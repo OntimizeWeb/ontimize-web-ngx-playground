@@ -3,8 +3,7 @@
 # compiled output
 /dist
 /tmp
-/out-tsc
-/aot-dist
+/tmp-src
 
 # dependencies
 /node_modules
