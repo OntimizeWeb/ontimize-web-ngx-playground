@@ -140,4 +140,5 @@ export class ListsComponent implements OnInit {
     }
     exampleComp.html = ListsUtils.getHtml(key, list, itemData);
   }
+
 }
