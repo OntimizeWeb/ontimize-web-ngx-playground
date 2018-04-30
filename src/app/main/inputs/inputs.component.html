@@ -21,13 +21,14 @@
           <div fxLayout="row" fxFill>
             <o-date-input attr="date" label="o-date (read-only)" layout-padding [data]="getDateValue()"></o-date-input>
             <o-date-input #date attr="date2" label="o-date (edit mode)" layout-padding tooltip="This is an awesome tooltip!!!!" [data]="getDateValue()"
-              required="true" min="01/01/1980" max="01/01/2020"></o-date-input>
+              format="LL" required="true" min="01/01/1980" max="01/01/2020"></o-date-input>
             <o-date-input attr="date3" label="o-date disabled" enabled="no" layout-padding [data]="getDateValue()"></o-date-input>
           </div>
         </div>
       </o-form>
     </div>
   </example-comp>
+
 
   <example-comp [comp-name]="getComponentId('listpicker')" [files]="getFiles('listpicker')" fxFill>
     <div fxFlex="grow">
@@ -40,7 +41,6 @@
             <o-list-picker #listpicker attr="listpicker2" label="o-list-picker (read-only)" [static-data]="getListPickerData()" [data]="getListPickerValue()"
               enabled="yes" filter="yes" value-column="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
               layout-padding required="true"></o-list-picker>
-            <!-- tooltip="This is an awesome tooltip!!!!" -->
             <o-list-picker attr="listpicker3" label="o-list-picker disabled" [static-data]="getListPickerData()" [data]="getListPickerValue()"
               enabled="no" filter="yes" value-column="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
               layout-padding></o-list-picker>

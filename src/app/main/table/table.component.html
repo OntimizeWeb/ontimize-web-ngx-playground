@@ -30,53 +30,53 @@
       <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
 
         <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
-          <md-input-container fxFlex="95">
-            <input mdInput #tableTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
-          </md-input-container>
+          <mat-form-field fxFlex="95">
+            <input matInput #tableTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
+          </mat-form-field>
         </div>
         <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
 
-          <md-slide-toggle #quickFilterToggle checked="true">
+          <mat-slide-toggle #quickFilterToggle checked="true">
             {{ 'TABLE.FILTER' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
 
-          <md-slide-toggle #filterCaseSensitiveToggle checked="true">
+          <mat-slide-toggle #filterCaseSensitiveToggle checked="true">
             {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
         </o-column>
         <o-column title-label="{{'TABLE.MENU' | oTranslate}}">
-          <md-slide-toggle #selectMultipleToggle checked="false">
+          <mat-slide-toggle #selectMultipleToggle checked="false">
             {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
 
-          <md-slide-toggle #exportButtonToggle checked="true">
+          <mat-slide-toggle #exportButtonToggle checked="true">
             {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
 
         </o-column>
         <o-column title-label="{{'BUTTONS' | oTranslate}}">
           <o-row>
             <div fxFlex="50">
-              <md-slide-toggle #buttonAddToggle [checked]="false">
+              <mat-slide-toggle #buttonAddToggle [checked]="false">
                 {{ 'TABLE.BUTTON.ADD' | oTranslate }}
-              </md-slide-toggle>
-              <md-slide-toggle #buttonRefreshToggle [checked]="false">
+              </mat-slide-toggle>
+              <mat-slide-toggle #buttonRefreshToggle [checked]="false">
                 {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
-              </md-slide-toggle>
+              </mat-slide-toggle>
             </div>
             <div fxFlex="50">
-              <md-slide-toggle #buttonRemoveToggle [checked]="false">
+              <mat-slide-toggle #buttonRemoveToggle [checked]="false">
                 {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
-              </md-slide-toggle>
-              <md-slide-toggle #showTextToggle checked="true">
+              </mat-slide-toggle>
+              <mat-slide-toggle #showTextToggle checked="true">
                 {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
-              </md-slide-toggle>
+              </mat-slide-toggle>
             </div>
           </o-row>
         </o-column>
-        <!-- <md-slide-toggle #paginationToggle checked="true">
+        <!-- <mat-slide-toggle #paginationToggle checked="true">
             {{ 'TABLE.SHOW_PAGINATION' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
         </o-column>-->
       </o-column>
     </div>
@@ -106,19 +106,19 @@
 
       <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex="30" layout-padding>
 
-        <md-input-container fxFill>
-          <input mdInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
-        </md-input-container>
+        <mat-form-field fxFill>
+          <input matInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
+        </mat-form-field>
 
-        <md-input-container fxFill>
-          <input mdInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
-        </md-input-container>
+        <mat-form-field fxFill>
+          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
+        </mat-form-field>
 
 
         <div fxLayout="row" fxLayoutAlign="space-around stretch">
-          <md-slide-toggle #fixedHeaderToggle>
+          <mat-slide-toggle #fixedHeaderToggle>
             {{ 'Fixed (header & footer)' | oTranslate }}
-          </md-slide-toggle>
+          </mat-slide-toggle>
 
         </div>
       </o-column>
@@ -174,7 +174,7 @@
   </example-comp>
 
   <example-comp #exEd collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-editors')" [files]="getFiles('o-table-editors')"
-    (showSource)="onShowSource('o-table', tableEd, exEd)">
+    (showSource)="onShowSource('o-table-editors', tableEd, exEd)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
       <o-table fxFill #tableEd attr="tableEd" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
         visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
@@ -198,15 +198,14 @@
           </o-table-cell-editor-integer>
         </o-table-column>
 
-        <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency"
-          thousand-separator="." decimal-separator=","
+        <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
           currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
           (editionCommitted)="editionCommitted($event)">
         </o-table-column>
 
         <o-table-column attr="CLOSED" title="CLOSED">
-          <o-table-cell-editor-boolean true-value="1" false-value="0" boolean-type="number"
-          (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+          <o-table-cell-editor-boolean true-value="1" false-value="0" boolean-type="number" (editionStarted)="editionStarted($event)"
+            (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
         </o-table-column>
 
         <!-- ;STARTDATE;BALANCE;NAME -->
@@ -215,8 +214,8 @@
     </div>
   </example-comp>
 
-  <example-comp #exEdAdv collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-editor-advance')" [files]="getFiles('o-table-editor-advance')"
-    (showSource)="onShowSource('o-table-editor-advance', tableEdAdv, exEdAdv)">
+  <!-- <example-comp #exEdAdv collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-editors-advance')" [files]="getFiles('o-table-editors-advance')"
+    (showSource)="onShowSource('o-table-editors-advance', tableEdAdv, exEdAdv)">
     <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
       <o-table fxFill #tableEdAdv attr="tableEdAdv" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
         layout-padding attr="accounts" title="ACCOUNTS" [static-data]="getTableData5()" sort-columns="ACCOUNT:DESC" query-on-init="false"
@@ -224,7 +223,7 @@
         <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
       </o-table>
     </div>
-  </example-comp>
+  </example-comp> -->
 
   <example-comp #ex3 collapsible="no" collapsed="no" [comp-name]="getComponentId('o-table-aggregate')" [files]="getFiles('o-table-aggregate')"
     (showSource)="onShowSource('o-table-aggregate', table3, ex3)">
