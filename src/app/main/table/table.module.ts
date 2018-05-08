@@ -6,6 +6,8 @@ import { TableRoutingModule } from './table-routing.module';
 import { OTableColumnRendererCardTypeComponent } from './render/o-table-column-renderer-cardtype.component';
 import { OTableColumnRendererBalanceComponent } from './render/o-table-column-renderer-balance.component';
 import { OTableColumnRendererTotalReadyComponent } from './render/o-table-column-renderer-totalready.component';
+import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
+
 @NgModule({
   imports: [
     SharedModule,
@@ -16,8 +18,11 @@ import { OTableColumnRendererTotalReadyComponent } from './render/o-table-column
     TableComponent,
     OTableColumnRendererCardTypeComponent,
     OTableColumnRendererBalanceComponent,
-    OTableColumnRendererTotalReadyComponent
-
+    OTableColumnRendererTotalReadyComponent,
+    OTableCellEditorCustomComponent
+  ],
+  entryComponents: [
+    OTableCellEditorCustomComponent
   ]
 })
 export class TableModule { }
