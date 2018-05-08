@@ -15,7 +15,6 @@ export class OTableColumnRendererBalanceComponent extends OBaseTableCellRenderer
 
   constructor(protected injector: Injector) {
     super(injector);
-    // this.initialize();
     this.setComponentPipe();
   }
 
@@ -24,6 +23,7 @@ export class OTableColumnRendererBalanceComponent extends OBaseTableCellRenderer
   }
 
   ngOnInit() {
+    super.ngOnInit();
     this.pipeArguments = {
       currencySimbol: '€',
       currencySymbolPosition: 'right',
