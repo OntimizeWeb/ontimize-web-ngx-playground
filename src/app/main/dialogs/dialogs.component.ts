@@ -1,35 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  OTranslateService,
-  DialogService,
-  ODialogConfig
-} from 'ontimize-web-ngx';
+import { DialogService, ODialogConfig, OTranslateService } from 'ontimize-web-ngx';
+
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
-  <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)" ></o-button>
-  <o-button attr="info" type="RAISED" label="INFO_DIALOG" layout-padding (click)="showInfo($event)" ></o-button>
-  <o-button attr="warn" type="RAISED" label="WARNING_DIALOG" layout-padding (click)="showWarning($event)" ></o-button>
-  <o-button attr="error" type="RAISED" label="ERROR_DIALOG" layout-padding (click)="showError($event)" ></o-button>
+  <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)"></o-button>
+  <o-button attr="info" type="RAISED" label="INFO_DIALOG" layout-padding (click)="showInfo($event)"></o-button>
+  <o-button attr="warn" type="RAISED" label="WARNING_DIALOG" layout-padding (click)="showWarning($event)"></o-button>
+  <o-button attr="error" type="RAISED" label="ERROR_DIALOG" layout-padding (click)="showError($event)"></o-button>
   <o-button attr="confirm" type="RAISED" label="CONFIRM_DIALOG" layout-padding (click)="showConfirm($event)"></o-button>
 `;
 
 const TYPESCRIPT_DATA = `
-import {
-  DialogService,
-  ODialogConfig
-} from 'ontimize-web-ngx';
+  import { Component } from '@angular/core';
+  import { DialogService, ODialogConfig } from 'ontimize-web-ngx';
 
-@Component({
-  selector: 'app-dialogs',
-  templateUrl: './dialogs.component.html',
-  styleUrls: ['./dialogs.component.scss']
-})
+  @Component({
+    selector: 'app-dialogs',
+    templateUrl: './dialogs.component.html',
+    styleUrls: ['./dialogs.component.scss']
+  })
+  export class DialogsComponent {
 
-export class DialogsComponent implements OnInit {
     constructor(
-      protected dialogService: DialogService) {
-    }
+      protected dialogService: DialogService
+    ) { }
 
     showAlert(evt: any) {
       if (this.dialogService) {
@@ -47,7 +42,6 @@ export class DialogsComponent implements OnInit {
           'This is an amazing "Information" dialog', config);
       }
     }
-
 
     showWarning(evt: any) {
       if (this.dialogService) {
@@ -75,6 +69,28 @@ export class DialogsComponent implements OnInit {
         this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?');
       }
     }
+
+    getComponentId() {
+      return 'Dialogs';
+    }
+
+    getFiles() {
+      return [
+        {
+          'type': 'html',
+          'data': HTML_DATA
+        },
+        {
+          'type': 'scss',
+          'data': ''
+        },
+        {
+          'type': 'typescript',
+          'data': TYPESCRIPT_DATA
+        }
+      ];
+    }
+
   }
 `;
 
@@ -88,8 +104,8 @@ export class DialogsComponent implements OnInit {
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService,
-    protected dialogService: DialogService) {
-  }
+    protected dialogService: DialogService
+  ) { }
 
   ngOnInit() {
     const title = this.translateService.get('DIALOGS');
@@ -112,7 +128,6 @@ export class DialogsComponent implements OnInit {
         'This is an amazing "Information" dialog', config);
     }
   }
-
 
   showWarning(evt: any) {
     if (this.dialogService) {

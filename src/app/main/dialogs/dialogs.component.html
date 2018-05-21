@@ -1,15 +1,13 @@
 <div fxLayout="column" fxLayoutAlign="center top" layout-margin>
-
   <example-comp [comp-name]="getComponentId()" [files]="getFiles()" fxFill>
 
-    <div fxLayout="row" layout-padding fxFill>
-      <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)" ></o-button>
-      <o-button attr="info" type="RAISED" label="INFO_DIALOG" layout-padding (click)="showInfo($event)" ></o-button>
-      <o-button attr="warn" type="RAISED" label="WARNING_DIALOG" layout-padding (click)="showWarning($event)" ></o-button>
-      <o-button attr="error" type="RAISED" label="ERROR_DIALOG" layout-padding (click)="showError($event)" ></o-button>
+    <div fxLayout="row" layout-padding fxFill class="dialog-buttons-container">
+      <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)"></o-button>
+      <o-button attr="info" type="RAISED" label="INFO_DIALOG" layout-padding (click)="showInfo($event)"></o-button>
+      <o-button attr="warn" type="RAISED" label="WARNING_DIALOG" layout-padding (click)="showWarning($event)"></o-button>
+      <o-button attr="error" type="RAISED" label="ERROR_DIALOG" layout-padding (click)="showError($event)"></o-button>
       <o-button attr="confirm" type="RAISED" label="CONFIRM_DIALOG" layout-padding (click)="showConfirm($event)"></o-button>
     </div>
 
   </example-comp>
-
 </div>
