@@ -1,0 +1,67 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE" [files]="getFiles('o-table')" (showSource)="onShowSource('o-table', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+
+    <div fxFlex="60" fxLayoutAlign="center center">
+      <o-table #table fxFlex attr="table" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+        visible-columns="PHOTO;NAME;SURNAME;STARTDATE;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
+        [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="getTableData()" [insert-button]="buttonAddToggle.checked"
+        [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked" [delete-button]="buttonRemoveToggle.checked"
+        [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked" [show-table-buttons-text]="showTextToggle.checked"
+        pagination-controls="no">
+
+        <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
+        <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+        <o-table-column attr="PHOTO" orderable="no" searchable="no">
+          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+        </o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
+        <o-table-column attr="action" width="64px">
+          <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
+        </o-table-column>
+      </o-table>
+    </div>
+
+    <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+      <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
+        <mat-slide-toggle #quickFilterToggle checked="true">
+          {{ 'TABLE.FILTER' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #filterCaseSensitiveToggle checked="true">
+          {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+        </mat-slide-toggle>
+      </o-column>
+      <o-column title-label="{{'TABLE.MENU' | oTranslate}}">
+        <mat-slide-toggle #selectMultipleToggle checked="false">
+          {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #exportButtonToggle checked="true">
+          {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #columnsVisibilityToggle checked="true">
+          {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </o-column>
+      <o-column title-label="{{'BUTTONS' | oTranslate}}">
+        <o-row>
+          <div fxFlex="50">
+            <mat-slide-toggle #buttonAddToggle [checked]="false">
+              {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle #buttonRefreshToggle [checked]="false">
+              {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+          <div fxFlex="50">
+            <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}">
+              {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle #showTextToggle checked="true">
+              {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+        </o-row>
+      </o-column>
+    </o-column>
+
+  </div>
+</example-comp>

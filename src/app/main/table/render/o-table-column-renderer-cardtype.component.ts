@@ -1,18 +1,17 @@
-import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Injector, TemplateRef, ViewChild } from '@angular/core';
 import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
 @Component({
-    selector: 'o-table-column-renderer-cardtype',
-    templateUrl: './o-table-column-renderer-cardtype.component.html'
+  selector: 'o-table-column-renderer-cardtype',
+  templateUrl: './o-table-column-renderer-cardtype.component.html'
 })
-
 export class OTableColumnRendererCardTypeComponent extends OBaseTableCellRenderer {
 
-    @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
-    constructor(protected injector: Injector) {
-        super(injector);
-        this.initialize();
-    }
-   
+  constructor(protected injector: Injector) {
+    super(injector);
+    this.initialize();
+  }
+
 }

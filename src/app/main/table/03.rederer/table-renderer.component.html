@@ -1,0 +1,25 @@
+<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_RENDER'" [files]="getFiles('o-table-renderer')"
+  (showSource)="onShowSource('o-table', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table fxFill #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" layout-padding title="ACCOUNTS"
+      [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no"
+      delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+
+      <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION"></o-table-columns-filter>
+
+      <o-table-column attr="PHOTO" orderable="no" searchable="no">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
+      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right"></o-table-column>
+      <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+      <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
+      <o-table-column attr="COMMISSION" title="COMMISSION">
+        <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
+          boolean-type="string"></o-table-cell-renderer-boolean>
+      </o-table-column>
+    </o-table>
+  </div>
+</example-comp>
