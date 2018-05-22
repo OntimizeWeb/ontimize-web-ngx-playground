@@ -1,18 +1,17 @@
-import { Component, Injector, ViewChild, TemplateRef, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'o-table-column-renderer-totalready',
   templateUrl: './o-table-column-renderer-totalready.component.html'
 })
-
 export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRenderer implements OnInit {
 
   @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.setComponentPipe();
+    this.initialize(); this.setComponentPipe();
   }
 
   setComponentPipe() {
@@ -20,7 +19,6 @@ export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRende
   }
 
   ngOnInit() {
-    super.ngOnInit();
     this.pipeArguments = {
       currencySimbol: '€',
       currencySymbolPosition: 'right',
@@ -29,13 +27,11 @@ export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRende
       grouping: true,
       thousandSeparator: '.'
     };
-
   }
 
   getCellData(value: any) {
     let parsedValue: string;
     if (this.componentPipe && typeof this.pipeArguments !== 'undefined' && value !== undefined) {
-
       parsedValue = this.componentPipe.transform(value, this.pipeArguments);
     }
     return parsedValue;
