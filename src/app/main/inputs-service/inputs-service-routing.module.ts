@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ComboComponent } from './combo.component';
+import { InputsServiceComponent } from './inputs-service.component';
 
 export const routes: Routes = [
-  { path: '', component: ComboComponent }
+  { path: '', component: InputsServiceComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ComboRoutingModule { }
+export class InputsServiceRoutingModule { }

@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE" [files]="getFiles('o-table')" (showSource)="onShowSource('o-table', table, ex)">
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')" (showSource)="onShowSource('o-table', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
     <div fxFlex="60" fxLayoutAlign="center center">
@@ -21,7 +21,7 @@
       </o-table>
     </div>
 
-    <o-column attr="conf" title-label="{{ 'TABLE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+    <o-column attr="conf" title-label="{{ 'TABLE.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
       <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
         <mat-slide-toggle #quickFilterToggle checked="true">
           {{ 'TABLE.FILTER' | oTranslate }}

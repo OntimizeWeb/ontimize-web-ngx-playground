@@ -29,25 +29,23 @@ export class ButtonsComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  getComponentId() {
-    return 'Buttons';
-  }
-
   getFiles() {
-    return [
-      {
-        'type': 'html',
-        'data': HTML_DATA
-      },
-      {
-        'type': 'scss',
-        'data': ''
-      },
-      {
-        'type': 'typescript',
-        'data': TYPESCRIPT_DATA
-      }
-    ];
+    return {
+      files: [
+        {
+          'type': 'html',
+          'data': HTML_DATA
+        },
+        {
+          'type': 'scss',
+          'data': ''
+        },
+        {
+          'type': 'typescript',
+          'data': TYPESCRIPT_DATA
+        }
+      ]
+    };
   }
 
 }

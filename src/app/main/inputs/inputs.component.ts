@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 import {
   OTextInputComponent,
@@ -11,9 +11,9 @@ import {
   OEmailInputComponent,
   OPasswordInputComponent,
   OTextareaInputComponent,
-  OListPickerComponent,
   OTranslateService,
-  OFileInputComponent
+  OFileInputComponent,
+  OCheckboxComponent
 } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
@@ -23,22 +23,13 @@ import { InputUtils } from './inputs-utils';
   selector: 'app-inputs',
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.inputs]': 'true'
+  }
 })
 export class InputsComponent implements OnInit, AfterViewInit {
-
-  @ViewChild('input') input: OTextInputComponent;
-  @ViewChild('date') date: ODateInputComponent;
-  @ViewChild('integer') integer: OIntegerInputComponent;
-  @ViewChild('real') real: ORealInputComponent;
-  @ViewChild('percent') percent: OPercentInputComponent;
-  @ViewChild('currency') currency: OCurrencyInputComponent;
-  @ViewChild('nif') nif: ONIFInputComponent;
-  @ViewChild('email') email: OEmailInputComponent;
-  @ViewChild('password') password: OPasswordInputComponent;
-  @ViewChild('textarea') textarea: OTextareaInputComponent;
-  @ViewChild('listpicker') listpicker: OListPickerComponent;
-  @ViewChild('file') file: OFileInputComponent;
 
   protected dateValue: Date;
 
@@ -57,22 +48,7 @@ export class InputsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    try {
-      this.input.isReadOnly = false;
-      this.listpicker.isReadOnly = false;
-      this.integer.isReadOnly = false;
-      this.real.isReadOnly = false;
-      this.percent.isReadOnly = false;
-      this.currency.isReadOnly = false;
-      this.nif.isReadOnly = false;
-      this.email.isReadOnly = false;
-      this.password.isReadOnly = false;
-      this.textarea.isReadOnly = false;
-      this.date.isReadOnly = false;
-      this.file.isReadOnly = false;
-    } catch (e) {
-      console.log('A component is undefined');
-    }
+
   }
 
   getInputValue() {
@@ -127,29 +103,8 @@ export class InputsComponent implements OnInit, AfterViewInit {
     `;
   }
 
-  getListPickerData() {
-    const array: Array<Object> = [];
-    array.push({
-      'CUSTOMERTYPEID': 1,
-      'DESCRIPTION': 'VIP'
-    });
-    array.push({
-      'CUSTOMERTYPEID': 2,
-      'DESCRIPTION': 'Normal'
-    });
-    array.push({
-      'CUSTOMERTYPEID': 3,
-      'DESCRIPTION': 'Other'
-    });
-    return array;
-  }
-
-  getListPickerValue() {
-    return 2;
-  }
-
-  getComponentId(key: string) {
-    return InputUtils.getComponentId(key);
+  getCheckboxValue() {
+    return true;
   }
 
   getFiles(key: string) {

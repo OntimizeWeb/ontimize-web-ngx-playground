@@ -96,10 +96,6 @@ export class ListsComponent implements OnInit {
     return result;
   }
 
-  getComponentId(key: string) {
-    return ListsUtils.getComponentId(key);
-  }
-
   getFiles(key: string, list?: any) {
     return ListsUtils.getFiles(key, list);
   }

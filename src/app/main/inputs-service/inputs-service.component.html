@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="center top" layout-margin>
+
+  <example-comp comp-name="INPUTS.COMBO" [files]="getFiles('combo')" fxFill>
+    <o-form editable-detail="false" show-header="no">
+
+      <div fxLayout="row" layout-padding fxFill>
+        <o-combo attr="combo" label="o-combo (read-only)" layout-padding [static-data]="getDataArray()" [data]="getValue()" value-column="key"
+          columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
+        <o-combo #combo attr="combo-editable" label="o-combo (edit-mode)" layout-padding [static-data]="getDataArray()" [data]="getValue()" value-column="key"
+          columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
+        <o-combo attr="combo-disabled" label="o-combo (disabled)" enabled="no" layout-padding [static-data]="getDataArray()" [data]="getValue()"
+          value-column="key" columns="key;value" visible-columns="value"></o-combo>
+      </div>
+
+    </o-form>
+  </example-comp>
+
+  <example-comp comp-name="INPUTS.LISTPICKER" [files]="getFiles('listpicker')" fxFill>
+    <o-form editable-detail="false" show-header="no">
+
+      <div fxLayout="row" layout-padding fxFill>
+        <o-list-picker attr="listpicker" label="o-list-picker (read-only)" [static-data]="getDataArray()" [data]="getValue()" filter="yes"
+          value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+
+        <o-list-picker #listpicker attr="listpicker2" label="o-list-picker (edit-mode)" [static-data]="getDataArray()" [data]="getValue()" filter="yes"
+          value-column="key" columns="key;value" visible-columns="value" layout-padding required="true" read-only="false" (onChange)="onListPickerChange($event, listpicker)"></o-list-picker>
+
+        <o-list-picker attr="listpicker3" label="o-list-picker (disabled)" [static-data]="getDataArray()" [data]="getValue()" enabled="no"
+          filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+
+      </div>
+    </o-form>
+  </example-comp>
+
+</div>

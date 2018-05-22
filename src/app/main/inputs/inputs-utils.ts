@@ -1,47 +1,5 @@
 export class InputUtils {
 
-  public static getComponentId(key: string) {
-    let compId = '';
-    switch (key) {
-      case 'currency':
-        compId = 'Currency Inputs';
-        break;
-      case 'date':
-        compId = 'Date Inputs';
-        break;
-      case 'email':
-        compId = 'Email Inputs';
-        break;
-      case 'integer':
-        compId = 'Integer Inputs';
-        break;
-      case 'listpicker':
-        compId = 'Listpicker Inputs';
-        break;
-      case 'nif':
-        compId = 'NIF Inputs';
-        break;
-      case 'password':
-        compId = 'Password Inputs';
-        break;
-      case 'percent':
-        compId = 'Percent Inputs';
-        break;
-      case 'real':
-        compId = 'Real Inputs';
-        break;
-      case 'text':
-        compId = 'Text Inputs';
-        break;
-      case 'textarea':
-        compId = 'Textarea Inputs';
-        break;
-      default:
-        break;
-    }
-    return compId;
-  }
-
   public static getFiles(key: string) {
     let tpl = '';
     let ts = '';
@@ -57,9 +15,6 @@ export class InputUtils {
         break;
       case 'integer':
         tpl = INTEGER_HTML_DATA;
-        break;
-      case 'listpicker':
-        tpl = LISTPICKER_HTML_DATA;
         break;
       case 'nif':
         tpl = NIF_HTML_DATA;
@@ -82,6 +37,9 @@ export class InputUtils {
       case 'file':
         tpl = FILE_HTML_DATA;
         break;
+      case 'checkbox':
+        tpl = CHECKBOX_HTML_DATA;
+        break;
       default:
         break;
     }
@@ -98,9 +56,6 @@ export class InputUtils {
         break;
       case 'integer':
         ts = INTEGER_TS_DATA;
-        break;
-      case 'listpicker':
-        ts = LISTPICKER_HTML_DATA;
         break;
       case 'nif':
         ts = NIF_TS_DATA;
@@ -123,23 +78,28 @@ export class InputUtils {
       case 'file':
         ts = '';
         break;
+      case 'checkbox':
+        ts = CHECKBOX_TS_DATA;
+        break;
       default:
         break;
     }
-    return [
-      {
-        'type': 'html',
-        'data': tpl
-      },
-      {
-        'type': 'scss',
-        'data': ''
-      },
-      {
-        'type': 'typescript',
-        'data': ts
-      }
-    ];
+    return {
+      files: [
+        {
+          'type': 'html',
+          'data': tpl
+        },
+        {
+          'type': 'scss',
+          'data': ''
+        },
+        {
+          'type': 'typescript',
+          'data': ts
+        }
+      ]
+    };
   }
 
 
@@ -181,23 +141,6 @@ const INTEGER_HTML_DATA = `
 
 <o-integer-input attr="integer3" label="o-integer disabled" enabled="no"  layout-padding
   [data]="getIntegerValue()" min="0" max="10"></o-integer-input>
-`;
-
-const LISTPICKER_HTML_DATA = `
-<o-list-picker attr="listpicker" label="o-list-picker (read-only)"
-  [static-data]="getListPickerData()" [data]="getListPickerValue()"
-  enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
-  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
-
-<o-list-picker #listpicker attr="listpicker2" label="o-list-picker (read-only)"
-  [static-data]="getListPickerData()" [data]="getListPickerValue()"
-  enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
-  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
-
-<o-list-picker attr="listpicker3" label="o-list-picker (read-only)"
-  [static-data]="getListPickerData()" [data]="getListPickerValue()"
-  enabled="no" filter="yes" value-column="CUSTOMERTYPEID"  columns="CUSTOMERTYPEID;DESCRIPTION"
-  visible-columns="DESCRIPTION" layout-padding></o-list-picker>
 `;
 
 const NIF_HTML_DATA = `
@@ -355,25 +298,32 @@ getTextareaValue() {
 }
 `;
 
-const FILE_HTML_LISTPICKER = `
-getListPickerData() {
-  const array: Array<Object> = [];
-  array.push({
-    'CUSTOMERTYPEID': 1,
-    'DESCRIPTION': 'VIP'
-  });
-  array.push({
-    'CUSTOMERTYPEID': 2,
-    'DESCRIPTION': 'Normal'
-  });
-  array.push({
-    'CUSTOMERTYPEID': 3,
-    'DESCRIPTION': 'Other'
-  });
-  return array;
-}
+const CHECKBOX_HTML_DATA = `
+<o-checkbox attr="check" label="O-checkbox (read-only)"></o-checkbox>
 
-getListPickerValue() {
-  return 2;
-}
+<o-checkbox #checkbox attr="check1" label="O-checkbox (edit mode)"></o-checkbox>
+
+<o-checkbox attr="check2" label="O-checkbox disabled" enabled="no"></o-checkbox>
 `;
+
+const CHECKBOX_TS_DATA = `
+import { Component, ViewChild } from '@angular/core';
+
+import { OCheckboxComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'checkbox-home',
+  moduleId: module.id,
+  styleUrls: ['checkbox-home.component.scss'],
+  templateUrl: 'checkbox-home.component.html'
+})
+export class CheckboxHomeComponent {
+
+  @ViewChild('checkbox') checkBox: OCheckboxComponent;
+
+  constructor() {
+  }
+
+  ngAfterViewInit() {
+  }
+}`;

@@ -1,26 +1,5 @@
 export class ListsUtils {
 
-  public static getComponentId(key: string) {
-    let compId = '';
-    switch (key) {
-      case 'o-list-item-text':
-        compId = 'Customizable list (o-list-item-text)';
-        break;
-      case 'o-list-item-avatar':
-        compId = 'Customizable list (o-list-item-avatar)';
-        break;
-      case 'o-list-item-card':
-        compId = 'Customizable list (o-list-item-card)';
-        break;
-      case 'o-list-item-card-image':
-        compId = 'Customizable list (o-list-item-card-image)';
-        break;
-      default:
-        compId = '';
-        break;
-    }
-    return compId;
-  }
   public static getHtml(key: string, list?: any, itemData?: any) {
     let tpl = '';
     switch (key) {
@@ -90,16 +69,18 @@ export class ListsUtils {
   }
 
   public static getFiles(key: string, list?: any) {
-    return [{
-      'type': 'scss',
-      'data': ''
-    }, {
-      'type': 'typescript',
-      'data': ListsUtils.getTypescript(key)
-    }, {
-      'type': 'html',
-      'data': ' '
-    }];
+    return {
+      files: [{
+        'type': 'scss',
+        'data': ''
+      }, {
+        'type': 'typescript',
+        'data': ListsUtils.getTypescript(key)
+      }, {
+        'type': 'html',
+        'data': ' '
+      }]
+    };
   }
 
   public static getTypescript(key: string) {

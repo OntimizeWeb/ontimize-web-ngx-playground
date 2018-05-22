@@ -6,7 +6,7 @@
         <span> {{ compName | oTranslate }}</span>
         <span fxFlex></span>
 
-        <button *ngIf="!collapsed && (orderedFiles !== undefined) && (orderedFiles.length > 0)" mat-icon-button aria-label="View Source"
+        <button *ngIf="!collapsed && (exampleFiles !== undefined) && (exampleFiles.length > 0)" mat-icon-button aria-label="View Source"
           (click)="toggleShowSource()">
           <mat-icon class="mat-24">code</mat-icon>
         </button>
@@ -22,7 +22,7 @@
       <mat-tab-group *ngIf="showSource">
 
 
-        <mat-tab *ngFor="let file of tabs" [label]="file.type">
+        <mat-tab *ngFor="let file of exampleFiles" [label]="file.type">
           <highlight-comp [template-content]="file.data" [template-type]="file.type"></highlight-comp>
         </mat-tab>
 

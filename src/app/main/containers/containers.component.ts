@@ -38,31 +38,28 @@ export class ContainersComponent implements OnInit {
   protected layoutHorizontal = 'start';
   protected layoutVertical = 'stretch';
 
-  dataHorizontal: Array<Object> = [];
-  dataVertical: Array<Object> = [];
+  dataHorizontal: Array<any> = [
+    { 'value': 'none', 'label': 'none', 'checked': false },
+    { 'value': 'start', 'label': 'start (default)', 'checked': true },
+    { 'value': 'center', 'label': 'center', 'checked': false },
+    { 'value': 'end', 'label': 'end', 'checked': false },
+    { 'value': 'space-around', 'label': 'space-around', 'checked': false },
+    { 'value': 'space-between', 'label': 'space-between', 'checked': false },
+    { 'value': 'space-evenly', 'label': 'space-evenly', 'checked': false }
+  ];
+  dataVertical: Array<any> = [
+    { 'value': 'none', 'label': 'none', 'checked': false },
+    { 'value': 'start', 'label': 'start', 'checked': false },
+    { 'value': 'center', 'label': 'center', 'checked': false },
+    { 'value': 'end', 'label': 'end', 'checked': false },
+    { 'value': 'stretch', 'label': 'stretch (default)', 'checked': true }
+  ];
   protected files: Array<Object> = [];
 
   constructor(protected navigationService: NavigationBarService) {
   }
 
   ngOnInit() {
-    this.dataHorizontal = [
-      { 'value': 'none', 'label': 'none', 'checked': false },
-      { 'value': 'start', 'label': 'start (default)', 'checked': true },
-      { 'value': 'center', 'label': 'center', 'checked': false },
-      { 'value': 'end', 'label': 'end', 'checked': false },
-      { 'value': 'space-around', 'label': 'space-around', 'checked': false },
-      { 'value': 'space-between', 'label': 'space-between', 'checked': false },
-      { 'value': 'space-evenly', 'label': 'space-evenly', 'checked': false }
-    ];
-    this.dataVertical = [
-      { 'value': 'none', 'label': 'none', 'checked': false },
-      { 'value': 'start', 'label': 'start', 'checked': false },
-      { 'value': 'center', 'label': 'center', 'checked': false },
-      { 'value': 'end', 'label': 'end', 'checked': false },
-      { 'value': 'stretch', 'label': 'stretch (default)', 'checked': true }
-    ];
-
     this.files = this.retrieveFiles();
     this.navigationService.setTitle('Layout > Child alignment');
   }
@@ -72,51 +69,43 @@ export class ContainersComponent implements OnInit {
   }
 
   onLayoutChange(evt) {
-    const self = this;
-    window.setTimeout(() => {
-      self.layout = evt.value;
-      self.files = self.retrieveFiles();
-    }, 0);
+    this.layout = evt.value;
+    this.files = this.retrieveFiles();
   }
 
   onLayoutHorizontalChange(evt) {
-    const self = this;
-    window.setTimeout(() => {
-      self.layoutHorizontal = evt.value;
-    }, 0);
+    this.layoutHorizontal = evt.value;
   }
 
   onLayoutVerticalChange(evt) {
-    const self = this;
-    window.setTimeout(() => {
-      self.layoutVertical = evt.value;
-    }, 0);
-  }
-
-  getComponentId() {
-    return this.layout === 'row' ? 'Rows' : 'Columns';
+    this.layoutVertical = evt.value;
   }
 
   getFiles() {
-    return this.files;
+    return { files: this.files };
   }
 
   retrieveFiles() {
     const html = this.layout === 'row' ? HTML_ROW_DATA : HTML_COL_DATA;
-    return [
-      {
-        'type': 'html',
-        'data': html
-      },
-      {
-        'type': 'scss',
-        'data': ''
-      },
-      {
-        'type': 'typescript',
-        'data': TYPESCRIPT_DATA
-      }
-    ];
+    return [{
+      'type': 'html',
+      'data': html
+    },
+    {
+      'type': 'scss',
+      'data': ''
+    },
+    {
+      'type': 'typescript',
+      'data': TYPESCRIPT_DATA
+    }];
   }
 
+  getMainDirection() {
+    return this.layout === 'row' ? 'horizontal' : 'vertical';
+  }
+
+  getSecondaryDirection() {
+    return this.layout === 'column' ? 'horizontal' : 'vertical';
+  }
 }
