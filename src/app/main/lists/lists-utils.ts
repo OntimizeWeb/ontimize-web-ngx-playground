@@ -70,16 +70,15 @@ export class ListsUtils {
 
   public static getFiles(key: string, list?: any) {
     return {
-      files: [{
-        'type': 'scss',
-        'data': ''
-      }, {
-        'type': 'typescript',
+      'html': {
+        'data': undefined
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
         'data': ListsUtils.getTypescript(key)
-      }, {
-        'type': 'html',
-        'data': ' '
-      }]
+      }
     };
   }
 

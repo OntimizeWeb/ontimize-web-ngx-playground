@@ -3,19 +3,20 @@ import {
   ElementRef,
   OnInit,
   OnDestroy,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
   selector: 'highlight-comp',
-  moduleId: module.id,
-  styleUrls: ['highlight.component.scss'],
-  templateUrl: 'highlight.component.html',
+  styleUrls: ['./highlight.component.scss'],
+  templateUrl: './highlight.component.html',
   inputs: [
     'templateContent: template-content',
     'templateType: template-type'
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HighlightComponent implements OnInit, OnDestroy {
 

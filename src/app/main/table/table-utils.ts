@@ -431,46 +431,18 @@ export class TableUtils {
   }
 
   public static getFiles(key: string) {
-    const files = [
-      {
-        'type': 'html',
+    let result: any = {
+      'html': {
         'data': TableUtils.getTypeHtml(key)
       },
-      {
-        'type': 'typescript',
-        'data': TableUtils.getTypescript(key)
+      'scss': {
+        'data': undefined
       },
-      {
-        'type': 'scss',
-        'data': ''
-      }];
-    if (key === 'o-table-renderer-advance') {
-      files.push({
-        'type': 'o-table-column-renderer-cardtype.component.html',
-        'data': TableUtils.getHtmlRendererCardType()
-      });
-      files.push({
-        'type': 'o-table-column-renderer-cardtype.component.ts',
-        'data': TableUtils.getTypescriptRendererCardType()
-      });
-      files.push({
-        'type': 'o-table-column-cell-balance.component.html',
-        'data': TableUtils.getHtmlRendererBalance()
-      });
-      files.push({
-        'type': 'o-table-column-cell-balance.component.ts',
-        'data': TableUtils.getTypescriptRendererBalance()
-      });
-      files.push({
-        'type': 'o-table-column-renderer-totalready.component.html',
-        'data': TableUtils.getHtmlRendererTotalReady()
-      });
-      files.push({
-        'type': 'o-table-column-renderer-totalready.component.ts',
-        'data': TableUtils.getTypescriptRendererTotalReady()
-      });
-    }
-    return files;
+      'typescript': {
+        'data': TableUtils.getTypescript(key)
+      }
+    };
+    return result;
   }
 
   public static getTypescript(key: string) {

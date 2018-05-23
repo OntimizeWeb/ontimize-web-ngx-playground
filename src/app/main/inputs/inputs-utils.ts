@@ -85,20 +85,15 @@ export class InputUtils {
         break;
     }
     return {
-      files: [
-        {
-          'type': 'html',
-          'data': tpl
-        },
-        {
-          'type': 'scss',
-          'data': ''
-        },
-        {
-          'type': 'typescript',
-          'data': ts
-        }
-      ]
+      'html': {
+        'data': tpl
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
+        'data': ts
+      }
     };
   }
 

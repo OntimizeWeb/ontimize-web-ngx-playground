@@ -54,7 +54,7 @@ export class ContainersComponent implements OnInit {
     { 'value': 'end', 'label': 'end', 'checked': false },
     { 'value': 'stretch', 'label': 'stretch (default)', 'checked': true }
   ];
-  protected files: Array<Object> = [];
+  protected files: any = {};
 
   constructor(protected navigationService: NavigationBarService) {
   }
@@ -82,23 +82,22 @@ export class ContainersComponent implements OnInit {
   }
 
   getFiles() {
-    return { files: this.files };
+    return this.files;
   }
 
   retrieveFiles() {
     const html = this.layout === 'row' ? HTML_ROW_DATA : HTML_COL_DATA;
-    return [{
-      'type': 'html',
-      'data': html
-    },
-    {
-      'type': 'scss',
-      'data': ''
-    },
-    {
-      'type': 'typescript',
-      'data': TYPESCRIPT_DATA
-    }];
+    return {
+      'html': {
+        'data': html
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
+        'data': TYPESCRIPT_DATA
+      }
+    };
   }
 
   getMainDirection() {

@@ -163,32 +163,29 @@ export class InputsServiceComponent implements OnInit, AfterViewInit {
   }
 
   getFiles(key: string) {
-    let resultArray = [{
-      'type': 'html',
-      'data': undefined
-    },
-    {
-      'type': 'scss',
-      'data': ''
-    },
-    {
-      'type': 'typescript',
-      'data': undefined
-    }];
+    let result = {
+      'html': {
+        'data': undefined
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
+        'data': undefined
+      }
+    };
 
     switch (key) {
       case 'combo':
-        resultArray[0]['data'] = COMBO_HTML_DATA;
-        resultArray[2]['data'] = COMBO_TYPESCRIPT_DATA;
+      result.html.data = COMBO_HTML_DATA;
+      result.typescript.data = COMBO_TYPESCRIPT_DATA;
         break;
       case 'listpicker':
-        resultArray[0]['data'] = LISTPICKER_HTML_DATA;
-        resultArray[2]['data'] = LISTPICKER_TYPESCRIPT_DATA;
+      result.html.data = LISTPICKER_HTML_DATA;
+      result.typescript.data = LISTPICKER_TYPESCRIPT_DATA;
         break;
     }
-    return {
-      files: resultArray
-    };
+    return result;
   }
 
   onListPickerChange(value: any, listPicker: OListPickerComponent) {

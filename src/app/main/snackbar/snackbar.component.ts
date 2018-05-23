@@ -38,20 +38,15 @@ export class SnackBarComponent implements OnInit {
 
   getFiles() {
     return {
-      files: [
-        {
-          'type': 'html',
-          'data': HTML_DATA
-        },
-        {
-          'type': 'scss',
-          'data': ''
-        },
-        {
-          'type': 'typescript',
-          'data': TYPESCRIPT_DATA
-        }
-      ]
+      'html': {
+        'data': HTML_DATA
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
+        'data': TYPESCRIPT_DATA
+      }
     };
   }
 

@@ -2,6 +2,12 @@ import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit, ChangeD
 import { InputConverter } from 'ontimize-web-ngx';
 import { Console } from '@angular/core/src/console';
 
+export interface IFiles {
+  html?: any;
+  scss?: any;
+  typescript?: any;
+  files?: any[];
+}
 @Component({
   selector: 'example-comp',
   styleUrls: ['example.component.scss'],
@@ -21,12 +27,12 @@ import { Console } from '@angular/core/src/console';
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExampleComponent implements OnInit {
+export class ExampleComponent {
+  aditionalTabs: any[];
 
   showSource = false;
   compName = '';
-  files: any = {};
-  exampleFiles: any[] = [];
+  files: IFiles = {};
 
   @InputConverter()
   collapsible: boolean = false;
@@ -50,30 +56,8 @@ export class ExampleComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.exampleFiles = this.files.files || [];
-    // this.initilizeData();
-  }
-
-  // initilizeData() {
-  //   if (this.orderedFiles) {
-  //     this.orderedFiles.map(x => {
-  //       if (x.type !== '' && x.data !== '') {
-  //         const item = {};
-  //         item['type'] = x.type;
-  //         item['data'] = x.data;
-  //         this.tabs.push(item);
-  //       }
-  //     });
-  //   }
-  // };
-
-  set html(value: string) {
-    for (const tab of this.exampleFiles) {
-      if (tab.type === 'html') {
-        tab.data = value;
-      }
-    }
+  ngAfterViewInit() {
+    this.aditionalTabs = this.files.files;
   }
 }
 
