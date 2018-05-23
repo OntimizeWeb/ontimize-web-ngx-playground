@@ -16,6 +16,7 @@ import { TableTotalComponent } from './06.total/table-total.component';
 import { TableCalculatedColumnComponent } from './07.calculatedcolumn/table-calculated-column.component';
 import { TablePaginationComponent } from './08.pagination/table-pagination.component';
 import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.component';
+import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.c
     TableContextMenuComponent,
     OTableColumnRendererCardTypeComponent,
     OTableColumnRendererBalanceComponent,
-    OTableColumnRendererTotalReadyComponent
+    OTableColumnRendererTotalReadyComponent,
+    OTableCellEditorCustomComponent
   ]
 })
 export class TableModule { }
