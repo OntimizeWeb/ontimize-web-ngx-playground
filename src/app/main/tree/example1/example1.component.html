@@ -1,13 +1,12 @@
 <div fxLayout="row" layout-padding fxLayoutAlign="center stretch" fxFlexFill>
-  <div fxLayout="column" layout-padding fxLayoutAlign="center stretch" fxFlex="55">
-    <o-tree #treeview fxFlex  service="itemtype" entity="itemtypeclass"
-      columns="iditemtypeclass;itemtypeclassdescription;iditemcategory;itemtypeclasscode"
-      keys="iditemtypeclass"
-      description-columns="itemtypeclassdescription;itemtypeclasscode"
-      separator=";" parent-column="iditemtypeclassparent"
-      recursive="true" query-on-init="true" service-type="DummyService"
-
-      root-title="ARBOL"
+  <div fxLayout="column" layout-padding fxLayoutAlign="center stretch" fxFlex="35">
+    <o-tree #treeview fxFlex
+      service="customers" entity="customer"
+      keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      description-columns="SURNAME;NAME" separator=", "
+      recursive="no" query-on-init="true"
+      service-type="DummyService"
+      root-title="EXAMPLE_TREE"
       [title]="treeTitle.value"
       [controls]="controlsToggle.checked"
       [quick-filter]="quickFilterToggle.checked"
@@ -19,7 +18,7 @@
     </o-tree>
 
   </div>
-  <div fxLayout="column" layout-padding fxLayoutAlign="start stretch" fxFlex="45">
+  <div fxLayout="column" layout-padding fxLayoutAlign="start stretch" fxFlex="65">
 
       <o-column title-label="{{ 'TREE_CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
           <mat-form-field fxFlex="95">
@@ -40,7 +39,7 @@
 
       </o-column>
 
-      <o-column title-label="{{ 'TREE_OUTPUTS' | oTranslate }}" elevation="0" fxFlex="60" layout-padding layout-align="center">
+      <o-column class="event-column" title-label="{{ 'TREE_OUTPUTS' | oTranslate }}" elevation="0" fxFlex="60" layout-padding layout-align="center">
           <div *ngFor="let ev of treeEvents">
             {{ ev.event }}
           </div>

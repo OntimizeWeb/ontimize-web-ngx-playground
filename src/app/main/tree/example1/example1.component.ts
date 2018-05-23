@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OTranslateService, SnackBarService, OSnackBarConfig } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
@@ -12,7 +12,11 @@ const TYPESCRIPT_DATA = `
 @Component({
   selector: 'example1',
   templateUrl: './example1.component.html',
-  styleUrls: ['./example1.component.scss']
+  styleUrls: ['./example1.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.tree-example1]': 'true'
+  }
 })
 export class TreeExample1Component implements OnInit {
 
@@ -29,25 +33,18 @@ export class TreeExample1Component implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  getComponentId() {
-    return 'Tree';
-  }
-
   getFiles() {
-    return [
-      {
-        'type': 'html',
+    return {
+      'html': {
         'data': HTML_DATA
       },
-      {
-        'type': 'scss',
-        'data': ''
+      'scss': {
+        'data': undefined
       },
-      {
-        'type': 'typescript',
+      'typescript': {
         'data': TYPESCRIPT_DATA
       }
-    ];
+    };
   }
 
   nodeSelected(arg: any) {

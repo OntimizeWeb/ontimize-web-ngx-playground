@@ -3,428 +3,414 @@
   "message": "",
   "data": [
     {
-      "creationdate": "12:19:52",
-      "iditemcategory": "f7d5971a-52ae-4df4-b36c-d5e3d95ed6fb",
-      "updatedate": "10:05:27",
-      "itemtypeclassdescription": "Actividad de la Administración",
-      "itemtypeclasspath": "ACT-ADMINISTRACION",
-      "itemcategorydescription": "Actividad",
-      "itemtypeclasscode": "ACT-ADMINISTRACION",
-      "itemcategorycode": "ACTIVITY",
-      "iditemtypeclass": "0d09dc23-86b0-44e4-a954-9851527ed1f2"
+      "SURNAME": "Lawrence",
+      "CUSTOMERID": 7511,
+      "NAME": "Daisyk"
     },
     {
-      "creationdate": "12:20:07",
-      "iditemcategory": "f7d5971a-52ae-4df4-b36c-d5e3d95ed6fb",
-      "updatedate": "10:06:19",
-      "itemtypeclassdescription": "Actividad de la Ciudadania",
-      "itemtypeclasspath": "ACT-CIUDADANIA",
-      "itemcategorydescription": "Actividad",
-      "itemtypeclasscode": "ACT-CIUDADANIA",
-      "itemcategorycode": "ACTIVITY",
-      "iditemtypeclass": "e2f52003-2429-4ac4-91d0-3c2586d24653"
+      "SURNAME": "Alan",
+      "CUSTOMERID": 10602,
+      "NAME": "James"
     },
     {
-      "creationdate": "12:20:20",
-      "iditemcategory": "f7d5971a-52ae-4df4-b36c-d5e3d95ed6fb",
-      "updatedate": "10:06:05",
-      "itemtypeclassdescription": "Actividad económica",
-      "itemtypeclasspath": "ACT-ECONOMICA",
-      "itemcategorydescription": "Actividad",
-      "itemtypeclasscode": "ACT-ECONOMICA",
-      "itemcategorycode": "ACTIVITY",
-      "iditemtypeclass": "5dc368e0-6c8f-4978-b220-67eda69faf0d"
+      "SURNAME": "Smith",
+      "CUSTOMERID": 10603,
+      "NAME": "Lucie"
     },
     {
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "itemtypeclasspath": "BIENES-MUEBLES",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemcategorycode": "INVENTORY",
-      "itemtypeclassdescription": "Bienes Muebles",
-      "iditemtypeclass": "88854df3-ee47-4470-9f82-dfdd7bdf2467",
-      "itemtypeclasscode": "BIENES-MUEBLES",
-      "itemcategorydescription": "Inventario"
+      "SURNAME": "Bugle",
+      "CUSTOMERID": 10604,
+      "NAME": "Mark"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Mobiliario de oficina",
-      "itemtypeclasspath": "BIENES-MUEBLES > MOBILIARIO-OFICINA ",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "MOBILIARIO-OFICINA ",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "79f19b68-dbda-483d-b127-ca03979159ee",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "88854df3-ee47-4470-9f82-dfdd7bdf2467"
+      "SURNAME": "Murray",
+      "CUSTOMERID": 10605,
+      "NAME": "Clarette"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:12:47",
-      "itemtypeclassdescription": "Edificaciones y Construcciones",
-      "itemtypeclasspath": "IMMUEBLES",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "IMMUEBLES",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "e7ec2415-561c-4c8d-94d4-28ceb3f5cdc9",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png"
+      "SURNAME": "Baños Márqueza",
+      "CUSTOMERID": 10606,
+      "NAME": "Tomás Miguel"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:12:06",
-      "itemtypeclassdescription": "Construcciones",
-      "itemtypeclasspath": "IMMUEBLES > CONSTRUCCION",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "CONSTRUCCION",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "74e70ed5-c3ad-408a-865e-8f851b3adafc",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "e7ec2415-561c-4c8d-94d4-28ceb3f5cdc9"
+      "SURNAME": "Buendía Lorente",
+      "CUSTOMERID": 10607,
+      "NAME": "Lidya Esther"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "observations": "",
-      "updatedate": "10:12:13",
-      "itemtypeclassdescription": "Edificaciones",
-      "itemtypeclasspath": "IMMUEBLES > EDIFICIOS",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "EDIFICIOS",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "097ebcb9-2e79-4c21-81e5-f27c70774ae4",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "e7ec2415-561c-4c8d-94d4-28ceb3f5cdc9"
+      "SURNAME": "Buttercup",
+      "CUSTOMERID": 10808,
+      "NAME": "Billy"
     },
     {
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemcategorycode": "INVENTORY",
-      "creationdate": "12:10:06",
-      "itemtypeclassdescription": "Servicios de utilidad pública",
-      "iditemtypeclass": "d0950d2d-ab1c-4eda-abd2-c525cf5d6550",
-      "itemtypeclasscode": "SERVICIOS-DE-UTILIDAD-PÚBLICA",
-      "itemcategorydescription": "Inventario"
+      "SURNAME": "C.Johnson",
+      "CUSTOMERID": 10810,
+      "NAME": "Marie"
     },
     {
-      "creationdate": "12:10:18",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Conducciones y energía",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "CONDUCCIONES-Y-ENERGÍA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "29411fb3-0199-477e-bcf1-7c3f14e297f8",
-      "iditemtypeclassparent": "d0950d2d-ab1c-4eda-abd2-c525cf5d6550"
+      "SURNAME": "Fernández Blanco",
+      "CUSTOMERID": 10811,
+      "NAME": "Pablo"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:16:43",
-      "itemtypeclassdescription": "Distribución del Agua",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > AGUA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "AGUA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "0c2e5b7a-c2ff-4411-a02d-037f8b14555e",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Windflower",
+      "CUSTOMERID": 10812,
+      "NAME": "Abie"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:15:08",
-      "itemtypeclassdescription": "Alumbrado",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > ALUMBRADO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "ALUMBRADO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "0c711d4c-d729-4e1a-a63d-fe6ceeedb0f6",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Poppy",
+      "CUSTOMERID": 10813,
+      "NAME": "Chistine"
     },
     {
-      "creationdate": "12:17:11",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:17:18",
-      "itemtypeclassdescription": "Red de Combustible",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > COMBUSTIBLE",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "COMBUSTIBLE",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "c3c5a242-5b3e-4487-8cff-1dee1a2a2fcf",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Rose",
+      "CUSTOMERID": 10814,
+      "NAME": "Bernice"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:14:38",
-      "itemtypeclassdescription": "Red eléctrica",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > RED-ELECTRICA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "RED-ELECTRICA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "00e2e984-aa5a-444f-9780-8e96facbe985",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Corbirock",
+      "CUSTOMERID": 10815,
+      "NAME": "Bridget"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:16:48",
-      "itemtypeclassdescription": "Saneamiento",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > SANEAMIENTO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "SANEAMIENTO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "b68ad54b-e44b-4db6-89e6-25a5413d491b",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Green",
+      "CUSTOMERID": 10834,
+      "NAME": "John"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:17:02",
-      "itemtypeclassdescription": "Red de telecomunicaciones",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > CONDUCCIONES-Y-ENERGÍA > TELECOMUNICACIONES",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TELECOMUNICACIONES",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "c384ee91-701f-430d-8703-7bac0ae84d50",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "29411fb3-0199-477e-bcf1-7c3f14e297f8"
+      "SURNAME": "Schwarzkopf",
+      "CUSTOMERID": 19270,
+      "NAME": "Adolph"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:10:38",
-      "itemtypeclassdescription": "Parques y jardines",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > PARQUES",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "PARQUES",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "4404ee50-53f7-4706-9626-325db2b30e94",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "d0950d2d-ab1c-4eda-abd2-c525cf5d6550"
+      "SURNAME": "Engels",
+      "CUSTOMERID": 19271,
+      "NAME": "Aubrey"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:15:41",
-      "itemtypeclassdescription": "Residuos",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > RESIDUOS",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "RESIDUOS",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "65e52b32-9f2d-4d4c-95ab-baea29838e65",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "d0950d2d-ab1c-4eda-abd2-c525cf5d6550"
+      "SURNAME": "Schmidt",
+      "CUSTOMERID": 19272,
+      "NAME": "Egbert"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "12:15:30",
-      "itemtypeclassdescription": "Turismo",
-      "itemtypeclasspath": "SERVICIOS-DE-UTILIDAD-PÚBLICA > TURISMO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TURISMO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "4e9df4d3-78a4-43db-a857-533f60a743f8",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "d0950d2d-ab1c-4eda-abd2-c525cf5d6550"
+      "SURNAME": "Müller",
+      "CUSTOMERID": 19273,
+      "NAME": "Frieda"
     },
     {
-      "itemtypeclasspath": "SUELO",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemcategorycode": "INVENTORY",
-      "creationdate": "12:48:59",
-      "itemtypeclassdescription": "Suelo",
-      "iditemtypeclass": "3abbacea-dfde-48e9-ba71-c06c831646a6",
-      "itemtypeclasscode": "SUELO",
-      "itemcategorydescription": "Inventario"
+      "SURNAME": "Meyer",
+      "CUSTOMERID": 19274,
+      "NAME": "Gretchen"
     },
     {
-      "creationdate": "10:15:37",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:15:43",
-      "itemtypeclassdescription": "Hidrografía",
-      "itemtypeclasspath": "SUELO > HIDROGRAFIA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "HIDROGRAFIA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "37fabf24-5ad2-465e-8f28-5b80585dc7a2",
-      "iditemtypeclassparent": "3abbacea-dfde-48e9-ba71-c06c831646a6"
+      "SURNAME": "Fischer",
+      "CUSTOMERID": 19320,
+      "NAME": "Heidi"
     },
     {
-      "creationdate": "10:15:48",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:15:52",
-      "itemtypeclassdescription": "Topografía",
-      "itemtypeclasspath": "SUELO > TOPOGRAFIA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TOPOGRAFIA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "0cbc2398-9ace-4a57-b3f9-9d864d74fdb7",
-      "iditemtypeclassparent": "3abbacea-dfde-48e9-ba71-c06c831646a6"
+      "SURNAME": "Schneider",
+      "CUSTOMERID": 19321,
+      "NAME": "Helmuth"
     },
     {
-      "creationdate": "10:15:57",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:16:06",
-      "itemtypeclassdescription": "Uso del Suelo",
-      "itemtypeclasspath": "SUELO > USO-SUELO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "USO-SUELO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "1933497a-6c63-40f7-ac2c-d8867cbd0714",
-      "iditemtypeclassparent": "3abbacea-dfde-48e9-ba71-c06c831646a6"
+      "SURNAME": "Metzger",
+      "CUSTOMERID": 19322,
+      "NAME": "Lancelot"
     },
     {
-      "itemtypeclasspath": "TRANSPORTE",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemcategorycode": "INVENTORY",
-      "creationdate": "10:10:17",
-      "itemtypeclassdescription": "Transporte",
-      "iditemtypeclass": "36fa0342-3aa6-4f47-bd95-bdb0b4ff459d",
-      "itemtypeclasscode": "TRANSPORTE",
-      "itemcategorydescription": "Inventario"
+      "SURNAME": "Töpfer",
+      "CUSTOMERID": 19323,
+      "NAME": "Luther"
     },
     {
-      "creationdate": "10:10:48",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Aire",
-      "itemtypeclasspath": "TRANSPORTE > AIRE",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "AIRE",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "1260d830-7280-4f56-9994-fc03a8f01397",
-      "iditemtypeclassparent": "36fa0342-3aa6-4f47-bd95-bdb0b4ff459d"
+      "SURNAME": "Weffer",
+      "CUSTOMERID": 19324,
+      "NAME": "Erick"
     },
     {
-      "creationdate": "10:10:45",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Mar",
-      "itemtypeclasspath": "TRANSPORTE > MAR",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "MAR",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "54107e42-b832-4c20-94ca-efa7c4947771",
-      "iditemtypeclassparent": "36fa0342-3aa6-4f47-bd95-bdb0b4ff459d"
+      "SURNAME": "Matius",
+      "CUSTOMERID": 19325,
+      "NAME": "Adelbert"
     },
     {
-      "creationdate": "10:10:51",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Rail",
-      "itemtypeclasspath": "TRANSPORTE > RAIL",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "RAIL",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "61c153b9-7d5e-467f-9f86-83980e60d84b",
-      "iditemtypeclassparent": "36fa0342-3aa6-4f47-bd95-bdb0b4ff459d"
+      "SURNAME": "Smit",
+      "CUSTOMERID": 19326,
+      "NAME": "Hiltrud"
     },
     {
-      "creationdate": "10:10:42",
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "itemtypeclassdescription": "Tierra",
-      "itemtypeclasspath": "TRANSPORTE > TIERRA",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TIERRA",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "cf292acc-3659-4ceb-ba0b-b4efe723231b",
-      "iditemtypeclassparent": "36fa0342-3aa6-4f47-bd95-bdb0b4ff459d"
+      "SURNAME": "Jansen",
+      "CUSTOMERID": 19327,
+      "NAME": "Kees"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:13:00",
-      "itemtypeclassdescription": "Tráfico",
-      "itemtypeclasspath": "TRANSPORTE > TIERRA > TRAFICO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TRAFICO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "c71575f3-1df3-4c95-a22f-98693bb4de3c",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "cf292acc-3659-4ceb-ba0b-b4efe723231b"
+      "SURNAME": "van Bruggen",
+      "CUSTOMERID": 19328,
+      "NAME": "Piet"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:13:10",
-      "itemtypeclassdescription": "Transporte público",
-      "itemtypeclasspath": "TRANSPORTE > TIERRA > TRANSPORTE-PUBLICO",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "TRANSPORTE-PUBLICO",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "40966224-f154-485e-aa45-8a70a79ebffd",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "cf292acc-3659-4ceb-ba0b-b4efe723231b"
+      "SURNAME": " de Groot",
+      "CUSTOMERID": 19329,
+      "NAME": "Sjon"
     },
     {
-      "iditemcategory": "a9377e6e-aede-448a-ac5f-5e705d99dafe",
-      "updatedate": "10:13:48",
-      "itemtypeclassdescription": "Vías públicas y caminos",
-      "itemtypeclasspath": "TRANSPORTE > TIERRA > VIAS-PUBLICAS",
-      "itemcategorydescription": "Inventario",
-      "itemtypeclasscode": "VIAS-PUBLICAS",
-      "itemcategorycode": "INVENTORY",
-      "iditemtypeclass": "852c4bb7-d9f1-47c5-acde-193e54b3f3b9",
-      "iconreference": "itemstypeicons/iconoINVENTORY.png",
-      "iditemtypeclassparent": "cf292acc-3659-4ceb-ba0b-b4efe723231b"
+      "SURNAME": "Van Rijn",
+      "CUSTOMERID": 19330,
+      "NAME": "Maikol"
     },
     {
-      "creationdate": "10:07:34",
-      "iditemcategory": "45d2b79d-8a73-406b-878d-b28e301e1278",
-      "updatedate": "10:07:38",
-      "itemtypeclassdescription": "Población",
-      "itemtypeclasspath": "POBLACION",
-      "itemcategorydescription": "Población",
-      "itemtypeclasscode": "POBLACION",
-      "itemcategorycode": "POPULATION",
-      "iditemtypeclass": "9a58495f-ddd4-44a4-9c01-4b6b1cd9f636"
+      "SURNAME": "van Wijk",
+      "CUSTOMERID": 19331,
+      "NAME": "Sjaak"
     },
     {
-      "iconreference": "itemstypeicons/iconoTERRITORY.png",
-      "itemtypeclasspath": "ADMIN-DIVISION",
-      "iditemcategory": "2f928fe5-cf53-47b3-a537-dcb6acd99d8f",
-      "itemcategorycode": "TERRITORY",
-      "itemtypeclassdescription": "Divisiones administrativas",
-      "iditemtypeclass": "955cdb29-9fe6-48d5-9dfc-376643ed76e3",
-      "itemtypeclasscode": "ADMIN-DIVISION",
-      "itemcategorydescription": "Territorio"
+      "SURNAME": "van Serooskerken",
+      "CUSTOMERID": 19332,
+      "NAME": "Petrik"
     },
     {
-      "creationdate": "01:50:29",
-      "iditemcategory": "2f928fe5-cf53-47b3-a537-dcb6acd99d8f",
-      "updatedate": "10:04:37",
-      "itemtypeclassdescription": "Catastro",
-      "itemtypeclasspath": "CATASTRO",
-      "itemcategorydescription": "Territorio",
-      "itemtypeclasscode": "CATASTRO",
-      "itemcategorycode": "TERRITORY",
-      "iditemtypeclass": "388b11be-7b04-4f52-8878-b3b832fe82f0"
+      "SURNAME": "Van Dyck",
+      "CUSTOMERID": 19333,
+      "NAME": "Steve"
     },
     {
-      "itemtypeclasspath": "MODELOS-GEOGRÁFICOS",
-      "iditemcategory": "2f928fe5-cf53-47b3-a537-dcb6acd99d8f",
-      "itemcategorycode": "TERRITORY",
-      "creationdate": "10:04:52",
-      "itemtypeclassdescription": "Modelos Geográficos",
-      "iditemtypeclass": "e7ea522b-2bb0-496c-a1bb-7da1de709732",
-      "itemtypeclasscode": "MODELOS-GEOGRÁFICOS",
-      "itemcategorydescription": "Territorio"
+      "SURNAME": "Timmerman",
+      "CUSTOMERID": 19334,
+      "NAME": "Olinda"
     },
     {
-      "iditemcategory": "2f928fe5-cf53-47b3-a537-dcb6acd99d8f",
-      "updatedate": "10:04:56",
-      "itemtypeclassdescription": "Open Street Maps",
-      "itemtypeclasspath": "MODELOS-GEOGRÁFICOS > OSM",
-      "itemcategorydescription": "Territorio",
-      "itemtypeclasscode": "OSM",
-      "itemcategorycode": "TERRITORY",
-      "iditemtypeclass": "08f907d6-792f-41d3-93b9-262c5a5074f9",
-      "iditemtypeclassparent": "e7ea522b-2bb0-496c-a1bb-7da1de709732"
+      "SURNAME": "Van Dijk",
+      "CUSTOMERID": 19335,
+      "NAME": "Nixie"
+    },
+    {
+      "SURNAME": "De Jong",
+      "CUSTOMERID": 19336,
+      "NAME": "Marlene"
+    },
+    {
+      "SURNAME": "Bakker",
+      "CUSTOMERID": 19337,
+      "NAME": "Louise"
+    },
+    {
+      "SURNAME": "Visser",
+      "CUSTOMERID": 19338,
+      "NAME": "Schmetterling"
+    },
+    {
+      "SURNAME": "de Gaulle",
+      "CUSTOMERID": 19339,
+      "NAME": "Jacques"
+    },
+    {
+      "SURNAME": "d'Orléans",
+      "CUSTOMERID": 19340,
+      "NAME": "Jean"
+    },
+    {
+      "SURNAME": "d'Estaing",
+      "CUSTOMERID": 19341,
+      "NAME": "Marie"
+    },
+    {
+      "SURNAME": "Vieuville ",
+      "CUSTOMERID": 19342,
+      "NAME": "Julia"
+    },
+    {
+      "SURNAME": "Galouzeau",
+      "CUSTOMERID": 19343,
+      "NAME": "Jeanne"
+    },
+    {
+      "SURNAME": "al-Fulan",
+      "CUSTOMERID": 19344,
+      "NAME": "Abbud"
+    },
+    {
+      "SURNAME": "Khalid",
+      "CUSTOMERID": 19345,
+      "NAME": "Abdel Khâliq"
+    },
+    {
+      "SURNAME": "Sharifah",
+      "CUSTOMERID": 19346,
+      "NAME": "Baraka"
+    },
+    {
+      "SURNAME": "Khalid",
+      "CUSTOMERID": 19347,
+      "NAME": "Jawhar"
+    },
+    {
+      "SURNAME": "Papamakarios",
+      "CUSTOMERID": 19348,
+      "NAME": "Adelphos"
+    },
+    {
+      "SURNAME": "Thalassinos",
+      "CUSTOMERID": 19349,
+      "NAME": "Ambrosine"
+    },
+    {
+      "SURNAME": "Nikopolidis",
+      "CUSTOMERID": 19350,
+      "NAME": "Andromeda"
+    },
+    {
+      "SURNAME": "Kirgyakos",
+      "CUSTOMERID": 19351,
+      "NAME": "Adonis"
+    },
+    {
+      "SURNAME": "Christopoulos",
+      "CUSTOMERID": 19352,
+      "NAME": "Elektra"
+    },
+    {
+      "SURNAME": "Mao",
+      "CUSTOMERID": 19353,
+      "NAME": "Tsang"
+    },
+    {
+      "SURNAME": "Qian",
+      "CUSTOMERID": 19354,
+      "NAME": "Zedong"
+    },
+    {
+      "SURNAME": "Pérez Miguelez",
+      "CUSTOMERID": 19355,
+      "NAME": "Paco"
+    },
+    {
+      "SURNAME": "Vazquez Santos",
+      "CUSTOMERID": 19356,
+      "NAME": "Paula"
+    },
+    {
+      "SURNAME": "Míguez Martinez",
+      "CUSTOMERID": 19357,
+      "NAME": "Ana"
+    },
+    {
+      "SURNAME": "López Piñeiro",
+      "CUSTOMERID": 19358,
+      "NAME": "Jose"
+    },
+    {
+      "SURNAME": "Dominguez ",
+      "CUSTOMERID": 19359,
+      "NAME": "Juan"
+    },
+    {
+      "SURNAME": "Nuñez Fernandez",
+      "CUSTOMERID": 19360,
+      "NAME": "Maria"
+    },
+    {
+      "SURNAME": "Santos Rodríguez",
+      "CUSTOMERID": 19361,
+      "NAME": "Carlos Manuel"
+    },
+    {
+      "SURNAME": "Brown",
+      "CUSTOMERID": 19362,
+      "NAME": "Philippe"
+    },
+    {
+      "SURNAME": "Calaghan",
+      "CUSTOMERID": 19363,
+      "NAME": "Michael"
+    },
+    {
+      "SURNAME": "Ashworth",
+      "CUSTOMERID": 19364,
+      "NAME": "Sue"
+    },
+    {
+      "SURNAME": "Andersen",
+      "CUSTOMERID": 19365,
+      "NAME": "Wing"
+    },
+    {
+      "SURNAME": "Martínez Kirsten",
+      "CUSTOMERID": 19381,
+      "NAME": "Pablo"
+    },
+    {
+      "SURNAME": "Londhe",
+      "CUSTOMERID": 19387,
+      "NAME": "vikas"
+    },
+    {
+      "SURNAME": "Ignacio",
+      "CUSTOMERID": 19393,
+      "NAME": "Salinas"
+    },
+    {
+      "SURNAME": "Genaro",
+      "CUSTOMERID": 19395,
+      "NAME": "Iglesias"
+    },
+    {
+      "SURNAME": "Rogelia",
+      "CUSTOMERID": 19397,
+      "NAME": "Fecha"
+    },
+    {
+      "SURNAME": "Eladio",
+      "CUSTOMERID": 19398,
+      "NAME": "Martínez"
+    },
+    {
+      "SURNAME": "Agustín",
+      "CUSTOMERID": 19399,
+      "NAME": "Lorenzo"
+    },
+    {
+      "SURNAME": "Jacinto",
+      "CUSTOMERID": 19400,
+      "NAME": "Villar"
+    },
+    {
+      "SURNAME": "Eudaldo",
+      "CUSTOMERID": 19401,
+      "NAME": "Hernandez"
+    },
+    {
+      "SURNAME": "Cristina",
+      "CUSTOMERID": 19403,
+      "NAME": "Cifuentes"
+    },
+    {
+      "SURNAME": "Jesucristo",
+      "CUSTOMERID": 19404,
+      "NAME": "Pérez"
+    },
+    {
+      "SURNAME": "Plácido",
+      "CUSTOMERID": 19405,
+      "NAME": "Domingo"
+    },
+    {
+      "SURNAME": "Gonzalo",
+      "CUSTOMERID": 19406,
+      "NAME": "López"
+    },
+    {
+      "SURNAME": "Carlos",
+      "CUSTOMERID": 19407,
+      "NAME": "Puente"
+    },
+    {
+      "SURNAME": "Martínez",
+      "CUSTOMERID": 19421,
+      "NAME": "Gonzalo"
     }
   ],
   "sqlTypes": {
-    "creationdate": 92,
-    "iditemcategory": 1111,
-    "updatedate": 92,
-    "observations": 12,
-    "creationuser": 12,
-    "itemtypeclassdescription": 12,
-    "updateuser": 12,
-    "itemtypeclasspath": 12,
-    "itemcategorydescription": 12,
-    "itemcategorycode": 12,
-    "itemtypeclasscode": 12,
-    "iditemtypeclass": 1111,
-    "iconreference": 12,
-    "iditemtypeclassparent": 1111
+    "SURNAME": 12,
+    "NAME": 12,
+    "CUSTOMERID": 4
   }
 }

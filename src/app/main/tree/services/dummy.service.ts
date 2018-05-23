@@ -10,7 +10,7 @@ import { FilterExpressionUtils } from 'ontimize-web-ngx/ontimize/components/filt
 export class DummyService extends OntimizeService {
 
   static mappings: Object = {
-    'itemtypeclass': '/tree-data.json'
+    'customer': '/tree-data.json'
   };
 
   constructor(protected injector: Injector) {
