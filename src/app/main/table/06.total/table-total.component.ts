@@ -1,24 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { Component } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
-import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 @Component({
   selector: 'table-total',
   templateUrl: 'table-total.component.html'
 })
-export class TableTotalComponent implements OnInit {
-
-  constructor(
-    protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
-  ) { }
-
-  ngOnInit() {
-    let title = this.translateService.get('TABLE');
-    this.navigationService.setTitle(title);
-  }
+export class TableTotalComponent {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

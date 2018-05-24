@@ -1,24 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { Component } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
-import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 @Component({
   selector: 'table-calculated-column',
   templateUrl: 'table-calculated-column.component.html'
 })
-export class TableCalculatedColumnComponent implements OnInit {
-
-  constructor(
-    protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
-  ) { }
-
-  ngOnInit() {
-    let title = this.translateService.get('TABLE');
-    this.navigationService.setTitle(title);
-  }
+export class TableCalculatedColumnComponent {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

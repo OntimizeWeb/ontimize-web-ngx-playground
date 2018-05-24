@@ -1,24 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OTranslateService, Util } from 'ontimize-web-ngx';
 
 import { TableUtils } from '../table-utils';
-import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 @Component({
   selector: 'table-context-menu',
   templateUrl: 'table-context-menu.component.html'
 })
-export class TableContextMenuComponent implements OnInit {
-
-  constructor(
-    protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
-  ) { }
-
-  ngOnInit() {
-    let title = this.translateService.get('TABLE');
-    this.navigationService.setTitle(title);
-  }
+export class TableContextMenuComponent {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

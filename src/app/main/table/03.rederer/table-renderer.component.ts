@@ -1,24 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { Component } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
-import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 @Component({
   selector: 'table-renderer',
   templateUrl: 'table-renderer.component.html'
 })
-export class TableRendererComponent implements OnInit {
-
-  constructor(
-    protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
-  ) { }
-
-  ngOnInit() {
-    let title = this.translateService.get('TABLE');
-    this.navigationService.setTitle(title);
-  }
+export class TableRendererComponent {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

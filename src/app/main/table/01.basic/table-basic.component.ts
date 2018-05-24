@@ -1,15 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { OTranslateService } from 'ontimize-web-ngx';
+import { Component, ViewChild } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
-import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 @Component({
   selector: 'table-basic',
   templateUrl: 'table-basic.component.html'
 })
-export class TableBasicComponent implements OnInit {
+export class TableBasicComponent {
 
   @ViewChild('quickFilterToggle')
   quickFilterToggle: any;
@@ -40,16 +37,6 @@ export class TableBasicComponent implements OnInit {
 
   @ViewChild('paginationToggle')
   paginationToggle: any;
-
-  constructor(
-    protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
-  ) { }
-
-  ngOnInit() {
-    let title = this.translateService.get('TABLE');
-    this.navigationService.setTitle(title);
-  }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
