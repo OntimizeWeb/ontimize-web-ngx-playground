@@ -1,13 +1,13 @@
 <div class="table-button-container">
-  <button mat-raised-button [routerLink]="['/table']" fxFlex layout-padding>Basic</button>
-  <button mat-raised-button [routerLink]="['/table/fixed']" fxFlex layout-padding>Fixed header & footer</button>
-  <button mat-raised-button [routerLink]="['/table/render']" fxFlex layout-padding>Renderers</button>
-  <button mat-raised-button [routerLink]="['/table/custrender']" fxFlex layout-padding>Custom renderers</button>
-  <button mat-raised-button [routerLink]="['/table/editor']" fxFlex layout-padding>Editors</button>
-  <button mat-raised-button [routerLink]="['/table/total']" fxFlex layout-padding>Totals</button>
-  <button mat-raised-button [routerLink]="['/table/calculatedcolumn']" fxFlex layout-padding>Calculated column</button>
-  <button mat-raised-button [routerLink]="['/table/pagination']" fxFlex layout-padding>Pagination</button>
-  <button mat-raised-button [routerLink]="['/table/contextmenu']" fxFlex layout-padding>Context menu</button>
+  <button mat-raised-button [routerLink]="['/table']" fxFlex layout-padding>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/fixed']" fxFlex layout-padding>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/render']" fxFlex layout-padding>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/custrender']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/editor']" fxFlex layout-padding>{{ 'TABLE.BUTTON.EDITORS' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/total']" fxFlex layout-padding>{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/calculatedcolumn']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/pagination']" fxFlex layout-padding>{{ 'TABLE.BUTTON.PAGINATION' | oTranslate }}</button>
+  <button mat-raised-button [routerLink]="['/table/contextmenu']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CONTEXT_MENU' | oTranslate }}</button>
 </div>
 
 <router-outlet></router-outlet>
