@@ -1,0 +1,12 @@
+<example-comp comp-name="INPUTS.INTEGER" [files]="files" fxFill>
+  <o-form editable-detail="false" show-header="no">
+    <div fxLayout="row wrap">
+      <o-integer-input attr="integer" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }} (read-only)" [data]="getValue()" min="0"
+        max="10" layout-padding></o-integer-input>
+      <o-integer-input attr="integer2" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }} (edit mode)" read-only="false" [data]="getValue()"
+        min="0" max="100" required="true" tooltip="This is an awesome tooltip!" layout-padding></o-integer-input>
+      <o-integer-input attr="integer3" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }} (disabled)" enabled="no" [data]="getValue()"
+        min="0" max="10" layout-padding></o-integer-input>
+    </div>
+  </o-form>
+</example-comp>

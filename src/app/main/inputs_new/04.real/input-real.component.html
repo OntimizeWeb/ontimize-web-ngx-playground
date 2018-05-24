@@ -1,0 +1,13 @@
+<example-comp comp-name="INPUTS.REAL" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="row wrap">
+      <o-real-input attr="real" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }} (read-only)" [data]="getValue()" decimal-digits="3"
+        min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0" layout-padding></o-real-input>
+      <o-real-input attr="real2" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        required="yes" decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0" tooltip="This is an awesome tooltip!"
+        layout-padding></o-real-input>
+      <o-real-input attr="real3" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }} (disabled)" enabled="no" [data]="getValue()" decimal-digits="3"
+        min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0" layout-padding></o-real-input>
+    </div>
+  </o-form>
+</example-comp>

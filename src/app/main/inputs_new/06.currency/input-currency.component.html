@@ -1,0 +1,13 @@
+<example-comp comp-name="INPUTS.CURRENCY" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="row wrap">
+      <o-currency-input attr="currency" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }} (read-only)" [data]="getValue()" decimal-digits="2"
+        min-decimal-digits="2" max-decimal-digits="2" layout-padding></o-currency-input>
+      <o-currency-input attr="currency2" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        decimal-digits="2" required="yes" min-decimal-digits="2" max-decimal-digits="2" tooltip="This is an awesome tooltip!"
+        layout-padding></o-currency-input>
+      <o-currency-input attr="currency3" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }} (disabled)" enabled="no" [data]="getValue()"
+        decimal-digits="2" min-decimal-digits="2" max-decimal-digits="2" layout-padding></o-currency-input>
+    </div>
+  </o-form>
+</example-comp>

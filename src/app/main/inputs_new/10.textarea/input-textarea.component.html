@@ -1,0 +1,12 @@
+<example-comp comp-name="INPUTS.TEXTAREA" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="column">
+      <o-textarea-input attr="textarea" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }} (read-only)" [data]="getValue()" rows="10"
+        layout-padding></o-textarea-input>
+      <o-textarea-input attr="textarea2" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        rows="10" tooltip="This is an awesome tooltip!" layout-padding></o-textarea-input>
+      <o-textarea-input attr="textarea3" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }} (disabled)" enabled="no" [data]="getValue()"
+        rows="10" layout-padding></o-textarea-input>
+    </div>
+  </o-form>
+</example-comp>

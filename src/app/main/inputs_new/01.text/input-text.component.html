@@ -1,0 +1,10 @@
+<example-comp comp-name="INPUTS.TEXT" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="row wrap">
+      <o-text-input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-text-input>
+      <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        required="yes" tooltip="This is an awesome tooltip!" layout-padding></o-text-input>
+      <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (disabled)" enabled="no" [data]="getValue()" layout-padding></o-text-input>
+    </div>
+  </o-form>
+</example-comp>

@@ -1,0 +1,10 @@
+<example-comp comp-name="INPUTS.CHECKBOX" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="row wrap">
+      <o-checkbox attr="check" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-checkbox>
+      <o-checkbox attr="check1" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        tooltip="This is an awesome tooltip!" layout-padding></o-checkbox>
+      <o-checkbox attr="check2" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (disabled)" enabled="no" layout-padding></o-checkbox>
+    </div>
+  </o-form>
+</example-comp>

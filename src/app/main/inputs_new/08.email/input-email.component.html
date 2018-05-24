@@ -1,0 +1,11 @@
+<example-comp comp-name="INPUTS.EMAIL" [files]="files">
+  <o-form editable-detail="no" show-header="no">
+    <div fxLayout="row wrap">
+      <o-email-input attr="email" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-email-input>
+      <o-email-input attr="email2" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        required="yes" tooltip="This is an awesome tooltip!" layout-padding></o-email-input>
+      <o-email-input attr="email3" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }} (disabled)" enabled="no" [data]="getValue()"
+        layout-padding></o-email-input>
+    </div>
+  </o-form>
+</example-comp>
