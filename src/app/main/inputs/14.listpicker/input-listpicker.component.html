@@ -1,7 +1,7 @@
 <example-comp comp-name="INPUTS.LISTPICKER" [files]="files" fxFill>
   <o-form editable-detail="false" show-header="no">
 
-    <div fxLayout="row" layout-padding fxFill>
+    <div fxLayout="row wrap">
       <o-list-picker attr="listpicker" label="o-list-picker (read-only)" [static-data]="getDataArray()" [data]="getValue()" filter="yes"
         value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
 
