@@ -1,8 +1,11 @@
 import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
-import { TreeExample1Component } from './example1/example1.component';
 import { TreeRoutingModule } from './tree-routing.module';
+
+import { TreeComponent } from './tree.component';
+
+import { TreeBasicComponent } from './01.basic/tree-basic.component';
 
 import { DummyService } from './services/dummy.service';
 export function getDummyServiceProvider(injector: Injector) {
@@ -16,7 +19,8 @@ export function getDummyServiceProvider(injector: Injector) {
     TreeRoutingModule
   ],
   declarations: [
-    TreeExample1Component
+    TreeComponent,
+    TreeBasicComponent
   ],
   providers: [{
     provide: 'DummyService',

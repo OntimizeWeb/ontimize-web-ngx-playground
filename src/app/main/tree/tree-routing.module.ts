@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TreeExample1Component } from './example1/example1.component';
+
+import { TreeComponent } from './tree.component';
+
+import { TreeBasicComponent } from './01.basic/tree-basic.component';
 
 export const routes: Routes = [
-  { path: '', component: TreeExample1Component }
+  {
+    path: '', component: TreeComponent, children: [
+      { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
+      { path: 'basic', component: TreeBasicComponent }
+    ]
+  }
 ];
 
 @NgModule({
