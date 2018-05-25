@@ -116,6 +116,7 @@
   "INPUTS.COMBO": "Combo inputs",
   "INPUTS.LISTPICKER": "List picker inputs",
   "TREE.COMPONENT": "Tree",
+  "TREE.BUTTON.BASIC" : "Basic",
   "SNACKBAR.COMPONENT": "SnackBar",
   "SNACKBAR.TEXT": "SnackBar text",
   "SNACKBAR.ACTION": "Done",
