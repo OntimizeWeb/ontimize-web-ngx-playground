@@ -15,10 +15,11 @@ import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.c
 export const routes: Routes = [
   {
     path: '', component: TableComponent, children: [
-      { path: '', component: TableBasicComponent },
+      { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
+      { path: 'basic', component: TableBasicComponent },
       { path: 'fixed', component: TableFixedComponent },
-      { path: 'render', component: TableRendererComponent },
-      { path: 'custrender', component: TableCustomRendererComponent },
+      { path: 'renderer', component: TableRendererComponent },
+      { path: 'custrenderer', component: TableCustomRendererComponent },
       { path: 'editor', component: TableEditorComponent },
       { path: 'total', component: TableTotalComponent },
       { path: 'calculatedcolumn', component: TableCalculatedColumnComponent },
