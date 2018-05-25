@@ -13,7 +13,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
     opened: false,
     items: [
       { id: 'inputs', name: 'INPUTS.COMPONENTS', route: '/main/inputs', icon: 'border_color' },
-      { id: 'service', name: 'INPUTS.SERVICES', route: '/main/inputs-service', icon: 'border_color' }
     ]
   },
   {

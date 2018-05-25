@@ -1,0 +1,16 @@
+<example-comp comp-name="INPUTS.LISTPICKER" [files]="files" fxFill>
+  <o-form editable-detail="false" show-header="no">
+
+    <div fxLayout="row" layout-padding fxFill>
+      <o-list-picker attr="listpicker" label="o-list-picker (read-only)" [static-data]="getDataArray()" [data]="getValue()" filter="yes"
+        value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+
+      <o-list-picker #listpicker attr="listpicker2" label="o-list-picker (edit-mode)" [static-data]="getDataArray()" [data]="getValue()"
+        filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding required="true" read-only="false"></o-list-picker>
+
+      <o-list-picker attr="listpicker3" label="o-list-picker (disabled)" [static-data]="getDataArray()" [data]="getValue()" enabled="no"
+        filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+
+    </div>
+  </o-form>
+</example-comp>

@@ -99,6 +99,8 @@
   "INPUT.BUTTON.TEXTAREA": "Textarea",
   "INPUT.BUTTON.FILE": "File",
   "INPUT.BUTTON.CHECKBOX": "Checkbox",
+  "INPUT.BUTTON.COMBO": "Combo",
+  "INPUT.BUTTON.LISTPICKER": "List picker",
   "INPUTS.TEXT": "Text inputs",
   "INPUTS.DATE": "Date inputs",
   "INPUTS.INTEGER": "Integer inputs",

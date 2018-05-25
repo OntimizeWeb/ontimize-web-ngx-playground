@@ -8,9 +8,7 @@ import { DialogsModule } from './dialogs/dialogs.module';
 import { SnackBarModule } from './snackbar/snackbar.module';
 import { ContextMenuModule } from './contextmenu/context-menu.module';
 import { HomeModule } from './home/home.module';
-// import { InputsModule } from './inputs/inputs.module';
-import { InputsModule } from './inputs_new/inputs.module';
-import { InputsServiceModule } from './inputs-service/inputs-service.module';
+import { InputsModule } from './inputs/inputs.module';
 import { ListsModule } from './lists/lists.module';
 import { TableModule } from './table/table.module';
 import { TreeModule } from './tree/tree.module';
@@ -22,7 +20,6 @@ export function loadSnackBarModule() { return SnackBarModule; }
 export function loadContextMenuModule() { return ContextMenuModule; }
 export function loadHomeModule() { return HomeModule; }
 export function loadInputsModule() { return InputsModule; }
-export function loadInputsServiceModule() { return InputsServiceModule; }
 export function loadListsModule() { return ListsModule; }
 export function loadTableModule() { return TableModule; }
 export function loadTreeModule() { return TreeModule; }
@@ -39,7 +36,6 @@ export const routes: Routes = [
       { path: 'contextmenu', loadChildren: loadContextMenuModule },
       { path: 'home', loadChildren: loadHomeModule },
       { path: 'inputs', loadChildren: loadInputsModule },
-      { path: 'inputs-service', loadChildren: loadInputsServiceModule },
       { path: 'lists', loadChildren: loadListsModule },
       { path: 'table', loadChildren: loadTableModule },
       { path: 'tree', loadChildren: loadTreeModule },
