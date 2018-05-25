@@ -114,7 +114,7 @@ const HTML_DATA_RENDERER = `
   </o-table>
 `;
 
-const HTML_DATA_RENDER_CUSTOM = `
+const HTML_DATA_RENDERER_CUSTOM = `
   <o-table #table attr="table" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
     attr="accounts" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
     insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
@@ -401,7 +401,7 @@ export class TableUtils {
         tpl = HTML_DATA_PAGINATOR;
         break;
       case 'o-table-renderer-advance':
-        tpl = HTML_DATA_RENDER_CUSTOM;
+        tpl = HTML_DATA_RENDERER_CUSTOM;
         break;
       case 'o-table-context-menu':
         tpl = HTML_DATA_CONTEXT_MENU;
@@ -492,7 +492,7 @@ export class TableUtils {
         code = HTML_DATA_RENDERER;
         break;
       case 'o-table-renderer-advance':
-        code = HTML_DATA_RENDER_CUSTOM;
+        code = HTML_DATA_RENDERER_CUSTOM;
         break;
       case 'o-table-editors':
         code = HTML_DATA_EDITORS;
