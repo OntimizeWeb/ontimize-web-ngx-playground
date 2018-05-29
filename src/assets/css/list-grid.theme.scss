@@ -1,0 +1,32 @@
+@mixin list-grid-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  ul.list-grid-container {
+    background: mat-color($primary);
+
+    li.list-grid-button {
+      a {
+        color: #cac6c6;
+        border: 2px solid transparent;
+      }
+
+      a:hover {
+        color: #ffffff;
+        border: 2px solid #ffffff;
+      }
+
+      a.active {
+        color: mat-color($accent);
+      }
+
+      a.active:hover {
+        color: mat-color($accent);
+        border: 2px solid mat-color($accent);
+      }
+    }
+  }
+}

@@ -1,9 +1,4 @@
-<div fxFlexFill fxLayout="column">
-  <div fxLayout="row wrap" class="tree-button-container">
-    <button mat-raised-button [routerLink]="['/tree']" fxFlex layout-padding>{{ 'TREE.BUTTON.BASIC' | oTranslate }}</button>
-  </div>
-
-  <div fxFlex fxLayout="column">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<ul class="list-grid-container" layout-padding>
+  <li class="list-grid-button"><a routerLink="/main/tree/basic" routerLinkActive="active" fxFlex>&#8226; {{ 'TREE.BUTTON.BASIC' | oTranslate }}</a></li>
+</ul>
+<router-outlet></router-outlet>
