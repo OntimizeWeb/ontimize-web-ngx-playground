@@ -1,10 +1,10 @@
 <example-comp comp-name="INPUTS.NIF" [files]="files">
   <o-form editable-detail="no" show-header="no">
     <div fxLayout="row wrap">
-      <o-nif-input attr="nif" label="NIF (read-only)" [data]="getValue()" layout-padding></o-nif-input>
-      <o-nif-input #nif attr="nif2" label="NIF (edit mode)" [data]="getValue()" read-only="no" required="yes" tooltip="This is an awesome tooltip!"
-        layout-padding></o-nif-input>
-      <o-nif-input attr="nif3" label="NIF (disabled)" enabled="no" [data]="getValue()" layout-padding></o-nif-input>
+      <o-nif-input attr="nif" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-nif-input>
+      <o-nif-input #nif attr="nif2" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
+        required="yes" tooltip="This is an awesome tooltip!" layout-padding></o-nif-input>
+      <o-nif-input attr="nif3" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (disabled)" enabled="no" [data]="getValue()" layout-padding></o-nif-input>
     </div>
   </o-form>
 </example-comp>
