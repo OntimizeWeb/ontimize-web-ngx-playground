@@ -1,7 +1,7 @@
-<div fxLayout="row wrap" class="input-button-container">
-  <button mat-raised-button [routerLink]="['/lists/list-item-text']" fxFlex layout-padding>{{ 'LIST.LIST_ITEM_TEXT' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/lists/list-item-avatar']" fxFlex layout-padding>{{ 'LIST.LIST_ITEM_AVATAR' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/lists/list-item-card']" fxFlex layout-padding>{{ 'LIST.LIST_ITEM_CARD' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/lists/list-item-card-image']" fxFlex layout-padding>{{ 'LIST.LIST_ITEM_CARD_IMAGE' | oTranslate }}</button>
-</div>
+<ul class="list-grid-container" layout-padding>
+  <li class="list-grid-button"><a routerLink="/main/lists/list-item-text" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_TEXT' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/lists/list-item-avatar" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_AVATAR' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/lists/list-item-card" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_CARD' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/lists/list-item-card-image" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_CARD_IMAGE' | oTranslate }}</a></li>
+</ul>
 <router-outlet></router-outlet>

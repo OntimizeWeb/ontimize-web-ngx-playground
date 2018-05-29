@@ -86,7 +86,6 @@
   "TABLE.EXAMPLE_COLUMN_CALCULATED": "Example of calculated column",
   "TABLE.EXAMPLE_TABLE_FIXED": "Example of fixed positioning of the footer",
   "INPUTS.COMPONENTS": "Input fields",
-  "INPUTS.SERVICES": "Input fields with service",
   "INPUT.BUTTON.TEXT": "Text",
   "INPUT.BUTTON.DATE": "Date",
   "INPUT.BUTTON.INTEGER": "Integer",

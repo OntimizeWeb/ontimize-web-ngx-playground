@@ -1,13 +1,12 @@
-<div fxLayout="row wrap" class="table-button-container">
-  <button mat-raised-button [routerLink]="['/table/basic']" fxFlex layout-padding>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/fixed']" fxFlex layout-padding>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/renderer']" fxFlex layout-padding>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/custrenderer']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/editor']" fxFlex layout-padding>{{ 'TABLE.BUTTON.EDITORS' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/total']" fxFlex layout-padding>{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/calculatedcolumn']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/pagination']" fxFlex layout-padding>{{ 'TABLE.BUTTON.PAGINATION' | oTranslate }}</button>
-  <button mat-raised-button [routerLink]="['/table/contextmenu']" fxFlex layout-padding>{{ 'TABLE.BUTTON.CONTEXT_MENU' | oTranslate }}</button>
-</div>
-
+<ul class="list-grid-container" layout-padding>
+  <li class="list-grid-button"><a routerLink="/main/table/basic" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/fixed" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/renderer" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/custrenderer" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.CUSTOM_RENDERERS' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/editor" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.EDITORS' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/total" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/calculatedcolumn" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/pagination" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.PAGINATION' | oTranslate }}</a></li>
+  <li class="list-grid-button"><a routerLink="/main/table/contextmenu" routerLinkActive="active" fxFlex>&#8226; {{ 'TABLE.BUTTON.CONTEXT_MENU' | oTranslate }}</a></li>
+</ul>
 <router-outlet></router-outlet>
