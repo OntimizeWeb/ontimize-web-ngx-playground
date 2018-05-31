@@ -1,0 +1,26 @@
+@mixin example-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .example-comp {
+    .playground-toolbar.mat-toolbar {
+      background: #fafafa;
+      color: #212121;
+
+      .comp-description {
+        color: #616161;
+      }
+    }
+
+    .playground-tabs.mat-tab-group {
+      background: #fafafa;
+    }
+
+    .playground-examples {
+      background: #fafafa;
+    }
+  }
+}

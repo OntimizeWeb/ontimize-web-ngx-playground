@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
 import { Console } from '@angular/core/src/console';
 
@@ -8,12 +8,14 @@ export interface IFiles {
   typescript?: any;
   files?: any[];
 }
+
 @Component({
   selector: 'example-comp',
   styleUrls: ['example.component.scss'],
   templateUrl: 'example.component.html',
   inputs: [
     'compName: comp-name',
+    'compDesc: comp-desc',
     'files',
     'collapsible',
     'collapsed'
@@ -28,24 +30,23 @@ export interface IFiles {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleComponent {
-  aditionalTabs: any[];
 
+  aditionalTabs: any[];
   showSource = false;
   compName = '';
+  compDesc: string;
   files: IFiles = {};
 
   @InputConverter()
   collapsible: boolean = false;
-
   @InputConverter()
   collapsed: boolean = false;
-  // protected html: string = undefined;
 
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
 
-  constructor(protected elRef: ElementRef) {
+  constructor() {
     this.tplData = {};
   }
 
@@ -59,5 +60,5 @@ export class ExampleComponent {
   ngAfterViewInit() {
     this.aditionalTabs = this.files.files;
   }
-}
 
+}

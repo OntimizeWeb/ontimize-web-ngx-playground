@@ -23,6 +23,8 @@
 */
 @import './list-grid.theme.scss';
 @include list-grid-theme($theme);
+@import '../../app/shared/example/example.theme.scss';
+@include example-component-theme($theme);
 
 /*
 * Other app styles
