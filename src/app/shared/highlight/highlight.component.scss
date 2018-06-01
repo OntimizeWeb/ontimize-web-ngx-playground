@@ -7,4 +7,12 @@
     right: 12px;
     top: 12px;
   }
+
+  code.highlight {
+    background: white;
+
+    span {
+      font-family: 'Inconsolata', monospace;
+    }
+  }
 }
