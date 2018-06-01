@@ -6,21 +6,22 @@
   $foreground: map-get($theme, foreground);
 
   .example-comp {
-    .playground-toolbar.mat-toolbar {
+    & > section {
       background: #fafafa;
-      color: #212121;
 
-      .comp-description {
-        color: #616161;
+      .playground-toolbar.mat-toolbar {
+        background: #eeeeee;
+        color: #212121;
+        border-bottom: 1px solid #e0e0e0;
+
+        .comp-description {
+          color: #616161;
+        }
       }
-    }
 
-    .playground-tabs.mat-tab-group {
-      background: #fafafa;
-    }
-
-    .playground-examples {
-      background: #fafafa;
+      .playground-tabs {
+        border-bottom: 1px solid #e0e0e0;
+      }
     }
   }
 }

@@ -1,11 +1,11 @@
 .example-comp {
+  & > section {
+    margin: 12px;
+  }
+
   .playground-toolbar .comp-description {
     font-size: .8em;
     line-height: 1em;
-  }
-
-  .playground-tabs.mat-tab-group {
-    padding: 12px;
   }
 
   .collapsible {
