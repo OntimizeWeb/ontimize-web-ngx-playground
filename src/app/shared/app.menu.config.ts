@@ -18,10 +18,10 @@ export const MENU_CONFIG: MenuRootItem[] = [
   {
     id: 'button',
     name: 'BUTTONS',
-    icon: 'people',
+    icon: 'add_circle',
     opened: false,
     items: [
-      { id: 'buttons', name: 'BUTTONS', route: '/main/buttons', icon: 'people' }
+      { id: 'buttons', name: 'BUTTONS', route: '/main/buttons', icon: 'add_circle' }
     ]
   },
   {

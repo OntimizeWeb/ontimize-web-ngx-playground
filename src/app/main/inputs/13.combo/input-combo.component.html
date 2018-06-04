@@ -1,13 +1,15 @@
-<example-comp comp-name="INPUTS.COMBO" [files]="files" fxFill>
+<example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC" [files]="files">
   <o-form editable-detail="false" show-header="no">
 
     <div fxLayout="row wrap">
-      <o-combo attr="combo" label="o-combo (read-only)" layout-padding [static-data]="getDataArray()" [data]="getValue()" value-column="key"
-        columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
-      <o-combo #combo attr="combo-editable" label="o-combo (edit-mode)" layout-padding [static-data]="getDataArray()" [data]="getValue()"
-        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
-      <o-combo attr="combo-disabled" label="o-combo (disabled)" enabled="no" layout-padding [static-data]="getDataArray()" [data]="getValue()"
-        value-column="key" columns="key;value" visible-columns="value"></o-combo>
+      <o-combo attr="combo" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (read-only)" [static-data]="getDataArray()" [data]="getValue()"
+        value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"
+        layout-padding></o-combo>
+      <o-combo #combo attr="combo-editable" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
+        layout-padding></o-combo>
+      <o-combo attr="combo-disabled" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-combo>
     </div>
 
   </o-form>

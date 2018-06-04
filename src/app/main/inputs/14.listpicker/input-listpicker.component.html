@@ -1,15 +1,16 @@
-<example-comp comp-name="INPUTS.LISTPICKER" [files]="files" fxFill>
+<example-comp comp-name="INPUTS.LISTPICKER" comp-desc="INPUTS.LISTPICKER.DESC" [files]="files">
   <o-form editable-detail="false" show-header="no">
 
     <div fxLayout="row wrap">
-      <o-list-picker attr="listpicker" label="o-list-picker (read-only)" [static-data]="getDataArray()" [data]="getValue()" filter="yes"
-        value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+      <o-list-picker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }} (read-only)" [static-data]="getDataArray()"
+        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
 
-      <o-list-picker #listpicker attr="listpicker2" label="o-list-picker (edit-mode)" [static-data]="getDataArray()" [data]="getValue()"
-        filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding required="true" read-only="false"></o-list-picker>
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false"
+        layout-padding></o-list-picker>
 
-      <o-list-picker attr="listpicker3" label="o-list-picker (disabled)" [static-data]="getDataArray()" [data]="getValue()" enabled="no"
-        filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
+      <o-list-picker attr="listpicker3" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }} (disabled)" [static-data]="getDataArray()"
+        [data]="getValue()" enabled="no" filter="yes" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-list-picker>
 
     </div>
   </o-form>
