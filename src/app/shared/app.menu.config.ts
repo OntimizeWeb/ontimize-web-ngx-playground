@@ -6,24 +6,8 @@ import {
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
-  {
-    id: 'input',
-    name: 'INPUTS.COMPONENTS',
-    icon: 'input',
-    opened: false,
-    items: [
-      { id: 'inputs', name: 'INPUTS.COMPONENTS', route: '/main/inputs', icon: 'border_color' },
-    ]
-  },
-  {
-    id: 'button',
-    name: 'BUTTONS',
-    icon: 'add_circle',
-    opened: false,
-    items: [
-      { id: 'buttons', name: 'BUTTONS', route: '/main/buttons', icon: 'add_circle' }
-    ]
-  },
+  { id: 'input', name: 'INPUTS.COMPONENTS', icon: 'input', route: '/main/inputs' },
+  { id: 'button', name: 'BUTTONS', icon: 'add_circle_outline', route: '/main/buttons' },
   {
     id: 'data',
     name: 'DATA',

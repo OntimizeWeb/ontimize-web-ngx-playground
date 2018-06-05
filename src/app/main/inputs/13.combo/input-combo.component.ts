@@ -61,8 +61,6 @@ export class ComboHomeComponent {
   constructor() {
   }
 
-  multipleValue = [1, 2];
-
   getDataArray() {
     let array: Array<Object> = [];
     array.push({
@@ -204,11 +202,6 @@ export class InputComboComponent {
     return this.multipleValue;
   }
 
-  onclick(event: any) {
-    console.log(event);
-    this.combo2.getSelectedItems();
-    console.log(' this.combo2.getSelectedItems() ', this.combo2.getSelectedItems());
-  }
 
 
 }

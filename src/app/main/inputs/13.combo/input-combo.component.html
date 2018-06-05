@@ -34,7 +34,7 @@
         tooltip-position="below" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
       <o-combo #combo2 attr="combo-editable-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
         [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
-        layout-padding multiple="yes" multiple-trigger-label="yes" (click)="onclick($event)"></o-combo>
+        layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
       <o-combo attr="combo-disabled-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
         [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" layout-padding multiple="yes"
         multiple-trigger-label="yes" ></o-combo>
