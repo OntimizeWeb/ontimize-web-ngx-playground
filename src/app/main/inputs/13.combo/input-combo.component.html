@@ -2,14 +2,43 @@
   <o-form editable-detail="false" show-header="no">
 
     <div fxLayout="row wrap">
-      <o-combo attr="combo" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (read-only)" [static-data]="getDataArray()" [data]="getValue()"
+      <o-combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }} (read-only)" [static-data]="getDataArray()" [data]="getValueSimple()"
         value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"
         layout-padding></o-combo>
-      <o-combo #combo attr="combo-editable" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
+      <o-combo #combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+        [data]="getValueSimple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
         layout-padding></o-combo>
-      <o-combo attr="combo-disabled" label="{{ 'INPUT.BUTTON.COMBO' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-combo>
+      <o-combo attr="combo-disabled" label="{{ 'INPUT.COMBO' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
+        [data]="getValueSimple()" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-combo>
+    </div>
+  </o-form>
+</example-comp>
+<example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC_MULTIPLE" [files]="files_multiple">
+  <o-form editable-detail="false" show-header="no">
+
+    <div fxLayout="row wrap">
+      <o-combo attr="combo-readonly-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (read-only)" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!"
+        tooltip-position="below" layout-padding multiple="yes"></o-combo>
+      <o-combo #combo attr="combo-editable-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
+        layout-padding multiple="yes"></o-combo>
+      <o-combo attr="combo-disabled-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" layout-padding multiple="yes"></o-combo>
+
+    </div>
+
+    <div fxLayout="row wrap">
+      <o-combo attr="combo-readonly-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (read-only)" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!"
+        tooltip-position="below" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
+      <o-combo #combo2 attr="combo-editable-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
+        layout-padding multiple="yes" multiple-trigger-label="yes" (click)="onclick($event)"></o-combo>
+      <o-combo attr="combo-disabled-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" layout-padding multiple="yes"
+        multiple-trigger-label="yes" ></o-combo>
+
     </div>
 
   </o-form>
