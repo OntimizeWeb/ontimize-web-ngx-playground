@@ -18,7 +18,8 @@ export interface IFiles {
     'compDesc: comp-desc',
     'files',
     'collapsible',
-    'collapsed'
+    'collapsed',
+    'tabHeight: tab-height'
   ],
   outputs: [
     'onShowSource : showSource'
@@ -32,10 +33,11 @@ export interface IFiles {
 export class ExampleComponent {
 
   aditionalTabs: any[];
-  showSource = false;
+  _showSource = false;
   compName = '';
   compDesc: string;
   files: IFiles = {};
+  tabHeight: string = '350px';
 
   @InputConverter()
   collapsible: boolean = false;
@@ -59,6 +61,14 @@ export class ExampleComponent {
 
   ngAfterViewInit() {
     this.aditionalTabs = this.files.files;
+  }
+
+  get showSource(): boolean {
+    return this._showSource;
+  }
+
+  set showSource(val: boolean) {
+    this._showSource = val;
   }
 
 }
