@@ -17,12 +17,11 @@
       background: none;
     }
 
-    .mat-ripple {
-      display: none;
-    }
-
     .application-sidenav-container {
       .application-sidenav-sidenav {
+        .mat-ripple {
+          display: none;
+        }
         background: $white-bg;
 
         .application-sidenav-item,
