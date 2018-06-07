@@ -133,12 +133,13 @@
   "INPUTS.LISTPICKER.DESC": "A component for getting or displaying an option from multiple.",
   "TREE.COMPONENT": "Tree",
   "TREE.CONFIGURATION": "Tree configuration",
-  "TREE.BUTTON.BASIC" : "Basic",
+  "TREE.BUTTON.BASIC": "Basic",
   "TREE.BUTTON.NODES": "Nodes",
-  "TREE.CONTROLS":"Controls",
+  "TREE.BUTTON.STATIC": "Static data",
+  "TREE.CONTROLS": "Controls",
   "TREE.QUICKFILTER": "Filter",
-  "TREE.REFRESH_BUTTON":"Refresh button",
-  "TREE.OUTPUTS" : "Outputs",
+  "TREE.REFRESH_BUTTON": "Refresh button",
+  "TREE.OUTPUTS": "Outputs",
   "SNACKBAR.COMPONENT": "SnackBar",
   "SNACKBAR.TEXT": "SnackBar text",
   "SNACKBAR.ACTION": "Done",
@@ -167,5 +168,6 @@
   "ENTITYID": "Entity",
   "CDID": "Control",
   "ANID": "Account",
-  "ACCOUNTTYP": "Type"
+  "ACCOUNTTYP": "Type",
+  "INPUT.COMBO.MESSAGE_TRIGGER": "(+{0} others)"
 }
