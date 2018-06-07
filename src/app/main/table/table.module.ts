@@ -9,7 +9,7 @@ import { OTableColumnRendererBalanceComponent } from './renderer/o-table-column-
 import { OTableColumnRendererTotalReadyComponent } from './renderer/o-table-column-renderer-totalready.component';
 import { TableBasicComponent } from './01.basic/table-basic.component';
 import { TableFixedComponent } from './02.fixed/table-fixed.component';
-import { TableRendererComponent } from './03.rederer/table-renderer.component';
+import { TableRendererComponent } from './03.renderer/table-renderer.component';
 import { TableCustomRendererComponent } from './04.customrenderer/table-custom-renderer.component';
 import { TableEditorComponent } from './05.editor/table-editor.component';
 import { TableTotalComponent } from './06.total/table-total.component';
