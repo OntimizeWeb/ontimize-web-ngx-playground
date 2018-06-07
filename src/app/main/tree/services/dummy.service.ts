@@ -10,7 +10,10 @@ import { FilterExpressionUtils } from 'ontimize-web-ngx/ontimize/components/filt
 export class DummyService extends OntimizeService {
 
   static mappings: Object = {
-    'customer': '/tree-data.json'
+    'customer': '/customers-data.json',
+    'customerAccount': '/accounts-data.json',
+    'accountConcepts': '/concepts-data.json',
+    'accountMovementTypes': '/movementtypes-data.json'
   };
 
   constructor(protected injector: Injector) {
@@ -83,7 +86,7 @@ export class DummyService extends OntimizeService {
         }
       }, error => innerObserver.error(error),
         () => innerObserver.complete());
-    }, 2500);
+    }, 1000);
     return dataObservable;
   }
 
