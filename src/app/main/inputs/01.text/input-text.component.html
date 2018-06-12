@@ -1,10 +1,17 @@
 <example-comp comp-name="INPUTS.TEXT" comp-desc="INPUTS.TEXT.DESC" [files]="files">
-  <o-form editable-detail="no" show-header="no">
-    <div fxLayout="row wrap">
-      <o-text-input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-text-input>
-      <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
-        required="yes" tooltip="This is an awesome tooltip!" layout-padding></o-text-input>
-      <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }} (disabled)" enabled="no" [data]="getValue()" layout-padding></o-text-input>
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Read only</label>
+      <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Editable</label>
+      <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+        tooltip="This is an awesome tooltip!"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Disabled</label>
+      <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" enabled="no" [data]="getValue()"></o-text-input>
     </div>
   </o-form>
 </example-comp>

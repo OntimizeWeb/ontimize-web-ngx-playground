@@ -1,10 +1,17 @@
 <example-comp comp-name="INPUTS.NIF" comp-desc="INPUTS.NIF.DESC" [files]="files">
-  <o-form editable-detail="no" show-header="no">
-    <div fxLayout="row wrap">
-      <o-nif-input attr="nif" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-nif-input>
-      <o-nif-input #nif attr="nif2" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
-        required="yes" tooltip="This is an awesome tooltip!" layout-padding></o-nif-input>
-      <o-nif-input attr="nif3" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }} (disabled)" enabled="no" [data]="getValue()" layout-padding></o-nif-input>
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Read only</label>
+      <o-nif-input attr="nif" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" [data]="getValue()"></o-nif-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Editable</label>
+      <o-nif-input #nif attr="nif2" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+        tooltip="This is an awesome tooltip!"></o-nif-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Disabled</label>
+      <o-nif-input attr="nif3" label="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" enabled="no" [data]="getValue()"></o-nif-input>
     </div>
   </o-form>
 </example-comp>

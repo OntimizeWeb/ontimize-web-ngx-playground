@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
@@ -6,7 +6,8 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 @Component({
   selector: 'inputs',
   templateUrl: './inputs.component.html',
-  styleUrls: ['./inputs.component.scss']
+  styleUrls: ['./inputs.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class InputsComponent implements OnInit {
 

@@ -1,10 +1,16 @@
 <example-comp comp-name="INPUTS.CHECKBOX" comp-desc="INPUTS.CHECKBOX.DESC" [files]="files">
-  <o-form editable-detail="no" show-header="no">
-    <div fxLayout="row wrap">
-      <o-checkbox attr="check" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (read-only)" [data]="getValue()" layout-padding></o-checkbox>
-      <o-checkbox attr="check1" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (edit mode)" [data]="getValue()" read-only="no"
-        tooltip="This is an awesome tooltip!" layout-padding></o-checkbox>
-      <o-checkbox attr="check2" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }} (disabled)" enabled="no" layout-padding></o-checkbox>
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Read only</label>
+      <o-checkbox attr="check" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue()"></o-checkbox>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Editable</label>
+      <o-checkbox attr="check1" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!"></o-checkbox>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Disabled</label>
+      <o-checkbox attr="check2" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" enabled="no"></o-checkbox>
     </div>
   </o-form>
 </example-comp>

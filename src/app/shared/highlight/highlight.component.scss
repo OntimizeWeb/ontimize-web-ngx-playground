@@ -1,7 +1,7 @@
 .snippet {
   margin: 0;
   position: relative;
-  height: 0px;
+  height: 0;
 
   .hljs {
     position: absolute;
@@ -20,6 +20,7 @@
 
   code.highlight {
     background: white;
+    font-family: 'Inconsolata', monospace;
 
     span {
       font-family: 'Inconsolata', monospace;

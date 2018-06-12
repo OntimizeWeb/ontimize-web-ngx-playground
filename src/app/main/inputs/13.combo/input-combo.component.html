@@ -1,45 +1,35 @@
 <example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC" [files]="files">
-  <o-form editable-detail="false" show-header="no">
-
-    <div fxLayout="row wrap">
-      <o-combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }} (read-only)" [static-data]="getDataArray()" [data]="getValueSimple()"
-        value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"
-        layout-padding></o-combo>
-      <o-combo #combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
-        [data]="getValueSimple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
-        layout-padding></o-combo>
-      <o-combo attr="combo-disabled" label="{{ 'INPUT.COMBO' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
-        [data]="getValueSimple()" value-column="key" columns="key;value" visible-columns="value" layout-padding></o-combo>
+  <o-form editable-detail="false" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Read only</label>
+      <o-combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
+        columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Editable</label>
+      <o-combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
+        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Disabled</label>
+      <o-combo attr="combo-disabled" label="{{ 'INPUT.COMBO' | oTranslate }}" enabled="no" [static-data]="getDataArray()" [data]="getValueSimple()"
+        value-column="key" columns="key;value" visible-columns="value"></o-combo>
     </div>
   </o-form>
 </example-comp>
-<example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC_MULTIPLE" [files]="files_multiple">
-  <o-form editable-detail="false" show-header="no">
 
-    <div fxLayout="row wrap">
-      <o-combo attr="combo-readonly-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (read-only)" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!"
-        tooltip-position="below" layout-padding multiple="yes"></o-combo>
-      <o-combo #combo attr="combo-editable-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
-        layout-padding multiple="yes"></o-combo>
-      <o-combo attr="combo-disabled-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" layout-padding multiple="yes"></o-combo>
-
+<example-comp comp-name="INPUTS.COMBO_MULTIPLE" comp-desc="INPUTS.COMBO.DESC_MULTIPLE" [files]="files_multiple">
+  <o-form editable-detail="false" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Multiple selection</label>
+      <o-combo attr="combo-editable-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueMultiple()"
+        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" multiple="yes"></o-combo>
     </div>
-
-    <div fxLayout="row wrap">
-      <o-combo attr="combo-readonly-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (read-only)" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!"
-        tooltip-position="below" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
-      <o-combo #combo2 attr="combo-editable-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (edit-mode)" [static-data]="getDataArray()"
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Sum up the trigger label</label>
+      <o-combo attr="combo-editable-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }}" [static-data]="getDataArray()"
         [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
-        layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
-      <o-combo attr="combo-disabled-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }} (disabled)" enabled="no" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" layout-padding multiple="yes"
-        multiple-trigger-label="yes" ></o-combo>
-
+        multiple="yes" multiple-trigger-label="yes"></o-combo>
     </div>
-
   </o-form>
 </example-comp>
