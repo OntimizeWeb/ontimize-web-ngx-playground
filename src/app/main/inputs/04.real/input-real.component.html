@@ -1,17 +1,17 @@
 <example-comp comp-name="INPUTS.REAL" comp-desc="INPUTS.REAL.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Read only</label>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-real-input attr="real" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" decimal-digits="3" min-decimal-digits="2"
         max-decimal-digits="4" min="30" max="40.0"></o-real-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Editable</label>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-real-input attr="real2" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
-        decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0" tooltip="This is an awesome tooltip!"></o-real-input>
+        decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4" min="0" max="100000" tooltip="This is an awesome tooltip!"></o-real-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Disabled</label>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-real-input attr="real3" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" enabled="no" [data]="getValue()" decimal-digits="3"
         min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0"></o-real-input>
     </div>

@@ -1,17 +1,17 @@
 <example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC" [files]="files">
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Read only</label>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
         columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Editable</label>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
         value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Disabled</label>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-combo attr="combo-disabled" label="{{ 'INPUT.COMBO' | oTranslate }}" enabled="no" [static-data]="getDataArray()" [data]="getValueSimple()"
         value-column="key" columns="key;value" visible-columns="value"></o-combo>
     </div>

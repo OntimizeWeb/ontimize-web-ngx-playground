@@ -1,16 +1,16 @@
 <example-comp comp-name="INPUTS.EMAIL" comp-desc="INPUTS.EMAIL.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Read only</label>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-email-input attr="email" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }}" [data]="getValue()" width="200px"></o-email-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Editable</label>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-email-input attr="email2" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
         tooltip="This is an awesome tooltip!" width="200px"></o-email-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Disabled</label>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-email-input attr="email3" label="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }}" enabled="no" [data]="getValue()" width="200px"></o-email-input>
     </div>
   </o-form>

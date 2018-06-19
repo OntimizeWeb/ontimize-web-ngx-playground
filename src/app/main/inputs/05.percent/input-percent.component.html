@@ -1,16 +1,16 @@
 <example-comp comp-name="INPUTS.PERCENT" comp-desc="INPUTS.PERCENT.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Read only</label>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-percent-input attr="percent" label="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" [data]="getValue()"></o-percent-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Editable</label>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-percent-input attr="percent2" label="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" [data]="getValue()" read-only="false"
         required="yes" tooltip="This is an awesome tooltip!"></o-percent-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Disabled</label>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-percent-input attr="percent3" label="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" enabled="no" [data]="getValue()"></o-percent-input>
     </div>
   </o-form>

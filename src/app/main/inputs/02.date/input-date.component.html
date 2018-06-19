@@ -1,16 +1,16 @@
 <example-comp comp-name="INPUTS.DATE" comp-desc="INPUTS.DATE.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Read only</label>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-date-input attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue()"></o-date-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Editable</label>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-date-input attr="date2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue()" read-only="no" format="LL"
         required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"></o-date-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">Disabled</label>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-date-input attr="date3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" enabled="no" [data]="getValue()"></o-date-input>
     </div>
   </o-form>
