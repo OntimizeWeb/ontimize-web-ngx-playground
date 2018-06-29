@@ -260,6 +260,21 @@ const HTML_DATA_CONTEXT_MENU = `
   </o-context-menu>
 `;
 
+
+const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
+  <o-table #table attr="table" title="ACCOUNTS" horizontal-scroll="{horizontal-scroll}" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
+    quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+    [ngStyle]="{ngStyle}">
+    <o-table-column attr="ENTITYID" title="ENTITYID" min-width="250px"></o-table-column>
+    <o-table-column attr="OFFICEID" title="OFFICEID" min-width="250px"></o-table-column>
+    <o-table-column attr="CDID" title="CDID" min-width="250px"></o-table-column>
+    <o-table-column attr="ANID" title="ANID" min-width="250px"></o-table-column>
+    <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator="," min-width="250px"></o-table-column>
+  </o-table>
+`;
+
+
 const TYPESCRIPT_DATA = `
   getTableData(): Array<any> {
     return ${JSON.stringify(FAKE_CUSTOMERS)};
@@ -391,26 +406,11 @@ export class TableUtils {
       case 'o-table':
         tpl = HTML_DATA;
         break;
-      case 'o-table-renderer':
-        tpl = HTML_DATA_RENDERER;
-        break;
-      case 'o-table-aggregate':
-        tpl = HTML_DATA_AGGREGATE;
-        break;
-      case 'o-table-paginator':
-        tpl = HTML_DATA_PAGINATOR;
-        break;
-      case 'o-table-renderer-advance':
-        tpl = HTML_DATA_RENDERER_CUSTOM;
-        break;
-      case 'o-table-context-menu':
-        tpl = HTML_DATA_CONTEXT_MENU;
-        break;
-      case 'o-table-column-calculated':
-        tpl = HTML_DATA_CALCULATED_COLUMN;
-        break;
       case 'o-table-fixed':
         tpl = HTML_DATA_TABLE_FIXED;
+        break;
+      case 'o-table-horizontal-scroll':
+        tpl = HTML_DATA_TABLE_HORIZONTAL_SCROLL;
         break;
     }
     if (table) {
@@ -425,6 +425,7 @@ export class TableUtils {
         .replace('{showTextToggle}', data.showTextToggle)
         .replace('{paginationToggle}', data.paginationToggle)
         .replace('{fixed-header}', data.fixedHeader)
+        .replace('{horizontal-scroll}', data.horizontalScroll)
         .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
     }
     return tpl;
@@ -432,9 +433,6 @@ export class TableUtils {
 
   public static getFiles(key: string) {
     let result: any = {
-      'html': {
-        'data': TableUtils.getTypeHtml(key)
-      },
       'scss': {
         'data': undefined
       },
@@ -442,6 +440,12 @@ export class TableUtils {
         'data': TableUtils.getTypescript(key)
       }
     };
+    const html = TableUtils.getTypeHtml(key);
+    if (html) {
+      result.html = {
+        'data': html
+      }
+    }
     return result;
   }
 
@@ -451,6 +455,7 @@ export class TableUtils {
       case 'o-table':
         code = TYPESCRIPT_DATA;
         break;
+      case 'o-table-horizontal-scroll':
       case 'o-table-fixed':
         code = TYPESCRIPT_DATA_TABLE_FIXED;
         break;
@@ -482,12 +487,6 @@ export class TableUtils {
   public static getTypeHtml(key: string) {
     let code = '';
     switch (key) {
-      case 'o-table':
-        code = HTML_DATA;
-        break;
-      case 'o-table-fixed':
-        code = HTML_DATA_TABLE_FIXED;
-        break;
       case 'o-table-renderer':
         code = HTML_DATA_RENDERER;
         break;

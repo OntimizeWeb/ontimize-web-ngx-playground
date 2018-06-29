@@ -11,6 +11,7 @@ import { TableTotalComponent } from './06.total/table-total.component';
 import { TableCalculatedColumnComponent } from './07.calculatedcolumn/table-calculated-column.component';
 import { TablePaginationComponent } from './08.pagination/table-pagination.component';
 import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.component';
+import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-horizontal-scroll.component';
 
 export const routes: Routes = [
   {
@@ -24,7 +25,8 @@ export const routes: Routes = [
       { path: 'total', component: TableTotalComponent },
       { path: 'calculatedcolumn', component: TableCalculatedColumnComponent },
       { path: 'pagination', component: TablePaginationComponent },
-      { path: 'contextmenu', component: TableContextMenuComponent }
+      { path: 'contextmenu', component: TableContextMenuComponent },
+      { path: 'horizontalscroll', component: TableHorizontalScrollComponent }
     ]
   }
 ];
