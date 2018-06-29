@@ -16,8 +16,8 @@
 
   <div fxLayout *ngIf="showSource" [style.height]="tabHeight">
     <mat-tab-group fxFlex class="playground-tabs">
-      <mat-tab label="{{ 'html' | uppercase }}" *ngIf="files.html && files.html.data">
-        <highlight-comp [template-content]="files.html.data" template-type="html"></highlight-comp>
+      <mat-tab label="{{ 'html' | uppercase }}" *ngIf="html">
+        <highlight-comp [template-content]="html" template-type="html"></highlight-comp>
       </mat-tab>
       <mat-tab label="{{ 'scss' | uppercase }}" *ngIf="files.scss && files.scss.data">
         <highlight-comp [template-content]="files.scss.data" template-type="scss"></highlight-comp>

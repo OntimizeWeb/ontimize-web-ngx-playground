@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
 import { Console } from '@angular/core/src/console';
 
@@ -36,7 +36,7 @@ export class ExampleComponent {
   _showSource = false;
   compName = '';
   compDesc: string;
-  files: IFiles = {};
+  _files: IFiles = {};
   tabHeight: string = '350px';
 
   @InputConverter()
@@ -48,7 +48,9 @@ export class ExampleComponent {
 
   private tplData: Object;
 
-  constructor() {
+  constructor(
+    protected cd: ChangeDetectorRef
+  ) {
     this.tplData = {};
   }
 
@@ -69,6 +71,29 @@ export class ExampleComponent {
 
   set showSource(val: boolean) {
     this._showSource = val;
+  }
+
+  set files(val: IFiles) {
+    if (val.html && val.html.data) {
+      this._files.html = val.html;
+    }
+    this._files.scss = val.scss;
+    this._files.typescript = val.typescript;
+    this._files.files = val.files;
+  }
+
+  get files(): IFiles {
+    return this._files;
+  }
+
+  set html(val: any) {
+    this.files.html = {
+      data: val
+    };
+  }
+
+  get html(): any {
+    return this.files && this.files.html && this.files.html.data ? this.files.html.data : undefined;
   }
 
 }

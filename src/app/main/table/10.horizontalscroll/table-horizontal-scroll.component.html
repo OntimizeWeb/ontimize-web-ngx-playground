@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
     <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
-      <o-table #table attr="table" title="ACCOUNTS" [horizontal-scroll]="horizontalScrollToggle.checked" [static-data]="getTableData()"
+      <o-table #table attr="table" title="ACCOUNTS" horizontal-scroll="no" [static-data]="getTableData()"
         columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP" visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE"
         layout-padding sort-columns="ANID" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
         pagination-controls="no" export-button="no">
@@ -16,7 +16,7 @@
     </div>
 
     <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex layout-padding>
-      <mat-slide-toggle #horizontalScrollToggle [checked]="false">
+      <mat-slide-toggle #horizontalScrollToggle (change)="onToggleChange($event)">
         {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
       </mat-slide-toggle>
     </o-column>
