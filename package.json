@@ -34,9 +34,9 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "3.0.0-rc.0",
+    "ontimize-web-ngx": "3.0.0-rc.1",
     "angular2-highlight-js": "5.0.1",
-    "ontimize-web-ngx-theming": "1.1.0"
+    "ontimize-web-ngx-theming": "1.1.1"
   },
   "devDependencies": {
     "@ngtools/webpack": "1.10.2",
