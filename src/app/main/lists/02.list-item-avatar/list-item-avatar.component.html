@@ -1,0 +1,85 @@
+<example-comp #ex2 collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [files]="files" (showSource)="onShowSource(list9, ex2)"
+  class="list-examples">
+
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+
+    <o-column elevation="1" fxFlex="40" layout-align="center" attr="list9row">
+      <o-list #list9 fxFill attr="list9" [title]="list9Title.value" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
+        query-on-init="true" pageable="no" [static-data]="getStaticData()" quick-filter="no" [refresh-button]="refreshButtonToggle2.checked"
+        [insert-button]="insertButtonToggle2.checked" [selectable]="selectableToggle2.checked" [dense]="denseToggle2.checked"
+        [detail-button-in-row]="detailButtonInRowToggle2.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput2.value"
+        [edit-button-in-row]="editButtonInRowToggle2.checked" [edit-button-in-row-icon]="editButtonInRowIconInput2.value">
+
+        <o-list-item *ngFor="let row of list9.dataArray">
+          <o-list-item-avatar #avatarItem avatar="{{row.thumbnailUrl}}" title="{{row.name}}" secondary-text="{{ row.body }}" [icon]="iconToggle2.checked ? itemIcon2.value : undefined"
+            (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
+        </o-list-item>
+      </o-list>
+    </o-column>
+
+    <o-column attr="conf2" title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
+        <mat-form-field fxFlex="95">
+          <input matInput #list9Title placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" layout-padding fxLayoutAlign="start">
+        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
+
+          <mat-slide-toggle #refreshButtonToggle2 [checked]="true">
+            {{ 'REFRESH_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #insertButtonToggle2>
+            {{ 'INSERT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+
+        </div>
+
+        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
+
+          <mat-slide-toggle #denseToggle2 [checked]="list9.dense">
+            {{ 'DENSE' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #selectableToggle2>
+            {{ 'SELECTABLE' | oTranslate }}
+          </mat-slide-toggle>
+
+        </div>
+      </div>
+      <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
+          <mat-slide-toggle #editButtonInRowToggle2>
+            {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #detailButtonInRowToggle2>
+            {{ 'DETAIL_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #iconToggle2>
+            {{ 'SHOW_ICON' | oTranslate }}
+          </mat-slide-toggle>
+
+        </div>
+        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
+          <mat-form-field class="padding-3" [hidden]="!editButtonInRowToggle2.checked">
+            <input matInput #editButtonInRowIconInput2 placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
+          </mat-form-field>
+
+          <mat-form-field class="padding-3" [hidden]="!detailButtonInRowToggle2.checked">
+            <input matInput #detailButtonInRowIconInput2 placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
+          </mat-form-field>
+
+          <mat-form-field class="padding-3" [hidden]="!iconToggle2.checked">
+            <input matInput #itemIcon2 placeholder="{{ 'ICON' | oTranslate }}" value="mood">
+          </mat-form-field>
+        </div>
+      </o-row>
+    </o-column>
+
+  </div>
+
+</example-comp>

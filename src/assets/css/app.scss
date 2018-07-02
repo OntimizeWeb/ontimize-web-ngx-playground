@@ -1,5 +1,5 @@
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
-
+// @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+@import './custom-theme.scss';
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
 
@@ -18,21 +18,14 @@
 @import '../../app/main/main-theme.scss';
 @include main-theme($theme);
 
+/*
+* Import application themes.
+*/
+@import './list-grid.theme.scss';
+@include list-grid-theme($theme);
+@import '../../app/shared/example/example.theme.scss';
+@include example-component-theme($theme);
 
 /*
 * Other app styles
 */
-
-.no-padding {
-  padding: 0px !important;
-}
-
-.customer-picture {
-  .input-image {
-
-    .input-image-preview {
-      width: 200px;
-      height: 200px;
-    }
-  }
-}

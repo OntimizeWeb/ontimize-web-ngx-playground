@@ -1,47 +1,8 @@
 export class ListsUtils {
 
-  public static getComponentId(key: string) {
-    let compId = '';
-    switch (key) {
-      case 'o-list-item-text':
-        compId = 'Customizable list (o-list-item-text)';
-        break;
-      case 'o-list-item-avatar':
-        compId = 'Customizable list (o-list-item-avatar)';
-        break;
-      case 'o-list-item-card':
-        compId = 'Customizable list (o-list-item-card)';
-        break;
-      case 'o-list-item-card-image':
-        compId = 'Customizable list (o-list-item-card-image)';
-        break;
-      default:
-        compId = '';
-        break;
-    }
-    return compId;
-  }
-  public static getHtml(key: string, list?: any, itemData?: any) {
-    let tpl = '';
-    switch (key) {
-      case 'o-list-item-text':
-        tpl = LIST1_HTML_DATA;
-        break;
-      case 'o-list-item-avatar':
-        tpl = LIST2_HTML_DATA;
-        break;
-      case 'o-list-item-card':
-        tpl = LIST3_HTML_DATA;
-        break;
-      case 'o-list-item-card-image':
-        tpl = LIST4_HTML_DATA;
-        break;
-      default:
-        tpl = 'no-data';
-        break;
-    }
+  public static replaceHtml(html: string, list?: any, itemData?: any) {
     if (list) {
-      tpl = tpl.replace('{title}', list.title || '')
+      html = html.replace('{title}', list.title || '')
         .replace('{quickFilter}', list.quickFilter)
         .replace('{refreshButton}', list.refreshButton)
         .replace('{insertButton}', list.insertButton)
@@ -55,51 +16,38 @@ export class ListsUtils {
     }
     if (itemData) {
 
-      tpl = tpl.replace('{collapsible}', itemData.collapsible)
+      html = html.replace('{collapsible}', itemData.collapsible)
         .replace('{collapsed}', itemData.collapsed);
 
       if (itemData.hasOwnProperty('icon')) {
-        tpl = tpl.replace('{icon}', itemData.icon)
+        html = html.replace('{icon}', itemData.icon)
           .replace('{iconPosition}', itemData.iconPosition || '');
       } else {
-        tpl = tpl.replace('icon="{icon}"', '')
+        html = html.replace('icon="{icon}"', '')
           .replace(' icon-position="{iconPosition}"', '');
       }
 
       if (itemData.action1 && itemData.action1.length) {
-        tpl = tpl.replace('{action1}', itemData.action1);
+        html = html.replace('{action1}', itemData.action1);
       } else {
-        tpl = tpl.replace('action-1-text="{action1}"', '');
+        html = html.replace('action-1-text="{action1}"', '');
       }
 
       if (itemData.action2 && itemData.action2.length) {
-        tpl = tpl.replace('{action2}', itemData.action2);
+        html = html.replace('{action2}', itemData.action2);
       } else {
-        tpl = tpl.replace('action-2-text="{action2}"', '');
+        html = html.replace('action-2-text="{action2}"', '');
       }
 
       if (!itemData.image) {
-        tpl = tpl.replace('image="{{ row.image }}"', '');
+        html = html.replace('image="{{ row.image }}"', '');
       }
 
       if (!itemData.avatar) {
-        tpl = tpl.replace('avatar="{{ row.thumbnailUrl }}"', '');
+        html = html.replace('avatar="{{ row.thumbnailUrl }}"', '');
       }
     }
-    return tpl;
-  }
-
-  public static getFiles(key: string, list?: any) {
-    return [{
-      'type': 'scss',
-      'data': ''
-    }, {
-      'type': 'typescript',
-      'data': ListsUtils.getTypescript(key)
-    }, {
-      'type': 'html',
-      'data': ' '
-    }];
+    return html;
   }
 
   public static getTypescript(key: string) {
@@ -193,100 +141,19 @@ export class ListsUtils {
           }
         `;
         break;
-      case 'o-list-item-card':
-
-        break;
-      case 'o-list-item-card-image':
-        break;
-      default:
-        break;
     }
     return typescriptCode;
   }
 
-  public static getUsers() {
-    return FAKE_USERS_LIST;
+  public static getListData(itemNumber?: number): Array<any> {
+    const result = [];
+    const arrayLength = itemNumber || 3;
+    for (let i = 0; i < arrayLength; i++) {
+      result.push(FAKE_USERS_LIST[i]);
+    }
+    return result;
   }
 }
-
-const LIST1_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}">
-
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item title="{{row.username}}"
-      secondary-text="{{ row.body }}"> (icon-action)="addToFavorites(row, item)"
-      icon="{icon}" icon-position="{iconPosition}">
-    </o-list-item-text>
-  </o-list-item>
-
-</o-list>
-`;
-
-const LIST2_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}">
-
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #item avatar="{{ row.thumbnailUrl }}"
-      title="{{row.name}}" secondary-text="{{ row.body }}"
-      (icon-action)="addToFavorites(row, item)" icon="{icon}">
-    </o-list-item-avatar>
-  </o-list-item>
-
-</o-list>
-`;
-
-const LIST3_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}"
-  row-height="{rowHeight}">
-
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item
-      title="{{row.username}}" subtitle="{{row.name}}" image="{{ row.image }}"
-      action-1-text="{action1}" action-2-text="{action2}"
-      (action-1)="onAction1()" (action-2)="onAction2()">
-    </o-list-item-card>
-  </o-list-item>
-
-<o-list>
-`;
-
-const LIST4_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"
-  detail-button-in-row="no" row-height="large">
-
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card-image #item title="{{row.username}}" subtitle="{{row.name}}"
-      content="{{ row.body }}" avatar="{{ row.thumbnailUrl }}" image="{{ row.image }}"
-      action-1-text="{action1}" action-2-text="{action2}"
-      (action-1)="onAction1()" (action-2)="onAction2()"
-      icon="{icon}" (icon-action)="onIconAction()"
-      collapsible="{collapsible}" collapsed="{collapsed}">
-    </o-list-item-card-image>
-  </o-list-item>
-
-<o-list>
-`;
 
 const FAKE_USERS_LIST = [
   {

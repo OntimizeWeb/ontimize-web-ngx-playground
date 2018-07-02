@@ -38,25 +38,18 @@ export class ContextMenuComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  getComponentId() {
-    return this.translateService.get('CONTEXTMENU');
-  }
-
   getFiles() {
-    return [
-      {
-        'type': 'html',
+    return {
+      'html': {
         'data': HTML_DATA
       },
-      {
-        'type': 'scss',
-        'data': ''
+      'scss': {
+        'data': undefined
       },
-      {
-        'type': 'typescript',
+      'typescript': {
         'data': TYPESCRIPT_DATA
       }
-    ];
+    };
   }
 
   onExecute(text: string) {

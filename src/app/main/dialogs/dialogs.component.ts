@@ -75,6 +75,20 @@ export class DialogsComponent implements OnInit {
         this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?');
       }
     }
+
+    getFiles() {
+      return {
+        'html': {
+          'data': HTML_DATA
+        },
+        'scss': {
+          'data': undefined
+        },
+        'typescript': {
+          'data': TYPESCRIPT_DATA
+        }
+      };
+    }
   }
 `;
 
@@ -141,25 +155,18 @@ export class DialogsComponent implements OnInit {
     }
   }
 
-  getComponentId() {
-    return 'Dialogs';
-  }
-
   getFiles() {
-    return [
-      {
-        'type': 'html',
+    return {
+      'html': {
         'data': HTML_DATA
       },
-      {
-        'type': 'scss',
-        'data': ''
+      'scss': {
+        'data': undefined
       },
-      {
-        'type': 'typescript',
+      'typescript': {
         'data': TYPESCRIPT_DATA
       }
-    ];
+    };
   }
 
 }

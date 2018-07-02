@@ -1,0 +1,24 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [files]="getFiles('o-table-horizontal-scroll')"
+  (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+
+    <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
+      <o-table #table attr="table" title="ACCOUNTS" horizontal-scroll="yes" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+        visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
+        quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+        <o-table-column attr="ENTITYID" title="ENTITYID" min-width="250px"></o-table-column>
+        <o-table-column attr="OFFICEID" title="OFFICEID" min-width="250px"></o-table-column>
+        <o-table-column attr="CDID" title="CDID" min-width="250px"></o-table-column>
+        <o-table-column attr="ANID" title="ANID" min-width="250px"></o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE" min-width="250px" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","></o-table-column>
+      </o-table>
+    </div>
+
+    <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex layout-padding>
+      <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
+        {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+      </mat-slide-toggle>
+    </o-column>
+
+  </div>
+</example-comp>

@@ -1,17 +1,25 @@
-import { Component, ElementRef, ViewEncapsulation, EventEmitter, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
 import { Console } from '@angular/core/src/console';
 
+export interface IFiles {
+  html?: any;
+  scss?: any;
+  typescript?: any;
+  files?: any[];
+}
+
 @Component({
   selector: 'example-comp',
-  moduleId: module.id,
   styleUrls: ['example.component.scss'],
   templateUrl: 'example.component.html',
   inputs: [
     'compName: comp-name',
-    'orderedFiles: files',
+    'compDesc: comp-desc',
+    'files',
     'collapsible',
-    'collapsed'
+    'collapsed',
+    'tabHeight: tab-height'
   ],
   outputs: [
     'onShowSource : showSource'
@@ -19,28 +27,30 @@ import { Console } from '@angular/core/src/console';
   encapsulation: ViewEncapsulation.None,
   host: {
     '[class.example-comp]': 'true'
-  }
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExampleComponent implements OnInit {
+export class ExampleComponent {
 
-  public showSource = false;
+  aditionalTabs: any[];
+  _showSource = false;
   compName = '';
-  orderedFiles: Array<any>;
-
-  tabs: any[] = [];
+  compDesc: string;
+  _files: IFiles = {};
+  tabHeight: string = '350px';
 
   @InputConverter()
   collapsible: boolean = false;
-
   @InputConverter()
   collapsed: boolean = false;
-  // protected html: string = undefined;
 
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
 
-  constructor(protected elRef: ElementRef) {
+  constructor(
+    protected cd: ChangeDetectorRef
+  ) {
     this.tplData = {};
   }
 
@@ -51,30 +61,39 @@ export class ExampleComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.initilizeData();
-
+  ngAfterViewInit() {
+    this.aditionalTabs = this.files.files;
   }
 
-  initilizeData() {
-    if (this.orderedFiles) {
-      this.orderedFiles.map(x => {
-        if (x.type !== '' && x.data !== '') {
-          const item = {};
-          item['type'] = x.type;
-          item['data'] = x.data;
-
-          this.tabs.push(item);
-        }
-      });
-    }
-  };
-  set html(value: string) {
-    for (const tab of this.tabs) {
-      if (tab.type === 'html') {
-        tab.data = value;
-      }
-    }
+  get showSource(): boolean {
+    return this._showSource;
   }
+
+  set showSource(val: boolean) {
+    this._showSource = val;
+  }
+
+  set files(val: IFiles) {
+    if (val.html && val.html.data) {
+      this._files.html = val.html;
+    }
+    this._files.scss = val.scss;
+    this._files.typescript = val.typescript;
+    this._files.files = val.files;
+  }
+
+  get files(): IFiles {
+    return this._files;
+  }
+
+  set html(val: any) {
+    this.files.html = {
+      data: val
+    };
+  }
+
+  get html(): any {
+    return this.files && this.files.html && this.files.html.data ? this.files.html.data : undefined;
+  }
+
 }
-

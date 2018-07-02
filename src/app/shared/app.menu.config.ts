@@ -6,34 +6,16 @@ import {
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
-  {
-    id: 'input',
-    name: 'INPUT',
-    icon: 'input',
-    opened: false,
-    items: [
-      { id: 'inputs', name: 'INPUTS', route: '/main/inputs', icon: 'border_color' },
-      { id: 'checkbox', name: 'CHECKBOX', route: '/main/checkbox', icon: 'check_circle' },
-      { id: 'combo', name: 'COMBO', route: '/main/combo', icon: 'people' }
-    ]
-  },
-  {
-    id: 'button',
-    name: 'BUTTON',
-    icon: 'people',
-    opened: false,
-    items: [
-      { id: 'buttons', name: 'BUTTONS', route: '/main/buttons', icon: 'people' }
-    ]
-  },
+  { id: 'input', name: 'INPUTS.COMPONENTS', icon: 'input', route: '/main/inputs' },
+  { id: 'button', name: 'BUTTONS', icon: 'add_circle_outline', route: '/main/buttons' },
   {
     id: 'data',
     name: 'DATA',
     icon: 'storage',
     opened: false,
     items: [
-      { id: 'list', name: 'LIST', route: '/main/lists', icon: 'list' },
-      { id: 'table', name: 'TABLE', route: '/main/table', icon: 'storage' }
+      { id: 'list', name: 'LIST.COMPONENT', route: '/main/lists', icon: 'list' },
+      { id: 'table', name: 'TABLE.COMPONENT', route: '/main/table', icon: 'storage' }
     ]
   },
   {
@@ -51,8 +33,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: 'crop_landscape',
     opened: false,
     items: [
-      { id: 'dialogs', name: 'DIALOGS', route: '/main/dialogs', icon: 'mode_comment' },
-      { id: 'snackbar', name: 'SNACKBAR', route: '/main/snackbar', icon: 'announcement' },
+      { id: 'dialogs', name: 'DIALOG.COMPONENT', route: '/main/dialogs', icon: 'mode_comment' },
+      { id: 'snackbar', name: 'SNACKBAR.COMPONENT', route: '/main/snackbar', icon: 'announcement' },
       { id: 'contextmenu', name: 'CONTEXTMENU', route: '/main/contextmenu', icon: 'menu' }
     ]
   }

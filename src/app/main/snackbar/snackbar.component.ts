@@ -36,25 +36,18 @@ export class SnackBarComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  getComponentId() {
-    return 'SnackBar';
-  }
-
   getFiles() {
-    return [
-      {
-        'type': 'html',
+    return {
+      'html': {
         'data': HTML_DATA
       },
-      {
-        'type': 'scss',
-        'data': ''
+      'scss': {
+        'data': undefined
       },
-      {
-        'type': 'typescript',
+      'typescript': {
         'data': TYPESCRIPT_DATA
       }
-    ];
+    };
   }
 
   showSnackBar(e: Event): void {

@@ -48,6 +48,7 @@ module.exports = {
     new GlobCopyWebpackPlugin({
       "patterns": [
         "assets/css/loader.css",
+        "assets/dummy-data",
         "assets/i18n",
         "assets/images",
         "favicon.ico"
