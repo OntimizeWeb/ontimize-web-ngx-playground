@@ -260,7 +260,6 @@ const HTML_DATA_CONTEXT_MENU = `
   </o-context-menu>
 `;
 
-
 const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
   <o-table #table attr="table" title="ACCOUNTS" horizontal-scroll="{horizontal-scroll}" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
@@ -274,6 +273,25 @@ const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
   </o-table>
 `;
 
+const HTML_DATA_INSERTABLE_ROW = `
+<o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+  sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+  pagination-controls="no" detail-mode="none" export-button="no">
+
+  <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
+
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered"> </o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+    currency-symbol-position="right">
+  </o-table-column>
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+  </o-table-column>
+
+  <o-table-insertable-row columns="NAME;STARTDATE" required-columns="STARTDATE" show-placeholder="yes"></o-table-insertable-row>
+</o-table>
+`;
 
 const TYPESCRIPT_DATA = `
   getTableData(): Array<any> {
@@ -459,6 +477,7 @@ export class TableUtils {
       case 'o-table-fixed':
         code = TYPESCRIPT_DATA_TABLE_FIXED;
         break;
+      case 'o-table-insertable-row':
       case 'o-table-renderer':
         code = TYPESCRIPT_DATA_RENDERERS;
         break;
@@ -507,6 +526,9 @@ export class TableUtils {
         break;
       case 'o-table-context-menu':
         code = HTML_DATA_CONTEXT_MENU;
+        break;
+      case 'o-table-insertable-row':
+        code = HTML_DATA_INSERTABLE_ROW;
         break;
     }
     return code;
