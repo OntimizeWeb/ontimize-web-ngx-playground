@@ -1,0 +1,27 @@
+<example-comp comp-name="IMAGEEXAMPLES.TEXT" comp-desc="IMAGEEXAMPLES.TEXT.DESC" [files]="getFiles('image')">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="row" style="height:400px">
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image1" data="http://placekitten.com/500/600" size-adjust="yes"></o-image>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image2" data="http://placekitten.com/500/600" height-image="300" width-image="300"></o-image>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image3" data="http://placekitten.com/500/600" height-image="300"></o-image>
+      </div>
+    </div>
+    <div fxLayout="row" style="height:400px">
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image1" data="http://placekitten.com/500/600" size-adjust="no"></o-image>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image2" data="http://placekitten.com/500/600" size-adjust="no" height-image="300" width-image="300"></o-image>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+        <o-image attr="image3" data="http://placekitten.com/500/600" size-adjust="no" height-image="300"></o-image>
+      </div>
+    </div>
+    
+  </o-form>
+</example-comp>
