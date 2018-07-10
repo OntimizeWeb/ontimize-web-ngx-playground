@@ -5,6 +5,7 @@ import { ImageExamplesComponent } from './image-examples/image-examples.componen
 import { ImageComponent } from './image-media/image.component';
 import { MediaRoutingModule } from './media-routing.module';
 import { MediaComponent } from './media.component';
+import { OImageModule2, OImageComponent2 } from './image/o-image.component';
 
 
 
@@ -13,7 +14,8 @@ import { MediaComponent } from './media.component';
     SharedModule,
     OntimizeWebModule,
     MediaRoutingModule,
-    OImageModule
+    OImageModule,
+    OImageModule2
   ],
   declarations: [
     MediaComponent,

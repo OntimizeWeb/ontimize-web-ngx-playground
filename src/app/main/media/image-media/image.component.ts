@@ -10,16 +10,15 @@ const HTML_DATA = `
 @Component({
   selector: 'image',
   templateUrl: './image.component.html',
-  styleUrls: ['./image.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ImageComponent implements OnInit {
+export class ImageComponent {
 
   @ViewChild('showControlToggle')
   showControlToggle: any = true;
 
-  @ViewChild('sizeAdjustToggle')
-  sizeAdjustToggle: any = false;
+  @ViewChild('autoFitToggle')
+  autoFitToggle: any = false;
 
   @ViewChild('readOnlyToggle')
   readOnlyToggle: any = false;
@@ -33,31 +32,26 @@ export class ImageComponent implements OnInit {
 
 
   constructor(
-
   ) {
 
   }
 
-  ngOnInit(): void {
+ 
+
+  files = {
+
+    'html': {
+      'data': HTML_DATA
+    },
+    'scss': {
+      'data': undefined
+    },
+    'typescript': {
+      'data': undefined
+    }
+  };
 
 
-  }
-
-
-
-  getFiles() {
-    return {
-      'html': {
-        'data': HTML_DATA
-      },
-      'scss': {
-        'data': undefined
-      },
-      'typescript': {
-        'data': undefined
-      }
-    };
-  }
 
 
   public static getHtml(data: any) {
@@ -78,13 +72,13 @@ export class ImageComponent implements OnInit {
   onShowSource(key: string, exampleComp: any) {
     const itemData: any = {
       showControl: this.showControlToggle.checked,
-      sizeAdjust: this.sizeAdjustToggle.checked,
+      sizeAdjust: this.autoFitToggle.checked,
       height: this.height ? this.height : "",
       width: this.width ? this.width : "",
       enabled: this.enabledToggle.checked,
       readOnly: this.readOnlyToggle.checked
     };
-    
+
     exampleComp.html = ImageComponent.getHtml(itemData);
 
   }
