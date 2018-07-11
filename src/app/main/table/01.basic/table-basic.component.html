@@ -41,26 +41,27 @@
           {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </o-column>
-      <o-column title-label="{{'BUTTONS' | oTranslate}}">
-        <o-row>
-          <div fxFlex="50">
-            <mat-slide-toggle #buttonAddToggle [checked]="false">
-              {{ 'TABLE.BUTTON.ADD' | oTranslate }}
-            </mat-slide-toggle>
-            <mat-slide-toggle #buttonRefreshToggle [checked]="false">
-              {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
-            </mat-slide-toggle>
-          </div>
-          <div fxFlex="50">
-            <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}">
-              {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
-            </mat-slide-toggle>
-            <mat-slide-toggle #showTextToggle checked="true">
-              {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
-            </mat-slide-toggle>
-          </div>
-        </o-row>
-      </o-column>
+
+      <o-row title-label="{{'BUTTONS' | oTranslate}}">
+        
+        <div fxFlex="40">
+          <mat-slide-toggle #buttonAddToggle [checked]="false">
+            {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #buttonRefreshToggle [checked]="false">
+            {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxFlex="40">
+          <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}">
+            {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #showTextToggle checked="true">
+            {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </o-row>
+
     </o-column>
 
   </div>
