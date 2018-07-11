@@ -151,6 +151,13 @@
   "IMAGE.ENABLED":"Enabled",
   "IMAGE.READ_ONLY":"Read only",
   "IMAGEEXAMPLES.TEXT":"Image",
+  "IMAGE.AUTOFIT":"Auto fit",
+  "IMAGE.AUTOFIT_200_300":"Auto fit (200*300px)",
+  "IMAGE.AUTOFIT_HEIGHT_300":"Auto fit (height=300px)",
+  "IMAGE.NOAUTOFIT":"Disabled auto fit",
+  "IMAGE.NOAUTOFIT_200_300":"Disabled auto fit (200*300px)",
+  "IMAGE.NOAUTOFIT_HEIGHT_300":"Disabled auto fit (height=300px)",
+  
   "IMAGEEXAMPLES.TEXT.DESC":"Component to insert or visualize images.",
   "SNACKBAR.COMPONENT": "SnackBar",
   "SNACKBAR.TEXT": "SnackBar text",
