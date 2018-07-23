@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 const HTML_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-html-input attr="html" label="HTML" [data]="getValue()" layout-padding></o-html-input>
+    <o-html-input #input1 attr="html" [data]="getValue()"></o-html-input>
+
+    <o-html-input attr="html2" [data]="getValue()" read-only="no" required="yes"></o-html-input>
 
   </o-form>
 `;
