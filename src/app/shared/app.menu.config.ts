@@ -19,6 +19,15 @@ export const MENU_CONFIG: MenuRootItem[] = [
     ]
   },
   {
+    id: 'media',
+    name: 'MEDIA',
+    icon: 'image',
+    opened: false,
+    items: [
+      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media', icon: 'image' }
+    ]
+  },
+  {
     id: 'layout',
     name: 'LAYOUT',
     icon: 'layers',

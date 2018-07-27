@@ -8,6 +8,7 @@ import { ListItemTextComponent } from './01.list-item-text/list-item-text.compon
 import { ListItemAvatarComponent } from './02.list-item-avatar/list-item-avatar.component';
 import { ListItemCardComponent } from './03.list-item-card/list-item-card.component';
 import { ListItemCardImageComponent } from './04.list-item-card-image/list-item-card-image.component';
+import { ListItemCustomComponent } from './05.list-item-custom/list-item-custom.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { ListItemCardImageComponent } from './04.list-item-card-image/list-item-
     ListItemTextComponent,
     ListItemAvatarComponent,
     ListItemCardComponent,
-    ListItemCardImageComponent
+    ListItemCardImageComponent,
+    ListItemCustomComponent
   ]
 })
 export class ListsModule { }
