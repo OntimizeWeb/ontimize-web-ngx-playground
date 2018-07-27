@@ -34,7 +34,7 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "3.0.0-rc.1",
+    "ontimize-web-ngx": "3.0.1",
     "angular2-highlight-js": "5.0.1",
     "ontimize-web-ngx-theming": "1.1.1"
   },
@@ -49,7 +49,7 @@
     "html-webpack-plugin": "3.2.0",
     "jasmine-spec-reporter": "~3.2.0",
     "node-sass": "4.7.2",
-    "ontimize-web-ngx-tools": "1.0.4",
+    "ontimize-web-ngx-tools": "1.0.6",
     "ts-node": "~2.0.0",
     "typescript": "2.4.2",
     "webpack": "3.11.0"
