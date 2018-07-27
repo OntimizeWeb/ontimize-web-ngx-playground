@@ -51,6 +51,7 @@
   "LIST.LIST_ITEM_AVATAR": "Avatar item",
   "LIST.LIST_ITEM_CARD": "Card item",
   "LIST.LIST_ITEM_CARD_IMAGE": "Image card item",
+  "LIST.LIST_ITEM_CUSTOM": "Custom item",
   "TABLE.COMPONENT": "Table",
   "TABLE.CONFIGURATION": "Table configuration",
   "TABLE.BUTTON.ADD": "Insert button",
