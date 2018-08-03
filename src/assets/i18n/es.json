@@ -68,6 +68,8 @@
   "TABLE.BUTTON.CALCULATED_COLUMN": "Columna calculada",
   "TABLE.BUTTON.PAGINATION": "Paginación",
   "TABLE.BUTTON.CONTEXT_MENU": "Menú contextual",
+  "TABLE.SHOW_TITLE": "Mostrar título",
+  "TABLE.CONTROLS": "Controles",
   "TABLE.FILTER": "Filtro",
   "TABLE.FILTER_CASE_SENSITIVE": "Filtro sensible a mayúsculas",
   "TABLE.BUTTON.SHOW_TEXT": "Mostrar texto",

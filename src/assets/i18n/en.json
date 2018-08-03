@@ -70,6 +70,8 @@
   "TABLE.BUTTON.CONTEXT_MENU": "Context menu",
   "TABLE.BUTTON.HORIZONTAL_SCROLL": "Horizontal scroll",
   "TABLE.BUTTON.INSERTABLE_ROW": "Insertable row",
+  "TABLE.SHOW_TITLE": "Show title",
+  "TABLE.CONTROLS": "Controls",
   "TABLE.FILTER": "Filter",
   "TABLE.FILTER_CASE_SENSITIVE": "Filter case sensitive",
   "TABLE.BUTTON.SHOW_TEXT": "Show text",

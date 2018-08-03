@@ -8,6 +8,15 @@ import { TableUtils } from '../table-utils';
 })
 export class TableBasicComponent {
 
+  @ViewChild('titleInput')
+  titleInput: any;
+
+  @ViewChild('controlsToggle')
+  controlsToggle: any;
+
+  @ViewChild('titleToggle')
+  titleToggle: any;
+
   @ViewChild('quickFilterToggle')
   quickFilterToggle: any;
 
@@ -48,6 +57,9 @@ export class TableBasicComponent {
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     const itemData: any = {
+      titleInput: this.titleInput.nativeElement.value,
+      controlsToggle: this.controlsToggle.checked,
+      titleToggle: this.titleToggle.checked,
       filter: this.quickFilterToggle.checked,
       filterCaseSensitive: this.filterCaseSensitive.checked,
       exportButtonToggle: this.exportButtonToggle.checked,
