@@ -17,6 +17,7 @@ import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
+import { ValidatorsComponent } from './16.validators/validators.component';
 
 export const routes: Routes = [
   {
@@ -36,7 +37,8 @@ export const routes: Routes = [
       { path: 'file', component: InputFileComponent },
       { path: 'checkbox', component: InputCheckboxComponent },
       { path: 'combo', component: InputComboComponent },
-      { path: 'listpicker', component: InputListpickerComponent }
+      { path: 'listpicker', component: InputListpickerComponent },
+      { path: 'validators', component: ValidatorsComponent }
     ]
   }
 ];
