@@ -293,6 +293,24 @@ const HTML_DATA_INSERTABLE_ROW = `
 </o-table>
 `;
 
+const HTML_DATA_TITLE_ALIGN = `
+<o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+  sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true">
+
+  <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+    currency-symbol-position="right">
+  </o-table-column>
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+  </o-table-column>
+</o-table>
+`;
+
+
 const TYPESCRIPT_DATA = `
   getTableData(): Array<any> {
     return ${JSON.stringify(FAKE_CUSTOMERS)};
@@ -532,6 +550,9 @@ export class TableUtils {
         break;
       case 'o-table-insertable-row':
         code = HTML_DATA_INSERTABLE_ROW;
+        break;
+      case 'o-table-title-align':
+        code = HTML_DATA_TITLE_ALIGN;
         break;
     }
     return code;
