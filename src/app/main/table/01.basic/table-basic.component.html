@@ -2,12 +2,12 @@
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
     <div fxFlex="60" fxLayoutAlign="center center">
-      <o-table #table fxFlex attr="table" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+      <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
         visible-columns="PHOTO;NAME;SURNAME;STARTDATE;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
         [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="getTableData()" [insert-button]="buttonAddToggle.checked"
         [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked" [delete-button]="buttonRemoveToggle.checked"
         [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked" [show-table-buttons-text]="showTextToggle.checked"
-        pagination-controls="no">
+        [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" pagination-controls="no">
 
         <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
         <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
@@ -22,6 +22,17 @@
     </div>
 
     <o-column attr="conf" title-label="{{ 'TABLE.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
+        <mat-form-field fxFlex="95">
+          <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
+        </mat-form-field>
+      </div>
+      <mat-slide-toggle #titleToggle checked="true">
+        {{ 'TABLE.SHOW_TITLE' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle #controlsToggle checked="true">
+        {{ 'TABLE.CONTROLS' | oTranslate }}
+      </mat-slide-toggle>
       <o-column title-label="{{'TABLE.FILTER' | oTranslate}}">
         <mat-slide-toggle #quickFilterToggle checked="true">
           {{ 'TABLE.FILTER' | oTranslate }}
@@ -43,7 +54,7 @@
       </o-column>
 
       <o-row title-label="{{'BUTTONS' | oTranslate}}">
-        
+
         <div fxFlex="40">
           <mat-slide-toggle #buttonAddToggle [checked]="false">
             {{ 'TABLE.BUTTON.ADD' | oTranslate }}
