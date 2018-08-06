@@ -19,6 +19,7 @@ import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.c
 import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-horizontal-scroll.component';
 import { TableInsertableRowComponent } from './11.insertablerow/table-insertable-row.component';
 import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
+import { TableTitleAlignComponent } from './12.titleAlign/table-title-align.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-cust
     OTableColumnRendererTotalReadyComponent,
     TableHorizontalScrollComponent,
     TableInsertableRowComponent,
-    OTableCellEditorCustomComponent
+    OTableCellEditorCustomComponent,
+    TableTitleAlignComponent
   ]
 })
 export class TableModule { }
