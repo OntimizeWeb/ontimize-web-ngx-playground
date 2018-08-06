@@ -1,29 +1,20 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CARD_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}"
-  row-height="{rowHeight}">
+<o-list #list attr="list" [title]="{title}" columns="id;name;username;email;street;phone" keys="id"
+  [static-data]="getStaticData()" refresh-button="{refreshButton}" row-height="{rowHeight}" insert-button="{insertButton}"
+  quick-filter="{quickFilter}">
 
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item
-      title="{{row.username}}" subtitle="{{row.name}}" image="{{ row.image }}"
-      action-1-text="{action1}" action-2-text="{action2}"
+    <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" show-image="{showImage}" image="{{ row.image }}"
+      action-1-text="{actionText1}" action-2-text="{actionText2}"
       (action-1)="onAction1()" (action-2)="onAction2()">
     </o-list-item-card>
   </o-list-item>
 
-<o-list>
-`;
-
-const LIST_ITEM_CARD_TS_DATA = `
-
+</o-list>
 `;
 
 @Component({
@@ -35,36 +26,26 @@ export class ListItemCardComponent {
 
   iconPosition: String = 'right';
 
-  @ViewChild('iconToggle')
-  iconToggle: any;
-  @ViewChild('itemIcon')
-  itemIcon: any;
-
-  @ViewChild('actionText1')
-  actionText1: any;
+  @ViewChild('cardListTitle')
+  cardListTitle: any;
+  @ViewChild('insertButtonToggle')
+  insertButtonToggle: any;
+  @ViewChild('refreshButtonToggle')
+  refreshButtonToggle: any;
+  @ViewChild('quickFilterToggle')
+  quickFilterToggle: any;
+  @ViewChild('showImageToggle')
+  showImageToggle: any;
   @ViewChild('action1Toggle')
   action1Toggle: any;
-  @ViewChild('actionText2')
-  actionText2: any;
   @ViewChild('action2Toggle')
   action2Toggle: any;
-  @ViewChild('actionText12')
-  actionText12: any;
-  @ViewChild('action1Toggle2')
-  action1Toggle2: any;
-  @ViewChild('actionText22')
-  actionText22: any;
-  @ViewChild('action2Toggle2')
-  action2Toggle2: any;
-
-  @ViewChild('collapsibleToggle')
-  collapsibleToggle: any;
-  @ViewChild('collapsedToggle')
-  collapsedToggle: any;
-  @ViewChild('imageToggle')
-  imageToggle: any;
-  @ViewChild('avatarToggle')
-  avatarToggle: any;
+  @ViewChild('rowHeight')
+  rowHeight: any;
+  @ViewChild('actionText1')
+  actionText1: any;
+  @ViewChild('actionText2')
+  actionText2: any;
 
   files = {
     'html': {
@@ -95,26 +76,17 @@ export class ListItemCardComponent {
   }
 
   onShowSource(list?: any, exampleComp?: any) {
-    const itemData: any = {
-      iconPosition: this.iconPosition
-    };
+    const itemData: any = {};
 
-    if (this.iconToggle.checked) {
-      itemData.icon = (this.itemIcon && this.itemIcon.nativeElement.value) ?
-        this.itemIcon.nativeElement.value : '';
-    }
-    itemData.action1 = (this.action1Toggle2.checked && this.actionText12 && this.actionText12.nativeElement.value)
-      ? this.actionText12.nativeElement.value : '';
-    itemData.action2 = (this.action2Toggle2.checked && this.actionText22 && this.actionText22.nativeElement.value)
-      ? this.actionText22.nativeElement.value : '';
-    itemData.collapsible = this.collapsibleToggle.checked;
-    itemData.collapsed = this.collapsedToggle.checked;
-    itemData.image = this.imageToggle.checked;
-    itemData.avatar = this.avatarToggle.checked;
-
+    list.title = this.cardListTitle.nativeElement.value;
+    list.refreshButton = this.refreshButtonToggle.checked;
+    list.quickFilter = this.quickFilterToggle.checked;
+    list.insertButton = this.insertButtonToggle.checked;
+    itemData.showImage = this.showImageToggle.checked;
+    itemData.actionText1 = this.actionText1.nativeElement.value;
+    itemData.actionText2 = this.actionText2.nativeElement.value;
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_HTML_DATA, list, itemData);
-
   }
 
 }

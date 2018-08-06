@@ -196,5 +196,6 @@
   "INPUTS.VALIDATORS.DESC": "User can add its own validators to the input components",
   "INPUTS.VALIDATOR.INPUT": "Component input",
   "INPUTS.VALIDATOR.O-VALIDATOR": "o-validator component",
-  "INPUTS.VALIDATOR.O-ERROR": "o-error component"
+  "INPUTS.VALIDATOR.O-ERROR": "o-error component",
+  "SHOW_IMAGE": "Image"
 }

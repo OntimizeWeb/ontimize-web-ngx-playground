@@ -12,10 +12,12 @@ export class ListsUtils {
         .replace('{detailButtonInRowIcon}', list.detailButtonInRowIcon || '')
         .replace('{editButtonInRow}', list.editButtonInRow)
         .replace('{editButtonInRowIcon}', list.editButtonInRowIcon || '')
-        .replace('{rowHeight}', list.rowHeight || '');
+        .replace('{rowHeight}', list.rowHeight || '')
+        .replace('{showImage}', itemData.showImage)
+        .replace('{actionText1}', itemData.actionText1)
+        .replace('{actionText2}', itemData.actionText2);
     }
     if (itemData) {
-
       html = html.replace('{collapsible}', itemData.collapsible)
         .replace('{collapsed}', itemData.collapsed);
 
