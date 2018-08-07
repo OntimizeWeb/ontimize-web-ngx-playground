@@ -20,6 +20,7 @@ import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
+import { InputHourComponent } from './16.hour/input-hour.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { InputListpickerComponent } from './14.listpicker/input-listpicker.compo
     InputFileComponent,
     InputCheckboxComponent,
     InputComboComponent,
-    InputListpickerComponent
+    InputListpickerComponent,
+    InputHourComponent
   ]
 })
 export class InputsModule { }
