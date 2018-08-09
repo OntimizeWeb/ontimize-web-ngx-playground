@@ -1,5 +1,20 @@
-<example-comp comp-name="INPUTS.HTML" comp-desc="INPUTS.HTML.DESC" [files]="files">
+<example-comp comp-name="INPUTS.HOUR" comp-desc="INPUTS.HOUR.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <o-hour-input attr="hour" label="{{ 'INPUTS.HTML' | oTranslate }}"  layout-padding></o-html-input>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-hour-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()"></o-hour-input>
+
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+        tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-hour-input attr="input3" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" enabled="no" [data]="getValue()"></o-hour-input>
+    </div>
+
   </o-form>
 </example-comp>

@@ -51,7 +51,8 @@ module.exports = {
         "assets/dummy-data",
         "assets/i18n",
         "assets/images",
-        "favicon.ico"
+        "favicon.ico",
+        "assets/js/ckeditor"
       ],
       "globOptions": {
         "cwd": path.join(process.cwd(), "src"),

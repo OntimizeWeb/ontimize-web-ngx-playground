@@ -13,6 +13,7 @@ import { TablePaginationComponent } from './08.pagination/table-pagination.compo
 import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.component';
 import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-horizontal-scroll.component';
 import { TableInsertableRowComponent } from './11.insertablerow/table-insertable-row.component';
+import { TableTitleAlignComponent } from './12.titleAlign/table-title-align.component';
 
 export const routes: Routes = [
   {
@@ -28,7 +29,8 @@ export const routes: Routes = [
       { path: 'pagination', component: TablePaginationComponent },
       { path: 'contextmenu', component: TableContextMenuComponent },
       { path: 'horizontalscroll', component: TableHorizontalScrollComponent },
-      { path: 'insertablerow', component: TableInsertableRowComponent }
+      { path: 'insertablerow', component: TableInsertableRowComponent },
+      { path: 'titlealign', component: TableTitleAlignComponent }
     ]
   }
 ];

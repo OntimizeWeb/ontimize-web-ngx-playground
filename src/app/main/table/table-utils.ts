@@ -54,11 +54,11 @@ const FAKE_BRANCHES =
   [{ 'OFFICEID': '0000', 'ADDRESS': 'AVDA. GARCIA BARBON, 1  9(36201) VIGO', 'NAME': 'MAIN BRANCH', 'STARTDATE': 670802400000 }, { 'OFFICEID': '0001', 'ADDRESS': 'MERCATOR PLACE, WILSONIA INDUSTRIAL, EAST LONDON, EASTERN CAPE', 'NAME': 'BCM MARKET SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0002', 'ADDRESS': 'DONKIN ST', 'NAME': 'BEDFORD EASTERN CAPE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0003', 'ADDRESS': 'PRIORITY HOUSE 5 IRIS ROAD BEDFORDVIEW GAUTENG', 'NAME': 'BEDFORDVIEW PRIV BNKG SUITE SC', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0004', 'ADDRESS': 'PRESIDENT SWART STREET BULTFONTEIN', 'NAME': 'BULTFONTEIN SERVICE CENTRE', 'STARTDATE': 765496800000 }, { 'OFFICEID': '0070', 'ADDRESS': 'SHOP 69 WESTRIDGE PARK SC', 'NAME': 'WESTRIDGE PARK SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0101', 'ADDRESS': 'CENTRO CITY 11 TRUMP ST', 'NAME': 'JOZI POD CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0102', 'ADDRESS': 'STA. MARIA DE LA CABEZA, ESQ. DR. CALERO   2822', 'NAME': 'MAJADAHONDA ', 'STARTDATE': 797032800000 }, { 'OFFICEID': '0103', 'ADDRESS': 'PL. MAYOR, 10   (28850) TORREJON DE ARDOZ', 'NAME': 'TORREJON', 'STARTDATE': 828655200000 }, { 'OFFICEID': '1471', 'ADDRESS': 'Edificio Citexvi, Fonte das Abelleiras, s/n · Local 27, 36310 Vigo, Pontevedra', 'NAME': 'ImatiaBank Innovation', 'STARTDATE': 1480546800000 }, { 'OFFICEID': '9999', 'ADDRESS': 'Calle Test', 'NAME': 'Banco Test', 'STARTDATE': 1504994400000 }];
 
 const HTML_DATA = `
-  <o-table #table fxFlex attr="table" title="CUSTOMERS" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
+  <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" pagination-controls="no">
+    select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
@@ -293,6 +293,24 @@ const HTML_DATA_INSERTABLE_ROW = `
 </o-table>
 `;
 
+const HTML_DATA_TITLE_ALIGN = `
+<o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+  sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true">
+
+  <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+    currency-symbol-position="right">
+  </o-table-column>
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+  </o-table-column>
+</o-table>
+`;
+
+
 const TYPESCRIPT_DATA = `
   getTableData(): Array<any> {
     return ${JSON.stringify(FAKE_CUSTOMERS)};
@@ -432,7 +450,10 @@ export class TableUtils {
         break;
     }
     if (table) {
-      tpl = tpl.replace('{quickFilter}', data.filter)
+      tpl = tpl.replace('{titleInput}', data.titleInput)
+        .replace('{controlsToggle}', data.controlsToggle)
+        .replace('{titleToggle}', data.titleToggle)
+        .replace('{quickFilter}', data.filter)
         .replace('{filterCaseSensitive}', data.filterCaseSensitive)
         .replace('{exportButtonToggle}', data.exportButtonToggle)
         .replace('{columnsVisibilityToggle}', data.columnsVisibilityToggle)
@@ -529,6 +550,9 @@ export class TableUtils {
         break;
       case 'o-table-insertable-row':
         code = HTML_DATA_INSERTABLE_ROW;
+        break;
+      case 'o-table-title-align':
+        code = HTML_DATA_TITLE_ALIGN;
         break;
     }
     return code;

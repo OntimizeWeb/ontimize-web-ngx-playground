@@ -1,0 +1,25 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CUSTOM" [files]="files" class="list-examples">
+
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+
+    <o-column elevation="1" fxFlex="40" layout-align="center" attr="listColumn">
+
+      <o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" query-on-init="true"
+        pageable="no" [static-data]="getStaticData()">
+
+        <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <img src="{{ row.image }}" fxFill />
+            </div>
+            <mat-card-title>{{ row.name }}</mat-card-title>
+            <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+
+      </o-list>
+
+    </o-column>
+
+  </div>
+</example-comp>

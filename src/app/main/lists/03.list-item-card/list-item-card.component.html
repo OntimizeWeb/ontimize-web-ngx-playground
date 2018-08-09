@@ -2,76 +2,74 @@
   class="list-examples">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-    <o-column elevation="1" fxFlex="40" layout-align="center" attr="listcardrow">
+    <o-column elevation="1" fxFlex="40" layout-align="center">
       <o-list #cardList fxFill attr="cardList" [title]="cardListTitle.value" columns="id;name;username;email;street;phone" keys="id"
-        quick-filter-columns="name;username" query-on-init="true" pageable="no" [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle3.checked"
-        selectable="no" detail-button-in-row="no" edit-button-in-row="no" row-height="large" [insert-button]="insertButtonToggle3.checked"
-        quick-filter="no">
+        [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" row-height="large" [insert-button]="insertButtonToggle.checked"
+        [quick-filter]="quickFilterToggle.checked">
 
         <o-list-item *ngFor="let row of cardList.dataArray">
-          <o-list-item-card #itemCard title="{{row.username}}" subtitle="{{row.name}}" image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : ''"
-            [action-2-text]="action2Toggle.checked ? actionText2.value : ''" (action-1)="onAction1()" (action-2)="onAction2()">
+          <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked" image="{{ row.image }}"
+            [action-1-text]="action1Toggle.checked ? actionText1.value : ''" [action-2-text]="action2Toggle.checked ? actionText2.value : ''"
+            (action-1)="onAction1()" (action-2)="onAction2()">
           </o-list-item-card>
         </o-list-item>
       </o-list>
     </o-column>
 
-    <o-column attr="conf3" title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+    <o-column title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
       <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
         <mat-form-field fxFlex="95">
           <input matInput #cardListTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
-
       </div>
       <div fxLayout="row" layout-padding fxLayoutAlign="start">
-        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
-
-          <mat-slide-toggle #insertButtonToggle3>
-            {{ 'INSERT_BUTTON' | oTranslate }}
-          </mat-slide-toggle>
-        </div>
-
-        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
-          <mat-slide-toggle #refreshButtonToggle3>
-            {{ 'REFRESH_BUTTON' | oTranslate }}
-          </mat-slide-toggle>
-        </div>
+        <mat-slide-toggle #refreshButtonToggle checked="true" fxFlex layout-padding>
+          {{ 'REFRESH_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex layout-padding>
+          {{ 'QUICK_FILTER' | oTranslate }}
+        </mat-slide-toggle>
       </div>
-      <o-row layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
-        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
-          <mat-slide-toggle #action1Toggle checked="true">
+      <div fxLayout="row" layout-padding fxLayoutAlign="start">
+        <mat-slide-toggle #insertButtonToggle fxFlex layout-padding>
+          {{ 'INSERT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+        <mat-slide-toggle #showImageToggle checked="true">
+          {{ 'SHOW_IMAGE' | oTranslate }}
+        </mat-slide-toggle>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #action1Toggle checked="true" fxFlex>
             {{ 'ACTION_1' | oTranslate }}
           </mat-slide-toggle>
-
-          <mat-slide-toggle #action2Toggle checked="true">
-            {{ 'ACTION_2' | oTranslate }}
-          </mat-slide-toggle>
-
-          <span>
-            {{ 'ROW_HEIGHT' | oTranslate }}
-          </span>
-          <mat-radio-group #rowHeight2 fxLayout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
-            <mat-radio-button value="small">
-              {{ 'SMALL' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="medium">
-              {{ 'MEDIUM' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="large">
-              {{ 'LARGE' | oTranslate }}
-            </mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div fxLayout="column" layout-padding fxLayoutAlign="start" fxFlex="50">
-          <mat-form-field class="padding-3" [hidden]="!action1Toggle.checked">
+          <mat-form-field [hidden]="!action1Toggle.checked" fxFlex>
             <input matInput #actionText1 placeholder="action-1-text" value="ACTION 1">
           </mat-form-field>
-
-          <mat-form-field class="padding-3" [hidden]="!action2Toggle.checked">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #action2Toggle checked="true" fxFlex>
+            {{ 'ACTION_2' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!action2Toggle.checked" fxFlex>
             <input matInput #actionText2 placeholder="action-2-text" value="ACTION 2">
           </mat-form-field>
         </div>
-      </o-row>
+        <span>
+          {{ 'ROW_HEIGHT' | oTranslate }}
+        </span>
+        <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="cardList.rowHeight" (change)="cardList.rowHeight = $event.value">
+          <mat-radio-button value="small" class="padding-3">
+            {{ 'SMALL' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="medium" class="padding-3">
+            {{ 'MEDIUM' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="large" class="padding-3">
+            {{ 'LARGE' | oTranslate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </o-column>
     </o-column>
   </div>
 </example-comp>
