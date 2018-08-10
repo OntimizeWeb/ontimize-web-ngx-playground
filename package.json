@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4202 --host 10.7.0.190",
+    "start": "ng serve --port 4202",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod",
     "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-playground/",
