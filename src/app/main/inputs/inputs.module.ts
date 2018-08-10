@@ -21,7 +21,8 @@ import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
 import { InputHourComponent } from './16.hour/input-hour.component';
-import { ValidatorsComponent } from './16.validators/validators.component';
+import { InputTimeComponent } from './17.time/input-time.component';
+import { ValidatorsComponent } from './99.validators/validators.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { ValidatorsComponent } from './16.validators/validators.component';
     InputComboComponent,
     InputListpickerComponent,
     InputHourComponent,
+    InputTimeComponent,
     ValidatorsComponent
   ]
 })
