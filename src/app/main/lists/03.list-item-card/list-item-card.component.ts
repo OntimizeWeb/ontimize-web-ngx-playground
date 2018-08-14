@@ -25,6 +25,7 @@ const LIST_ITEM_CARD_HTML_DATA = `
 export class ListItemCardComponent {
 
   iconPosition: String = 'right';
+  protected staticData = ListsUtils.getListData();
 
   @ViewChild('cardListTitle')
   cardListTitle: any;
@@ -72,7 +73,7 @@ export class ListItemCardComponent {
   }
 
   getStaticData() {
-    return ListsUtils.getListData()
+    return this.staticData;
   }
 
   onShowSource(list?: any, exampleComp?: any) {

@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
     <o-column elevation="1" fxFlex="40" layout-align="center">
-      <o-list #cardList fxFill attr="cardList" [title]="cardListTitle.value" columns="id;name;username;email;street;phone" keys="id"
+      <o-list #cardList fxFill attr="cardList" [title]="cardListTitle.value" columns="id;name;username;image" keys="id"
         [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" row-height="large" [insert-button]="insertButtonToggle.checked"
         [quick-filter]="quickFilterToggle.checked">
 

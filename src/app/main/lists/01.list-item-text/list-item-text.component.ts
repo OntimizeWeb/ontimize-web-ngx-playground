@@ -3,7 +3,7 @@ import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_TEXT_HTML_DATA = `
 <o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
+  columns="id;name;username;email" quick-filter-columns="name;username;email"
   [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
   refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
   dense="{dense}" detail-button-in-row="{detailButtonInRow}"
@@ -12,7 +12,7 @@ const LIST_ITEM_TEXT_HTML_DATA = `
 
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-text #item title="{{row.username}}"
-      secondary-text="{{ row.body }}"> (icon-action)="addToFavorites(row, item)"
+      secondary-text="{{ row.email }}"> (icon-action)="addToFavorites(row, item)"
       icon="{icon}" icon-position="{iconPosition}">
     </o-list-item-text>
   </o-list-item>
@@ -32,6 +32,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
 export class ListItemTextComponent {
 
   iconPosition: String = 'right';
+  protected staticData = ListsUtils.getListData(5);
 
   @ViewChild('iconToggle')
   iconToggle: any;
@@ -59,7 +60,7 @@ export class ListItemTextComponent {
   }
 
   getStaticData() {
-    return ListsUtils.getListData(5);
+    return this.staticData;
   }
 
   onShowSource(list?: any, exampleComp?: any) {

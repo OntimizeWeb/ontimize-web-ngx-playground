@@ -29,23 +29,23 @@
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle #imageToggle checked="true" fxFlex>
-          {{ 'IMAGE' | oTranslate }}
-        </mat-slide-toggle>
-        <mat-slide-toggle #avatarToggle fxFlex>
-          {{ 'AVATAR' | oTranslate }}
-        </mat-slide-toggle>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle #collapsibleToggle fxFlex>
-          {{ 'COLLAPSIBLE' | oTranslate }}
-        </mat-slide-toggle>
-        <mat-slide-toggle #collapsedToggle checked="true" fxFlex>
-          {{ 'COLLAPSED' | oTranslate }}
-        </mat-slide-toggle>
-      </div>
       <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+        <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+          <mat-slide-toggle #imageToggle checked="true" fxFlex>
+            {{ 'IMAGE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #avatarToggle fxFlex>
+            {{ 'AVATAR' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+          <mat-slide-toggle #collapsibleToggle fxFlex>
+            {{ 'COLLAPSIBLE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #collapsedToggle checked="true" fxFlex>
+            {{ 'COLLAPSED' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <mat-slide-toggle #action1Toggle checked="true" fxFlex>
             {{ 'ACTION_1' | oTranslate }}
