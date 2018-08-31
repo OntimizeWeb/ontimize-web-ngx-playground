@@ -1,38 +1,46 @@
-<example-comp #ex2 collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [files]="files" (showSource)="onShowSource(list, ex2)"
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [files]="files" (showSource)="onShowSource(list, ex)"
   class="list-examples">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-column elevation="1" fxFlex="40" layout-align="center" attr="listrow">
-      <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;email;street;phone" keys="id" quick-filter-columns="name;username"
-        [static-data]="getStaticData()" quick-filter="no" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked"
-        [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"
-        [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
-        [edit-button-in-row-icon]="editButtonInRowIconInput.value">
+    <o-column elevation="1" fxFlex="40" layout-align="center">
+      <o-list #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email" [static-data]="getStaticData()"
+        [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked"
+        [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked" [selectable]="selectableToggle.checked"
+        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
+        [edit-button-in-row]="editButtonInRowToggle.checked" [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
         <o-list-item *ngFor="let row of list.dataArray">
-          <o-list-item-avatar #avatarItem avatar="{{ row.thumbnailUrl }}" title="{{ row.name }}" secondary-text="{{ row.body }}" [icon]="iconToggle.checked ? itemIcon.value : undefined"
-            (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
+          <o-list-item-avatar #avatarItem avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
+            secondary-text="{{ row.email }}" [icon]="iconToggle.checked ? itemIcon.value : undefined" (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
         </o-list-item>
       </o-list>
     </o-column>
-    <o-column attr="conf2" title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+    <o-column title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
       <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
         <mat-form-field fxFlex="95">
           <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
       </div>
-      <div fxLayout="row" fxLayoutAlig="center center">
-        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex layout-padding>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
           {{ 'REFRESH_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle #denseToggle [checked]="list.odense" fxFlex layout-padding>
+        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex layout-padding>
+          {{ 'QUICK_FILTER' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #selectableToggle fxFlex>
+          {{ 'SELECTABLE' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #denseToggle [checked]="list.odense" fxFlex>
           {{ 'DENSE' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <div fxLayout="row" fxLayoutAlig="center center">
-        <mat-slide-toggle #insertButtonToggle fxFlex layout-padding>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #insertButtonToggle fxFlex>
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle #selectableToggle fxFlex layout-padding>
-          {{ 'SELECTABLE' | oTranslate }}
+        <mat-slide-toggle #deleteButtonToggle fxFlex>
+          {{ 'DELETE_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">

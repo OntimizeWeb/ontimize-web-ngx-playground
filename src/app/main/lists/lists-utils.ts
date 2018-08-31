@@ -6,6 +6,7 @@ export class ListsUtils {
         .replace('{quickFilter}', list.quickFilter)
         .replace('{refreshButton}', list.refreshButton)
         .replace('{insertButton}', list.insertButton)
+        .replace('{deleteButton}', list.deleteButton)
         .replace('{selectable}', list.selectable)
         .replace('{dense}', list.dense || false)
         .replace('{detailButtonInRow}', list.detailButtonInRow)
@@ -41,12 +42,16 @@ export class ListsUtils {
         html = html.replace('action-2-text="{action2}"', '');
       }
 
-      if (!itemData.image) {
-        html = html.replace('image="{{ row.image }}"', '');
+      if (itemData.image) {
+        html = html.replace('{image}', '{{ row.image }}');
+      } else {
+        html = html.replace('image="{image}"', '');
       }
 
-      if (!itemData.avatar) {
-        html = html.replace('avatar="{{ row.thumbnailUrl }}"', '');
+      if (itemData.avatar && itemData.avatar.length) {
+        html = html.replace('{avatar}', itemData.avatar);
+      } else {
+        html = html.replace('avatar="{avatar}"', '');
       }
     }
     return html;
