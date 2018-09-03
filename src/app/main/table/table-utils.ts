@@ -58,7 +58,7 @@ const HTML_DATA = `
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
+    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
