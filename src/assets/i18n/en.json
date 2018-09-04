@@ -158,6 +158,7 @@
   "IMAGE.COMPONENT": "Image",
   "IMAGE.CONFIGURATION": "Image configuration",
   "IMAGE.SHOW_CONTROL": "Show controls",
+  "IMAGE.SHOW_FULLSCREEN": "Show full screen button",
   "IMAGE.SIZE_ADJUST": "Adjust image size",
   "IMAGE.HEIGHT": "Height (% or px)",
   "IMAGE.WIDTH": "Width (% or px)",
