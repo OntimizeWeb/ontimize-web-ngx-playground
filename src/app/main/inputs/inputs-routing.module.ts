@@ -20,11 +20,12 @@ import { InputListpickerComponent } from './14.listpicker/input-listpicker.compo
 import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputOverviewComponent } from './00.overview/input-overview.component';
 
 export const routes: Routes = [
   {
     path: '', component: InputsComponent, children: [
-      { path: '', redirectTo: 'text', pathMatch: 'prefix' },
+      { path: '', component: InputOverviewComponent },
       { path: 'text', component: InputTextComponent },
       { path: 'date', component: InputDateComponent },
       { path: 'integer', component: InputIntegerComponent },

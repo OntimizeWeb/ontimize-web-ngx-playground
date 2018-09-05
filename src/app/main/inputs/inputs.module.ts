@@ -5,6 +5,7 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
 import { InputsComponent } from './inputs.component';
 import { InputsRoutingModule } from './inputs-routing.module';
+import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
 import { InputDateComponent } from './02.date/input-date.component';
 import { InputIntegerComponent } from './03.integer/input-integer.component';
@@ -22,6 +23,7 @@ import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
 import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
+import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 
 @NgModule({
@@ -32,6 +34,7 @@ import { ValidatorsComponent } from './99.validators/validators.component';
   ],
   declarations: [
     InputsComponent,
+    InputOverviewComponent,
     InputTextComponent,
     InputDateComponent,
     InputIntegerComponent,
@@ -49,7 +52,8 @@ import { ValidatorsComponent } from './99.validators/validators.component';
     InputListpickerComponent,
     InputHourComponent,
     InputTimeComponent,
-    ValidatorsComponent
+    ValidatorsComponent,
+    ClearComponent
   ]
 })
 export class InputsModule { }
