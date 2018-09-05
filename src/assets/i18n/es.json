@@ -119,6 +119,8 @@
   "INPUT.BUTTON.TIME": "Fecha y hora",
   "INPUT.COMBO": "Combo",
   "INPUT.COMBOMULTIPLE": "Combo multiple",
+  "INPUTS.CLEAR": "Botón limpiar",
+  "INPUTS.CLEAR.DESC": "Añade un botón para limpiar el campo usando el atributo 'clear-button'",
   "INPUTS.TEXT": "Inputs de texto",
   "INPUTS.TEXT.DESC": "Componente para mostrar una entrada de texto.",
   "INPUTS.DATE": "Inputs fecha",

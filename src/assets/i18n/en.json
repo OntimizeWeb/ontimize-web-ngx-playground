@@ -119,6 +119,8 @@
   "INPUT.BUTTON.TIME": "Time",
   "INPUT.COMBO": "Combo",
   "INPUT.COMBOMULTIPLE": "Combo multiple",
+  "INPUTS.CLEAR": "Clear button",
+  "INPUTS.CLEAR.DESC": "Add a button for clearing the input field using the attribute 'clear-button'",
   "INPUTS.TEXT": "Text inputs",
   "INPUTS.TEXT.DESC": "A component for getting or displaying text input submitted by the user.",
   "INPUTS.DATE": "Date inputs",
