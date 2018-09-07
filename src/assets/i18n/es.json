@@ -94,6 +94,8 @@
   "TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL": "Ejemplo de tabla con scroll horizontal",
   "TABLE.EXAMPLE_INSERTABLE_ROW": "Ejemplo de tabla con fila insertable",
   "TABLE.EXAMPLE_TITLE_ALIGN": "Ejemplo de alineación de los títulos de las columnas",
+  "GRID.COMPONENT": "Grid",
+  "GRID.EXAMPLE": "Grid",
   "INPUTS.COMPONENTS": "Campos de entrada",
   "INPUTS.READ_ONLY": "Solo lectura",
   "INPUTS.EDITABLE": "Editable",
