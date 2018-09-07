@@ -46,7 +46,7 @@ export class InputHourComponent {
   };
 
   getValue() {
-    return '05:00 AM'
+    return '05:00 AM';
   }
 
 }

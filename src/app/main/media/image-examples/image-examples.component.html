@@ -1,25 +1,25 @@
 <example-comp comp-name="IMAGEEXAMPLES.TEXT" comp-desc="IMAGEEXAMPLES.TEXT.DESC" [files]="getFiles()">
   <p layout-padding>The size of the image is 300 * 200 pixeles</p>
-  <o-row style="height:200px">
+  <o-row style="height: 200px" class="img-ex-row">
     <o-column fxFlex="30" title-label="IMAGE.AUTOFIT">
       <o-image attr="image1" data="http://placekitten.com/300/200" show-controls="no" fxFill></o-image>
     </o-column>
-    <o-column fxFlex="30" title-label="IMAGE.AUTOFIT_200_300" >
+    <o-column fxFlex="30" title-label="IMAGE.AUTOFIT_200_300">
       <o-image attr="image2" data="http://placekitten.com/300/200" width="200px" height="300px" show-controls="no"></o-image>
     </o-column>
     <o-column fxFlex="30" title-label="IMAGE.AUTOFIT_HEIGHT_300">
       <o-image attr="image3" data="http://placekitten.com/300/200" height="300px" show-controls="no"></o-image>
     </o-column>
   </o-row>
-  <o-row>
-      <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT">
-        <o-image attr="image4" data="http://placekitten.com/300/200" auto-fit="no" show-controls="no" fxFill></o-image>
-      </o-column>
-      <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT_200_300"  style="height:200px">
-        <o-image attr="image5" data="http://placekitten.com/300/200" auto-fit="no" height="300px" width="200px" show-controls="no"></o-image>
-      </o-column>
-      <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT_HEIGHT_300">
-        <o-image attr="image6" data="http://placekitten.com/300/200" auto-fit="no" height="200px" show-controls="no"></o-image>
-      </o-column>
+  <o-row style="height: 200px" class="img-ex-row">
+    <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT">
+      <o-image attr="image4" data="http://placekitten.com/300/200" auto-fit="no" show-controls="no" fxFill></o-image>
+    </o-column>
+    <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT_200_300" style="height:200px">
+      <o-image attr="image5" data="http://placekitten.com/300/200" auto-fit="no" height="300px" width="200px" show-controls="no"></o-image>
+    </o-column>
+    <o-column fxFlex="30" title-label="IMAGE.NOAUTOFIT_HEIGHT_300">
+      <o-image attr="image6" data="http://placekitten.com/300/200" auto-fit="no" height="200px" show-controls="no"></o-image>
+    </o-column>
   </o-row>
 </example-comp>

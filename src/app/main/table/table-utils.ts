@@ -58,7 +58,7 @@ const HTML_DATA = `
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-table-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
+    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME;STARTDATE"></o-table-columns-filter>
@@ -68,6 +68,7 @@ const HTML_DATA = `
     <o-table-column attr="PHOTO" orderable="no" searchable="no">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
     </o-table-column>
+    <o-table-column attr="SURNAME" multiline="yes"></o-table-column>
     <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"> </o-table-column>
     <o-table-column attr="action" width="64px">
       <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>

@@ -30,7 +30,7 @@ export class InputTimeComponent {
   };
 
   getValue() {
-    return '05:00 AM'
+    return 1535353788828;
   }
 
 }
