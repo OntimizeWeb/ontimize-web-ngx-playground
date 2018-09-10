@@ -11,7 +11,7 @@ export class OTableColumnRendererTotalReadyComponent extends OBaseTableCellRende
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.initialize(); this.setComponentPipe();
+    this.setComponentPipe();
   }
 
   setComponentPipe() {
