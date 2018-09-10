@@ -83,6 +83,8 @@
   "TABLE.COLUMNS_VISIBILITY_BUTTON": "Opción mostrar/ocultar columnas",
   "TABLE.PAGINATION": "Paginación",
   "TABLE.SHOW_PAGINATION": "Mostrar paginación",
+  "TABLE.ITEM.MULTILINE": "Multilínea",
+  "TABLE.ROW_HEIGHT.INFO": "Este atributo es ignorado cuando alguna columna de la tabla es multilínea",
   "TABLE.EXAMPLE_RENDERER": "Ejemplo de renderes básicos",
   "TABLE.EXAMPLE_EDITOR": "Ejemplo de editores básicos",
   "TABLE.EXAMPLE_AGGRETATE": "Ejemplo de totales de la tabla",
