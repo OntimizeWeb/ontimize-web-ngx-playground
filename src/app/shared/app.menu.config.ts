@@ -15,6 +15,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
     opened: false,
     items: [
       { id: 'list', name: 'LIST.COMPONENT', route: '/main/lists', icon: 'list' },
+      { id: 'grid', name: 'GRID.COMPONENT', route: '/main/grid', icon: 'view_module' },
       { id: 'table', name: 'TABLE.COMPONENT', route: '/main/table', icon: 'storage' }
     ]
   },
