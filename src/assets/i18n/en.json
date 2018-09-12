@@ -215,6 +215,7 @@
   "CDID": "Control",
   "ANID": "Account",
   "ACCOUNTTYP": "Type",
+  "NOTES": "Notes",
   "INPUT.COMBO.MESSAGE_TRIGGER": "(+{0} others)",
   "INPUTS.VALIDATORS": "Custom validators",
   "INPUTS.VALIDATORS.DESC": "User can add its own validators to the input components",
