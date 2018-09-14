@@ -2,18 +2,16 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_AVATAR_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}">
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+  title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
+  refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
+  selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
+  detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
+  edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
 
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #item avatar="{{ row.thumbnailUrl }}"
-      title="{{row.name}}" secondary-text="{{ row.body }}"
-      (icon-action)="addToFavorites(row, item)" icon="{icon}">
+    <o-list-item-avatar #tem icon="{icon}" avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
+      secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-avatar>
   </o-list-item>
 
@@ -21,7 +19,13 @@ const LIST_ITEM_AVATAR_HTML_DATA = `
 `;
 
 const LIST_ITEM_AVATAR_TS_DATA = `
-
+  addToFavorites(itemData, avatarItem) {
+    if (avatarItem.icon === 'star') {
+      avatarItem.icon = 'star_border';
+    } else {
+      avatarItem.icon = 'star';
+    }
+  }
 `;
 
 @Component({
@@ -32,7 +36,22 @@ const LIST_ITEM_AVATAR_TS_DATA = `
 export class ListItemAvatarComponent {
 
   iconPosition: String = 'right';
+  protected staticData = ListsUtils.getListData(5);
 
+  @ViewChild('listTitle')
+  listTitle: any;
+  @ViewChild('refreshButtonToggle')
+  refreshButtonToggle: any;
+  @ViewChild('denseToggle')
+  denseToggle: any;
+  @ViewChild('insertButtonToggle')
+  insertButtonToggle: any;
+  @ViewChild('selectableToggle')
+  selectableToggle: any;
+  @ViewChild('editButtonInRowToggle')
+  editButtonInRowToggle: any;
+  @ViewChild('detailButtonInRowToggle')
+  detailButtonInRowToggle: any;
   @ViewChild('iconToggle')
   iconToggle: any;
   @ViewChild('itemIcon')
@@ -46,12 +65,12 @@ export class ListItemAvatarComponent {
       'data': undefined
     },
     'typescript': {
-      'data': undefined
+      'data': LIST_ITEM_AVATAR_TS_DATA
     }
   };
 
   getStaticData() {
-    return ListsUtils.getListData(5);
+    return this.staticData;
   }
 
   addToFavorites(itemData, avatarItem) {
@@ -67,13 +86,21 @@ export class ListItemAvatarComponent {
       iconPosition: this.iconPosition
     };
 
+    list.title = this.listTitle.nativeElement.value;
+    list.refreshButton = this.refreshButtonToggle.checked;
+    list.dense = this.denseToggle.checked;
+    list.insertButton = this.insertButtonToggle.checked;
+    list.selectable = this.selectableToggle.checked;
+
+    list.editButtonInRow = this.editButtonInRowToggle.checked;
+    list.detailButtonInRow = this.detailButtonInRowToggle.checked;
+
     if (this.iconToggle.checked) {
       itemData.icon = (this.itemIcon && this.itemIcon.nativeElement.value) ?
         this.itemIcon.nativeElement.value : '';
     }
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_AVATAR_HTML_DATA, list, itemData);
-
   }
 
 }

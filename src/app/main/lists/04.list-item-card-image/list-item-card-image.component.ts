@@ -2,27 +2,32 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CARD_IMAGE_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="no"
-  detail-button-in-row="no" row-height="large">
+<o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
+  [static-data]="getStaticData()" refresh-button="{refreshButton}" insert-button="{insertButton}"
+  quick-filter="no" row-height="medium" detail-mode="none">
 
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card-image #item title="{{row.username}}" subtitle="{{row.name}}"
-      content="{{ row.body }}" avatar="{{ row.thumbnailUrl }}" image="{{ row.image }}"
-      action-1-text="{action1}" action-2-text="{action2}"
-      (action-1)="onAction1()" (action-2)="onAction2()"
-      icon="{icon}" (icon-action)="onIconAction()"
-      collapsible="{collapsible}" collapsed="{collapsed}">
+  <o-list-item *ngFor="let row of #list.dataArray">
+    <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}" avatar="{avatar}"
+      image="{image}" action-1-text="{action1}" action-2-text="{action2}" (action-1)="onAction1()" (action-2)="onAction2()"
+      icon="{icon}" (icon-action)="onIconAction()" collapsible="{collapsible}" collapsed="{collapsed}">
     </o-list-item-card-image>
   </o-list-item>
 
-<o-list>
+</o-list>
 `;
 
 const LIST_ITEM_CARD_IMAGE_TS_DATA = `
+  onAction1() {
+    alert('onAction1');
+  }
 
+  onAction2() {
+    alert('onAction2');
+  }
+
+  onIconAction() {
+    alert('onIconAction');
+  }
 `;
 
 @Component({
@@ -34,36 +39,34 @@ export class ListItemCardImageComponent {
 
   iconPosition: String = 'right';
 
-  @ViewChild('iconToggle')
-  iconToggle: any;
-  @ViewChild('itemIcon')
-  itemIcon: any;
-
-  @ViewChild('actionText1')
-  actionText1: any;
-  @ViewChild('action1Toggle')
-  action1Toggle: any;
-  @ViewChild('actionText2')
-  actionText2: any;
-  @ViewChild('action2Toggle')
-  action2Toggle: any;
-  @ViewChild('actionText12')
-  actionText12: any;
-  @ViewChild('action1Toggle2')
-  action1Toggle2: any;
-  @ViewChild('actionText22')
-  actionText22: any;
-  @ViewChild('action2Toggle2')
-  action2Toggle2: any;
-
+  @ViewChild('listTitle')
+  listTitle: any;
+  @ViewChild('refreshButtonToggle')
+  refreshButtonToggle: any;
+  @ViewChild('imageToggle')
+  imageToggle: any;
+  @ViewChild('insertButtonToggle')
+  insertButtonToggle: any;
+  @ViewChild('avatarToggle')
+  avatarToggle: any;
   @ViewChild('collapsibleToggle')
   collapsibleToggle: any;
   @ViewChild('collapsedToggle')
   collapsedToggle: any;
-  @ViewChild('imageToggle')
-  imageToggle: any;
-  @ViewChild('avatarToggle')
-  avatarToggle: any;
+  @ViewChild('action1Toggle')
+  action1Toggle: any;
+  @ViewChild('action1Text')
+  action1Text: any;
+  @ViewChild('action2Toggle')
+  action2Toggle: any;
+  @ViewChild('action2Text')
+  action2Text: any;
+  @ViewChild('iconToggle')
+  iconToggle: any;
+  @ViewChild('icon')
+  icon: any;
+  @ViewChild('rowHeight')
+  rowHeight: any;
 
   files = {
     'html': {
@@ -73,7 +76,7 @@ export class ListItemCardImageComponent {
       'data': undefined
     },
     'typescript': {
-      'data': undefined
+      'data': LIST_ITEM_CARD_IMAGE_TS_DATA
     }
   };
 
@@ -98,22 +101,23 @@ export class ListItemCardImageComponent {
       iconPosition: this.iconPosition
     };
 
-    if (this.iconToggle.checked) {
-      itemData.icon = (this.itemIcon && this.itemIcon.nativeElement.value) ?
-        this.itemIcon.nativeElement.value : '';
-    }
-    itemData.action1 = (this.action1Toggle2.checked && this.actionText12 && this.actionText12.nativeElement.value)
-      ? this.actionText12.nativeElement.value : '';
-    itemData.action2 = (this.action2Toggle2.checked && this.actionText22 && this.actionText22.nativeElement.value)
-      ? this.actionText22.nativeElement.value : '';
+    list.title = this.listTitle.nativeElement.value;
+    list.refreshButton = this.refreshButtonToggle.checked;
+    list.insertButton = this.insertButtonToggle.checked;
+    itemData.image = this.imageToggle.checked;
+    itemData.avatar = this.avatarToggle.checked ? '{{ row.thumbnailUrl }}' : '';
     itemData.collapsible = this.collapsibleToggle.checked;
     itemData.collapsed = this.collapsedToggle.checked;
-    itemData.image = this.imageToggle.checked;
-    itemData.avatar = this.avatarToggle.checked;
-
+    itemData.action1 = (this.action1Toggle.checked && this.action1Text && this.action1Text.nativeElement.value)
+      ? this.action1Text.nativeElement.value : '';
+    itemData.action2 = (this.action2Toggle.checked && this.action2Text && this.action2Text.nativeElement.value)
+      ? this.action2Text.nativeElement.value : '';
+    if (this.iconToggle.checked) {
+      itemData.icon = (this.icon && this.icon.nativeElement.value) ?
+        this.icon.nativeElement.value : '';
+    }
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_IMAGE_HTML_DATA, list, itemData);
-
   }
 
 }

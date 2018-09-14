@@ -17,11 +17,15 @@ import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
+import { InputHourComponent } from './16.hour/input-hour.component';
+import { InputTimeComponent } from './17.time/input-time.component';
+import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputOverviewComponent } from './00.overview/input-overview.component';
 
 export const routes: Routes = [
   {
     path: '', component: InputsComponent, children: [
-      { path: '', redirectTo: 'text', pathMatch: 'prefix' },
+      { path: '', component: InputOverviewComponent },
       { path: 'text', component: InputTextComponent },
       { path: 'date', component: InputDateComponent },
       { path: 'integer', component: InputIntegerComponent },
@@ -36,7 +40,10 @@ export const routes: Routes = [
       { path: 'file', component: InputFileComponent },
       { path: 'checkbox', component: InputCheckboxComponent },
       { path: 'combo', component: InputComboComponent },
-      { path: 'listpicker', component: InputListpickerComponent }
+      { path: 'listpicker', component: InputListpickerComponent },
+      { path: 'hour', component: InputHourComponent },
+      { path: 'time', component: InputTimeComponent },
+      { path: 'validators', component: ValidatorsComponent }
     ]
   }
 ];

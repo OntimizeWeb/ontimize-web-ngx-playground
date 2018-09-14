@@ -14,8 +14,18 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: 'storage',
     opened: false,
     items: [
+      { id: 'grid', name: 'GRID.COMPONENT', route: '/main/grid', icon: 'view_module' },
       { id: 'list', name: 'LIST.COMPONENT', route: '/main/lists', icon: 'list' },
       { id: 'table', name: 'TABLE.COMPONENT', route: '/main/table', icon: 'storage' }
+    ]
+  },
+  {
+    id: 'media',
+    name: 'MEDIA',
+    icon: 'image',
+    opened: false,
+    items: [
+      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media', icon: 'image' }
     ]
   },
   {

@@ -2,18 +2,16 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_TEXT_HTML_DATA = `
-<o-list #list fxFill keys="id" query-on-init="true" pageable="no"
-  columns="id;name;username;email;street;phone" quick-filter-columns="name;username"
-  [static-data]="getUsers()" title="{title}" quick-filter="{quickFilter}"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" selectable="{selectable}"
-  dense="{dense}" detail-button-in-row="{detailButtonInRow}"
-  detail-button-in-row-icon="{detailButtonInRowIcon}"
-  edit-button-in-row="{editButtonInRow}" edit-button-in-row-icon="{editButtonInRowIcon}">
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+  title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
+  refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
+  selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
+  detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
+  edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
 
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item title="{{row.username}}"
-      secondary-text="{{ row.body }}"> (icon-action)="addToFavorites(row, item)"
-      icon="{icon}" icon-position="{iconPosition}">
+    <o-list-item-text #item icon="{icon}" icon-position="{iconPosition}" title="{{ row.username }}"
+      primary-text="{{ row.name }}" secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-text>
   </o-list-item>
 
@@ -21,7 +19,13 @@ const LIST_ITEM_TEXT_HTML_DATA = `
 `;
 
 const LIST_ITEM_TEXT_TS_DATA = `
-
+  addToFavorites(itemData, avatarItem) {
+    if (avatarItem.icon === 'star') {
+      avatarItem.icon = 'star_border';
+    } else {
+      avatarItem.icon = 'star';
+    }
+  }
 `;
 
 @Component({
@@ -32,6 +36,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
 export class ListItemTextComponent {
 
   iconPosition: String = 'right';
+  protected staticData = ListsUtils.getListData(5);
 
   @ViewChild('iconToggle')
   iconToggle: any;
@@ -46,7 +51,7 @@ export class ListItemTextComponent {
       'data': undefined
     },
     'typescript': {
-      'data': undefined
+      'data': LIST_ITEM_TEXT_TS_DATA
     }
   };
 
@@ -59,7 +64,7 @@ export class ListItemTextComponent {
   }
 
   getStaticData() {
-    return ListsUtils.getListData(5);
+    return this.staticData;
   }
 
   onShowSource(list?: any, exampleComp?: any) {
@@ -74,5 +79,8 @@ export class ListItemTextComponent {
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
   }
-
+  asdf(a, b?) {
+    console.log(a);
+    if (b) console.log(b);
+  }
 }

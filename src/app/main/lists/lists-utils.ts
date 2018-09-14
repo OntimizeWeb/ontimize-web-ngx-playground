@@ -6,16 +6,19 @@ export class ListsUtils {
         .replace('{quickFilter}', list.quickFilter)
         .replace('{refreshButton}', list.refreshButton)
         .replace('{insertButton}', list.insertButton)
+        .replace('{deleteButton}', list.deleteButton)
         .replace('{selectable}', list.selectable)
         .replace('{dense}', list.dense || false)
         .replace('{detailButtonInRow}', list.detailButtonInRow)
         .replace('{detailButtonInRowIcon}', list.detailButtonInRowIcon || '')
         .replace('{editButtonInRow}', list.editButtonInRow)
         .replace('{editButtonInRowIcon}', list.editButtonInRowIcon || '')
-        .replace('{rowHeight}', list.rowHeight || '');
+        .replace('{rowHeight}', list.rowHeight || '')
+        .replace('{showImage}', itemData.showImage)
+        .replace('{actionText1}', itemData.actionText1)
+        .replace('{actionText2}', itemData.actionText2);
     }
     if (itemData) {
-
       html = html.replace('{collapsible}', itemData.collapsible)
         .replace('{collapsed}', itemData.collapsed);
 
@@ -39,12 +42,16 @@ export class ListsUtils {
         html = html.replace('action-2-text="{action2}"', '');
       }
 
-      if (!itemData.image) {
-        html = html.replace('image="{{ row.image }}"', '');
+      if (itemData.image) {
+        html = html.replace('{image}', '{{ row.image }}');
+      } else {
+        html = html.replace('image="{image}"', '');
       }
 
-      if (!itemData.avatar) {
-        html = html.replace('avatar="{{ row.thumbnailUrl }}"', '');
+      if (itemData.avatar && itemData.avatar.length) {
+        html = html.replace('{avatar}', itemData.avatar);
+      } else {
+        html = html.replace('avatar="{avatar}"', '');
       }
     }
     return html;

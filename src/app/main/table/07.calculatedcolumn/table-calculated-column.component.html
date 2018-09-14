@@ -16,8 +16,7 @@
         currency-symbol="€" currency-symbol-position="right" operation="UNITPRICE*UNITSINSTOCK"></o-table-column-calculated>
 
       <o-table-column-calculated attr="PROFITABILITY" title="PROFITABILITY" [operation-function]="profitability">
-        <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
-          boolean-type="string"></o-table-cell-renderer-boolean>
+        <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"></o-table-cell-renderer-boolean>
       </o-table-column-calculated>
 
       <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>

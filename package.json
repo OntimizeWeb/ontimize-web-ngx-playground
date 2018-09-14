@@ -1,9 +1,11 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
+    "zzz": "npm run xxx && npm start",
     "ng": "ng",
     "start": "ng serve --port 4202",
     "build": "ng build",
@@ -34,9 +36,9 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "3.0.0-rc.1",
+    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\3.0.0-rc.2\\ontimize-web-ngx\\dist\\ontimize-web-ngx-3.0.2.tgz",
     "angular2-highlight-js": "5.0.1",
-    "ontimize-web-ngx-theming": "1.1.1"
+    "ontimize-web-ngx-theming": "1.1.2"
   },
   "devDependencies": {
     "@ngtools/webpack": "1.10.2",
@@ -49,7 +51,7 @@
     "html-webpack-plugin": "3.2.0",
     "jasmine-spec-reporter": "~3.2.0",
     "node-sass": "4.7.2",
-    "ontimize-web-ngx-tools": "1.0.4",
+    "ontimize-web-ngx-tools": "1.0.6",
     "ts-node": "~2.0.0",
     "typescript": "2.4.2",
     "webpack": "3.11.0"

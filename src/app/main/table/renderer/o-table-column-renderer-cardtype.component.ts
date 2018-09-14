@@ -11,7 +11,6 @@ export class OTableColumnRendererCardTypeComponent extends OBaseTableCellRendere
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.initialize();
   }
 
 }
