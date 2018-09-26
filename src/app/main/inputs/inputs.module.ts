@@ -25,6 +25,7 @@ import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputEventsComponent } from 'app/main/inputs/97.events/events.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { ValidatorsComponent } from './99.validators/validators.component';
     InputHourComponent,
     InputTimeComponent,
     ValidatorsComponent,
-    ClearComponent
+    ClearComponent, 
+    InputEventsComponent
   ]
 })
 export class InputsModule { }
