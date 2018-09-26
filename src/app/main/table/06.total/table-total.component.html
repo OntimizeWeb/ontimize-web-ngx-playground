@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_AGGRETATE'" [files]="getFiles('o-table-aggregate')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_AGGRETATE" [files]="getFiles('o-table-aggregate')"
   (showSource)="onShowSource('o-table-aggregate', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"

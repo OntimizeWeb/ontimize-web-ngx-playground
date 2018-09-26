@@ -20,6 +20,7 @@ import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-hori
 import { TableInsertableRowComponent } from './11.insertablerow/table-insertable-row.component';
 import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
 import { TableTitleAlignComponent } from './12.titleAlign/table-title-align.component';
+import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { TableTitleAlignComponent } from './12.titleAlign/table-title-align.comp
     TableHorizontalScrollComponent,
     TableInsertableRowComponent,
     OTableCellEditorCustomComponent,
-    TableTitleAlignComponent
+    TableTitleAlignComponent,
+    TableMultipleSortComponent
   ]
 })
 export class TableModule { }

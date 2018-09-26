@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_COLUMN_CALCULATED'" [files]="getFiles('o-table-column-calculated')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_COLUMN_CALCULATED" [files]="getFiles('o-table-column-calculated')"
   (showSource)="onShowSource('o-table-column-calculated', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE" visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"

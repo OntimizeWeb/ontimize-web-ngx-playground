@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_CONTEXT_MENU'" [files]="getFiles('o-table-context-menu')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_CONTEXT_MENU" [files]="getFiles('o-table-context-menu')"
   (showSource)="onShowSource('o-table-context-menu', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"

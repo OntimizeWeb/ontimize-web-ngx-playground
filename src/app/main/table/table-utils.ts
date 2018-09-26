@@ -310,6 +310,15 @@ const HTML_DATA_TITLE_ALIGN = `
 </o-table>
 `;
 
+const HTML_DATA_MULTIPLE_SORT = `
+<o-table
+</o-table>
+`;
+
+const HTML_DATA_MULTIPLE_SORT_FALSE = `
+<o-table
+</o-table>
+`;
 
 const TYPESCRIPT_DATA = `
   getTableData(): Array<any> {
@@ -553,6 +562,12 @@ export class TableUtils {
         break;
       case 'o-table-title-align':
         code = HTML_DATA_TITLE_ALIGN;
+        break;
+      case 'o-table-multiple-sort':
+        code = HTML_DATA_MULTIPLE_SORT;
+        break;
+      case 'o-table-multiple-sort-false':
+        code = HTML_DATA_MULTIPLE_SORT_FALSE;
         break;
     }
     return code;
