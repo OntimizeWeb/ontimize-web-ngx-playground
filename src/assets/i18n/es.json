@@ -172,7 +172,7 @@
   "INPUTS.TIME": "Fecha y hora",
   "INPUTS.TIME.DESC": "Componente para insertar o mostrar la fecha y hora.",
   "INPUTS.EVENTS": "Eventos",
-  "INPUTS.EVENTS.DESC": "Este ejemplo demuestra cómo puede interceptar los eventos de los inputs para enviar mensajes a la consola cuando se producen estos eventos. Puede usar estos eventos para personalizaciones o ejecutar lógica personalizada, si es necesario.",
+  "INPUTS.EVENTS.DESC": "Este ejemplo demuestra cómo puede interceptar los eventos de los inputs para enviar mensajes a la consola.",
   "IMAGE.COMPONENT": "Image",
   "IMAGE.CONFIGURATION": "Configuración de la imagen",
   "IMAGE.SHOW_CONTROL": "Mostrar controles",
