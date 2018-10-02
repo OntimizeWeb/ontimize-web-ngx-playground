@@ -11,4 +11,47 @@
   .application-layout-content-wrapper {
     background: $white-bg;
   }
+
+  .o-app-sidenav.o-app-sidenav {
+    .application-sidenav-menuitem.application-sidenav-item .mat-button-focus-overlay {
+      background: none;
+    }
+
+    .application-sidenav-container {
+      .application-sidenav-sidenav {
+        .mat-ripple {
+          display: none;
+        }
+        background: $white-bg;
+
+        .application-sidenav-item,
+        .sidenav-toggle {
+          // color: mat-color($primary, 0.54);
+          color: mat-color($primary, 0.72);
+        }
+
+        .application-sidenav-menugroup {
+          &:hover {
+            color: mat-color($accent);
+          }
+          color: mat-color($primary, 0.84);
+
+          &.active {
+            background: $white-bg;
+
+            + .application-sidenav-menugroup-items-container ul {
+              background: $white-bg;
+              box-shadow: none;
+            }
+          }
+        }
+
+        &.mat-drawer {
+          box-shadow: 1px 0 2px rgba(0,0,0,0.24);
+        }
+      }
+    }
+
+  }
+
 }
