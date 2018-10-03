@@ -79,8 +79,5 @@ export class ListItemTextComponent {
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
   }
-  asdf(a, b?) {
-    console.log(a);
-    if (b) console.log(b);
-  }
+
 }
