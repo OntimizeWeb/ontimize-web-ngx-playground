@@ -14,6 +14,7 @@ import { TableContextMenuComponent } from './09.contextmenu/table-context-menu.c
 import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-horizontal-scroll.component';
 import { TableInsertableRowComponent } from './11.insertablerow/table-insertable-row.component';
 import { TableTitleAlignComponent } from './12.titleAlign/table-title-align.component';
+import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
 
 export const routes: Routes = [
   {
@@ -30,7 +31,8 @@ export const routes: Routes = [
       { path: 'contextmenu', component: TableContextMenuComponent },
       { path: 'horizontalscroll', component: TableHorizontalScrollComponent },
       { path: 'insertablerow', component: TableInsertableRowComponent },
-      { path: 'titlealign', component: TableTitleAlignComponent }
+      { path: 'titlealign', component: TableTitleAlignComponent },
+      { path: 'multipleSort', component: TableMultipleSortComponent }
     ]
   }
 ];

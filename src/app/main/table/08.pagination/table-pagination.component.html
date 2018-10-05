@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_PAGINACION'" [files]="getFiles('o-table-paginator')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_PAGINACION" [files]="getFiles('o-table-paginator')"
   (showSource)="onShowSource('o-table-paginator', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"

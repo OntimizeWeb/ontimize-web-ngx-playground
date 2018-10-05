@@ -21,6 +21,7 @@ import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
+import { InputRadioComponent } from './18.radio/input-radio.component';
 
 export const routes: Routes = [
   {
@@ -43,7 +44,8 @@ export const routes: Routes = [
       { path: 'listpicker', component: InputListpickerComponent },
       { path: 'hour', component: InputHourComponent },
       { path: 'time', component: InputTimeComponent },
-      { path: 'validators', component: ValidatorsComponent }
+      { path: 'validators', component: ValidatorsComponent },
+      { path: 'radio', component: InputRadioComponent }
     ]
   }
 ];

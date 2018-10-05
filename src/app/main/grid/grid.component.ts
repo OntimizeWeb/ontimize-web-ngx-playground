@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 const FAKE_USERS = [
   {
     'id': 1,
@@ -225,30 +224,40 @@ const FAKE_USERS = [
        magni quo et`
   }];
 
-const HTML_DATA = ` 
-<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()" [title]="{title}"
-[cols]="{columns}" [show-page-size]="{showPageSize}" [orderable]="{orderable}" [quick-filter]="{quickfilter}"
-grid-item-height="1:3" sortable-columns="name;email" [controls]="{controls}" [page-size]="{pageSize}" [sort-column]="{sortColumn}">
-  <o-grid-item *ngFor="let list of grid.dataArray">
-    <o-column layout-padding class="container-item">
-      <img [src]="list.thumbnailUrl" style="margin-top:8px">
-      <h4>{{list.name}}</h4>
-      <div class="phone">
-        <mat-icon>phone</mat-icon> <span> {{list.phone}} </span></div>
-      <div class="email">
-        <mat-icon>email</mat-icon> <span>{{list.email}} </span></div>
-      <div class="domain">
-        <mat-icon>domain</mat-icon> <span> {{list.companyname}} </span></div>
-      <div class="website">
-        <mat-icon>website</mat-icon> <span> {{list.website}} </span></div>
-      <div class="body">
-        {{list.body}}
-      </div>
-    </o-column>
-  </o-grid-item>
-</o-grid>`;
+const HTML_DATA = `
+  <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
+    keys="id" [cols]="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
+    orderable="{orderable}" quick-filter="{quickfilter}" grid-item-height="1:3" sortable-columns="name;email"
+    sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}"
+    pagination-controls="{paginationControls}">
+    <o-grid-item *ngFor="let list of grid.dataArray">
+      <o-column layout-padding class="container-item">
+        <img [src]="list.thumbnailUrl" style="margin-top:8px">
+        <h4>{{ list.name }}</h4>
+        <div class="phone">
+          <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+        </div>
+        <div class="email">
+          <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+        </div>
+        <div class="domain">
+          <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
+        </div>
+        <div class="website">
+          <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+        </div>
+        <div class="body">
+          {{list.body}}
+        </div>
+      </o-column>
+    </o-grid-item>
+  </o-grid>
 
-const CSS_DATA =`
+
+
+`;
+
+const CSS_DATA = `
 .container-item{
   width: 100%;
   height:100%;
@@ -283,11 +292,10 @@ getStaticData() {
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss']
 })
-
 export class GridComponent {
 
-  public columns;
-  public pagesize;
+  public columns = 4;
+  public pagesize = 8;
   public sortColumn;
 
   getStaticData() {
@@ -302,10 +310,9 @@ export class GridComponent {
       'data': undefined
     },
     'typescript': {
-      'data':  HTML_TS
+      'data': HTML_TS
     }
   };
-
 
   onShowSource(grid?: any, exampleComp?: any) {
     exampleComp.html = this.replaceHtml(HTML_DATA, grid);
@@ -314,16 +321,23 @@ export class GridComponent {
   public replaceHtml(html: string, grid?: any) {
     if (grid) {
       html = html.replace('{title}', grid.title || '')
-        .replace('{columns}', grid.oCols)
-        .replace('{orderable}', grid.orderable)
-        .replace('{quickfilter}', grid.quickFilter) 
-        .replace('{pageSize}', grid.pageSize)
+        .replace('{columns}', grid.cols)
+        .replace('{orderable}', grid.showSort)
+        .replace('{quickfilter}', grid.quickFilter)
+        .replace('{queryRows}', grid.queryRows)
         .replace('{controls}', grid.controls)
         .replace('{showPageSize}', grid.showPageSize)
-        .replace('{sortColumn}', grid.sortColumn?grid.sortColumn:'');
+        .replace('{sortColumn}', grid.sortColumn ? grid.sortColumn : '')
+        .replace('{refreshButton}', grid.refreshButton)
+        .replace('{paginationControls}', grid.paginationControls);
     }
     return html;
   }
 
-}
+  reloadGridData(grid) {
+    setTimeout(() => {
+      grid.reloadData();
+    }, 0);
+  }
 
+}

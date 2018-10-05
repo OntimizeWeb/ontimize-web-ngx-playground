@@ -1,11 +1,9 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
-    "zzz": "npm run xxx && npm start",
     "ng": "ng",
     "start": "ng serve --port 4202",
     "build": "ng build",
@@ -36,9 +34,9 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "3.1.0",
+    "ontimize-web-ngx": "3.1.1",
     "angular2-highlight-js": "5.0.1",
-    "ontimize-web-ngx-theming": "1.1.2"
+    "ontimize-web-ngx-theming": "1.2.0"
   },
   "devDependencies": {
     "@ngtools/webpack": "1.10.2",

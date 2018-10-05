@@ -25,6 +25,8 @@ import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputEventsComponent } from 'app/main/inputs/97.events/events.component';
+import { InputRadioComponent } from './18.radio/input-radio.component';
 
 @NgModule({
   imports: [
@@ -53,7 +55,9 @@ import { ValidatorsComponent } from './99.validators/validators.component';
     InputHourComponent,
     InputTimeComponent,
     ValidatorsComponent,
-    ClearComponent
+    ClearComponent,
+    InputEventsComponent,
+    InputRadioComponent
   ]
 })
 export class InputsModule { }
