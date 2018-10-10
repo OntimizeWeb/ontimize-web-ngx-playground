@@ -14,7 +14,7 @@
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-radio attr="radio-disabled" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no" layout="row"></o-radio>
     </div>
   </o-form>
 </example-comp>

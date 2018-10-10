@@ -11,7 +11,7 @@ const RADIO_HTML_DATA = `
       tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
 
     <o-radio attr="radio-disabled" label="Radio" [static-data]="getDataArray()"
-      [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>
+      [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no" layout="row"></o-radio>
 
   </o-form>
 `;
