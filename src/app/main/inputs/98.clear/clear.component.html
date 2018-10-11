@@ -1,14 +1,14 @@
 <example-comp comp-name="INPUTS.CLEAR" comp-desc="INPUTS.CLEAR.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input #input attr="text" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValueText()" read-only="no" clear-button="yes"
-      layout-padding (onValueChange)="onValueChange($event)"></o-text-input>
+    <o-text-input #input attr="text" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValueText()" read-only="no"
+      clear-button="yes" layout-padding></o-text-input>
 
-    <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValueDate()" read-only="no" format="LL"
-      clear-button="yes" layout-padding (onValueChange)="onValueChange($event)"></o-date-input>
+    <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValueDate()" read-only="no"
+      format="LL" clear-button="yes" layout-padding></o-date-input>
 
-    <o-currency-input #curr attr="currency" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" [data]="getValueCurr()" read-only="no"
-      clear-button="yes" step="1" layout-padding (onValueChange)="onValueChange($event)"></o-currency-input>
+    <o-currency-input #curr attr="currency" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" [data]="getValueCurr()"
+      read-only="no" clear-button="yes" step="1" layout-padding></o-currency-input>
 
   </o-form>
 </example-comp>

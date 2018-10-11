@@ -110,7 +110,14 @@ onValueChange(event) {
   }
 }
 `;
+export class ConsoleLogEvent {
+  eventName: string;
+  attr: string;
+  type: string;
+  newValue: any;
+  oldValue
 
+}
 @Component({
   selector: 'input-events',
   templateUrl: './events.component.html',
@@ -151,6 +158,8 @@ export class InputEventsComponent {
         return 1505358700000;
       case 'date':
         return '2018-12-28';
+      case 'radio':
+        return 2;
     }
     return value;
   }
@@ -182,9 +191,46 @@ export class InputEventsComponent {
   }
 
   onValueChange(event) {
-    this.consoleLog.unshift(event);
+    let eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onValueChange';
+    eventChange.newValue = event.newValue;
+    eventChange.oldValue = event.oldValue;
+    eventChange.type = event.type;
+    eventChange.attr = event.target.oattr;
+    this.consoleLog.unshift(eventChange);
+  }
+  onChange(event, input) {
+    let eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onChange';
+    eventChange.attr = input.oattr;
+    this.consoleLog.unshift(eventChange);
+
   }
 
+  showNewAndOldValue(event: any): boolean {
+    var show = false;
+    if (event.hasOwnProperty('newValue') && typeof event.newValue !== undefined &&
+      event.hasOwnProperty('oldValue') && typeof event.oldValue !== undefined) {
+      show = true;
+    }
+    return show;
+  }
+  showTypeEvent(event: any): boolean {
+    var show = false;
+    if (event.hasOwnProperty('type') && typeof event.type !== undefined ) {
+      show = true;
+    }
+    return show;
+  }
 
+  clearConsole() {
+    this.consoleLog = [];
+  }
+
+  print(e){
+    console.log(e);
+  }
+
+ 
 
 }

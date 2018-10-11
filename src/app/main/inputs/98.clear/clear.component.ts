@@ -68,9 +68,6 @@ export class ClearComponent {
     return 2574.99;
   }
 
-  onValueChange(event) {
-    console.log(event);
-  }
 
 
 
