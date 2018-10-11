@@ -7,14 +7,19 @@
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
-        tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
+      <o-row>
+        <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
+          [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
+          tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
+        <o-radio attr="radio-editable2" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
+          [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
+          tooltip="This is an awesome tooltip!" tooltip-position="below" layout="row"></o-radio>
+      </o-row>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-radio attr="radio-disabled" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no" layout="row"></o-radio>
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>
     </div>
   </o-form>
 </example-comp>

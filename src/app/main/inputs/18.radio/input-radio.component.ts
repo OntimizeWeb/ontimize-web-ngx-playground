@@ -6,12 +6,18 @@ const RADIO_HTML_DATA = `
     <o-radio attr="radio" label="Radio" [static-data]="getDataArray()" [data]="getValue()"
       value-column="key" columns="key;value" visible-columns="value"></o-radio>
 
-    <o-radio attr="radio-editable" label="Radio" [static-data]="getDataArray()"
-      [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
-      tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
+    <o-row>
+      <o-radio attr="radio-editable" label="Radio" [static-data]="getDataArray()"
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
+        tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
+
+      <o-radio attr="radio-editable" label="Radio" [static-data]="getDataArray()"
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
+        tooltip="This is an awesome tooltip!" tooltip-position="below" layout="row"></o-radio>
+    </o-row>
 
     <o-radio attr="radio-disabled" label="Radio" [static-data]="getDataArray()"
-      [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no" layout="row"></o-radio>
+      [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>
 
   </o-form>
 `;
