@@ -1,37 +1,44 @@
 import { Component } from '@angular/core';
 
 const HTML_HTML_DATA = `
-  <o-form editable-detail="no" show-header="no" layout-direction="column">
+<o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-html-input attr="html" label="HTML" [data]="getValue()" layout-padding></o-html-input>
+  <div fxLayout="column" layout-padding>
+    <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+    <o-hour-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()"></o-hour-input>
 
-  </o-form>
+  </div>
+  <div fxLayout="column" layout-padding>
+    <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+    <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+    tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
+  </div>
+  <div fxLayout="column" layout-padding>
+    <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+    <o-hour-input attr="input3" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" enabled="no" [data]="getValue()"></o-hour-input>
+  </div>
+
+</o-form>
 `;
 
 const HTML_TS_DATA = `
-  @Component({
-    selector: 'input-html',
-    templateUrl: 'input-html.component.html'
-  })
-  export class HTMLInputComponent {
-
-    getValue() {
-      return \`
-        <!DOCTYPE html>
-        <html>
-          <body>
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5</h5>
-            <h6>Heading 6</h6>
-          </body>
-        </html>
-      \`;
-    }
-
+  getValue() {
+    return '05:00 PM'
   }
+`;
+
+const HTML_FORMAT_DATA = `
+<o-form editable-detail="no" show-header="no" layout-direction="column">
+  <div fxLayout="column" layout-padding>
+    <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+    <o-hour-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" format="12"></o-hour-input>
+  </div>
+  <div fxLayout="column" layout-padding>
+    <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+    <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+    tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
+  </div>
+</o-form>
 `;
 
 @Component({
@@ -52,9 +59,16 @@ export class InputHourComponent {
     }
   };
 
-  getValue() {
-    return '05:00 AM'
-      
-  }
+  formatFiles = {
+    'html': {
+      'data': HTML_FORMAT_DATA
+    },
+    'typescript': {
+      'data': HTML_TS_DATA
+    }
+  };
 
+  getValue() {
+    return '05:00 PM';
+  }
 }

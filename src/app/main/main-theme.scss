@@ -13,24 +13,24 @@
   }
 
   .o-app-sidenav.o-app-sidenav {
-    .application-sidenav-menuitem.application-sidenav-item .mat-button-focus-overlay {
+    .o-app-sidenav-menuitem.o-app-sidenav-item .mat-button-focus-overlay {
       background: none;
     }
 
-    .application-sidenav-container {
-      .application-sidenav-sidenav {
+    .o-app-sidenav-container {
+      .o-app-sidenav-sidenav {
         .mat-ripple {
           display: none;
         }
         background: $white-bg;
 
-        .application-sidenav-item,
+        .o-app-sidenav-item,
         .sidenav-toggle {
           // color: mat-color($primary, 0.54);
           color: mat-color($primary, 0.72);
         }
 
-        .application-sidenav-menugroup {
+        .o-app-sidenav-menugroup {
           &:hover {
             color: mat-color($accent);
           }
@@ -39,7 +39,7 @@
           &.active {
             background: $white-bg;
 
-            + .application-sidenav-menugroup-items-container ul {
+            + .o-app-sidenav-menugroup-items-container ul {
               background: $white-bg;
               box-shadow: none;
             }

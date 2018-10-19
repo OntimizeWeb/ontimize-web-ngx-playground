@@ -3,8 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CUSTOM_HTML_DATA = `
-<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" query-on-init="true"
-  pageable="no" [static-data]="getStaticData()">
+<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
 
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>

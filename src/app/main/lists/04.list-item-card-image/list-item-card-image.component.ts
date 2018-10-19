@@ -3,17 +3,31 @@ import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CARD_IMAGE_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
-  quick-filter-columns="name;username" [static-data]="getStaticData()" quick-filter="no" refresh-button="{refreshButton}"
-  insert-button="{insertButton}">
+  [static-data]="getStaticData()" refresh-button="{refreshButton}" insert-button="{insertButton}"
+  quick-filter="no" row-height="medium" detail-mode="none">
 
   <o-list-item *ngFor="let row of #list.dataArray">
     <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}" avatar="{avatar}"
       image="{image}" action-1-text="{action1}" action-2-text="{action2}" (action-1)="onAction1()" (action-2)="onAction2()"
-      icon="{icon}" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked" [collapsed]="{collapsed}">
+      icon="{icon}" (icon-action)="onIconAction()" collapsible="{collapsible}" collapsed="{collapsed}">
     </o-list-item-card-image>
   </o-list-item>
 
 </o-list>
+`;
+
+const LIST_ITEM_CARD_IMAGE_TS_DATA = `
+  onAction1() {
+    alert('onAction1');
+  }
+
+  onAction2() {
+    alert('onAction2');
+  }
+
+  onIconAction() {
+    alert('onIconAction');
+  }
 `;
 
 @Component({
@@ -25,8 +39,8 @@ export class ListItemCardImageComponent {
 
   iconPosition: String = 'right';
 
-  @ViewChild('title')
-  title: any;
+  @ViewChild('listTitle')
+  listTitle: any;
   @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
   @ViewChild('imageToggle')
@@ -51,6 +65,8 @@ export class ListItemCardImageComponent {
   iconToggle: any;
   @ViewChild('icon')
   icon: any;
+  @ViewChild('rowHeight')
+  rowHeight: any;
 
   files = {
     'html': {
@@ -60,7 +76,7 @@ export class ListItemCardImageComponent {
       'data': undefined
     },
     'typescript': {
-      'data': undefined
+      'data': LIST_ITEM_CARD_IMAGE_TS_DATA
     }
   };
 
@@ -85,11 +101,11 @@ export class ListItemCardImageComponent {
       iconPosition: this.iconPosition
     };
 
+    list.title = this.listTitle.nativeElement.value;
     list.refreshButton = this.refreshButtonToggle.checked;
     list.insertButton = this.insertButtonToggle.checked;
-
     itemData.image = this.imageToggle.checked;
-    itemData.avatar = this.avatarToggle.checked;
+    itemData.avatar = this.avatarToggle.checked ? '{{ row.thumbnailUrl }}' : '';
     itemData.collapsible = this.collapsibleToggle.checked;
     itemData.collapsed = this.collapsedToggle.checked;
     itemData.action1 = (this.action1Toggle.checked && this.action1Text && this.action1Text.nativeElement.value)

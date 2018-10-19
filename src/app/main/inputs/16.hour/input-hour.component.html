@@ -18,3 +18,16 @@
 
   </o-form>
 </example-comp>
+
+<example-comp comp-name="INPUTS.HOUR.FORMATS" comp-desc="INPUTS.HOUR.FORMATS.DESC" [files]="formatFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="row" layout-align="space-between center">
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.FORMATS_12' | oTranslate }}</label>
+      <o-hour-input attr="formatinput" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" format="12"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.FORMATS_24' | oTranslate }}</label>
+      <o-hour-input attr="formatinput2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" format="24"></o-hour-input>
+    </div>
+  </o-form>
+</example-comp>

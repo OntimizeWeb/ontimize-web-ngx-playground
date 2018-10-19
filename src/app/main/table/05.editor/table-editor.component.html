@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" [comp-name]="'TABLE.EXAMPLE_EDITOR'" [files]="getFiles('o-table-editors')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_EDITOR" [files]="getFiles('o-table-editors')"
   (showSource)="onShowSource('o-table-editors', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"

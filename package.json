@@ -4,8 +4,6 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "xxx": "rimraf node_modules/ontimize-web-ngx* && npm install",
-    "zzz": "npm run xxx && npm start",
     "ng": "ng",
     "start": "ng serve --port 4202",
     "build": "ng build",
@@ -37,7 +35,7 @@
     "zone.js": "0.8.26",
     "ontimize-web-ngx": "C:\\Users\\patricia.martinez\\Documents\\ontimize web\\ontimize-web-ngx-angular6\\dist\\ontimize-web-ngx-4.0.0-rc.0.tgz",
     "angular2-highlight-js": "5.0.1",
-    "ontimize-web-ngx-theming": "1.1.2"
+    "ontimize-web-ngx-theming": "1.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",

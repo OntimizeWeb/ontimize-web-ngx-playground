@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
 const HTML_DATA = `
-<o-image attr="image1" data="http://placekitten.com/300/600" [show-controls]="{showControl}" 
-[height-image]="{height}" [width-image]="{width}" [size-adjust]="{sizeAdjust}"
-[enabled]="{enabled}" [read-only]="{readOnly}" empty-image="./assets/images/no-image.png"
-></o-image>
+  <o-image attr="image" data="http://placekitten.com/1920/1080" height="{height}" width="{width}"
+    auto-fit="{autoFit}" enabled="{enabled}" read-only="{readOnly}" show-controls="{showControl}"
+    full-screen-button="{showFullscreen}" empty-image="./assets/images/no-image.png"></o-image>
 `;
 
 @Component({
@@ -16,30 +15,18 @@ export class ImageComponent {
 
   @ViewChild('showControlToggle')
   showControlToggle: any = true;
-
+  @ViewChild('showFullscreenToggle')
+  showFullscreenToggle: any = false;
   @ViewChild('autoFitToggle')
   autoFitToggle: any = false;
-
   @ViewChild('readOnlyToggle')
   readOnlyToggle: any = false;
-
   @ViewChild('enabledToggle')
   enabledToggle: any = false;
-
-
-  height = "";
-  width = "";
-
-
-  constructor(
-  ) {
-
-  }
-
- 
+  height = '';
+  width = '';
 
   files = {
-
     'html': {
       'data': HTML_DATA
     },
@@ -51,20 +38,25 @@ export class ImageComponent {
     }
   };
 
-
-
-
   public static getHtml(data: any) {
     let tpl = HTML_DATA;
-
-
     tpl = tpl.replace('{showControl}', data.showControl)
-      .replace('{height}', data.height)
-      .replace('{width}', data.width)
-      .replace('{sizeAdjust}', data.sizeAdjust)
+      .replace('{autoFit}', data.autoFit)
       .replace('{enabled}', data.enabled)
       .replace('{readOnly}', data.readOnly)
+      .replace('{showFullscreen}', data.showFullscreen);
 
+    if (data.height && data.height.length) {
+      tpl = tpl.replace('{height}', data.height);
+    } else {
+      tpl = tpl.replace('height="{height}"', '');
+    }
+
+    if (data.width && data.width.length) {
+      tpl = tpl.replace('{width}', data.width);
+    } else {
+      tpl = tpl.replace('width="{width}"', '');
+    }
 
     return tpl;
   }
@@ -72,14 +64,14 @@ export class ImageComponent {
   onShowSource(key: string, exampleComp: any) {
     const itemData: any = {
       showControl: this.showControlToggle.checked,
-      sizeAdjust: this.autoFitToggle.checked,
-      height: this.height ? this.height : "",
-      width: this.width ? this.width : "",
+      showFullscreen: this.showFullscreenToggle.checked,
+      autoFit: this.autoFitToggle.checked,
+      height: this.height ? this.height : '',
+      width: this.width ? this.width : '',
       enabled: this.enabledToggle.checked,
       readOnly: this.readOnlyToggle.checked
     };
-
     exampleComp.html = ImageComponent.getHtml(itemData);
-
   }
+
 }

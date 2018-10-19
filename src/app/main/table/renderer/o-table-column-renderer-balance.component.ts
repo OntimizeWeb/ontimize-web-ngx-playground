@@ -12,7 +12,6 @@ export class OTableColumnRendererBalanceComponent extends OBaseTableCellRenderer
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.initialize();
     this.setComponentPipe();
   }
 
