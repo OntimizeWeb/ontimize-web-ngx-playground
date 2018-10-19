@@ -47,7 +47,7 @@
     <div fxFlexDirection="row">
       <o-radio #radio attr="radio" label="Radio" [static-data]="getDataArray()" [data]="getValue('radio')" value-column="key"
         columns="key;value" visible-columns="value" fxFlex="70" (onChange)="onChange($event,radio)" (onValueChange)="onValueChange($event)"
-        read-only="no"></o-radio>
+        read-only="no" layout="row"></o-radio>
       <button mat-button (click)="setValue(radio, '4')">setValue Germany</button>
     </div>
     <!-- TIME-->
@@ -58,7 +58,7 @@
       <button mat-button (click)="setValue(time,1535358788828)">setValue 08/27/2018 10:33am</button>
     </div>
     <!-- FILE-->
-    <o-file-input attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)" read-only="no" required="yes"
+    <o-file-input #file attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)" read-only="no" required="yes"
       accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes" layout-padding tooltip="This is an awesome tooltip!"
       (onValueChange)="onValueChange($event)" (onChange)="onChange($event,file)" clear-button="yes" ></o-file-input>
 
