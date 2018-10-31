@@ -1,5 +1,7 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { MatInput } from "@angular/material/input";
+import { Component, ViewChild } from '@angular/core';
+import { MatCheckbox } from '@angular/material';
+import { OValueChangeEvent } from 'ontimize-web-ngx';
+
 
 const HTML_DATA = `
 <!-- CHECKBOX-->
@@ -58,9 +60,9 @@ const HTML_DATA = `
 const TS_DATA = `
 consoleLog = [];
 onValueChange(event) {
-  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue + 
+  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue +
   ' this change is of type '+ event.type );
- 
+
   getValue(attr: string) {
     var value;
     switch (attr) {
@@ -115,8 +117,8 @@ export class ConsoleLogEvent {
   attr: string;
   type: string;
   newValue: any;
-  oldValue
-
+  oldValue: any;
+  value: any;
 }
 @Component({
   selector: 'input-events',
@@ -125,6 +127,10 @@ export class ConsoleLogEvent {
 })
 export class InputEventsComponent {
 
+  @ViewChild('printOnChange') printOnChange: MatCheckbox;
+  @ViewChild('printOnValueChange') printOnValueChange: MatCheckbox;
+  @ViewChild('printOnFocus') printOnFocus: MatCheckbox;
+  @ViewChild('printOnBlur') printOnBlur: MatCheckbox;
 
   consoleLog = [];
 
@@ -141,7 +147,7 @@ export class InputEventsComponent {
   };
 
   getValue(attr: string) {
-    var value;
+    let value;
     switch (attr) {
       case 'input':
         value = 'John Doe';
@@ -190,47 +196,67 @@ export class InputEventsComponent {
     input.setValue(value);
   }
 
-  onValueChange(event) {
-    let eventChange = new ConsoleLogEvent();
+  onValueChange(event: OValueChangeEvent) {
+    if (!this.printOnValueChange.checked) {
+      return;
+    }
+    const eventChange = new ConsoleLogEvent();
     eventChange.eventName = 'onValueChange';
     eventChange.newValue = event.newValue;
     eventChange.oldValue = event.oldValue;
-    eventChange.type = event.type;
+    eventChange.type = event.isProgrammaticChange() ? 'PROGRAMMATIC' : 'USER';
     eventChange.attr = event.target.oattr;
     this.consoleLog.unshift(eventChange);
   }
+
   onChange(event, input) {
-    let eventChange = new ConsoleLogEvent();
+    if (!this.printOnChange.checked) {
+      return;
+    }
+    const eventChange = new ConsoleLogEvent();
     eventChange.eventName = 'onChange';
     eventChange.attr = input.oattr;
     this.consoleLog.unshift(eventChange);
+  }
 
+  onFocus(event, input) {
+    if (!this.printOnFocus.checked) {
+      return;
+    }
+    const eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onFocus';
+    eventChange.attr = input.oattr;
+    this.consoleLog.unshift(eventChange);
+  }
+
+  onBlur(event, input) {
+    if (!this.printOnBlur.checked) {
+      return;
+    }
+    const eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onBlur';
+    eventChange.attr = input.oattr;
+    this.consoleLog.unshift(eventChange);
+  }
+
+  showValue(event: any): boolean {
+    return event.hasOwnProperty('value') && typeof event.value !== 'undefined';
   }
 
   showNewAndOldValue(event: any): boolean {
-    var show = false;
-    if (event.hasOwnProperty('newValue') && typeof event.newValue !== undefined &&
-      event.hasOwnProperty('oldValue') && typeof event.oldValue !== undefined) {
-      show = true;
-    }
-    return show;
+    return event.hasOwnProperty('newValue') && typeof event.newValue !== 'undefined' &&
+      event.hasOwnProperty('oldValue') && typeof event.oldValue !== 'undefined';
   }
+
   showTypeEvent(event: any): boolean {
-    var show = false;
-    if (event.hasOwnProperty('type') && typeof event.type !== undefined ) {
-      show = true;
-    }
-    return show;
+    return event.hasOwnProperty('type') && typeof event.type !== 'undefined';
   }
 
   clearConsole() {
     this.consoleLog = [];
   }
 
-  print(e){
+  print(e) {
     console.log(e);
   }
-
- 
-
 }
