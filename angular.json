@@ -135,14 +135,5 @@
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-playground",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+  "defaultProject": "ontimize-web-ngx-playground"
 }
