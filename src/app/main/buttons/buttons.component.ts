@@ -10,6 +10,17 @@ const HTML_DATA = `
 <o-button attr="floating" type="FLOATING" icon="add" layout-padding></o-button>
 `;
 
+const HTML_DATA_TOGGLE = `
+<o-button-toggle attr="singleToggle" label="Toggle me!" layout-padding></o-button-toggle>
+
+<o-button-toggle-group attr="toggleGroup" layout="row" multiple="no" value="car" layout-padding>
+  <o-button-toggle attr="toggle1" value="bike" icon="directions_bike"></o-button-toggle>
+  <o-button-toggle attr="toggle2" value="car" icon="directions_car"></o-button-toggle>
+  <o-button-toggle attr="toggle3" value="train" icon="directions_railway"></o-button-toggle>
+  <o-button-toggle attr="toggle4" value="boat" icon="directions_boat" enabled="no"></o-button-toggle>
+</o-button-toggle-group>
+`;
+
 const TYPESCRIPT_DATA = ``;
 
 @Component({
@@ -33,6 +44,20 @@ export class ButtonsComponent implements OnInit {
     return {
       'html': {
         'data': HTML_DATA
+      },
+      'scss': {
+        'data': undefined
+      },
+      'typescript': {
+        'data': TYPESCRIPT_DATA
+      }
+    };
+  }
+
+  getFilesToggle() {
+    return {
+      'html': {
+        'data': HTML_DATA_TOGGLE
       },
       'scss': {
         'data': undefined
