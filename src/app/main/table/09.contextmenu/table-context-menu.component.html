@@ -10,7 +10,7 @@
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
       <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
         currency-symbol-position="right"></o-table-column>
-      <o-table-context-menu [context-menu]="contextMenu"></o-table-context-menu>
+      <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
     </o-table>
     <o-context-menu #contextMenu>
       <o-context-menu-item icon="grade" label="Item 1" (execute)="onExecute('Item 1', $event)"></o-context-menu-item>
