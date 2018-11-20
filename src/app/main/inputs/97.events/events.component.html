@@ -60,8 +60,14 @@
     <!-- FILE-->
     <o-file-input #file attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)" read-only="no" required="yes"
       accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes" layout-padding tooltip="This is an awesome tooltip!"
-      (onValueChange)="onValueChange($event)" (onChange)="onChange($event,file)" clear-button="yes" ></o-file-input>
+      (onValueChange)="onValueChange($event)" (onChange)="onChange($event,file)" clear-button="yes"></o-file-input>
 
+    <!-- SLIDER-->
+    <div fxFlexDirection="row">
+      <o-slider #slider attr="slider" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue('slider')" read-only="no"
+        tooltip="This is an awesome tooltip!" read-only="no" (onValueChange)="onValueChange($event)" (onChange)="onChange($event,slider)" fxFlex="70"></o-slider>
+      <button mat-button (click)="setValue(slider,85)">setValue 85</button>
+    </div>
     <mat-toolbar class="playground-toolbar">
       <mat-toolbar-row>
         <span>{{ 'CONSOLE.LOG' | oTranslate }}</span>
