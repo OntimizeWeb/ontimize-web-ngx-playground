@@ -27,6 +27,8 @@ import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { InputRadioComponent } from './18.radio/input-radio.component';
+import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from "app/main/inputs/20.slider/input-slider.component";
 
 @NgModule({
   imports: [
@@ -57,7 +59,10 @@ import { InputRadioComponent } from './18.radio/input-radio.component';
     ValidatorsComponent,
     ClearComponent,
     InputEventsComponent,
-    InputRadioComponent
+    InputRadioComponent,
+    InputSlidetoggleComponent,
+    InputSliderComponent
+
   ]
 })
 export class InputsModule { }
