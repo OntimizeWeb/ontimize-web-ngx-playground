@@ -5,11 +5,12 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4202",
+    "start": "ng serve --port 4202  --host  10.7.0.190",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod",
     "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-playground/",
-    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/playground/"
+    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/playground/",
+    "xxxx": "rimraf .\\node_modules\\ontimize-web-ngx\\ && npm i && npm start  "
   },
   "private": true,
   "dependencies": {
@@ -34,7 +35,7 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "5.5.6",
     "zone.js": "0.8.20",
-    "ontimize-web-ngx": "3.1.1",
+    "ontimize-web-ngx": "D:/angular 6/ontimize-web-ngx/dist/ontimize-web-ngx-3.2.0.tgz",
     "angular2-highlight-js": "5.0.1",
     "ontimize-web-ngx-theming": "1.2.0"
   },
