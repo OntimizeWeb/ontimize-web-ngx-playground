@@ -24,15 +24,13 @@ import { InputListpickerComponent } from './14.listpicker/input-listpicker.compo
 import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { InputRadioComponent } from './18.radio/input-radio.component';
+import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from './20.slider/input-slider.component';
 import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
-import { InputEventsComponent } from './97.events/events.component';
-import { InputRadioComponent } from './18.radio/input-radio.component';
-import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
-import { InputSliderComponent } from "app/main/inputs/20.slider/input-slider.component";
 
 @NgModule({
   providers: [
