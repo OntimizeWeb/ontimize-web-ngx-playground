@@ -159,6 +159,7 @@ export class InputEventsComponent {
       case 'date':
         return '2018-12-28';
       case 'radio':
+      case 'slider':
         return 2;
     }
     return value;

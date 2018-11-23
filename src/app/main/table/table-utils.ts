@@ -249,7 +249,7 @@ const HTML_DATA_CONTEXT_MENU = `
       currency-symbol-position="right"></o-table-column>
 
     <!-- Table context menu -->
-    <o-table-context-menu [context-menu]="contextMenu"></o-table-context-menu>
+    <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
   </o-table>
 
   <!-- Context menu definition -->
