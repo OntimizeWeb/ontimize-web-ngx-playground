@@ -184,6 +184,30 @@
   "INPUTS.EVENTS.DESC": "This example demonstrates how you can intercept the inputs's events to output messages in the console.",
   "INPUTS.RADIO": "Radio",
   "INPUTS.RADIO.DESC": "A component for getting or displaying an option from multiple.",
+
+  "INPUTS.APPEARANCE" :"Appearance",
+  "INPUTS.APPEARANCE.DESC" :"Using angular material different appearance variants.",
+  "INPUT.APPEARANCE.LEGACY" :"Legacy",
+  "INPUT.APPEARANCE.STANDARD" :"Standard",
+  "INPUT.APPEARANCE.FILL" :"Fill",
+  "INPUT.APPEARANCE.OUTLINE" :"Outline",
+
+
+  "INPUTS.FLOAT_LABEL" :"Floating label",
+  "INPUTS.FLOAT_LABEL.DESC" :"Using different float-label attribute values.",
+  "INPUT.FLOAT_LABEL.ALWAYS" :"Always floating",
+  "INPUT.FLOAT_LABEL.NEVER" :"Never floating",
+  "INPUT.FLOAT_LABEL.AUTO" :"Automatic floating",
+
+  "INPUTS.PLACEHOLDER" :"Placeholder",
+  "INPUTS.PLACEHOLDER.DESC" :"Using a placeholder value (different from label)",
+  "INPUT.PLACEHOLDER.LABEL" :"Floating label",
+  "INPUT.PLACEHOLDER.FLOAT_ALWAYS" :"Placeholder and always floating label",
+  "INPUT.PLACEHOLDER.NEVER_OUTLINE" :"Placeholder, never floating label and appearance outline",
+  "INPUT.PLACEHOLDER.NEVER_LABEL" :"Label value and never floating label",
+
+
+
   "IMAGE.COMPONENT": "Image",
   "IMAGE.CONFIGURATION": "Image configuration",
   "IMAGE.SHOW_CONTROL": "Show controls",

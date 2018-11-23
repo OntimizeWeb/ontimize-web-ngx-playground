@@ -184,6 +184,30 @@
   "INPUTS.EVENTS.DESC": "Este ejemplo demuestra cómo puede interceptar los eventos de los inputs para enviar mensajes a la consola.",
   "INPUTS.RADIO": "Radio",
   "INPUTS.RADIO.DESC": "Componente para insertar o mostrar una opción entre múltiples.",
+
+  "INPUTS.APPEARANCE" :"Apariencia",
+  "INPUTS.APPEARANCE.DESC" :"Ejemplo del uso del attributo `appearance` de angular material.",
+  "INPUT.APPEARANCE.LEGACY" :"Legacy",
+  "INPUT.APPEARANCE.STANDARD" :"Standard",
+  "INPUT.APPEARANCE.FILL" :"Fill",
+  "INPUT.APPEARANCE.OUTLINE" :"Outline",
+
+
+  "INPUTS.FLOAT_LABEL" :"",
+  "INPUTS.FLOAT_LABEL.DESC" :"",
+  "INPUT.FLOAT_LABEL.ALWAYS" :"",
+  "INPUT.FLOAT_LABEL.NEVER" :"",
+  "INPUT.FLOAT_LABEL.AUTO" :"",
+
+  "INPUTS.PLACEHOLDER" :"",
+  "INPUTS.PLACEHOLDER.DESC" :"",
+  "INPUT.PLACEHOLDER.LABEL" :"",
+  "INPUT.PLACEHOLDER.FLOAT_ALWAYS" :"",
+  "INPUT.PLACEHOLDER.NEVER" :"",
+
+
+
+
   "IMAGE.COMPONENT": "Image",
   "IMAGE.CONFIGURATION": "Configuración de la imagen",
   "IMAGE.SHOW_CONTROL": "Mostrar controles",
