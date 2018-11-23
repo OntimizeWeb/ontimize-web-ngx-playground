@@ -72,8 +72,16 @@
             (onFocus)="onFocus($event, time)" (onBlur)="onBlur($event, time)"></o-time-input>
           <button mat-button (click)="setValue(time,1535358788828)">setValue 08/27/2018 10:33am</button>
         </div>
+        <!-- SLIDER-->
+        <div fxFlexDirection="row">
+          <o-slider #slider attr="slider" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue('slider')"
+            read-only="no" tooltip="This is an awesome tooltip!" read-only="no" (onValueChange)="onValueChange($event)"
+            (onChange)="onChange($event,slider)" fxFlex="70"></o-slider>
+          <button mat-button (click)="setValue(slider,85)">setValue 85</button>
+        </div>
       </div>
     </div>
+
     <mat-toolbar class="playground-toolbar">
       <mat-toolbar-row>
         <span>{{ 'CONSOLE.LOG' | oTranslate }}</span>

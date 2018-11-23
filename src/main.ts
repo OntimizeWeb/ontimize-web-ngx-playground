@@ -5,6 +5,8 @@ import 'hammerjs';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import 'hammerjs';
+
 import { ontimizePostBootstrap } from 'ontimize-web-ngx';
 
 if (environment.production) {

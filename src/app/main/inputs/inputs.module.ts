@@ -29,6 +29,10 @@ import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
+import { InputEventsComponent } from './97.events/events.component';
+import { InputRadioComponent } from './18.radio/input-radio.component';
+import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from "app/main/inputs/20.slider/input-slider.component";
 
 @NgModule({
   providers: [
@@ -65,6 +69,8 @@ import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angul
     InputEventsComponent,
     InputRadioComponent,
     AppearanceComponent
+    InputSlidetoggleComponent,
+    InputSliderComponent
   ]
 })
 export class InputsModule { }
