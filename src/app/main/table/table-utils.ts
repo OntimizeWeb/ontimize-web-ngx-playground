@@ -293,20 +293,18 @@ const HTML_DATA_INSERTABLE_ROW = `
 </o-table>
 `;
 
-const HTML_DATA_TITLE_ALIGN = `
-<o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
-  sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true">
-
-  <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
-  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
-  <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
-  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-    currency-symbol-position="right">
-  </o-table-column>
-  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
-  </o-table-column>
+const HTML_DATA_ALIGN = `
+<o-table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="getTableData()" query-on-init="no"
+  insert-button="no" delete-button="no" refresh-button="no" selection-mode="none" pagination-controls="no"
+  detail-mode="none" export-button="no" auto-align-titles="yes" fxFill layout-padding>
+  <o-table-column attr="NAME" title="NAME" title-align="center"></o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" content-align="start"></o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator=","
+    currency-symbol="€" currency-symbol-position="right" title-align="center"></o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end" content-align="end"></o-table-column>
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number"
+    render-type="icon" render-true-value="check_circle" render-false-value="highlight_off"></o-table-column>
 </o-table>
 `;
 
@@ -560,8 +558,8 @@ export class TableUtils {
       case 'o-table-insertable-row':
         code = HTML_DATA_INSERTABLE_ROW;
         break;
-      case 'o-table-title-align':
-        code = HTML_DATA_TITLE_ALIGN;
+      case 'o-table-align':
+        code = HTML_DATA_ALIGN;
         break;
       case 'o-table-multiple-sort':
         code = HTML_DATA_MULTIPLE_SORT;

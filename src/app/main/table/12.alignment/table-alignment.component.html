@@ -1,0 +1,16 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_ALIGN" [files]="getFiles('o-table-align')">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+      visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="getTableData()" query-on-init="no"
+      insert-button="no" delete-button="no" refresh-button="no" selection-mode="none" pagination-controls="no"
+      detail-mode="none" export-button="no" auto-align-titles="yes" fxFill layout-padding>
+      <o-table-column attr="NAME" title="NAME" title-align="center"></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" content-align="start"></o-table-column>
+      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator=","
+        currency-symbol="€" currency-symbol-position="right" title-align="center"></o-table-column>
+      <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end" content-align="end"></o-table-column>
+      <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number"
+        render-type="icon" render-true-value="check_circle" render-false-value="highlight_off"></o-table-column>
+    </o-table>
+  </div>
+</example-comp>
