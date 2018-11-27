@@ -34,3 +34,18 @@
     </div>
   </o-form>
 </example-comp>
+
+<example-comp comp-name="INPUTS.HOUR.VALUE_TYPE" comp-desc="INPUTS.HOUR.VALUE_TYPE.DESC" [files]="valueTypeFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="row" layout-align="space-between center">
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_STRING' | oTranslate }}</label>
+      <o-hour-input value-type="string" attr="valueTypeInput" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()"
+        read-only="no"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_TIMESTAMP' | oTranslate }}</label>
+      <o-hour-input value-type="timestamp" attr="valueTypeInput2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getTimestampValue()"
+        read-only="no"></o-hour-input>
+    </div>
+  </o-form>
+</example-comp>
