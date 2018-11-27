@@ -66,7 +66,7 @@ import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angul
     ClearComponent,
     InputEventsComponent,
     InputRadioComponent,
-    AppearanceComponent
+    AppearanceComponent,
     InputSlidetoggleComponent,
     InputSliderComponent
   ]
