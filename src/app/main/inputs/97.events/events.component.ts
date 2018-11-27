@@ -58,9 +58,9 @@ const HTML_DATA = `
 const TS_DATA = `
 consoleLog = [];
 onValueChange(event) {
-  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue + 
+  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue +
   ' this change is of type '+ event.type );
- 
+
   getValue(attr: string) {
     var value;
     switch (attr) {
@@ -155,9 +155,8 @@ export class InputEventsComponent {
       case 'combo':
         return 2;
       case 'time':
-        return 1505358700000;
       case 'date':
-        return '2018-12-28';
+        return 1505358700000;
       case 'radio':
       case 'slider':
         return 2;
@@ -232,6 +231,6 @@ export class InputEventsComponent {
     console.log(e);
   }
 
- 
+
 
 }

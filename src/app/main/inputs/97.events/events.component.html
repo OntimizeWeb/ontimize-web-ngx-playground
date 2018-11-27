@@ -19,7 +19,7 @@
       <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
         read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"
         (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange($event,date)"></o-date-input>
-      <button mat-button (click)="setValue(date,'2018-10-03')">setValue 2018-10-03</button>
+      <button mat-button (click)="setValue(date, 1538524800000)">setValue 2018-10-03</button>
     </div>
 
     <!-- LISKPICKER-->
@@ -40,7 +40,7 @@
     <!-- hour-->
     <div fxFlexDirection="row">
       <o-hour-input #hour attr="hour" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue('hour')"
-        read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24" (onChange)="onChange($event,hour)"
+        value-type="string" read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24" (onChange)="onChange($event,hour)"
         (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-hour-input>
       <button mat-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
     </div>
