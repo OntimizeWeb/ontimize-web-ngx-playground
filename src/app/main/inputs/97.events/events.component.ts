@@ -161,9 +161,8 @@ export class InputEventsComponent {
       case 'combo':
         return 2;
       case 'time':
-        return 1505358700000;
       case 'date':
-        return '2018-12-28';
+        return 1505358700000;
       case 'radio':
       case 'slider':
         return 2;

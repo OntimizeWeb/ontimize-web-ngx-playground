@@ -36,7 +36,7 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\4.0.0-rc.0\\ontimize-web-ngx\\dist\\ontimize-web-ngx-4.0.0-rc.0.tgz",
+    "ontimize-web-ngx": "file:C:\\workspace\\github\\ontimize-web-ng2-VERSIONS\\4.0.0-rc.0\\ontimize-web-ngx\\dist\\ontimize-web-ngx-4.0.0-rc.1.tgz",
     "angular2-highlight-js": "5.0.1",
     "ontimize-web-ngx-theming": "1.2.0"
   },
@@ -50,7 +50,7 @@
     "copy-webpack-plugin": "4.5.4",
     "html-webpack-plugin": "4.0.0-beta.2",
     "node-sass": "4.9.4",
-    "ontimize-web-ngx-tools": "file:C:\\workspace\\github\\TOOLS\\ontimize-web-ngx-tools\\ontimize-web-ngx-tools-2.0.0.tgz",
+    "ontimize-web-ngx-tools": "4.0.0-rc.0",
     "ts-node": "~2.0.0",
     "typescript": "2.9.2",
     "webpack": "4.18.0",

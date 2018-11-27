@@ -41,6 +41,31 @@ const HTML_FORMAT_DATA = `
 </o-form>
 `;
 
+const HTML_VALUETYPE_DATA = `
+  getValue() {
+    return '05:00 PM'
+  }
+
+  getTimestampValue() {
+    return 1542975966197;
+  }
+`;
+
+const TS_VALUETYPE_DATA = `
+<o-form editable-detail="no" show-header="no" layout-direction="row" layout-align="space-between center">
+  <div fxLayout="column" layout-padding fxFlex="40">
+    <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_STRING' | oTranslate }}</label>
+    <o-hour-input value-type="string" attr="valueTypeInput" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()"
+      read-only="no"></o-hour-input>
+  </div>
+  <div fxLayout="column" layout-padding fxFlex="40">
+    <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_TIMESTAMP' | oTranslate }}</label>
+    <o-hour-input value-type="timestamp" attr="valueTypeInput2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getTimestampValue()"
+      read-only="no"></o-hour-input>
+  </div>
+</o-form>
+`;
+
 @Component({
   selector: 'input-hour',
   templateUrl: 'input-hour.component.html'
@@ -68,7 +93,21 @@ export class InputHourComponent {
     }
   };
 
+  valueTypeFiles = {
+    'html': {
+      'data': HTML_VALUETYPE_DATA
+    },
+    'typescript': {
+      'data': TS_VALUETYPE_DATA
+    }
+  };
+
+
   getValue() {
     return '05:00 PM';
+  }
+
+  getTimestampValue() {
+    return 1542975966197;
   }
 }

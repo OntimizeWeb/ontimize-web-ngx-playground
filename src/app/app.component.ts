@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { OntimizeMatIconRegistry } from 'ontimize-web-ngx';
 
 @Component({
@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
   constructor(protected injector: Injector) {
     this.ontimizeMatIconRegistry = this.injector.get(OntimizeMatIconRegistry);
+    this.ontimizeMatIconRegistry.addOntimizeSvgIcon('double-check', 'assets/images/double-check.svg');
   }
 
   ngOnInit() {
