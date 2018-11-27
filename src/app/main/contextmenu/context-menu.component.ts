@@ -9,11 +9,11 @@ const HTML_DATA = `
 
 </div>
 <o-context-menu #myOContextMenu>
-  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute('Item 1', $event)" enabled="no"></o-context-menu-item>
+  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute('Item 1')" enabled="no"></o-context-menu-item>
   <o-context-menu-group label="Group" icon="priority_high" >
-      <o-context-menu-item icon="star_rate" label="Item 2" (execute)="onExecute('Item 2',$event)"  enabled="no"></o-context-menu-item>
+      <o-context-menu-item icon="star_rate" label="Item 2" (execute)="onExecute('Item 2')"  enabled="no"></o-context-menu-item>
       <o-context-menu-separator></o-context-menu-separator>
-      <o-context-menu-item label="Item 3" (execute)="onExecute('Item 3',$event)" [visible]="getVisible"></o-context-menu-item>
+      <o-context-menu-item label="Item 3" (execute)="onExecute('Item 3')" [visible]="getVisible"></o-context-menu-item>
   </o-context-menu-group>
 </o-context-menu>
 `;

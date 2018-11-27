@@ -23,12 +23,12 @@ import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
 import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
-import { ClearComponent } from './98.clear/clear.component';
-import { ValidatorsComponent } from './99.validators/validators.component';
-import { InputEventsComponent } from './97.events/events.component';
 import { InputRadioComponent } from './18.radio/input-radio.component';
 import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
-import { InputSliderComponent } from "app/main/inputs/20.slider/input-slider.component";
+import { InputSliderComponent } from './20.slider/input-slider.component';
+import { InputEventsComponent } from './97.events/events.component';
+import { ClearComponent } from './98.clear/clear.component';
+import { ValidatorsComponent } from './99.validators/validators.component';
 
 @NgModule({
   imports: [
@@ -62,7 +62,6 @@ import { InputSliderComponent } from "app/main/inputs/20.slider/input-slider.com
     InputRadioComponent,
     InputSlidetoggleComponent,
     InputSliderComponent
-
   ]
 })
 export class InputsModule { }
