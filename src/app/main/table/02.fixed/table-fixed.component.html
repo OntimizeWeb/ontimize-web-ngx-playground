@@ -6,7 +6,7 @@
       <div fxFlex="{{height.value}}px" fxLayout="column" fxLayoutAlign="start stretch" [ngStyle]="{'overflow': 'auto'}">
 
         <o-table #table attr="table" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-          visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
+          visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
           quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
           <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
           <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
