@@ -68,7 +68,7 @@ const HTML_DATA = `
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px"></o-table-column>
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
     <o-table-column attr="action" width="64px">
       <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
     </o-table-column>
