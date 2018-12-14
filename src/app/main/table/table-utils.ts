@@ -68,7 +68,7 @@ const HTML_DATA = `
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px"></o-table-column>
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
     <o-table-column attr="action" width="64px">
       <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
     </o-table-column>
@@ -77,7 +77,7 @@ const HTML_DATA = `
 
 const HTML_DATA_TABLE_FIXED = `
   <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
     quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
     [ngStyle]="{ngStyle}">
     <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
@@ -598,7 +598,6 @@ export class TableUtils {
 
         constructor(protected injector: Injector) {
           super(injector);
-          this.initialize();
           this.setComponentPipe();
         }
 
@@ -688,7 +687,7 @@ export class TableUtils {
 
         constructor(protected injector: Injector) {
           super(injector);
-          this.initialize(); this.setComponentPipe();
+          this.setComponentPipe();
         }
 
         setComponentPipe() {

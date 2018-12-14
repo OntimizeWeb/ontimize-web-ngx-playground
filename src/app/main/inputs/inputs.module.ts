@@ -25,7 +25,6 @@ import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { InputRadioComponent } from './18.radio/input-radio.component';
 import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
-import { InputSliderComponent } from './20.slider/input-slider.component';
 import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
@@ -67,8 +66,7 @@ import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angul
     InputEventsComponent,
     InputRadioComponent,
     AppearanceComponent,
-    InputSlidetoggleComponent,
-    InputSliderComponent
+    InputSlidetoggleComponent
   ]
 })
 export class InputsModule { }
