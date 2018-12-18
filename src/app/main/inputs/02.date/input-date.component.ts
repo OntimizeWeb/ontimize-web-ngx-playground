@@ -47,10 +47,38 @@ export class InputDateComponent {
     }
   };
 
-  protected dateValue: Date = new Date();
+  valueTypeFiles = {
+    'html': {
+      'data': DATE_HTML_DATA
+    },
+    'scss': {
+      'data': undefined
+    },
+    'typescript': {
+      'data': DATE_TS_DATA
+    }
+  };
 
-  getValue() {
-    return this.dateValue;
+  protected dateValue: Date = new Date('10/05/2018');
+
+  getValue(type: string = 'timestamp') {
+    let result;
+    switch (type) {
+      case 'string':
+        result = '10/05/2018';
+        break;
+      case 'date':
+        result = this.dateValue;
+        break;
+      case 'ISO-8601':
+        result = this.dateValue.toISOString();
+        break;
+      case 'timestamp':
+        result = this.dateValue.getTime();
+      default:
+        break;
+    }
+    return result;
   }
 
 }
