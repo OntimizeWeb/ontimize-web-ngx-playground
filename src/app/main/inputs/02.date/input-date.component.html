@@ -6,12 +6,40 @@
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-date-input attr="date2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue()" read-only="no" format="LL"
-        required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"></o-date-input>
+      <o-date-input text-input-enabled="false" attr="date2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue()"
+        read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"></o-date-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-date-input attr="date3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" enabled="no" [data]="getValue()"></o-date-input>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.DATE.VALUE_TYPE" comp-desc="INPUTS.DATE.VALUE_TYPE.DESC" [files]="valueTypeFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.TIMESTAMP' | oTranslate }}</label>
+      <o-date-input value-type="timestamp" attr="valueTypeInput" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('timestamp')"
+        read-only="no" required="yes"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
+      <o-date-input value-type="string" attr="valueTypeInput2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('string')"
+        read-only="no" required="yes"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.DATE' | oTranslate }}</label>
+      <o-date-input value-type="date" attr="valueTypeInput3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
+        read-only="no" required="yes"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.ISO-8601' | oTranslate }}</label>
+      <o-date-input value-type="iso-8601" attr="valueTypeInput4" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('ISO-8601')"
+        read-only="no" required="yes"></o-date-input>
     </div>
   </o-form>
 </example-comp>
