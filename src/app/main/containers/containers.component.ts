@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_ROW_DATA = `
-<o-row attr="row1" title-label="Row title" layout-align="start stretch"
+<o-row attr="row1" title="Row title" layout-align="start stretch"
   elevation="2">
   <div layout-padding style="background-color:#3498db;" > One </div>
   <div layout-padding style="background-color:#e74c3c;" > Two </div>
@@ -13,7 +13,7 @@ const HTML_ROW_DATA = `
 `;
 
 const HTML_COL_DATA = `
-<o-column attr="column1" title-label="Column title" layout-align="start stretch"
+<o-column attr="column1" title="Column title" layout-align="start stretch"
   elevation="2">
   <div layout-padding style="background-color:#3498db;" > One </div>
   <div layout-padding style="background-color:#e74c3c;" > Two </div>
