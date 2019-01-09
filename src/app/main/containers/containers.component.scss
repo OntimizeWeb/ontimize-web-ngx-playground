@@ -1,12 +1,13 @@
 .app-containers {
-  .radio-group-vertical{
-    mat-radio-button{
+  .radio-group-vertical {
+    mat-radio-button {
       display: block;
+      padding: 2px 0;
     }
   }
 
   .alignment-label {
-    font-size: 0.75em;
+    font-size: .75em;
     color: #aaa;
   }
 
@@ -18,4 +19,4 @@
   .container-content {
     height: calc(100% - 32px);
   }
-  }
+}
