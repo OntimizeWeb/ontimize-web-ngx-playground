@@ -34,6 +34,7 @@ const TYPESCRIPT_DATA = ``;
 })
 export class ContainersComponent implements OnInit {
 
+  public appearance = '';
   layout = 'row';
   protected layoutHorizontal = 'start';
   protected layoutVertical = 'stretch';
@@ -106,5 +107,9 @@ export class ContainersComponent implements OnInit {
 
   getSecondaryDirection() {
     return this.layout === 'column' ? 'horizontal' : 'vertical';
+  }
+
+  onChangeAppearance(event) {
+    this.appearance = event.source.checked ? event.value : '';
   }
 }
