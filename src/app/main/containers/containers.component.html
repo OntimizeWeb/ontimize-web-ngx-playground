@@ -9,23 +9,23 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="start center" layout-padding>
     <span>Select container layout direction: </span>
-    <mat-radio-group (change)="onLayoutChange($event)" layout-padding>
+    <mat-radio-group [(ngModel)]="layout" layout-padding>
       <mat-radio-button value="column"> {{ 'COLUMN' | oTranslate }}</mat-radio-button>
       <mat-radio-button value="row" checked="true"> {{ 'ROW' | oTranslate }}</mat-radio-button>
     </mat-radio-group>
   </div>
 
-  <example-comp comp-name="CONTAINERS" [files]="getFiles()" fxFill>
+  <example-comp #ex comp-name="CONTAINERS" [files]="getFiles()" (showSource)="onShowSource(ex)" fxFill>
     <div fxLayout="row" fxLayoutAlign="space-around stretch" fxFill>
 
-      <o-row *ngIf="layout === 'row'" attr="row1" layout-fill="yes" [title]="title.value" [icon]="icon.value"
-        [layout-align]="getLayoutAlign()" [elevation]="elevation.value" fxFlex="55">
+      <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
+        [elevation]="elevation.value" fxFlex="55">
         <div layout-padding style="background-color:#3498db;">One</div>
         <div layout-padding style="background-color:#e74c3c;">Two</div>
         <div layout-padding style="background-color:#f9c922;">Three</div>
       </o-row>
-      <o-column *ngIf="layout === 'column'" attr="col1" layout-fill="yes" [title]="title.value" [icon]="icon.value"
-        [layout-align]="getLayoutAlign()" [elevation]="elevation.value" fxFlex="55">
+      <o-column *ngIf="layout === 'column'" attr="col1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
+        [elevation]="elevation.value" fxFlex="55">
         <div layout-padding style="background-color:#3498db;">One</div>
         <div layout-padding style="background-color:#e74c3c;">Two</div>
         <div layout-padding style="background-color:#f9c922;">Three</div>
@@ -33,7 +33,7 @@
 
       <o-column attr="conf" title="Configuration" elevation="0" fxFlex="40" layout-padding>
         <mat-form-field>
-          <input matInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
+          <input #title matInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
         </mat-form-field>
         <mat-form-field>
           <input matInput #icon placeholder="{{ 'CONTAINER_ICON' | oTranslate }}" value="check">
