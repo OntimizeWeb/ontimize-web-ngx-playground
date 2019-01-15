@@ -25,6 +25,7 @@
   "TITLE": "Title",
   "DESCRIPTION": "Description",
   "ELEVATION": "Elevation",
+  "APPEARANCE_OUTLINE": "Appearance: outline",
   "CONTAINER_ICON": "Icon",
   "ITEM_CONFIGURATION": "Item configuration",
   "QUICK_FILTER": "Filter",

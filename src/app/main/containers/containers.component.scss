@@ -1,10 +1,12 @@
 .containers-basic,
 .containers-collapsible {
-  .radio-group-vertical {
-    mat-radio-button {
-      display: block;
-      padding: 2px 0;
-    }
+  .radio-group-horizontal .mat-radio-button {
+    padding-right: 8px;
+  }
+
+  .radio-group-vertical .mat-radio-button {
+    display: block;
+    padding: 2px 0;
   }
 
   .alignment-label {

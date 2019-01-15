@@ -3,7 +3,8 @@ import { Component, ViewChild } from '@angular/core';
 import { ExampleComponent } from '../../../shared/example/example.component';
 
 const HTML_DATA = `
-<o-{layout}-collapsible attr="container" title="{title}" icon="{icon}" layout-align="{layoutAlign}" elevation="{elevation}">
+<o-{layout}-collapsible attr="container" title="{title}" icon="{icon}" layout-align="{layoutAlign}" elevation="{elevation}"
+  appearance="{appearance}">
   <div layout-padding style="background-color:#3498db;">One</div>
   <div layout-padding style="background-color:#e74c3c;">Two</div>
   <div layout-padding style="background-color:#f9c922;">Three</div>
@@ -34,6 +35,9 @@ export class ContainersCollapsibleComponent {
 
   @ViewChild('icon')
   public iconInput: any;
+
+  @ViewChild('appearance')
+  public appearanceInput: any;
 
   public dataHorizontal: Array<any> = [
     { 'value': 'start', 'label': 'start (default)', 'checked': true },
@@ -95,7 +99,8 @@ export class ContainersCollapsibleComponent {
       .replace('{title}', this.titleInput.nativeElement.value)
       .replace('{icon}', this.iconInput.nativeElement.value)
       .replace('{layoutAlign}', this.getLayoutAlign())
-      .replace('{elevation}', this.elevationInput.nativeElement.value);
+      .replace('{elevation}', this.elevationInput.nativeElement.value)
+      .replace('{appearance}', this.appearanceInput.checked ? 'outline' : 'none');
   }
 
 }

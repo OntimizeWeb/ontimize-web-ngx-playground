@@ -25,6 +25,7 @@
   "TITLE": "Título",
   "DESCRIPTION": "Descripción",
   "ELEVATION": "Elevación",
+  "APPEARANCE_OUTLINE": "Apariencia: outline",
   "CONTAINER_ICON": "Icono",
   "ITEM_CONFIGURATION": "Configuración del item",
   "QUICK_FILTER": "Filter",
