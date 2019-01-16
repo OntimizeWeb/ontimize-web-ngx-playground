@@ -13,7 +13,7 @@ export class TableRendererComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getAccounts().slice();
+    return TableUtils.getAccounts();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

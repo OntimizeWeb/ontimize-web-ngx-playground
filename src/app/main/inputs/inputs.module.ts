@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { OntimizeWebModule, O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
 
 import { SharedModule } from '../../shared/shared.module';
 import { InputsComponent } from './inputs.component';
@@ -25,6 +25,7 @@ import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
 import { InputRadioComponent } from './18.radio/input-radio.component';
 import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from './20.slider/input-slider.component';
 import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
@@ -32,10 +33,11 @@ import { ValidatorsComponent } from './99.validators/validators.component';
 import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
 
 @NgModule({
-  providers: [
+  // providers: [
+    // { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } }
     // { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
     // { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
-  ],
+  // ],
   imports: [
     SharedModule,
     OntimizeWebModule,
@@ -66,7 +68,8 @@ import { MAT_LABEL_GLOBAL_OPTIONS, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angul
     InputEventsComponent,
     InputRadioComponent,
     AppearanceComponent,
-    InputSlidetoggleComponent
+    InputSlidetoggleComponent,
+    InputSliderComponent
   ]
 })
 export class InputsModule { }

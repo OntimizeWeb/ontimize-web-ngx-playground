@@ -52,7 +52,7 @@ export class TableBasicComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getCustomers().slice();
+    return TableUtils.getCustomers();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
