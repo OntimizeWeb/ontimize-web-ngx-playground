@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4402",
+    "start": "ng serve --port 4401",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod",
     "production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-playground --href /ontimize-web-ngx-playground/",
@@ -34,9 +34,9 @@
     "rxjs": "6.3.3",
     "zone.js": "0.8.26",
     "reflect-metadata": "0.1.12",
-    "ontimize-web-ngx": "4.0.0-rc.0",
+    "ontimize-web-ngx": "4.0.0-rc.1",
     "angular2-highlight-js": "5.0.1",
-    "ontimize-web-ngx-theming": "1.2.0"
+    "ontimize-web-ngx-theming": "4.0.0-rc.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
