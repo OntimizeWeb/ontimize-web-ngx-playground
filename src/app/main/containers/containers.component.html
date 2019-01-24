@@ -26,21 +26,21 @@
   <example-comp comp-name="CONTAINERS" [files]="getFiles()" fxFill>
 
     <div fxLayout="row" fxLayoutAlign="space-around stretch" fxFill>
-      <o-row *ngIf="layout === 'row'" attr="row1" layout-fill="yes" [title-label]="title.value" [layout-align]="getLayoutAlign()"
+      <o-row *ngIf="layout === 'row'" attr="row1" layout-fill="yes" [title]="title.value" [layout-align]="getLayoutAlign()"
         [elevation]="elevation.value" fxFlex="60">
         <div layout-padding style="background-color:#3498db;"> One </div>
         <div layout-padding style="background-color:#e74c3c;"> Two </div>
         <div layout-padding style="background-color:#f9c922;"> Three </div>
       </o-row>
 
-      <o-column *ngIf="layout === 'column'" attr="col1" layout-fill="yes" [title-label]="title.value" [layout-align]="getLayoutAlign()"
+      <o-column *ngIf="layout === 'column'" attr="col1" layout-fill="yes" [title]="title.value" [layout-align]="getLayoutAlign()"
         [elevation]="elevation.value" fxFlex="60">
         <div layout-padding style="background-color:#3498db;"> One </div>
         <div layout-padding style="background-color:#e74c3c;"> Two </div>
         <div layout-padding style="background-color:#f9c922;"> Three </div>
       </o-column>
 
-      <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex="35" layout-padding>
+      <o-column attr="conf" title="Configuration" elevation="0" fxFlex="35" layout-padding>
 
         <mat-form-field>
           <input matInput #title placeholder="{{ 'TITLE' | oTranslate }}" value="Title">

@@ -6,7 +6,7 @@ const DATE_HTML_DATA = `
     <o-date-input attr="date" label="Date" [data]="getValue()"></o-date-input>
 
     <o-date-input attr="date2" label="Date" [data]="getValue()" read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020"
-      tooltip="This is an awesome tooltip!"></o-date-input>
+      ></o-date-input>
 
     <o-date-input attr="date3" label="Date" enabled="no" [data]="getValue()"></o-date-input>
 

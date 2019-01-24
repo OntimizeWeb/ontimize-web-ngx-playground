@@ -8,7 +8,7 @@ const SLIDE_HTML_DATA = `
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider #slider attr="slider-editable" [data]="getValue()" tooltip="This is an awesome tooltip!"
+      <o-slider #slider attr="slider-editable" [data]="getValue()"
         read-only="no"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
@@ -24,7 +24,7 @@ const SLIDE_HTML_DATA = `
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-slider attr="slider-editable" [data]="getValue()" read-only="no"
-        tooltip="This is an awesome tooltip!" layout="column" color="warn" max="100" min="0" thumb-label="true"
+         layout="column" color="warn" max="100" min="0" thumb-label="true"
         tick-interval="auto"></o-slider>
     </div>
     <div fxLayout="column" layout-padding fxFlex="30">

@@ -6,7 +6,7 @@ const SLIDETOGGLE_HTML_DATA = `
     <o-slide-toggle attr="slidetoggle" label="Slide toggle" [data]="getValue()"></o-slide-toggle>
 
     <o-slide-toggle attr="slidetoggle-editable" label="Slide toggle" [data]="getValue()" read-only="no"
-        tooltip="This is an awesome tooltip!"></o-slide-toggle>
+        ></o-slide-toggle>
 
     <o-slide-toggle attr="slidetoggle-disabled" label="Slide toggle" enabled="no"></o-slide-toggle>
 

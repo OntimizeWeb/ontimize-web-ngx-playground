@@ -6,7 +6,7 @@ const CURRENCY_HTML_DATA = `
     <o-currency-input attr="currency" label="Currency" [data]="getValue()" decimal-digits="2" min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
 
     <o-currency-input attr="currency2" label="Currency" [data]="getValue()" read-only="no" decimal-digits="2" required="yes"
-      min-decimal-digits="2" max-decimal-digits="2" tooltip="This is an awesome tooltip!"></o-currency-input>
+      min-decimal-digits="2" max-decimal-digits="2" ></o-currency-input>
 
     <o-currency-input attr="currency3" label="Currency" enabled="no" [data]="getValue()" decimal-digits="2" min-decimal-digits="2"
       max-decimal-digits="2"></o-currency-input>

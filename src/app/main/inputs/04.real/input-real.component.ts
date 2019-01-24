@@ -7,7 +7,7 @@ const REAL_HTML_DATA = `
       min="30" max="40.0"></o-real-input>
 
     <o-real-input attr="real2" label="Real" [data]="getValue()" read-only="no" required="yes" decimal-digits="3" min-decimal-digits="2"
-      max-decimal-digits="4" min="30" max="40.0" tooltip="This is an awesome tooltip!"></o-real-input>
+      max-decimal-digits="4" min="30" max="40.0" ></o-real-input>
 
     <o-real-input attr="real3" label="Real" enabled="no" [data]="getValue()" decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4"
       min="30" max="40.0"></o-real-input>

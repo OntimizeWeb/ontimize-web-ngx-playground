@@ -5,7 +5,7 @@ const TEXTAREA_HTML_DATA = `
 
     <o-textarea-input attr="textarea" label="Textarea" [data]="getValue()" rows="10"></o-textarea-input>
 
-    <o-textarea-input attr="textarea2" label="Textarea" [data]="getValue()" read-only="no" rows="10" tooltip="This is an awesome tooltip!"></o-textarea-input>
+    <o-textarea-input attr="textarea2" label="Textarea" [data]="getValue()" read-only="no" rows="10" ></o-textarea-input>
 
     <o-textarea-input attr="textarea3" label="Textarea" enabled="no" [data]="getValue()" rows="10"></o-textarea-input>
 

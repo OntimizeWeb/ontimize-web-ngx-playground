@@ -5,7 +5,7 @@ const PERCENT_HTML_DATA = `
 
     <o-percent-input attr="percent" label="Percentage" [data]="getValue()"></o-percent-input>
 
-    <o-percent-input attr="percent2" label="Percentage" [data]="getValue()" read-only="false" required="yes" tooltip="This is an awesome tooltip!"></o-percent-input>
+    <o-percent-input attr="percent2" label="Percentage" [data]="getValue()" read-only="false" required="yes" ></o-percent-input>
 
     <o-percent-input attr="percent3" label="Percentage" enabled="no" [data]="getValue()"></o-percent-input>
 

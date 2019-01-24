@@ -11,7 +11,7 @@ const HTML_HTML_DATA = `
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
     <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
-    tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
+     clear-button="yes" format="24"></o-hour-input>
   </div>
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
@@ -36,7 +36,7 @@ const HTML_FORMAT_DATA = `
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
     <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
-    tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
+     clear-button="yes" format="24"></o-hour-input>
   </div>
 </o-form>
 `;

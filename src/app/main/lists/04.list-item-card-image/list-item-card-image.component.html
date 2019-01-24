@@ -15,7 +15,7 @@
         </o-list-item>
       </o-list>
     </o-column>
-    <o-column title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+    <o-column title="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
       <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
           <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
@@ -29,7 +29,7 @@
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
         <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
           <mat-slide-toggle #imageToggle checked="true" fxFlex>
             {{ 'IMAGE' | oTranslate }}

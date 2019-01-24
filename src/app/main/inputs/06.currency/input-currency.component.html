@@ -8,7 +8,7 @@
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-currency-input attr="currency2" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" [data]="getValue()" read-only="no"
-        decimal-digits="2" required="yes" min-decimal-digits="2" max-decimal-digits="2" tooltip="This is an awesome tooltip!"></o-currency-input>
+        decimal-digits="2" min="2" required="yes" min-decimal-digits="2" max-decimal-digits="2" ></o-currency-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>

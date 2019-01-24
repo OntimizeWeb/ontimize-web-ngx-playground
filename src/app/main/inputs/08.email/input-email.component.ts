@@ -5,7 +5,7 @@ const EMAIL_HTML_DATA = `
 
     <o-email-input attr="email" label="Email" [data]="getValue()"></o-email-input>
 
-    <o-email-input attr="email2" label="Email" [data]="getValue()" read-only="no" required="yes" tooltip="This is an awesome tooltip!"></o-email-input>
+    <o-email-input attr="email2" label="Email" [data]="getValue()" read-only="no" required="yes" ></o-email-input>
 
     <o-email-input attr="email3" label="Email" enabled="no" [data]="getValue()"></o-email-input>
 
