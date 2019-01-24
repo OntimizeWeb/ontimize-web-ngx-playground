@@ -2,24 +2,24 @@ import { Component } from '@angular/core';
 
 const HTML_DATA = `
 <div fxLayout="row">
-  <o-column fxFlex="30" title-label="Auto fit">
+  <o-column fxFlex="30" title="Auto fit">
     <o-image attr="image1" data="http://placekitten.com/300/200" show-controls="no" fxFill></o-image>
   </o-column>
-  <o-column fxFlex="30" title-label="Auto fit in the dimension of 200*300px">
+  <o-column fxFlex="30" title="Auto fit in the dimension of 200*300px">
     <o-image attr="image2" data="http://placekitten.com/300/200" width="200px" height="300px" show-controls="no"></o-image>
   </o-column>
-  <o-column fxFlex="30" title-label="Auto fit in height=300px">
+  <o-column fxFlex="30" title="Auto fit in height=300px">
     <o-image attr="image3" data="http://placekitten.com/300/200" height="300px" show-controls="no"></o-image>
   </o-column>
 </div>
 <div fxLayout="row">
-  <o-column fxFlex="30" title-label="Disabled auto fit">
+  <o-column fxFlex="30" title="Disabled auto fit">
     <o-image attr="image4" data="http://placekitten.com/300/200" auto-fit="no" show-controls="no" fxFill></o-image>
   </o-column>
-  <o-column fxFlex="30" title-label="Disabled Auto fit in the dimension of 200*300px ">
+  <o-column fxFlex="30" title="Disabled Auto fit in the dimension of 200*300px ">
     <o-image attr="image5" data="http://placekitten.com/300/200" auto-fit="no" height="300px" width="200px" show-controls="no"></o-image>
   </o-column>
-  <o-column fxFlex="30" title-label="Disabled Auto fit in height=200px'">
+  <o-column fxFlex="30" title="Disabled Auto fit in height=200px'">
     <o-image attr="image6" data="http://placekitten.com/300/200" auto-fit="no" height="200px" show-controls="no"></o-image>
   </o-column>
 </div>
