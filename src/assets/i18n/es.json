@@ -254,5 +254,6 @@
   "INPUTS.VALIDATOR.INPUT": "Input del componente",
   "INPUTS.VALIDATOR.O-VALIDATOR": "Componente o-validator",
   "INPUTS.VALIDATOR.O-ERROR": "Componente o-error",
-  "SHOW_IMAGE": "Imagen"
+  "SHOW_IMAGE": "Imagen",
+  "TOOLTIP" : "Tooltip"
 }
