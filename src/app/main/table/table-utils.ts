@@ -261,15 +261,15 @@ const HTML_DATA_CONTEXT_MENU = `
 `;
 
 const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
-  <o-table #table attr="table" title="ACCOUNTS" horizontal-scroll="{horizontal-scroll}" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
-    quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-    [ngStyle]="{ngStyle}">
-    <o-table-column attr="ENTITYID" title="ENTITYID" min-width="250px"></o-table-column>
-    <o-table-column attr="OFFICEID" title="OFFICEID" min-width="250px"></o-table-column>
-    <o-table-column attr="CDID" title="CDID" min-width="250px"></o-table-column>
-    <o-table-column attr="ANID" title="ANID" min-width="250px"></o-table-column>
-    <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator="," min-width="250px"></o-table-column>
+  <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="getTableData()" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
+    visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
+    delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding>
+    <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" format="LL"></o-table-column>
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
   </o-table>
 `;
 
