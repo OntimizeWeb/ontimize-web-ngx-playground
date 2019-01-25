@@ -1,7 +1,7 @@
-import { Component, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { OTableComponent } from 'ontimize-web-ngx';
 
 import { TableUtils } from '../table-utils';
-import { OTableComponent } from "ontimize-web-ngx";
 
 @Component({
   selector: 'table-horizontal-scroll',
@@ -37,7 +37,7 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getAccountsTableFixed();
+    return TableUtils.getCustomers().slice();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
