@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')"
   (showSource)="onShowSource('o-table', table, ex)">
-  <div fxLayout="row wrap" fxLayoutAlign="center stretch" layout-padding>
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
     <div fxFlex="60" fxLayoutAlign="center center">
       <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
@@ -25,7 +25,7 @@
 
     <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
       layout-align="center">
-      <mat-form-field fxFlex="95">
+      <mat-form-field>
         <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-between center">
