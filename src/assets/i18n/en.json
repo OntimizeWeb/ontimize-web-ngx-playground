@@ -260,5 +260,6 @@
   "INPUTS.VALIDATOR.O-VALIDATOR": "o-validator component",
   "INPUTS.VALIDATOR.O-ERROR": "o-error component",
   "SHOW_IMAGE": "Image",
-  "TOOLTIP" : "Tooltip"
+  "TOOLTIP" : "Tooltip",
+  "TOOLTIP.CONFIGURATION": "Tooltip configuration"
 }

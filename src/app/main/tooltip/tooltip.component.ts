@@ -4,7 +4,7 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 
 const HTML_DATA = `
 <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" tooltip="{tooltip}"
-tooltip-position="{tooltipPosition}" tooltip-show-delay="{tooltipShowDelay}"></o-text-input>
+tooltip-position="{tooltipPosition}" tooltip-show-delay="{tooltipShowDelay}" tooltip-hide-delay="{tooltipHideDelay}"></o-text-input>
 `;
 
 @Component({
@@ -26,11 +26,12 @@ export class TooltipComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  onShowSource(exampleComp: any, tooltip: string, position: string, delay: string) {
+  onShowSource(exampleComp: any, tooltip: string, position: string, showDelay: string, hideDelay: string) {
     let tpl = HTML_DATA;
     tpl = tpl.replace('{tooltip}', tooltip)
       .replace('{tooltipPosition}', position)
-      .replace('{tooltipShowDelay}', delay);
+      .replace('{tooltipShowDelay}', showDelay)
+      .replace('{tooltipHideDelay}', hideDelay);
     exampleComp.html = tpl;
   }
 

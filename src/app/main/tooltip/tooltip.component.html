@@ -1,29 +1,35 @@
 <div fxLayout="column" fxLayoutAlign="center top">
 
-  <example-comp #ex comp-name="TOOLTIP" fxFill (showSource)="onShowSource(ex, tooltipInput.value, matSelect.value,delayInput.value)">
-    <o-form editable-detail="no" show-header="no" layout-direction="column">
-      <div fxLayout="row" layout-padding fxFill fxLayoutGap="56px">
+  <example-comp #ex comp-name="TOOLTIP" fxFill (showSource)="onShowSource(ex, tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
+    <o-form editable-detail="no" show-header="no" layout-direction="row">
+
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
         <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
-          [tooltip-position]="matSelect.value" [tooltip-show-delay]="delayInput.value"></o-text-input>
-
-        <div fxLayout="row" fxLayoutGap="14px">
-          <mat-form-field>
-            <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
-              <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
-                {{positionOption}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field>
-            <input #delayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
-          </mat-form-field>
-        </div>
+          [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value" [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
       </div>
+
+      <o-column attr="conf" title="{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}" fxFlex="50" layout-padding layout-align="center">
+        <mat-form-field>
+          <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
+            <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+              {{positionOption}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
+        </mat-form-field>
+      </o-column>
+
     </o-form>
   </example-comp>
 </div>
