@@ -13,6 +13,7 @@ import { ListsModule } from './lists/lists.module';
 import { TableModule } from './table/table.module';
 import { MediaModule } from './media/media.module';
 import { GridModule } from './grid/grid.module';
+import { TooltipModule } from './tooltip/tooltip.module';
 
 export function loadButtonsModule() { return ButtonsModule; }
 export function loadContainersModule() { return ContainersModule; }
@@ -25,6 +26,7 @@ export function loadListsModule() { return ListsModule; }
 export function loadTableModule() { return TableModule; }
 export function loadMediaModule() { return MediaModule; }
 export function loadGridModule() { return GridModule; }
+export function loadTooltipModule() { return TooltipModule; }
 
 export const routes: Routes = [
   {
@@ -42,6 +44,7 @@ export const routes: Routes = [
       { path: 'grid', loadChildren: loadGridModule },
       { path: 'table', loadChildren: loadTableModule },
       { path: 'media', loadChildren: loadMediaModule },
+      { path: 'tooltip', loadChildren: loadTooltipModule },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   }

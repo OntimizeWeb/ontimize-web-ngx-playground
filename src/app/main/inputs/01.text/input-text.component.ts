@@ -5,7 +5,7 @@ const TEXT_HTML_DATA = `
 
     <o-text-input fxFlex attr="input" label="Text" [data]="getValue()"></o-text-input>
 
-    <o-text-input attr="input2" label="Text" [data]="getValue()" read-only="no" required="yes" tooltip="This is an awesome tooltip!"></o-text-input>
+    <o-text-input attr="input2" label="Text" [data]="getValue()" read-only="no" required="yes" ></o-text-input>
 
     <o-text-input attr="input3" label="Text" enabled="no" [data]="getValue()"></o-text-input>
 
