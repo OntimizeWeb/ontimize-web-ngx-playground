@@ -2,17 +2,17 @@
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-real-input attr="real" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" decimal-digits="3" min-decimal-digits="2"
+      <o-real-input attr="real" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" min-decimal-digits="2"
         max-decimal-digits="4" min="30" max="40.0"></o-real-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-real-input attr="real2" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
-        decimal-digits="3" min-decimal-digits="2" max-decimal-digits="4" min="0" max="100000" ></o-real-input>
+      <o-real-input attr="real2" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" [data]="getValue()" read-only="no"
+        required="yes" min-decimal-digits="2" max-decimal-digits="4" min="0" max="100000"></o-real-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-real-input attr="real3" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" enabled="no" [data]="getValue()" decimal-digits="3"
+      <o-real-input attr="real3" label="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" enabled="no" [data]="getValue()"
         min-decimal-digits="2" max-decimal-digits="4" min="30" max="40.0"></o-real-input>
     </div>
   </o-form>
