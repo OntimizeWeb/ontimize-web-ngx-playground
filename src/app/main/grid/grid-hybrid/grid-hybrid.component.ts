@@ -18,7 +18,7 @@ export class GridHybridComponent {
   }
 
   onShowSource(grid?: any, exampleComp?: any) {
-    exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID_FIXED, grid);
+    exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID_HYBRID, grid);
   }
 
   public replaceHtml(html: string, grid?: any) {
