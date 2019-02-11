@@ -7,7 +7,7 @@
         page-size-options="4;8;16" [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked"
         grid-item-height="1:2" sortable-columns="name;email" [sort-column]="sortColumn" [controls]="showControlsToggle.checked"
         [refresh-button]="refreshButtonToggle.checked" [pagination-controls]="paginationControlsToggle.checked"
-        [gutter-size]="gutterSizeInput.value">
+        [gutter-size]="gutterSizeInput.value" [ngStyle]="{'height':'600px'}">
         <o-grid-item *ngFor="let list of grid.dataArray">
           <o-column layout-padding class="container-item">
             <img [src]="list.thumbnailUrl" style="margin-top:8px">
@@ -42,9 +42,9 @@
             min="1">
         </mat-form-field>
         <mat-form-field fxFlex="50">
-            <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}" [(ngModel)]="gutterSize"
-              min="1">
-          </mat-form-field>
+          <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}"
+            [(ngModel)]="gutterSize" min="1">
+        </mat-form-field>
       </div>
       <div fxLayout="column">
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
