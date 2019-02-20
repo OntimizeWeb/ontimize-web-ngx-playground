@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { GridUtils } from '../grid.utils';
+import { Component } from '@angular/core';
 
+import { GridUtils } from '../grid.utils';
 
 @Component({
   selector: 'grid-hybrid',
@@ -9,8 +9,8 @@ import { GridUtils } from '../grid.utils';
 
 export class GridHybridComponent {
 
-  getStaticData() {
-    return GridUtils.getData('o-grid-hybrid');
+  getStaticData(key) {
+    return GridUtils.getData(key);
   }
 
   getFiles(type) {
