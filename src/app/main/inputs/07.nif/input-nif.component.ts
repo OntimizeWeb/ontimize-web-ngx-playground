@@ -6,7 +6,7 @@ const NIF_HTML_DATA = `
     <o-nif-input attr="nif" label="NIF" [data]="getValue()"></o-nif-input>
 
     <o-nif-input #nif attr="nif2" label="NIF" [data]="getValue()" read-only="no" required="yes"
-      tooltip="This is an awesome tooltip!"></o-nif-input>
+      ></o-nif-input>
 
     <o-nif-input attr="nif3" label="NIF" enabled="no" [data]="getValue()"></o-nif-input>
 

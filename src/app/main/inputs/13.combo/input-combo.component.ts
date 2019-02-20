@@ -4,7 +4,7 @@ const COMBO_HTML_DATA = `
   <o-form editable-detail="false" show-header="no" layout-direction="column">
 
     <o-combo attr="combo" label="Combo" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key" columns="key;value"
-      visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
+      visible-columns="value"></o-combo>
 
     <o-combo attr="combo-editable" label="Combo" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
       columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>

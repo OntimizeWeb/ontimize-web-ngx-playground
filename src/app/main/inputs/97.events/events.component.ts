@@ -7,7 +7,7 @@ const HTML_DATA = `
 <!-- CHECKBOX-->
 <div fxFlexDirection="row">
   <o-checkbox #check attr="checkbox" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue('checkbox')"
-    read-only="no" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)" fxFlex="70"></o-checkbox>
+    read-only="no"  (onValueChange)="onValueChange($event)" fxFlex="70"></o-checkbox>
   <button mat-button (click)="setValue(check,false)">setValue false</button>
 </div>
 <!-- COMBO-->
@@ -20,7 +20,7 @@ const HTML_DATA = `
 <!-- DATE-->
 <div fxFlexDirection="row">
   <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
-    read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"
+    read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-date-input>
   <button mat-button (click)="setValue(date,'2010-01-01')">setValue 01/01/1980</button>
 </div>
@@ -36,21 +36,21 @@ const HTML_DATA = `
 <!-- INPUT-->
 <div fxFlexDirection="row">
   <o-text-input #input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue('input')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)"
+    read-only="no" required="yes"  (onValueChange)="onValueChange($event)"
     clear-button="yes" fxFlex="70"></o-text-input>
   <button mat-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
 </div>
 <!-- hour-->
 <div fxFlexDirection="row">
   <o-hour-input #hour attr="hour" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue('hour')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
+    read-only="no" required="yes"  clear-button="yes" format="24"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-hour-input>
   <button mat-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
 </div>
 <!-- TIME-->
 <div fxFlexDirection="row">
   <o-time-input #time attr="time" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue('time')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
+    read-only="no" required="yes"  clear-button="yes" format="24"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-time-input>
   <button mat-button (click)="setValue(time,1535358788828)">setValue 08/27/2018 10:33am</button>
 </div>

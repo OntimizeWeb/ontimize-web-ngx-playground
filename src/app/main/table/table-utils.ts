@@ -104,8 +104,8 @@ const HTML_DATA_RENDERER = `
     </o-table-column>
     <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-      currency-symbol-position="right"></o-table-column>
-    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+      currency-symbol-position="right" ></o-table-column>
+    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
     <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
     <o-table-column attr="COMMISSION" title="COMMISSION">
       <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"

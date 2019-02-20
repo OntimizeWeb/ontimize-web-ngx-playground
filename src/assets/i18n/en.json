@@ -109,6 +109,9 @@
   "TABLE.EXAMPLE_MULTIPLE_SORT_DESC": "Column sorting is added after clicking in the column header",
   "TABLE.EXAMPLE_MULTIPLE_SORT_FALSE": "Example of table simple columns sorting",
   "TABLE.EXAMPLE_MULTIPLE_SORT_FALSE_DESC": "Column sorting after clicking in the column header (deactivates previous sorting)",
+  "GRID.BUTTON.BASIC": "Basic",
+  "GRID.BUTTON.FIXED": "Fixed header & footer",
+  "GRID.BUTTON.HYBRID": "Hybrid",
   "GRID.COMPONENT": "Grid",
   "GRID.EXAMPLE": "Grid",
   "GRID.SHOW_PAGINATION": "Show items per page",
@@ -119,6 +122,7 @@
   "GRID.PAGINATION": "Pagination",
   "GRID.NUM_COLUMNS": "Columns per row",
   "GRID.PAGE_SIZE": "Items per page",
+  "GRID.GUTTER_SIZE": "Gutter size",
   "GRID.PAGINATION_CONTROLS": "Show pagination controls",
   "INPUTS.COMPONENTS": "Input fields",
   "INPUTS.READ_ONLY": "Read only",
@@ -277,5 +281,7 @@
   "INPUTS.VALIDATOR.INPUT": "Component input",
   "INPUTS.VALIDATOR.O-VALIDATOR": "o-validator component",
   "INPUTS.VALIDATOR.O-ERROR": "o-error component",
-  "SHOW_IMAGE": "Image"
+  "SHOW_IMAGE": "Image",
+  "TOOLTIP" : "Tooltip",
+  "TOOLTIP.CONFIGURATION": "Tooltip configuration"
 }

@@ -8,12 +8,12 @@ const RADIO_HTML_DATA = `
 
     <o-row>
       <o-radio attr="radio-editable" label="Radio" [static-data]="getDataArray()"
-        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
-        tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
+        [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no"
+        required="yes"></o-radio>
 
       <o-radio attr="radio-editable" label="Radio" [static-data]="getDataArray()"
         [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
-        tooltip="This is an awesome tooltip!" tooltip-position="below" layout="row"></o-radio>
+         layout="row"></o-radio>
     </o-row>
 
     <o-radio attr="radio-disabled" label="Radio" [static-data]="getDataArray()"
