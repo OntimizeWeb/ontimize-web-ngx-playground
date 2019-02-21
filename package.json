@@ -5,11 +5,11 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4202",
+    "start": "ng serve --port 4301",
     "build": "ng build",
     "production": "ng build --aot=false --target -prod",
     "production-aot": "ontimize-web-ngx production-aot --href /ontimize-web-ngx-playground/",
-    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/playground/"
+    "production-aot-server": "ontimize-web-ngx production-aot --href /ontimizeweb/v3/playground/"
   },
   "private": true,
   "dependencies": {
