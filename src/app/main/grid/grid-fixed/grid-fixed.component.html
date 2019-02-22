@@ -4,7 +4,7 @@
     <o-column elevation="1" fxFlex="60" layout-align="center">
       <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
         keys="id" [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes"
-        query-rows="8" grid-item-height="1:2">
+        query-rows="8" grid-item-height="1:2" quick-filter="yes">
         <o-grid-item *ngFor="let list of grid.dataArray">
           <o-column layout-padding class="container-item">
             <img [src]="list.thumbnailUrl" style="margin-top:8px">
