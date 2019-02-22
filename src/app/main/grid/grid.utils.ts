@@ -234,7 +234,7 @@ const HTML_DATA_GRID = `
     keys="id" [cols]="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
     orderable="{orderable}" quick-filter="{quickfilter}" grid-item-height="1:3" sortable-columns="name;email"
     sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}"
-    pagination-controls="{paginationControls}" gutter-size="{gutterSize}px">
+    pagination-controls="{paginationControls}" gutter-size="{gutterSize}px" [ngStyle]="{'height':'600px'}">
     <o-grid-item *ngFor="let list of grid.dataArray">
       <o-column layout-padding class="container-item">
         <img [src]="list.thumbnailUrl" style="margin-top:8px">
@@ -264,7 +264,7 @@ const HTML_DATA_GRID = `
 
 const HTML_DATA_GRID_FIXED = `
 <o-grid #grid attr="grid"  title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-keys="id" [fixed-header]="{fixedHeader}" style="height:{height}px" pagination-controls="yes" query-rows="8">
+keys="id" [fixed-header]="{fixedHeader}" style="height:'{height}px'" pagination-controls="yes" query-rows="8">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding class="container-item">
       <img [src]="list.thumbnailUrl" style="margin-top:8px">
@@ -303,30 +303,6 @@ const CSS_DATA = `
 .container-item{
   width: 100%;
   height:100%;
-  .email,
-  .domain,
-  .phone,
-  .body,
-  .website{
-    font-size: 0.8em;
-    display: flex;
-    align-items: center;
-    color:#4b4b4b;
-    mat-icon{
-      padding-right:8px;
-    }
-    span{
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-  }
-}`;
-
-const CSS_DATA_FIXED = `
-.container-item{
-  width: 100%;
-  height:100%;
   .name{
     margin:8px 0;
     font-size: 0.9em;
@@ -353,8 +329,9 @@ const CSS_DATA_FIXED = `
     font-size:18px;
     height: 18px;;
   }
-}
-`;
+}`;
+
+
 const
   HTML_TS = `
 getStaticData() {
@@ -389,8 +366,6 @@ export class GridUtils {
     switch (type) {
       case 'o-grid-hybrid':
         return '';
-      case 'o-grid-fixed':
-        return CSS_DATA_FIXED;
       default:
         return CSS_DATA;
 

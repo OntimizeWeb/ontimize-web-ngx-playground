@@ -3,12 +3,12 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-column elevation="1" fxFlex="60" layout-align="center">
       <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-        keys="id" [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" 
-        pagination-controls="yes" query-rows="8"   grid-item-height="1:1.5">
+        keys="id" [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes"
+        query-rows="8" grid-item-height="1:2" quick-filter="yes">
         <o-grid-item *ngFor="let list of grid.dataArray">
           <o-column layout-padding class="container-item">
             <img [src]="list.thumbnailUrl" style="margin-top:8px">
-            <div class="name"><b>{{ list.name }}</b></div>
+            <h4>{{ list.name }}</h4>
             <div class="phone">
               <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
             </div>
@@ -20,6 +20,9 @@
             </div>
             <div class="website">
               <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+            </div>
+            <div class="body">
+              {{list.body}}
             </div>
           </o-column>
         </o-grid-item>
@@ -35,7 +38,7 @@
           {{ 'GRID.BUTTON.FIXED' | oTranslate }}
         </mat-slide-toggle>
         <mat-form-field>
-          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="500" type="number">
+          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="600" type="number">
         </mat-form-field>
       </o-column>
     </o-column>

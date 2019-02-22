@@ -15,7 +15,7 @@ export class GridFixedComponent {
   gridHeight: any;
 
   getStaticData() {
-    return  GridUtils.getData('o-grid-fixed');
+    return GridUtils.getData('o-grid-fixed');
   }
 
   getFiles(type) {
