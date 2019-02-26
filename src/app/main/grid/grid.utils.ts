@@ -291,7 +291,7 @@ keys="id" [fixed-header]="{fixedHeader}" style="height:'{height}px'" pagination-
 
 const HTML_DATA_GRID_HYBRID = `
  <o-grid #grid attr="grid" [static-data]="getStaticData())" columns="text;cols;rows;color" cols="4"
-grid-item-height="100px" controls="no" gutter-size="0">
+grid-item-height="100px" controls="no" gutter-size="0" show-footer="no">
   <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
     <div [style.background]="list.color" fxFill>
       {{list.text}}

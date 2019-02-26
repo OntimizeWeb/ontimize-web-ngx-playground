@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-hybrid')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
   <o-grid #grid attr="grid" [static-data]="getStaticData('o-grid-hybrid')" columns="text;cols;rows;color" cols="4"
-    grid-item-height="100px" controls="no" gutter-size="0">
+    grid-item-height="100px" controls="no" gutter-size="0" show-footer="no">
     <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
       <div [style.background]="list.color" fxFill>
         {{list.text}}
