@@ -116,6 +116,7 @@
   "GRID.EXAMPLE": "Grid",
   "GRID.SHOW_PAGINATION": "Show items per page",
   "GRID.SHOW_SORT": "Show sort",
+  "GRID.SHOW_FOOTER":"Show footer",
   "GRID.DEFAULT_COLS_VALUE": "Default columns for row",
   "GRID.CONFIGURATION": "Configuration",
   "GRID.SHOW_CONTROLS": "Show toolbar",

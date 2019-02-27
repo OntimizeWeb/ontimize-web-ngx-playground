@@ -120,6 +120,7 @@
   "GRID.NUM_COLUMNS": "Columnas por fila",
   "GRID.PAGE_SIZE": "Elementos por página",
   "GRID.PAGINATION_CONTROLS": "Mostrar controles paginación",
+  "GRID.SHOW_FOOTER":"Mostrar footer",
   "INPUTS.COMPONENTS": "Campos de entrada",
   "INPUTS.READ_ONLY": "Solo lectura",
   "INPUTS.EDITABLE": "Editable",
