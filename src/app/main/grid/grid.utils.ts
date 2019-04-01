@@ -1,4 +1,3 @@
-
 const FAKE_USERS = [
   {
     'id': 1,
@@ -9,8 +8,8 @@ const FAKE_USERS = [
     'suite': 'Apt. 556',
     'city': 'Gwenborough',
     'zipcode': '92998-3874',
-    'lat': '-37.3159',
-    'lng': '81.1496',
+    'lat': -37.3159,
+    'lng': 81.1496,
     'phone': '1-770-736-8031 x56442',
     'website': 'hildegard.org',
     'companyname': 'Romaguera-Crona',
@@ -31,8 +30,8 @@ const FAKE_USERS = [
     'suite': 'Suite 879',
     'city': 'Wisokyburgh',
     'zipcode': '90566-7771',
-    'lat': '-43.9509',
-    'lng': '-34.4618',
+    'lat': -43.9509,
+    'lng': -34.4618,
     'phone': '010-692-6593 x09125',
     'website': 'anastasia.net',
     'companyname': 'Deckow-Crist',
@@ -53,8 +52,8 @@ const FAKE_USERS = [
     'suite': 'Suite 847',
     'city': 'McKenziehaven',
     'zipcode': '59590-4157',
-    'lat': '-68.6102',
-    'lng': '-47.0653',
+    'lat': -68.6102,
+    'lng': -47.0653,
     'phone': '1-463-123-4447',
     'website': 'ramiro.info',
     'companyname': 'Romaguera-Jacobson',
@@ -76,8 +75,8 @@ const FAKE_USERS = [
     'suite': 'Apt. 692',
     'city': 'South Elvis',
     'zipcode': '53919-4257',
-    'lat': '29.4572',
-    'lng': '-164.2990',
+    'lat': 29.4572,
+    'lng': -164.2990,
     'phone': '493-170-9623 x156',
     'website': 'kale.biz',
     'companyname': 'Robel-Corkery',
@@ -98,8 +97,8 @@ const FAKE_USERS = [
     'suite': 'Suite 351',
     'city': 'Roscoeview',
     'zipcode': '33263',
-    'lat': '-31.8129',
-    'lng': '62.5342',
+    'lat': -31.8129,
+    'lng': 62.5342,
     'phone': '(254)954-1289',
     'website': 'demarco.info',
     'companyname': 'Keebler LLC',
@@ -120,8 +119,8 @@ const FAKE_USERS = [
     'suite': 'Apt. 950',
     'city': 'South Christy',
     'zipcode': '23505-1337',
-    'lat': '-71.4197',
-    'lng': '71.7478',
+    'lat': -71.4197,
+    'lng': 71.7478,
     'phone': '1-477-935-8478 x6430',
     'website': 'ola.org',
     'companyname': 'Considine-Lockman',
@@ -142,8 +141,8 @@ const FAKE_USERS = [
     'suite': 'Suite 280',
     'city': 'Howemouth',
     'zipcode': '58804-1099',
-    'lat': '24.8918',
-    'lng': '21.8984',
+    'lat': 24.8918,
+    'lng': 21.8984,
     'phone': '210.067.6132',
     'website': 'elvis.io',
     'companyname': 'Johns Group',
@@ -164,8 +163,8 @@ const FAKE_USERS = [
     'suite': 'Suite 729',
     'city': 'Aliyaview',
     'zipcode': '45169',
-    'lat': '-14.3990',
-    'lng': '-120.7677',
+    'lat': -14.3990,
+    'lng': -120.7677,
     'phone': '586.493.6943 x140',
     'website': 'jacynthe.com',
     'companyname': 'Abernathy Group',
@@ -187,8 +186,8 @@ const FAKE_USERS = [
     'suite': 'Suite 449',
     'city': 'Bartholomebury',
     'zipcode': '76495-3109',
-    'lat': '24.6463',
-    'lng': '-168.8889',
+    'lat': 24.6463,
+    'lng': -168.8889,
     'phone': '(775)976-6794 x41206',
     'website': 'conrad.com',
     'companyname': 'Yost and Sons',
@@ -209,8 +208,8 @@ const FAKE_USERS = [
     'suite': 'Suite 198',
     'city': 'Lebsackbury',
     'zipcode': '31428-2261',
-    'lat': '-38.2386',
-    'lng': '57.2232',
+    'lat': -38.2386,
+    'lng': 57.2232,
     'phone': '024-648-3804',
     'website': 'ambrose.net',
     'companyname': 'Hoeger LLC',
@@ -229,6 +228,7 @@ const FAKE_DATAHYBRID = [
   { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
   { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
 ];
+
 const HTML_DATA_GRID = `
   <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
     keys="id" [cols]="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
@@ -257,9 +257,6 @@ const HTML_DATA_GRID = `
       </o-column>
     </o-grid-item>
   </o-grid>
-
-
-
 `;
 
 const HTML_DATA_GRID_FIXED = `
@@ -284,9 +281,6 @@ keys="id" [fixed-header]="{fixedHeader}" style="height:'{height}px'" pagination-
     </o-column>
   </o-grid-item>
 </o-grid>
-
-
-
 `;
 
 const HTML_DATA_GRID_HYBRID = `
@@ -331,21 +325,19 @@ const CSS_DATA = `
   }
 }`;
 
-
 const
   HTML_TS = `
 getStaticData() {
   return ${JSON.stringify(FAKE_USERS)};
 }
-`
+`;
 
 const
   HTML_TS_HIBRID = `
 getStaticData() {
   return ${JSON.stringify(FAKE_DATAHYBRID)};
 }
-`
-
+`;
 
 export class GridUtils {
 
@@ -371,7 +363,6 @@ export class GridUtils {
 
     }
   }
-
 
   public static getHtml(key: string, table: any, data: any) {
     let tpl = '';
@@ -402,7 +393,6 @@ export class GridUtils {
     };
     return result;
   }
-
 
   public static getTypescript(key: string) {
     let code = '';
@@ -435,7 +425,6 @@ export class GridUtils {
     return code;
   }
 
-
   public static replaceHtml(html: string, grid?: any) {
     if (grid) {
       html = html.replace('{title}', grid.title || '')
@@ -453,10 +442,5 @@ export class GridUtils {
     }
     return html;
   }
-
-
-
-
-
 
 }
