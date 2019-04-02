@@ -183,7 +183,6 @@ export class InputEventsComponent {
 
 
   getDataArray() {
-   
     return this.array;
   }
 
