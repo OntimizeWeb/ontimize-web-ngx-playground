@@ -35,11 +35,28 @@ const COMBO_TS_DATA = `
     templateUrl: './input-combo.component.html'
   })
   export class InputComboComponent {
+    
+    public array: Array<Object> = [{
+      'key': 1,
+      'value': 'Spain'
+    }, {
+      'key': 2,
+      'value': 'United States'
+    }, {
+      'key': 3,
+      'value': 'United Kingdom'
+    }, {
+      'key': 4,
+      'value': 'Germany'
+    }];
 
     getValueSimple() {
       return 2;
     }
 
+    getDataArray() {
+      return this.array;
+    }
   }
 `;
 
@@ -52,10 +69,27 @@ const COMBO_TS_DATA_MULTIPLE = `
   })
   export class InputComboComponent {
 
-    multipleValue = [1, 2];
+    public multipleValue = [1, 2];
+    public array: Array<Object> = [{
+      'key': 1,
+      'value': 'Spain'
+    }, {
+      'key': 2,
+      'value': 'United States'
+    }, {
+      'key': 3,
+      'value': 'United Kingdom'
+    }, {
+      'key': 4,
+      'value': 'Germany'
+    }];
 
     getValueMultiple() {
       return this.multipleValue;
+    }
+
+    getDataArray() {
+      return this.array;
     }
 
   }
@@ -66,6 +100,21 @@ const COMBO_TS_DATA_MULTIPLE = `
   templateUrl: './input-combo.component.html'
 })
 export class InputComboComponent {
+
+
+  public array: Array<Object> = [{
+    'key': 1,
+    'value': 'Spain'
+  }, {
+    'key': 2,
+    'value': 'United States'
+  }, {
+    'key': 3,
+    'value': 'United Kingdom'
+  }, {
+    'key': 4,
+    'value': 'Germany'
+  }];
 
   files = {
     'html': {
@@ -92,24 +141,7 @@ export class InputComboComponent {
   };
 
   getDataArray() {
-    const array: Array<Object> = [];
-    array.push({
-      'key': 1,
-      'value': 'Spain'
-    });
-    array.push({
-      'key': 2,
-      'value': 'United States'
-    });
-    array.push({
-      'key': 3,
-      'value': 'United Kingdom'
-    });
-    array.push({
-      'key': 4,
-      'value': 'Germany'
-    });
-    return array;
+    return this.array;
   }
 
   multipleValue = [1, 2];

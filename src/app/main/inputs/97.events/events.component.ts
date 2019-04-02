@@ -59,6 +59,19 @@ const HTML_DATA = `
 
 const TS_DATA = `
 consoleLog = [];
+public array: Array<Object> = [{
+  'key': 1,
+  'value': 'Spain'
+}, {
+  'key': 2,
+  'value': 'United States'
+}, {
+  'key': 3,
+  'value': 'United Kingdom'
+}, {
+  'key': 4,
+  'value': 'Germany'
+}];
 onValueChange(event) {
   console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue +
   ' this change is of type '+ event.type );
@@ -87,24 +100,7 @@ onValueChange(event) {
 
 
   getDataArray() {
-    const array: Array<Object> = [];
-    array.push({
-      'key': 1,
-      'value': 'Spain'
-    });
-    array.push({
-      'key': 2,
-      'value': 'United States'
-    });
-    array.push({
-      'key': 3,
-      'value': 'United Kingdom'
-    });
-    array.push({
-      'key': 4,
-      'value': 'Germany'
-    });
-    return array;
+    return this.array;
   }
 
   setValue(input: any, value: any) {
@@ -131,6 +127,21 @@ export class InputEventsComponent {
   @ViewChild('printOnValueChange') printOnValueChange: MatCheckbox;
   @ViewChild('printOnFocus') printOnFocus: MatCheckbox;
   @ViewChild('printOnBlur') printOnBlur: MatCheckbox;
+
+  public array: Array<Object> = [{
+    'key': 1,
+    'value': 'Spain'
+  }, {
+    'key': 2,
+    'value': 'United States'
+  }, {
+    'key': 3,
+    'value': 'United Kingdom'
+  }, {
+    'key': 4,
+    'value': 'Germany'
+  }];
+
 
   consoleLog = [];
 
@@ -172,24 +183,8 @@ export class InputEventsComponent {
 
 
   getDataArray() {
-    const array: Array<Object> = [];
-    array.push({
-      'key': 1,
-      'value': 'Spain'
-    });
-    array.push({
-      'key': 2,
-      'value': 'United States'
-    });
-    array.push({
-      'key': 3,
-      'value': 'United Kingdom'
-    });
-    array.push({
-      'key': 4,
-      'value': 'Germany'
-    });
-    return array;
+   
+    return this.array;
   }
 
   setValue(input: any, value: any) {
