@@ -1,20 +1,21 @@
 <example-comp comp-name="INPUTS.TIME" comp-desc="INPUTS.TIME.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-time-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue()"></o-time-input>
+      <o-time-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" hour-placeholder="hh:mm"
+        date-placeholder="dd/mm/yyyy" [data]="getValue()"></o-time-input>
 
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-time-input attr="input2"  [data]="getValue()" read-only="no" required="yes"
-         clear-button="yes" format="24" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" hour-placeholder="hh:mm" date-placeholder="dd/mm/yyyy" ></o-time-input>
+      <o-time-input attr="input2" [data]="getValue()" read-only="no" required="yes" clear-button="yes" format="24"
+        label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" hour-placeholder="hh:mm" date-placeholder="dd/mm/yyyy">
+      </o-time-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-time-input attr="input3" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" enabled="no" [data]="getValue()"></o-time-input>
+      <o-time-input attr="input3" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" enabled="no" [data]="getValue()"
+        hour-placeholder="hh:mm" date-placeholder="dd/mm/yyyy"></o-time-input>
     </div>
-
   </o-form>
 </example-comp>
