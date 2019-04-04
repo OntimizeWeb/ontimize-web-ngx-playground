@@ -1,17 +1,13 @@
 <example-comp comp-name="INPUTS.FLOAT_LABEL" comp-desc="INPUTS.FLOAT_LABEL.DESC" collapsible="no">
   <o-form editable-detail="no" show-header="no" layout-direction="row">
     <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
-
-      <o-text-input attr="attr"
-        [float-label]="floatLabelValue"
-        [appearance]="appearanceValue"
-        [label]="label.value"
-        [placeholder]="placeholder.value"
-        read-only="no" clear-button="yes">
+      <o-text-input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
+        [placeholder]="placeholder.value" read-only="no" clear-button="yes"
+        [hide-required-marker]="hideRequiredMarker.checked" required="yes">
       </o-text-input>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="start center" fxFlex="50">
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start start" fxFlex="50">
 
       <mat-form-field>
         <input matInput #label placeholder="Label" value="Label value">
@@ -20,6 +16,8 @@
       <mat-form-field>
         <input matInput #placeholder placeholder="Placeholder" value="Placeholder value">
       </mat-form-field>
+
+      <mat-checkbox #hideRequiredMarker>Hide required marker</mat-checkbox>
 
       <div fxLayoutGap="8px">
         <label>Float label: </label>
@@ -68,13 +66,15 @@
       read-only="no" clear-button="yes"></o-text-input>
 
     <o-text-input attr="text_placeholder2" float-label="always" label="{{ 'INPUT.PLACEHOLDER.LABEL' | oTranslate }}"
-      placeholder="{{ 'INPUT.PLACEHOLDER.FLOAT_ALWAYS' | oTranslate }}" read-only="no" clear-button="yes"></o-text-input>
+      placeholder="{{ 'INPUT.PLACEHOLDER.FLOAT_ALWAYS' | oTranslate }}" read-only="no" clear-button="yes">
+    </o-text-input>
 
-    <o-text-input attr="text_placeholder3" float-label="never" label="{{ 'INPUT.PLACEHOLDER.NEVER_LABEL' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input attr="text_placeholder3" float-label="never"
+      label="{{ 'INPUT.PLACEHOLDER.NEVER_LABEL' | oTranslate }}" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-text-input attr="text_placeholder4" float-label="never" appearance="outline" placeholder="{{ 'INPUT.PLACEHOLDER.NEVER_OUTLINE' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input attr="text_placeholder4" float-label="never" appearance="outline"
+      placeholder="{{ 'INPUT.PLACEHOLDER.NEVER_OUTLINE' | oTranslate }}" read-only="no" clear-button="yes">
+    </o-text-input>
 
   </o-form>
 </example-comp>
@@ -82,23 +82,25 @@
 <example-comp comp-name="INPUTS.APPEARANCE" comp-desc="INPUTS.APPEARANCE.DESC" [files]="appearanceFiles">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}" [data]="getValueText()"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-text-input appearance="standard" attr="text_2" label="{{ 'INPUT.APPEARANCE.STANDARD' | oTranslate }}" [data]="getValueText()"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="standard" attr="text_2" label="{{ 'INPUT.APPEARANCE.STANDARD' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-text-input appearance="fill" attr="text_3" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" [data]="getValueText()"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="fill" attr="text_3" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-text-input appearance="outline" attr="text_4" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" [data]="getValueText()"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="outline" attr="text_4" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-currency-input appearance="fill" attr="currency3" clear-button="yes" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
-      read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
+    <o-currency-input appearance="fill" attr="currency3" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes">
+    </o-currency-input>
 
-    <o-currency-input appearance="outline" attr="currency4" clear-button="yes" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
-      read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
+    <o-currency-input appearance="outline" attr="currency4" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes">
+    </o-currency-input>
 
     <!-- <o-combo attr="combo-editable" appearance="fill" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" [static-data]="getDataArray()"
       [data]="getValueSimple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>

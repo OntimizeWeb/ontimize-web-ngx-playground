@@ -204,6 +204,7 @@
   "INPUTS.HOUR.VALUE_TYPE_DESC": "There are two different value types",
   "INPUTS.HOUR.VALUE_TYPE_STRING": "String",
   "INPUTS.HOUR.VALUE_TYPE_TIMESTAMP": "Timestamp",
+  "INPUTS.HOUR.VALUE_TYPE.DESC":"There are two available types for hour displaying and saving",
   "INPUTS.TIME": "Time",
   "INPUTS.TIME.DESC": "A component for getting or displaying date and hour submitted by the user.",
   "INPUTS.EVENTS": "Events",
