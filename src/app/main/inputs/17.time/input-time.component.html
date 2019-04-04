@@ -8,8 +8,8 @@
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-time-input attr="input2" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
-         clear-button="yes" format="24"></o-time-input>
+      <o-time-input attr="input2"  [data]="getValue()" read-only="no" required="yes"
+         clear-button="yes" format="24" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" hour-placeholder="hh:mm" date-placeholder="dd/mm/yyyy" ></o-time-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
