@@ -1,7 +1,8 @@
-<example-comp comp-name="INPUTS.FLOAT_LABEL" comp-desc="INPUTS.FLOAT_LABEL.DESC" collapsible="no">
+<example-comp  #ex comp-name="INPUTS.CONFIGURATION" comp-desc="INPUTS.CONFIGURATION.DESC" collapsible="no"
+  [files]="customInputFiles" (showSource)="onShowSource('customInput', input, ex)">
   <o-form editable-detail="no" show-header="no" layout-direction="row">
     <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
-      <o-text-input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
+      <o-text-input  #input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
         [placeholder]="placeholder.value" read-only="no" clear-button="yes"
         [hide-required-marker]="hideRequiredMarker.checked" required="yes">
       </o-text-input>

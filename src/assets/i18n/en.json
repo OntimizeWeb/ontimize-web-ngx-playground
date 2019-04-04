@@ -217,6 +217,8 @@
   "INPUT.APPEARANCE.STANDARD": "Standard",
   "INPUT.APPEARANCE.FILL": "Fill",
   "INPUT.APPEARANCE.OUTLINE": "Outline",
+  "INPUTS.CONFIGURATION":"Input Configuration",
+  "INPUTS.CONFIGURATION.DESC":"Using input variants",
   "INPUTS.FLOAT_LABEL": "Floating label",
   "INPUTS.FLOAT_LABEL.DESC": "Using different float-label attribute values.",
   "INPUT.FLOAT_LABEL.ALWAYS": "Always floating",
