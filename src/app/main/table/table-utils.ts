@@ -63,7 +63,7 @@ const HTML_DATA = `
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
     <!-- Custom definition button -->
-    <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+    <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
     <!-- Custom definition columns -->
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>

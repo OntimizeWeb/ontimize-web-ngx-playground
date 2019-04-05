@@ -11,7 +11,7 @@
         [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no">
 
         <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
-        <o-table-button (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+        <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
         <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
           <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
           </o-table-cell-renderer-image>
