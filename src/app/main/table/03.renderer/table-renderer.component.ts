@@ -8,16 +8,20 @@ import { TableUtils } from '../table-utils';
 })
 export class TableRendererComponent {
 
-  getFiles(key: string) {
+  public getFiles(key: string): any {
     return TableUtils.getFiles(key);
   }
 
-  getTableData(): Array<any> {
+  public getTableData(): any[] {
     return TableUtils.getAccounts();
   }
 
-  onShowSource(key: string, table?: any, exampleComp?: any) {
+  public onShowSource(key: string, table?: any, exampleComp?: any): void {
     exampleComp.html = TableUtils.getHtml(key, table, {});
+  }
+
+  public translateArgsFn(rowData: any): any[] {
+    return [rowData.NUMCARDS];
   }
 
 }

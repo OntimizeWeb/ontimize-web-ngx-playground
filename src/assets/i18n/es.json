@@ -281,5 +281,7 @@
   "INPUTS.VALIDATOR.O-ERROR": "Componente o-error",
   "SHOW_IMAGE": "Imagen",
   "TOOLTIP": "Tooltip",
-  "TOOLTIP.CONFIGURATION": "Configuración del tooltip"
+  "TOOLTIP.CONFIGURATION": "Configuración del tooltip",
+  "CARDS": "Num. Cards",
+  "CUST_HAS_CARDS": "Has {0} cards"
 }
