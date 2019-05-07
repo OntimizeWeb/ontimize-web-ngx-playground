@@ -281,17 +281,17 @@ const HTML_DATA_INSERTABLE_ROW = `
   sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
   pagination-controls="no" detail-mode="none" export-button="no">
 
+  
   <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
-
-  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
-  <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered"> </o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes"> </o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered" > </o-table-column>
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
     currency-symbol-position="right">
   </o-table-column>
-  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number" auto-commit="false">
   </o-table-column>
 
-  <o-table-insertable-row columns="NAME;STARTDATE" required-columns="STARTDATE" show-placeholder="yes"></o-table-insertable-row>
+  <o-table-insertable-row columns="NAME;STARTDATE;BALANCE;CLOSED" required-columns="STARTDATE" show-placeholder="yes"></o-table-insertable-row>
 </o-table>
 `;
 
@@ -509,6 +509,7 @@ export class TableUtils {
         break;
       case 'o-table-horizontal-scroll':
       case 'o-table-fixed':
+      case 'o-table-custom-insertable-row':
         code = TYPESCRIPT_DATA_TABLE_FIXED;
         break;
       case 'o-table-insertable-row':
@@ -533,6 +534,7 @@ export class TableUtils {
       case 'o-table-context-menu':
         code = TYPESCRIPT_DATA_CONTEXT_MENU;
         break;
+    
     }
     return code;
   }
