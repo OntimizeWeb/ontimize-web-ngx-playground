@@ -170,6 +170,7 @@ export class InputEventsComponent {
     eventChange.oldValue = event.oldValue;
     eventChange.type = event.isProgrammaticChange() ? 'PROGRAMMATIC' : 'USER';
     eventChange.attr = event.target.oattr;
+
     this.consoleLog.unshift(eventChange);
   }
 
@@ -309,6 +310,7 @@ export class InputEventsComponent {
   }
 
   onValueChange(event: OValueChangeEvent) {
+    console.log(event);
     if (!this.printOnValueChange.checked) {
       return;
     }
@@ -356,8 +358,8 @@ export class InputEventsComponent {
   }
 
   showNewAndOldValue(event: any): boolean {
-    return event.hasOwnProperty('newValue') && typeof event.newValue !== 'undefined' &&
-      event.hasOwnProperty('oldValue') && typeof event.oldValue !== 'undefined';
+    return (event.hasOwnProperty('newValue') && typeof event.newValue !== 'undefined') ||
+      (event.hasOwnProperty('oldValue') && typeof event.oldValue !== 'undefined');
   }
 
   showTypeEvent(event: any): boolean {
