@@ -251,7 +251,7 @@ const HTML_DATA_CONTEXT_MENU = `
       currency-symbol-position="right"></o-table-column>
 
     <!-- Table context menu -->
-    <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
+    <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-detail="no"></o-table-context-menu>
   </o-table>
 
   <!-- Context menu definition -->
@@ -283,7 +283,7 @@ const HTML_DATA_INSERTABLE_ROW = `
 
   
   <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
-  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes"> </o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered" > </o-table-column>
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
     currency-symbol-position="right">
