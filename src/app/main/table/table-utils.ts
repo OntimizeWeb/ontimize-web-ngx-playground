@@ -7,6 +7,17 @@ const FAKE_ACCOUNTS_TABLE = [
   { 'STARTDATE': 1061071200000, 'NAME': 'ButterCup, Buendía Lorente', 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 1, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' }
 ];
 
+const FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW = [
+  { 'NAME': 'James', SURNAME: 'Lawrence', PHOTO: '', 'STARTDATE': 631148400000, 'ACCOUNT': '0002 2095 34 0000000010', 'ENDDATE': 1010271600000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 1, 'BALANCE': 17835.0, 'COMMISSION': 'false', 'NUMCARDS': 1, 'CLOSED': 1, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Lucie Alan', PHOTO: '', 'STARTDATE': 966722400000, 'ACCOUNT': '0000 2095 00 0000000002', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 2, 'BALANCE': 1958.2299999999998, 'COMMISSION': 'false', 'NUMCARDS': 1, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Bugle Smith', 'STARTDATE': 1215554400000, 'ACCOUNT': '0000 2095 00 0000000003', 'ENDDATE': 1224626400000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 3, 'BALANCE': 15000.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 2, 'CLOSED': 1, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Murray Bugle', 'STARTDATE': 1049493600000, 'ACCOUNT': '0001 2095 00 0000000001', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 5, 'BALANCE': 20000.0, 'COMMISSION': 'true', 'NUMCARDS': 3, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Baños Marquez, Murray', 'STARTDATE': 995320800000, 'ACCOUNT': '0001 2095 00 0000000004', 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 6, 'BALANCE': 660.13, 'COMMISSION': 'true', 'NUMCARDS': 2, 'CLOSED': 1, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'STARTDATE': 1061071200000, 'NAME': 'ButterCup, Buendía Lorente', 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 1, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' }
+];
+
+
+
 const FAKE_ACCOUNTS_TABLE_FIXED =
   [{ 'STARTDATE': 631148400000, 'OFFICEID': '0002', 'ENTITYID': '2095', 'ENDDATE': 1010271600000, 'ACCOUNTTYP': 'Savings account', 'ANID': '0000000010', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 1, 'BALANCE': 17835.0, 'CDID': '34' },
   { 'STARTDATE': 966722400000, 'OFFICEID': '0000', 'ENTITYID': '2095', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'ANID': '0000000002', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 2, 'BALANCE': 1958.2299999999998, 'CDID': '00' },
@@ -346,6 +357,13 @@ const TYPESCRIPT_DATA_RENDERERS = `
   }
 `;
 
+const TYPESCRIPT_DATA_TABLE_INSERTABLE = `
+  public getTableData(): any[] {
+    return ${JSON.stringify(FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW)};
+  }
+
+  
+`;
 const TYPESCRIPT_DATA_RENDERERS_ADVANCE = `
   getTableData() {
     return ${JSON.stringify(FAKE_CARDS)};
@@ -429,6 +447,10 @@ export class TableUtils {
   public static getAccounts(): Array<any> {
     return FAKE_ACCOUNTS_TABLE;
   }
+  public static getAccountsInsertableRow(): Array<any> {
+    return FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW;
+  }
+
 
   public static getAccountsTableFixed(): Array<any> {
     return FAKE_ACCOUNTS_TABLE_FIXED;
@@ -509,10 +531,11 @@ export class TableUtils {
         break;
       case 'o-table-horizontal-scroll':
       case 'o-table-fixed':
-      case 'o-table-custom-insertable-row':
         code = TYPESCRIPT_DATA_TABLE_FIXED;
         break;
       case 'o-table-insertable-row':
+        code = TYPESCRIPT_DATA_TABLE_INSERTABLE;
+        break;
       case 'o-table-renderer':
         code = TYPESCRIPT_DATA_RENDERERS;
         break;
@@ -534,7 +557,7 @@ export class TableUtils {
       case 'o-table-context-menu':
         code = TYPESCRIPT_DATA_CONTEXT_MENU;
         break;
-    
+
     }
     return code;
   }
