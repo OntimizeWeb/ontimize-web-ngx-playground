@@ -291,5 +291,10 @@
   "TOOLTIP": "Tooltip",
   "TOOLTIP.CONFIGURATION": "Tooltip configuration",
   "CARDS": "Num. Cards",
-  "CUST_HAS_CARDS": "Has {0} cards"
+  "CUST_HAS_CARDS": "Has {0} cards",
+  "INPUTS.DATERANGE.SHOWRANGES": "Show ranges",
+  "INPUTS.DATERANGE.SHOWRANGES.DESC": "There are 7 different predefined ranges",
+  "INPUTS.DATERANGE.MINMAX": "Set min and max date",
+  "INPUTS.DATERANGE.MINMAX.DESC": "A user can set a maximum and minimum range selection date",
+  "INPUT.BUTTON.DATERANGE": "Date range"
 }
