@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { MatCheckbox } from '@angular/material';
+import * as moment from 'moment';
 import { OValueChangeEvent } from 'ontimize-web-ngx';
+
+
 
 const HTML_DATA = `
 <!-- INPUT-->
@@ -246,7 +248,7 @@ export class InputEventsComponent {
   @ViewChild('printOnValueChange') printOnValueChange: MatCheckbox;
   @ViewChild('printOnFocus') printOnFocus: MatCheckbox;
   @ViewChild('printOnBlur') printOnBlur: MatCheckbox;
-
+  public moment = moment;
   public array: Array<Object> = [{
     'key': 1,
     'value': 'Spain'
@@ -296,6 +298,9 @@ export class InputEventsComponent {
       case 'radio':
       case 'slider':
         return 2;
+        break;
+      case 'daterange':
+        return  {startDate: moment('2019-05-15T00:00Z'),  endDate: moment('2019-05-20T00:00Z')}
     }
     return value;
   }

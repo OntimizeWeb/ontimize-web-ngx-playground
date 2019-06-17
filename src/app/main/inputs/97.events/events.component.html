@@ -94,6 +94,18 @@
             (onChange)="onChange($event,check)" fxFlex="70"></o-checkbox>
           <button fxFlex mat-raised-button (click)="setValue(check,false)">setValue false</button>
         </div>
+        <!-- DATERAGE-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-daterange-input #daterange attr="daterange" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}"
+            read-only="no" required="yes" [data]="getValue('range')" (change)="change($event)" clear-button="yes"
+            format="LL" separator=" to " (onValueChange)="onValueChange($event)" (onChange)="onChange($event,daterange)"
+            (onFocus)="onFocus($event,daterange)" (onBlur)="onBlur($event,daterange)" fxFlex="70">
+          </o-daterange-input>
+          <button fxFlex mat-raised-button (click)="setValue(daterange, {
+            startDate: moment('2019-05-15T00:00Z'),
+            endDate: moment('2019-05-20T00:00Z')
+          })">setValue  </button>
+        </div>
       </div>
     </div>
 

@@ -150,6 +150,7 @@
   "INPUT.BUTTON.RADIO": "Radio",
   "INPUT.BUTTON.SLIDE_TOGGLE": "Slide toggle",
   "INPUT.BUTTON.SLIDER": "Slider",
+  "INPUT.BUTTON.DATERANGE": "Date range",
   "INPUTS.SLIDER": "Slider",
   "INPUTS.SLIDER.DESC": "A component allows for the selection of a value from a range.",
   "INPUT.COMBO": "Combo",
@@ -292,9 +293,10 @@
   "TOOLTIP.CONFIGURATION": "Tooltip configuration",
   "CARDS": "Num. Cards",
   "CUST_HAS_CARDS": "Has {0} cards",
+  "INPUTS.DATERANGE":"Date range",
   "INPUTS.DATERANGE.SHOWRANGES": "Show ranges",
   "INPUTS.DATERANGE.SHOWRANGES.DESC": "There are 7 different predefined ranges",
   "INPUTS.DATERANGE.MINMAX": "Set min and max date",
   "INPUTS.DATERANGE.MINMAX.DESC": "A user can set a maximum and minimum range selection date",
-  "INPUT.BUTTON.DATERANGE": "Date range"
+  "INPUTS.DATERAGE.DESC":"A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box."
 }
