@@ -5,3 +5,12 @@
 .o-table-column-centered {
   text-align: center;
 }
+
+o-app-layout-sidenav {
+  text-align: right;
+  .version {
+    
+    padding: 12px;
+    font-size: .9em;
+  }
+}
