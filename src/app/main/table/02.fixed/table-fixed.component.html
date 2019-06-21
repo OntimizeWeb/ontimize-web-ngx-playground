@@ -1,25 +1,26 @@
-<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_FIXED" [files]="getFiles('o-table-fixed')"
-  (showSource)="onShowSource('o-table-fixed', table, ex)">
-  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_FIXED"
+  [files]="getFiles('o-table-fixed')" (showSource)="onShowSource('o-table-fixed', table, ex)">
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
 
     <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
-      <div fxFlex="{{height.value}}px" fxLayout="column" fxLayoutAlign="start stretch" [ngStyle]="{'overflow': 'auto'}">
 
-        <o-table #table attr="table" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-          visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
-          quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
-          <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
-          <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
-          <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
-          <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","
-            width="18%"></o-table-column>
-          <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
-        </o-table>
-      </div>
+      <o-table #table attr="table" title="ACCOUNTS"  [fixed-header]="fixedHeaderToggle.checked" [static-data]="getTableData()"
+        columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+        visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
+        quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no"
+        export-button="no" [ngStyle]="{'height.px':height.value}">
+        <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
+        <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
+        <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
+        <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes"
+          thousand-separator="," width="18%"></o-table-column>
+        <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
+      </o-table>
+
     </div>
 
-    <o-column attr="conf" title-label="Configuration" elevation="0" fxFlex layout-padding>
+    <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
       <mat-form-field>
         <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
       </mat-form-field>

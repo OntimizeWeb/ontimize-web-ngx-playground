@@ -1,35 +1,62 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_EDITOR" [files]="getFiles('o-table-editors')"
   (showSource)="onShowSource('o-table-editors', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-      visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
-      sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-      pagination-controls="no" detail-mode="none" edition-mode="click" export-button="no">
+    <o-table fxFill #table attr="table" keys="ACCOUNTID"
+      columns="ACCOUNTID;NAME;BALANCE;STARTDATE;TIME;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+      visible-columns="NAME;STARTDATE;TIME;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS"
+      [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
+      insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no" detail-mode="none"
+      edition-mode="click" export-button="no">
 
       <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
 
       <o-table-column attr="NAME" title="NAME">
-        <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
+        <o-table-cell-editor-text (editionStarted)="editionStarted($event)"
+          (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+        </o-table-cell-editor-text>
       </o-table-column>
 
-      <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
-        (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+      <o-table-column attr="STARTDATE" title="STARTDATE" date-value-type="iso-8601" format="LL" type="date"
+        editable="yes" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+        (editionCommitted)="editionCommitted($event)" required="yes">
+      </o-table-column>
+
+      <o-table-column attr="TIME" title="TIME" type="time" editable="yes" 
+        (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+        (editionCommitted)="editionCommitted($event)" required="yes">
       </o-table-column>
 
       <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
-        <o-table-cell-editor-integer (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+        <o-table-cell-editor-integer (editionStarted)="editionStarted($event)"
+          (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
         </o-table-cell-editor-integer>
       </o-table-column>
 
-      <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
-        currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+      <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="."
+        decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+        (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
         (editionCommitted)="editionCommitted($event)">
       </o-table-column>
 
       <o-table-column attr="CLOSED" title="CLOSED">
-        <o-table-cell-editor-boolean true-value="1" false-value="0" boolean-type="number" (editionStarted)="editionStarted($event)"
-          (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+        <!-- auto-commit="false" -->
+        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off"
+          render-type="icon" boolean-type="number" true-value="1" false-value="0"></o-table-cell-renderer-boolean>
+        <o-table-cell-editor-boolean show-notification-on-edit="false" true-value="1" false-value="0"
+          boolean-type="number" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+          (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
       </o-table-column>
+
+      <o-table-column attr="CLOSED_2" title="CLOSED">
+        <!-- auto-commit="false" -->
+        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off"
+          render-type="icon" boolean-type="string" true-value="VERDADERO" false-value="FALSO">
+        </o-table-cell-renderer-boolean>
+        <o-table-cell-editor-boolean show-notification-on-edit="false" true-value="VERDADERO" false-value="FALSO"
+          boolean-type="string" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+          (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+      </o-table-column>
+
 
     </o-table>
   </div>

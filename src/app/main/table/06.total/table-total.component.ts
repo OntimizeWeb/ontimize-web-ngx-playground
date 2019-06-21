@@ -13,7 +13,7 @@ export class TableTotalComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getProducts().slice();
+    return TableUtils.getProducts();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

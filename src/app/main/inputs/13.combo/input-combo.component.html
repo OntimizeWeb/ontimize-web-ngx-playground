@@ -1,14 +1,19 @@
 <example-comp comp-name="INPUTS.COMBO" comp-desc="INPUTS.COMBO.DESC" [files]="files">
-  <o-form editable-detail="false" show-header="no" layout-direction="column">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
-        columns="key;value" visible-columns="value" tooltip="This is an awesome tooltip!" tooltip-position="below"></o-combo>
+        columns="key;value" visible-columns="value"></o-combo>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
-        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" fxFlex></o-combo>
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO.SEARCH' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+        </o-combo>
+      </div>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
@@ -19,17 +24,23 @@
 </example-comp>
 
 <example-comp comp-name="INPUTS.COMBO_MULTIPLE" comp-desc="INPUTS.COMBO.DESC_MULTIPLE" [files]="files_multiple">
-  <o-form editable-detail="false" show-header="no" layout-direction="column">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">Multiple selection</label>
-      <o-combo attr="combo-editable-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueMultiple()"
-        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" multiple="yes"></o-combo>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-multiple" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }}" [static-data]="getDataArray()"
+          [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+          fxFlex></o-combo>
+        <o-combo attr="combo-editable-multiple-search" label="{{ 'INPUT.COMBOMULTIPLE.SEARCH' | oTranslate }}" [static-data]="getDataArray()"
+          [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+          null-selection="no" searchable="yes" fxFlex></o-combo>
+      </div>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">Sum up the trigger label</label>
       <o-combo attr="combo-editable-multiple2" label="{{ 'INPUT.COMBOMULTIPLE' | oTranslate }}" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
-        multiple="yes" multiple-trigger-label="yes"></o-combo>
+        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+        multiple-trigger-label="yes"></o-combo>
     </div>
   </o-form>
 </example-comp>

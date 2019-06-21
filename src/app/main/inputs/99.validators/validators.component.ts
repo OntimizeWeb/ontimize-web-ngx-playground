@@ -78,6 +78,8 @@ export class ValidatorsComponent {
   };
 
   validatorsArray: ValidatorFn[] = [];
+  required = true;
+  minLength = 2;
 
   constructor() {
     this.validatorsArray.push(this.aValidator);
@@ -102,5 +104,10 @@ export class ValidatorsComponent {
       };
     }
     return {};
+  }
+
+  changeParams() {
+    this.required = !this.required;
+    this.minLength += 2;
   }
 }

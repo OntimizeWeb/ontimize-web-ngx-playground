@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { TableUtils } from '../table-utils';
 
 @Component({
-  selector: 'table-title-align',
-  templateUrl: 'table-title-align.component.html'
+  selector: 'table-alignment',
+  templateUrl: 'table-alignment.component.html'
 })
-export class TableTitleAlignComponent {
+export class TableAlignmentComponent {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

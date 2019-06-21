@@ -5,16 +5,18 @@
       <o-list #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email" [static-data]="getStaticData()"
         [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked"
         [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked" [selectable]="selectableToggle.checked"
-        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
-        [edit-button-in-row]="editButtonInRowToggle.checked" [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
+        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"
+        [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
+        [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
         <o-list-item *ngFor="let row of list.dataArray">
           <o-list-item-avatar #avatarItem avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
-            secondary-text="{{ row.email }}" [icon]="iconToggle.checked ? itemIcon.value : undefined" (icon-action)="addToFavorites(row, avatarItem)"></o-list-item-avatar>
+            secondary-text="{{ row.email }}" [icon]="iconToggle.checked ? itemIcon.value : undefined" (icon-action)="addToFavorites(row, avatarItem)">
+          </o-list-item-avatar>
         </o-list-item>
       </o-list>
     </o-column>
-    <o-column title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
-      <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
+    <o-column title="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
           <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
@@ -43,7 +45,7 @@
           {{ 'DELETE_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
         <div fxLayout="row" fxLayoutAlign="center center">
           <mat-slide-toggle #editButtonInRowToggle fxFlex>
             {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}

@@ -6,15 +6,15 @@
         [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
         row-height="medium" detail-mode="none">
         <o-list-item *ngFor="let row of list.dataArray">
-          <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked" image="{{ row.image }}"
-            [action-1-text]="action1Toggle.checked ? actionText1.value : undefined" [action-2-text]="action2Toggle.checked ? actionText2.value : undefined"
-            (action-1)="onAction1()" (action-2)="onAction2()">
+          <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
+            image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
+            [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
           </o-list-item-card>
         </o-list-item>
       </o-list>
     </o-column>
-    <o-column title-label="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
-      <div fxLayout="row" layout-padding fxLayoutAlign="center" fxFill>
+    <o-column title="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
           <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
@@ -32,7 +32,7 @@
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
         <mat-slide-toggle #showImageToggle checked="true">
           {{ 'SHOW_IMAGE' | oTranslate }}
         </mat-slide-toggle>

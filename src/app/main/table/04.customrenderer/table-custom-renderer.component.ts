@@ -9,7 +9,7 @@ import { TableUtils } from '../table-utils';
 export class TableCustomRendererComponent {
 
   getTableData(): Array<any> {
-    return TableUtils.getCards().slice();
+    return TableUtils.getCards();
   }
 
   getFiles(key: string) {

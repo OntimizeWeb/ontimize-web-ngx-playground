@@ -13,7 +13,7 @@ export class TablePaginationComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getBranches().slice();
+    return TableUtils.getBranches();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

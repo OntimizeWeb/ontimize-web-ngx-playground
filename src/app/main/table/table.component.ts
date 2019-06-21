@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-
-import { OTranslateService, Util } from 'ontimize-web-ngx';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
-import { TableUtils } from './table-utils';
+import { OTranslateService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-table',
