@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as moment from 'moment';
 
 const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -119,8 +119,8 @@ export class InputDateRangeComponent {
   constructor() {
 
     this.selected = {
-      startDate: null,//moment('2019-05-15T00:00Z'),
-      endDate: null,//moment('2019-05-20T00:00Z')
+      startDate: moment('2019-05-15T00:00Z'),
+      endDate: moment('2019-05-20T00:00Z')
     };
   }
 
