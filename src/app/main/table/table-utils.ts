@@ -163,25 +163,46 @@ const HTML_DATA_EDITORS = `
     <o-table-column attr="NAME" title="NAME">
       <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
     </o-table-column>
+
     <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
       (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
     </o-table-column>
-    <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
-      <o-table-cell-editor-integer (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
-      </o-table-cell-editor-integer>
-    </o-table-column>
-    <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
-      currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
-      (editionCommitted)="editionCommitted($event)">
-    </o-table-column>
-    <o-table-column attr="CLOSED" title="CLOSED">
-      <o-table-cell-editor-boolean true-value="1" false-value="0" boolean-type="number" (editionStarted)="editionStarted($event)"
-        (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+
+    <o-table-column attr="TIME" title="TIME" type="time" editable="yes" (editionStarted)="editionStarted($event)" 
+    (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)" required="yes">
     </o-table-column>
 
-    <!-- Insertable row -->
-    <o-table-insertable-row columns="NAME;STARTDATE" required-columns="STARTDATE" show-placeholder="yes"></o-table-insertable-row>
-  </o-table>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
+    <o-table-cell-editor-integer (editionStarted)="editionStarted($event)"
+      (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+    </o-table-cell-editor-integer>
+  </o-table-column>
+
+  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="."
+    decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+    (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+    (editionCommitted)="editionCommitted($event)">
+  </o-table-column>
+
+  <o-table-column attr="CLOSED" title="CLOSED">
+    <!-- auto-commit="false" -->
+    <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off"
+      render-type="icon" boolean-type="number" true-value="1" false-value="0"></o-table-cell-renderer-boolean>
+    <o-table-cell-editor-boolean show-notification-on-edit="false" true-value="1" false-value="0"
+      boolean-type="number" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+      (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+  </o-table-column>
+
+  <o-table-column attr="CLOSED_2" title="CLOSED">
+    <!-- auto-commit="false" -->
+    <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off"
+      render-type="icon" boolean-type="string" true-value="VERDADERO" false-value="FALSO">
+    </o-table-cell-renderer-boolean>
+    <o-table-cell-editor-boolean show-notification-on-edit="false" true-value="VERDADERO" false-value="FALSO"
+      boolean-type="string" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+      (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+  </o-table-column>
+
 `;
 
 const HTML_DATA_AGGREGATE = `

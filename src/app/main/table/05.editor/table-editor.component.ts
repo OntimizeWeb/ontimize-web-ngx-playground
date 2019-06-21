@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { TableUtils } from '../table-utils';
+
 
 @Component({
   selector: 'table-editor',
@@ -27,18 +27,15 @@ export class TableEditorComponent {
   }
 
   editionStarted(arg: any) {
-    console.log('editionStarted');
-    console.log(arg);
+    console.log('editionStarted', arg);
   }
 
   editionCancelled(arg: any) {
-    console.log('editionCancelled');
-    console.log(arg);
+    console.log('editionCancelled', arg);
   }
 
   editionCommitted(arg: any) {
-    console.log('editionCommitted');
-    console.log(arg);
+    console.log('editionCommitted', arg);
   }
 
 }
