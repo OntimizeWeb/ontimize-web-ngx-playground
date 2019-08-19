@@ -31,6 +31,8 @@
   "QUICK_FILTER": "Filter",
   "REFRESH_BUTTON": "Refresh button",
   "INSERT_BUTTON": "Insert button",
+  "INSERT_BUTTON_FLOATABLE":"Insert button floatable",
+  "INSERT_BUTTON_POSITION_TOP":"Insert button floatable on top",
   "DELETE_BUTTON": "Delete button",
   "SHOW_ICON": "Show item icon",
   "ICON": "Item icon",

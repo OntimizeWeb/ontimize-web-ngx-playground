@@ -4,7 +4,8 @@ import { ListsUtils } from '../lists-utils';
 const LIST_ITEM_TEXT_HTML_DATA = `
 <o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
   title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
-  refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
+  refresh-button="{refreshButton}" insert-button="{insertButton}" insert-button-position="{insertButtonPosition}"
+  insert-button-floatable="{insertButtonFloatable}" delete-button="{deleteButton}"
   selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
   detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
   edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
@@ -42,7 +43,10 @@ export class ListItemTextComponent {
   iconToggle: any;
   @ViewChild('itemIcon')
   itemIcon: any;
-
+  @ViewChild('insertButtonFloatableToggle')
+  insertButtonFloatableToggle: any;
+  @ViewChild('insertButtonPositionToggle')
+  insertButtonPositionToggle: any;
   files = {
     'html': {
       'data': LIST_ITEM_TEXT_HTML_DATA
@@ -76,6 +80,9 @@ export class ListItemTextComponent {
       itemData.icon = (this.itemIcon && this.itemIcon.nativeElement.value) ?
         this.itemIcon.nativeElement.value : '';
     }
+
+    itemData.insertButtonPosition = this.insertButtonPositionToggle.checked ? 'top' : 'bottom';
+    itemData.insertButtonFloatable = this.insertButtonFloatableToggle.checked;
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
   }

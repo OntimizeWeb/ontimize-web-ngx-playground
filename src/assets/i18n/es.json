@@ -31,6 +31,8 @@
   "QUICK_FILTER": "Filter",
   "REFRESH_BUTTON": "Botón recargar",
   "INSERT_BUTTON": "Botón insertar",
+  "INSERT_BUTTON_FLOATABLE":"Botón insertar flotante",
+  "INSERT_BUTTON_POSITION_TOP":"Botón insertar flotante en la parte superior",
   "DELETE_BUTTON": "Botón borrar",
   "SHOW_ICON": "Mostrar icono del item",
   "ICON": "Icono del item",
