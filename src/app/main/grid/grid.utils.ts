@@ -10,7 +10,7 @@ const FAKE_USERS = [
     'zipcode': '92998-3874',
     'lat': -37.3159,
     'lng': 81.1496,
-    'phone': '1-770-736-8031 x56442',
+    'phone': '(+21) 1-770-736-8031 x56442',
     'website': 'hildegard.org',
     'companyname': 'Romaguera-Crona',
     'companycatchPhrase': 'Multi-layered client-server neural-net',
