@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GalleryOptions, GalleryImage } from 'ontimize-web-ngx-gallery';
+import { GalleryImage, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `
 <o-row style="height: 400px" class="img-ex-row">
@@ -59,7 +59,7 @@ export class GalleryExampleComponent implements OnInit {
   }
 
   onShowSource(key: string, exampleComp: any) {
-    const itemData: any = { };
+    const itemData: any = {};
     exampleComp.html = GalleryExampleComponent.getHtml(itemData);
   }
 
@@ -137,6 +137,7 @@ export class GalleryExampleComponent implements OnInit {
 
     this.galleryImages = [
       {
+        url: 'http://placehold.it/150/30ac17',
         small: 'assets/images/photo1.jpg',
         medium: 'assets/images/photo1.jpg',
         big: 'assets/images/photo1.jpg'
