@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { MediaComponent } from './media.component';
-import { ImageComponent } from './image-media/image.component';
+import { RouterModule, Routes } from '@angular/router';
 import { ImageExamplesComponent } from './image-examples/image-examples.component';
+import { ImagePlaygroundComponent } from './image-media/image.component';
+import { ImageComponent } from './image.component';
+
+
 
 export const routes: Routes = [
   {
-    path: '', component: MediaComponent,
+    path: '', component: ImageComponent,
     children: [
       { path: '', redirectTo: 'playground', pathMatch: 'prefix' },
-      { path: 'playground', component: ImageComponent },
+      { path: 'playground', component: ImagePlaygroundComponent },
       { path: 'examples', component: ImageExamplesComponent }
     ]
   }
@@ -20,4 +21,4 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MediaRoutingModule { }
+export class ImageRoutingModule { }

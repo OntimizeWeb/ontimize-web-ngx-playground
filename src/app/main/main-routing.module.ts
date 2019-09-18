@@ -7,13 +7,14 @@ import { DialogsModule } from './dialogs/dialogs.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { GridModule } from './grid/grid.module';
 import { HomeModule } from './home/home.module';
+import { ImageModule } from './image/image.module';
 import { InputsModule } from './inputs/inputs.module';
 import { ListsModule } from './lists/lists.module';
 import { MainComponent } from './main.component';
-import { MediaModule } from './media/media.module';
 import { SnackBarModule } from './snackbar/snackbar.module';
 import { TableModule } from './table/table.module';
 import { TooltipModule } from './tooltip/tooltip.module';
+
 
 
 export function loadButtonsModule() { return ButtonsModule; }
@@ -25,7 +26,7 @@ export function loadHomeModule() { return HomeModule; }
 export function loadInputsModule() { return InputsModule; }
 export function loadListsModule() { return ListsModule; }
 export function loadTableModule() { return TableModule; }
-export function loadMediaModule() { return MediaModule; }
+export function loadImageModule() { return ImageModule; }
 export function loadGridModule() { return GridModule; }
 export function loadTooltipModule() { return TooltipModule; }
 export function loadGalleryModule() { return GalleryModule; }
@@ -46,7 +47,7 @@ export const routes: Routes = [
       { path: 'lists', loadChildren: loadListsModule },
       { path: 'grid', loadChildren: loadGridModule },
       { path: 'table', loadChildren: loadTableModule },
-      { path: 'media', loadChildren: loadMediaModule },
+      { path: 'image', loadChildren: loadImageModule },
       { path: 'tooltip', loadChildren: loadTooltipModule },
       { path: 'gallery', loadChildren: loadGalleryModule },
       { path: '', redirectTo: 'home', pathMatch: 'full' }

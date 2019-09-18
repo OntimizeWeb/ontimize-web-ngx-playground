@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GalleryOptions, GalleryImage, GalleryComponent, GalleryImageSize } from 'ontimize-web-ngx-gallery';
+import { GalleryComponent, GalleryImage, GalleryImageSize, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `
 <o-gallery #demoGaleria [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
@@ -73,25 +73,25 @@ export class GalleryMediaComponent implements OnInit {
 
     this.galleryImages = [
       {
-        small: 'assets/images/photo1.jpg',
-        medium: 'assets/images/photo1.jpg',
-        big: 'assets/images/photo1.jpg'
+        small: 'assets/images/gallery/photo1.jpg',
+        medium: 'assets/images/gallery/photo1.jpg',
+        big: 'assets/images/gallery/photo1.jpg'
       },
       {
-        small: 'assets/images/photo2.jpg',
-        medium: 'assets/images/photo2.jpg',
-        big: 'assets/images/photo2.jpg'
+        small: 'assets/images/gallery/photo2.jpg',
+        medium: 'assets/images/gallery/photo2.jpg',
+        big: 'assets/images/gallery/photo2.jpg'
       },
       {
-        small: 'assets/images/photo3.jpg',
-        medium: 'assets/images/photo3.jpg',
-        big: 'assets/images/photo3.jpg'
-      },
-      {
-        small: 'assets/images/i_video.jpg',
-        medium: 'assets/videos/video1.mp4',
-        big: 'assets/videos/video1.mp4'
-      }
+        small: 'assets/images/gallery/photo3.jpg',
+        medium: 'assets/images/gallery/photo3.jpg',
+        big: 'assets/images/gallery/photo3.jpg'
+       }
+      // {
+      //   small: 'assets/images/gallery/i_video.jpg',
+      //   medium: 'assets/videos/gallery/video1.mp4',
+      //   big: 'assets/videos/gallery/video1.mp4'
+      // }
     ];
   }
 

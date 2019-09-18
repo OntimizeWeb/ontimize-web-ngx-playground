@@ -11,7 +11,7 @@ const HTML_DATA = `
   templateUrl: './image.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ImageComponent {
+export class ImagePlaygroundComponent {
 
   @ViewChild('showControlToggle')
   showControlToggle: any = true;
@@ -71,7 +71,7 @@ export class ImageComponent {
       enabled: this.enabledToggle.checked,
       readOnly: this.readOnlyToggle.checked
     };
-    exampleComp.html = ImageComponent.getHtml(itemData);
+    exampleComp.html = ImagePlaygroundComponent.getHtml(itemData);
   }
 
 }

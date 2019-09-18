@@ -2,21 +2,24 @@ import { NgModule } from '@angular/core';
 import { OImageModule, OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
 import { ImageExamplesComponent } from './image-examples/image-examples.component';
-import { ImageComponent } from './image-media/image.component';
-import { MediaRoutingModule } from './media-routing.module';
-import { MediaComponent } from './media.component';
+import { ImagePlaygroundComponent } from './image-media/image.component';
+import { ImageRoutingModule } from './image-routing.module';
+import { ImageComponent } from './image.component';
+
+
+
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    MediaRoutingModule,
+    ImageRoutingModule,
     OImageModule
   ],
   declarations: [
-    MediaComponent,
     ImageComponent,
+    ImagePlaygroundComponent,
     ImageExamplesComponent
   ]
 })
-export class MediaModule { }
+export class ImageModule { }
