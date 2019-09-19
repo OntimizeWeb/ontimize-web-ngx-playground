@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GalleryImage, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `
-<o-row style="height: 400px" class="img-ex-row">
+<o-row style="height: 400px">
   <o-column fxFlex="30" title="GALLERY.NORMAL">
     <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions1"></o-gallery>
   </o-column>
@@ -13,7 +13,7 @@ const HTML_DATA = `
     <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions3"></o-gallery>
   </o-column>
 </o-row>
-<o-row style="height: 400px" class="img-ex-row">
+<o-row style="height: 400px">
   <o-column fxFlex="30" title="GALLERY.ONLYTHUMB">
     <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions4"></o-gallery>
   </o-column>
@@ -137,20 +137,19 @@ export class GalleryExampleComponent implements OnInit {
 
     this.galleryImages = [
       {
-        url: 'http://placehold.it/150/30ac17',
-        small: 'assets/images/photo1.jpg',
-        medium: 'assets/images/photo1.jpg',
-        big: 'assets/images/photo1.jpg'
+        small: 'assets/images/gallery/photo1.jpg',
+        medium: 'assets/images/gallery/photo1.jpg',
+        big: 'assets/images/gallery/photo1.jpg'
       },
       {
-        small: 'assets/images/photo2.jpg',
-        medium: 'assets/images/photo2.jpg',
-        big: 'assets/images/photo2.jpg'
+        small: 'assets/images/gallery/photo2.jpg',
+        medium: 'assets/images/gallery/photo2.jpg',
+        big: 'assets/images/gallery/photo2.jpg'
       },
       {
-        small: 'assets/images/photo3.jpg',
-        medium: 'assets/images/photo3.jpg',
-        big: 'assets/images/photo3.jpg'
+        small: 'assets/images/gallery/photo3.jpg',
+        medium: 'assets/images/gallery/photo3.jpg',
+        big: 'assets/images/gallery/photo3.jpg'
       },
       {
         small: 'assets/images/i_video.jpg',
