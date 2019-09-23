@@ -73,20 +73,26 @@ export class GalleryMediaComponent implements OnInit {
 
     this.galleryImages = [
       {
-        small: 'assets/images/gallery/photo1.jpg',
-        medium: 'assets/images/gallery/photo1.jpg',
-        big: 'assets/images/gallery/photo1.jpg'
+        small: 'https://picsum.photos/id/237/150/100.jpg',
+        medium: 'https://picsum.photos/id/237/600/450.jpg',
+        big: 'https://picsum.photos/id/237/600/450.jpg'
       },
       {
-        small: 'assets/images/gallery/photo2.jpg',
-        medium: 'assets/images/gallery/photo2.jpg',
-        big: 'assets/images/gallery/photo2.jpg'
+        small: 'https://picsum.photos/id/1062/150/100.jpg',
+        medium: 'https://picsum.photos/id/1062/600/450.jpg',
+        big: 'https://picsum.photos/id/1062/600/450.jpg'
       },
       {
-        small: 'assets/images/gallery/photo3.jpg',
-        medium: 'assets/images/gallery/photo3.jpg',
-        big: 'assets/images/gallery/photo3.jpg'
-       }
+        small: 'https://picsum.photos/id/1012/150/100.jpg',
+        medium: 'https://picsum.photos/id/1012/600/450.jpg',
+        big: 'https://picsum.photos/id/1012/600/450.jpg'
+      },
+      {
+        small: 'https://picsum.photos/id/1025/150/100.jpg',
+        medium: 'https://picsum.photos/id/1025/600/450.jpg',
+        big: 'https://picsum.photos/id/1025/600/450.jpg'
+      },
+      
       // {
       //   small: 'assets/images/gallery/i_video.jpg',
       //   medium: 'assets/videos/gallery/video1.mp4',

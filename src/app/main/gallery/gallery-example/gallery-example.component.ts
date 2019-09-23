@@ -26,6 +26,116 @@ const HTML_DATA = `
 </o-row>
 `;
 
+const TYPESCRIPT_DATA = `
+import { GalleryImage, GalleryOptions } from 'ontimize-web-ngx-gallery';
+
+...
+galleryOptions1: GalleryOptions[];
+galleryOptions2: GalleryOptions[];
+galleryOptions3: GalleryOptions[];
+galleryOptions4: GalleryOptions[];
+galleryOptions5: GalleryOptions[];
+galleryOptions6: GalleryOptions[];
+galleryImages: GalleryImage[];
+....
+ngOnInit(): void {
+  this.galleryOptions1 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+    }
+  ];
+
+  this.galleryOptions2 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+      image: true,
+      thumbnails: false,
+      preview: false
+    }
+  ];
+
+  this.galleryOptions3 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+      image: true,
+      thumbnails: false,
+      preview: true
+    }
+  ];
+
+  this.galleryOptions4 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+      image: false,
+      thumbnails: true
+    }
+  ];
+
+  this.galleryOptions5 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+      image: true,
+      imageArrows: true,
+      thumbnails: true,
+      preview: true,
+      previewKeyboardNavigation: false,
+      previewDownload: false,
+      previewRotate: false,
+      previewZoom: false,
+      previewDescription: false,
+      previewFullscreen: false
+    }
+  ];
+
+  this.galleryOptions6 = [
+    {
+      breakpoint: 1920,
+      height: "200px",
+      width: "300px",
+      preview: true,
+      previewAutoPlay: true
+    }
+  ];
+
+  this.galleryImages = [
+    {
+      small: 'https://picsum.photos/id/1011/150/100.jpg',
+      medium: 'https://picsum.photos/id/1011/600/450.jpg',
+      big: 'https://picsum.photos/id/1011/600/450.jpg'
+    },
+    {
+      small: 'https://picsum.photos/id/1012/150/100.jpg',
+      medium: 'https://picsum.photos/id/1012/600/450.jpg',
+      big: 'https://picsum.photos/id/1012/600/450.jpg'
+    },
+    {
+      small: 'https://picsum.photos/id/1020/150/100.jpg',
+      medium: 'https://picsum.photos/id/1020/600/450.jpg',
+      big: 'https://picsum.photos/id/1020/600/450.jpg'
+    },
+    {
+      small: 'https://picsum.photos/id/1023/150/100.jpg',
+      medium: 'https://picsum.photos/id/1023/600/450.jpg',
+      big: 'https://picsum.photos/id/1023/600/450.jpg'
+    },
+    {
+      small: 'assets/images/i_video.jpg',
+      medium: 'assets/videos/video1.mp4',
+      big: 'assets/videos/video1.mp4'
+    }
+  ];
+}`; 
+
 @Component({
   selector: 'gallery-example',
   templateUrl: './gallery-example.component.html',
@@ -49,7 +159,7 @@ export class GalleryExampleComponent implements OnInit {
       'data': undefined
     },
     'typescript': {
-      'data': undefined
+      'data': TYPESCRIPT_DATA
     }
   };
 
@@ -137,19 +247,24 @@ export class GalleryExampleComponent implements OnInit {
 
     this.galleryImages = [
       {
-        small: 'assets/images/gallery/photo1.jpg',
-        medium: 'assets/images/gallery/photo1.jpg',
-        big: 'assets/images/gallery/photo1.jpg'
+        small: 'https://picsum.photos/id/1011/150/100.jpg',
+        medium: 'https://picsum.photos/id/1011/600/450.jpg',
+        big: 'https://picsum.photos/id/1011/600/450.jpg'
       },
       {
-        small: 'assets/images/gallery/photo2.jpg',
-        medium: 'assets/images/gallery/photo2.jpg',
-        big: 'assets/images/gallery/photo2.jpg'
+        small: 'https://picsum.photos/id/1012/150/100.jpg',
+        medium: 'https://picsum.photos/id/1012/600/450.jpg',
+        big: 'https://picsum.photos/id/1012/600/450.jpg'
       },
       {
-        small: 'assets/images/gallery/photo3.jpg',
-        medium: 'assets/images/gallery/photo3.jpg',
-        big: 'assets/images/gallery/photo3.jpg'
+        small: 'https://picsum.photos/id/1020/150/100.jpg',
+        medium: 'https://picsum.photos/id/1020/600/450.jpg',
+        big: 'https://picsum.photos/id/1020/600/450.jpg'
+      },
+      {
+        small: 'https://picsum.photos/id/1023/150/100.jpg',
+        medium: 'https://picsum.photos/id/1023/600/450.jpg',
+        big: 'https://picsum.photos/id/1023/600/450.jpg'
       },
       {
         small: 'assets/images/i_video.jpg',
