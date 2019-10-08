@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  OTranslateService,
-  DialogService,
-  ODialogConfig
-} from 'ontimize-web-ngx';
-import { NavigationBarService } from '../../shared/navigation-bar.service';;
+import { DialogService, ODialogConfig, OTranslateService } from 'ontimize-web-ngx';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
+;
 
 const HTML_DATA = `
   <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)" ></o-button>
@@ -44,7 +41,12 @@ export class DialogsComponent implements OnInit {
           okButtonText: 'It rocks!'
         };
         this.dialogService.info('Info dialog title',
-          'This is an amazing "Information" dialog', config);
+          '<h3>This is an amazing "Information" dialog that it content html text</h3>
+          <ul> 
+          <li><span>&#10003;</span> Panda </li>
+          <li><span>&#10003;</span> Unicorn</li>
+          <li><span>&#10003;</span> Lion </li>
+          </ul>', config);
       }
     }
 
@@ -123,7 +125,12 @@ export class DialogsComponent implements OnInit {
         okButtonText: 'It rocks!'
       };
       this.dialogService.info('Info dialog title',
-        'This is an amazing "Information" dialog', config);
+        `<h3>This is an amazing "Information" dialog that it content html text</h3>
+         <ul> 
+         <li><span>&#10003;</span> Panda </li>
+         <li><span>&#10003;</span> Unicorn</li>
+         <li><span>&#10003;</span> Lion </li>
+         </ul>`, config);
     }
   }
 

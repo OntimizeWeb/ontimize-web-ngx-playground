@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
-
 const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
   <div fxLayout="column" layout-padding>

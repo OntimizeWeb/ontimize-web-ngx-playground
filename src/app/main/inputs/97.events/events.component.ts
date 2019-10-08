@@ -300,7 +300,8 @@ export class InputEventsComponent {
         return 2;
         break;
       case 'daterange':
-        return  {startDate: moment('2019-05-15T00:00Z'),  endDate: moment('2019-05-20T00:00Z')}
+        return { startDate: moment('2019-05-15T00:00Z'), endDate: moment('2019-05-20T00:00Z') }
+
     }
     return value;
   }

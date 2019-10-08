@@ -1,0 +1,26 @@
+<example-comp #ex2 comp-name="GALLERYEXAMPLES.TEXT" comp-desc="GALLERYEXAMPLES.TEXT.DESC" [files]="files"
+  (showSource)="onShowSource('gallery1',ex2)">
+  <!-- <p layout-padding>{{ 'GALLERY.ADVICE' | oTranslate }}</p> -->
+  <o-row style="height: 400px">
+    <o-column fxFlex="30" title="GALLERY.NORMAL">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions1"></o-gallery>
+    </o-column>
+    <o-column fxFlex="30" title="GALLERY.ONLYIMAGE">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions2"></o-gallery>
+    </o-column>
+    <o-column fxFlex="30" title="GALLERY.ONLYIMAGEANDPREVIEW">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions3"></o-gallery>
+    </o-column>
+  </o-row>
+  <o-row style="height: 400px">
+    <o-column fxFlex="30" title="GALLERY.ONLYTHUMB">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions4"></o-gallery>
+    </o-column>
+    <o-column fxFlex="30" title="GALLERY.NOTHINGPREV">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions5"></o-gallery>
+    </o-column>
+    <o-column fxFlex="30" title="GALLERY.AUTOPLAYPREV">
+      <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions6"></o-gallery>
+    </o-column>
+  </o-row>
+</example-comp>

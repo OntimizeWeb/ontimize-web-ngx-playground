@@ -1,0 +1,34 @@
+<example-comp #ex1 collapsible="no" collapsed="no" comp-name="IMAGE.COMPONENT" [files]="files" (showSource)="onShowSource('image1',ex1)">
+  <div fxLayout="row" layout-padding>
+    <div fxFlex="60">
+      <div style="overflow:auto; height:400px;">
+        <o-image data="http://placekitten.com/1920/1080" [height]="height" [width]="width" [auto-fit]="autoFitToggle.checked"
+          [enabled]="enabledToggle.checked" [read-only]="readOnlyToggle.checked" [show-controls]="showControlToggle.checked"
+          [full-screen-button]="showFullscreenToggle.checked" empty-image="./assets/images/no-image.png"></o-image>
+      </div>
+    </div>
+    <o-column attr="conf" title="{{ 'IMAGE.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="40" layout-padding layout-align="center">
+      <mat-slide-toggle #showControlToggle checked="true">
+        {{ 'IMAGE.SHOW_CONTROL' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle #showFullscreenToggle checked="false">
+        {{ 'IMAGE.SHOW_FULLSCREEN' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle #autoFitToggle checked="true">
+        {{ 'IMAGE.SIZE_ADJUST' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle #enabledToggle checked="true">
+        {{ 'IMAGE.ENABLED' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle #readOnlyToggle checked="false">
+        {{ 'IMAGE.READ_ONLY' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-form-field>
+        <input matInput placeholder="{{ 'IMAGE.HEIGHT' | oTranslate }}" [(ngModel)]="height">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="{{ 'IMAGE.WIDTH' | oTranslate }}" [(ngModel)]="width">
+      </mat-form-field>
+    </o-column>
+  </div>
+</example-comp>

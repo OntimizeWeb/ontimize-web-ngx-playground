@@ -1,8 +1,4 @@
-import {
-  MenuRootItem,
-  MenuGroup,
-  MenuItem
-} from 'ontimize-web-ngx';
+import { MenuRootItem } from 'ontimize-web-ngx';
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
@@ -25,7 +21,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: 'image',
     opened: false,
     items: [
-      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media', icon: 'image' }
+      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/image', icon: 'image' },
+      { id: 'gallery', name: 'GALLERY.COMPONENT', route: '/main/gallery', icon: 'perm_media' }
     ]
   },
   {

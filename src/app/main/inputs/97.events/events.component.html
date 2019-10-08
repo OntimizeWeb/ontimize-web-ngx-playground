@@ -97,7 +97,7 @@
         <!-- DATERAGE-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-daterange-input #daterange attr="daterange" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}"
-            read-only="no" required="yes" [data]="getValue('range')" clear-button="yes"
+            read-only="no" required="yes" [data]="getValue('daterange')" clear-button="yes"
             format="LL" separator=" to " (onValueChange)="onValueChange($event)" (onChange)="onChange($event,daterange)"
             (onFocus)="onFocus($event,daterange)" (onBlur)="onBlur($event,daterange)" fxFlex="70">
           </o-daterange-input>
