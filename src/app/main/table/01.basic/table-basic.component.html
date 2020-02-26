@@ -5,7 +5,7 @@
       <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
         [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="getTableData()" [insert-button]="buttonAddToggle.checked"
-        [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
+        [export-button]="exportButtonToggle.checked" [show-configuration-option]="configurationButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
         [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
         [select-all-checkbox]="selectMultipleToggle.checked" [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked"
         [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no">
@@ -65,6 +65,9 @@
           </mat-slide-toggle>
           <mat-slide-toggle #exportButtonToggle checked="true" fxFlex>
             {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #configurationButtonToggle checked="true" fxFlex>            
+            {{ 'TABLE.SHOW_CONFIGURATION_OPTION' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
