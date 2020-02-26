@@ -67,9 +67,7 @@ const FAKE_BRANCHES =
 const HTML_DATA = `
   <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
-    filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
-    columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
+    filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" show-configuration-option="{configurationButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}" select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -512,6 +510,7 @@ export class TableUtils {
         .replace('{quickFilter}', data.filter)
         .replace('{filterCaseSensitive}', data.filterCaseSensitive)
         .replace('{exportButtonToggle}', data.exportButtonToggle)
+        .replace('{configurationButtonToggle}', data.configurationButtonToggle)
         .replace('{columnsVisibilityToggle}', data.columnsVisibilityToggle)
         .replace('{selectMultipleToggle}', data.selectMultipleToggle)
         .replace('{buttonAddToggle}', data.buttonAddToggle)
