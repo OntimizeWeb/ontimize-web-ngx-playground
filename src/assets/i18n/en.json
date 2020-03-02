@@ -90,6 +90,7 @@
   "TABLE.MENU": "Menu",
   "TABLE.SELECT_BUTTON": "Option select...",
   "TABLE.EXPORT_BUTTON": "Option export",
+  "TABLE.SHOW_CONFIGURATION_OPTION": "Option show/hide config.",
   "TABLE.COLUMNS_VISIBILITY_BUTTON": "Option show/hide columns",
   "TABLE.PAGINATION": "Pagination",
   "TABLE.SHOW_PAGINATION": "Show pagination",
