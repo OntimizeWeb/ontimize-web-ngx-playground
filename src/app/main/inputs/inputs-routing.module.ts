@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
-// import { InputDateComponent } from './02.date/input-date.component';
+import { InputDateComponent } from './02.date/input-date.component';
 import { InputIntegerComponent } from './03.integer/input-integer.component';
 import { InputRealComponent } from './04.real/input-real.component';
 import { InputPercentComponent } from './05.percent/input-percent.component';
@@ -31,7 +31,7 @@ export const routes: Routes = [
     path: '', component: InputsComponent, children: [
       { path: '', component: InputOverviewComponent },
       { path: 'text', component: InputTextComponent },
-      // { path: 'date', component: InputDateComponent },
+      { path: 'date', component: InputDateComponent },
       { path: 'daterange', component: InputDateRangeComponent },
       { path: 'integer', component: InputIntegerComponent },
       { path: 'real', component: InputRealComponent },
