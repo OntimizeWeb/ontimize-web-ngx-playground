@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutAlign="center top">
+
+  <example-comp comp-name="BUTTON" [files]="getFiles()">
+
+    <div fxLayout="row" fxLayoutAlign="start center" layout-padding>
+      <o-button attr="basic" type="BASIC" label="BASIC" layout-padding></o-button>
+      <o-button attr="raised" type="RAISED" label="RAISED" layout-padding></o-button>
+      <o-button attr="stroked" type="STROKED" label="STROKED" layout-padding></o-button>
+      <o-button attr="flat" type="FLAT" label="FLAT" layout-padding></o-button>
+      <o-button attr="icon" type="ICON" icon="add" layout-padding></o-button>
+      <o-button attr="fab" type="FAB" icon="power_setting" layout-padding></o-button>
+      <o-button attr="fab-mini" type="FAB-MINI" icon="power_setting" layout-padding></o-button>
+    </div>
+
+  </example-comp>
+
+  <example-comp comp-name="BUTTON_TOGGLE" [files]="getFilesToggle()">
+
+    <div fxLayout="column" fxLayoutAlign="spce-around start" layout-padding>
+
+      <o-button-toggle attr="singleToggle" label="Toggle me!" layout-padding></o-button-toggle>
+
+      <o-button-toggle-group attr="toggleGroup" layout="row" multiple="no" value="car" layout-padding>
+        <o-button-toggle attr="toggle1" value="bike" icon="directions_bike"></o-button-toggle>
+        <o-button-toggle attr="toggle2" value="car" icon="directions_car"></o-button-toggle>
+        <o-button-toggle attr="toggle3" value="train" icon="directions_railway"></o-button-toggle>
+        <o-button-toggle attr="toggle4" value="boat" icon="directions_boat" enabled="no"></o-button-toggle>
+      </o-button-toggle-group>
+
+    </div>
+
+  </example-comp>
+
+</div>

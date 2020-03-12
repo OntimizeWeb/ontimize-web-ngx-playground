@@ -93,10 +93,10 @@ const HTML_DATA = `
 const TS_DATA = `
 export class InputEventsComponent {
 
-  @ViewChild('printOnChange', { static: true }) printOnChange: MatCheckbox;
-  @ViewChild('printOnValueChange', { static: true }) printOnValueChange: MatCheckbox;
-  @ViewChild('printOnFocus', { static: true }) printOnFocus: MatCheckbox;
-  @ViewChild('printOnBlur', { static: true }) printOnBlur: MatCheckbox;
+  @ViewChild('printOnChange', { static: false }) printOnChange: MatCheckbox;
+  @ViewChild('printOnValueChange', { static: false }) printOnValueChange: MatCheckbox;
+  @ViewChild('printOnFocus', { static: false }) printOnFocus: MatCheckbox;
+  @ViewChild('printOnBlur', { static: false }) printOnBlur: MatCheckbox;
 
   public array: Array<Object> = [{
     'key': 1,
@@ -242,10 +242,10 @@ export class ConsoleLogEvent {
 })
 export class InputEventsComponent {
 
-  @ViewChild('printOnChange', { static: true }) printOnChange: MatCheckbox;
-  @ViewChild('printOnValueChange', { static: true }) printOnValueChange: MatCheckbox;
-  @ViewChild('printOnFocus', { static: true }) printOnFocus: MatCheckbox;
-  @ViewChild('printOnBlur', { static: true }) printOnBlur: MatCheckbox;
+  @ViewChild('printOnChange', { static: false }) printOnChange: MatCheckbox;
+  @ViewChild('printOnValueChange', { static: false }) printOnValueChange: MatCheckbox;
+  @ViewChild('printOnFocus', { static: false }) printOnFocus: MatCheckbox;
+  @ViewChild('printOnBlur', { static: false }) printOnBlur: MatCheckbox;
   public moment = moment;
   public array: Array<Object> = [{
     'key': 1,

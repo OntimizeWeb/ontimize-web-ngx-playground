@@ -86,9 +86,9 @@ getValueCurr() {
 })
 export class AppearanceComponent {
 
-  @ViewChild('label', { static: true }) label:ElementRef;
-  @ViewChild('placeholder', { static: true }) placeholder:ElementRef;
-  @ViewChild('hideRequiredMarker', { static: true }) hideRequiredMarker:MatCheckbox;
+  @ViewChild('label', { static: false }) label: ElementRef;
+  @ViewChild('placeholder', { static: false }) placeholder: ElementRef;
+  @ViewChild('hideRequiredMarker', { static: false }) hideRequiredMarker: MatCheckbox;
 
   floatLabelFiles = {
     'html': {
@@ -166,21 +166,21 @@ export class AppearanceComponent {
     return 2;
   }
 
-  
+
   onShowSource(key: string, input?: any, exampleComp?: any) {
     const itemData: any = {
       floatLabel: this.floatLabelValue,
-      appearanceValue:this.appearanceValue,
-      labelValue:this.label.nativeElement.value,
-      placeholderValue:this.placeholder.nativeElement.value,
-      hideRequiredMarker:this.hideRequiredMarker.checked
+      appearanceValue: this.appearanceValue,
+      labelValue: this.label.nativeElement.value,
+      placeholderValue: this.placeholder.nativeElement.value,
+      hideRequiredMarker: this.hideRequiredMarker.checked
 
     };
     exampleComp.html = CUSTOM_INPUT_HTML_DATA
-                      .replace('{floatLabel}', itemData.floatLabel)
-                      .replace('{appearanceValue}', itemData.appearanceValue)
-                      .replace('{labelValue}', itemData.labelValue)
-                      .replace('{placeholderValue}', itemData.placeholderValue)
-                      .replace('{hideRequiredMarker}', itemData.hideRequiredMarker);
+      .replace('{floatLabel}', itemData.floatLabel)
+      .replace('{appearanceValue}', itemData.appearanceValue)
+      .replace('{labelValue}', itemData.labelValue)
+      .replace('{placeholderValue}', itemData.placeholderValue)
+      .replace('{hideRequiredMarker}', itemData.hideRequiredMarker);
   }
 }
