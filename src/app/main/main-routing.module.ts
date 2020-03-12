@@ -13,7 +13,10 @@ export const routes: Routes = [
       { path: 'contextmenu', loadChildren: () => import('./contextmenu/context-menu.module').then(m => m.ContextMenuModule) },
       { path: 'dialogs', loadChildren: () => import('./dialogs/dialogs.module').then(m => m.DialogsModule) },
       { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'inputs', loadChildren: () => import('./inputs/inputs.module').then(m => m.InputsModule) }
+      { path: 'inputs', loadChildren: () => import('./inputs/inputs.module').then(m => m.InputsModule) },
+      { path: 'media', loadChildren: () => import('./media/media.module').then(m => m.MediaModule) },
+      { path: 'snackbar', loadChildren: () => import('./snackbar/snackbar.module').then(m => m.SnackBarModule) },
+      { path: 'tooltip', loadChildren: () => import('./tooltip/tooltip.module').then(m => m.TooltipModule) }
     ]
   }
 ];
