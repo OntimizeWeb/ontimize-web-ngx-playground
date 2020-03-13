@@ -1,0 +1,104 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')"
+  (showSource)="onShowSource('o-table', table, ex)">
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
+    <div fxFlex="60" fxLayoutAlign="center center">
+      <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
+        visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
+        [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="getTableData()" [insert-button]="buttonAddToggle.checked"
+        [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
+        [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
+        [select-all-checkbox]="selectMultipleToggle.checked" [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked"
+        [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no">
+
+        <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
+        <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm" tooltip="yes"></o-table-button>
+        <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="yes">
+          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+          </o-table-cell-renderer-image>
+        </o-table-column>
+        <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+        <o-table-column attr="action" width="64px">
+          <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
+        </o-table-column>
+      </o-table>
+    </div>
+
+    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
+      layout-align="center">
+      <mat-form-field>
+        <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-slide-toggle #titleToggle checked="true" fxFlex>
+          {{ 'TABLE.SHOW_TITLE' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #controlsToggle checked="true" fxFlex>
+          {{ 'TABLE.CONTROLS' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
+        matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}">
+        <span>
+          {{ 'ROW_HEIGHT' | oTranslate }}
+        </span>
+        <mat-radio-button value="large" class="padding-3">
+          {{ 'LARGE' | oTranslate }}
+        </mat-radio-button>
+        <mat-radio-button value="medium" class="padding-3">
+          {{ 'MEDIUM' | oTranslate }}
+        </mat-radio-button>
+        <mat-radio-button value="small" class="padding-3">
+          {{ 'SMALL' | oTranslate }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <o-row title="{{ 'TABLE.FILTER' | oTranslate }}">
+        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex>
+          {{ 'TABLE.FILTER' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #filterCaseSensitiveToggle checked="false" fxFlex>
+          {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+        </mat-slide-toggle>
+      </o-row>
+      <o-column title="{{ 'TABLE.MENU' | oTranslate }}">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-slide-toggle #selectMultipleToggle checked="false" fxFlex>
+            {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #exportButtonToggle checked="true" fxFlex>
+            {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-slide-toggle #columnsVisibilityToggle checked="true" fxFlex>
+            {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </o-column>
+      <o-column title="{{ 'BUTTONS' | oTranslate }}">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-slide-toggle #buttonAddToggle [checked]="false" fxFlex>
+            {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #buttonRefreshToggle [checked]="false" fxFlex>
+            {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}"
+            fxFlex>
+            {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #showTextToggle checked="true" fxFlex>
+            {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </o-column>
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
+        <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked"
+          fxFlex>
+          {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
+        </mat-slide-toggle>
+      </o-column>
+    </o-column>
+  </div>
+</example-comp>

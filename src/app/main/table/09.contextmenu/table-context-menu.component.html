@@ -1,0 +1,21 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_CONTEXT_MENU" [files]="getFiles('o-table-context-menu')"
+  (showSource)="onShowSource('o-table-context-menu', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
+      title="CUSTOMERS" [static-data]="getTableData()" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
+      pagination-controls="no" export-button="no" layout-padding fxFill detail-mode="none">
+      <o-table-column attr="PHOTO" orderable="no" searchable="no">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
+      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right"></o-table-column>
+      <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+    </o-table>
+    <o-context-menu #contextMenu>
+      <o-context-menu-item icon="grade" label="Item 1" (execute)="onExecute('Item 1', $event)"></o-context-menu-item>
+      <o-context-menu-item icon="grade" label="Item 2" enabled="no"></o-context-menu-item>
+      <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute('Item 3', $event)"></o-context-menu-item>
+    </o-context-menu>
+  </div>
+</example-comp>
