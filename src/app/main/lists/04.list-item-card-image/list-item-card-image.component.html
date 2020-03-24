@@ -1,0 +1,90 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CARD_IMAGE" [files]="files" (showSource)="onShowSource(list, ex)"
+  class="list-examples">
+  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+    <o-column elevation="1" fxFlex="40" layout-align="center">
+      <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
+        [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no" row-height="medium"
+        detail-mode="none">
+        <o-list-item *ngFor="let row of list.dataArray">
+          <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}" [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined"
+            [image]="imageToggle.checked ? row.image : undefined" [action-1-text]="action1Toggle.checked ? action1Text.value : undefined"
+            [action-2-text]="action2Toggle.checked ? action2Text.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()"
+            [icon]="iconToggle.checked ? icon.value : undefined" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
+            [collapsed]="collapsedToggle.checked">
+          </o-list-item-card-image>
+        </o-list-item>
+      </o-list>
+    </o-column>
+    <o-column title="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
+        <mat-form-field fxFlex="95">
+          <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+          {{ 'REFRESH_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #insertButtonToggle fxFlex>
+          {{ 'INSERT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+        <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+          <mat-slide-toggle #imageToggle checked="true" fxFlex>
+            {{ 'IMAGE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #avatarToggle fxFlex>
+            {{ 'AVATAR' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+          <mat-slide-toggle #collapsibleToggle fxFlex>
+            {{ 'COLLAPSIBLE' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #collapsedToggle checked="true" fxFlex>
+            {{ 'COLLAPSED' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #action1Toggle checked="true" fxFlex>
+            {{ 'ACTION_1' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!action1Toggle.checked" fxFlex>
+            <input matInput #action1Text placeholder="action-1-text" value="ACTION 1">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #action2Toggle checked="true" fxFlex>
+            {{ 'ACTION_2' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!action2Toggle.checked" fxFlex>
+            <input matInput #action2Text placeholder="action-2-text" value="ACTION 2">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #iconToggle fxFlex>
+            {{ 'SHOW_ICON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
+            <input matInput #icon placeholder="icon" value="share">
+          </mat-form-field>
+        </div>
+        <span>
+          {{ 'ROW_HEIGHT' | oTranslate }}
+        </span>
+        <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
+          <mat-radio-button value="large" class="padding-3">
+            {{ 'LARGE' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="medium" class="padding-3">
+            {{ 'MEDIUM' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="small" class="padding-3">
+            {{ 'SMALL' | oTranslate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </o-column>
+    </o-column>
+  </div>
+</example-comp>

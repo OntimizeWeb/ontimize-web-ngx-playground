@@ -1,0 +1,85 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_TEXT" [files]="files" (showSource)="onShowSource(list, ex)"
+  class="list-examples">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-column elevation="1" fxFlex="40" layout-align="center">
+      <o-list #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email" [static-data]="getStaticData()"
+        [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked"
+        [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked" [selectable]="selectableToggle.checked"
+        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
+        [edit-button-in-row]="editButtonInRowToggle.checked" [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
+        <o-list-item *ngFor="let row of list.dataArray">
+          <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="iconPosition" (icon-action)="addToFavorites(row, item)"
+            title="{{row.username}}" primary-text="{{ row.name }}" secondary-text="{{ row.email }}"></o-list-item-text>
+        </o-list-item>
+      </o-list>
+    </o-column>
+    <o-column attr="conf" title="{{ 'LIST.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="50" layout-padding layout-align="center">
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
+        <mat-form-field fxFlex="95">
+          <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+          {{ 'REFRESH_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex layout-padding>
+          {{ 'QUICK_FILTER' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #selectableToggle fxFlex>
+          {{ 'SELECTABLE' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #denseToggle [checked]="list.odense" fxFlex>
+          {{ 'DENSE' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle #insertButtonToggle fxFlex>
+          {{ 'INSERT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #deleteButtonToggle fxFlex>
+          {{ 'DELETE_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #editButtonInRowToggle fxFlex>
+            {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!editButtonInRowToggle.checked" fxFlex>
+            <input matInput #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle #detailButtonInRowToggle fxFlex>
+            {{ 'DETAIL_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!detailButtonInRowToggle.checked" fxFlex>
+            <input matInput #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="column" fxFlex>
+            <mat-slide-toggle #iconToggle>
+              {{ 'SHOW_ICON' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-radio-group *ngIf="iconToggle.checked" layout-padding [value]="iconPosition" (change)="iconPosition = $event.value"
+              fxFlex>
+              <mat-radio-button value="left" class="padding-3">
+                {{ 'LEFT' | oTranslate }}
+              </mat-radio-button>
+              <mat-radio-button value="right" class="padding-3">
+                {{ 'RIGHT' | oTranslate }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
+            <input matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
+          </mat-form-field>
+        </div>
+      </o-column>
+    </o-column>
+  </div>
+</example-comp>
