@@ -27,16 +27,16 @@ export class ContainersCollapsibleComponent {
   protected layoutHorizontal = 'start';
   protected layoutVertical = 'stretch';
 
-  @ViewChild('title', { static: false })
+  @ViewChild('title', { static: true })
   public titleInput: any;
 
-  @ViewChild('elevation', { static: false })
+  @ViewChild('elevation', { static: true })
   public elevationInput: any;
 
-  @ViewChild('icon', { static: false })
+  @ViewChild('icon', { static: true })
   public iconInput: any;
 
-  @ViewChild('appearance', { static: false })
+  @ViewChild('appearance', { static: true })
   public appearanceInput: any;
 
   public dataHorizontal: Array<any> = [
