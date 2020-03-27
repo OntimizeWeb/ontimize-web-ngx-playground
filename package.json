@@ -1,13 +1,15 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "0.0.0",
+  "version": "8.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4401",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "production": "ng build --prod=true --baseHref=/ontimize-web-ngx-playground/",
+    "production-server": "ng build --prod=true  --baseHref=/ontimizeweb/playground/"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +35,8 @@
     "zone.js": "~0.9.1",
     "ontimize-web-ngx": "file:C:\\workspace\\ontimizeWeb\\8.x.x\\ontimize-web-ngx\\dist\\ontimize-web-ngx\\ontimize-web-ngx-8.0.0.tgz",
     "ontimize-web-ngx-theming": "4.0.2",
-    "angular2-highlight-js": "5.0.1"
+    "angular2-highlight-js": "5.0.1",
+    "ngx-material-timepicker": "5.4.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.24",
