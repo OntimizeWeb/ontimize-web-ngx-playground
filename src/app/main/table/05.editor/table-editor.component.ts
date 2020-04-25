@@ -13,7 +13,13 @@ export class TableEditorComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getAccounts();
+    let accounts = TableUtils.getAccounts();
+    accounts.forEach(obj => {
+      if (obj['STARTDATE'] && typeof obj['STARTDATE'] === 'number') {
+        obj['STARTDATE'] = new Date(obj['STARTDATE']).toISOString();
+      }
+    });
+    return accounts;
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

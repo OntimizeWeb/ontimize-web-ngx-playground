@@ -1,0 +1,17 @@
+<example-comp comp-name="INPUTS.SLIDE_TOGGLE" comp-desc="INPUTS.SLIDE_TOGGLE.DESC" [files]="files">
+  <o-form editable-detail="false" show-header="no">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-slide-toggle attr="slidetoggle" label="{{ 'INPUT.BUTTON.SLIDE_TOGGLE' | oTranslate }}" [data]="getValue()"></o-slide-toggle>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-slide-toggle attr="slidetoggle-editable" label="{{ 'INPUT.BUTTON.SLIDE_TOGGLE' | oTranslate }}" [data]="getValue()"
+        read-only="no" ></o-slide-toggle>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-slide-toggle attr="slidetoggle-disabled" label="{{ 'INPUT.BUTTON.SLIDE_TOGGLE' | oTranslate }}" enabled="no"></o-slide-toggle>
+    </div>
+  </o-form>
+</example-comp>

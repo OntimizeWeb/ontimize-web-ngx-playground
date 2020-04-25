@@ -61,16 +61,13 @@ export class ClearComponent {
   protected dateValue: Date = new Date();
 
   getValueDate() {
-    return this.dateValue;
+    return this.dateValue.getTime();
   }
 
   getValueCurr() {
     return 2574.99;
   }
 
-  onValueChange(event) {
-    console.log(event);
-  }
 
 
 

@@ -5,7 +5,7 @@ const PASSWORD_HTML_DATA = `
 
     <o-password-input attr="password" label="Password" [data]="getValue()"></o-password-input>
 
-    <o-password-input attr="password2" label="Password" [data]="getValue()" read-only="no" required="yes" tooltip="This is an awesome tooltip!"></o-password-input>
+    <o-password-input attr="password2" label="Password" [data]="getValue()" read-only="no" required="yes" ></o-password-input>
 
     <o-password-input attr="password3" label="Password" enabled="no" [data]="getValue()"></o-password-input>
 
@@ -18,7 +18,7 @@ const PASSWORD_TS_DATA = `
     templateUrl: 'input-password.component.html'
   })
   export class InputPasswordComponent {
- 
+
     getValue() {
       return 'password';
     }

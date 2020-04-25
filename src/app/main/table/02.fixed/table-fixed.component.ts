@@ -19,7 +19,7 @@ export class TableFixedComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getAccountsTableFixed();
+    return TableUtils.getAccountsTableFixed().slice();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

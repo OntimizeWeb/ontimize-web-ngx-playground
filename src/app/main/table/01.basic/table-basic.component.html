@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')"
   (showSource)="onShowSource('o-table', table, ex)">
-  <div fxLayout="row wrap" fxLayoutAlign="center stretch" layout-padding>
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
     <div fxFlex="60" fxLayoutAlign="center center">
       <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
@@ -16,16 +16,16 @@
           <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
           </o-table-cell-renderer-image>
         </o-table-column>
-        <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px"></o-table-column>
+        <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
         <o-table-column attr="action" width="64px">
           <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
         </o-table-column>
       </o-table>
     </div>
 
-    <o-column attr="conf" title-label="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
+    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
       layout-align="center">
-      <mat-form-field fxFlex="95">
+      <mat-form-field>
         <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -51,7 +51,7 @@
           {{ 'SMALL' | oTranslate }}
         </mat-radio-button>
       </mat-radio-group>
-      <o-row title-label="{{ 'TABLE.FILTER' | oTranslate }}">
+      <o-row title="{{ 'TABLE.FILTER' | oTranslate }}">
         <mat-slide-toggle #quickFilterToggle checked="true" fxFlex>
           {{ 'TABLE.FILTER' | oTranslate }}
         </mat-slide-toggle>
@@ -59,7 +59,7 @@
           {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
         </mat-slide-toggle>
       </o-row>
-      <o-column title-label="{{ 'TABLE.MENU' | oTranslate }}">
+      <o-column title="{{ 'TABLE.MENU' | oTranslate }}">
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <mat-slide-toggle #selectMultipleToggle checked="false" fxFlex>
             {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
@@ -74,7 +74,7 @@
           </mat-slide-toggle>
         </div>
       </o-column>
-      <o-column title-label="{{ 'BUTTONS' | oTranslate }}">
+      <o-column title="{{ 'BUTTONS' | oTranslate }}">
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <mat-slide-toggle #buttonAddToggle [checked]="false" fxFlex>
             {{ 'TABLE.BUTTON.ADD' | oTranslate }}
@@ -93,7 +93,7 @@
           </mat-slide-toggle>
         </div>
       </o-column>
-      <o-column layout-padding layout-align="start" title-label="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
+      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
         <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked"
           fxFlex>
           {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}

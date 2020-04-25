@@ -5,7 +5,7 @@ const HTML_DATA = `
 <!-- CHECKBOX-->
 <div fxFlexDirection="row">
   <o-checkbox #check attr="checkbox" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue('checkbox')"
-    read-only="no" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)" fxFlex="70"></o-checkbox>
+    read-only="no"  (onValueChange)="onValueChange($event)" fxFlex="70"></o-checkbox>
   <button mat-button (click)="setValue(check,false)">setValue false</button>
 </div>
 <!-- COMBO-->
@@ -18,7 +18,7 @@ const HTML_DATA = `
 <!-- DATE-->
 <div fxFlexDirection="row">
   <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
-    read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"
+    read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-date-input>
   <button mat-button (click)="setValue(date,'2010-01-01')">setValue 01/01/1980</button>
 </div>
@@ -34,21 +34,21 @@ const HTML_DATA = `
 <!-- INPUT-->
 <div fxFlexDirection="row">
   <o-text-input #input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue('input')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)"
+    read-only="no" required="yes"  (onValueChange)="onValueChange($event)"
     clear-button="yes" fxFlex="70"></o-text-input>
   <button mat-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
 </div>
 <!-- hour-->
 <div fxFlexDirection="row">
   <o-hour-input #hour attr="hour" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue('hour')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
+    read-only="no" required="yes"  clear-button="yes" format="24"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-hour-input>
   <button mat-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
 </div>
 <!-- TIME-->
 <div fxFlexDirection="row">
   <o-time-input #time attr="time" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue('time')"
-    read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
+    read-only="no" required="yes"  clear-button="yes" format="24"
     (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-time-input>
   <button mat-button (click)="setValue(time,1535358788828)">setValue 08/27/2018 10:33am</button>
 </div>
@@ -58,9 +58,9 @@ const HTML_DATA = `
 const TS_DATA = `
 consoleLog = [];
 onValueChange(event) {
-  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue + 
+  console.log( 'Event onValueChange in' + event.target.oattr +' change old value: '+ event.oldValue + ' by new value: '+ event.newValue +
   ' this change is of type '+ event.type );
- 
+
   getValue(attr: string) {
     var value;
     switch (attr) {
@@ -110,7 +110,14 @@ onValueChange(event) {
   }
 }
 `;
+export class ConsoleLogEvent {
+  eventName: string;
+  attr: string;
+  type: string;
+  newValue: any;
+  oldValue
 
+}
 @Component({
   selector: 'input-events',
   templateUrl: './events.component.html',
@@ -148,9 +155,11 @@ export class InputEventsComponent {
       case 'combo':
         return 2;
       case 'time':
-        return 1505358700000;
       case 'date':
-        return '2018-12-28';
+        return 1505358700000;
+      case 'radio':
+      case 'slider':
+        return 2;
     }
     return value;
   }
@@ -182,7 +191,44 @@ export class InputEventsComponent {
   }
 
   onValueChange(event) {
-    this.consoleLog.unshift(event);
+    let eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onValueChange';
+    eventChange.newValue = event.newValue;
+    eventChange.oldValue = event.oldValue;
+    eventChange.type = event.type;
+    eventChange.attr = event.target.oattr;
+    this.consoleLog.unshift(eventChange);
+  }
+  onChange(event, input) {
+    let eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'onChange';
+    eventChange.attr = input.oattr;
+    this.consoleLog.unshift(eventChange);
+
+  }
+
+  showNewAndOldValue(event: any): boolean {
+    var show = false;
+    if (event.hasOwnProperty('newValue') && typeof event.newValue !== undefined &&
+      event.hasOwnProperty('oldValue') && typeof event.oldValue !== undefined) {
+      show = true;
+    }
+    return show;
+  }
+  showTypeEvent(event: any): boolean {
+    var show = false;
+    if (event.hasOwnProperty('type') && typeof event.type !== undefined ) {
+      show = true;
+    }
+    return show;
+  }
+
+  clearConsole() {
+    this.consoleLog = [];
+  }
+
+  print(e){
+    console.log(e);
   }
 
 

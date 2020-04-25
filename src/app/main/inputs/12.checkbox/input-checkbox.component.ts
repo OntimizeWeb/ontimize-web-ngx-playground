@@ -5,7 +5,7 @@ const CHECKBOX_HTML_DATA = `
 
     <o-checkbox attr="check" label="Checkbox" [data]="getValue()"></o-checkbox>
 
-    <o-checkbox attr="check1" label="Checkbox" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!"></o-checkbox>
+    <o-checkbox attr="check1" label="Checkbox" [data]="getValue()" read-only="no" ></o-checkbox>
 
     <o-checkbox attr="check2" label="Checkbox" enabled="no"></o-checkbox>
 

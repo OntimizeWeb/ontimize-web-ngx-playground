@@ -1,72 +1,106 @@
 <example-comp comp-name="INPUTS.EVENTS" comp-desc="INPUTS.EVENTS.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <!-- CHECKBOX-->
-    <div fxFlexDirection="row">
-      <o-checkbox #check attr="checkbox" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue('checkbox')"
-        read-only="no" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)" fxFlex="70"></o-checkbox>
-      <button mat-button (click)="setValue(check,false)">setValue false</button>
-    </div>
-    <!-- COMBO-->
-    <div fxFlexDirection="row">
-      <o-combo #combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValue('combo')"
-        value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" (onValueChange)="onValueChange($event)"
-        fxFlex="70"></o-combo>
-      <button mat-button (click)="setValue(combo,4)">setValue Germany</button>
-    </div>
-    <!-- DATE-->
-    <div fxFlexDirection="row">
-      <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
-        read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020" tooltip="This is an awesome tooltip!"
-        (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-date-input>
-      <button mat-button (click)="setValue(date,'2018-10-03')">setValue 2018-10-03</button>
-    </div>
 
-    <!-- LISKPICKER-->
-    <div fxFlexDirection="row">
-      <o-list-picker #listpicker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" [static-data]="getDataArray()"
-        [data]="getValue('listpicker')" filter="yes" value-column="key" columns="key;value" visible-columns="value"
-        required="true" read-only="false" (onValueChange)="onValueChange($event)" fxFlex="70"></o-list-picker>
-      <button mat-button (click)="setValue(listpicker, '4')">setValue Germany</button>
-    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around start">
+      <div fxLayout="column" fxFlex="40" fxLayoutAlign="start stretch">
 
-    <!-- INPUT-->
-    <div fxFlexDirection="row">
-      <o-text-input #input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue('input')"
-        read-only="no" required="yes" tooltip="This is an awesome tooltip!" (onValueChange)="onValueChange($event)"
-        clear-button="yes" fxFlex="70"></o-text-input>
-      <button mat-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
-    </div>
-    <!-- hour-->
-    <div fxFlexDirection="row">
-      <o-hour-input #hour attr="hour" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue('hour')"
-        read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
-        (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-hour-input>
-      <button mat-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
-    </div>
-    <!-- TIME-->
-    <div fxFlexDirection="row">
-      <o-time-input #time attr="time" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue('time')"
-        read-only="no" required="yes" tooltip="This is an awesome tooltip!" clear-button="yes" format="24"
-        (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"></o-time-input>
-      <button mat-button (click)="setValue(time,1535358788828)">setValue 08/27/2018 10:33am</button>
+        <!-- INPUT-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-text-input #input attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue('input')"
+            read-only="no" required="yes"  (onValueChange)="onValueChange($event)"
+            (onChange)="onChange($event,input)" clear-button="yes" fxFlex="70"></o-text-input>
+          <button fxFlex mat-raised-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
+        </div>
+        <!-- DATE-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-date-input #date attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')"
+            read-only="no" format="LL" required="yes" min="01/01/1980" max="01/01/2020"
+            (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange($event,date)"></o-date-input>
+          <button fxFlex mat-raised-button (click)="setValue(date, 1538524800000)">setValue 2018-10-03</button>
+        </div>
+        <!-- hour-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-hour-input #hour attr="hour" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue('hour')"
+            value-type="string" read-only="no" required="yes"  clear-button="yes"
+            format="24" (onChange)="onChange($event,hour)" (onValueChange)="onValueChange($event)" clear-button="yes"
+            fxFlex="70"></o-hour-input>
+          <button fxFlex mat-raised-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
+        </div>
+        <!-- COMBO-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-combo #combo attr="combo" label="{{ 'INPUT.COMBO' | oTranslate }}" [static-data]="getDataArray()" [data]="getValue('combo')"
+            value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"
+            (onValueChange)="onValueChange($event)" fxFlex="70" (onChange)="onChange($event,combo)"></o-combo>
+          <button fxFlex mat-raised-button (click)="setValue(combo,4)">setValue Germany</button>
+        </div>
+        <!-- LISKPICKER-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-list-picker #listpicker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}"
+            [static-data]="getDataArray()" [data]="getValue('listpicker')" filter="yes" value-column="key" columns="key;value"
+            visible-columns="value" required="true" read-only="false" (onValueChange)="onValueChange($event)" fxFlex="70"
+            (onChange)="onChange($event,listpicker)"></o-list-picker>
+          <button fxFlex mat-raised-button (click)="setValue(listpicker, '4')">setValue Germany</button>
+        </div>
+
+      </div>
+      <div fxLayout="column" fxFlex="40" fxLayoutAlign="start stretch">
+        <!-- RADIO-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-radio #radio attr="radio" label="Radio" [static-data]="getDataArray()" [data]="getValue('radio')"
+            value-column="key" columns="key;value" visible-columns="value" fxFlex="70" (onChange)="onChange($event,radio)"
+            (onValueChange)="onValueChange($event)" read-only="no" layout="row"></o-radio>
+          <button fxFlex mat-raised-button (click)="setValue(radio, '4')">setValue Germany</button>
+        </div>
+        <!-- TIME-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-time-input #time attr="time" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue('time')"
+            read-only="no" required="yes"  clear-button="yes" format="24"
+            (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange($event,time)"></o-time-input>
+          <button fxFlex mat-raised-button (click)="setValue(time,1535358788828)">setValue 1535358788828</button>
+        </div>
+        <!-- SLIDER-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-slider #slider attr="slider" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue('slider')"
+            read-only="no"  read-only="no" (onValueChange)="onValueChange($event)"
+            (onChange)="onChange($event,slider)" fxFlex="70"></o-slider>
+          <button fxFlex mat-raised-button (click)="setValue(slider,85)">setValue 85</button>
+        </div>
+        <!-- FILE-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-file-input fxFlex="70" #file attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)"
+            read-only="no" required="yes" accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes"
+            layout-padding  (onValueChange)="onValueChange($event)" (onChange)="onChange($event,file)"
+            clear-button="yes"></o-file-input>
+        </div>
+        <!-- CHECKBOX-->
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+          <o-checkbox #check attr="checkbox" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue('checkbox')"
+            read-only="no"  (onValueChange)="onValueChange($event)" (onChange)="onChange($event,check)"
+            fxFlex="70"></o-checkbox>
+          <button fxFlex mat-raised-button (click)="setValue(check,false)">setValue false</button>
+        </div>
+      </div>
     </div>
 
     <mat-toolbar class="playground-toolbar">
       <mat-toolbar-row>
         <span>{{ 'CONSOLE.LOG' | oTranslate }}</span>
+        <span class="mat-toolbar-space"></span>
+        <button mat-icon-button (click)="clearConsole()">
+          <mat-icon>delete</mat-icon>
+        </button>
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-list dense class="console" style="min-height:200px">
       <mat-list-item *ngFor="let log of consoleLog">
-        Event&nbsp;<b>onValueChange</b>&nbsp; in &nbsp;{{
-        log.target.oattr }} ::
-        change old value: <b>
-          {{ log.oldValue }}</b>&nbsp;
-        by
-        new value: <b>{{ log.newValue }}</b>, this change is of type &nbsp;<b>{{ log.type }}</b>
+        Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
+        <ng-container *ngIf="showNewAndOldValue(log)">:: change old value: <b> {{ log.oldValue }}</b>&nbsp; by new
+          value: <b>{{ log.newValue }}</b>, </ng-container>
+        <ng-container *ngIf="showTypeEvent(log)"> this change is of type &nbsp;<b>{{ log.type }}</b></ng-container>
         <mat-divider></mat-divider>
       </mat-list-item>
 
     </mat-list>
+
   </o-form>
 </example-comp>

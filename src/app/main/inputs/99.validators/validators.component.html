@@ -2,17 +2,25 @@
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.INPUT' | oTranslate }}</label>
-      <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [validators]="validatorsArray" read-only="no"></o-text-input>
+      <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [validators]="validatorsArray"
+        read-only="no"></o-text-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-VALIDATOR' | oTranslate }}</label>
-      <o-text-input fxFlex attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
+      <o-text-input fxFlex attr="input2" [min-length]="minLength" [required]="required" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"
+        read-only="no">
         <o-validator error-name="requiredB" error-text="Must contain a 'b'" [validator-function]="bValidator"></o-validator>
       </o-text-input>
+
+      <!-- <o-integer-input attr="integer2" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}" read-only="false" [min]="minLength"
+        [required]="required"></o-integer-input> -->
+
+      <!-- <button (click)="changeParams()">set required false</button> -->
+
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-ERROR' | oTranslate }}</label>
-      <o-text-input fxFlex attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" >
+      <o-text-input fxFlex attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
         <o-validator [validator-function]="aValidator">
           <o-error name="requiredLowercaseA" text="Must contain a lowercase 'a'"></o-error>
           <o-error name="requiredUppercaseA" text="Must contain a uppercase 'A'"></o-error>
