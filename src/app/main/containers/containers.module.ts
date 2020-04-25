@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -9,6 +9,7 @@ import { ContainersComponent } from './containers.component';
 
 @NgModule({
   imports: [ContainersRoutingModule, OntimizeWebModule, SharedModule],
-  declarations: [ContainersBasicComponent, ContainersCollapsibleComponent, ContainersComponent]
+  declarations: [ContainersBasicComponent, ContainersCollapsibleComponent, ContainersComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ContainersModule { }

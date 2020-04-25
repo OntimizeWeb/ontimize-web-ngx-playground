@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
 import { GridRoutingModule } from './grid-routing.module';
@@ -18,6 +18,7 @@ import { GridHybridComponent } from './grid-hybrid/grid-hybrid.component';
     GridBasicComponent,
     GridFixedComponent,
     GridHybridComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridModule {}
