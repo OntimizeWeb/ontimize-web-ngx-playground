@@ -1,15 +1,25 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { NavigationBarService } from '../shared/navigation-bar.service';
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainComponent implements OnInit {
+  public version: string = environment.version;
+  protected sectionTitle = '';
 
-  constructor() { }
+  constructor(protected navigationService: NavigationBarService) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.navigationService.onTitleChange((title) => {
+      this.sectionTitle = title;
+    });
+  }
 }
