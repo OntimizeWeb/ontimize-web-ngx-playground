@@ -3,13 +3,13 @@
   "version": "8.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4401",
+    "start": "ng serve --port 8401",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "production": "ng build --prod=true --baseHref=/",
-    "production-server": "ng build --prod=true  --baseHref=/ontimizeweb/playground/"
+    "production-server": "ng build --prod=true  --baseHref=/"
   },
   "private": true,
   "dependencies": {
