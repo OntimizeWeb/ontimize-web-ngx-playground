@@ -1,4 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { MatCheckbox } from '@angular/material';
+
+const CUSTOM_INPUT_HTML_DATA = `
+<o-text-input attr="attr" [float-label]="{floatLabel}" [appearance]="{appearanceValue}" [label]="{labelValue}"
+  [placeholder]="{placeholderValue}" read-only="no" clear-button="yes"
+  [hide-required-marker]="{hideRequiredMarker}" required="yes">
+</o-text-input>
+`;
+
 
 const FLOAT_LABEL_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -30,7 +39,7 @@ const PLACEHOLDER_HTML_DATA = `
     read-only="no" clear-button="yes"></o-text-input>
 
   <o-text-input attr="text_placeholder4" float-label="never" appearance="outline" placeholder="{{ 'INPUT.PLACEHOLDER.NEVER_OUTLINE' | oTranslate }}"
-    read-only="no" clear-button="yes"></o-text-input>
+    read-only="no" clear-button="yes" hi></o-text-input>
 </o-form>
 `;
 
@@ -77,6 +86,10 @@ getValueCurr() {
 })
 export class AppearanceComponent {
 
+  @ViewChild('label') label:ElementRef;
+  @ViewChild('placeholder') placeholder:ElementRef;
+  @ViewChild('hideRequiredMarker') hideRequiredMarker:MatCheckbox;
+
   floatLabelFiles = {
     'html': {
       'data': FLOAT_LABEL_HTML_DATA
@@ -84,10 +97,6 @@ export class AppearanceComponent {
     'scss': {
       'data': undefined
     }
-    // ,
-    // 'typescript': {
-    //   'data': FLOAT_LABEL_TS_DATA
-    // }
   };
 
   placeholderFiles = {
@@ -112,6 +121,12 @@ export class AppearanceComponent {
     },
     'typescript': {
       'data': APPEARANCE_TS_DATA
+    }
+  };
+
+  customInputFiles = {
+    'html': {
+      'data': CUSTOM_INPUT_HTML_DATA
     }
   };
 
@@ -149,5 +164,23 @@ export class AppearanceComponent {
 
   getValueSimple() {
     return 2;
+  }
+
+  
+  onShowSource(key: string, input?: any, exampleComp?: any) {
+    const itemData: any = {
+      floatLabel: this.floatLabelValue,
+      appearanceValue:this.appearanceValue,
+      labelValue:this.label.nativeElement.value,
+      placeholderValue:this.placeholder.nativeElement.value,
+      hideRequiredMarker:this.hideRequiredMarker.checked
+
+    };
+    exampleComp.html = CUSTOM_INPUT_HTML_DATA
+                      .replace('{floatLabel}', itemData.floatLabel)
+                      .replace('{appearanceValue}', itemData.appearanceValue)
+                      .replace('{labelValue}', itemData.labelValue)
+                      .replace('{placeholderValue}', itemData.placeholderValue)
+                      .replace('{hideRequiredMarker}', itemData.hideRequiredMarker);
   }
 }

@@ -1,12 +1,10 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
 
 @Component({
   selector: 'table-fixed',
-  styleUrls: ['table-fixed.component.scss'],
-  templateUrl: 'table-fixed.component.html',
-  encapsulation: ViewEncapsulation.None
+  templateUrl: 'table-fixed.component.html'
 })
 export class TableFixedComponent {
 

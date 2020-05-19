@@ -1,0 +1,51 @@
+<example-comp comp-name="INPUTS.DATERANGE" comp-desc="INPUTS.DATERAGE.DESC" [files]="files">
+
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-daterange-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
+        [data]="getValue()">
+      </o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+        required="yes" [data]="getValue()" clear-button="yes" format="LL" separator=" to ">
+      </o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-daterange-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no"
+        [data]="getValue()">
+      </o-daterange-input>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.DATERANGE.MINMAX" comp-desc="INPUTS.DATERANGE.MINMAX.DESC" [files]="mixMaxDateRangeFiles">
+
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+        required="yes" [data]="getValue()" min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY"
+        show-week-numbers="true">
+      </o-daterange-input>
+    </div>
+
+  </o-form>
+</example-comp>
+<example-comp comp-name="INPUTS.DATERANGE.SHOWRANGES" comp-desc="INPUTS.DATERANGE.SHOWRANGES.DESC" [files]="showRangeDateRangeFiles">
+
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+        required="yes" [data]="getValue()" show-ranges="true" format="DD/MM/YYYY"
+        separator=" to " touch-ui="yes">
+      </o-daterange-input>
+    </div>
+
+  </o-form>
+</example-comp>

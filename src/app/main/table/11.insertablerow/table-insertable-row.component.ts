@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -13,7 +12,7 @@ export class TableInsertableRowComponent {
   }
 
   getTableData(): Array<any> {
-    return TableUtils.getAccounts();
+    return TableUtils.getAccountsInsertableRow();
   }
 
 }

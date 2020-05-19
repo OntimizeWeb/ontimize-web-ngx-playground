@@ -38,6 +38,9 @@ export class TableBasicComponent {
   @ViewChild('exportButtonToggle')
   exportButtonToggle: any;
 
+  @ViewChild('configurationButtonToggle')
+  configurationButtonToggle: any;
+
   @ViewChild('columnsVisibilityToggle')
   columnsVisibilityToggle: any;
 
@@ -63,6 +66,7 @@ export class TableBasicComponent {
       filter: this.quickFilterToggle.checked,
       filterCaseSensitive: this.filterCaseSensitive.checked,
       exportButtonToggle: this.exportButtonToggle.checked,
+      configurationButtonToggle: this.configurationButtonToggle.checked,
       columnsVisibilityToggle: this.columnsVisibilityToggle.checked,
       selectMultipleToggle: this.selectMultipleToggle.checked,
       buttonAddToggle: this.buttonAddToggle.checked,

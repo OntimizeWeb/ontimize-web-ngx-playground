@@ -3,11 +3,19 @@ import { OTranslateService } from 'ontimize-web-ngx';
 import { NavigationBarService } from '../../shared/navigation-bar.service';;
 
 const HTML_DATA = `
-<o-button attr="flat" type="FLAT" label="FLAT" layout-padding></o-button>
-
-<o-button attr="raised" type="RAISED" label="RAISED" layout-padding></o-button>
-
-<o-button attr="floating" type="FLOATING" icon="add" layout-padding></o-button>
+  <o-button attr="basic" type="BASIC" label="BASIC" layout-padding></o-button>
+  
+  <o-button attr="raised" type="RAISED" label="RAISED" layout-padding></o-button>
+  
+  <o-button attr="stroked" type="STROKED" label="STROKED" layout-padding></o-button>
+  
+  <o-button attr="flat" type="FLAT" label="FLAT" layout-padding></o-button>
+  
+  <o-button attr="icon" type="ICON" icon="add" layout-padding></o-button>
+  
+  <o-button attr="floating" type="FAB" icon="power_setting" layout-padding></o-button>
+  
+  <o-button attr="floating-mini" type="FAB-MINI" icon="power_setting" layout-padding></o-button>
 `;
 
 const HTML_DATA_TOGGLE = `
