@@ -314,7 +314,7 @@ export class InputEventsComponent {
 
   onValueChange(event: OValueChangeEvent) {
     console.log(event);
-    if (!this.printOnValueChange.checked) {
+    if (this.printOnValueChange && !this.printOnValueChange.checked) {
       return;
     }
     const eventChange = new ConsoleLogEvent();
@@ -327,7 +327,7 @@ export class InputEventsComponent {
   }
 
   onChange(event, input) {
-    if (!this.printOnChange.checked) {
+    if (this.printOnChange && !this.printOnChange.checked) {
       return;
     }
     const eventChange = new ConsoleLogEvent();
@@ -337,7 +337,7 @@ export class InputEventsComponent {
   }
 
   onFocus(event, input) {
-    if (!this.printOnFocus.checked) {
+    if (this.printOnFocus && !this.printOnFocus.checked) {
       return;
     }
     const eventChange = new ConsoleLogEvent();
@@ -347,7 +347,7 @@ export class InputEventsComponent {
   }
 
   onBlur(event, input) {
-    if (!this.printOnBlur.checked) {
+    if (this.printOnBlur && !this.printOnBlur.checked) {
       return;
     }
     const eventChange = new ConsoleLogEvent();
