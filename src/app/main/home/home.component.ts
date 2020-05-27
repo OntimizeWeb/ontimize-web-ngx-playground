@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { OTranslateService } from 'ontimize-web-ngx';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
 
 @Component({
   selector: 'home',
@@ -9,16 +10,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private actRoute: ActivatedRoute
-  ) {
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
   }
 
   ngOnInit() {
+    let title = '';
+    title = this.translateService.get('INTRODUCTION');
+    this.navigationService.setTitle(title);
   }
-
-  navigate() {
-    this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
-  }
-
 }
