@@ -6,11 +6,33 @@
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-checkbox attr="check1" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue()" read-only="no" ></o-checkbox>
+      <o-checkbox attr="check1" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue()" read-only="no">
+      </o-checkbox>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-checkbox attr="check2" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" enabled="no"></o-checkbox>
+      <o-checkbox attr="check2" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" enabled="no" [data]="getValue()">
+      </o-checkbox>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.CHECKBOXBOOLEANTYPE" comp-desc="INPUTS.CHECKBOXBOOLEANTYPE.DESC" [files]="filesValueType">
+  <o-form #form2 editable-detail="no" show-header="no" layout-direction="row">
+    <div fxLayout="column" layout-padding fxFlex="30">
+      <label class="input-comp-title">{{ 'INPUTS.CHECKBOXBOOLEANTYPE_NUMBER' | oTranslate }}</label>
+      <o-checkbox attr="check4" boolean-type="number" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValueBooleanType('number')"
+        read-only="no" false-value="0" true-value="1"></o-checkbox>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="30">
+      <label class="input-comp-title">{{ 'INPUTS.CHECKBOXBOOLEANTYPE_BOOLEAN' | oTranslate }}</label>
+      <o-checkbox attr="check5" boolean-type="boolean" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValueBooleanType('boolean')"
+        read-only="no" false-value="false" true-value="true"></o-checkbox>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="30">
+      <label class="input-comp-title">{{ 'INPUTS.CHECKBOXBOOLEANTYPE_STRING' | oTranslate }}</label>
+      <o-checkbox attr="check7" boolean-type="string" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValueBooleanType('string')"
+        read-only="no" false-value="N" true-value="Y"></o-checkbox>
     </div>
   </o-form>
 </example-comp>

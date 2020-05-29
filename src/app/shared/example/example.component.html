@@ -8,6 +8,10 @@
     <button *ngIf="!collapsed" mat-icon-button aria-label="View Source" (click)="toggleShowSource()">
       <mat-icon class="mat-24">code</mat-icon>
     </button>
+    <button *ngIf="collapsible" mat-icon-button aria-label="Collapse" (click)="collapsed = !collapsed">
+      <mat-icon *ngIf="!collapsed" class="mat-24">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="collapsed" class="mat-24">keyboard_arrow_down</mat-icon>
+    </button>
   </mat-toolbar>
 
   <div fxLayout *ngIf="showSource" [style.height]="tabHeight">
