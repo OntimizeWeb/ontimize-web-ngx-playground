@@ -31,7 +31,8 @@
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.TIMESTAMP' | oTranslate }}</label>
-      <o-date-input attr="valueTypeInput" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('timestamp')" read-only="no" required="yes">
+      <o-date-input value-type="timestamp" attr="valueTypeInput" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('timestamp')"
+        read-only="no" required="yes">
       </o-date-input>
     </div>
 
