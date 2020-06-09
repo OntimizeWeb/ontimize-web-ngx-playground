@@ -295,5 +295,7 @@
   "INPUTS.DATERANGE.SHOWRANGES.DESC": "Existen 7 rangos diferentes predefinidos",
   "INPUTS.DATERANGE.MINMAX": "Establecer una fecha minima y máxima",
   "INPUTS.DATERANGE.MINMAX.DESC": "Un usuario puede establecer un rango minimo y maximo de selección de fechas.",
-  "INPUTS.DATERAGE.DESC":"A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box."
+  "INPUTS.DATERAGE.DESC":"A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box.",
+  "INPUTS.DATE.CUSTOM_DATE_CLASS": "Fechas en el calendario con css personalizados",
+  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Aplicar una o más clases CSS a algunas fechas en el calendario"
 }
