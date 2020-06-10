@@ -34,7 +34,7 @@
     "highlight.js": "^9.5.0",
     "ontimize-web-ngx": "8.0.0-rc.0",
     "ontimize-web-ngx-theming": "4.0.2",
-    "ontimize-web-ngx-gallery": "file:ontimize-web-ngx-gallery-0.0.1.tgz",
+    "ontimize-web-ngx-gallery": "file:ontimize-web-ngx-gallery-8.0.0-SNAPSHOT-0.tgz",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
     "zone.js": "~0.9.1"
