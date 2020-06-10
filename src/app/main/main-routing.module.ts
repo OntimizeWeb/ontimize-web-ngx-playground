@@ -19,7 +19,9 @@ export const routes: Routes = [
       { path: 'media', loadChildren: () => import('./media/media.module').then(m => m.MediaModule) },
       { path: 'snackbar', loadChildren: () => import('./snackbar/snackbar.module').then(m => m.SnackBarModule) },
       { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
-      { path: 'tooltip', loadChildren: () => import('./tooltip/tooltip.module').then(m => m.TooltipModule) }
+      { path: 'tooltip', loadChildren: () => import('./tooltip/tooltip.module').then(m => m.TooltipModule) },
+      { path: 'image', loadChildren: () => import('./media/media.module').then(m => m.MediaModule) },
+      { path: 'gallery', loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule) },
     ]
   }
 ];
