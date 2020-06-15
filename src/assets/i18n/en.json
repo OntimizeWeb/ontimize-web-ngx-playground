@@ -304,7 +304,6 @@
   "INPUTS.DATERANGE.MINMAX": "Set min and max date",
   "INPUTS.DATERANGE.MINMAX.DESC": "A user can set a maximum and minimum range selection date",
   "INPUTS.DATERAGE.DESC":"A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box.",
-<<<<<<< HEAD
   "GALLERY": "Gallery",
   "GALLERY.AD": "Close the left menu to see the gallery better",
   "GALLERY.COMPONENT": "Gallery",
@@ -334,11 +333,7 @@
   "GALLERY.NORMAL": "Normal gallery",
   "GALLERY.ONLYIMAGE": "Gallery with only images",
   "GALLERY.ONLYIMAGEANDPREVIEW": "Gallery with images and preview",
-  "GALLERY.ONLYTHUMB": "Gallery with only thumbnails",
   "GALLERY.NOTHINGPREV": "Gallery without options",
+  "GALLERY.ONLYTHUMB": "Gallery with only thumbnails",
   "GALLERY.AUTOPLAYPREV": "Gallery with autoplay on"
-=======
-  "INPUTS.DATE.CUSTOM_DATE_CLASS":"Date input with custom date classes",
-  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Apply one or more CSS classes to some dates in the calendar"
->>>>>>> ff00fce09df0d7ea5adc7aee166ec40ad140dbbe
 }
