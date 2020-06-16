@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --prod=true --baseHref=/",
+    "production": "ng build --prod=true --aot --baseHref=/",
     "production-aot-server": "ng build --prod=true  --baseHref=/ontimizeweb/v8/playground/"
   },
   "private": true,
@@ -32,9 +32,9 @@
     "angular2-highlight-js": "^8.0.1",
     "hammerjs": "^2.0.8",
     "highlight.js": "^9.5.0",
-    "ontimize-web-ngx": "8.0.0-rc.0",
+    "ontimize-web-ngx": "8.0.0-SNAPSHOT-2",
     "ontimize-web-ngx-theming": "4.0.2",
-    "ontimize-web-ngx-gallery": "file:ontimize-web-ngx-gallery-8.0.0-SNAPSHOT-0.tgz",
+    "ontimize-web-ngx-gallery": "8.0.0-SNAPSHOT-0",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
     "zone.js": "~0.9.1"
