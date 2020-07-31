@@ -335,5 +335,7 @@
   "GALLERY.ONLYIMAGEANDPREVIEW": "Gallery with images and preview",
   "GALLERY.NOTHINGPREV": "Gallery without options",
   "GALLERY.ONLYTHUMB": "Gallery with only thumbnails",
-  "GALLERY.AUTOPLAYPREV": "Gallery with autoplay on"
+  "GALLERY.AUTOPLAYPREV": "Gallery with autoplay on",
+  "INPUTS.DATE.CUSTOM_DATE_CLASS": "Date input with custom date classes",
+  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Apply one or more CSS classes to some dates in the calendar"
 }
