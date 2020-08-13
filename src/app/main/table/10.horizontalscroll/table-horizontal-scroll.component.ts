@@ -13,8 +13,7 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   @ViewChild('horizontalScrollToggle')
   horizontalScrollToggle: any = true;
 
-  // @ViewChild('minwWdth')
-  // minwWdth: any;
+  public data = TableUtils.getCustomers().slice();;
 
   @ViewChild('table')
   table: OTableComponent;
@@ -34,10 +33,6 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getCustomers().slice();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

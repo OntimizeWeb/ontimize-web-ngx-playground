@@ -7,13 +7,10 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-alignment.component.html'
 })
 export class TableAlignmentComponent {
+  public data = TableUtils.getAccounts();
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getAccounts();
   }
 
 }
