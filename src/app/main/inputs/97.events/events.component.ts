@@ -220,11 +220,6 @@ export class InputEventsComponent {
   clearConsole() {
     this.consoleLog = [];
   }
-
-  print(e) {
-    console.log(e);
-  }
-
 }
 `;
 export class ConsoleLogEvent {
@@ -313,7 +308,6 @@ export class InputEventsComponent {
   }
 
   onValueChange(event: OValueChangeEvent) {
-    console.log(event);
     if (this.printOnValueChange && !this.printOnValueChange.checked) {
       return;
     }

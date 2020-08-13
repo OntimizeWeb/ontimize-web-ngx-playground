@@ -7,13 +7,10 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-pagination.component.html'
 })
 export class TablePaginationComponent {
+  public data = TableUtils.getBranches();
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getBranches();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

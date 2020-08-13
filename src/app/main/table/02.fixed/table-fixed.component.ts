@@ -14,12 +14,10 @@ export class TableFixedComponent {
   @ViewChild('height', { static: false })
   tableHeight: any;
 
+  public data = TableUtils.getAccountsTableFixed().slice();
+
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getAccountsTableFixed().slice();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

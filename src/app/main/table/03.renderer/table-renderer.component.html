@@ -1,12 +1,10 @@
-<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER"
-  [files]="getFiles('o-table-renderer')" (showSource)="onShowSource('o-table', table, ex)">
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER" [files]="getFiles('o-table-renderer')"
+  (showSource)="onShowSource('o-table', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table attr="accounts"
-      columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
-      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding
-      title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false"
-      quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no"
-      export-button="no" edition-mode="click" detail-mode="none">
+    <o-table fxFill #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
+      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS" [static-data]="data"
+      sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
+      pagination-controls="no" export-button="no" edition-mode="click" detail-mode="none">
 
       <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS">
       </o-table-columns-filter>
@@ -16,16 +14,15 @@
         </o-table-cell-renderer-image>
       </o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
-      <o-table-column attr="BALANCE" title="BALANCE" type="real" thousand-separator="." decimal-separator=","
-        currency-symbol="€" currency-symbol-position="right" filter-source="both"></o-table-column>
+      <o-table-column attr="BALANCE" title="BALANCE" type="real" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right" filter-source="both"></o-table-column>
       <o-table-column attr="INTERESRATE" title="INTERESRATE">
         <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2" value-base="100">
         </o-table-cell-renderer-percentage>
       </o-table-column>
 
       <o-table-column attr="COMMISSION" title="COMMISSION">
-        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off"
-          render-type="icon" boolean-type="string">
+        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
         </o-table-cell-renderer-boolean>
       </o-table-column>
       <o-table-column attr="CARDS">
