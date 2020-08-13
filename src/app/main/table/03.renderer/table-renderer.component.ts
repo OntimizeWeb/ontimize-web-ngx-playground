@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -8,12 +7,10 @@ import { TableUtils } from '../table-utils';
 })
 export class TableRendererComponent {
 
+  public data = TableUtils.getAccounts();
+
   public getFiles(key: string): any {
     return TableUtils.getFiles(key);
-  }
-
-  public getTableData(): any[] {
-    return TableUtils.getAccounts();
   }
 
   public onShowSource(key: string, table?: any, exampleComp?: any): void {

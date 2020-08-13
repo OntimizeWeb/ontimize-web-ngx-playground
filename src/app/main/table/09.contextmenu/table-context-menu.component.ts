@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OTranslateService, Util } from 'ontimize-web-ngx';
+import { Util } from 'ontimize-web-ngx';
 
 import { TableUtils } from '../table-utils';
 
@@ -8,13 +8,10 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-context-menu.component.html'
 })
 export class TableContextMenuComponent {
+  public data = TableUtils.getAccounts();
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getAccounts();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
