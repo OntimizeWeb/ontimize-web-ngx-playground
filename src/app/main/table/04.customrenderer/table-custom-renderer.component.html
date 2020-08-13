@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER_ADVANCE" [files]="getFiles('o-table-renderer-advance')">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
-      visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+      visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" layout-padding title="ACCOUNTS" [static-data]="data"
       sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
       refresh-button="no" pagination-controls="no" export-button="no">
       <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>

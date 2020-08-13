@@ -47,13 +47,12 @@ export class TableBasicComponent {
   @ViewChild('paginationToggle', { static: false })
   paginationToggle: any;
 
+  public data = TableUtils.getCustomers();
+
   getFiles(key: string) {
     return TableUtils.getFiles(key);
   }
 
-  getTableData(): Array<any> {
-    return TableUtils.getCustomers();
-  }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     const itemData: any = {

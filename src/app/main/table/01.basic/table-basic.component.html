@@ -4,7 +4,7 @@
     <div fxFlex="60" fxLayoutAlign="center center">
       <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
-        [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="getTableData()" [insert-button]="buttonAddToggle.checked"
+        [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
         [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
         [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
         [select-all-checkbox]="selectMultipleToggle.checked" [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked"
@@ -23,8 +23,7 @@
       </o-table>
     </div>
 
-    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
-      layout-align="center">
+    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding layout-align="center">
       <mat-form-field>
         <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
       </mat-form-field>
@@ -84,8 +83,7 @@
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
-          <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}"
-            fxFlex>
+          <mat-slide-toggle #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" fxFlex>
             {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
           </mat-slide-toggle>
           <mat-slide-toggle #showTextToggle checked="true" fxFlex>
@@ -94,8 +92,7 @@
         </div>
       </o-column>
       <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
-        <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked"
-          fxFlex>
+        <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
           {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
         </mat-slide-toggle>
       </o-column>
