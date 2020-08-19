@@ -16,8 +16,6 @@ const FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW = [
   { 'STARTDATE': 1061071200000, 'NAME': 'ButterCup, Buendía Lorente', 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 1, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' }
 ];
 
-
-
 const FAKE_ACCOUNTS_TABLE_FIXED =
   [{ 'STARTDATE': 631148400000, 'OFFICEID': '0002', 'ENTITYID': '2095', 'ENDDATE': 1010271600000, 'ACCOUNTTYP': 'Savings account', 'ANID': '0000000010', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 1, 'BALANCE': 17835.0, 'CDID': '34' },
   { 'STARTDATE': 966722400000, 'OFFICEID': '0000', 'ENTITYID': '2095', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'ANID': '0000000002', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 2, 'BALANCE': 1958.2299999999998, 'CDID': '00' },
@@ -67,9 +65,8 @@ const FAKE_BRANCHES =
 const HTML_DATA = `
   <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
-    filter-case-sensitive="{filterCaseSensitive}" [static-data]="getTableData()" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
-    columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no">
+    filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
+    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no" edition-mode="click" detail-mode="none">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -87,7 +84,7 @@ const HTML_DATA = `
 `;
 
 const HTML_DATA_TABLE_FIXED = `
-  <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+  <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="data" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
     quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
     [ngStyle]="{ngStyle}">
@@ -104,7 +101,7 @@ const HTML_DATA_TABLE_FIXED = `
 const HTML_DATA_RENDERER = `
   <o-table #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
     visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS"
-    [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
+    [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
     refresh-button="no" pagination-controls="no" export-button="no">
 
     <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION"></o-table-columns-filter>
@@ -129,7 +126,7 @@ const HTML_DATA_RENDERER = `
 
 const HTML_DATA_RENDERER_CUSTOM = `
   <o-table #table attr="table" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
-    attr="accounts" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
+    attr="accounts" title="ACCOUNTS" [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
     insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
 
     <!-- Filter columns -->
@@ -168,7 +165,7 @@ const HTML_DATA_EDITORS = `
       (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
     </o-table-column>
 
-    <o-table-column attr="TIME" title="TIME" type="time" editable="yes" (editionStarted)="editionStarted($event)" 
+    <o-table-column attr="TIME" title="TIME" type="time" editable="yes" (editionStarted)="editionStarted($event)"
     (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)" required="yes">
     </o-table-column>
 
@@ -207,7 +204,7 @@ const HTML_DATA_EDITORS = `
 
 const HTML_DATA_AGGREGATE = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
-    title="PRODUCTS" [static-data]="getTableData()" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
+    title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
     pagination-controls="no" export-button="no">
 
     <!-- Filter columns -->
@@ -229,7 +226,7 @@ const HTML_DATA_AGGREGATE = `
 
 const HTML_DATA_CALCULATED_COLUMN = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE" visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
-    title="PRODUCTS" [static-data]="getTableData()" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
+    title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
     pagination-controls="no" export-button="no">
 
     <!-- Filter columns -->
@@ -258,7 +255,7 @@ const HTML_DATA_CALCULATED_COLUMN = `
 
 const HTML_DATA_PAGINATOR = `
   <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-    sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="getTableData()">
+    sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="data">
 
     <!-- Custom definition columns -->
     <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
@@ -271,7 +268,7 @@ const HTML_DATA_PAGINATOR = `
 
 const HTML_DATA_CONTEXT_MENU = `
   <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
-    title="CUSTOMERS" [static-data]="getTableData()" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
+    title="CUSTOMERS" [static-data]="data" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
     pagination-controls="no" export-button="no">
 
     <!-- Custom definition columns -->
@@ -295,7 +292,7 @@ const HTML_DATA_CONTEXT_MENU = `
 `;
 
 const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
-  <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="getTableData()" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
+  <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
     delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding>
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
@@ -309,11 +306,11 @@ const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
 
 const HTML_DATA_INSERTABLE_ROW = `
 <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="data"
   sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
   pagination-controls="no" detail-mode="none" export-button="no">
 
-  
+
   <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered" > </o-table-column>
@@ -329,7 +326,7 @@ const HTML_DATA_INSERTABLE_ROW = `
 
 const HTML_DATA_ALIGN = `
 <o-table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="getTableData()" query-on-init="no"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="data" query-on-init="no"
   insert-button="no" delete-button="no" refresh-button="no" selection-mode="none" pagination-controls="no"
   detail-mode="none" export-button="no" auto-align-titles="yes" fxFill layout-padding>
   <o-table-column attr="NAME" title="NAME" title-align="center"></o-table-column>
@@ -343,51 +340,111 @@ const HTML_DATA_ALIGN = `
 `;
 
 const HTML_DATA_MULTIPLE_SORT = `
-<o-table
+<o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+  visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData"
+  sort-columns="NUMCARDS:DESC;NAME:ASC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false">
+
+  <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+    currency-symbol-position="right">
+  </o-table-column>
+  <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+  </o-table-column>
 </o-table>
 `;
 
 const HTML_DATA_MULTIPLE_SORT_FALSE = `
-<o-table
-</o-table>
+ <o-table fxFill #table attr="table2" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
+    visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData" sort-columns="NAME:DESC"
+    query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no" detail-mode="none"
+    export-button="no" auto-align-titles="true" multiple-sort="no">
+
+    <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
+    <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
+    <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+      currency-symbol-position="right">
+    </o-table-column>
+    <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
+    </o-table-column>
+  </o-table>
 `;
 
 const TYPESCRIPT_DATA = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_CUSTOMERS)};
-  }
+import { Component } from '@angular/core';
+import { TableUtils } from '../table-utils';
+
+ @Component({
+  selector: 'table-basic',
+  templateUrl: 'table-basic.component.html'
+})
+export class TableBasicComponent {
+
+  public data =  ${JSON.stringify(FAKE_CUSTOMERS)};
 
   onAction1() {
     alert('onAction1');
   }
+}
 `;
 
 const TYPESCRIPT_DATA_TABLE_FIXED = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_ACCOUNTS_TABLE_FIXED)};
-  }
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-fixed',
+  templateUrl: 'table-fixed.component.html'
+})
+export class TableFixedComponent {
+
+  public data = ${JSON.stringify(FAKE_ACCOUNTS_TABLE_FIXED)};
+}
 `;
 
 const TYPESCRIPT_DATA_RENDERERS = `
-  public getTableData(): any[] {
-    return ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
-  }
+ import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-renderer',
+  templateUrl: 'table-renderer.component.html'
+})
+export class TableRendererComponent {
+
+  public data =  ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
 
   public translateArgsFn(rowData: any): any[] {
     return [rowData.NUMCARDS];
   }
+
 `;
 
 const TYPESCRIPT_DATA_TABLE_INSERTABLE = `
-  public getTableData(): any[] {
-    return ${JSON.stringify(FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW)};
-  }
+import { Component } from '@angular/core';
 
-  
+@Component({
+  selector: 'table-insertable-row',
+  templateUrl: 'table-insertable-row.component.html'
+})
+export class TableInsertableRowComponent {
+   public data = ${JSON.stringify(FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW)};
+}
+
+
 `;
 const TYPESCRIPT_DATA_RENDERERS_ADVANCE = `
-  getTableData() {
-    return ${JSON.stringify(FAKE_CARDS)};
+  import { Component ,NgModule} from '@angular/core';
+  import { OntimizeWebModule } from 'ontimize-web-ngx';
+  import { SharedModule } from '../../shared/shared.module';
+
+  @Component({
+    selector: 'table-custom-renderer',
+    templateUrl: 'table-custom-renderer.component.html'
+  })
+  export class TableCustomRendererComponent {
+    public data =  ${JSON.stringify(FAKE_CARDS)};
   }
 
   // Important! Add renderers to module declarations
@@ -404,11 +461,26 @@ const TYPESCRIPT_DATA_RENDERERS_ADVANCE = `
       OTableColumnRendererTotalReadyComponent
     ]
   })
+  export class TableModule { }
 `;
 
 const TYPESCRIPT_DATA_EDITORS = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(HTML_DATA_EDITORS)};
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-editor',
+  templateUrl: 'table-editor.component.html'
+})
+export class TableEditorComponent {
+
+   getTableData(): Array<any> {
+    let accounts =  ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
+    accounts.forEach(obj => {
+      if (obj['STARTDATE'] && typeof obj['STARTDATE'] === 'number') {
+        obj['STARTDATE'] = new Date(obj['STARTDATE']).toISOString();
+      }
+    });
+    return accounts;
   }
 
   editionStarted(arg: any) {
@@ -425,34 +497,62 @@ const TYPESCRIPT_DATA_EDITORS = `
     console.log('editionCommitted');
     console.log(arg);
   }
+}
 `;
 
 const TYPESCRIPT_DATA_AGGREGATE = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_PRODUCTS)};
-  }
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-total',
+  templateUrl: 'table-total.component.html'
+})
+export class TableTotalComponent {
+  public data = ${JSON.stringify(FAKE_PRODUCTS)};
+}
+
 `;
 
 const TYPESCRIPT_DATA_CALCULATED_COLUMN = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_PRODUCTS)};
-  }
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-calculated-column',
+  templateUrl: 'table-calculated-column.component.html'
+})
+export class TableCalculatedColumnComponent {
+  public data = ${JSON.stringify(FAKE_PRODUCTS)};
 
   profitability(row): boolean {
     return (row['TOTALSTOCK'] > 0 ? true : false);
   }
+}
 `;
 
 const TYPESCRIPT_DATA_PAGINATOR = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_BRANCHES)};
-  }
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-pagination',
+  templateUrl: 'table-pagination.component.html'
+})
+export class TablePaginationComponent {
+  public data = ${JSON.stringify(FAKE_BRANCHES)};
+
+}
+
 `;
 
 const TYPESCRIPT_DATA_CONTEXT_MENU = `
-  getTableData(): Array<any> {
-    return ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
-  }
+import { Component } from '@angular/core';
+import { Util } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'table-context-menu',
+  templateUrl: 'table-context-menu.component.html'
+})
+export class TableContextMenuComponent {
+  public data =  ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
 
   getVisible(data: any): boolean {
     return Util.parseBoolean(data.COMMISSION);
@@ -461,7 +561,28 @@ const TYPESCRIPT_DATA_CONTEXT_MENU = `
   onExecute(text: string, event: any): void {
     alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
   }
+
+}
+
 `;
+
+const TYPESCRIPT_DATA_MULTIPLE_SORT = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-multiple-sort',
+  templateUrl: 'table-multiple-sort.component.html'
+})
+export class TableMultipleSortComponent {
+
+  tableData: Array<any> =[
+    { 'NUMCARDS': 2, 'NAME': 'Bugle Smith', 'STARTDATE': 1215554400000, 'ACCOUNT': '0000 2095 00 0000000003', 'ENDDATE': 1224626400000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 3, 'BALANCE': 15000.0, 'CDID': '00', 'COMMISSION': 'true', 'CLOSED': 1 },
+    { 'NUMCARDS': 3, 'NAME': 'Murray Bugle', 'STARTDATE': 1049493600000, 'ACCOUNT': '0001 2095 00 0000000001', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 5, 'BALANCE': 20000.0, 'COMMISSION': 'true', 'CLOSED': 0 },
+    { 'NUMCARDS': 2, 'NAME': 'Baños Marquez, Murray', 'STARTDATE': 995320800000, 'ACCOUNT': '0001 2095 00 0000000004', 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 6, 'BALANCE': 660.13, 'COMMISSION': 'true', 'CLOSED': 1 },
+    { 'NUMCARDS': 1, 'NAME': 'ButterCup, Buendía Lorente', 'STARTDATE': 1061071200000, 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'CLOSED': 0 }
+  ];
+}`;
+
 
 export class TableUtils {
 
@@ -512,6 +633,7 @@ export class TableUtils {
         .replace('{quickFilter}', data.filter)
         .replace('{filterCaseSensitive}', data.filterCaseSensitive)
         .replace('{exportButtonToggle}', data.exportButtonToggle)
+        .replace('{configurationButtonToggle}', data.configurationButtonToggle)
         .replace('{columnsVisibilityToggle}', data.columnsVisibilityToggle)
         .replace('{selectMultipleToggle}', data.selectMultipleToggle)
         .replace('{buttonAddToggle}', data.buttonAddToggle)
@@ -577,6 +699,12 @@ export class TableUtils {
         break;
       case 'o-table-context-menu':
         code = TYPESCRIPT_DATA_CONTEXT_MENU;
+        break;
+      case 'o-table-multiple-sort':
+        code = TYPESCRIPT_DATA_MULTIPLE_SORT;
+        break;
+      case 'o-table-multiple-sort-false':
+        code = TYPESCRIPT_DATA_MULTIPLE_SORT;
         break;
 
     }

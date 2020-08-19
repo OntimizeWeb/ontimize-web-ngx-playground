@@ -2,7 +2,7 @@
   (showSource)="onShowSource('o-table-paginator', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-      sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="getTableData()"
+      sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="data"
       layout-padding fxFill>
       <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>

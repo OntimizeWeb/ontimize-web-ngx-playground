@@ -7,10 +7,7 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-custom-renderer.component.html'
 })
 export class TableCustomRendererComponent {
-
-  getTableData(): Array<any> {
-    return TableUtils.getCards();
-  }
+  public data = TableUtils.getCards();
 
   getFiles(key: string) {
     let result: any = TableUtils.getFiles(key);
