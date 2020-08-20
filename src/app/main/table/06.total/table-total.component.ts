@@ -7,13 +7,10 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-total.component.html'
 })
 export class TableTotalComponent {
+  public data = TableUtils.getProducts();
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
-  }
-
-  getTableData(): Array<any> {
-    return TableUtils.getProducts();
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

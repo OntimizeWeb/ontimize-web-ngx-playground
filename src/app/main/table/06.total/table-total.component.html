@@ -2,7 +2,7 @@
   (showSource)="onShowSource('o-table-aggregate', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
-      layout-padding title="PRODUCTS" [static-data]="getTableData()" query-on-init="false" quick-filter="yes" insert-button="no"
+      layout-padding title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no"
       refresh-button="no" pagination-controls="no" export-button="no">
 
       <o-table-columns-filter columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"></o-table-columns-filter>

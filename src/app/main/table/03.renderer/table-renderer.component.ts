@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { TableUtils } from '../table-utils';
-import { OFileInputComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'table-renderer',
@@ -9,13 +7,12 @@ import { OFileInputComponent } from 'ontimize-web-ngx';
 })
 export class TableRendererComponent {
 
+  public data = TableUtils.getAccounts();
+
   public getFiles(key: string): any {
     return TableUtils.getFiles(key);
   }
 
-  public getTableData(): any[] {
-    return TableUtils.getAccounts();
-  }
 
   public onShowSource(key: string, table?: any, exampleComp?: any): void {
     exampleComp.html = TableUtils.getHtml(key, table, {});

@@ -3,15 +3,14 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
       visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData"
-      sort-columns="NUMCARDS:DESC;NAME:ASC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes"
-      refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true"
-      store-state="false">
+      sort-columns="NUMCARDS:DESC;NAME:ASC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+      pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false">
 
       <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
       <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
-      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator=","
-        currency-symbol="€" currency-symbol-position="right">
+      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right">
       </o-table-column>
       <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
       </o-table-column>
@@ -24,16 +23,15 @@
   [files]="getFiles('o-table-multiple-sort-false')">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="table2" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-      visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData"
-      sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes"
-      refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true"
-      multiple-sort="no">
+      visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData" sort-columns="NAME:DESC"
+      query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no" detail-mode="none"
+      export-button="no" auto-align-titles="true" multiple-sort="no">
 
       <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
       <o-table-column attr="NUMCARDS" title="NUMCARDS" title-align="end"> </o-table-column>
-      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator=","
-        currency-symbol="€" currency-symbol-position="right">
+      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right">
       </o-table-column>
       <o-table-column attr="CLOSED" title="CLOSED" type="boolean" true-value="1" false-value="0" boolean-type="number">
       </o-table-column>
