@@ -10,7 +10,6 @@ import { NavigationBarService } from '../shared/navigation-bar.service';
   encapsulation: ViewEncapsulation.None
 })
 export class MainComponent implements OnInit {
-  public version: string = environment.version;
   protected sectionTitle = '';
 
   constructor(protected navigationService: NavigationBarService) {
