@@ -1,416 +1,467 @@
 {
   "code": 0,
   "message": "",
+  "totalQueryRecordsNumber": 69,
+  "startRecordIndex": 0,
   "data": [
     {
-      "SURNAME": "Lawrence",
-      "CUSTOMERID": 7511,
-      "NAME": "Daisy"
+      "SURNAME": "surPrueba1",
+      "EMAIL": "falso@email.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "calle Falsa 123",
+      "CUSTOMERID": 19486,
+      "NAME": "prueba1",
+      "STARTDATE": 1598911200000
     },
     {
-      "SURNAME": "Alan",
-      "CUSTOMERID": 10602,
-      "NAME": "James"
+      "SURNAME": "García Rodríguez",
+      "EMAIL": "ramon.rodriguez@mail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Gran Vía n 1123 6º C",
+      "CUSTOMERID": 19487,
+      "NAME": "Ramón",
+      "STARTDATE": 1578524400000
     },
     {
-      "SURNAME": "Smith",
-      "CUSTOMERID": 10603,
-      "NAME": "Lucie"
-    },
-    {
-      "SURNAME": "Bugle",
-      "CUSTOMERID": 10604,
-      "NAME": "Mark"
-    },
-    {
-      "SURNAME": "Murray",
-      "CUSTOMERID": 10605,
-      "NAME": "Clarette"
-    },
-    {
-      "SURNAME": "Baños Márqueza",
-      "CUSTOMERID": 10606,
-      "NAME": "Tomás Miguel"
-    },
-    {
-      "SURNAME": "Buendía Lorente",
-      "CUSTOMERID": 10607,
-      "NAME": "Lidya Esther"
-    },
-    {
-      "SURNAME": "Buttercup",
-      "CUSTOMERID": 10808,
-      "NAME": "Billy"
-    },
-    {
-      "SURNAME": "C.Johnson",
-      "CUSTOMERID": 10810,
-      "NAME": "Marie"
-    },
-    {
-      "SURNAME": "Fernández Blanco",
-      "CUSTOMERID": 10811,
-      "NAME": "Pablo"
-    },
-    {
-      "SURNAME": "Windflower",
-      "CUSTOMERID": 10812,
-      "NAME": "Abie"
-    },
-    {
-      "SURNAME": "Poppy",
-      "CUSTOMERID": 10813,
-      "NAME": "Chistine"
-    },
-    {
-      "SURNAME": "Rose",
-      "CUSTOMERID": 10814,
-      "NAME": "Bernice"
-    },
-    {
-      "SURNAME": "Corbirock",
-      "CUSTOMERID": 10815,
-      "NAME": "Bridget"
-    },
-    {
-      "SURNAME": "Green",
-      "CUSTOMERID": 10834,
-      "NAME": "John"
-    },
-    {
-      "SURNAME": "Schwarzkopf",
-      "CUSTOMERID": 19270,
-      "NAME": "Adolph"
-    },
-    {
-      "SURNAME": "Engels",
-      "CUSTOMERID": 19271,
-      "NAME": "Aubrey"
-    },
-    {
-      "SURNAME": "Schmidt",
-      "CUSTOMERID": 19272,
-      "NAME": "Egbert"
-    },
-    {
-      "SURNAME": "Müller",
-      "CUSTOMERID": 19273,
-      "NAME": "Frieda"
-    },
-    {
-      "SURNAME": "Meyer",
-      "CUSTOMERID": 19274,
-      "NAME": "Gretchen"
-    },
-    {
-      "SURNAME": "Fischer",
-      "CUSTOMERID": 19320,
-      "NAME": "Heidi"
-    },
-    {
-      "SURNAME": "Schneider",
-      "CUSTOMERID": 19321,
-      "NAME": "Helmuth"
-    },
-    {
-      "SURNAME": "Metzger",
-      "CUSTOMERID": 19322,
-      "NAME": "Lancelot"
-    },
-    {
-      "SURNAME": "Töpfer",
-      "CUSTOMERID": 19323,
-      "NAME": "Luther"
-    },
-    {
-      "SURNAME": "Weffer",
-      "CUSTOMERID": 19324,
-      "NAME": "Erick"
-    },
-    {
-      "SURNAME": "Matius",
-      "CUSTOMERID": 19325,
-      "NAME": "Adelbert"
-    },
-    {
-      "SURNAME": "Smit",
-      "CUSTOMERID": 19326,
-      "NAME": "Hiltrud"
-    },
-    {
-      "SURNAME": "Jansen",
-      "CUSTOMERID": 19327,
-      "NAME": "Kees"
-    },
-    {
-      "SURNAME": "van Bruggen",
-      "CUSTOMERID": 19328,
-      "NAME": "Piet"
-    },
-    {
-      "SURNAME": " de Groot",
+      "SURNAME": "de Groot",
+      "EMAIL": "Sjon.deGroot@Ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "44 Passage Saint-Sébastien",
       "CUSTOMERID": 19329,
-      "NAME": "Sjon"
-    },
-    {
-      "SURNAME": "Van Rijn",
-      "CUSTOMERID": 19330,
-      "NAME": "Maikol"
-    },
-    {
-      "SURNAME": "van Wijk",
-      "CUSTOMERID": 19331,
-      "NAME": "Sjaak"
-    },
-    {
-      "SURNAME": "van Serooskerken",
-      "CUSTOMERID": 19332,
-      "NAME": "Petrik"
-    },
-    {
-      "SURNAME": "Van Dyck",
-      "CUSTOMERID": 19333,
-      "NAME": "Steve"
-    },
-    {
-      "SURNAME": "Timmerman",
-      "CUSTOMERID": 19334,
-      "NAME": "Olinda"
-    },
-    {
-      "SURNAME": "Van Dijk",
-      "CUSTOMERID": 19335,
-      "NAME": "Nixie"
-    },
-    {
-      "SURNAME": "De Jong",
-      "CUSTOMERID": 19336,
-      "NAME": "Marlene"
-    },
-    {
-      "SURNAME": "Bakker",
-      "CUSTOMERID": 19337,
-      "NAME": "Louise"
-    },
-    {
-      "SURNAME": "Visser",
-      "CUSTOMERID": 19338,
-      "NAME": "Schmetterling"
-    },
-    {
-      "SURNAME": "de Gaulle",
-      "CUSTOMERID": 19339,
-      "NAME": "Jacques"
-    },
-    {
-      "SURNAME": "d'Orléans",
-      "CUSTOMERID": 19340,
-      "NAME": "Jean"
-    },
-    {
-      "SURNAME": "d'Estaing",
-      "CUSTOMERID": 19341,
-      "NAME": "Marie"
-    },
-    {
-      "SURNAME": "Vieuville ",
-      "CUSTOMERID": 19342,
-      "NAME": "Julia"
-    },
-    {
-      "SURNAME": "Galouzeau",
-      "CUSTOMERID": 19343,
-      "NAME": "Jeanne"
-    },
-    {
-      "SURNAME": "al-Fulan",
-      "CUSTOMERID": 19344,
-      "NAME": "Abbud"
-    },
-    {
-      "SURNAME": "Khalid",
-      "CUSTOMERID": 19345,
-      "NAME": "Abdel Khâliq"
-    },
-    {
-      "SURNAME": "Sharifah",
-      "CUSTOMERID": 19346,
-      "NAME": "Baraka"
-    },
-    {
-      "SURNAME": "Khalid",
-      "CUSTOMERID": 19347,
-      "NAME": "Jawhar"
-    },
-    {
-      "SURNAME": "Papamakarios",
-      "CUSTOMERID": 19348,
-      "NAME": "Adelphos"
-    },
-    {
-      "SURNAME": "Thalassinos",
-      "CUSTOMERID": 19349,
-      "NAME": "Ambrosine"
-    },
-    {
-      "SURNAME": "Nikopolidis",
-      "CUSTOMERID": 19350,
-      "NAME": "Andromeda"
-    },
-    {
-      "SURNAME": "Kirgyakos",
-      "CUSTOMERID": 19351,
-      "NAME": "Adonis"
-    },
-    {
-      "SURNAME": "Christopoulos",
-      "CUSTOMERID": 19352,
-      "NAME": "Elektra"
-    },
-    {
-      "SURNAME": "Mao",
-      "CUSTOMERID": 19353,
-      "NAME": "Tsang"
-    },
-    {
-      "SURNAME": "Qian",
-      "CUSTOMERID": 19354,
-      "NAME": "Zedong"
-    },
-    {
-      "SURNAME": "Pérez Miguelez",
-      "CUSTOMERID": 19355,
-      "NAME": "Paco"
-    },
-    {
-      "SURNAME": "Vazquez Santos",
-      "CUSTOMERID": 19356,
-      "NAME": "Paula"
-    },
-    {
-      "SURNAME": "Míguez Martinez",
-      "CUSTOMERID": 19357,
-      "NAME": "Ana"
-    },
-    {
-      "SURNAME": "López Piñeiro",
-      "CUSTOMERID": 19358,
-      "NAME": "Jose"
-    },
-    {
-      "SURNAME": "Dominguez ",
-      "CUSTOMERID": 19359,
-      "NAME": "Juan"
-    },
-    {
-      "SURNAME": "Nuñez Fernandez",
-      "CUSTOMERID": 19360,
-      "NAME": "Maria"
-    },
-    {
-      "SURNAME": "Santos Rodríguez",
-      "CUSTOMERID": 19361,
-      "NAME": "Carlos Manuel"
-    },
-    {
-      "SURNAME": "Brown",
-      "CUSTOMERID": 19362,
-      "NAME": "Philippe"
-    },
-    {
-      "SURNAME": "Calaghan",
-      "CUSTOMERID": 19363,
-      "NAME": "Michael"
-    },
-    {
-      "SURNAME": "Ashworth",
-      "CUSTOMERID": 19364,
-      "NAME": "Sue"
-    },
-    {
-      "SURNAME": "Andersen",
-      "CUSTOMERID": 19365,
-      "NAME": "Wing"
+      "NAME": "Sjon",
+      "STARTDATE": 1545696000000
     },
     {
       "SURNAME": "Martínez Kirsten",
+      "EMAIL": "pablo.martinez@imatia.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Edificio Citexvi Fonte das Abelleiras, S/N Local 27",
       "CUSTOMERID": 19381,
-      "NAME": "Pablo"
+      "NAME": "Pablo",
+      "STARTDATE": 1433289600000
     },
     {
-      "SURNAME": "Londhe",
-      "CUSTOMERID": 19387,
-      "NAME": "vikas"
+      "SURNAME": "van Wijk",
+      "EMAIL": "Sjaak.vanWijk@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Wijngaardsstraatje 9III, 1012 ",
+      "CUSTOMERID": 19331,
+      "NAME": "Sjaak",
+      "STARTDATE": 1288137600000
     },
     {
-      "SURNAME": "Ignacio",
-      "CUSTOMERID": 19393,
-      "NAME": "Salinas"
+      "SURNAME": "Smit",
+      "EMAIL": "Hiltrud.Smit@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Oosterspoorplein 1",
+      "CUSTOMERID": 19326,
+      "NAME": "Hiltrud",
+      "STARTDATE": 1287532800000
     },
     {
-      "SURNAME": "Genaro",
-      "CUSTOMERID": 19395,
-      "NAME": "Iglesias"
+      "SURNAME": "Metzger",
+      "EMAIL": "Lancelot.Metzger@Ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Rijksweg 1-31",
+      "CUSTOMERID": 19322,
+      "NAME": "Lancelot",
+      "STARTDATE": 1286409600000
     },
     {
-      "SURNAME": "Rogelia",
-      "CUSTOMERID": 19397,
-      "NAME": "Fecha"
+      "SURNAME": "Visser",
+      "EMAIL": "Schmetterling.Visser@ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Lijnbaansgracht 9, 1015",
+      "CUSTOMERID": 19338,
+      "NAME": "Schmetterling",
+      "STARTDATE": 1285804800000
     },
     {
-      "SURNAME": "Eladio",
-      "CUSTOMERID": 19398,
-      "NAME": "Martínez"
+      "SURNAME": "Töpfer",
+      "EMAIL": "Luther.Töpfer@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Erasmusgracht, 1055",
+      "CUSTOMERID": 19323,
+      "NAME": "Luther",
+      "STARTDATE": 1285545600000
     },
     {
-      "SURNAME": "Agustín",
-      "CUSTOMERID": 19399,
-      "NAME": "Lorenzo"
+      "SURNAME": "Bakker",
+      "EMAIL": "Louise.Bakker@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Marsopstrasse 2",
+      "CUSTOMERID": 19337,
+      "NAME": "Louise",
+      "STARTDATE": 1285200000000
     },
     {
-      "SURNAME": "Jacinto",
-      "CUSTOMERID": 19400,
-      "NAME": "Villar"
+      "SURNAME": "Jansen",
+      "EMAIL": "Kees.Jansen@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Dempschergasse 13",
+      "CUSTOMERID": 19327,
+      "NAME": "Kees",
+      "STARTDATE": 1284508800000
     },
     {
-      "SURNAME": "Eudaldo",
-      "CUSTOMERID": 19401,
-      "NAME": "Hernandez"
+      "SURNAME": "Schneider",
+      "EMAIL": "Helmuth.Schneider@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Gubitzstrasse 24",
+      "CUSTOMERID": 19321,
+      "NAME": "Helmuth",
+      "STARTDATE": 1283817600000
     },
     {
-      "SURNAME": "Cristina",
-      "CUSTOMERID": 19403,
-      "NAME": "Cifuentes"
+      "SURNAME": "Müller",
+      "EMAIL": "Frieda.Müller@ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Grottkauer Strasse 62",
+      "CUSTOMERID": 19273,
+      "NAME": "Frieda",
+      "STARTDATE": 1283817600000
     },
     {
-      "SURNAME": "Jesucristo",
-      "CUSTOMERID": 19404,
-      "NAME": "Pérez"
+      "SURNAME": "Van Rijn",
+      "EMAIL": "Maikol.VanRijn@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Plantage Westermanlaan, 1018",
+      "CUSTOMERID": 19330,
+      "NAME": "Maikol",
+      "STARTDATE": 1283126400000
     },
     {
-      "SURNAME": "Plácido",
-      "CUSTOMERID": 19405,
-      "NAME": "Domingo"
+      "SURNAME": "Fischer",
+      "EMAIL": "Heidi.Fischer@Imatia.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Glacischaussee 20",
+      "CUSTOMERID": 19320,
+      "NAME": "Heidi",
+      "STARTDATE": 1282435200000
     },
     {
-      "SURNAME": "Gonzalo",
-      "CUSTOMERID": 19406,
-      "NAME": "López"
+      "SURNAME": "De Jong",
+      "EMAIL": "Marlene.DeJong@Imatia.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "12 Rue Marbeau",
+      "CUSTOMERID": 19336,
+      "NAME": "Marlene",
+      "STARTDATE": 1281139200000
     },
     {
-      "SURNAME": "Carlos",
-      "CUSTOMERID": 19407,
-      "NAME": "Puente"
+      "SURNAME": "Schmidt",
+      "EMAIL": "EgbertSchmidt@ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Sagritzer Weg 10",
+      "CUSTOMERID": 19272,
+      "NAME": "Egbert",
+      "STARTDATE": 1281139200000
     },
     {
-      "SURNAME": "Martínez",
-      "CUSTOMERID": 19421,
-      "NAME": "Gonzalo"
+      "SURNAME": "d'Orléans",
+      "EMAIL": "Jean.dOrléans@Ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Chemin Lateral, 93110",
+      "CUSTOMERID": 19340,
+      "NAME": "Jean",
+      "STARTDATE": 1280534400000
+    },
+    {
+      "SURNAME": "van Bruggen",
+      "EMAIL": "Piet.VanBruggen@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "s113 18, 1092",
+      "CUSTOMERID": 19328,
+      "NAME": "Piet",
+      "STARTDATE": 1280448000000
+    },
+    {
+      "SURNAME": "Timmerman",
+      "EMAIL": "Olinda.Timmerman@Ontimize.com ",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Pythagorasstraat 36, 1098",
+      "CUSTOMERID": 19334,
+      "NAME": "Olinda",
+      "STARTDATE": 1280448000000
+    },
+    {
+      "SURNAME": "Weffer",
+      "EMAIL": "Erick.Weffer@Ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Warmoesstraat 25, 1012",
+      "CUSTOMERID": 19324,
+      "NAME": "Erick",
+      "STARTDATE": 1280361600000
+    },
+    {
+      "SURNAME": "Van Dyck",
+      "EMAIL": "SteveVanDyck@Ontimize.com ",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Kleine Wittenburgerstraat 211, 1018",
+      "CUSTOMERID": 19333,
+      "NAME": "Steve",
+      "STARTDATE": 1280361600000
+    },
+    {
+      "SURNAME": "Meyer",
+      "EMAIL": "Gretchen.Meyer@imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Koningshoef",
+      "CUSTOMERID": 19274,
+      "NAME": "Gretchen",
+      "STARTDATE": 1280016000000
+    },
+    {
+      "SURNAME": "Matius",
+      "EMAIL": "Adelbert.Matius@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Molukkenstraat 1",
+      "CUSTOMERID": 19325,
+      "NAME": "Adelbert",
+      "STARTDATE": 1279497600000
+    },
+    {
+      "SURNAME": "Thalassinos",
+      "EMAIL": "Ambrosine.Thalassinos@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Tantalou 8",
+      "CUSTOMERID": 19349,
+      "NAME": "Ambrosine",
+      "STARTDATE": 1279238400000
+    },
+    {
+      "SURNAME": "Engels",
+      "EMAIL": "Aubrey.Engels@ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Tidorestraat 58-128",
+      "CUSTOMERID": 19271,
+      "NAME": "Aubrey",
+      "STARTDATE": 1279152000000
+    },
+    {
+      "SURNAME": "d'Estaing",
+      "EMAIL": "MariedEstaing@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "21 Allée des Papillons, 93110",
+      "CUSTOMERID": 19341,
+      "NAME": "Marie",
+      "STARTDATE": 1279152000000
+    },
+    {
+      "SURNAME": "Sharifah",
+      "EMAIL": "BarakaSharifah@gmail.com ",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "2 Verulam St, Camden Town, Greater London WC1X 8",
+      "CUSTOMERID": 19346,
+      "NAME": "Baraka",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Khalid",
+      "EMAIL": "AbdelKhâliq.Khalid@gmail.com ",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "113-121 Handsworth Ave, Walthamstow, Greater London E4 9",
+      "CUSTOMERID": 19345,
+      "NAME": "Abdel Khâliq",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Nikopolidis",
+      "EMAIL": "Andromeda.Nikopolidis@ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "D. Kalapothaki 2",
+      "CUSTOMERID": 19350,
+      "NAME": "Andromeda",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Kirgyakos",
+      "EMAIL": "Adonis.Kirgyakos@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Aristotelous 6",
+      "CUSTOMERID": 19351,
+      "NAME": "Adonis",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "de Gaulle",
+      "EMAIL": "Jacques.deGaulle@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "2 Allée de Villodrigo, 93110",
+      "CUSTOMERID": 19339,
+      "NAME": "Jacques",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Christopoulos",
+      "EMAIL": "Elektra.Christopoulos@Ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Paikou 4",
+      "CUSTOMERID": 19352,
+      "NAME": "Elektra",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Mao",
+      "EMAIL": "Mao.Tsang@Ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Calle de Gregoria Hernández, 2",
+      "CUSTOMERID": 19353,
+      "NAME": "Tsang",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Qian",
+      "EMAIL": "Qian-Zedong@Ontimize.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Gotha-Allee 17",
+      "CUSTOMERID": 19354,
+      "NAME": "Zedong",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Pérez Miguelez",
+      "EMAIL": "Paco.Perez@hotmail.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Carrer del Pintor Alsamora, 73-85",
+      "CUSTOMERID": 19355,
+      "NAME": "Paco",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Vazquez Santos",
+      "EMAIL": "Paula.Vazquez@hotmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Calle de Regueros, 2-12",
+      "CUSTOMERID": 19356,
+      "NAME": "Paula",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "van Serooskerken",
+      "EMAIL": "Petrik.VanSerooskerken@Ontimize.com ",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Kloveniersburgwal 37III, 1011",
+      "CUSTOMERID": 19332,
+      "NAME": "Petrik",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Míguez Martinez",
+      "EMAIL": "AnaMM@gmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Avinguda de la República Argentina, 220",
+      "CUSTOMERID": 19357,
+      "NAME": "Ana",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "López Piñeiro",
+      "EMAIL": "JLP@Imatia.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Calle de Salgado Somoza, 1-29",
+      "CUSTOMERID": 19358,
+      "NAME": "Jose",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Dominguez ",
+      "EMAIL": "Juan.Dom@Ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Calle de Iparraguirre, 42",
+      "CUSTOMERID": 19359,
+      "NAME": "Juan",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Nuñez Fernandez",
+      "EMAIL": "Mariola@Ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Calle de Federico López, 7-27, Pozuelo de Alarcón",
+      "CUSTOMERID": 19360,
+      "NAME": "Maria",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Santos Rodríguez",
+      "EMAIL": "CarlosManuelSantos@Ontimize.com",
+      "CUSTOMERTYPEID": 1,
+      "ADDRESS": "Passatge d'Alió, 19-45",
+      "CUSTOMERID": 19361,
+      "NAME": "Carlos Manuel",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Calaghan",
+      "EMAIL": "Michael.Calaghan@gmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "154-168 Boswall Pkwy, Edinburgh, City of Edinburgh EH5 2",
+      "CUSTOMERID": 19363,
+      "NAME": "Michael",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Andersen",
+      "EMAIL": "Wing.Andersen@gmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "56 Gurranebraher Ave",
+      "CUSTOMERID": 19365,
+      "NAME": "Wing",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Schwarzkopf",
+      "EMAIL": "Adolph.Schwarzkopf@hotmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Bergstrasse 79",
+      "CUSTOMERID": 19270,
+      "NAME": "Adolph",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Khalid",
+      "EMAIL": "Jawhar.Khalid@gmail.com ",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Simrockstrasse 38",
+      "CUSTOMERID": 19347,
+      "NAME": "Jawhar",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Papamakarios",
+      "EMAIL": "AdelphosPapamakarios@gmail.com ",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "Agias Sofias 32",
+      "CUSTOMERID": 19348,
+      "NAME": "Adelphos",
+      "STARTDATE": 1278460800000
+    },
+    {
+      "SURNAME": "Ashworth",
+      "EMAIL": "Sue.Ashworth@Ontimize.com",
+      "CUSTOMERTYPEID": 2,
+      "ADDRESS": "Nymphenburger Strasse 55",
+      "CUSTOMERID": 19364,
+      "NAME": "Sue",
+      "STARTDATE": 1278367200000
+    },
+    {
+      "SURNAME": "al-Fulan",
+      "EMAIL": "Abbud.al-Fulan@gmail.com",
+      "CUSTOMERTYPEID": 3,
+      "ADDRESS": "83-87 Addison Rd, Kensington, Greater London W14 8",
+      "CUSTOMERID": 19344,
+      "NAME": "Abbud",
+      "STARTDATE": 1278201600000
     }
   ],
   "sqlTypes": {
     "SURNAME": 12,
+    "EMAIL": 12,
+    "CUSTOMERTYPEID": 4,
+    "ADDRESS": 12,
     "NAME": 12,
-    "CUSTOMERID": 4
+    "CUSTOMERID": 4,
+    "STARTDATE": 93
   }
 }
