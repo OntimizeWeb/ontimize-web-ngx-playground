@@ -337,5 +337,22 @@
   "GALLERY.ONLYTHUMB": "Gallery with only thumbnails",
   "GALLERY.AUTOPLAYPREV": "Gallery with autoplay on",
   "INPUTS.DATE.CUSTOM_DATE_CLASS": "Date input with custom date classes",
-  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Apply one or more CSS classes to some dates in the calendar"
+  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Apply one or more CSS classes to some dates in the calendar",
+  "TABLE.BUTTON.ROW_EXPANDABLE":"Row expandable",
+  "TABLEEXPANDABLE.BUTTON.BASIC":"Basic",
+  "TABLEEXPANDABLE.BUTTON.WITHOUTBUTTON":"Without button action",
+  "TABLEEXPANDABLE.BUTTON.CONTAINEREXPANBLE":"Container expandable",
+  "TABLE.EXAMPLE_SIMPLE_TEMPLATE_ROW_EXPANDABLE": "Simple template",
+  "TABLE.EXAMPLE_SIMPLE_TEMPLATE_ROW_EXPANDABLE_DESC": "Example of expandable row with simple template",
+  "TABLE.EXAMPLE_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER": "Template with container expandable",
+  "TABLE.EXAMPLE_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER_DESC": "o-expandable-container defines a template with context.",
+  "TABLE.EXAMPLE_TEMPLATE_WITHOUT_EXPANDABLE_ACTION_BUTTON":"Row expandable without expandable action button",
+  "TABLE.EXAMPLE_TEMPLATE_WITHOUT_EXPANDABLE_ACTION_BUTTON_DESC": "You need to click on row and show the different information",
+  "CUSTOMERID":"ID",
+  "EMAIL": "Email",
+  "COUNTRY": "Country",
+  "STATE": "State",
+  "ZIPCODE": "Zip code",
+  "PHONE":"Phone",
+  "CONTACT_DATA":"Contact information"
 }
