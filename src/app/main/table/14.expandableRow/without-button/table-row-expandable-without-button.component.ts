@@ -8,7 +8,7 @@ import { OTableComponent, OnClickTableEvent } from 'ontimize-web-ngx';
 })
 export class TableRowExpandableWithoutButtonComponent {
 
-  @ViewChild('table', { static: true }) table: OTableComponent;
+  @ViewChild('table') table: OTableComponent;
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
