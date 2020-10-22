@@ -1,8 +1,7 @@
 import { Injector } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
-import { share } from 'rxjs/operators';
 
-import { FilterExpressionUtils, OntimizeService, LoginService, AppConfig, Util, ServiceResponse } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, OntimizeService, LoginService, AppConfig, Util } from 'ontimize-web-ngx';
 
 export class DummyService extends OntimizeService {
 
@@ -59,18 +58,24 @@ export class DummyService extends OntimizeService {
     entity = (Util.isDefined(entity)) ? entity : this.entity;
 
     const url = this._urlBase + DummyService.mappings[entity];
+
     const options = {
       headers: this.buildHeaders()
     };
-    return this.doRequest({
-      method: 'GET',
-      url: url,
-      options: options,
-      successCallback: (resp, subscriber) => {
-        this.customParseSuccessfulQueryResponse(kv, resp, subscriber);
-      },
-      errorCallBack: this.parseUnsuccessfulQueryResponse
+    const self = this;
+
+    let innerObserver: any;
+    const dataObservable = Observable.create(observer => {
+      innerObserver = observer
     });
+
+    this.httpClient.get(url, options).subscribe((resp: any) => {
+      this.customParseSuccessfulQueryResponse(kv, resp, innerObserver);
+    }, error => innerObserver.error(error),
+      () => innerObserver.complete());
+
+    return dataObservable;
+
   }
 
   public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
@@ -91,12 +96,12 @@ export class DummyService extends OntimizeService {
     return undefined;
   }
 
-  protected customParseSuccessfulQueryResponse(kv: any, resp: ServiceResponse, subscriber: Subscriber<ServiceResponse>) {
-    if (resp && resp.isUnauthorized()) {
-      this.clientErrorFallback(401);
-    } else if (resp && resp.isFailed()) {
+  protected customParseSuccessfulQueryResponse(kv: any, resp: any, subscriber: Subscriber<any>) {
+    if (resp && resp.code === 401) {
+        this.redirectLogin(true);
+    } else if (resp && resp.code === 1)  {
       subscriber.error(resp.message);
-    } else if (resp && resp.isSuccessful()) {
+    } else if (resp && resp.code === 0) {
       resp.data = this.filterResponse(kv, resp);
       subscriber.next(resp);
     } else {
