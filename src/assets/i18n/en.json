@@ -354,5 +354,6 @@
   "STATE": "State",
   "ZIPCODE": "Zip code",
   "PHONE":"Phone",
-  "CONTACT_DATA":"Contact information"
+  "CONTACT_DATA":"Contact information",
+  "TABLE.AUTOADJUST":"Auto adjust"
 }
