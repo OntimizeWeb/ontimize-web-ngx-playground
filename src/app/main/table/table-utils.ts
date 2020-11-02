@@ -67,7 +67,8 @@ const HTML_DATA = `
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no" edition-mode="click" detail-mode="none">
+    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}"
+    pagination-controls="no" edition-mode="click" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -726,7 +727,8 @@ export class TableUtils {
         .replace('{showTextToggle}', data.showTextToggle)
         .replace('{paginationToggle}', data.paginationToggle)
         .replace('{fixed-header}', data.fixedHeader)
-        .replace('{horizontal-scroll}', data.horizontalScroll)
+        .replace('{horizontalScroll}', data.horizontalScroll)
+        .replace('{autoAdjust}', data.autoAdjust)
         .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
     }
     return tpl;
