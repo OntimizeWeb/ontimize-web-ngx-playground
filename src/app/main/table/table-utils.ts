@@ -65,8 +65,9 @@ const FAKE_BRANCHES =
 const HTML_DATA = `
   <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
-    filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no" edition-mode="click" detail-mode="none">
+    filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}"
+    refresh-button="{buttonRefreshToggle}" select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}"
+    show-title="{titleToggle}" row-height="{rowHeight}" pagination-controls="no" edition-mode="click" detail-mode="none">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -727,7 +728,8 @@ export class TableUtils {
         .replace('{paginationToggle}', data.paginationToggle)
         .replace('{fixed-header}', data.fixedHeader)
         .replace('{horizontal-scroll}', data.horizontalScroll)
-        .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
+        .replace('{ngStyle}', '{\'height\':' + data.height + 'px}')
+        .replace('{rowHeight}', data.rowHeight);
     }
     return tpl;
   }
