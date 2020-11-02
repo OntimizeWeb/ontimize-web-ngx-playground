@@ -8,8 +8,8 @@
         [export-button]="exportButtonToggle.checked" [show-configuration-option]="configurationButtonToggle.checked"
         [columns-visibility-button]="columnsVisibilityToggle.checked" [delete-button]="buttonRemoveToggle.checked"
         [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-        [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked"
-        [row-height]="rowHeight" pagination-controls="no">
+        [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" [row-height]="rowHeight"
+        pagination-controls="no">
 
         <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
         <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
@@ -36,9 +36,7 @@
           {{ 'TABLE.CONTROLS' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <mat-radio-group #rowHeightRG
-       [(ngModel)]="rowHeight"
-       fxLayout="column" layout-padding  matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}">
+      <mat-radio-group [(ngModel)]="rowHeight" fxLayout="column" layout-padding matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}">
         <span>
           {{ 'ROW_HEIGHT' | oTranslate }}
         </span>
