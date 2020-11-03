@@ -64,6 +64,7 @@ module.exports = {
       { context: "src", from: "assets/css/**/*", to: "./", ignore: ["app.scss"] },
       { context: "src", from: "assets/i18n/**/*", to: "./" },
       { context: "src", from: "assets/images/**/*", to: "./" },
+      { context: "src", from: "assets/dummy-data/**/*", to: "./" },
       { from: "src/favicon.ico", to: "./" }
     ]),
 
