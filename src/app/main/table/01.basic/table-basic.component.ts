@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -50,6 +49,8 @@ export class TableBasicComponent {
   @ViewChild('paginationToggle')
   paginationToggle: any;
 
+  rowHeight ='medium'
+
   public data = TableUtils.getCustomers();
 
   getFiles(key: string) {
@@ -71,7 +72,8 @@ export class TableBasicComponent {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked
+      showTextToggle: this.showTextToggle.checked,
+      rowHeight: this.rowHeight
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }
