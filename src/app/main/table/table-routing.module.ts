@@ -15,6 +15,7 @@ import { TableHorizontalScrollComponent } from './10.horizontalscroll/table-hori
 import { TableInsertableRowComponent } from './11.insertablerow/table-insertable-row.component';
 import { TableAlignmentComponent } from './12.alignment/table-alignment.component';
 import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
+import { TableRowExpandableComponent } from './14.expandableRow/table-row-expandable.component';
 
 export const routes: Routes = [
   {
@@ -32,7 +33,9 @@ export const routes: Routes = [
       { path: 'horizontalscroll', component: TableHorizontalScrollComponent },
       { path: 'insertablerow', component: TableInsertableRowComponent },
       { path: 'align', component: TableAlignmentComponent },
-      { path: 'multipleSort', component: TableMultipleSortComponent }
+      { path: 'multipleSort', component: TableMultipleSortComponent },
+      { path: 'rowexpandable', component: TableRowExpandableComponent}
+
     ]
   }
 ];

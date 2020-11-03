@@ -65,8 +65,9 @@ const FAKE_BRANCHES =
 const HTML_DATA = `
   <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
-    filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
-    select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}" pagination-controls="no" edition-mode="click" detail-mode="none">
+    filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}" columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}"
+    refresh-button="{buttonRefreshToggle}" select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}"
+    show-title="{titleToggle}" row-height="{rowHeight}" pagination-controls="no" edition-mode="click" detail-mode="none">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -372,7 +373,72 @@ const HTML_DATA_MULTIPLE_SORT_FALSE = `
     </o-table-column>
   </o-table>
 `;
+const HTML_DATA_ROW_EXPANDABLE_SIMPLE_TEMPLATE = `
+  <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      query-rows="10" fixed-header="yes">
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{{'ADDRESS' | oTranslate}}</strong>: {{row.ADDRESS}}</span>
+              <span fxFlex="20%"><strong>{{'COUNTRY' | oTranslate}}</strong>: {{row.COUNTRY}}</span>
+              <span fxFlex="20%" ><strong>{{'STATE' | oTranslate}}</strong>: {{row.STATE}}</span>
+              <span fxFlex="20%"><strong>{{'ZIPCODE' | oTranslate}}</strong>: {{row.ZIPCODE}}</span>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span  fxFlex="20%"><strong>{{'EMAIL' | oTranslate}}</strong>: {{row.EMAIL}}</span>
+              <span  fxFlex="20%"><strong>{{'PHONE' | oTranslate}}</strong>: {{row.PHONE}}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
 
+    </o-table>
+`;
+const HTML_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
+  <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      store-state="false" query-rows="10" (onClick)="onClick($event)" fixed-header="yes">
+      <o-table-row-expandable expandible-column-visible="no">
+        <ng-template let-row>
+          <o-expandable-container [targets]="[accountsTable]" [data]="row">
+            <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+              columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+              title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" insert-button="no" delete-button="no" detail-mode="none">
+              <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+              <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+              <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+                thousand-separator="." decimal-separator=",">
+              </o-table-column>
+            </o-table>
+          </o-expandable-container>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>`;
+
+const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
+  <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+      store-state="false" query-rows="10" fixed-header="yes">
+      <o-table-row-expandable icon-collapse="expande_less" icon-expande="chevrow_right">
+        <ng-template let-row>
+          <o-expandable-container [targets]="[accountsTable]" [data]="row">
+            <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+              columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+              title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
+              detail-mode="none">
+              <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+              <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+              <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+                thousand-separator="." decimal-separator=",">
+              </o-table-column>
+            </o-table>
+          </o-expandable-container>
+        </ng-template>
+      </o-table-row-expandable>
+    </o-table>`;
 const TYPESCRIPT_DATA = `
 import { Component } from '@angular/core';
 import { TableUtils } from '../table-utils';
@@ -583,6 +649,25 @@ export class TableMultipleSortComponent {
   ];
 }`;
 
+const TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
+  import { Component, ViewChild } from '@angular/core';
+  import { OTableComponent, OnClickTableEvent } from 'ontimize-web-ngx';
+
+  @Component({
+    selector: 'table-row-expandable',
+    templateUrl: 'table-row-expandable.component.html'
+  })
+  export class TableRowExpandableComponent {
+
+    @ViewChild('table', { static: true }) table: OTableComponent;
+
+
+    onClick(event: OnClickTableEvent) {
+      this.table.toogleRowExpandable(event.row, event.rowIndex, event.mouseEvent);
+    }
+  }
+
+`;
 
 export class TableUtils {
 
@@ -643,7 +728,8 @@ export class TableUtils {
         .replace('{paginationToggle}', data.paginationToggle)
         .replace('{fixed-header}', data.fixedHeader)
         .replace('{horizontal-scroll}', data.horizontalScroll)
-        .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
+        .replace('{ngStyle}', '{\'height\':' + data.height + 'px}')
+        .replace('{rowHeight}', data.rowHeight);
     }
     return tpl;
   }
@@ -706,6 +792,10 @@ export class TableUtils {
       case 'o-table-multiple-sort-false':
         code = TYPESCRIPT_DATA_MULTIPLE_SORT;
         break;
+      case 'o-table-row-expandable-without-action-button':
+        code = TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON;
+        break;
+
 
     }
     return code;
@@ -746,6 +836,15 @@ export class TableUtils {
         break;
       case 'o-table-multiple-sort-false':
         code = HTML_DATA_MULTIPLE_SORT_FALSE;
+        break;
+      case 'o-table-row-expandable':
+        code = HTML_DATA_ROW_EXPANDABLE_SIMPLE_TEMPLATE;
+        break;
+      case 'o-table-row-expandable-without-action-button':
+        code = HTML_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON;
+        break;
+      case 'o-table-row-expandable-with-expandable-container':
+        code = HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER;
         break;
     }
     return code;

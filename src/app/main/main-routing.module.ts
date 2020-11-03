@@ -14,6 +14,7 @@ import { MainComponent } from './main.component';
 import { SnackBarModule } from './snackbar/snackbar.module';
 import { TableModule } from './table/table.module';
 import { TooltipModule } from './tooltip/tooltip.module';
+import { AboutModule } from './about/about.module';
 
 
 
@@ -30,6 +31,7 @@ export function loadImageModule() { return ImageModule; }
 export function loadGridModule() { return GridModule; }
 export function loadTooltipModule() { return TooltipModule; }
 export function loadGalleryModule() { return GalleryModule; }
+export function loadAboutModule() { return AboutModule; }
 
 
 export const routes: Routes = [
@@ -50,6 +52,7 @@ export const routes: Routes = [
       { path: 'image', loadChildren: loadImageModule },
       { path: 'tooltip', loadChildren: loadTooltipModule },
       { path: 'gallery', loadChildren: loadGalleryModule },
+      { path: 'about', loadChildren: loadAboutModule },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   }

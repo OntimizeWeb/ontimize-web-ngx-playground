@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 
 import {
   APP_CONFIG,
@@ -9,6 +9,7 @@ import {
 
 import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
+import { DummyService } from './shared/services/dummy.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MainModule } from './main/main.module';
@@ -16,6 +17,11 @@ import { MainModule } from './main/main.module';
 // Defining custom providers (if needed)...
 export const customProviders: any = [
 ];
+
+
+export function getDummyServiceProvider(injector: Injector) {
+  return new DummyService(injector);
+}
 
 @NgModule({
   imports: [
@@ -31,8 +37,12 @@ export const customProviders: any = [
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
-    ...ONTIMIZE_PROVIDERS,
-    ...customProviders
+    {
+      provide: 'DummyService',
+      useFactory: getDummyServiceProvider,
+      deps: [Injector]
+    },
+    ...ONTIMIZE_PROVIDERS
   ],
 })
 export class AppModule { }
