@@ -21,6 +21,13 @@ import { TableInsertableRowComponent } from './11.insertablerow/table-insertable
 import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
 import { TableAlignmentComponent } from './12.alignment/table-alignment.component';
 import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
+import { TableRowExpandableBasicComponent } from './14.expandableRow/basic/table-row-expandable-basic.component';
+import { TableRowExpandableWithoutButtonComponent } from './14.expandableRow/without-button/table-row-expandable-without-button.component';
+import { TableRowExpandableComponent } from './14.expandableRow/table-row-expandable.component';
+import {
+  TableRowExpandableWithContainerComponent
+} from './14.expandableRow/expandable-container/table-row-expandable-with-expandable-container.component';
+
 
 @NgModule({
   imports: [
@@ -46,7 +53,11 @@ import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sor
     TableMultipleSortComponent,
     OTableColumnRendererCardTypeComponent,
     OTableColumnRendererBalanceComponent,
-    OTableColumnRendererTotalReadyComponent
+    OTableColumnRendererTotalReadyComponent,
+    TableRowExpandableBasicComponent,
+    TableRowExpandableWithoutButtonComponent,
+    TableRowExpandableWithContainerComponent,
+    TableRowExpandableComponent
   ]
 })
 export class TableModule { }

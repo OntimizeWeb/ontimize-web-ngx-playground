@@ -1,14 +1,15 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')"
   (showSource)="onShowSource('o-table', table, ex)">
-  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding>
     <div fxFlex="60" fxLayoutAlign="center center">
-      <o-table #table fxFlex attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
+      <o-table #table attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
         [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
         [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
         [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
         [select-all-checkbox]="selectMultipleToggle.checked" [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked"
-        [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no" edition-mode="click" detail-mode="none">
+        [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no" edition-mode="click" detail-mode="none"
+        [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked">
 
         <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
         <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm" tooltip="yes"></o-table-button>
@@ -23,7 +24,7 @@
       </o-table>
     </div>
 
-    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding layout-align="center">
+    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding layout-align="start">
       <mat-form-field>
         <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
       </mat-form-field>
@@ -35,21 +36,28 @@
           {{ 'TABLE.CONTROLS' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
-        matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}">
-        <span>
-          {{ 'ROW_HEIGHT' | oTranslate }}
-        </span>
-        <mat-radio-button value="large" class="padding-3">
-          {{ 'LARGE' | oTranslate }}
-        </mat-radio-button>
-        <mat-radio-button value="medium" class="padding-3">
-          {{ 'MEDIUM' | oTranslate }}
-        </mat-radio-button>
-        <mat-radio-button value="small" class="padding-3">
-          {{ 'SMALL' | oTranslate }}
-        </mat-radio-button>
-      </mat-radio-group>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-slide-toggle #autoAdjustToggle checked="false" fxFlex>
+          {{ 'TABLE.AUTOADJUST' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #horizontalScrollToggle checked="false" fxFlex>
+          {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <o-row title=" {{ 'ROW_HEIGHT' | oTranslate }}">
+        <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
+          matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" fxLayoutAlign="space-around center" fxFlex="100">
+          <mat-radio-button value="large" class="padding-3">
+            {{ 'LARGE' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="medium" class="padding-3">
+            {{ 'MEDIUM' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="small" class="padding-3">
+            {{ 'SMALL' | oTranslate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </o-row>
       <o-row title="{{ 'TABLE.FILTER' | oTranslate }}">
         <mat-slide-toggle #quickFilterToggle checked="true" fxFlex>
           {{ 'TABLE.FILTER' | oTranslate }}
@@ -58,7 +66,7 @@
           {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
         </mat-slide-toggle>
       </o-row>
-      <o-column title="{{ 'TABLE.MENU' | oTranslate }}">
+      <o-column-collapsible title="{{ 'TABLE.MENU' | oTranslate }}" expanded="no">
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <mat-slide-toggle #selectMultipleToggle checked="false" fxFlex>
             {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
@@ -72,8 +80,8 @@
             {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
-      </o-column>
-      <o-column title="{{ 'BUTTONS' | oTranslate }}">
+      </o-column-collapsible>
+      <o-column-collapsible title="{{ 'BUTTONS' | oTranslate }}" expanded="no">
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <mat-slide-toggle #buttonAddToggle [checked]="false" fxFlex>
             {{ 'TABLE.BUTTON.ADD' | oTranslate }}
@@ -90,7 +98,7 @@
             {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
           </mat-slide-toggle>
         </div>
-      </o-column>
+      </o-column-collapsible>
       <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
         <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
           {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
