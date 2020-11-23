@@ -47,6 +47,12 @@ export class TableBasicComponent {
   @ViewChild('paginationToggle', { static: false })
   paginationToggle: any;
 
+  @ViewChild('autoAdjustToggle', { static: false })
+  autoAdjustToggle: any;
+
+  @ViewChild('horizontalScrollToggle', { static: false })
+  horizontalScrollToggle: any;
+
   public data = TableUtils.getCustomers();
 
   getFiles(key: string) {
@@ -67,7 +73,9 @@ export class TableBasicComponent {
       buttonAddToggle: this.buttonAddToggle.checked,
       buttonRemoveToggle: this.buttonRemoveToggle.checked,
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
-      showTextToggle: this.showTextToggle.checked
+      showTextToggle: this.showTextToggle.checked,
+      autoAdjust: this.autoAdjustToggle.checked,
+      horizontalScroll: this.horizontalScrollToggle.checked
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }

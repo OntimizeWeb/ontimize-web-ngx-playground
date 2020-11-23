@@ -22,6 +22,7 @@ export const routes: Routes = [
       { path: 'tooltip', loadChildren: () => import('./tooltip/tooltip.module').then(m => m.TooltipModule) },
       { path: 'image', loadChildren: () => import('./media/media.module').then(m => m.MediaModule) },
       { path: 'gallery', loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule) },
+      { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) }
     ]
   }
 ];

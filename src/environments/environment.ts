@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  version: require('../../package.json').version
+  versions: {
+    core: '8.1.0',
+    gallery: '8.0.0',
+    theming: '4.0.2'
+  }
 };
 
 /*
