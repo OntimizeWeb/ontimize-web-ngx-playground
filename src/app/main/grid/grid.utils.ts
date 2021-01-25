@@ -231,10 +231,10 @@ const FAKE_DATAHYBRID = [
 
 const HTML_DATA_GRID = `
   <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-    keys="id" [cols]="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
+    keys="id" cols="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
     orderable="{orderable}" quick-filter="{quickfilter}" grid-item-height="1:3" sortable-columns="name;email"
-    sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}"
-    pagination-controls="{paginationControls}" gutter-size="{gutterSize}px" [ngStyle]="{'height':'600px'}">
+    sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}" insert-button="{insertButton}"
+    pagination-controls="{paginationControls}" gutter-size="{gutterSize}px" fixed-header="yes"  [ngStyle]="{'height':'600px'}" >
     <o-grid-item *ngFor="let list of grid.dataArray">
       <o-column layout-padding class="container-item">
         <img [src]="list.thumbnailUrl" style="margin-top:8px">

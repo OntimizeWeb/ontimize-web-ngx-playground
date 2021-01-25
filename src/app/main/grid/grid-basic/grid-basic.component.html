@@ -1,13 +1,13 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-basic')"
+<example-comp #ex collapsible="no" collapsed="no" fxFlexFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-basic')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-column elevation="1" fxFlex="60" layout-align="center">
-      <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-        keys="id" [cols]="columns" [query-rows]="pagesize" [show-page-size]="showPageSizeToggle.checked"
-        page-size-options="4;8;16" [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked"
-        grid-item-height="1:2" sortable-columns="name;email" [sort-column]="sortColumn" [controls]="showControlsToggle.checked"
-        [refresh-button]="refreshButtonToggle.checked" [pagination-controls]="paginationControlsToggle.checked"
-        [gutter-size]="gutterSizeInput.value" [ngStyle]="{'height':'600px'}" [show-footer]="showFooterToggle.checked">
+      <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
+        [cols]="columns" [query-rows]="pagesize" [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16"
+        [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email"
+        [sort-column]="sortColumn" [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
+        [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value" [show-footer]="showFooterToggle.checked"
+        [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'600px'}">
         <o-grid-item *ngFor="let list of grid.dataArray">
           <o-column layout-padding class="container-item">
             <img [src]="list.thumbnailUrl" style="margin-top:8px">
@@ -31,19 +31,16 @@
         </o-grid-item>
       </o-grid>
     </o-column>
-    <o-column attr="conf" title="{{ 'GRID.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-align="center"
-      layout-padding>
+    <o-column attr="conf" title="{{ 'GRID.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-align="center" layout-padding>
       <mat-form-field>
         <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
         <mat-form-field fxFlex="50">
-          <input matInput #colsInput type="number" placeholder="{{ 'GRID.NUM_COLUMNS' | oTranslate }}" [(ngModel)]="columns"
-            min="1">
+          <input matInput #colsInput type="number" placeholder="{{ 'GRID.NUM_COLUMNS' | oTranslate }}" [(ngModel)]="columns" min="1">
         </mat-form-field>
         <mat-form-field fxFlex="50">
-          <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}"
-            [(ngModel)]="gutterSize" min="1">
+          <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}" [(ngModel)]="gutterSize" min="1">
         </mat-form-field>
       </div>
       <div fxLayout="column">
@@ -51,8 +48,16 @@
           <mat-slide-toggle #showControlsToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
+          <mat-slide-toggle #showFooterToggle [checked]="true" fxFlex>
+            {{ 'GRID.SHOW_FOOTER' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
           <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
             {{ 'REFRESH_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #insertButtonToggle [checked]="false" fxFlex>
+            {{ 'INSERT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
@@ -60,8 +65,7 @@
             {{ 'GRID.SHOW_PAGINATION' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field fxFlex>
-            <input matInput #pageSizeInput type="number" placeholder="{{ 'GRID.PAGE_SIZE' | oTranslate }}" [(ngModel)]="pagesize"
-              min="1">
+            <input matInput #pageSizeInput type="number" placeholder="{{ 'GRID.PAGE_SIZE' | oTranslate }}" [(ngModel)]="pagesize" min="1">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
@@ -84,12 +88,7 @@
             {{ 'GRID.PAGINATION_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
-          <mat-slide-toggle #showFooterToggle [checked]="true" fxFlex>
-            {{ 'GRID.SHOW_FOOTER' | oTranslate }}
-          </mat-slide-toggle>
-         
-        </div>
+
       </div>
     </o-column>
   </div>
