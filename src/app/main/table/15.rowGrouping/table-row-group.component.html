@@ -1,0 +1,11 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_DEFAULT_GROUP_ORDER" [files]="getFiles('o-table-basic-row-grouping')"
+  (showSource)="onShowSource('o-table-basic-row-grouping', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
+      columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
+      quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+      detail-mode="none" groupable="true">
+      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+    </o-table>
+  </div>
+</example-comp>

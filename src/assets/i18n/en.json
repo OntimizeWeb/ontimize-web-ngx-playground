@@ -355,5 +355,19 @@
   "ZIPCODE": "Zip code",
   "PHONE":"Phone",
   "CONTACT_DATA":"Contact information",
-  "TABLE.AUTOADJUST":"Auto adjust"
+  "TABLE.AUTOADJUST":"Auto adjust",
+  "TABLE.BUTTON.ROW_GROUPING": "Row grouping",
+  "TABLEROWGROUPING.BUTTON.BASIC":"Basic",
+  "TABLEROWGROUPING.BUTTON.DEFAULTGROUPINGORDER": "Default grouping order",
+  "TABLE.EXAMPLE_DEFAULT_GROUP_ORDER":"Example of grouping rows by multiple columns ",
+  "TABLE.EXAMPLE_ROW_GROUP_CELL_RENDERING":"Example of grouping rows with rendered cells",
+  "athlete":"Athlete",
+  "age": "Age",
+  "country":"Country",
+  "year":"Year",
+  "date":"Date",
+  "sport":"Sport",
+  "gold":"Gold",
+  "silver":"Silver",
+  "bronze":"Bronze"
 }
