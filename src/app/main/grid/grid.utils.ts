@@ -230,7 +230,7 @@ const FAKE_DATAHYBRID = [
 ];
 
 const HTML_DATA_GRID = `
-  <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
+  <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
     keys="id" cols="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
     orderable="{orderable}" quick-filter="{quickfilter}" grid-item-height="1:3" sortable-columns="name;email"
     sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}" insert-button="{insertButton}"
