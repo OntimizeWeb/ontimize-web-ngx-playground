@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatSlideToggle } from '@angular/material';
 import * as moment from 'moment';
 
 const DATE_HTML_DATA = `
@@ -11,7 +12,7 @@ const DATE_HTML_DATA = `
   </div>
   <div fxLayout="column" layout-padding>
     <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
-      required="yes" [data]="getValue()" (change)="change($event)"  clear-button="yes"  format="LL" separator=" to ">
+      required="yes" [data]="getValue()" (change)="change($event)"  clear-button="yes"  format="LL" separator=" to " mode="{mode}">
     </o-daterange-input>
   </div>
   <div fxLayout="column" layout-padding>
@@ -29,7 +30,7 @@ const DATE_HTML_MINMAX = `
     <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
     <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
       required="yes" [data]="getValue()" min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY"
-      show-week-numbers="true">
+      show-week-numbers="true"  mode="{mode}">
     </o-daterange-input>
   </div>
 </o-form>
@@ -41,7 +42,7 @@ const DATE_HTML_RANGES = `
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
         required="yes" [data]="getValue()" show-ranges="true" format="DD/MM/YYYY"
-        separator=" to " touch-ui="yes">
+        separator=" to " touch-ui="yes"  mode="{mode}">
       </o-daterange-input>
     </div>
   </o-form>
@@ -80,12 +81,15 @@ export class InputDateRangeComponent {
 @Component({
   selector: 'date-range',
   templateUrl: './date-range.component.html',
-  styleUrls: ['./date-range.component.css']
+  styleUrls: ['./date-range.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class InputDateRangeComponent {
 
+  @ViewChild('mode', { static: true }) mode: MatSlideToggle;
   public selected = {};
+
   public files = {
     html: {
       data: DATE_HTML_DATA
@@ -97,6 +101,7 @@ export class InputDateRangeComponent {
       data: DATE_TS_DATA
     }
   };
+
 
   public mixMaxDateRangeFiles = {
     html: {
@@ -115,6 +120,31 @@ export class InputDateRangeComponent {
       data: DATE_TS_DATA
     }
   };
+
+  onShowSource(key: string, exampleComp?: any) {
+    const itemData: any = {
+      mode: this.mode.checked ? 'mobile' : 'desktop'
+    };
+    exampleComp.html = this.getHtml(key, itemData);
+  }
+  public getHtml(key: string, data: any) {
+    let tpl = '';
+    switch (key) {
+      case 'o-daterange':
+        tpl = DATE_HTML_DATA;
+        break;
+      case 'o-daterange-minmax':
+        tpl = DATE_HTML_MINMAX;
+        break;
+      case 'o-daterange-ranges':
+        tpl = DATE_HTML_RANGES;
+        break;
+    }
+
+    tpl = tpl.replace('{mode}', data.mode);
+
+    return tpl;
+  }
 
   constructor() {
 
