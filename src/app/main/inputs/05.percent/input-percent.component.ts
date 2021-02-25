@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 const PERCENT_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-percent-input attr="percent" label="Percentage" [data]="getValue()"></o-percent-input>
+    <o-percent-input attr="percent" label="Percentage" [data]="getValue()" value-base="100"></o-percent-input>
 
-    <o-percent-input attr="percent2" label="Percentage" [data]="getValue()" read-only="false" required="yes" ></o-percent-input>
+    <o-percent-input attr="percent2" label="Percentage" [data]="getValue()" read-only="false" required="yes" value-base="100"></o-percent-input>
 
-    <o-percent-input attr="percent3" label="Percentage" enabled="no" [data]="getValue()"></o-percent-input>
+    <o-percent-input attr="percent3" label="Percentage" enabled="no" [data]="getValue()" value-base="100"></o-percent-input>
 
   </o-form>
 `;
@@ -45,7 +45,7 @@ export class InputPercentComponent {
   };
 
   getValue() {
-    return 52.55;
+    return 0.5255;
   }
 
 }
