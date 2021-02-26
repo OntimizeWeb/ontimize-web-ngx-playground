@@ -90,6 +90,7 @@
   "TABLE.EXPORT_BUTTON": "Opción exportar",
   "TABLE.COLUMNS_VISIBILITY_BUTTON": "Opción mostrar/ocultar columnas",
   "TABLE.PAGINATION": "Paginación",
+  "TABLE.PAGINATION.PAGE_SIZE_OPTIONS": "Tamaño de cada página",
   "TABLE.SHOW_PAGINATION": "Mostrar paginación",
   "TABLE.ITEM.MULTILINE": "Multilínea",
   "TABLE.ROW_HEIGHT.INFO": "Este atributo es ignorado cuando alguna columna de la tabla es multilínea",

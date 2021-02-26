@@ -269,14 +269,14 @@ const HTML_DATA_CALCULATED_COLUMN = `
 
 const HTML_DATA_PAGINATOR = `
   <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-    sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="data">
+    sort-columns="NAME" keys="OFFICEID" insert-button="no" query-rows="5" refresh-button="no" export-button="no" [static-data]="data">
 
     <!-- Custom definition columns -->
     <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
     <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
 
     <!-- Table paginator -->
-    <o-table-paginator page-size="5"></o-table-paginator>
+    <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
   </o-table>
 `;
 

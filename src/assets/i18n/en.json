@@ -90,6 +90,7 @@
   "TABLE.EXPORT_BUTTON": "Option export",
   "TABLE.COLUMNS_VISIBILITY_BUTTON": "Option show/hide columns",
   "TABLE.PAGINATION": "Pagination",
+  "TABLE.PAGINATION.PAGE_SIZE_OPTIONS": "Size of each page",
   "TABLE.SHOW_PAGINATION": "Show pagination",
   "TABLE.ITEM.MULTILINE": "Multiline",
   "TABLE.ROW_HEIGHT.INFO": "This attribute is ignored when any column in the table is multiline",

@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4801",
@@ -32,8 +32,8 @@
     "angular2-highlight-js": "^8.0.1",
     "hammerjs": "^2.0.8",
     "highlight.js": "^9.5.0",
-    "ontimize-web-ngx": "8.1.1",
-    "ontimize-web-ngx-theming": "8.0.0",
+    "ontimize-web-ngx": "8.2.0",
+    "ontimize-web-ngx-theming": "8.0.1",
     "ontimize-web-ngx-gallery": "8.0.1",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
