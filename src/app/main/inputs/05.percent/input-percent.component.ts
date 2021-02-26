@@ -45,7 +45,7 @@ export class InputPercentComponent {
   };
 
   getValue() {
-    return 0.5255;
+    return 52.55;
   }
 
 }
