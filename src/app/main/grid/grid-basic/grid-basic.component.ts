@@ -39,6 +39,7 @@ export class GridBasicComponent {
         .replace('{showPageSize}', grid.showPageSize)
         .replace('{sortColumn}', grid.sortColumn ? grid.sortColumn : '')
         .replace('{refreshButton}', grid.refreshButton)
+        .replace('{insertButton}', grid.insertButton)
         .replace('{paginationControls}', grid.paginationControls)
         .replace('{fixedHeader}', grid.fixedHeader)
         .replace('{gutterSize}', grid.gutterSize);

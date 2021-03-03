@@ -15,6 +15,18 @@ const FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW = [
   { 'NAME': 'Baños Marquez, Murray', 'STARTDATE': 995320800000, 'ACCOUNT': '0001 2095 00 0000000004', 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 6, 'BALANCE': 660.13, 'COMMISSION': 'true', 'NUMCARDS': 2, 'CLOSED': 1, 'CARDS': 'CUST_HAS_CARDS' },
   { 'STARTDATE': 1061071200000, 'NAME': 'ButterCup, Buendía Lorente', 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 1, 'CLOSED': 0, 'CARDS': 'CUST_HAS_CARDS' }
 ];
+const FAKE_ACCOUNTS_TABLE_GROUP_BY_COLUMN = [
+  { 'NAME': 'James', SURNAME: 'Lawrence', PHOTO: '', 'STARTDATE': 1608624195000, 'STARTDATE2': 1608624195000, 'ACCOUNT': '0002 2095 34 0000000010', 'ENDDATE': 1010271600000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 1, 'BALANCE': 17835.0, 'COMMISSION': 'false', 'NUMCARDS': 1, 'CLOSED': 1, 'CLOSED_2': 1, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Lucie Alan', PHOTO: '', 'STARTDATE': 1608625878000, 'STARTDATE2': 1608625878000, 'ACCOUNT': '0000 2095 00 0000000002', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 2, 'BALANCE': 1958.2299999999998, 'COMMISSION': 'false', 'NUMCARDS': 1, 'CLOSED': 0, 'CLOSED_2': 0, 'CARDS': 'CUST_HAS_CARDS' },
+  { 'NAME': 'Bugle Smith', 'STARTDATE': 1608626887000, 'STARTDATE2': 1608626887000, 'ACCOUNT': '0000 2095 00 0000000003', 'ENDDATE': 1224626400000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 3, 'BALANCE': 15000.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 2, 'CLOSED': 1, 'CLOSED_2': 1, 'CARDS': 'CUST_HAS_CARDS' },
+  {
+    'NAME': 'Murray Bugle', 'STARTDATE': 1049493600000, 'STARTDATE2': '', 'ACCOUNT': '0001 2095 00 0000000001', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Personal account', 'INTERESRATE': 0.0125, 'ACCOUNTID': 5, 'BALANCE': 20000.0, 'COMMISSION': 'true', 'NUMCARDS': 3, 'CLOSED': 0, 'CLOSED_2': 0, 'CARDS': 'CUST_HAS_CARDS'
+  },
+  {
+    'NAME': 'Baños Marquez, Murray', 'STARTDATE': 995320800000, 'STARTDATE2': '', 'ACCOUNT': '0001 2095 00 0000000004', 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 6, 'BALANCE': 660.13, 'COMMISSION': 'true', 'NUMCARDS': 2, 'CLOSED': 1, 'CLOSED_2': 1, 'CARDS': 'CUST_HAS_CARDS'
+  },
+  { 'STARTDATE': 1061071200000, 'STARTDATE2': '', 'NAME': 'ButterCup, Buendía Lorente', 'ACCOUNT': '0001 2095 00 0000000005', 'ENDDATE': 1072825200000, 'ACCOUNTTYP': 'Savings account', 'INTERESRATE': 0.043, 'ACCOUNTID': 7, 'BALANCE': 11500.0, 'CDID': '00', 'COMMISSION': 'true', 'NUMCARDS': 1, 'CLOSED': 0, 'CLOSED_2': 0, 'CARDS': 'CUST_HAS_CARDS' }
+];
 
 const FAKE_ACCOUNTS_TABLE_FIXED =
   [{ 'STARTDATE': 631148400000, 'OFFICEID': '0002', 'ENTITYID': '2095', 'ENDDATE': 1010271600000, 'ACCOUNTTYP': 'Savings account', 'ANID': '0000000010', 'INTERESRATE': 0.009899999999999999, 'ACCOUNTID': 1, 'BALANCE': 17835.0, 'CDID': '34' },
@@ -257,14 +269,14 @@ const HTML_DATA_CALCULATED_COLUMN = `
 
 const HTML_DATA_PAGINATOR = `
   <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-    sort-columns="NAME" keys="OFFICEID" insert-button="no" refresh-button="no" export-button="no" [static-data]="data">
+    sort-columns="NAME" keys="OFFICEID" insert-button="no" query-rows="5" refresh-button="no" export-button="no" [static-data]="data">
 
     <!-- Custom definition columns -->
     <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
     <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
 
     <!-- Table paginator -->
-    <o-table-paginator page-size="5"></o-table-paginator>
+    <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
   </o-table>
 `;
 
@@ -440,6 +452,48 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
         </ng-template>
       </o-table-row-expandable>
     </o-table>`;
+const HTML_DATA_BASIC_ROW_GROUPING = `
+   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
+      columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
+      quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+      detail-mode="none" groupable="true">
+      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+    </o-table>`;
+
+const HTML_DATA_ROW_ROW_GROUPING_RENDERED_CELLS =
+  ` <o-table fxFill #table attr="accounts" layout-padding title="ACCOUNTS" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
+      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CLOSED;CARDS"  [static-data]="data"
+      sort-columns="COMMISSION" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
+      pagination-controls="no" export-button="no" edition-mode="click" detail-mode="none" grouped-columns="COMMISSION">
+
+      <o-table-column attr="PHOTO" orderable="no" searchable="no" width="32px">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+        </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LLL"> </o-table-column>
+      <o-table-column attr="BALANCE" title="BALANCE" type="real" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right" filter-source="both" width="140px"></o-table-column>
+      <o-table-column attr="INTERESRATE" title="INTERESRATE" width="100px" content-align="end">
+        <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2" value-base="100">
+        </o-table-cell-renderer-percentage>
+      </o-table-column>
+
+      <o-table-column attr="COMMISSION" title="COMMISSION">
+        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
+        </o-table-cell-renderer-boolean>
+      </o-table-column>
+
+      <o-table-column attr="CLOSED" title="CLOSED">
+        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="number"
+          true-value="1" false-value="0"></o-table-cell-renderer-boolean>
+      </o-table-column>
+      <o-table-column attr="CARDS">
+        <o-table-cell-renderer-translate [translate-params]="translateArgsFn"></o-table-cell-renderer-translate>
+      </o-table-column>
+
+      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+    </o-table>
+    `;
 const TYPESCRIPT_DATA = `
 import { Component } from '@angular/core';
 import { TableUtils } from '../table-utils';
@@ -670,6 +724,25 @@ const TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
 
 `;
 
+const TYPESCRIPT_DATA_ROW_ROW_GROUPING_RENDERED_CELLS = `
+import { Component, } from '@angular/core';
+
+@Component({
+  selector: 'table-row-group-basic',
+  templateUrl: 'table-row-group-basic.component.html'
+})
+export class TableRowGroupBasicComponent {
+  public data = ${JSON.stringify(FAKE_ACCOUNTS_TABLE_GROUP_BY_COLUMN) }
+
+
+  public translateArgsFn(rowData: any): any[] {
+    return [rowData.NUMCARDS];
+  }
+
+ }
+`;
+
+
 export class TableUtils {
 
   public static getAccounts(): Array<any> {
@@ -679,6 +752,9 @@ export class TableUtils {
     return FAKE_ACCOUNTS_TABLE_INSERTABLE_ROW;
   }
 
+  public static getAccountsGroupByColumn(): Array<any> {
+    return FAKE_ACCOUNTS_TABLE_GROUP_BY_COLUMN;
+  }
 
   public static getAccountsTableFixed(): Array<any> {
     return FAKE_ACCOUNTS_TABLE_FIXED;
@@ -796,7 +872,6 @@ export class TableUtils {
         code = TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON;
         break;
 
-
     }
     return code;
   }
@@ -846,6 +921,10 @@ export class TableUtils {
       case 'o-table-row-expandable-with-expandable-container':
         code = HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER;
         break;
+      case 'o-table-basic-row-grouping':
+        code = HTML_DATA_BASIC_ROW_GROUPING;
+        break;
+
     }
     return code;
   }

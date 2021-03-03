@@ -90,6 +90,7 @@
   "TABLE.EXPORT_BUTTON": "Opción exportar",
   "TABLE.COLUMNS_VISIBILITY_BUTTON": "Opción mostrar/ocultar columnas",
   "TABLE.PAGINATION": "Paginación",
+  "TABLE.PAGINATION.PAGE_SIZE_OPTIONS": "Tamaño de cada página",
   "TABLE.SHOW_PAGINATION": "Mostrar paginación",
   "TABLE.ITEM.MULTILINE": "Multilínea",
   "TABLE.ROW_HEIGHT.INFO": "Este atributo es ignorado cuando alguna columna de la tabla es multilínea",
@@ -290,12 +291,12 @@
   "TOOLTIP.CONFIGURATION": "Configuración del tooltip",
   "CARDS": "Num. Cards",
   "CUST_HAS_CARDS": "Has {0} cards",
-  "INPUTS.DATERANGE":"Rango de fechas",
+  "INPUTS.DATERANGE": "Rango de fechas",
   "INPUTS.DATERANGE.SHOWRANGES": "Mostrar rangos predefinidos",
   "INPUTS.DATERANGE.SHOWRANGES.DESC": "Existen 7 rangos diferentes predefinidos",
   "INPUTS.DATERANGE.MINMAX": "Establecer una fecha minima y máxima",
   "INPUTS.DATERANGE.MINMAX.DESC": "Un usuario puede establecer un rango minimo y maximo de selección de fechas.",
-  "INPUTS.DATERAGE.DESC":"A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box.",
+  "INPUTS.DATERAGE.DESC": "A component for getting or displaying start and end date values as a range in a calendar pop-up or by entering the value directly in an HTML input text box.",
   "GALLERY": "Galería",
   "GALLERY.AD": "Cierra el menú de la izquierda para ver la galería mejor",
   "GALLERY.COMPONENT": "Galería",
@@ -329,5 +330,7 @@
   "GALLERY.NOTHINGPREV": "Galería sin opciones",
   "GALLERY.AUTOPLAYPREV": "Galería con autoplay on",
   "INPUTS.DATE.CUSTOM_DATE_CLASS": "Input fecha con clases para personalización de fechas",
-  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Aplica una o más clases CSS a algunas fechas en el calendario"
+  "INPUTS.DATE.CUSTOM_DATE_CLASS.DESC": "Aplica una o más clases CSS a algunas fechas en el calendario",
+  "MODE.DESKTOP": "Modo escritorio",
+  "MODE.MOBILE": "Modo móvil"
 }

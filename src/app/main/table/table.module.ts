@@ -27,7 +27,7 @@ import { TableRowExpandableComponent } from './14.expandableRow/table-row-expand
 import {
   TableRowExpandableWithContainerComponent
 } from './14.expandableRow/expandable-container/table-row-expandable-with-expandable-container.component';
-
+import { TableRowGroupComponent } from './15.rowGrouping/table-row-group.component';
 
 @NgModule({
   imports: [
@@ -57,7 +57,8 @@ import {
     TableRowExpandableBasicComponent,
     TableRowExpandableWithoutButtonComponent,
     TableRowExpandableWithContainerComponent,
-    TableRowExpandableComponent
+    TableRowExpandableComponent,
+    TableRowGroupComponent
   ]
 })
 export class TableModule { }
