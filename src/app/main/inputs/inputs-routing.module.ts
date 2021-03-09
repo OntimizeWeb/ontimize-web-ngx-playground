@@ -15,14 +15,16 @@ import { InputTextareaComponent } from './10.textarea/input-textarea.component';
 import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
-import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
-import { HTMLInputComponent } from './15.html/input-html.component';
-import { InputHourComponent } from './16.hour/input-hour.component';
-import { InputTimeComponent } from './17.time/input-time.component';
-import { InputRadioComponent } from './18.radio/input-radio.component';
-import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
-import { InputSliderComponent } from './20.slider/input-slider.component';
-import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
+import { InputComboCustomRenderComponent } from './14.combo-renderer/input-combo-custom-render.component';
+import { InputListpickerComponent } from './15.listpicker/input-listpicker.component';
+import { InputListpickerCustomRenderComponent } from './16.listpicker-renderer/input-listpicker-custom-render.component';
+import { HTMLInputComponent } from './17.html/input-html.component';
+import { InputHourComponent } from './18.hour/input-hour.component';
+import { InputTimeComponent } from './19.time/input-time.component';
+import { InputRadioComponent } from './20.radio/input-radio.component';
+import { InputSlidetoggleComponent } from './21.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from './22.slider/input-slider.component';
+import { InputDateRangeComponent } from './23.daterange/date-range/date-range.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsComponent } from './inputs.component';
 
@@ -45,7 +47,9 @@ export const routes: Routes = [
       { path: 'file', component: InputFileComponent },
       { path: 'checkbox', component: InputCheckboxComponent },
       { path: 'combo', component: InputComboComponent },
+      { path: 'combo-custom-renderer', component: InputComboCustomRenderComponent },
       { path: 'listpicker', component: InputListpickerComponent },
+      { path: 'listpicker-custom-renderer', component: InputListpickerCustomRenderComponent },
       { path: 'hour', component: InputHourComponent },
       { path: 'time', component: InputTimeComponent },
       { path: 'validators', component: ValidatorsComponent },

@@ -1,4 +1,4 @@
-import { NgModule, Injector } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import hljs from 'highlight.js/lib/highlight';
 import css from 'highlight.js/lib/languages/css';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -22,7 +22,7 @@ export function getDummyServiceProvider(injector: Injector) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     ONTIMIZE_MODULES,

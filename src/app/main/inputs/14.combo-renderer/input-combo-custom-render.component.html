@@ -1,0 +1,28 @@
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArray()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <combo-custom-render></combo-custom-render>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_MULTIPLE" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC_MULTIPLE" [files]="files_multiple">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Multiple selection</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-multiple-search" label="{{ 'INPUT.COMBOMULTIPLE_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArray()"
+          [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+          null-selection="no" searchable="yes" fxFlex>
+          <combo-custom-render></combo-custom-render>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>

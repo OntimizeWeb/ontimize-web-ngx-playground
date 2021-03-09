@@ -1,0 +1,47 @@
+<example-comp comp-name="INPUTS.HOUR" comp-desc="INPUTS.HOUR.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-hour-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" value-type="string"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-hour-input attr="input2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" required="yes" clear-button="yes"
+        format="24" value-type="string"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-hour-input attr="input3" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" enabled="no" [data]="getValue()" value-type="string"></o-hour-input>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.HOUR.FORMATS" comp-desc="INPUTS.HOUR.FORMATS.DESC" [files]="formatFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="row" layout-align="space-between center">
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.FORMATS_12' | oTranslate }}</label>
+      <o-hour-input attr="formatinput" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" format="12"
+        value-type="string"></o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.FORMATS_24' | oTranslate }}</label>
+      <o-hour-input attr="formatinput2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" format="24"
+        value-type="string"></o-hour-input>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.HOUR.VALUE_TYPE" comp-desc="INPUTS.HOUR.VALUE_TYPE.DESC" [files]="valueTypeFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="row" layout-align="space-between center">
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_STRING' | oTranslate }}</label>
+      <o-hour-input attr="valueTypeInput" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getValue()" read-only="no" value-type="string">
+      </o-hour-input>
+    </div>
+    <div fxLayout="column" layout-padding fxFlex="40">
+      <label class="input-comp-title">{{ 'INPUTS.HOUR.VALUE_TYPE_TIMESTAMP' | oTranslate }}</label>
+      <o-hour-input value-type="timestamp" attr="valueTypeInput2" label="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" [data]="getTimestampValue()"
+        read-only="no"></o-hour-input>
+    </div>
+  </o-form>
+</example-comp>

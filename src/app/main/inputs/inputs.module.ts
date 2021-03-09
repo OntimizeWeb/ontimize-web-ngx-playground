@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+
 import { SharedModule } from '../../shared/shared.module';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
@@ -15,20 +16,27 @@ import { InputTextareaComponent } from './10.textarea/input-textarea.component';
 import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
-import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
-import { HTMLInputComponent } from './15.html/input-html.component';
-import { InputHourComponent } from './16.hour/input-hour.component';
-import { InputTimeComponent } from './17.time/input-time.component';
-import { InputRadioComponent } from './18.radio/input-radio.component';
-import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
-import { InputSliderComponent } from './20.slider/input-slider.component';
-import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
+import { OComboRendererComponent } from './14.combo-renderer/combo-custom-render/combo-custom-render.component';
+import { InputComboCustomRenderComponent } from './14.combo-renderer/input-combo-custom-render.component';
+import { InputListpickerComponent } from './15.listpicker/input-listpicker.component';
+import { InputListpickerCustomRenderComponent } from './16.listpicker-renderer/input-listpicker-custom-render.component';
+import {
+  OListPickerRendererComponent
+} from './16.listpicker-renderer/listpicker-custom-render/listpicker-custom-render.component';
+import { HTMLInputComponent } from './17.html/input-html.component';
+import { InputHourComponent } from './18.hour/input-hour.component';
+import { InputTimeComponent } from './19.time/input-time.component';
+import { InputRadioComponent } from './20.radio/input-radio.component';
+import { InputSlidetoggleComponent } from './21.slidetoggle/input-slidetoggle.component';
+import { InputSliderComponent } from './22.slider/input-slider.component';
+import { InputDateRangeComponent } from './23.daterange/date-range/date-range.component';
 import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsRoutingModule } from './inputs-routing.module';
 import { InputsComponent } from './inputs.component';
+
 
 @NgModule({
   // providers: [
@@ -58,7 +66,9 @@ import { InputsComponent } from './inputs.component';
     InputFileComponent,
     InputCheckboxComponent,
     InputComboComponent,
+    InputComboCustomRenderComponent,
     InputListpickerComponent,
+    InputListpickerCustomRenderComponent,
     InputHourComponent,
     InputTimeComponent,
     ValidatorsComponent,
@@ -68,7 +78,9 @@ import { InputsComponent } from './inputs.component';
     AppearanceComponent,
     InputSlidetoggleComponent,
     InputSliderComponent,
-    InputDateRangeComponent
+    InputDateRangeComponent,
+    OComboRendererComponent,
+    OListPickerRendererComponent
   ]
 })
 export class InputsModule { }
