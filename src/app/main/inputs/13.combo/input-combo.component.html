@@ -45,3 +45,102 @@
     </div>
   </o-form>
 </example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <combo-custom-render></combo-custom-render>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_MULTIPLE_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC_MULTIPLE" [files]="files_multiple_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Multiple selection</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-multiple-search" label="{{ 'INPUT.COMBOMULTIPLE_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()"
+          [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+          null-selection="no" searchable="yes" fxFlex>
+          <combo-custom-render></combo-custom-render>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - CURRENCY</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-currency></o-combo-renderer-currency>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - REAL</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-real></o-combo-renderer-real>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - INTEGER</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-integer></o-combo-renderer-integer>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - BOOLEAN</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayBooleanRenderer()" [data]="getValueBoolean()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - DATE</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayDateRenderer()" [data]="getValueSimple()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-date format="YYYY-MM-DD"></o-combo-renderer-date>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>

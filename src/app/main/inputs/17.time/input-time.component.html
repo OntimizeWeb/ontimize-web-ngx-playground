@@ -1,0 +1,19 @@
+<example-comp comp-name="INPUTS.TIME" comp-desc="INPUTS.TIME.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-time-input attr="input" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue()" date-placeholder="mm/dd/yyyy"
+        hour-placeholder="hh:mm"></o-time-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-time-input attr="input2" read-only="no" required="yes" clear-button="yes" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" [data]="getValue()"
+        date-placeholder="mm/dd/yyyy" hour-placeholder="hh:mm"></o-time-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-time-input attr="input3" label="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" enabled="no" [data]="getValue()" date-placeholder="mm/dd/yyyy"
+        hour-placeholder="hh:mm"></o-time-input>
+    </div>
+  </o-form>
+</example-comp>
