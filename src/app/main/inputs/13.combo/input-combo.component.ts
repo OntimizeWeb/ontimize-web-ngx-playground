@@ -50,10 +50,65 @@ const COMBO_HTML_DATA_CUSTOM_RENDER = `
   </o-form>
 `;
 
+const COMBO_HTML_DATA_CURRENCY_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-currency></o-combo-renderer-currency>
+    </o-combo>
+
+  </o-form>
+`;
+
+const COMBO_HTML_DATA_REAL_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-real></o-combo-renderer-real>
+    </o-combo>
+
+  </o-form>
+`;
+
+const COMBO_HTML_DATA_INTEGER_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-integer></o-combo-renderer-integer>
+    </o-combo>
+
+  </o-form>
+`;
+
+const COMBO_HTML_DATA_PERCENTAGE_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
+    </o-combo>
+
+  </o-form>
+`;
+
+const COMBO_HTML_DATA_DATE_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-date></o-combo-renderer-date>
+    </o-combo>
+
+  </o-form>
+`;
+
 const COMBO_HTML_DATA_BOOLEAN_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArrayBooleanRenderer()" [data]="getValueBoolean()"
+    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
     value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
     </o-combo>
@@ -232,12 +287,86 @@ export class InputComboComponent {
     value: 1
   }];
 
-  public getDataArrayBooleanRenderer(): any[] {
+  public getDataArray(): any[] {
     return this.array;
   }
 
-  public getValueBoolean(): any {
+  public getValueSimple(): any {
     return 1;
+  }
+
+}
+`;
+
+const COMBO_TS_DATA_DATE_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 0,
+    value: "10/05/2005"
+  }, {
+    key: 1,
+    value: "04/03/1980"
+  }, {
+    key: 2,
+    value: "24/08/2011"
+  }, {
+    key: 3,
+    value: "01/12/1980"
+  }, {
+    key: 4,
+    value: "30/01/2016"
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 1;
+  }
+
+}
+`;
+
+const COMBO_TS_DATA_PERCENTAGE_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 16,
+    value: "16"
+  }, {
+    key: 23,
+    value: "23"
+  }, {
+    key: 45,
+    value: "45"
+  }, {
+    key: 68,
+    value: "68"
+  }, {
+    key: 97,
+    value: "97"
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 16;
   }
 
 }
@@ -359,6 +488,23 @@ export class InputComboComponent {
     value: "30/01/2016"
   }];
 
+  public array_percentage_renderer: Object[] = [{
+    key: 16,
+    value: "16"
+  }, {
+    key: 23,
+    value: "23"
+  }, {
+    key: 45,
+    value: "45"
+  }, {
+    key: 68,
+    value: "68"
+  }, {
+    key: 97,
+    value: "97"
+  }];
+
   public files = {
     html: {
       data: COMBO_HTML_DATA
@@ -386,6 +532,66 @@ export class InputComboComponent {
   public files_custom_render = {
     html: {
       data: COMBO_HTML_DATA_CUSTOM_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_CUSTOM_RENDERER
+    }
+  };
+
+  public files_currency_render = {
+    html: {
+      data: COMBO_HTML_DATA_CURRENCY_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_CUSTOM_RENDERER
+    }
+  };
+
+  public files_integer_render = {
+    html: {
+      data: COMBO_HTML_DATA_INTEGER_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_CUSTOM_RENDERER
+    }
+  };
+
+  public files_percentage_render = {
+    html: {
+      data: COMBO_HTML_DATA_PERCENTAGE_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_PERCENTAGE_RENDERER
+    }
+  };
+
+  public files_date_render = {
+    html: {
+      data: COMBO_HTML_DATA_DATE_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_DATE_RENDERER
+    }
+  };
+
+  public files_real_render = {
+    html: {
+      data: COMBO_HTML_DATA_REAL_RENDER
     },
     scss: {
       data: undefined
@@ -435,8 +641,16 @@ export class InputComboComponent {
     return this.array_date_renderer;
   }
 
+  public getDataArrayPercentageRenderer(): any[] {
+    return this.array_percentage_renderer;
+  }
+
   public getValueSimple(): any {
     return 2;
+  }
+
+  public getValuePercentage(): any {
+    return 16;
   }
 
   public getValueBoolean(): any {

@@ -75,12 +75,12 @@
   </o-form>
 </example-comp>
 
-<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+<example-comp comp-name="INPUTS.COMBO_CURRENCY_RENDERER" comp-desc="INPUTS.COMBO_CURRENCY_RENDERER.DESC" [files]="files_currency_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - CURRENCY</label>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
-        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CURRENCY_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
           value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
           <o-combo-renderer-currency></o-combo-renderer-currency>
         </o-combo>
@@ -89,12 +89,12 @@
   </o-form>
 </example-comp>
 
-<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+<example-comp comp-name="INPUTS.COMBO_REAL_RENDERER" comp-desc="INPUTS.COMBO_REAL_RENDERER.DESC" [files]="files_real_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - REAL</label>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.REAL' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
-        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_REAL_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
           value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
           <o-combo-renderer-real></o-combo-renderer-real>
         </o-combo>
@@ -103,12 +103,12 @@
   </o-form>
 </example-comp>
 
-<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+<example-comp comp-name="INPUTS.COMBO_INTEGER_RENDERER" comp-desc="INPUTS.COMBO_INTEGER_RENDERER.DESC" [files]="files_integer_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - INTEGER</label>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
-        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_INTEGER_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()" [data]="getValueSimple()"
           value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
           <o-combo-renderer-integer></o-combo-renderer-integer>
         </o-combo>
@@ -117,12 +117,12 @@
   </o-form>
 </example-comp>
 
-<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+<example-comp comp-name="INPUTS.COMBO_BOOLEAN_RENDERER" comp-desc="INPUTS.COMBO_BOOLEAN_RENDERER.DESC" [files]="files_boolean_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - BOOLEAN</label>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.BOOLEAN' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
-        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayBooleanRenderer()" [data]="getValueBoolean()"
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_BOOLEAN_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayBooleanRenderer()" [data]="getValueBoolean()"
           value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
           <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
         </o-combo>
@@ -131,12 +131,26 @@
   </o-form>
 </example-comp>
 
-<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_custom_render">
+<example-comp comp-name="INPUTS.COMBO_PERCENTAGE_RENDERER" comp-desc="INPUTS.COMBO_PERCENTAGE_RENDERER.DESC" [files]="files_percentage_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }} - DATE</label>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
-        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayDateRenderer()" [data]="getValueSimple()"
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_PERCENTAGE_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayPercentageRenderer()" [data]="getValuePercentage()"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_DATE_RENDERER" comp-desc="INPUTS.COMBO_DATE_RENDERER.DESC" [files]="files_date_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.DATE' | oTranslate }}</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_DATE_RENDERER.SEARCH' | oTranslate }}" [static-data]="getDataArrayDateRenderer()" [data]="getValueSimple()"
           value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
           <o-combo-renderer-date format="YYYY-MM-DD"></o-combo-renderer-date>
         </o-combo>
