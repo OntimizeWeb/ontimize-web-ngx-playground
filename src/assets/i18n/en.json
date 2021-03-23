@@ -372,5 +372,7 @@
   "silver": "Silver",
   "bronze": "Bronze",
   "MODE.DESKTOP": "Mode Desktop",
-  "MODE.MOBILE": "Mode Mobile"
+  "MODE.MOBILE": "Mode Mobile",
+  "TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS":"Multiple expanded rows",
+  "TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS_DESC": "Multiple expanded rows at the same time"
 }
