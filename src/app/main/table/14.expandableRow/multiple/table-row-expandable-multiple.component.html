@@ -1,0 +1,24 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS"
+  comp-desc="TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS_DESC" [files]="getFiles('o-table-multiple-expanded-rows')">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"
+      visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
+      pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes">
+      <o-table-row-expandable multiple="yes">
+        <ng-template let-row>
+          <div class="example-element-detail">
+            <div class="example-element-diagram">
+              <div class="example-element-position"> {{row.Position}} </div>
+              <div class="example-element-symbol"> {{row.Symbol}} </div>
+              <div class="example-element-name"> {{row.Name}} </div>
+              <div class="example-element-weight"> {{row.Weight}} </div>
+            </div>
+            <div class="example-element-description" fxFlex>
+              {{row.Description}}
+            </div>
+          </div>
+        </ng-template>
+      </o-table-row-expandable>
+    </o-table>
+  </div>
+</example-comp>
