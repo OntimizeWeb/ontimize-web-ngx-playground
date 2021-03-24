@@ -2,18 +2,18 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-list-picker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" [static-data]="getDataArray()" [data]="getValue()"
+      <o-list-picker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" [static-data]="dataArray" [data]="value"
         filter="yes" value-column="key" columns="key;value" visible-columns="value"></o-list-picker>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }} - Custom Render" [static-data]="getDataArray()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }} - Custom Render" [static-data]="dataArray"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
       </o-list-picker>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-list-picker attr="listpicker3" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" [static-data]="getDataArray()" [data]="getValue()"
+      <o-list-picker attr="listpicker3" label="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" [static-data]="dataArray" [data]="value"
         enabled="no" filter="yes" value-column="key" columns="key;value" visible-columns="value"></o-list-picker>
     </div>
   </o-form>
@@ -23,8 +23,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_CUSTOM_RENDERER' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_CUSTOM_RENDERER' | oTranslate }}" [static-data]="dataArrayCustomRenderer"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <listpicker-custom-render></listpicker-custom-render>
       </o-list-picker>
     </div>
@@ -36,8 +36,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="dataArrayCustomRenderer"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <o-list-picker-renderer-currency></o-list-picker-renderer-currency>
       </o-list-picker>
     </div>
@@ -49,8 +49,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.REAL' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="dataArrayCustomRenderer"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <o-list-picker-renderer-real></o-list-picker-renderer-real>
       </o-list-picker>
     </div>
@@ -62,8 +62,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="getDataArrayCustomRenderer()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="dataArrayCustomRenderer"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <o-list-picker-renderer-integer></o-list-picker-renderer-integer>
       </o-list-picker>
     </div>
@@ -74,8 +74,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="getDataArrayPercentageRenderer()"
-        [data]="getValuePercentage()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker2" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="dataArrayPercentageRenderer"
+        [data]="valuePercentage" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <o-list-picker-renderer-percentage value-base="100"></o-list-picker-renderer-percentage>
       </o-list-picker>
     </div>
@@ -87,8 +87,8 @@
   <o-form editable-detail="false" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUT.BUTTON.DATE' | oTranslate }}</label>
-      <o-list-picker #listpicker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="getDataArrayDateRenderer()"
-        [data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+      <o-list-picker #listpicker attr="listpicker" label="{{ 'INPUT.BUTTON.LISTPICKER_WITH_RENDERER' | oTranslate }}" [static-data]="dataArrayDateRenderer"
+        [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
         <o-list-picker-renderer-date format="YYYY-MM-DD"></o-list-picker-renderer-date>
       </o-list-picker>
     </div>

@@ -3,19 +3,19 @@ import { Component } from '@angular/core';
 const COMBO_HTML_DATA = `
   <o-form editable-detail="false" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo" label="Combo" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key" columns="key;value"
+    <o-combo attr="combo" label="Combo" [static-data]="dataArray" [data]="valueSimple" value-column="key" columns="key;value"
       visible-columns="value"></o-combo>
 
     <div fxLayout="row">
-      <o-combo attr="combo-editable" label="Combo" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
+      <o-combo attr="combo-editable" label="Combo" [static-data]="dataArray" [data]="valueSimple" value-column="key"
         columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
 
-      <o-combo attr="combo-editable-search" label="Combo with search" [static-data]="getDataArray()" [data]="getValueSimple()"
+      <o-combo attr="combo-editable-search" label="Combo with search" [static-data]="dataArray" [data]="valueSimple"
         value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
         </o-combo>
     </div>
 
-    <o-combo attr="combo-disabled" label="Combo" enabled="no" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
+    <o-combo attr="combo-disabled" label="Combo" enabled="no" [static-data]="dataArray" [data]="valueSimple" value-column="key"
       columns="key;value" visible-columns="value"></o-combo>
 
   </o-form>
@@ -25,15 +25,15 @@ const COMBO_HTML_DATA_MULTIPLE = `
   <o-form editable-detail="false" show-header="no" layout-direction="column">
 
     <div fxLayout="row">
-      <o-combo attr="combo-editable-multiple" label="Combo multiple" [static-data]="getDataArray()" [data]="getValueMultiple()" value-column="key"
+      <o-combo attr="combo-editable-multiple" label="Combo multiple" [static-data]="dataArray" [data]="valueMultiple" value-column="key"
         columns="key;value" visible-columns="value" required="yes" read-only="false" multiple="yes"></o-combo>
 
-      <o-combo attr="combo-editable-multiple-search" label="Combo multiple with search" [static-data]="getDataArray()"
-        [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+      <o-combo attr="combo-editable-multiple-search" label="Combo multiple with search" [static-data]="dataArray"
+        [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
         null-selection="no" searchable="yes"></o-combo>
     </div>
 
-    <o-combo attr="combo-editable-multiple2" label="Combo" [static-data]="getDataArray()" [data]="getValueMultiple()" value-column="key"
+    <o-combo attr="combo-editable-multiple2" label="Combo" [static-data]="dataArray" [data]="valueMultiple" value-column="key"
       columns="key;value" visible-columns="value" required="yes" read-only="false" multiple="yes" multiple-trigger-label="yes"></o-combo>
 
   </o-form>
@@ -42,7 +42,7 @@ const COMBO_HTML_DATA_MULTIPLE = `
 const COMBO_HTML_DATA_CUSTOM_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <combo-custom-render></combo-custom-render>
     </o-combo>
@@ -53,7 +53,7 @@ const COMBO_HTML_DATA_CUSTOM_RENDER = `
 const COMBO_HTML_DATA_CURRENCY_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-currency></o-combo-renderer-currency>
     </o-combo>
@@ -64,7 +64,7 @@ const COMBO_HTML_DATA_CURRENCY_RENDER = `
 const COMBO_HTML_DATA_REAL_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-real></o-combo-renderer-real>
     </o-combo>
@@ -75,7 +75,7 @@ const COMBO_HTML_DATA_REAL_RENDER = `
 const COMBO_HTML_DATA_INTEGER_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-integer></o-combo-renderer-integer>
     </o-combo>
@@ -86,7 +86,7 @@ const COMBO_HTML_DATA_INTEGER_RENDER = `
 const COMBO_HTML_DATA_PERCENTAGE_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
     </o-combo>
@@ -97,7 +97,7 @@ const COMBO_HTML_DATA_PERCENTAGE_RENDER = `
 const COMBO_HTML_DATA_DATE_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
       value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-date></o-combo-renderer-date>
     </o-combo>
@@ -108,7 +108,7 @@ const COMBO_HTML_DATA_DATE_RENDER = `
 const COMBO_HTML_DATA_BOOLEAN_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
     value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
       <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
     </o-combo>
@@ -119,8 +119,8 @@ const COMBO_HTML_DATA_BOOLEAN_RENDER = `
 const COMBO_HTML_DATA_MULTIPLE_CUSTOM_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-combo attr="combo-editable-multiple-search" [static-data]="getDataArray()"
-      [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+    <o-combo attr="combo-editable-multiple-search" [static-data]="dataArray"
+      [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
       null-selection="no" searchable="yes" fxFlex>
       <combo-custom-render></combo-custom-render>
     </o-combo>
@@ -137,7 +137,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: 'Spain'
   }, {
@@ -169,13 +169,7 @@ export class InputComboComponent {
     value: 'Finland'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
+  public valueSimple: any = 2;
 
 }
 `;
@@ -190,7 +184,7 @@ import { Component } from '@angular/core';
 export class InputComboComponent {
 
   public multipleValue = [1, 2];
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: 'Spain'
   }, {
@@ -222,14 +216,6 @@ export class InputComboComponent {
     value: 'Finland'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueMultiple(): any[] {
-    return this.multipleValue;
-  }
-
 }
 `;
 
@@ -242,7 +228,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: '1615472370'
   }, {
@@ -259,13 +245,7 @@ export class InputComboComponent {
     value: '1115472370'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
+  public valueSimple: any = 2;
 
 }
 `;
@@ -279,7 +259,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 0,
     value: 0
   }, {
@@ -287,13 +267,7 @@ export class InputComboComponent {
     value: 1
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 1;
-  }
+  public valueSimple: any = 1;
 
 }
 `;
@@ -307,7 +281,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 0,
     value: "10/05/2005"
   }, {
@@ -324,13 +298,7 @@ export class InputComboComponent {
     value: "30/01/2016"
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 1;
-  }
+  public valueSimple: any = 1;
 
 }
 `;
@@ -344,7 +312,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 16,
     value: "16"
   }, {
@@ -361,13 +329,7 @@ export class InputComboComponent {
     value: "97"
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 16;
-  }
+  public valueSimple: any = 16;
 
 }
 `;
@@ -396,14 +358,6 @@ export class InputComboComponent {
     value: '1015363293'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueMultiple(): any[] {
-    return this.multipleValue;
-  }
-
 }
 `;
 
@@ -414,7 +368,7 @@ export class InputComboComponent {
 export class InputComboComponent {
 
   public multipleValue = [1, 2];
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: 'Spain'
   }, {
@@ -446,7 +400,7 @@ export class InputComboComponent {
     value: 'Finland'
   }];
 
-  public array_custom_renderer: Object[] = [{
+  public dataArrayCustomRenderer: Object[] = [{
     key: 1,
     value: '1615472370'
   }, {
@@ -463,7 +417,7 @@ export class InputComboComponent {
     value: '1115472370'
   }];
 
-  public array_boolean_renderer: Object[] = [{
+  public dataArrayBooleanRenderer: Object[] = [{
     key: 0,
     value: false
   }, {
@@ -471,7 +425,7 @@ export class InputComboComponent {
     value: true
   }];
 
-  public array_date_renderer: Object[] = [{
+  public dataArrayDateRenderer: Object[] = [{
     key: 0,
     value: "10/05/2005"
   }, {
@@ -488,7 +442,7 @@ export class InputComboComponent {
     value: "30/01/2016"
   }];
 
-  public array_percentage_renderer: Object[] = [{
+  public dataArrayPercentageRenderer: Object[] = [{
     key: 16,
     value: "16"
   }, {
@@ -625,40 +579,12 @@ export class InputComboComponent {
     }
   };
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
+  public valueSimple: any = 2;
 
-  public getDataArrayCustomRenderer(): any[] {
-    return this.array_custom_renderer;
-  }
+  public valuePercentage: any = 16;
 
-  public getDataArrayBooleanRenderer(): any[] {
-    return this.array_boolean_renderer;
-  }
+  public valueBoolean: any = 1;
 
-  public getDataArrayDateRenderer(): any[] {
-    return this.array_date_renderer;
-  }
-
-  public getDataArrayPercentageRenderer(): any[] {
-    return this.array_percentage_renderer;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
-
-  public getValuePercentage(): any {
-    return 16;
-  }
-
-  public getValueBoolean(): any {
-    return 1;
-  }
-
-  public getValueMultiple(): any[] {
-    return this.multipleValue;
-  }
+  public valueMultiple: any[] = this.multipleValue;
 
 }
