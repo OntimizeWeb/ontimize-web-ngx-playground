@@ -74,6 +74,70 @@ const FAKE_CARDS = [
 const FAKE_BRANCHES =
   [{ 'OFFICEID': '0000', 'ADDRESS': 'AVDA. GARCIA BARBON, 1  9(36201) VIGO', 'NAME': 'MAIN BRANCH', 'STARTDATE': 670802400000 }, { 'OFFICEID': '0001', 'ADDRESS': 'MERCATOR PLACE, WILSONIA INDUSTRIAL, EAST LONDON, EASTERN CAPE', 'NAME': 'BCM MARKET SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0002', 'ADDRESS': 'DONKIN ST', 'NAME': 'BEDFORD EASTERN CAPE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0003', 'ADDRESS': 'PRIORITY HOUSE 5 IRIS ROAD BEDFORDVIEW GAUTENG', 'NAME': 'BEDFORDVIEW PRIV BNKG SUITE SC', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0004', 'ADDRESS': 'PRESIDENT SWART STREET BULTFONTEIN', 'NAME': 'BULTFONTEIN SERVICE CENTRE', 'STARTDATE': 765496800000 }, { 'OFFICEID': '0070', 'ADDRESS': 'SHOP 69 WESTRIDGE PARK SC', 'NAME': 'WESTRIDGE PARK SERVICE CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0101', 'ADDRESS': 'CENTRO CITY 11 TRUMP ST', 'NAME': 'JOZI POD CENTRE', 'STARTDATE': 733960800000 }, { 'OFFICEID': '0102', 'ADDRESS': 'STA. MARIA DE LA CABEZA, ESQ. DR. CALERO   2822', 'NAME': 'MAJADAHONDA ', 'STARTDATE': 797032800000 }, { 'OFFICEID': '0103', 'ADDRESS': 'PL. MAYOR, 10   (28850) TORREJON DE ARDOZ', 'NAME': 'TORREJON', 'STARTDATE': 828655200000 }, { 'OFFICEID': '1471', 'ADDRESS': 'Edificio Citexvi, Fonte das Abelleiras, s/n · Local 27, 36310 Vigo, Pontevedra', 'NAME': 'ImatiaBank Innovation', 'STARTDATE': 1480546800000 }, { 'OFFICEID': '9999', 'ADDRESS': 'Calle Test', 'NAME': 'Banco Test', 'STARTDATE': 1504994400000 }];
 
+const PERIODIC_ELEMENTS = [
+  {
+    Position: 1,
+    Name: 'Hydrogen',
+    Weight: 1.0079,
+    Symbol: 'H',
+    Description: `Hydrogen is a chemical element with symbol H and atomic number 1. With a standard atomic weight of 1.008, hydrogen is the lightest element on the periodic table.`
+  }, {
+    Position: 2,
+    Name: 'Helium',
+    Weight: 4.0026,
+    Symbol: 'He',
+    Description: `Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas group in the periodic table. Its boiling point is the lowest among all the elements.`
+  }, {
+    Position: 3,
+    Name: 'Lithium',
+    Weight: 6.941,
+    Symbol: 'Li',
+    Description: `Lithium is a chemical element with symbol Li and atomic number 3. It is a soft, silvery-white alkali metal. Under standard conditions, it is the lightest metal and the lightest solid element.`
+  }, {
+    Position: 4,
+    Name: 'Beryllium',
+    Weight: 9.0122,
+    Symbol: 'Be',
+    Description: `Beryllium is a chemical element with symbol Be and atomic number 4. It is a relatively rare element in the universe, usually occurring as a product of the spallation of larger atomic nuclei that have collided with cosmic rays.`
+  }, {
+    Position: 5,
+    Name: 'Boron',
+    Weight: 10.811,
+    Symbol: 'B',
+    Description: `Boron is a chemical element with symbol B and atomic number 5. Produced entirely by cosmic ray spallation and supernovae and not by stellar nucleosynthesis, it is a low-abundance element in the Solar system and in the Earth's crust.`
+  }, {
+    Position: 6,
+    Name: 'Carbon',
+    Weight: 12.0107,
+    Symbol: 'C',
+    Description: `Carbon is a chemical element with symbol C and atomic number 6. It is nonmetallic and tetravalent—making four electrons available to form covalent cal bonds. It belongs to group 14 of the periodic table.`
+  }, {
+    Position: 7,
+    Name: 'Nitrogen',
+    Weight: 14.0067,
+    Symbol: 'N',
+    Description: `Nitrogen is a chemical element with symbol N and atomic number 7. It was first discovered and isolated by Scottish physician Daniel Rutherford in 1772.`
+  }, {
+    Position: 8,
+    Name: 'Oxygen',
+    Weight: 15.9994,
+    Symbol: 'O',
+    Description: `Oxygen is a chemical element with symbol O and atomic number 8. It is a member of the chalcogen group on the periodic table, a highly reactive nonmetal, and an oxidizing agent that readily forms oxides with most elements as well as with other compounds.`
+  }, {
+    Position: 9,
+    Name: 'Fluorine',
+    Weight: 18.9984,
+    Symbol: 'F',
+    Description: `Fluorine is a chemical element with symbol F and atomic number 9. It is the lightest halogen and exists as a highly toxic pale yellow diatomic gas at standard conditions.`
+  }, {
+    Position: 10,
+    Name: 'Neon',
+    Weight: 20.1797,
+    Symbol: 'Ne',
+    Description: `Neon is a chemical element with symbol Ne and atomic number 10. It is a noble gas. Neon is a colorless, odorless, inert monatomic gas under standard conditions, with about two-thirds the density of air.`
+  },
+];
+
 const HTML_DATA = `
   <o-table #table fxFlex attr="table" title="{titleInput}" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" quick-filter="{quickFilter}"
@@ -494,6 +558,29 @@ const HTML_DATA_ROW_ROW_GROUPING_RENDERED_CELLS =
       <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
     </o-table>
     `;
+
+const HTML_DATA_MULTIPLE_EXPANDED_ROWS = `
+<o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"
+  visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
+  pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes">
+  <o-table-row-expandable multiple="yes">
+    <ng-template let-row>
+      <div class="example-element-detail">
+        <div class="example-element-diagram">
+          <div class="example-element-position"> {{row.Position}} </div>
+          <div class="example-element-symbol"> {{row.Symbol}} </div>
+          <div class="example-element-name"> {{row.Name}} </div>
+          <div class="example-element-weight"> {{row.Weight}} </div>
+        </div>
+        <div class="example-element-description" fxFlex>
+          {{row.Description}}
+        </div>
+      </div>
+    </ng-template>
+  </o-table-row-expandable>
+</o-table>
+    `;
+
 const TYPESCRIPT_DATA = `
 import { Component } from '@angular/core';
 import { TableUtils } from '../table-utils';
@@ -724,6 +811,19 @@ const TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
 
 `;
 
+const TYPESCRIPT_DATA_MULTIPLE_EXPANDED_ROWS = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'table-row-expandable-multiple',
+  templateUrl: 'table-row-expandable-multiple.component.html'
+})
+export class TableRowExpandableMultipleComponent {
+
+  public tableData = ${JSON.stringify(PERIODIC_ELEMENTS)};
+}
+`;
+
 const TYPESCRIPT_DATA_ROW_ROW_GROUPING_RENDERED_CELLS = `
 import { Component, } from '@angular/core';
 
@@ -732,7 +832,7 @@ import { Component, } from '@angular/core';
   templateUrl: 'table-row-group-basic.component.html'
 })
 export class TableRowGroupBasicComponent {
-  public data = ${JSON.stringify(FAKE_ACCOUNTS_TABLE_GROUP_BY_COLUMN) }
+  public data = ${JSON.stringify(FAKE_ACCOUNTS_TABLE_GROUP_BY_COLUMN)}
 
 
   public translateArgsFn(rowData: any): any[] {
@@ -741,6 +841,34 @@ export class TableRowGroupBasicComponent {
 
  }
 `;
+
+const SCSS_DATA_MULTIPLE_EXPANDED_ROWS = `
+.example-element-detail {
+  display: flex;
+  overflow: hidden;
+
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+
+  .example-element-description {
+    padding: 16px;
+    white-space: pre-wrap;
+  }
+}
+
+`
 
 
 export class TableUtils {
@@ -759,6 +887,7 @@ export class TableUtils {
   public static getAccountsTableFixed(): Array<any> {
     return FAKE_ACCOUNTS_TABLE_FIXED;
   }
+
   public static getCustomers(): Array<any> {
     return FAKE_CUSTOMERS;
   }
@@ -773,6 +902,10 @@ export class TableUtils {
 
   public static getCards(): Array<any> {
     return FAKE_CARDS;
+  }
+
+  public static getPeriodicElements(): Array<any> {
+    return PERIODIC_ELEMENTS;
   }
 
   public static getHtml(key: string, table: any, data: any) {
@@ -813,7 +946,7 @@ export class TableUtils {
   public static getFiles(key: string) {
     let result: any = {
       'scss': {
-        'data': undefined
+        'data': TableUtils.getTypeScss(key)
       },
       'typescript': {
         'data': TableUtils.getTypescript(key)
@@ -826,6 +959,15 @@ export class TableUtils {
       }
     }
     return result;
+  }
+  static getTypeScss(key: string) {
+    let code = '';
+    switch (key) {
+      case 'o-table-multiple-expanded-rows':
+        code = SCSS_DATA_MULTIPLE_EXPANDED_ROWS;
+        break;
+    }
+    return code;
   }
 
   public static getTypescript(key: string) {
@@ -870,6 +1012,9 @@ export class TableUtils {
         break;
       case 'o-table-row-expandable-without-action-button':
         code = TYPESCRIPT_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON;
+        break;
+      case 'o-table-multiple-expanded-rows':
+        code = TYPESCRIPT_DATA_MULTIPLE_EXPANDED_ROWS;
         break;
 
     }
@@ -923,6 +1068,9 @@ export class TableUtils {
         break;
       case 'o-table-basic-row-grouping':
         code = HTML_DATA_BASIC_ROW_GROUPING;
+        break;
+      case 'o-table-multiple-expanded-rows':
+        code = HTML_DATA_MULTIPLE_EXPANDED_ROWS;
         break;
 
     }

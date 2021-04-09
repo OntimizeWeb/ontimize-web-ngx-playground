@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+
 import { SharedModule } from '../../shared/shared.module';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
@@ -14,8 +15,10 @@ import { InputPasswordComponent } from './09.password/input-password.component';
 import { InputTextareaComponent } from './10.textarea/input-textarea.component';
 import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
+import { OComboRendererComponent } from './13.combo/combo-custom-render/combo-custom-render.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
+import { OListPickerRendererComponent } from './14.listpicker/listpicker-custom-render/listpicker-custom-render.component';
 import { HTMLInputComponent } from './15.html/input-html.component';
 import { InputHourComponent } from './16.hour/input-hour.component';
 import { InputTimeComponent } from './17.time/input-time.component';
@@ -68,7 +71,9 @@ import { InputsComponent } from './inputs.component';
     AppearanceComponent,
     InputSlidetoggleComponent,
     InputSliderComponent,
-    InputDateRangeComponent
+    InputDateRangeComponent,
+    OComboRendererComponent,
+    OListPickerRendererComponent
   ]
 })
 export class InputsModule { }
