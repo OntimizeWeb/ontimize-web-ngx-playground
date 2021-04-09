@@ -5,12 +5,12 @@
   "startRecordIndex": 0,
   "data": [
     {
-      "SURNAME": "surPrueba1",
-      "EMAIL": "falso@email.com",
+      "SURNAME": "Martinez Perez",
+      "EMAIL": "manuel.perez@email.com",
       "CUSTOMERTYPEID": 1,
-      "ADDRESS": "calle Falsa 123",
+      "ADDRESS": "Avda. Castellana 123",
       "CUSTOMERID": 19486,
-      "NAME": "prueba1",
+      "NAME": "Manuel",
       "STARTDATE": 1598911200000
     },
     {
