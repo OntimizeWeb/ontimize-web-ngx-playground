@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
+import { LoginService } from 'ontimize-web-ngx';
 import { environment } from '../../environments/environment';
 import { NavigationBarService } from '../shared/navigation-bar.service';
 
@@ -12,8 +13,14 @@ import { NavigationBarService } from '../shared/navigation-bar.service';
 export class MainComponent implements OnInit {
   protected sectionTitle = '';
 
-  constructor(protected navigationService: NavigationBarService) {
-
+  constructor(
+    protected injector: Injector,
+    protected navigationService: NavigationBarService) {
+    const loginService = this.injector.get(LoginService);
+    loginService.storeSessionInfo({
+      id: 12345,
+      user: 'playground'
+    });
   }
 
   ngOnInit() {

@@ -74,8 +74,37 @@ export class DummyService extends OntimizeService {
     });
   }
 
+  public filteredQuery(kv?: object, av?: Array<string>, entity?: string,
+    sqltypes?: object): Observable<any> {
+    entity = (Util.isDefined(entity)) ? entity : this.entity;
+
+    const url = this._urlBase + DummyService.mappings[entity];
+    const options = {
+      headers: this.buildHeaders()
+    };
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: options,
+      successCallback: (resp, subscriber) => {
+        Object.keys(kv).forEach(function (key) {
+          console.log(key)
+        });
+
+
+        const filtered = resp.data.filter(item => {
+          const equal = Object.keys(kv).every(key => item[key] === kv[key]);
+          return equal;
+        });
+        resp.data = filtered;
+        this.customParseSuccessfulQueryResponse(kv, resp, subscriber);
+      },
+      errorCallBack: this.parseUnsuccessfulQueryResponse
+    });
+  }
+
   public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
-      offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
+    offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
     return undefined;
   }
 
