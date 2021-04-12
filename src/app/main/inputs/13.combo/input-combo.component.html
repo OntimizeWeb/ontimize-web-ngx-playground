@@ -60,6 +60,20 @@
   </o-form>
 </example-comp>
 
+<example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC" [files]="files_country_flag_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_CUSTOM_RENDERER.SEARCH' | oTranslate }}" [static-data]="dataArrayCountryFlagRenderer" [data]="valueCountryFlag"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <combo-country-flag-render></combo-country-flag-render>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
+
 <example-comp comp-name="INPUTS.COMBO_MULTIPLE_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC_MULTIPLE" [files]="files_multiple_custom_render">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
