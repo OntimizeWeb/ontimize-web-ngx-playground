@@ -501,6 +501,23 @@ export class InputComboComponent {
     value: "30/01/2016"
   }];
 
+  public dataArrayIconRenderer: Object[] = [{
+    key: "home",
+    value: "Home"
+  }, {
+    key: "face",
+    value: "face"
+  }, {
+    key: "done",
+    value: "done"
+  }, {
+    key: "list",
+    value: "list"
+  }, {
+    key: "paid",
+    value: "paid"
+  }];
+
   public dataArrayPercentageRenderer: Object[] = [{
     key: 16,
     value: "16"
@@ -657,6 +674,8 @@ export class InputComboComponent {
   public valuePercentage: any = 16;
 
   public valueBoolean: any = 1;
+
+  public valueIcon: any = "paid ";
 
   public valueMultiple: any[] = this.multipleValue;
 

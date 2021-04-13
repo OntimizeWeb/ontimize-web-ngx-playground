@@ -172,3 +172,17 @@
     </div>
   </o-form>
 </example-comp>
+
+<example-comp comp-name="INPUTS.COMBO_DATE_RENDERER" comp-desc="INPUTS.COMBO_DATE_RENDERER.DESC" [files]="files_date_render">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUT.BUTTON.DATE' | oTranslate }}</label>
+      <div fxLayout="row" fxLayoutGap="8px">
+        <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_DATE_RENDERER.SEARCH' | oTranslate }}" [static-data]="dataArrayIconRenderer" [data]="valueIcon"
+          value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-icon icon-position="right"></o-combo-renderer-icon>
+        </o-combo>
+      </div>
+    </div>
+  </o-form>
+</example-comp>
