@@ -127,6 +127,18 @@ const COMBO_HTML_DATA_BOOLEAN_RENDER = `
   </o-form>
 `;
 
+const COMBO_HTML_DATA_ICON_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-multiple-search" [static-data]="dataArray"
+      [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+      null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-icon icon-key="materialIcon" icon-position="right"></o-combo-renderer-boolean>
+    </o-combo>
+  
+  </o-form>
+`;
+
 const COMBO_HTML_DATA_MULTIPLE_CUSTOM_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
@@ -345,6 +357,42 @@ export class InputComboComponent {
 }
 `;
 
+const COMBO_TS_DATA_ICON_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public dataArray: Object[] = [{
+    key: 0,
+    value: "Snowboard",
+    materialIcon: "snowboarding"
+  }, {
+    key: 1,
+    value: "Surfing",
+    materialIcon: "surfing"
+  }, {
+    key: 2,
+    value: "Skateboarding",
+    materialIcon: "skateboarding"
+  }, {
+    key: 3,
+    value: "Skiing",
+    materialIcon: "downhill_skiing"
+  }, {
+    key: 4,
+    value: "Paragliding",
+    materialIcon: "paragliding"
+  }];
+
+  public valueSimple: any = 3;
+
+}
+`;
+
 const COMBO_TS_DATA_PERCENTAGE_RENDERER = `
 import { Component } from '@angular/core';
 
@@ -502,20 +550,25 @@ export class InputComboComponent {
   }];
 
   public dataArrayIconRenderer: Object[] = [{
-    key: "home",
-    value: "Home"
+    key: 0,
+    value: "Snowboard",
+    materialIcon: "snowboarding"
   }, {
-    key: "face",
-    value: "face"
+    key: 1,
+    value: "Surfing",
+    materialIcon: "surfing"
   }, {
-    key: "done",
-    value: "done"
+    key: 2,
+    value: "Skateboarding",
+    materialIcon: "skateboarding"
   }, {
-    key: "list",
-    value: "list"
+    key: 3,
+    value: "Skiing",
+    materialIcon: "downhill_skiing"
   }, {
-    key: "paid",
-    value: "paid"
+    key: 4,
+    value: "Paragliding",
+    materialIcon: "paragliding"
   }];
 
   public dataArrayPercentageRenderer: Object[] = [{
@@ -667,6 +720,18 @@ export class InputComboComponent {
     }
   };
 
+  public files_icon_render = {
+    html: {
+      data: COMBO_HTML_DATA_ICON_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_ICON_RENDERER
+    }
+  };
+
   public valueSimple: any = 2;
 
   public valueCountryFlag: any = "fr";
@@ -675,7 +740,7 @@ export class InputComboComponent {
 
   public valueBoolean: any = 1;
 
-  public valueIcon: any = "paid ";
+  public valueIcon: any = 3;
 
   public valueMultiple: any[] = this.multipleValue;
 
