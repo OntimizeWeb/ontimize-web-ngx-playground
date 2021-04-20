@@ -179,8 +179,8 @@
       <label class="input-comp-title">{{ 'INPUT.BUTTON.ICON' | oTranslate }}</label>
       <div fxLayout="row" fxLayoutGap="8px">
         <o-combo attr="combo-editable-search" label="{{ 'INPUT.COMBO_ICON_RENDERER.SEARCH' | oTranslate }}" [static-data]="dataArrayIconRenderer" [data]="valueIcon"
-          value-column="key" columns="key;value;paco" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
-          <o-combo-renderer-icon icon-key="materialIcon" icon-position="right"></o-combo-renderer-icon>
+          value-column="key" columns="key;value;materialIcon" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+          <o-combo-renderer-icon icon-column="materialIcon" icon-position="right"></o-combo-renderer-icon>
         </o-combo>
       </div>
     </div>
