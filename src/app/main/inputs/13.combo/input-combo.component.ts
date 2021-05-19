@@ -50,6 +50,17 @@ const COMBO_HTML_DATA_CUSTOM_RENDER = `
   </o-form>
 `;
 
+const COMBO_HTML_DATA_COUNTRY_FLAG_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
+      value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+      <combo-country-flag-render></combo-country-flag-render>
+    </o-combo>
+
+  </o-form>
+`;
+
 const COMBO_HTML_DATA_CURRENCY_RENDER = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
@@ -113,6 +124,18 @@ const COMBO_HTML_DATA_BOOLEAN_RENDER = `
       <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
     </o-combo>
 
+  </o-form>
+`;
+
+const COMBO_HTML_DATA_ICON_RENDER = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-combo attr="combo-editable-multiple-search" [static-data]="dataArray"
+      [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" multiple="yes"
+      null-selection="no" searchable="yes" fxFlex>
+      <o-combo-renderer-icon icon-key="materialIcon" icon-position="right"></o-combo-renderer-boolean>
+    </o-combo>
+  
   </o-form>
 `;
 
@@ -250,6 +273,37 @@ export class InputComboComponent {
 }
 `;
 
+const COMBO_TS_DATA_COUNTRY_FLAG_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public dataArray: Object[] = [{
+    key: "es",
+    value: "Spain"
+  }, {
+    key: "pt",
+    value: "Portugal"
+  }, {
+    key: "fr",
+    value: "France"
+  }, {
+    key: "gb",
+    value: "United Kingdom"
+  }, {
+    key: "us",
+    value: "United States"
+  }];
+
+  public valueSimple: any = "fr";
+
+}
+`;
+
 const COMBO_TS_DATA_BOOLEAN_RENDERER = `
 import { Component } from '@angular/core';
 
@@ -299,6 +353,42 @@ export class InputComboComponent {
   }];
 
   public valueSimple: any = 1;
+
+}
+`;
+
+const COMBO_TS_DATA_ICON_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public dataArray: Object[] = [{
+    key: 0,
+    value: "Snowboard",
+    materialIcon: "snowboarding"
+  }, {
+    key: 1,
+    value: "Surfing",
+    materialIcon: "surfing"
+  }, {
+    key: 2,
+    value: "Skateboarding",
+    materialIcon: "skateboarding"
+  }, {
+    key: 3,
+    value: "Skiing",
+    materialIcon: "downhill_skiing"
+  }, {
+    key: 4,
+    value: "Paragliding",
+    materialIcon: "paragliding"
+  }];
+
+  public valueSimple: any = 3;
 
 }
 `;
@@ -400,6 +490,23 @@ export class InputComboComponent {
     value: 'Finland'
   }];
 
+  public dataArrayCountryFlagRenderer: Object[] = [{
+    key: "es",
+    value: "Spain"
+  }, {
+    key: "pt",
+    value: "Portugal"
+  }, {
+    key: "fr",
+    value: "France"
+  }, {
+    key: "gb",
+    value: "United Kingdom"
+  }, {
+    key: "us",
+    value: "United States"
+  }];
+
   public dataArrayCustomRenderer: Object[] = [{
     key: 1,
     value: '1615472370'
@@ -440,6 +547,28 @@ export class InputComboComponent {
   }, {
     key: 4,
     value: "30/01/2016"
+  }];
+
+  public dataArrayIconRenderer: Object[] = [{
+    key: 0,
+    value: "Snowboard",
+    materialIcon: "snowboarding"
+  }, {
+    key: 1,
+    value: "Surfing",
+    materialIcon: "surfing"
+  }, {
+    key: 2,
+    value: "Skateboarding",
+    materialIcon: "skateboarding"
+  }, {
+    key: 3,
+    value: "Skiing",
+    materialIcon: "downhill_skiing"
+  }, {
+    key: 4,
+    value: "Paragliding",
+    materialIcon: "paragliding"
   }];
 
   public dataArrayPercentageRenderer: Object[] = [{
@@ -579,11 +708,39 @@ export class InputComboComponent {
     }
   };
 
+  public files_country_flag_render = {
+    html: {
+      data: COMBO_HTML_DATA_COUNTRY_FLAG_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_COUNTRY_FLAG_RENDERER
+    }
+  };
+
+  public files_icon_render = {
+    html: {
+      data: COMBO_HTML_DATA_ICON_RENDER
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: COMBO_TS_DATA_ICON_RENDERER
+    }
+  };
+
   public valueSimple: any = 2;
+
+  public valueCountryFlag: any = "fr";
 
   public valuePercentage: any = 16;
 
   public valueBoolean: any = 1;
+
+  public valueIcon: any = 3;
 
   public valueMultiple: any[] = this.multipleValue;
 
