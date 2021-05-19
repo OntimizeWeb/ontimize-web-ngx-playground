@@ -2,7 +2,7 @@ import { Injector } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import { share } from 'rxjs/operators';
 
-import { FilterExpressionUtils, OntimizeService, LoginService, AppConfig, Util, ServiceResponse } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, OntimizeService, AuthService, AppConfig, Util, ServiceResponse } from 'ontimize-web-ngx';
 
 export class DummyService extends OntimizeService {
 
@@ -23,24 +23,20 @@ export class DummyService extends OntimizeService {
 
   public getDefaultServiceConfiguration(serviceName?: string): Object {
 
-    const loginService = this.injector.get(LoginService);
+    const authService = this.injector.get(AuthService);
     const configuration = this.injector.get(AppConfig).getServiceConfiguration();
 
     let servConfig = {};
     if (serviceName && configuration.hasOwnProperty(serviceName)) {
       servConfig = configuration[serviceName];
     }
-    servConfig['session'] = loginService.getSessionInfo();
+    servConfig['session'] = authService.getSessionInfo();
     return servConfig;
   }
 
   public configureService(config: any): void {
+    super.configureService(config);
     this._urlBase = './assets/dummy-data';
-    this._sessionid = config.session ? config.session.id : -1;
-
-    if (config.entity !== undefined) {
-      this.entity = config.entity;
-    }
   }
 
   public startsession(user: string, password: string): Observable<any> {

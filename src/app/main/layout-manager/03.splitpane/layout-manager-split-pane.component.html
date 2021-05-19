@@ -1,5 +1,12 @@
 <o-form-layout-manager mode="split-pane" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=","
-  attr="o-form-layout-customer-home" title-data-origin="customers_form_edit">
+  attr="o-form-layout-customer-home" title-data-origin="customers_form_edit"
+  
+  main-min-width="45%"
+  >
+
+  <o-form-layout-split-pane-options main-width="45%" main-min-width="25%">
+
+  </o-form-layout-split-pane-options>
 
   <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;NOTES" sort-columns="SURNAME" quick-filter="no" row-height="medium"

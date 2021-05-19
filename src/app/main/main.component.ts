@@ -1,8 +1,7 @@
 import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
-import { LoginService } from 'ontimize-web-ngx';
-import { environment } from '../../environments/environment';
-import { NavigationBarService } from '../shared/navigation-bar.service';
+import { AuthService } from 'ontimize-web-ngx';
 
+import { NavigationBarService } from '../shared/navigation-bar.service';
 
 @Component({
   selector: 'app-main',
@@ -16,8 +15,8 @@ export class MainComponent implements OnInit {
   constructor(
     protected injector: Injector,
     protected navigationService: NavigationBarService) {
-    const loginService = this.injector.get(LoginService);
-    loginService.storeSessionInfo({
+    const authService = this.injector.get(AuthService);
+    authService.storeSessionInfo({
       id: 12345,
       user: 'playground'
     });
