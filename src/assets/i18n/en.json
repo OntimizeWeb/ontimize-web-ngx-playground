@@ -216,6 +216,7 @@
   "INPUTS.COMBO_BOOLEAN_RENDERER": "Combo input with boolean renderer",
   "INPUTS.COMBO_PERCENTAGE_RENDERER": "Combo input with percentage renderer",
   "INPUTS.COMBO_DATE_RENDERER": "Combo input with date renderer",
+  "INPUTS.COMBO_ICON_RENDERER": "Combo input with icon renderer",
   "INPUTS.COMBO_MULTIPLE": "Combo inputs with multiple selection",
   "INPUTS.COMBO_MORE_INPUTS": "Combo configuration",
   "INPUTS.COMBO_MULTIPLE_CUSTOM_RENDERER": "Multiple selection with custom renderer",
