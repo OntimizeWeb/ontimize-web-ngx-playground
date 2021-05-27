@@ -75,7 +75,7 @@ export class DummyService extends OntimizeService {
   }
 
   public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
-      offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
+    offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
     return undefined;
   }
 
@@ -92,6 +92,21 @@ export class DummyService extends OntimizeService {
     return undefined;
   }
 
+  public queryWithDelay(kv?: object, av?: Array<string>, entity?: string,
+    sqltypes?: object): Observable<any> {
+    const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
+      setTimeout(() => {
+        this.query(kv, av, entity, sqltypes).subscribe((resp: ServiceResponse) => {
+          observer.next(resp);
+        }, err => {
+          observer.error(err);
+        });
+      }, 3000);
+    });
+    return dataObservable.pipe(share());
+
+  }
+
   protected customParseSuccessfulQueryResponse(kv: any, resp: ServiceResponse, subscriber: Subscriber<ServiceResponse>) {
     if (resp && resp.isUnauthorized()) {
       this.clientErrorFallback(401);
@@ -105,8 +120,7 @@ export class DummyService extends OntimizeService {
     }
   }
 
-  private filterResponse(kv: object, resp) {
-
+  private filterResponse(kv, resp) {
     if (kv.hasOwnProperty(FilterExpressionUtils.FILTER_EXPRESSION_KEY)) {
       return this.fetchRoots(resp);
     }

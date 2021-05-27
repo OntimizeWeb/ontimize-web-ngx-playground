@@ -15,8 +15,8 @@ export class OListPickerRendererComponent extends OListPickerCustomRenderer {
     super(injector);
   }
 
-  getListPickerValue(value: any) {
-    let theDate = moment.unix(value).format("DD/MM/YYYY");
+  getListPickerValue(record: any) {
+    let theDate = moment.unix(record['integerValue']).format("DD/MM/YYYY");
     return theDate;
   }
 }
