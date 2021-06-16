@@ -1,12 +1,11 @@
 import { Injector } from '@angular/core';
+import { AppConfig, FilterExpressionUtils, OntimizeService, ServiceResponse, Util } from 'ontimize-web-ngx';
 import { Observable, Subscriber } from 'rxjs';
 import { share } from 'rxjs/operators';
 
-import { FilterExpressionUtils, OntimizeService, AuthService, AppConfig, Util, ServiceResponse } from 'ontimize-web-ngx';
-
 export class DummyService extends OntimizeService {
 
-  static mappings: Object = {
+  static mappings: object = {
     customer: '/customers-data.json',
     customerRecursive: '/customers-recursive-data.json',
     account: '/accounts-data.json',
@@ -21,22 +20,18 @@ export class DummyService extends OntimizeService {
     super(injector);
   }
 
-  public getDefaultServiceConfiguration(serviceName?: string): Object {
-
-    const authService = this.injector.get(AuthService);
+  public getDefaultServiceConfiguration(serviceName?: string): object {
     const configuration = this.injector.get(AppConfig).getServiceConfiguration();
 
     let servConfig = {};
     if (serviceName && configuration.hasOwnProperty(serviceName)) {
       servConfig = configuration[serviceName];
     }
-    servConfig['session'] = authService.getSessionInfo();
     return servConfig;
   }
 
   public configureService(config: any): void {
     this._urlBase = './assets/dummy-data';
-    this._sessionid = config.session ? config.session.id : -1;
 
     if (config.entity !== undefined) {
       this.entity = config.entity;
@@ -55,8 +50,7 @@ export class DummyService extends OntimizeService {
     return undefined;
   }
 
-  public query(kv?: object, av?: Array<string>, entity?: string,
-    sqltypes?: object): Observable<any> {
+  public query(kv?: object, av?: Array<string>, entity?: string, sqltypes?: object): Observable<any> {
     entity = (Util.isDefined(entity)) ? entity : this.entity;
 
     const url = this._urlBase + DummyService.mappings[entity];
@@ -65,8 +59,8 @@ export class DummyService extends OntimizeService {
     };
     return this.doRequest({
       method: 'GET',
-      url: url,
-      options: options,
+      url,
+      options,
       successCallback: (resp, subscriber) => {
         this.customParseSuccessfulQueryResponse(kv, resp, subscriber);
       },
@@ -74,26 +68,7 @@ export class DummyService extends OntimizeService {
     });
   }
 
-  public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
-    offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
-    return undefined;
-  }
-
-  public insert(av: Object = {}, entity?: string, sqltypes?: Object): Observable<any> {
-    return undefined;
-  }
-
-  public update(kv: Object = {}, av: Object = {}, entity?: string,
-    sqltypes?: Object): Observable<any> {
-    return undefined;
-  }
-
-  public delete(kv: Object = {}, entity?: string, sqltypes?: Object): Observable<any> {
-    return undefined;
-  }
-
-  public queryWithDelay(kv?: object, av?: Array<string>, entity?: string,
-    sqltypes?: object): Observable<any> {
+  public queryWithDelay(kv?: object, av?: Array<string>, entity?: string, sqltypes?: object): Observable<any> {
     const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
       setTimeout(() => {
         this.query(kv, av, entity, sqltypes).subscribe((resp: ServiceResponse) => {
@@ -104,7 +79,6 @@ export class DummyService extends OntimizeService {
       }, 3000);
     });
     return dataObservable.pipe(share());
-
   }
 
   protected customParseSuccessfulQueryResponse(kv: any, resp: ServiceResponse, subscriber: Subscriber<ServiceResponse>) {
@@ -120,7 +94,7 @@ export class DummyService extends OntimizeService {
     }
   }
 
-  private filterResponse(kv, resp) {
+  private filterResponse(kv: object, resp) {
     if (kv.hasOwnProperty(FilterExpressionUtils.FILTER_EXPRESSION_KEY)) {
       return this.fetchRoots(resp);
     }
