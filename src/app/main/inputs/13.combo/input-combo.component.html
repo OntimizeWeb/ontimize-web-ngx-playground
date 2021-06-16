@@ -145,6 +145,16 @@
         </o-combo>
       </o-form>
     </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_ICON_RENDERER" [files]="ComboCodeExamples.files_icon_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select sport" [static-data]="MockData.sportsArray"
+          [data]="MockData.selectedSportCode" value-column="sportCode" columns="sportCode;sportDescription;sportIcon"
+          visible-columns="sportDescription" required="yes" fxFlex>
+          <o-combo-renderer-icon icon-column="sportIcon" icon-position="right"></o-combo-renderer-icon>
+        </o-combo>
+      </o-form>
+    </example-comp>
   </mat-tab>
 
   <mat-tab label="{{'INPUTS.COMBO.CUSTOM_RENDERERS_TAB' | oTranslate}}">

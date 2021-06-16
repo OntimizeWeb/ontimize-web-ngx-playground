@@ -15,6 +15,9 @@ import { InputPasswordComponent } from './09.password/input-password.component';
 import { InputTextareaComponent } from './10.textarea/input-textarea.component';
 import { InputFileComponent } from './11.file/input-file.component';
 import { InputCheckboxComponent } from './12.checkbox/input-checkbox.component';
+import {
+  OComboCountryFlagRendererComponent
+} from './13.combo/combo-country-flag-render/combo-country-flag-render.component';
 import { OComboRendererComponent } from './13.combo/combo-custom-render/combo-custom-render.component';
 import { InputComboComponent } from './13.combo/input-combo.component';
 import { InputListpickerComponent } from './14.listpicker/input-listpicker.component';
@@ -73,6 +76,7 @@ import { InputsComponent } from './inputs.component';
     InputSliderComponent,
     InputDateRangeComponent,
     OComboRendererComponent,
+    OComboCountryFlagRendererComponent,
     OListPickerRendererComponent
   ]
 })

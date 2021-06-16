@@ -184,6 +184,18 @@ const COMBO_HTML_DATA_LOCKER_DISABLED = `
   </o-form>
 `;
 
+const COMBO_HTML_DATA_ICON_RENDER = `
+<o-form show-header="no" layout-padding>
+
+  <o-combo attr="combo" label="Select sport" [static-data]="sportsArray"
+    [data]="selectedSportCode" value-column="sportCode" columns="sportCode;sportDescription;sportIcon"
+    visible-columns="sportDescription" required="yes" fxFlex>
+    <o-combo-renderer-icon icon-column="sportIcon" icon-position="right"></o-combo-renderer-icon>
+  </o-combo>
+
+</o-form>
+`;
+
 const COMBO_TS_DATA = `
 import { Component } from '@angular/core';
 
@@ -491,6 +503,41 @@ export class InputComboComponent {
 }
 `;
 
+const COMBO_TS_DATA_ICON_RENDERER = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public sportsArray = [{
+    sportCode: 0,
+    sportDescription: "Snowboard",
+    materialIcon: "snowboarding"
+  }, {
+    sportCode: 1,
+    sportDescription: "Surfing",
+    materialIcon: "surfing"
+  }, {
+    sportCode: 2,
+    sportDescription: "Skateboarding",
+    materialIcon: "skateboarding"
+  }, {
+    sportCode: 3,
+    sportDescription: "Skiing",
+    materialIcon: "downhill_skiing"
+  }, {
+    sportCode: 4,
+    sportDescription: "Paragliding",
+    materialIcon: "paragliding"
+  }];
+
+  public selectedSportCode = 3;
+}
+`;
+
 export class ComboCodeExamples {
   public static files = {
     html: {
@@ -579,6 +626,15 @@ export class ComboCodeExamples {
     },
     typescript: {
       data: COMBO_TS_DATA_BOOLEAN_RENDERER
+    }
+  };
+
+  public static files_icon_render = {
+    html: {
+      data: COMBO_HTML_DATA_ICON_RENDER
+    },
+    typescript: {
+      data: COMBO_TS_DATA_ICON_RENDERER
     }
   };
 
