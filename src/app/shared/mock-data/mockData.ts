@@ -103,6 +103,27 @@ export class MockData {
     itemTranslationKey: 'TRANSLATION_2'
   }];
 
+  public static sportsArray = [{
+    sportCode: 0,
+    sportDescription: "Snowboard",
+    sportIcon: "snowboarding"
+  }, {
+    sportCode: 1,
+    sportDescription: "Surfing",
+    sportIcon: "surfing"
+  }, {
+    sportCode: 2,
+    sportDescription: "Skateboarding",
+    sportIcon: "skateboarding"
+  }, {
+    sportCode: 3,
+    sportDescription: "Skiing",
+    sportIcon: "downhill_skiing"
+  }, {
+    sportCode: 4,
+    sportDescription: "Paragliding",
+    sportIcon: "paragliding"
+  }];
 
   public static selectedCountryCode = 2;
 
@@ -121,4 +142,6 @@ export class MockData {
   public static selectedBooleanString = 'trueString';
 
   public static selectedTranslationCode = 2;
+
+  public static selectedSportCode = 3;
 }
