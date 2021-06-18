@@ -11,7 +11,7 @@ import { LayoutManagerComponent } from './layout-manager.component';
 export const routes: Routes = [
   {
     path: '', component: LayoutManagerComponent, children: [
-      { path: '', component: LayoutManagerOverviewComponent },
+      { path: '', redirectTo: 'tab', pathMatch: 'full' },
       { path: 'tab', component: LayoutManagerTabgroupComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
       { path: 'dialog', component: LayoutManagerDialogComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
       { path: 'split-pane', component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }

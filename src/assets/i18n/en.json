@@ -415,5 +415,11 @@
   "TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS_DESC": "Multiple expanded rows at the same time",
   "TRANSLATION_0": "First value",
   "TRANSLATION_1": "Second value",
-  "TRANSLATION_2": "Third value"
+  "TRANSLATION_2": "Third value",
+  "LAYOUT_MANAGER": "Form Layout Manager",
+  "LAYOUT_MANAGER.TABGROUP": "Tab group",
+  "LAYOUT_MANAGER.DIALOG": "Dialog",
+  "LAYOUT_MANAGER.SPLITPANE": "Split pane",
+  "CUSTOMER_DATA": "Customer data",
+  "COMMENTS": "Comments"
 }
