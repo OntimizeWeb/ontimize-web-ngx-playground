@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;TIME;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
       visible-columns="NAME;STARTDATE;TIME;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
-      sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
+      sort-columns="BALANCE:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
       pagination-controls="no" detail-mode="none" edition-mode="click" export-button="no">
 
       <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
