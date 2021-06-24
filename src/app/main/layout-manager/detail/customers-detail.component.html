@@ -1,0 +1,38 @@
+<o-form-container breadcrumb="yes" breadcrumb-label-columns="NAME;SURNAME" breadcrumb-separator=", " [form]="form">
+
+  <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;U"
+    #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC" show-header-navigation="yes" service-type="DummyService"
+    query-method="filteredQuery">
+
+    <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
+      <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+        <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
+        <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+          <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
+          <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
+          <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
+          <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
+          </o-date-input>
+        </div>
+      </div>
+    </o-row>
+
+    <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
+      <div fxLayout="row wrap" fxLayoutGap="14px">
+        <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
+        <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
+        <o-text-input attr="STATE" class="form-field"></o-text-input>
+        <o-text-input attr="ZIPCODE" class="form-field"></o-text-input>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="14px">
+        <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
+        <o-text-input attr="PHONE" class="form-field"></o-text-input>
+      </div>
+    </o-column>
+
+    <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
+      <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+    </o-column>
+  </o-form>
+
+</o-form-container>
