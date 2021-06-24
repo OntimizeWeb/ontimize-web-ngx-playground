@@ -1,5 +1,5 @@
 import { Injector } from '@angular/core';
-import { AppConfig, FilterExpressionUtils, OntimizeService, ServiceResponse, Util } from 'ontimize-web-ngx';
+import { AppConfig, AuthService, FilterExpressionUtils, OntimizeService, ServiceResponse, Util } from 'ontimize-web-ngx';
 import { Observable, Subscriber } from 'rxjs';
 import { share } from 'rxjs/operators';
 
@@ -20,17 +20,21 @@ export class DummyService extends OntimizeService {
     super(injector);
   }
 
-  public getDefaultServiceConfiguration(serviceName?: string): object {
+  public getDefaultServiceConfiguration(serviceName?: string): Object {
+
+    const authService = this.injector.get(AuthService);
     const configuration = this.injector.get(AppConfig).getServiceConfiguration();
 
     let servConfig = {};
     if (serviceName && configuration.hasOwnProperty(serviceName)) {
       servConfig = configuration[serviceName];
     }
+    servConfig['session'] = authService.getSessionInfo();
     return servConfig;
   }
 
   public configureService(config: any): void {
+    super.configureService(config);
     this._urlBase = './assets/dummy-data';
 
     if (config.entity !== undefined) {
@@ -62,6 +66,30 @@ export class DummyService extends OntimizeService {
       url,
       options,
       successCallback: (resp, subscriber) => {
+        this.customParseSuccessfulQueryResponse(kv, resp, subscriber);
+      },
+      errorCallBack: this.parseUnsuccessfulQueryResponse
+    });
+  }
+
+  public filteredQuery(kv?: object, av?: Array<string>, entity?: string,
+    sqltypes?: object): Observable<any> {
+    entity = (Util.isDefined(entity)) ? entity : this.entity;
+
+    const url = this._urlBase + DummyService.mappings[entity];
+    const options = {
+      headers: this.buildHeaders()
+    };
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: options,
+      successCallback: (resp, subscriber) => {
+        const filtered = resp.data.filter(item => {
+          const equal = Object.keys(kv).every(key => item[key] === kv[key]);
+          return equal;
+        });
+        resp.data = filtered;
         this.customParseSuccessfulQueryResponse(kv, resp, subscriber);
       },
       errorCallBack: this.parseUnsuccessfulQueryResponse
