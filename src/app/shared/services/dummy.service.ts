@@ -85,11 +85,6 @@ export class DummyService extends OntimizeService {
       url: url,
       options: options,
       successCallback: (resp, subscriber) => {
-        Object.keys(kv).forEach(function (key) {
-          console.log(key)
-        });
-
-
         const filtered = resp.data.filter(item => {
           const equal = Object.keys(kv).every(key => item[key] === kv[key]);
           return equal;
