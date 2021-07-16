@@ -1,21 +1,20 @@
-<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_PAGINACION" [files]="getFiles('o-table-paginator')"
-  (showSource)="onShowSource('o-table-paginator', table, ex)">
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_PAGINACION"
+  [files]="getFiles('o-table-paginator')" (showSource)="onShowSource('o-table-paginator', table, ex)">
   <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding>
     <div fxFlex="60" fxLayoutAlign="center center">
-      <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-        <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-          sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no" export-button="no" [static-data]="data"
-          layout-padding fxFill>
-          <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
-          <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
-          <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
-        </o-table>
-      </div>
+      <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
+        visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5"
+        insert-button="no" refresh-button="no" export-button="no" [static-data]="data" layout-padding fxFill>
+        <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
+        <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
+      </o-table>
     </div>
-    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding layout-align="start">
+    <o-column attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding
+      layout-align="start">
       <mat-form-field>
-        <input matInput #pageSizeOptionsInput placeholder="{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}" value="5;10;15" 
-        (change)="onEmptySetDefault()">
+        <input matInput #pageSizeOptionsInput placeholder="{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}"
+          value="5;10;15" (change)="onEmptySetDefault()">
       </mat-form-field>
     </o-column>
   </div>
