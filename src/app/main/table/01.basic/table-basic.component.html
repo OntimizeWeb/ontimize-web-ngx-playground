@@ -2,7 +2,7 @@
   (showSource)="onShowSource('o-table', table, ex)">
   <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding>
     <div fxFlex="60" fxLayoutAlign="center center">
-      <o-table #table attr="table" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
+      <o-table #table attr="tableBasic" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
         visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
         [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
         [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
