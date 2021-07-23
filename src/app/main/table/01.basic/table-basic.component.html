@@ -9,7 +9,7 @@
         [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked"
         [select-all-checkbox]="selectMultipleToggle.checked" [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked"
         [show-title]="titleToggle.checked" row-height="medium" pagination-controls="no" edition-mode="click" detail-mode="none"
-        [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked">
+        [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no">
 
         <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
         <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm" tooltip="yes"></o-table-button>
