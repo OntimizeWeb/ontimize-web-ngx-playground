@@ -144,7 +144,7 @@ const HTML_DATA = `
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
     select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}"
-    pagination-controls="no" edition-mode="click" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}">
+    pagination-controls="no" edition-mode="click" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -517,47 +517,18 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
       </o-table-row-expandable>
     </o-table>`;
 const HTML_DATA_BASIC_ROW_GROUPING = `
-   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
-      columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
-      quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-      detail-mode="none" groupable="true">
-      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
-    </o-table>`;
-
-const HTML_DATA_ROW_ROW_GROUPING_RENDERED_CELLS =
-  ` <o-table fxFill #table attr="accounts" layout-padding title="ACCOUNTS" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
-      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CLOSED;CARDS"  [static-data]="data"
-      sort-columns="COMMISSION" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="no" export-button="no" edition-mode="click" detail-mode="none" grouped-columns="COMMISSION">
-
-      <o-table-column attr="PHOTO" orderable="no" searchable="no" width="32px">
-        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-        </o-table-cell-renderer-image>
-      </o-table-column>
-      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LLL"> </o-table-column>
-      <o-table-column attr="BALANCE" title="BALANCE" type="real" thousand-separator="." decimal-separator="," currency-symbol="€"
-        currency-symbol-position="right" filter-source="both" width="140px"></o-table-column>
-      <o-table-column attr="INTERESRATE" title="INTERESRATE" width="100px" content-align="end">
-        <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2" value-base="100">
-        </o-table-cell-renderer-percentage>
-      </o-table-column>
-
-      <o-table-column attr="COMMISSION" title="COMMISSION">
-        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
-        </o-table-cell-renderer-boolean>
-      </o-table-column>
-
-      <o-table-column attr="CLOSED" title="CLOSED">
-        <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="number"
-          true-value="1" false-value="0"></o-table-cell-renderer-boolean>
-      </o-table-column>
-      <o-table-column attr="CARDS">
-        <o-table-cell-renderer-translate [translate-params]="translateArgsFn"></o-table-cell-renderer-translate>
-      </o-table-column>
-
-      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
-    </o-table>
+  <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
+  columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
+  quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+  detail-mode="none">
+    <o-table-columns-grouping columns="country;sport">
+      <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
+      <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
+    </o-table-columns-grouping>
+    <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+  </o-table>
     `;
+
 
 const HTML_DATA_MULTIPLE_EXPANDED_ROWS = `
 <o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"

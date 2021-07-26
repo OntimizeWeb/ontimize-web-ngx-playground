@@ -4,7 +4,7 @@
 
     <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
 
-      <o-table #table attr="table" title="ACCOUNTS"  [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
+      <o-table #table attr="tableFixed" title="ACCOUNTS"  [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
         columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
         visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
         quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no"
