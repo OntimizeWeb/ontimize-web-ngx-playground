@@ -1,5 +1,4 @@
-// @import '~ontimize-web-ngx-theming/src/themes/ontimize.scss';
-@import "./custom-theme.scss";
+ @import '~ontimize-web-ngx-theming/src/themes/ontimize.scss';
 @import "~ontimize-web-ngx-theming/ontimize-theme.scss";
 @include ontimize-theme-styles($theme);
 
@@ -12,11 +11,6 @@
 @import "~ontimize-web-ngx/theme.scss";
 @include o-material-theme($theme);
 
-/*
-* Propagate theme to screen styles definition.
-*/
-@import "../../app/main/main-theme.scss";
-@include main-theme($theme);
 
 /*
 * Import application themes.
