@@ -144,7 +144,7 @@ const HTML_DATA = `
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
     select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}"
-    pagination-controls="no" edition-mode="click" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no">
+    pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no" >
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -162,16 +162,20 @@ const HTML_DATA = `
 `;
 
 const HTML_DATA_TABLE_FIXED = `
-  <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="data" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+  <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="data"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
-    quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-    [ngStyle]="{ngStyle}">
+    quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{ngStyle}"
+    edition-mode="none" detail-mode="none">
     <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
     <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
     <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
     <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
     <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","
       width="18%"></o-table-column>
+    <o-table-columns-grouping>
+      <o-table-columns-grouping-column attr="BALANCE" aggregate="sum"> </o-table-columns-grouping-column>
+    </o-table-columns-grouping>
     <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
   </o-table>
 `;
@@ -180,7 +184,7 @@ const HTML_DATA_RENDERER = `
   <o-table #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
     visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS"
     [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
-    refresh-button="no" pagination-controls="no" export-button="no">
+    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
 
     <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION"></o-table-columns-filter>
 
@@ -203,9 +207,10 @@ const HTML_DATA_RENDERER = `
 `;
 
 const HTML_DATA_RENDERER_CUSTOM = `
-  <o-table #table attr="table" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
-    attr="accounts" title="ACCOUNTS" [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
-    insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+  <o-table #table attr="table" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
+    visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" attr="accounts" title="ACCOUNTS"
+    [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
+    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
@@ -283,7 +288,7 @@ const HTML_DATA_EDITORS = `
 const HTML_DATA_AGGREGATE = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
     title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
-    pagination-controls="no" export-button="no">
+    pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"></o-table-columns-filter>
@@ -294,6 +299,13 @@ const HTML_DATA_AGGREGATE = `
     </o-table-column>
     <o-table-column attr="UNITSINORDER" title="UNITSINORDER" type="integer"></o-table-column>
     <o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+
+    <!-- Grouping columns -->
+    <o-table-columns-grouping>
+      <o-table-columns-grouping-column attr="UNITPRICE" aggregate="sum"> </o-table-columns-grouping-column>
+      <o-table-columns-grouping-column attr="UNITSINSTOCK" aggregate="avg"> </o-table-columns-grouping-column>
+      <o-table-columns-grouping-column attr="TOTALSTOCK" aggregate="sum"> </o-table-columns-grouping-column>
+    </o-table-columns-grouping>
 
     <!-- Aggregate columns -->
     <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
@@ -323,6 +335,13 @@ const HTML_DATA_CALCULATED_COLUMN = `
       <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
         boolean-type="string"></o-table-cell-renderer-boolean>
     </o-table-column-calculated>
+
+    <!-- Grouping columns -->
+    <o-table-columns-grouping>
+      <o-table-columns-grouping-column attr="UNITPRICE" aggregate="sum"> </o-table-columns-grouping-column>
+      <o-table-columns-grouping-column attr="UNITSINSTOCK" aggregate="avg"> </o-table-columns-grouping-column>
+      <o-table-columns-grouping-column attr="TOTALSTOCK" aggregate="sum"> </o-table-columns-grouping-column>
+    </o-table-columns-grouping>
 
     <!-- Aggregate columns -->
     <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
@@ -372,7 +391,8 @@ const HTML_DATA_CONTEXT_MENU = `
 const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
   <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
-    delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding>
+    delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
+    edition-mode="none" detail-mode="none">
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
