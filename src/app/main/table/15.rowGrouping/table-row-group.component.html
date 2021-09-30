@@ -5,9 +5,6 @@
       columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
       quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
       detail-mode="none" [ngStyle]="{'height':'600px'}">
-      <o-table-column attr="gold" type="percentage"></o-table-column>
-      <o-table-column attr="silver" type="real"></o-table-column>
-      <o-table-column attr="bronze" type="currency" content-align="center"></o-table-column>
       <o-table-columns-grouping columns="country;sport">
         <o-table-columns-grouping-column attr="age" title="edad" aggregate="min"> </o-table-columns-grouping-column>
         <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
