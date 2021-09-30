@@ -4,12 +4,20 @@
     <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
       columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
       quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-      detail-mode="none">
+      detail-mode="none" fixed-header="yes" [ngStyle]="{'height':'600px'}">
+      <o-table-column attr="gold" type="percentage"></o-table-column>
+      <o-table-column attr="silver" type="real"></o-table-column>
+      <o-table-column attr="bronze" type="currency" content-align="center"></o-table-column>
       <o-table-columns-grouping columns="country;sport">
-        <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
+        <o-table-columns-grouping-column attr="age" title="edad" aggregate="min"> </o-table-columns-grouping-column>
         <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
       </o-table-columns-grouping>
       <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+       <o-table-column-aggregate attr="age" title="(avg total)" aggregate="avg"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="gold" title="(max total)" aggregate="max"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="bronze" title="(min total)" aggregate="min"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="silver" title="(sum Total)"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="attlete" title="(Total count)" aggregate="count"></o-table-column-aggregate>
     </o-table>
   </div>
 </example-comp>
