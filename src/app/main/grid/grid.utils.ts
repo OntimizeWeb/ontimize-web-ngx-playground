@@ -15,8 +15,8 @@ const FAKE_USERS = [
     'companyname': 'Romaguera-Crona',
     'companycatchPhrase': 'Multi-layered client-server neural-net',
     'companybs': 'harness real-time e-markets',
-    'thumbnailUrl': 'http://placehold.it/100/30ac17',
-    'image': 'http://placehold.it/600/30ac17',
+    'thumbnailUrl': 'assets/images/placehold/100-30ac17.png',
+    'image': 'assets/images/placehold/600-30ac17.png',
     'body': `laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora
     quo necessitatibus\ndolor
     quam autem quasi\nreiciendis et nam sapiente accusantium`
@@ -37,8 +37,8 @@ const FAKE_USERS = [
     'companyname': 'Deckow-Crist',
     'companycatchPhrase': 'Proactive didactic contingency',
     'companybs': 'synergize scalable supply-chains',
-    'thumbnailUrl': 'http://placehold.it/100/dff9f6',
-    'image': 'http://placehold.it/600/dff9f6',
+    'thumbnailUrl': 'assets/images/placehold/100-dff9f6.png',
+    'image': 'assets/images/placehold/600-dff9f6.png',
     'body': `est natus enim nihil est dolore omnis voluptatem
      numquam\net omnis occaecati quod ullam at\nvoluptatem error
      expedita pariatur\nnihil sint nostrum voluptatem reiciendis et`
@@ -59,8 +59,8 @@ const FAKE_USERS = [
     'companyname': 'Romaguera-Jacobson',
     'companycatchPhrase': 'Face to face bifurcated interface',
     'companybs': 'e-enable strategic applications',
-    'thumbnailUrl': 'http://placehold.it/100/1941e9',
-    'image': 'http://placehold.it/600/1941e9',
+    'thumbnailUrl': 'assets/images/placehold/100-1941e9.png',
+    'image': 'assets/images/placehold/600-1941e9.png',
     'body': `quia molestiae reprehenderit quasi aspernatur\naut expedita
     occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe
      quia accusamus maiores nam est\ncum et ducimus et vero voluptates
@@ -82,8 +82,8 @@ const FAKE_USERS = [
     'companyname': 'Robel-Corkery',
     'companycatchPhrase': 'Multi-tiered zero tolerance productivity',
     'companybs': 'transition cutting-edge web services',
-    'thumbnailUrl': 'http://placehold.it/100/39e985',
-    'image': 'http://placehold.it/600/39e985',
+    'thumbnailUrl': 'assets/images/placehold/100-39e985.png',
+    'image': 'assets/images/placehold/600-39e985.png',
     'body': `non et atque\noccaecati deserunt quas accusantium unde odit
     nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net
     qui rerum deleniti ut occaecati`
@@ -104,8 +104,8 @@ const FAKE_USERS = [
     'companyname': 'Keebler LLC',
     'companycatchPhrase': 'User-centric fault-tolerant solution',
     'companybs': 'revolutionize end-to-end systems',
-    'thumbnailUrl': 'http://placehold.it/100/7735a',
-    'image': 'http://placehold.it/600/7735a',
+    'thumbnailUrl': 'assets/images/placehold/100-7735a.png',
+    'image': 'assets/images/placehold/600-7735a.png',
     'body': `harum non quasi et ratione\ntempore iure ex voluptates
     in ratione\nharum architecto fugit inventore cupiditate\nvoluptates
     magni quo et`
@@ -126,8 +126,8 @@ const FAKE_USERS = [
     'companyname': 'Considine-Lockman',
     'companycatchPhrase': 'Synchronised bottom-line interface',
     'companybs': 'e-enable innovative applications',
-    'thumbnailUrl': 'http://placehold.it/100/aef555',
-    'image': 'http://placehold.it/600/aef555',
+    'thumbnailUrl': 'assets/images/placehold/100-aef555.png',
+    'image': 'assets/images/placehold/600-aef555.png',
     'body': `laudantium enim quasi est quidem magnam voluptate´
     ipsam eos\ntempora quo necessitatibus\ndolor quam autem
     quasi\nreiciendis et nam sapiente accusantium`
@@ -148,8 +148,8 @@ const FAKE_USERS = [
     'companyname': 'Johns Group',
     'companycatchPhrase': 'Configurable multimedia task-force',
     'companybs': 'generate enterprise e-tailers',
-    'thumbnailUrl': 'http://placehold.it/100/c672a0',
-    'image': 'http://placehold.it/600/c672a0',
+    'thumbnailUrl': 'assets/images/placehold/100-c672a0.png',
+    'image': 'assets/images/placehold/600-c672a0.png',
     'body': `est natus enim nihil est dolore omnis voluptatem numquam\net
     omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil
      sint nostrum voluptatem reiciendis et`
@@ -170,8 +170,8 @@ const FAKE_USERS = [
     'companyname': 'Abernathy Group',
     'companycatchPhrase': 'Implemented secondary concept',
     'companybs': 'e-enable extensible e-tailers',
-    'thumbnailUrl': 'http://placehold.it/100/412ffd',
-    'image': 'http://placehold.it/600/412ffd',
+    'thumbnailUrl': 'assets/images/placehold/100-412ffd.png',
+    'image': 'assets/images/placehold/600-412ffd.png',
     'body': `quia molestiae reprehenderit quasi aspernatur\naut
     expedita occaecati aliquam eveniet laudantium\nomnis quibusdam
     delectus saepe quia accusamus maiores nam est\ncum et ducimus
@@ -193,8 +193,8 @@ const FAKE_USERS = [
     'companyname': 'Yost and Sons',
     'companycatchPhrase': 'Switchable contextually-based project',
     'companybs': 'aggregate real-time technologies',
-    'thumbnailUrl': 'http://placehold.it/100/15c072',
-    'image': 'http://placehold.it/600/15c072',
+    'thumbnailUrl': 'assets/images/placehold/100-15c072.png',
+    'image': 'assets/images/placehold/600-15c072.png',
     'body': `non et atque\noccaecati deserunt quas accusantium unde
      odit nobis qui voluptatem\nquia voluptas consequuntur itaque
      dolor\net qui rerum deleniti ut occaecati`
@@ -215,8 +215,8 @@ const FAKE_USERS = [
     'companyname': 'Hoeger LLC',
     'companycatchPhrase': 'Centralized empowering task-force',
     'companybs': 'target end-to-end models',
-    'thumbnailUrl': 'http://placehold.it/100/e65eee',
-    'image': 'http://placehold.it/600/e65eee',
+    'thumbnailUrl': 'assets/images/placehold/100-e65eee.png',
+    'image': 'assets/images/placehold/600-e65eee.png',
     'body': `harum non quasi et ratione\ntempore iure ex voluptates in
       ratione\nharum architecto fugit inventore cupiditate\nvoluptates
        magni quo et`
