@@ -421,5 +421,6 @@
   "LAYOUT_MANAGER.DIALOG": "Dialog",
   "LAYOUT_MANAGER.SPLITPANE": "Split pane",
   "CUSTOMER_DATA": "Customer data",
-  "COMMENTS": "Comments"
+  "COMMENTS": "Comments",
+  "edad":"Min age"
 }

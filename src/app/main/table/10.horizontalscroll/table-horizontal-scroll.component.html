@@ -3,9 +3,10 @@
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
     <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
-      <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
-        visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
-        delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding>
+      <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+        columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
+        query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
+        edition-mode="none" detail-mode="none">
         <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
           <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
           </o-table-cell-renderer-image>
