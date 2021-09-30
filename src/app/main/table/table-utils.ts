@@ -540,7 +540,7 @@ const HTML_DATA_BASIC_ROW_GROUPING = `
   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
   columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
   quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-  detail-mode="none">
+  detail-mode="none" [ngStyle]="{'height':'600px'}">
     <o-table-columns-grouping columns="country;sport">
       <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
       <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
