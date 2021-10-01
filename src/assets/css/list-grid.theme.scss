@@ -7,24 +7,22 @@
 
   // Colors
   ul.list-grid-container {
-    background: mat-color($primary);
+    background: #ffffff;
 
     li.list-grid-button {
       a {
-        color: #ffffff;
+        color: mat-color($primary,500);
 
         .new {
           background-color: mat-color($accent);
-          color: white;
+          color: mat-color($accent,100);
         }
       }
 
+      a.active,
       a:hover {
-        color: mat-color($primary, 200);
-      }
-
-      a.active {
-        color: mat-color($accent);
+        color: mat-color($primary, 800);
+        background-color: mat-color($accent,100);
       }
 
       a.active:hover {
@@ -50,7 +48,6 @@
       a {
         padding: 6px;
         text-decoration: none;
-        border-radius: 4px;
         white-space: nowrap;
 
         .new {

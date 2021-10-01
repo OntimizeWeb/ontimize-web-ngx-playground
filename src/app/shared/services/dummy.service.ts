@@ -13,7 +13,7 @@ export class DummyService extends OntimizeService {
     accountConcepts: '/concepts-data.json',
     movement: '/movements.json',
     accountMovementTypes: '/movementtypes-data.json',
-    olympicWinners: '/olympic-winners-data.json'
+    olympicWinners: '/olympic-winners-data-50.json'
   };
 
   constructor(protected injector: Injector) {
