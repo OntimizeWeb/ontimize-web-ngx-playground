@@ -536,6 +536,48 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
         </ng-template>
       </o-table-row-expandable>
     </o-table>`;
+const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_SYNC = `
+    <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+    title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+    query-rows="10" fixed-header="yes" [show-expandable-icon-function]="hasChilds">
+    <o-table-row-expandable>
+      <ng-template let-row>
+        <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+          <div fxLayout="row wrap" fxLayoutGap="14px">
+            <span fxFlex="30%"><strong>{{'ADDRESS' | oTranslate}}</strong>: {{row.ADDRESS}}</span>
+            <span fxFlex="20%"><strong>{{'COUNTRY' | oTranslate}}</strong>: {{row.COUNTRY}}</span>
+            <span fxFlex="20%"><strong>{{'STATE' | oTranslate}}</strong>: {{row.STATE}}</span>
+            <span fxFlex="20%"><strong>{{'ZIPCODE' | oTranslate}}</strong>: {{row.ZIPCODE}}</span>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="14px">
+            <span fxFlex="40%"><strong>{{'EMAIL' | oTranslate}}</strong>: {{row.EMAIL}}</span>
+            <span fxFlex="40%"><strong>{{'PHONE' | oTranslate}}</strong>: {{row.PHONE}}</span>
+          </div>
+        </o-column>
+      </ng-template>
+    </o-table-row-expandable>
+    </o-table>`;
+const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_ASYNC = `
+    <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+    title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+    store-state="false" query-rows="10" fixed-header="yes" [show-expandable-icon-function]="context">
+    <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+      <ng-template let-row>
+        <o-expandable-container [targets]="[accountsTable]" [data]="row">
+          <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+            columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+            title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
+            detail-mode="none">
+            <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+            <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+              thousand-separator="." decimal-separator=",">
+            </o-table-column>
+          </o-table>
+        </o-expandable-container>
+      </ng-template>
+    </o-table-row-expandable>
+    </o-table>`;
 const HTML_DATA_BASIC_ROW_GROUPING = `
   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
   columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
@@ -815,6 +857,89 @@ export class TableRowExpandableMultipleComponent {
 }
 `;
 
+const TYPESCRIPT_DATA_EXPANDABLE_FUNCTION_SYNC = `
+import { Component } from '@angular/core';
+
+import { TableUtils } from '../../table-utils';
+
+@Component({
+  selector: 'table-row-expandable-function-sync',
+  templateUrl: 'table-row-expandable-function-sync.component.html'
+})
+export class TableRowExpandableFunctionSyncComponent {
+
+  getFiles(key: string) {
+    return TableUtils.getFiles(key);
+  }
+
+  hasChilds(row: any, rowIndex: number) {
+    // Check for each row if hasChilds or not to show or not the expansion icon.
+    return row.HASCHILD ? true : false;
+  }
+}
+`;
+
+const TYPESCRIPT_DATA_EXPANDABLE_FUNCTION_ASYNC = `
+import { Component, Injector, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { DummyService } from 'src/app/shared/services/dummy.service';
+
+import { TableUtils } from '../../table-utils';
+
+@Component({
+  selector: 'table-row-expandable-function-async',
+  templateUrl: 'table-row-expandable-function-async.component.html'
+})
+export class TableRowExpandableFunctionAsyncComponent implements OnInit{
+  
+  service: DummyService;
+  context: any;
+  //Variable to better perfomance and not looping queries because of change detection.
+  cache: Object = {};
+
+  getFiles(key: string) {
+    return TableUtils.getFiles(key);
+  }
+  
+  constructor( protected injector: Injector ) {
+    this.service = this.injector.get(DummyService);
+    // Bind context
+    this.context = this.showExpandableIcon.bind(this);
+  }
+
+  ngOnInit(): void {
+    this.configureService();
+  }
+
+  protected configureService() {
+    const conf = this.service.getDefaultServiceConfiguration('customers');
+    this.service.configureService(conf);
+  }
+
+  showExpandableIcon(row: any, rowIndex: number):Observable<boolean> {
+    // Filter by current row customerID
+    const filter = {
+      'CUSTOMERID': row.CUSTOMERID
+    };
+    const columns = [];
+    let result: boolean = true;
+    // Check if customerID is in cache so we avoid to do the query again and again.
+    if(this.cache[row.CUSTOMERID] != null) {
+      return of(this.cache[row.CUSTOMERID]);
+    } else {
+      this.service.query(filter, columns, 'customerAccount').subscribe(resp => {
+        if (resp.code === 0) {
+          result = resp.data.length != 0 ? true : false;
+          this.cache[row.CUSTOMERID] = result;
+          return of(result);
+        }
+      });
+    }
+  }
+
+}
+`;
+
 const TYPESCRIPT_DATA_ROW_ROW_GROUPING_RENDERED_CELLS = `
 import { Component, } from '@angular/core';
 
@@ -1007,6 +1132,12 @@ export class TableUtils {
       case 'o-table-multiple-expanded-rows':
         code = TYPESCRIPT_DATA_MULTIPLE_EXPANDED_ROWS;
         break;
+      case 'o-table-row-expandable-function-sync':
+        code = TYPESCRIPT_DATA_EXPANDABLE_FUNCTION_SYNC;
+        break;
+      case 'o-table-row-expandable-function-async':
+        code = TYPESCRIPT_DATA_EXPANDABLE_FUNCTION_ASYNC;
+        break;
 
     }
     return code;
@@ -1056,6 +1187,12 @@ export class TableUtils {
         break;
       case 'o-table-row-expandable-with-expandable-container':
         code = HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER;
+        break;
+      case 'o-table-row-expandable-function-sync':
+        code = HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_SYNC;
+        break;
+      case 'o-table-row-expandable-function-async':
+        code = HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_ASYNC;
         break;
       case 'o-table-basic-row-grouping':
         code = HTML_DATA_BASIC_ROW_GROUPING;

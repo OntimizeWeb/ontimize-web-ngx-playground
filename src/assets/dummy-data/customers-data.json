@@ -12,7 +12,8 @@
       "ADDRESS": "Avda. Castellana 123",
       "CUSTOMERID": 19486,
       "NAME": "Manuel",
-      "STARTDATE": 1598911200000
+      "STARTDATE": 1598911200000,
+      "HASCHILD": false
     },
     {
       "SURNAME": "García Rodríguez",
@@ -21,7 +22,8 @@
       "ADDRESS": "Gran Vía n 1123 6º C",
       "CUSTOMERID": 19487,
       "NAME": "Ramón",
-      "STARTDATE": 1578524400000
+      "STARTDATE": 1578524400000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "de Groot",
@@ -30,7 +32,8 @@
       "ADDRESS": "44 Passage Saint-Sébastien",
       "CUSTOMERID": 19329,
       "NAME": "Sjon",
-      "STARTDATE": 1545696000000
+      "STARTDATE": 1545696000000,
+      "HASCHILD": false
     },
     {
       "SURNAME": "Martínez Kirsten",
@@ -39,7 +42,8 @@
       "ADDRESS": "Edificio Citexvi Fonte das Abelleiras, S/N Local 27",
       "CUSTOMERID": 19381,
       "NAME": "Pablo",
-      "STARTDATE": 1433289600000
+      "STARTDATE": 1433289600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "van Wijk",
@@ -48,7 +52,8 @@
       "ADDRESS": "Wijngaardsstraatje 9III, 1012 ",
       "CUSTOMERID": 19331,
       "NAME": "Sjaak",
-      "STARTDATE": 1288137600000
+      "STARTDATE": 1288137600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Smit",
@@ -57,7 +62,8 @@
       "ADDRESS": "Oosterspoorplein 1",
       "CUSTOMERID": 19326,
       "NAME": "Hiltrud",
-      "STARTDATE": 1287532800000
+      "STARTDATE": 1287532800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Metzger",
@@ -66,7 +72,8 @@
       "ADDRESS": "Rijksweg 1-31",
       "CUSTOMERID": 19322,
       "NAME": "Lancelot",
-      "STARTDATE": 1286409600000
+      "STARTDATE": 1286409600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Visser",
@@ -75,7 +82,8 @@
       "ADDRESS": "Lijnbaansgracht 9, 1015",
       "CUSTOMERID": 19338,
       "NAME": "Schmetterling",
-      "STARTDATE": 1285804800000
+      "STARTDATE": 1285804800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Töpfer",
@@ -84,7 +92,8 @@
       "ADDRESS": "Erasmusgracht, 1055",
       "CUSTOMERID": 19323,
       "NAME": "Luther",
-      "STARTDATE": 1285545600000
+      "STARTDATE": 1285545600000,
+      "HASCHILD": false
     },
     {
       "SURNAME": "Bakker",
@@ -93,7 +102,8 @@
       "ADDRESS": "Marsopstrasse 2",
       "CUSTOMERID": 19337,
       "NAME": "Louise",
-      "STARTDATE": 1285200000000
+      "STARTDATE": 1285200000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Jansen",
@@ -102,7 +112,8 @@
       "ADDRESS": "Dempschergasse 13",
       "CUSTOMERID": 19327,
       "NAME": "Kees",
-      "STARTDATE": 1284508800000
+      "STARTDATE": 1284508800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Schneider",
@@ -111,7 +122,8 @@
       "ADDRESS": "Gubitzstrasse 24",
       "CUSTOMERID": 19321,
       "NAME": "Helmuth",
-      "STARTDATE": 1283817600000
+      "STARTDATE": 1283817600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Müller",
@@ -120,7 +132,8 @@
       "ADDRESS": "Grottkauer Strasse 62",
       "CUSTOMERID": 19273,
       "NAME": "Frieda",
-      "STARTDATE": 1283817600000
+      "STARTDATE": 1283817600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Van Rijn",
@@ -129,7 +142,8 @@
       "ADDRESS": "Plantage Westermanlaan, 1018",
       "CUSTOMERID": 19330,
       "NAME": "Maikol",
-      "STARTDATE": 1283126400000
+      "STARTDATE": 1283126400000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Fischer",
@@ -138,7 +152,8 @@
       "ADDRESS": "Glacischaussee 20",
       "CUSTOMERID": 19320,
       "NAME": "Heidi",
-      "STARTDATE": 1282435200000
+      "STARTDATE": 1282435200000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "De Jong",
@@ -147,7 +162,8 @@
       "ADDRESS": "12 Rue Marbeau",
       "CUSTOMERID": 19336,
       "NAME": "Marlene",
-      "STARTDATE": 1281139200000
+      "STARTDATE": 1281139200000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Schmidt",
@@ -156,7 +172,8 @@
       "ADDRESS": "Sagritzer Weg 10",
       "CUSTOMERID": 19272,
       "NAME": "Egbert",
-      "STARTDATE": 1281139200000
+      "STARTDATE": 1281139200000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "d'Orléans",
@@ -165,7 +182,8 @@
       "ADDRESS": "Chemin Lateral, 93110",
       "CUSTOMERID": 19340,
       "NAME": "Jean",
-      "STARTDATE": 1280534400000
+      "STARTDATE": 1280534400000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "van Bruggen",
@@ -174,7 +192,8 @@
       "ADDRESS": "s113 18, 1092",
       "CUSTOMERID": 19328,
       "NAME": "Piet",
-      "STARTDATE": 1280448000000
+      "STARTDATE": 1280448000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Timmerman",
@@ -183,7 +202,8 @@
       "ADDRESS": "Pythagorasstraat 36, 1098",
       "CUSTOMERID": 19334,
       "NAME": "Olinda",
-      "STARTDATE": 1280448000000
+      "STARTDATE": 1280448000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Weffer",
@@ -192,7 +212,8 @@
       "ADDRESS": "Warmoesstraat 25, 1012",
       "CUSTOMERID": 19324,
       "NAME": "Erick",
-      "STARTDATE": 1280361600000
+      "STARTDATE": 1280361600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Van Dyck",
@@ -201,7 +222,8 @@
       "ADDRESS": "Kleine Wittenburgerstraat 211, 1018",
       "CUSTOMERID": 19333,
       "NAME": "Steve",
-      "STARTDATE": 1280361600000
+      "STARTDATE": 1280361600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Meyer",
@@ -210,7 +232,8 @@
       "ADDRESS": "Koningshoef",
       "CUSTOMERID": 19274,
       "NAME": "Gretchen",
-      "STARTDATE": 1280016000000
+      "STARTDATE": 1280016000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Matius",
@@ -219,7 +242,8 @@
       "ADDRESS": "Molukkenstraat 1",
       "CUSTOMERID": 19325,
       "NAME": "Adelbert",
-      "STARTDATE": 1279497600000
+      "STARTDATE": 1279497600000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Thalassinos",
@@ -228,7 +252,8 @@
       "ADDRESS": "Tantalou 8",
       "CUSTOMERID": 19349,
       "NAME": "Ambrosine",
-      "STARTDATE": 1279238400000
+      "STARTDATE": 1279238400000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Engels",
@@ -237,7 +262,8 @@
       "ADDRESS": "Tidorestraat 58-128",
       "CUSTOMERID": 19271,
       "NAME": "Aubrey",
-      "STARTDATE": 1279152000000
+      "STARTDATE": 1279152000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "d'Estaing",
@@ -246,7 +272,8 @@
       "ADDRESS": "21 Allée des Papillons, 93110",
       "CUSTOMERID": 19341,
       "NAME": "Marie",
-      "STARTDATE": 1279152000000
+      "STARTDATE": 1279152000000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Sharifah",
@@ -255,7 +282,8 @@
       "ADDRESS": "2 Verulam St, Camden Town, Greater London WC1X 8",
       "CUSTOMERID": 19346,
       "NAME": "Baraka",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Khalid",
@@ -264,7 +292,8 @@
       "ADDRESS": "113-121 Handsworth Ave, Walthamstow, Greater London E4 9",
       "CUSTOMERID": 19345,
       "NAME": "Abdel Khâliq",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Nikopolidis",
@@ -273,7 +302,8 @@
       "ADDRESS": "D. Kalapothaki 2",
       "CUSTOMERID": 19350,
       "NAME": "Andromeda",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Kirgyakos",
@@ -282,7 +312,8 @@
       "ADDRESS": "Aristotelous 6",
       "CUSTOMERID": 19351,
       "NAME": "Adonis",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "de Gaulle",
@@ -291,7 +322,8 @@
       "ADDRESS": "2 Allée de Villodrigo, 93110",
       "CUSTOMERID": 19339,
       "NAME": "Jacques",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Christopoulos",
@@ -300,7 +332,8 @@
       "ADDRESS": "Paikou 4",
       "CUSTOMERID": 19352,
       "NAME": "Elektra",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Mao",
@@ -309,7 +342,8 @@
       "ADDRESS": "Calle de Gregoria Hernández, 2",
       "CUSTOMERID": 19353,
       "NAME": "Tsang",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Qian",
@@ -318,7 +352,8 @@
       "ADDRESS": "Gotha-Allee 17",
       "CUSTOMERID": 19354,
       "NAME": "Zedong",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Pérez Miguelez",
@@ -327,7 +362,8 @@
       "ADDRESS": "Carrer del Pintor Alsamora, 73-85",
       "CUSTOMERID": 19355,
       "NAME": "Paco",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Vazquez Santos",
@@ -336,7 +372,8 @@
       "ADDRESS": "Calle de Regueros, 2-12",
       "CUSTOMERID": 19356,
       "NAME": "Paula",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "van Serooskerken",
@@ -345,7 +382,8 @@
       "ADDRESS": "Kloveniersburgwal 37III, 1011",
       "CUSTOMERID": 19332,
       "NAME": "Petrik",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Míguez Martinez",
@@ -354,7 +392,8 @@
       "ADDRESS": "Avinguda de la República Argentina, 220",
       "CUSTOMERID": 19357,
       "NAME": "Ana",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "López Piñeiro",
@@ -363,7 +402,8 @@
       "ADDRESS": "Calle de Salgado Somoza, 1-29",
       "CUSTOMERID": 19358,
       "NAME": "Jose",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Dominguez ",
@@ -372,7 +412,8 @@
       "ADDRESS": "Calle de Iparraguirre, 42",
       "CUSTOMERID": 19359,
       "NAME": "Juan",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Nuñez Fernandez",
@@ -381,7 +422,8 @@
       "ADDRESS": "Calle de Federico López, 7-27, Pozuelo de Alarcón",
       "CUSTOMERID": 19360,
       "NAME": "Maria",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Santos Rodríguez",
@@ -390,7 +432,8 @@
       "ADDRESS": "Passatge d'Alió, 19-45",
       "CUSTOMERID": 19361,
       "NAME": "Carlos Manuel",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Calaghan",
@@ -399,7 +442,8 @@
       "ADDRESS": "154-168 Boswall Pkwy, Edinburgh, City of Edinburgh EH5 2",
       "CUSTOMERID": 19363,
       "NAME": "Michael",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Andersen",
@@ -408,7 +452,8 @@
       "ADDRESS": "56 Gurranebraher Ave",
       "CUSTOMERID": 19365,
       "NAME": "Wing",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Schwarzkopf",
@@ -417,7 +462,8 @@
       "ADDRESS": "Bergstrasse 79",
       "CUSTOMERID": 19270,
       "NAME": "Adolph",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Khalid",
@@ -426,7 +472,8 @@
       "ADDRESS": "Simrockstrasse 38",
       "CUSTOMERID": 19347,
       "NAME": "Jawhar",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Papamakarios",
@@ -435,7 +482,8 @@
       "ADDRESS": "Agias Sofias 32",
       "CUSTOMERID": 19348,
       "NAME": "Adelphos",
-      "STARTDATE": 1278460800000
+      "STARTDATE": 1278460800000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "Ashworth",
@@ -444,7 +492,8 @@
       "ADDRESS": "Nymphenburger Strasse 55",
       "CUSTOMERID": 19364,
       "NAME": "Sue",
-      "STARTDATE": 1278367200000
+      "STARTDATE": 1278367200000,
+      "HASCHILD": true
     },
     {
       "SURNAME": "al-Fulan",
@@ -453,7 +502,8 @@
       "ADDRESS": "83-87 Addison Rd, Kensington, Greater London W14 8",
       "CUSTOMERID": 19344,
       "NAME": "Abbud",
-      "STARTDATE": 1278201600000
+      "STARTDATE": 1278201600000,
+      "HASCHILD": true
     }
   ],
   "sqlTypes": {
