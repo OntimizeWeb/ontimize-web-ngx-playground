@@ -39,12 +39,14 @@ export class TableRowExpandableFunctionAsyncComponent implements OnInit{
     const filter = {
       'CUSTOMERID': row.CUSTOMERID
     };
-    const columns = [];
+    const columns = ['ACCOUNTID'];
     let result: boolean = true;
     // Check if customerID is in cache so we avoid to do the query again and again.
     if(this.cache[row.CUSTOMERID] != null) {
       return of(this.cache[row.CUSTOMERID]);
     } else {
+      // Setted this to false to avoid performance errors if lifecycle has not finished.
+      this.cache[row.CUSTOMERID] = false;
       this.service.query(filter, columns, 'customerAccount').subscribe(resp => {
         if (resp.code === 0) {
           result = resp.data.length != 0 ? true : false;
