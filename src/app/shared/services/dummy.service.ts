@@ -1,8 +1,9 @@
-import { Injector } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { AppConfig, AuthService, FilterExpressionUtils, OntimizeService, ServiceResponse, Util } from 'ontimize-web-ngx';
 import { Observable, Subscriber } from 'rxjs';
 import { share } from 'rxjs/operators';
 
+@Injectable()
 export class DummyService extends OntimizeService {
 
   static mappings: object = {
