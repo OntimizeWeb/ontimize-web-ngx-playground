@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { of } from 'rxjs';
 
 import { TableUtils } from '../../table-utils';
 
@@ -14,6 +15,6 @@ export class TableRowExpandableFunctionSyncComponent {
 
   hasChilds(row: any, rowIndex: number) {
     // Check for each row if hasChilds or not to show or not the expansion icon.
-    return row.HASCHILD ? true : false;
+    return row.HASCHILD ? of(true) : of(false);
   }
 }

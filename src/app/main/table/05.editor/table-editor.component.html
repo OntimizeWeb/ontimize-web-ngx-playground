@@ -24,9 +24,9 @@
       </o-table-column>
 
       <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
-        <o-table-cell-editor-real (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+        <o-table-cell-editor-integer (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
           (editionCommitted)="editionCommitted($event)">
-        </o-table-cell-editor-real>
+        </o-table-cell-editor-integer>
       </o-table-column>
 
       <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
