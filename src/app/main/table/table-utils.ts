@@ -859,7 +859,7 @@ export class TableRowExpandableMultipleComponent {
 
 const TYPESCRIPT_DATA_EXPANDABLE_FUNCTION_SYNC = `
 import { Component } from '@angular/core';
-
+import { of } from 'rxjs';
 import { TableUtils } from '../../table-utils';
 
 @Component({
@@ -868,14 +868,11 @@ import { TableUtils } from '../../table-utils';
 })
 export class TableRowExpandableFunctionSyncComponent {
 
-  getFiles(key: string) {
-    return TableUtils.getFiles(key);
-  }
-
   hasChilds(row: any, rowIndex: number) {
     // Check for each row if hasChilds or not to show or not the expansion icon.
-    return row.HASCHILD ? true : false;
+    return row.HASCHILD ? of(true) : of(false);
   }
+
 }
 `;
 
@@ -896,10 +893,6 @@ export class TableRowExpandableFunctionAsyncComponent implements OnInit{
   context: any;
   //Variable to better perfomance and not looping queries because of change detection.
   cache: Object = {};
-
-  getFiles(key: string) {
-    return TableUtils.getFiles(key);
-  }
   
   constructor( protected injector: Injector ) {
     this.service = this.injector.get(DummyService);
