@@ -32,11 +32,7 @@
     "angular2-highlight-js": "^8.0.1",
     "hammerjs": "^2.0.8",
     "highlight.js": "^9.5.0",
-<<<<<<< HEAD
     "ontimize-web-ngx": "8.5.5",
-=======
-    "ontimize-web-ngx": "8.3.1",
->>>>>>> d1b3e565fcbeba7ad4767d8bbe4f259f7b53e1d8
     "ontimize-web-ngx-gallery": "8.0.1",
     "ontimize-web-ngx-theming": "8.1.0",
     "rxjs": "~6.4.0",
