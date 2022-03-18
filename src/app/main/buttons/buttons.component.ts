@@ -73,6 +73,22 @@ const HTML_DATA_TOGGLE = `
 </o-button-toggle-group>
 `;
 
+const HTML_DATA_ICON_POSITION = `
+  <div fxLayout="row wrap">
+    <o-button attr="iconposition1" type="BASIC" color="primary" label="icon-position='left'" layout-padding icon="arrow_forward_ios">
+    </o-button>
+    <o-button attr="iconposition2" type="RAISED" color="primary" label="icon-position='right'" layout-padding icon="arrow_forward_ios"
+      icon-position="right"></o-button>
+    <o-button attr="iconposition3" type="STROKED" color="primary" label="Stroked icon-position='top'" layout-padding icon="arrow_forward_ios"
+      icon-position="top"></o-button>
+    <o-button attr="iconposition4" type="FLAT" color="primary" label="Flat icon-position='bottom'" layout-padding icon="arrow_forward_ios"
+      icon-position="bottom">
+    </o-button>
+  </div>
+`;
+const HTML_DATA_ICON_IMAGE = `
+    <o-button label="Image icon" layout-padding image="./assets/images/visa.png"></o-button>
+`;
 const TYPESCRIPT_DATA = ``;
 
 @Component({
@@ -82,6 +98,7 @@ const TYPESCRIPT_DATA = ``;
 })
 export class ButtonsComponent implements OnInit {
 
+  iconPosition = screenLeft;
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService) {
@@ -92,10 +109,10 @@ export class ButtonsComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  getFiles() {
+  getFiles(key: string) {
     return {
       'html': {
-        'data': HTML_DATA
+        'data': this.getHTMLData(key)
       },
       'scss': {
         'data': undefined
@@ -104,6 +121,25 @@ export class ButtonsComponent implements OnInit {
         'data': TYPESCRIPT_DATA
       }
     };
+  }
+
+  public getHTMLData(key: string) {
+    let code = '';
+    switch (key) {
+      case 'buttons':
+        code = HTML_DATA;
+        break;
+      case 'button-toggle':
+        code = HTML_DATA_TOGGLE;
+        break;
+      case 'button-icon-position':
+        code = HTML_DATA_ICON_POSITION;
+        break;
+      case 'button-image-icon':
+        code = HTML_DATA_ICON_IMAGE;
+        break;
+    }
+    return code;
   }
 
   getFilesToggle() {
