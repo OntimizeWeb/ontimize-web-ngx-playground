@@ -79,9 +79,9 @@ const HTML_DATA_ICON_POSITION = `
     </o-button>
     <o-button attr="iconposition2" type="RAISED" color="primary" label="icon-position='right'" layout-padding icon="arrow_forward_ios"
       icon-position="right"></o-button>
-    <o-button attr="iconposition3" type="STROKED" color="primary" label="Stroked icon-position='top'" layout-padding icon="arrow_forward_ios"
+    <o-button attr="iconposition3" type="STROKED" color="primary" label="icon-position='top'" layout-padding icon="arrow_forward_ios"
       icon-position="top"></o-button>
-    <o-button attr="iconposition4" type="FLAT" color="primary" label="Flat icon-position='bottom'" layout-padding icon="arrow_forward_ios"
+    <o-button attr="iconposition4" type="FLAT" color="primary" label="icon-position='bottom'" layout-padding icon="arrow_forward_ios"
       icon-position="bottom">
     </o-button>
   </div>
@@ -98,7 +98,6 @@ const TYPESCRIPT_DATA = ``;
 })
 export class ButtonsComponent implements OnInit {
 
-  iconPosition = screenLeft;
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService) {
