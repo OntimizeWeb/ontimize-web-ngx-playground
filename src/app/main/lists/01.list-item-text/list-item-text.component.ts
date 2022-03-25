@@ -8,7 +8,8 @@ const LIST_ITEM_TEXT_HTML_DATA = `
   refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
   selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
   detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
-  edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
+  edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none" pagination-controls="{paginationControls}"
+  page-size-options="5;10" insert-button-position="{insertButtonPosition}" show-buttons-text="{showTextButton}">
 
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-text #item icon="{icon}" icon-position="{iconPosition}" title="{{ row.username }}"
@@ -37,12 +38,14 @@ const LIST_ITEM_TEXT_TS_DATA = `
 export class ListItemTextComponent {
 
   iconPosition: String = 'right';
-  protected staticData = ListsUtils.getListData(5);
+  protected staticData = ListsUtils.getListData(10);
 
   @ViewChild('iconToggle', { static: false })
   iconToggle: any;
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
+
+  insertButtonPosition = 'bottom';
 
   files = {
     'html': {

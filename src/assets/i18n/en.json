@@ -61,6 +61,8 @@
   "LIST.LIST_ITEM_CARD": "Card item",
   "LIST.LIST_ITEM_CARD_IMAGE": "Image card item",
   "LIST.LIST_ITEM_CUSTOM": "Custom item",
+  "LIST.PAGINATION_CONTROLS": "Show pagination controls",
+  "LIST.INSERT_BUTTON_POSITION":"Insert button position",
   "TABLE.COMPONENT": "Table",
   "TABLE.CONFIGURATION": "Table configuration",
   "TABLE.BUTTON.ADD": "Insert button",

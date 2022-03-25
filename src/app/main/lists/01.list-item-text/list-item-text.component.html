@@ -5,11 +5,14 @@
       <o-list #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email" [static-data]="getStaticData()"
         [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked"
         [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked" [selectable]="selectableToggle.checked"
-        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked" [detail-button-in-row-icon]="detailButtonInRowIconInput.value"
-        [edit-button-in-row]="editButtonInRowToggle.checked" [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
+        [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"
+        [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
+        [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none" [pagination-controls]="paginationButtonToggle.checked"
+        page-size-options="5;10" [insert-button-position]="insertButtonPosition" [show-buttons-text]="showTextToggle.checked">
         <o-list-item *ngFor="let row of list.dataArray">
-          <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="iconPosition" (icon-action)="addToFavorites(row, item)"
-            title="{{row.username}}" primary-text="{{ row.name }}" secondary-text="{{ row.email }}"></o-list-item-text>
+          <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="iconPosition"
+            (icon-action)="addToFavorites(row, item)" title="{{row.username}}" primary-text="{{ row.name }}" secondary-text="{{ row.email }}">
+          </o-list-item-text>
         </o-list-item>
       </o-list>
     </o-column>
@@ -39,8 +42,25 @@
         <mat-slide-toggle #insertButtonToggle fxFlex>
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
+        <mat-form-field *ngIf="insertButtonToggle.checked" fxFlex>
+          <mat-label>{{'LIST.INSERT_BUTTON_POSITION' | oTranslate}}</mat-label>
+          <mat-select [(value)]="insertButtonPosition">
+            <mat-option value="top">Top</mat-option>
+            <mat-option value="bottom">Bottom</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
         <mat-slide-toggle #deleteButtonToggle fxFlex>
           {{ 'DELETE_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle #showTextToggle checked="false" fxFlex>
+          {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div  layout-padding>
+        <mat-slide-toggle #paginationButtonToggle fxFlex>
+          {{ 'LIST.PAGINATION_CONTROLS' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
@@ -65,8 +85,7 @@
             <mat-slide-toggle #iconToggle>
               {{ 'SHOW_ICON' | oTranslate }}
             </mat-slide-toggle>
-            <mat-radio-group *ngIf="iconToggle.checked" layout-padding [value]="iconPosition" (change)="iconPosition = $event.value"
-              fxFlex>
+            <mat-radio-group *ngIf="iconToggle.checked" layout-padding [value]="iconPosition" (change)="iconPosition = $event.value" fxFlex>
               <mat-radio-button value="left" class="padding-3">
                 {{ 'LEFT' | oTranslate }}
               </mat-radio-button>
@@ -75,7 +94,7 @@
               </mat-radio-button>
             </mat-radio-group>
           </div>
-          <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
+          <mat-form-field [hidden]="!iconToggle.checked" fxFlex >
             <input matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
           </mat-form-field>
         </div>
