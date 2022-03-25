@@ -58,7 +58,7 @@
           {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <div  layout-padding>
+      <div layout-padding>
         <mat-slide-toggle #paginationButtonToggle fxFlex>
           {{ 'LIST.PAGINATION_CONTROLS' | oTranslate }}
         </mat-slide-toggle>
@@ -94,7 +94,7 @@
               </mat-radio-button>
             </mat-radio-group>
           </div>
-          <mat-form-field [hidden]="!iconToggle.checked" fxFlex >
+          <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
             <input matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
           </mat-form-field>
         </div>
