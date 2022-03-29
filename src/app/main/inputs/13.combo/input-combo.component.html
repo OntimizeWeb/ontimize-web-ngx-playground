@@ -206,4 +206,22 @@
       </example-comp>
     </ng-template>
   </mat-tab>
+
+  <mat-tab label="{{'INPUTS.COMBO.QUERY_ON_EVENT' | oTranslate}}">
+    <ng-template matTabContent>
+      <example-comp comp-name="INPUTS.COMBO.QUERY_ON_EVENT" comp-desc="INPUTS.COMBO.QUERY_ON_EVENT.DESC"
+        [files]="ComboCodeExamples.files_combo_locker">
+        <o-form show-header="no">
+          <o-combo #comboCountry attr="comboCountry" label="Select Country" service-type="DummyService"
+          query-method="query" service="comboCountry" entity="comboCountry" value-column="CountryId"
+          columns="CountryId,CountryName" visible-columns="CountryName" keys="CountryId">
+          </o-combo>
+          <o-combo #comboState attr="comboState" label="Select State" service-type="DummyService"
+          query-method="query" service="comboState" entity="comboState" value-column="StateId"
+          columns="StateID,StateName,CountryId" visible-columns="StateName" keys="StateId" [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+          </o-combo>
+        </o-form>
+      </example-comp>
+    </ng-template>
+  </mat-tab>
 </mat-tab-group>
