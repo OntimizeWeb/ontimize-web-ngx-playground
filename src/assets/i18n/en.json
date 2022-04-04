@@ -231,6 +231,8 @@
   "INPUTS.COMBO_MORE_INPUTS.DESC": "Additional inputs to configure the combo",
   "INPUTS.COMBO.LOCKER.DESC": "Combo that uses the 'oLocker' directive to lock the component while waiting the data response from the server.",
   "INPUTS.COMBO.LOCKER.DISABLED.DESC": "Combo using the 'oLocker' directive and the setting the 'oLockerMode' as 'disabled'.",
+  "INPUTS.COMBO.QUERY_ON_EVENT": "Combo using query-on-event input",
+  "INPUTS.COMBO.QUERY_ON_EVENT.DESC": "Dependandt combo using query-on-event input to load the second one.",
   "INPUTS.LISTPICKER": "List picker inputs",
   "INPUTS.LISTPICKER_CUSTOM_RENDERER": "List picker with custom renderer",
   "INPUTS.LISTPICKER_REAL_RENDERER": "List picker with real renderer",

@@ -196,6 +196,19 @@ const COMBO_HTML_DATA_ICON_RENDER = `
 </o-form>
 `;
 
+const COMBO_HTML_DATA_QUERY_ON_EVENT = `
+<o-form show-header="no">
+  <o-combo #comboCountry attr="comboCountry" label="Select Country" service-type="DummyService"
+  query-method="query" service="comboCountry" entity="comboCountry" value-column="CountryId"
+  columns="CountryId,CountryName" visible-columns="CountryName" keys="CountryId">
+  </o-combo>
+  <o-combo #comboState attr="comboState" label="Select State" service-type="DummyService"
+  query-method="query" service="comboState" entity="comboState" value-column="StateId"
+  columns="StateID,StateName,CountryId" visible-columns="StateName" keys="StateId" [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+  </o-combo>
+</o-form>
+`;
+
 const COMBO_TS_DATA = `
 import { Component } from '@angular/core';
 
@@ -538,6 +551,17 @@ export class InputComboComponent {
 }
 `;
 
+const COMBO_TS_DATA_QUERY_ON_EVENT = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+}
+`;
+
 export class ComboCodeExamples {
   public static files = {
     html: {
@@ -656,6 +680,15 @@ export class ComboCodeExamples {
   public static files_combo_locker_disabled = {
     html: {
       data: COMBO_HTML_DATA_LOCKER_DISABLED
+    }
+  };
+
+  public static files_combo_query_on_event = {
+    html: {
+      data: COMBO_HTML_DATA_QUERY_ON_EVENT
+    },
+    typescript: {
+      data: COMBO_TS_DATA_QUERY_ON_EVENT
     }
   };
 
