@@ -12,6 +12,18 @@ const PASSWORD_HTML_DATA = `
   </o-form>
 `;
 
+const SHOW_PASSWORD_BUTTON_HTML_DATA = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-password-input attr="password" label="Password" [data]="getValue()" show-password-button="yes"></o-password-input>
+
+    <o-password-input attr="password2" label="Password" [data]="getValue()" read-only="no" required="yes" show-password-button="yes"></o-password-input>
+
+    <o-password-input attr="password3" label="Password" enabled="no" [data]="getValue()" show-password-button="yes"></o-password-input>
+
+  </o-form>
+`;
+
 const PASSWORD_TS_DATA = `
   @Component({
     selector: 'input-password',
@@ -44,8 +56,26 @@ export class InputPasswordComponent {
     }
   };
 
+
   getValue() {
     return 'password';
+  }
+
+  getFiles(key) {
+
+    switch (key) {
+      case 'show-button-text':
+        this.files['html'] = {
+          data: SHOW_PASSWORD_BUTTON_HTML_DATA
+        }
+        break;
+      default:
+        this.files['html'] = {
+          data: PASSWORD_HTML_DATA
+        }
+        break;
+    }
+    return this.files;
   }
 
 }
