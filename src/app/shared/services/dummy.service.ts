@@ -14,7 +14,9 @@ export class DummyService extends OntimizeService {
     accountConcepts: '/concepts-data.json',
     movement: '/movements.json',
     accountMovementTypes: '/movementtypes-data.json',
-    olympicWinners: '/olympic-winners-data-50.json'
+    olympicWinners: '/olympic-winners-data-50.json',
+    comboCountry: '/combo-country-data.json',
+    comboState: '/combo-state-data.json'
   };
 
   constructor(protected injector: Injector) {
