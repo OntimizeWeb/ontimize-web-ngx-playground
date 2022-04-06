@@ -61,7 +61,7 @@ export class InputPasswordComponent {
     return 'password';
   }
 
-  getFiles(key) {
+  getFiles(key?:string) {
 
     switch (key) {
       case 'show-button-text':
