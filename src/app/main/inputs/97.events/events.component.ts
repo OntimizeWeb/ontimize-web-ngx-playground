@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatCheckbox } from '@angular/material';
 import * as moment from 'moment';
-import { OValueChangeEvent } from 'ontimize-web-ngx';
+import { OBaseComponent, OValueChangeEvent } from 'ontimize-web-ngx';
 
 const HTML_DATA = `
 <!-- INPUT-->
@@ -294,6 +294,10 @@ export class InputEventsComponent {
         break;
       case 'daterange':
         return { startDate: moment('2019-05-15T00:00Z'), endDate: moment('2019-05-20T00:00Z') }
+      case 'currency':
+        return 23.3;
+      case 'integer':
+        return 10000;
     }
     return value;
   }
@@ -334,10 +338,15 @@ export class InputEventsComponent {
     if (this.printOnFocus && !this.printOnFocus.checked) {
       return;
     }
+
     const eventChange = new ConsoleLogEvent();
     eventChange.eventName = 'onFocus';
     eventChange.attr = input.oattr;
     this.consoleLog.unshift(eventChange);
+  }
+
+  onFocusTest($event) {
+    console.log('onFocusTest', event);
   }
 
   onBlur(event, input) {
@@ -369,5 +378,13 @@ export class InputEventsComponent {
 
   print(e) {
     console.log(e);
+  }
+  onClick($event, input: OBaseComponent) {
+    const eventChange = new ConsoleLogEvent();
+    eventChange.eventName = 'click';
+    //eventChange.attr = input.oattr;
+    this.consoleLog.unshift(eventChange);
+
+
   }
 }
