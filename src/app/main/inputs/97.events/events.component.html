@@ -23,7 +23,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-currency-input #currency attr="currency" label="INPUT.BUTTON.CURRENCY" [data]="getValue('currency')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(currency)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(currency)"
-            (onBlur)="onBlur(currency)" (click)="onClick(currency)" (onChange)="onChange(currency)">
+            (onBlur)="onBlur(currency)" (click)="onClick(currency)">
           </o-currency-input>
           <button fxFlex mat-raised-button (click)="setValue(currency, 50)">setValue 50</button>
         </div>
@@ -157,7 +157,3 @@
   </o-form>
 </example-comp>
 
-<mat-form-field appearance="fill">
-  <mat-label>Input</mat-label>
-  <input matInput (focus)="onFocusTest($event)">
-</mat-form-field>
