@@ -29,6 +29,7 @@ import { InputRadioComponent } from './18.radio/input-radio.component';
 import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
 import { InputSliderComponent } from './20.slider/input-slider.component';
 import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
+import { InputPhoneComponent } from './22.phone/input-phone.component';
 import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
@@ -77,7 +78,8 @@ import { InputsComponent } from './inputs.component';
     InputDateRangeComponent,
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
-    OListPickerRendererComponent
+    OListPickerRendererComponent,
+    InputPhoneComponent
   ]
 })
 export class InputsModule { }
