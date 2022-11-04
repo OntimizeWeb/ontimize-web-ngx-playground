@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { OColumnCollapsibleComponent, OTranslateService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 
@@ -11,10 +11,17 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 })
 export class InputsComponent implements OnInit {
 
+  private expanded: boolean;
+
+  @ViewChild("collapsible", {static: true}) collapsible: OColumnCollapsibleComponent;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService
-  ) { }
+  ) {
+    this.expanded = true;
+
+  }
 
   ngOnInit() {
     let title = '';
@@ -22,5 +29,16 @@ export class InputsComponent implements OnInit {
     title = title + ' > ' + this.translateService.get('INPUTS');
     this.navigationService.setTitle(title);
   }
+
+  /*col_click() {
+    if (this.expanded) {
+      this.expanded = false;
+      this.collapsible.title = "";
+    }
+    else {
+      this.expanded = true;
+      this.collapsible.title = this.translateService.get('SELECTION');
+    }
+  }*/
 
 }

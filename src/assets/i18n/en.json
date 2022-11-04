@@ -443,5 +443,6 @@
   "LAYOUT_MANAGER.SPLITPANE": "Split pane",
   "CUSTOMER_DATA": "Customer data",
   "COMMENTS": "Comments",
-  "edad":"Min age"
+  "edad":"Min age",
+  "SELECTION": "Selection"
 }

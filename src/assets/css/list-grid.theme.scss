@@ -6,6 +6,12 @@
   $foreground: map-get($theme, foreground);
 
   // Colors
+
+  .active{
+    border-color: mat-color($primary, 500);
+    background-color: mat-color($primary, 200);
+  }
+
   ul.list-grid-container {
     background: #ffffff;
 
