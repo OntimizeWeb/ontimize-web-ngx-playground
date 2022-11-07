@@ -1,5 +1,5 @@
 <div fxLayout="row">
-  <o-column-collapsible #collapsible title="{{'SELECTION' | oTranslate}}" icon="filter_list" (click)="col_click()">
+  <o-column-collapsible #collapsible title="{{'SELECTION' | oTranslate}}" icon="filter_list" (click)="status()" id="collapsible">
 
     <a class="menu-item" routerLink="/main/inputs/checkbox" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/combo" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.COMBO' | oTranslate }}</a>
