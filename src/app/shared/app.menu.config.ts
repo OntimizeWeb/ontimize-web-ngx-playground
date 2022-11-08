@@ -45,5 +45,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
       { id: 'contextmenu', name: 'CONTEXTMENU', route: '/main/contextmenu', icon: 'menu' },
       { id: 'tooltip', name: 'TOOLTIP', route: '/main/tooltip', icon: 'mode_comment' }
     ]
-  }
+  },
+  { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' }
 ];

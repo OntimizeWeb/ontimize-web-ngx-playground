@@ -1,0 +1,26 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TEMPLATE_WITHOUT_EXPANDABLE_ACTION_BUTTON"
+  comp-desc="TABLE.EXAMPLE_TEMPLATE_WITHOUT_EXPANDABLE_ACTION_BUTTON_DESC" [files]="getFiles('o-table-row-expandable-without-action-button')">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding style="height:500px">
+    <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      store-state="false" query-rows="10" (onClick)="onClick($event)" fixed-header="yes">
+      <o-table-row-expandable expandable-column-visible="no">
+        <ng-template let-row>
+          <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{{'ADDRESS' | oTranslate}}</strong>: {{row.ADDRESS}}</span>
+              <span fxFlex="20%"><strong>{{'COUNTRY' | oTranslate}}</strong>: {{row.COUNTRY}}</span>
+              <span fxFlex="20%"><strong>{{'STATE' | oTranslate}}</strong>: {{row.STATE}}</span>
+              <span fxFlex="20%"><strong>{{'ZIPCODE' | oTranslate}}</strong>: {{row.ZIPCODE}}</span>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="20%"><strong>{{'EMAIL' | oTranslate}}</strong>: {{row.EMAIL}}</span>
+              <span fxFlex="20%"><strong>{{'PHONE' | oTranslate}}</strong>: {{row.PHONE}}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>
+  </div>
+</example-comp>
