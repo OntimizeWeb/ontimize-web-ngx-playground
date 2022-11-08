@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../shared/navigation-bar.service';
