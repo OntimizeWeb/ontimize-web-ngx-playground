@@ -2,7 +2,7 @@ import { MenuRootItem } from 'ontimize-web-ngx';
 
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
-  { id: 'input', name: 'INPUTS.COMPONENTS', icon: 'input', route: '/main/inputs' },
+  { id: 'input', name: 'INPUTS.COMPONENTS', icon: 'input', route: '/main/inputs/home' },
   { id: 'button', name: 'BUTTONS', icon: 'add_circle_outline', route: '/main/buttons' },
   {
     id: 'data',

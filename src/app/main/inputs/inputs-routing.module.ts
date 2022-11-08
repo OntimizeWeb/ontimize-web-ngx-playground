@@ -25,9 +25,11 @@ import { InputSliderComponent } from './20.slider/input-slider.component';
 import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
 import { InputPhoneComponent } from './22.phone/input-phone.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsComponent } from './inputs.component';
 
 export const routes: Routes = [
+  { path: 'home', component: InputsHomeComponent},
   {
     path: '', component: InputsComponent, children: [
       { path: '', component: InputOverviewComponent },
