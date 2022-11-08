@@ -62,7 +62,6 @@ export class DummyService extends OntimizeService {
     const options = {
       headers: this.buildHeaders()
     };
-    const self = this;
 
     let innerObserver: any;
     const dataObservable = Observable.create(observer => {
