@@ -9,8 +9,16 @@
 o-app-layout-sidenav {
   text-align: right;
   display: block;
+
   .version {
     padding: 12px;
     font-size: 0.9em;
   }
+
+}
+
+o-app-layout-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
 }
