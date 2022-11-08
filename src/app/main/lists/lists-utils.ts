@@ -16,7 +16,10 @@ export class ListsUtils {
         .replace('{rowHeight}', list.rowHeight || '')
         .replace('{showImage}', itemData.showImage)
         .replace('{actionText1}', itemData.actionText1)
-        .replace('{actionText2}', itemData.actionText2);
+        .replace('{actionText2}', itemData.actionText2)
+        .replace('{paginationControls}', list.paginationControls)
+        .replace('{showTextButton}', list.showButtonsText)
+        .replace('{insertButtonPosition}', list.insertButtonPosition);
     }
     if (itemData) {
       html = html.replace('{collapsible}', itemData.collapsible)

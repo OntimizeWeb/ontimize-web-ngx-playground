@@ -23,6 +23,7 @@ import { InputRadioComponent } from './18.radio/input-radio.component';
 import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.component';
 import { InputSliderComponent } from './20.slider/input-slider.component';
 import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
+import { InputPhoneComponent } from './22.phone/input-phone.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsComponent } from './inputs.component';
 
@@ -51,7 +52,8 @@ export const routes: Routes = [
       { path: 'validators', component: ValidatorsComponent },
       { path: 'radio', component: InputRadioComponent },
       { path: 'slidetoggle', component: InputSlidetoggleComponent },
-      { path: 'slider', component: InputSliderComponent }
+      { path: 'slider', component: InputSliderComponent },
+      { path: 'phone', component: InputPhoneComponent }
     ]
   }
 ];

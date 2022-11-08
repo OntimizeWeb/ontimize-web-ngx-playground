@@ -134,7 +134,7 @@ ngOnInit(): void {
       big: 'assets/videos/video1.mp4'
     }
   ];
-}`; 
+}`;
 
 @Component({
   selector: 'gallery-example',
@@ -179,7 +179,7 @@ export class GalleryExampleComponent implements OnInit {
       {
         breakpoint: 1920,
         height: "200px",
-        width: "300px",
+        width: "300px"
       }
     ];
 

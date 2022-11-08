@@ -11,6 +11,7 @@ export class InputComboComponent {
 
   ComboCodeExamples = ComboCodeExamples;
 
-  MockData = MockData;
+	disabled: boolean = false;
 
+  MockData = MockData;
 }
