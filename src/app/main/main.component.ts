@@ -12,7 +12,7 @@ import { NavigationBarService } from '../shared/navigation-bar.service';
 })
 export class MainComponent implements OnInit {
   protected sectionTitle = '';
-  private headerTitle: String;
+  private headerTitle: string;
 
   constructor(
     protected injector: Injector,
