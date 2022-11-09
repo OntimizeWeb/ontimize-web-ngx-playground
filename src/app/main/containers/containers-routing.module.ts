@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OTranslateService } from 'ontimize-web-ngx';
 
 import { ContainersBasicComponent } from './containers-basic/containers-basic.component';
 import { ContainersCollapsibleComponent } from './containers-collapsible/containers-collapsible.component';
