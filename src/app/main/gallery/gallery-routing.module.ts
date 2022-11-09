@@ -9,8 +9,8 @@ export const routes: Routes = [
     path: '', component: GalleryComponent,
     children: [
       { path: '', redirectTo: 'playground', pathMatch: 'prefix' },
-      { path: 'playground', component: GalleryMediaComponent },
-      { path: 'examples', component: GalleryExampleComponent },
+      { path: 'playground', data: { oAppHeaderTitle: 'Gallery component playground' }, component: GalleryMediaComponent },
+      { path: 'examples', data: { oAppHeaderTitle: 'Gallery component examples' }, component: GalleryExampleComponent },
     ]
   }
 ];

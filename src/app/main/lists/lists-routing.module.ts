@@ -12,11 +12,11 @@ export const routes: Routes = [
   {
     path: '', component: ListsComponent, children: [
       { path: '', redirectTo: 'list-item-text', pathMatch: 'prefix' },
-      { path: 'list-item-text', component: ListItemTextComponent },
-      { path: 'list-item-avatar', component: ListItemAvatarComponent },
-      { path: 'list-item-card', component: ListItemCardComponent },
-      { path: 'list-item-card-image', component: ListItemCardImageComponent },
-      { path: 'list-item-custom', component: ListItemCustomComponent }
+      { path: 'list-item-text', data: { oAppHeaderTitle: 'Text item list' }, component: ListItemTextComponent },
+      { path: 'list-item-avatar', data: { oAppHeaderTitle: 'Avatar item list' }, component: ListItemAvatarComponent },
+      { path: 'list-item-card', data: { oAppHeaderTitle: 'Card item list' }, component: ListItemCardComponent },
+      { path: 'list-item-card-image', data: { oAppHeaderTitle: 'Card image item list' }, component: ListItemCardImageComponent },
+      { path: 'list-item-custom', data: { oAppHeaderTitle: 'Custom item list' }, component: ListItemCustomComponent }
     ]
   }
 ];

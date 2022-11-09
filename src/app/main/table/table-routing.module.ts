@@ -22,21 +22,21 @@ export const routes: Routes = [
   {
     path: '', component: TableComponent, children: [
       { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
-      { path: 'basic', component: TableBasicComponent },
-      { path: 'fixed', component: TableFixedComponent },
-      { path: 'renderer', component: TableRendererComponent },
-      { path: 'custrenderer', component: TableCustomRendererComponent },
-      { path: 'editor', component: TableEditorComponent },
-      { path: 'total', component: TableTotalComponent },
-      { path: 'calculatedcolumn', component: TableCalculatedColumnComponent },
-      { path: 'pagination', component: TablePaginationComponent },
-      { path: 'contextmenu', component: TableContextMenuComponent },
-      { path: 'horizontalscroll', component: TableHorizontalScrollComponent },
-      { path: 'insertablerow', component: TableInsertableRowComponent },
-      { path: 'align', component: TableAlignmentComponent },
-      { path: 'multipleSort', component: TableMultipleSortComponent },
-      { path: 'rowexpandable', component: TableRowExpandableComponent },
-      { path: 'rowgroup', component: TableRowGroupComponent }
+      { path: 'basic', data: { oAppHeaderTitle: 'Basic table' }, component: TableBasicComponent },
+      { path: 'fixed', data: { oAppHeaderTitle: 'Fixed header or footer table' }, component: TableFixedComponent },
+      { path: 'renderer', data: { oAppHeaderTitle: 'Renderer table' }, component: TableRendererComponent },
+      { path: 'custrenderer', data: { oAppHeaderTitle: 'Custom renderer table' }, component: TableCustomRendererComponent },
+      { path: 'editor', data: { oAppHeaderTitle: 'Table editor' }, component: TableEditorComponent },
+      { path: 'total', data: { oAppHeaderTitle: 'Table totals' }, component: TableTotalComponent },
+      { path: 'calculatedcolumn', data: { oAppHeaderTitle: 'Calculated column table' }, component: TableCalculatedColumnComponent },
+      { path: 'pagination', data: { oAppHeaderTitle: 'Table pagination' }, component: TablePaginationComponent },
+      { path: 'contextmenu', data: { oAppHeaderTitle: 'Table context menu' }, component: TableContextMenuComponent },
+      { path: 'horizontalscroll', data: { oAppHeaderTitle: 'Horizontal scroll table' }, component: TableHorizontalScrollComponent },
+      { path: 'insertablerow', data: { oAppHeaderTitle: 'Insertable row table' }, component: TableInsertableRowComponent },
+      { path: 'align', data: { oAppHeaderTitle: 'Column align table' }, component: TableAlignmentComponent },
+      { path: 'multipleSort', data: { oAppHeaderTitle: 'Multiple sort table' }, component: TableMultipleSortComponent },
+      { path: 'rowexpandable', data: { oAppHeaderTitle: 'Row expandable table' }, component: TableRowExpandableComponent },
+      { path: 'rowgroup', data: { oAppHeaderTitle: 'Row grouping table' }, component: TableRowGroupComponent }
     ]
   }
 ];

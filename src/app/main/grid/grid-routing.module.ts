@@ -11,9 +11,9 @@ export const routes: Routes = [
   {
     path: '', component: GridComponent, children: [
       { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
-      { path: 'basic', component: GridBasicComponent },
-      { path: 'fixed', component: GridFixedComponent },
-      { path: 'hybrid', component: GridHybridComponent }
+      { path: 'basic', data: { oAppHeaderTitle: 'Basic grid' }, component: GridBasicComponent },
+      { path: 'fixed', data: { oAppHeaderTitle: 'Fixed grid' }, component: GridFixedComponent },
+      { path: 'hybrid', data: { oAppHeaderTitle: 'Hybrid grid' }, component: GridHybridComponent }
     ]
   }
 ];

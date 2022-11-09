@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OTranslateService } from 'ontimize-web-ngx';
 
 import { ContainersBasicComponent } from './containers-basic/containers-basic.component';
 import { ContainersCollapsibleComponent } from './containers-collapsible/containers-collapsible.component';
@@ -9,8 +10,8 @@ export const routes: Routes = [{
   path: '', component: ContainersComponent,
   children: [
     { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
-    { path: 'basic', component: ContainersBasicComponent },
-    { path: 'collapsible', component: ContainersCollapsibleComponent }
+    { path: 'basic', data: { oAppHeaderTitle: 'Basic container' }, component: ContainersBasicComponent },
+    { path: 'collapsible', data: { oAppHeaderTitle: 'Collapsible container' }, component: ContainersCollapsibleComponent }
   ]
 }];
 

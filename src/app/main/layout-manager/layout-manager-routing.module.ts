@@ -12,9 +12,9 @@ export const routes: Routes = [
   {
     path: '', component: LayoutManagerComponent, children: [
       { path: '', redirectTo: 'tab', pathMatch: 'full' },
-      { path: 'tab', component: LayoutManagerTabgroupComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
-      { path: 'dialog', component: LayoutManagerDialogComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
-      { path: 'split-pane', component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }
+      { path: 'tab', data: { oAppHeaderTitle: 'Layout manager tab group' }, component: LayoutManagerTabgroupComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
+      { path: 'dialog', data: { oAppHeaderTitle: 'Layout manager dialog' }, component: LayoutManagerDialogComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
+      { path: 'split-pane', data: { oAppHeaderTitle: 'Layout manager split pane' }, component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }
     ]
   }
 ];
