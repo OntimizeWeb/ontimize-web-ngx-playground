@@ -1,3 +1,81 @@
 .padding-3 {
   padding: 3px;
 }
+
+.menu-item {
+  display: block;
+  padding: 10px 0 10px 10px;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+}
+
+.active {
+  border-style: solid;
+  border-width: 0 0 0 3px;
+}
+
+.collapsed {
+  width: 37px;
+  height: 37px;
+  margin: 12px 12px 12px 24px;
+
+  .mat-expansion-panel {
+    background-color: transparent;
+
+    .mat-expansion-panel-header {
+      padding: 0;
+
+      .mat-icon {
+        transform: translate(6px, 0);
+      }
+    }
+  }
+}
+
+.o-column-collapsible {
+  margin: 12px 12px 12px 24px;
+  width: 200px;
+  height: fit-content;
+  max-height: 100%;
+  min-height: 0;
+  overflow: auto;
+  box-shadow: 0 3px 6px #00000029;
+
+  .mat-expansion-panel {
+    overflow: auto;
+    min-height: 0;
+    height: fit-content;
+
+    .mat-expansion-panel-header {
+      margin-bottom: 20px;
+
+      .mat-content {
+        .mat-icon {
+          transform: translate(135px, 0);
+        }
+
+        span {
+          transform: translate(-30px, 0);
+          font-weight: bold;
+          font-size: 15px;
+        }
+
+      }
+    }
+  }
+}
+
+.mat-expansion-indicator {
+  display: none;
+}
+
+.o-column-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body>.o-container-scroll {
+  padding: 0;
+}
+
+.o-column-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-content {
+  height: fit-content;
+}

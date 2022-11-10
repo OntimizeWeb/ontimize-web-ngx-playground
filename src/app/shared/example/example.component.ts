@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
-import { InputConverter } from 'ontimize-web-ngx';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { InputConverter, OColumnCollapsibleComponent } from 'ontimize-web-ngx';
 
 export interface IFiles {
   html?: any;
@@ -39,7 +39,7 @@ export class ExampleComponent {
   tabHeight: string = '350px';
 
   @InputConverter()
-  collapsible: boolean = false;
+  collapsible1: boolean = false;
 
   @InputConverter()
   collapsed: boolean = false;
@@ -47,6 +47,10 @@ export class ExampleComponent {
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
+
+  private colCollapsed: boolean;
+
+  @ViewChild("collapsible", { static: true }) collapsible: OColumnCollapsibleComponent;
 
   constructor(
     protected cd: ChangeDetectorRef
@@ -94,6 +98,15 @@ export class ExampleComponent {
 
   get html(): any {
     return this.files && this.files.html && this.files.html.data ? this.files.html.data : undefined;
+  }
+
+  status() {
+    if (this.collapsible.expPanel._getExpandedState() == "collapsed") {
+      this.colCollapsed = true;
+    }
+    else {
+      this.colCollapsed = false;
+    }
   }
 
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { OColumnCollapsibleComponent, OTranslateService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-table',
@@ -11,6 +11,8 @@ import { OTranslateService } from 'ontimize-web-ngx';
 })
 export class TableComponent implements OnInit {
 
+  @ViewChild("collapsible", { static: true }) collapsible: OColumnCollapsibleComponent;
+
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService
@@ -19,6 +21,16 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     let title = this.translateService.get('TABLE');
     this.navigationService.setTitle(title);
+  }
+
+  status() {
+    if (this.collapsible.expPanel._getExpandedState() == "collapsed") {
+      document.getElementById("collapsible").style.display = "none";
+    }
+    else {
+      this.collapsible.title = this.translateService.get('SELECTION');
+      document.getElementById("collapsible").style.display = "block";
+    }
   }
 
 }
