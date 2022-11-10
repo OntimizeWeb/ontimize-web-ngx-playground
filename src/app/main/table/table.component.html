@@ -1,15 +1,18 @@
-<div fxLayout="row">
-  <o-column-collapsible #collapsible title="{{'SELECTION' | oTranslate}}" icon="filter_list" (click)="status()" id="collapsible">
+<div fxLayout="row" class="main-container">
+  <o-column-collapsible *ngIf="expanded" #collapsible title="{{'SELECTION' | oTranslate}}" icon="menu" (click)="status()" id="collapsible"
+    expanded="true">
     <a class="menu-item" routerLink="/main/table/basic" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/fixed" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/renderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/custrenderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/editor" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.EDITORS' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/total" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</a>
-    <a class="menu-item" routerLink="/main/table/calculatedcolumn" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/table/calculatedcolumn" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate
+      }}</a>
     <a class="menu-item" routerLink="/main/table/pagination" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.PAGINATION' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/contextmenu" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CONTEXT_MENU' | oTranslate }}</a>
-    <a class="menu-item" routerLink="/main/table/horizontalscroll" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/table/horizontalscroll" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate
+      }}</a>
     <a class="menu-item" routerLink="/main/table/insertablerow" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.INSERTABLE_ROW' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/align" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ALIGN' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/multipleSort" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.MULTIPLE_SORT' | oTranslate }}</a>
@@ -17,5 +20,11 @@
     <a class="menu-item" routerLink="/main/table/rowgroup" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_GROUPING' | oTranslate }} <span
         class="new">new</span></a>
   </o-column-collapsible>
-  <div fxFlex="calc(100% - 300px)"><router-outlet></router-outlet></div>
+
+  <div fxFlex="calc(100% - 300px)" class="left-border">
+    <header-button-menu comp-name="{{ 'TABLE.COMPONENT' | oTranslate }}" comp-desc="A component for display multiple information on a table format.">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

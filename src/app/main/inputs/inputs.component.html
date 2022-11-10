@@ -1,5 +1,6 @@
-<div fxLayout="row">
-  <o-column-collapsible #collapsible title="{{'SELECTION' | oTranslate}}" icon="filter_list" (click)="status()" id="collapsible">
+<div fxLayout="row" class="main-container">
+  <o-column-collapsible *ngIf="expanded" #collapsible title="{{'SELECTION' | oTranslate}}" icon="menu" (click)="status()" id="collapsible"
+    expanded="true">
 
     <a class="menu-item" routerLink="/main/inputs/checkbox" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/combo" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.COMBO' | oTranslate }}</a>
@@ -25,5 +26,9 @@
     <a class="menu-item" routerLink="/main/inputs/textarea" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}</a>
 
   </o-column-collapsible>
-  <router-outlet></router-outlet>
+  <div fxFlex="calc(100% - 300px)" class="left-border">
+    <header-button-menu comp-name="{{ 'INPUTS.COMPONENTS' | oTranslate }}" comp-desc="All the components who can get information from the user.">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
 </div>

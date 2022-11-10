@@ -1,6 +1,5 @@
 <section fxLayout="column" fxLayoutAlign="start stretch">
   <mat-toolbar fxLayout="row" color="primary" class="playground-toolbar">
-    <button *ngIf="colCollapsed" class="collapsible-btn"><img src="../../../assets/images/filter_list_FILL0_wght400_GRAD0_opsz48.svg" width="24px" height="24px"></button>
     <div fxLayout="column" fxFlex>
       <span>{{ compName | oTranslate }}</span>
       <span class="comp-description">{{ compDesc | oTranslate }}</span>
@@ -8,7 +7,7 @@
     <button *ngIf="!collapsed" mat-icon-button aria-label="View Source" (click)="toggleShowSource()">
       <mat-icon class="mat-24">code</mat-icon>
     </button>
-    <button *ngIf="collapsible1" mat-icon-button aria-label="Collapse" (click)="collapsed = !collapsed">
+    <button *ngIf="collapsible" mat-icon-button aria-label="Collapse" (click)="collapsed = !collapsed">
       <mat-icon *ngIf="!collapsed" class="mat-24">keyboard_arrow_up</mat-icon>
       <mat-icon *ngIf="collapsed" class="mat-24">keyboard_arrow_down</mat-icon>
     </button>

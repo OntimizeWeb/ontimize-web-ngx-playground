@@ -1,0 +1,23 @@
+.header-container {
+  margin-top: 10px;
+  margin-left: 10px;
+
+  .col-button {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    padding: 3px;
+    margin: 10px;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #0000001E;
+  }
+
+  p {
+    margin: 3px;
+  }
+
+  h3 {
+    margin: 3px;
+  }
+}

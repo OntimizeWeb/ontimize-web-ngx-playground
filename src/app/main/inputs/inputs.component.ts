@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output, ViewChild, ViewEncapsulation }
 import { OColumnCollapsibleComponent, OTranslateService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { ExpandedStateService } from '../../shared/services/expanded-state.service';
 
 @Component({
   selector: 'inputs',
@@ -11,11 +12,13 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 })
 export class InputsComponent implements OnInit {
 
-  @ViewChild("collapsible", {static: true}) collapsible: OColumnCollapsibleComponent;
+  @ViewChild("collapsible", {static: false}) collapsible: OColumnCollapsibleComponent;
+  private expanded: boolean = true;
 
   constructor(
     protected navigationService: NavigationBarService,
-    protected translateService: OTranslateService
+    protected translateService: OTranslateService,
+    protected expandedService: ExpandedStateService
   ) { }
 
   ngOnInit() {
@@ -23,17 +26,24 @@ export class InputsComponent implements OnInit {
     title += this.translateService.get('INPUTS');
     title = title + ' > ' + this.translateService.get('INPUTS');
     this.navigationService.setTitle(title);
-
+    this.expandedService.onStateChange((state) => {
+      if (state) {
+        this.expanded = true;
+      }
+      else {
+        this.expanded = false;
+      }
+    });
   }
 
   status() {
     if (this.collapsible.expPanel._getExpandedState() == "collapsed") {
-      this.collapsible.title = "";
-      document.getElementById("collapsible").className = "collapsed";
+      this.expandedService.setState(false);
+      this.expanded = false;
     }
     else {
-      this.collapsible.title = this.translateService.get('SELECTION');
-      document.getElementById("collapsible").className = "o-column-collapsible";
+      this.expandedService.setState(true);
+      this.expanded = true;
     }
   }
 
