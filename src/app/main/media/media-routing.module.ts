@@ -10,8 +10,8 @@ export const routes: Routes = [
     path: '', component: MediaComponent,
     children: [
       { path: '', redirectTo: 'playground', pathMatch: 'prefix' },
-      { path: 'playground', data: { oAppHeaderTitle: 'Image component playground' }, component: ImageComponent },
-      { path: 'examples', data: { oAppHeaderTitle: 'Image component examples' }, component: ImageExamplesComponent }
+      { path: 'playground', data: { oAppHeaderTitle: 'Image' }, component: ImageComponent },
+      { path: 'examples', data: { oAppHeaderTitle: 'Image' }, component: ImageExamplesComponent }
     ]
   }
 ];

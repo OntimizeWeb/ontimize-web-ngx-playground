@@ -9,8 +9,8 @@ export const routes: Routes = [{
   path: '', component: ContainersComponent,
   children: [
     { path: '', redirectTo: 'basic', pathMatch: 'prefix' },
-    { path: 'basic', data: { oAppHeaderTitle: 'Basic container' }, component: ContainersBasicComponent },
-    { path: 'collapsible', data: { oAppHeaderTitle: 'Collapsible container' }, component: ContainersCollapsibleComponent }
+    { path: 'basic', data: { oAppHeaderTitle: 'Containers' }, component: ContainersBasicComponent },
+    { path: 'collapsible', data: { oAppHeaderTitle: 'Containers' }, component: ContainersCollapsibleComponent }
   ]
 }];
 
