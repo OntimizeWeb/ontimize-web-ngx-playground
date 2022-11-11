@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { OColumnCollapsibleComponent, OTranslateService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
@@ -14,12 +15,18 @@ export class InputsComponent implements OnInit {
 
   @ViewChild("collapsible", {static: false}) collapsible: OColumnCollapsibleComponent;
   private expanded: boolean = true;
+  private selectedComponent: string;
 
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService,
-    protected expandedService: ExpandedStateService
-  ) { }
+    protected expandedService: ExpandedStateService,
+    protected router: Router
+  ) {
+    router.events.subscribe((val) => {
+      this.selectedComponent = this.router.url.split("/")[this.router.url.split("/").length - 1].toUpperCase();
+    });
+  }
 
   ngOnInit() {
     let title = '';
