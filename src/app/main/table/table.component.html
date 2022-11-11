@@ -1,6 +1,5 @@
 <div fxLayout="row" class="main-container">
-  <o-column-collapsible *ngIf="expanded" #collapsible title="{{'EXAMPLES' | oTranslate}}" icon="menu" (click)="status()" id="collapsible"
-    expanded="true">
+  <collapsible-menu>
     <a class="menu-item" routerLink="/main/table/basic" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/fixed" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/renderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</a>
@@ -19,7 +18,7 @@
     <a class="menu-item" routerLink="/main/table/rowexpandable" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_EXPANDABLE' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/table/rowgroup" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_GROUPING' | oTranslate }} <span
         class="new">new</span></a>
-  </o-column-collapsible>
+  </collapsible-menu>
 
   <div fxFlex="calc(100% - 300px)" class="left-border">
     <header-button-menu comp-name="{{ 'TABLE.COMPONENT' | oTranslate }}" comp-desc="A component for display multiple information on a table format.">

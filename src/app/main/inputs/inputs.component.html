@@ -1,7 +1,5 @@
 <div fxLayout="row" class="main-container">
-  <o-column-collapsible *ngIf="expanded" #collapsible title="{{'EXAMPLES' | oTranslate}}" icon="menu" (click)="status()" id="collapsible"
-    expanded="true">
-
+  <collapsible-menu>
     <a class="menu-item" routerLink="/main/inputs/checkbox" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/combo" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.COMBO' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/currency" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}</a>
@@ -24,8 +22,7 @@
     <a class="menu-item" routerLink="/main/inputs/text" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.TEXT' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/time" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.TIME' | oTranslate }}</a>
     <a class="menu-item" routerLink="/main/inputs/textarea" routerLinkActive="active" fxFlex>{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}</a>
-
-  </o-column-collapsible>
+  </collapsible-menu>
   <div fxFlex="calc(100% - 300px)" class="left-border">
     <header-button-menu comp-name="{{ 'INPUTS.' + selectedComponent | oTranslate }}" comp-desc="{{ 'INPUTS.' + selectedComponent + '.DESC' | oTranslate }}">
     </header-button-menu>

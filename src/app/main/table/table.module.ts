@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { DummyService } from 'src/app/shared/services/dummy.service';
-import { HeaderButtonMenuComponent } from '../../shared/header-button-menu/header-button-menu.component';
 
 import { SharedModule } from '../../shared/shared.module';
 import { TableBasicComponent } from './01.basic/table-basic.component';

@@ -1,8 +1,16 @@
-<ul class="list-grid-container">
-  <li class="list-grid-button"><a routerLink="/main/lists/list-item-text" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_TEXT' | oTranslate }}</a></li>
-  <li class="list-grid-button"><a routerLink="/main/lists/list-item-avatar" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_AVATAR' | oTranslate }}</a></li>
-  <li class="list-grid-button"><a routerLink="/main/lists/list-item-card" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_CARD' | oTranslate }}</a></li>
-  <li class="list-grid-button"><a routerLink="/main/lists/list-item-card-image" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_CARD_IMAGE' | oTranslate }}</a></li>
-  <li class="list-grid-button"><a routerLink="/main/lists/list-item-custom" routerLinkActive="active" fxFlex>&#8226; {{ 'LIST.LIST_ITEM_CUSTOM' | oTranslate }}</a></li>
-</ul>
-<router-outlet></router-outlet>
+<div fxLayout="row" class="main-container">
+  <collapsible-menu>
+  <a class="menu-item" routerLink="/main/lists/list-item-text" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_TEXT' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/lists/list-item-avatar" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_AVATAR' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/lists/list-item-card" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CARD' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/lists/list-item-card-image" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CARD_IMAGE' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/lists/list-item-custom" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CUSTOM' | oTranslate }}</a>
+</collapsible-menu>
+
+<div fxFlex="calc(100% - 300px)" class="left-border">
+  <header-button-menu comp-name="{{ 'LIST.COMPONENT' | oTranslate }}" comp-desc="A component for display multiple information on a list format.">
+  </header-button-menu>
+  <router-outlet></router-outlet>
+</div>
+
+</div>
