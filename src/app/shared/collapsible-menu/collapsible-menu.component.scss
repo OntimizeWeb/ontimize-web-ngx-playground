@@ -2,10 +2,6 @@
   display: none;
 }
 
-.o-column-collapsible>.o-container.mat-expansion-panel .mat-expansion-panel-content {
-  height: fit-content;
-}
-
 #collapsible {
   margin: 12px 12px 12px 12px;
   width: 200px;
@@ -56,4 +52,9 @@
   >.o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body>.o-container-scroll {
     padding: 0;
   }
+
+  >.o-container.mat-expansion-panel .mat-expansion-panel-content {
+    height: fit-content;
+  }
+
 }
