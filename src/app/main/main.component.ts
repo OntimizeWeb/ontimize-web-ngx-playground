@@ -14,7 +14,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     protected injector: Injector,
-    protected navigationService: NavigationBarService) {
+    protected navigationService: NavigationBarService
+  ) {
     const authService = this.injector.get(AuthService);
     authService.storeSessionInfo({
       id: 12345,
@@ -27,4 +28,6 @@ export class MainComponent implements OnInit {
       this.sectionTitle = title;
     });
   }
+
+
 }

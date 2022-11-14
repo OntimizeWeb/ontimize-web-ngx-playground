@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DialogsComponent } from './dialogs.component';
 
 export const routes: Routes = [
-  { path: '', component: DialogsComponent }
+  { path: '', data: { oAppHeaderTitle: 'Dialog' }, component: DialogsComponent }
 ];
 
 @NgModule({

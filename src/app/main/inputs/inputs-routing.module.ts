@@ -24,7 +24,6 @@ import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.co
 import { InputSliderComponent } from './20.slider/input-slider.component';
 import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
 import { InputPhoneComponent } from './22.phone/input-phone.component';
-import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsComponent } from './inputs.component';
 
@@ -32,30 +31,29 @@ export const routes: Routes = [
   { path: 'home', component: InputsHomeComponent},
   {
     path: '', component: InputsComponent, children: [
-      { path: '', component: InputOverviewComponent },
-      { path: 'text', component: InputTextComponent },
-      { path: 'date', component: InputDateComponent },
-      { path: 'daterange', component: InputDateRangeComponent },
-      { path: 'integer', component: InputIntegerComponent },
-      { path: 'real', component: InputRealComponent },
-      { path: 'percent', component: InputPercentComponent },
-      { path: 'currency', component: InputCurrencyComponent },
-      { path: 'nif', component: InputNIFComponent },
-      { path: 'email', component: InputEmailComponent },
-      { path: 'password', component: InputPasswordComponent },
-      { path: 'textarea', component: InputTextareaComponent },
-      { path: 'html', component: HTMLInputComponent },
-      { path: 'file', component: InputFileComponent },
-      { path: 'checkbox', component: InputCheckboxComponent },
-      { path: 'combo', component: InputComboComponent },
-      { path: 'listpicker', component: InputListpickerComponent },
-      { path: 'hour', component: InputHourComponent },
-      { path: 'time', component: InputTimeComponent },
-      { path: 'validators', component: ValidatorsComponent },
-      { path: 'radio', component: InputRadioComponent },
-      { path: 'slidetoggle', component: InputSlidetoggleComponent },
-      { path: 'slider', component: InputSliderComponent },
-      { path: 'phone', component: InputPhoneComponent }
+      { path: '', data: { oAppHeaderTitle: 'Inputs overview' }, component: InputOverviewComponent },
+      { path: 'text', data: { oAppHeaderTitle: 'Text field' }, component: InputTextComponent },
+      { path: 'date', data: { oAppHeaderTitle: 'Date field' }, component: InputDateComponent },
+      { path: 'daterange', data: { oAppHeaderTitle: 'Date range field' }, component: InputDateRangeComponent },
+      { path: 'integer', data: { oAppHeaderTitle: 'Integer field' }, component: InputIntegerComponent },
+      { path: 'real', data: { oAppHeaderTitle: 'Real field' }, component: InputRealComponent },
+      { path: 'percent', data: { oAppHeaderTitle: 'Percentage field' }, component: InputPercentComponent },
+      { path: 'currency', data: { oAppHeaderTitle: 'Currency field' }, component: InputCurrencyComponent },
+      { path: 'nif', data: { oAppHeaderTitle: 'NIF field' }, component: InputNIFComponent },
+      { path: 'email', data: { oAppHeaderTitle: 'Email field' }, component: InputEmailComponent },
+      { path: 'password', data: { oAppHeaderTitle: 'Password field' }, component: InputPasswordComponent },
+      { path: 'textarea', data: { oAppHeaderTitle: 'Text area field' }, component: InputTextareaComponent },
+      { path: 'html', data: { oAppHeaderTitle: 'HTML field' }, component: HTMLInputComponent },
+      { path: 'file', data: { oAppHeaderTitle: 'File field' }, component: InputFileComponent },
+      { path: 'checkbox', data: { oAppHeaderTitle: 'Checkbox field' }, component: InputCheckboxComponent },
+      { path: 'combo', data: { oAppHeaderTitle: 'Combo field' }, component: InputComboComponent },
+      { path: 'listpicker', data: { oAppHeaderTitle: 'List picker field' }, component: InputListpickerComponent },
+      { path: 'hour', data: { oAppHeaderTitle: 'Hour field' }, component: InputHourComponent },
+      { path: 'time', data: { oAppHeaderTitle: 'Time field' }, component: InputTimeComponent },
+      { path: 'radio', data: { oAppHeaderTitle: 'Radio field' }, component: InputRadioComponent },
+      { path: 'slidetoggle', data: { oAppHeaderTitle: 'Slide toggle field' }, component: InputSlidetoggleComponent },
+      { path: 'slider', data: { oAppHeaderTitle: 'Slider field' }, component: InputSliderComponent },
+      { path: 'phone', data: { oAppHeaderTitle: 'Phone field' }, component: InputPhoneComponent }
     ]
   }
 ];
