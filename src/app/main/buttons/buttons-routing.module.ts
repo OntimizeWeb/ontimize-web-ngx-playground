@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ButtonsComponent } from './buttons.component';
 
 export const routes: Routes = [
-  { path: '', component: ButtonsComponent }
+  { path: '', data: { oAppHeaderTitle: 'Buttons' }, component: ButtonsComponent }
 ];
 
 @NgModule({

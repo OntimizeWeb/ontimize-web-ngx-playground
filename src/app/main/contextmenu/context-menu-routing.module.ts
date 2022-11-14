@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContextMenuComponent } from './context-menu.component';
 
 export const routes: Routes = [
-  { path: '', component: ContextMenuComponent }
+  { path: '', data: { oAppHeaderTitle: 'Context menu' }, component: ContextMenuComponent }
 ];
 
 @NgModule({
