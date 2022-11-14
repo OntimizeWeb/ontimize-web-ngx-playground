@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OColumnCollapsibleComponent } from 'ontimize-web-ngx';
 import { ExpandedStateService } from '../services/expanded-state.service';
 
 @Component({
   selector: 'collapsible-menu',
   templateUrl: './collapsible-menu.component.html',
-  styleUrls: ['./collapsible-menu.component.scss']
+  styleUrls: ['./collapsible-menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CollapsibleMenuComponent implements OnInit {
 
