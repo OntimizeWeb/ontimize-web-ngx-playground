@@ -94,7 +94,10 @@ export class TableBasicComponent {
 
   toggle() {
     if (this.collapsibleConf.expPanel._getExpandedState() == "collapsed") {
-
+      document.getElementById("collapsibleConf").style.maxWidth = "150px";
+    }
+    else {
+      document.getElementById("collapsibleConf").style.maxWidth = "40%";
     }
   }
 

@@ -7,11 +7,15 @@
   border-style: solid;
   border-width: 0 0 0 1px;
   border-color: #0000001E;
+  padding-left: 10px;
+  overflow: auto;
 }
 
 .main-container {
   background-color: white;
-  width: calc(100%-20px);
-  height: calc(100%-20px);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  max-height: max-content;
   margin: 10px;
+  overflow: auto;
 }

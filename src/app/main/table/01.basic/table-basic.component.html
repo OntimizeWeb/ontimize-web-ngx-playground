@@ -24,7 +24,7 @@
       </o-table>
     </div>
 
-    <o-column-collapsible #collapsibleConf (click)="toggle()" attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-padding layout-align="start">
+    <o-column-collapsible #collapsibleConf id="collapsibleConf" (click)="toggle()" attr="conf" title="{{ 'TABLE.CONFIGURATION' | oTranslate }}" layout-padding layout-align="start">
       <mat-form-field>
         <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
       </mat-form-field>

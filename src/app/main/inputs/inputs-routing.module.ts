@@ -28,7 +28,7 @@ import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsComponent } from './inputs.component';
 
 export const routes: Routes = [
-  { path: 'home', component: InputsHomeComponent},
+  { path: 'home', data: { oAppHeaderTitle: 'Inputs home' }, component: InputsHomeComponent},
   {
     path: '', component: InputsComponent, children: [
       { path: '', data: { oAppHeaderTitle: 'Inputs overview' }, component: InputOverviewComponent },
