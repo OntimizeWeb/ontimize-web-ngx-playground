@@ -30,7 +30,7 @@ import { InputsComponent } from './inputs.component';
 export const routes: Routes = [
   {
     path: '', component: InputsComponent, children: [
-      { path: '', component: InputOverviewComponent },
+      { path: '', data: { oAppHeaderTitle: 'Inputs overview' }, component: InputOverviewComponent },
       { path: 'text', data: { oAppHeaderTitle: 'Text field' }, component: InputTextComponent },
       { path: 'date', data: { oAppHeaderTitle: 'Date field' }, component: InputDateComponent },
       { path: 'daterange', data: { oAppHeaderTitle: 'Date range field' }, component: InputDateRangeComponent },
@@ -49,7 +49,6 @@ export const routes: Routes = [
       { path: 'listpicker', data: { oAppHeaderTitle: 'List picker field' }, component: InputListpickerComponent },
       { path: 'hour', data: { oAppHeaderTitle: 'Hour field' }, component: InputHourComponent },
       { path: 'time', data: { oAppHeaderTitle: 'Time field' }, component: InputTimeComponent },
-      { path: 'validators', component: ValidatorsComponent },
       { path: 'radio', data: { oAppHeaderTitle: 'Radio field' }, component: InputRadioComponent },
       { path: 'slidetoggle', data: { oAppHeaderTitle: 'Slide toggle field' }, component: InputSlidetoggleComponent },
       { path: 'slider', data: { oAppHeaderTitle: 'Slider field' }, component: InputSliderComponent },

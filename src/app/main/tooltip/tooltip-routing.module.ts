@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TooltipComponent } from './tooltip.component';
 
 export const routes: Routes = [
-  { path: '', component: TooltipComponent }
+  { path: '', data: { oAppHeaderTitle: 'Tooltip' }, component: TooltipComponent }
 ];
 
 @NgModule({

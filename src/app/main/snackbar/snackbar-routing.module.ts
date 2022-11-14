@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SnackBarComponent } from './snackbar.component';
 
 export const routes: Routes = [
-  { path: '', component: SnackBarComponent }
+  { path: '', data: { oAppHeaderTitle: 'Snackbar' }, component: SnackBarComponent }
 ];
 
 @NgModule({
