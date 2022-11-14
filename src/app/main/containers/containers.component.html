@@ -1,5 +1,13 @@
-<ul class="list-grid-container">
+<div fxLayout="row" class="main-container">
+  <collapsible-menu>
   <li class="list-grid-button"><a routerLink="/main/containers/basic" routerLinkActive="active" fxFlex>&#8226; {{ 'CONTAINERS.BASIC' | oTranslate }}</a></li>
   <li class="list-grid-button"><a routerLink="/main/containers/collapsible" routerLinkActive="active" fxFlex>&#8226; {{ 'CONTAINERS.COLLAPSIBLE' | oTranslate }}</a></li>
-</ul>
-<router-outlet></router-outlet>
+</collapsible-menu>
+
+<div fxFlex="calc(100% - 300px)" class="left-border">
+  <header-button-menu comp-name="{{ 'CONTAINERS' | oTranslate }}" comp-desc="A component for display multiple information.">
+  </header-button-menu>
+  <router-outlet></router-outlet>
+</div>
+
+</div>
