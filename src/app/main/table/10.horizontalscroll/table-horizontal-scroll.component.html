@@ -1,26 +1,31 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [files]="getFiles('o-table-horizontal-scroll')"
   (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
-  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+  <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
+    <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
-    <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
-      <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
-        columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
-        query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
-        edition-mode="none" detail-mode="none">
-        <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
-          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-          </o-table-cell-renderer-image>
-        </o-table-column>
-        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-        <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
-      </o-table>
+      <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
+        <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+          columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
+          query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
+          edition-mode="none" detail-mode="none">
+          <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
+            <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+            </o-table-cell-renderer-image>
+          </o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
+        </o-table>
+      </div>
+      <o-button attr="sidenav-toggle" label="{{ 'TABLE.CONFIGURATION' | oTranslate }}" (click)="sidenav.toggle()" icon="tune" fxFlex="15"
+        class="tableConfBtn" #btnConf></o-button>
+
+      <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
+        <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
+          <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
+            {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+          </mat-slide-toggle>
+        </o-column>
+      </mat-sidenav>
     </div>
-
-    <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
-      <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
-        {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
-      </mat-slide-toggle>
-    </o-column>
-
-  </div>
+  </mat-sidenav-container>
 </example-comp>

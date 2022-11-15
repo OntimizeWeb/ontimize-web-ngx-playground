@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { OColumnCollapsibleComponent } from 'ontimize-web-ngx';
 
 import { TableUtils } from '../table-utils';
 
@@ -54,9 +53,6 @@ export class TableBasicComponent {
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any;
 
-  @ViewChild('collapsibleConf', { static: false })
-  collapsibleConf: OColumnCollapsibleComponent;
-
   public data = TableUtils.getCustomers();
 
   getFiles(key: string) {
@@ -92,13 +88,5 @@ export class TableBasicComponent {
     console.log('actionClick');
   }
 
-  toggle() {
-    if (this.collapsibleConf.expPanel._getExpandedState() == "collapsed") {
-      document.getElementById("collapsibleConf").style.maxWidth = "150px";
-    }
-    else {
-      document.getElementById("collapsibleConf").style.maxWidth = "40%";
-    }
-  }
 
 }

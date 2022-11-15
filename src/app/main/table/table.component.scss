@@ -1,3 +1,19 @@
 .padding-3 {
   padding: 3px;
 }
+
+.sidenav-container {
+  background-color: transparent;
+
+  .mat-sidenav-content{
+    overflow: hidden;
+  }
+
+  .tableConfBtn{
+    margin-top: 8px;
+  }
+
+  .sidenav{
+    padding: 10px;
+  }
+}
