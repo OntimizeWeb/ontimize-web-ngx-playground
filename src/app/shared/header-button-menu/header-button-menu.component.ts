@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ButtonsComponent } from '../../main/buttons/buttons.component';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ExpandedStateService } from '../services/expanded-state.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { ExpandedStateService } from '../services/expanded-state.service';
   ],
   encapsulation: ViewEncapsulation.None,
 })
-export class HeaderButtonMenuComponent implements OnInit {
+export class HeaderButtonMenuComponent {
 
   private compName: string;
   private compDesc: string;
@@ -22,8 +21,6 @@ export class HeaderButtonMenuComponent implements OnInit {
     protected expandedService: ExpandedStateService
   ) { }
 
-  ngOnInit(): void {
-  }
   ngAfterViewInit() {
     this.expandedService.onStateChange((state) => {
       if (state) {

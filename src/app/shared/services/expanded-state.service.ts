@@ -5,7 +5,7 @@ import { ObservableWrapper } from 'ontimize-web-ngx';
 export class ExpandedStateService {
   public expanded = true;
 
-  private emitter: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+  private emitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   setState(val: boolean) {
     this.expanded = val;
