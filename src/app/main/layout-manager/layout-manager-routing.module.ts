@@ -12,7 +12,8 @@ export const routes: Routes = [
   {
     path: '', component: LayoutManagerComponent, children: [
       { path: '', redirectTo: 'tab', pathMatch: 'full' },
-      { path: 'tab', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerTabgroupComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
+      { path: 'tab', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerTabgroupComponent, 
+      children: [{ path: ':OTHERID/:CUSTOMERID', component: CustomersDetailComponent }] },
       { path: 'dialog', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerDialogComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
       { path: 'split-pane', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }
     ]

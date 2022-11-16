@@ -450,7 +450,7 @@
       "EMAIL": "Wing.Andersen@gmail.com",
       "CUSTOMERTYPEID": 3,
       "ADDRESS": "56 Gurranebraher Ave",
-      "CUSTOMERID": 19365,
+      "CUSTOMERID": "19365",
       "NAME": "Wing",
       "STARTDATE": 1278460800000,
       "HASCHILD": true
@@ -500,7 +500,7 @@
       "EMAIL": "Abbud.al-Fulan@gmail.com",
       "CUSTOMERTYPEID": 3,
       "ADDRESS": "83-87 Addison Rd, Kensington, Greater London W14 8",
-      "CUSTOMERID": 19344,
+      "CUSTOMERID": "19344",
       "NAME": "Abbud",
       "STARTDATE": 1278201600000,
       "HASCHILD": true

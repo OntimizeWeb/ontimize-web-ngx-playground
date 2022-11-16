@@ -88,6 +88,9 @@ export class DummyService extends OntimizeService {
       url: url,
       options: options,
       successCallback: (resp, subscriber) => {
+        resp.data.forEach(item => {
+          item['OTHERID'] = 1
+        })
         const filtered = resp.data.filter(item => {
           const equal = Object.keys(kv).every(key => item[key] === kv[key]);
           return equal;

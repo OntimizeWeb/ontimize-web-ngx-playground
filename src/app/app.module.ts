@@ -16,9 +16,9 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('xml', xml);
 
 
-export function getDummyServiceProvider(injector: Injector) {
-  return new DummyService(injector);
-}
+// export function getDummyServiceProvider(injector: Injector) {
+//   return new DummyService(injector);
+// }
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ export function getDummyServiceProvider(injector: Injector) {
     { provide: APP_CONFIG, useValue: CONFIG },
     {
       provide: 'DummyService',
-      useFactory: getDummyServiceProvider,
+      useValue: DummyService,
       deps: [Injector]
     },
     ...ONTIMIZE_PROVIDERS

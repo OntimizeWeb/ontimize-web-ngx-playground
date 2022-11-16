@@ -1,9 +1,9 @@
 <o-form-layout-manager attr="o-form-layout-manager-tab" mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=","
   title-data-origin="customers_form_edit" fxFlex>
 
-  <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES" visible-columns="PHOTO;NAME;SURNAME;NOTES"
+  <o-table #table attr="table" keys="OTHERID;CUSTOMERID" columns="CUSTOMERID;OTHERID;PHOTO;NAME;SURNAME;NOTES" visible-columns="PHOTO;NAME;SURNAME;NOTES"
     sort-columns="SURNAME" quick-filter="no" row-height="medium" select-all-checkbox="no" export-button="no" show-configuration-option="no"
-    columns-visibility-button="no" delete-button="no" service-type="DummyService" service="customers" entity="customer">
+    columns-visibility-button="no" delete-button="no" service-type="DummyService" service="customers" entity="customer" query-method="filteredQuery">
 
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="yes">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
