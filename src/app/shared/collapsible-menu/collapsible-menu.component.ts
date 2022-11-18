@@ -31,11 +31,9 @@ export class CollapsibleMenuComponent implements OnInit {
   status() {
     if (this.collapsible.expPanel._getExpandedState() == "collapsed") {
       this.expandedService.setState(false);
-      this.expanded = false;
     }
     else {
       this.expandedService.setState(true);
-      this.expanded = true;
     }
   }
 

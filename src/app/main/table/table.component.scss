@@ -10,10 +10,20 @@
   }
 
   .tableConfBtn{
-    margin-top: 8px;
+    margin-top: 80px;
+    transform: rotate(90deg) translate(70px, 30px);
+    padding: 0 20px 0 10px;
   }
 
   .sidenav{
     padding: 10px;
   }
+}
+
+.max-height{
+  height: 100%;
+}
+
+.playground-examples{
+  //height 100%
 }

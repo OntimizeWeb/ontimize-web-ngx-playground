@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { DummyService } from 'src/app/shared/services/dummy.service';
 
@@ -43,7 +44,8 @@ import { TableComponent } from './table.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    TableRoutingModule
+    TableRoutingModule,
+    MatButtonModule
   ],
   declarations: [
     TableComponent,
