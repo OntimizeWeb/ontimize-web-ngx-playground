@@ -7,11 +7,12 @@
 
   .mat-sidenav-content{
     overflow: hidden;
+    width: 100%;
   }
 
   .tableConfBtn{
     margin-top: 80px;
-    transform: rotate(90deg) translate(70px, 30px);
+    transform: rotate(90deg) translate(80px, 40px);
     padding: 0 20px 0 10px;
   }
 
@@ -24,6 +25,16 @@
   height: 100%;
 }
 
-.playground-examples{
-  //height 100%
+.example-comp{
+
+  section{
+    height: 100%;
+
+    .playground-examples{
+
+      >div{
+        height: 100%;
+      }
+    }
+  }
 }

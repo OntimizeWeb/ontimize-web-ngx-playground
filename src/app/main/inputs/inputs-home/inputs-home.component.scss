@@ -1,23 +1,27 @@
-a{
+a {
   text-decoration: none;
 }
 
-.card-container{
+.card-container {
   margin: 50px;
   flex-wrap: wrap;
   row-gap: 30px;
 
-  mat-card{
+  mat-card {
     width: 240px;
     height: 100px;
 
-    mat-card-header{
+    mat-card-header {
       font-size: 20px;
       font-weight: bold;
-      margin: 10px;
+      margin: 10px 0 10px 0;
+
+      ::ng-deep .mat-card-header-text {
+        margin: 0px;
+      }
     }
 
-    mat-card-content{
+    mat-card-content {
       margin-top: auto;
       margin-bottom: auto;
     }

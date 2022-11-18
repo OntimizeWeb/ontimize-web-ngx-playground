@@ -1,43 +1,48 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_FIXED" [files]="getFiles('o-table-fixed')"
   (showSource)="onShowSource('o-table-fixed', table, ex)">
+
   <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
+    <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
+      <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
+        <mat-form-field>
+          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
+        </mat-form-field>
+        <mat-slide-toggle #fixedHeaderToggle [checked]="true">
+          {{ 'TABLE.BUTTON.FIXED' | oTranslate }}
+        </mat-slide-toggle>
+      </o-column>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center stretch" layout-padding>
+        <div fxFlex="95" fxLayout="column" fxLayoutAlign="center stretch">
 
-      <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
+          <o-table #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
+            columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+            visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false" quick-filter="yes"
+            insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+            [ngStyle]="{'height.px':height.value}" edition-mode="none" detail-mode="none">
+            <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
+            <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
+            <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
+            <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
+            <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator="," width="18%">
+            </o-table-column>
+            <o-table-columns-grouping>
+              <o-table-columns-grouping-column attr="BALANCE" aggregate="sum"> </o-table-columns-grouping-column>
+            </o-table-columns-grouping>
+            <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
+          </o-table>
 
-        <o-table #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
-          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-          visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false" quick-filter="yes"
-          insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{'height.px':height.value}"
-          edition-mode="none" detail-mode="none">
-          <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
-          <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
-          <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
-          <o-table-column attr="ANID" title="ANID" width="20%"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator="," width="18%">
-          </o-table-column>
-          <o-table-columns-grouping>
-            <o-table-columns-grouping-column attr="BALANCE" aggregate="sum"> </o-table-columns-grouping-column>
-          </o-table-columns-grouping>
-          <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
-        </o-table>
-
+        </div>
+        <div fxFlex="5">
+          <button mat-stroked-button (click)="sidenav.toggle()" class="tableConfBtn" #btnConf><mat-icon>filter_list</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}</button>
+        </div>
       </div>
-      <o-button attr="sidenav-toggle" label="{{ 'TABLE.CONFIGURATION' | oTranslate }}" (click)="sidenav.toggle()" icon="tune" fxFlex="15"
-        class="tableConfBtn" #btnConf></o-button>
 
-      <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
-        <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
-          <mat-form-field>
-            <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
-          </mat-form-field>
-          <mat-slide-toggle #fixedHeaderToggle [checked]="true">
-            {{ 'TABLE.BUTTON.FIXED' | oTranslate }}
-          </mat-slide-toggle>
-        </o-column>
-      </mat-sidenav>
 
-    </div>
+    </mat-sidenav-content>
+
   </mat-sidenav-container>
+
 </example-comp>
