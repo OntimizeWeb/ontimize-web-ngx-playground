@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 import { TableUtils } from '../table-utils';
 
@@ -11,6 +12,44 @@ export class TablePaginationComponent {
   pageSizeOptionsInput: any;
 
   public data = TableUtils.getBranches();
+
+  @ViewChild('sidenav', { static: false })
+  sidenav: MatSidenav;
+
+  private innerWidth: any;
+
+  ngAfterViewInit(): void {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth >= 1920) {
+      this.sidenav.opened = true;
+      this.sidenav.mode = "side";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
+    }
+    else {
+      this.sidenav.mode = "over";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
+      if (this.innerWidth <= 1279) {
+        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
+      }
+    }
+
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth >= 1920) {
+      this.sidenav.mode = "side";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
+    }
+    else {
+      this.sidenav.mode = "over";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
+      if (this.innerWidth <= 1279) {
+        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
+      }
+    }
+  }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

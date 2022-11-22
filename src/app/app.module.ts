@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 import { DummyService } from './shared/services/dummy.service';
-import { ExpandedStateService } from './shared/services/expanded-state.service';
+import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
@@ -32,7 +32,7 @@ export function getDummyServiceProvider(injector: Injector) {
     OGalleryModule
   ],
   providers: [
-    { provide: ExpandedStateService },
+    { provide: CollapsibleStateService },
     { provide: APP_CONFIG, useValue: CONFIG },
     {
       provide: 'DummyService',

@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 import { OTableComponent } from 'ontimize-web-ngx';
 
 import { TableUtils } from '../table-utils';
@@ -13,6 +14,11 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any = true;
 
+  @ViewChild('sidenav', { static: false })
+  sidenav: MatSidenav;
+
+  private innerWidth: any;
+
   public data = TableUtils.getCustomers().slice();;
 
   @ViewChild('table', { static: false })
@@ -21,6 +27,35 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (this.table) {
       this.table.updateScrolledState();
+    }
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth >= 1920) {
+      this.sidenav.opened = true;
+      this.sidenav.mode = "side";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
+    }
+    else {
+      this.sidenav.mode = "over";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
+      if (this.innerWidth <= 1279) {
+        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
+      }
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth >= 1920) {
+      this.sidenav.mode = "side";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
+    }
+    else {
+      this.sidenav.mode = "over";
+      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
+      if (this.innerWidth <= 1279) {
+        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
+      }
     }
   }
 

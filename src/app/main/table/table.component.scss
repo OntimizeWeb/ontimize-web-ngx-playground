@@ -10,7 +10,7 @@
     width: 100%;
   }
 
-  .tableConfBtn{
+  .table-conf-btn{
     margin-top: 80px;
     transform: rotate(90deg) translate(80px, 40px);
     padding: 0 20px 0 10px;
@@ -37,4 +37,8 @@
       }
     }
   }
+}
+
+.main-container{
+  overflow: hidden;
 }

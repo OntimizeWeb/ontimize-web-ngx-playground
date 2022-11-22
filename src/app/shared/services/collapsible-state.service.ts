@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { ObservableWrapper } from 'ontimize-web-ngx';
 
 @Injectable()
-export class ExpandedStateService {
+export class CollapsibleStateService {
   public expanded = true;
 
   private emitter: EventEmitter<boolean> = new EventEmitter<boolean>();

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OColumnCollapsibleComponent } from 'ontimize-web-ngx';
-import { ExpandedStateService } from '../services/expanded-state.service';
+import { CollapsibleStateService } from '../services/collapsible-state.service';
 
 @Component({
   selector: 'collapsible-menu',
@@ -14,7 +14,7 @@ export class CollapsibleMenuComponent implements OnInit {
   private expanded: boolean = true;
 
   constructor(
-    protected expandedService: ExpandedStateService
+    protected expandedService: CollapsibleStateService
   ) { }
 
   ngOnInit() {

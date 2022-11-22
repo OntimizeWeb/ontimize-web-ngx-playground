@@ -2,14 +2,28 @@
   (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
   <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
     <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
-      <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
-        <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
-          {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
-        </mat-slide-toggle>
-      </o-column>
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
+          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon layout-margin>tune</mat-icon>
+            <span> {{ 'TABLE.CONFIGURATION' | oTranslate }}</span>
+          </div>
+          <div fxLayoutAlign="end center" fxFlex>
+            <button mat-button (click)="sidenav.toggle()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
+          <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
+            {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+          </mat-slide-toggle>
+        </o-column>
+      </div>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+    <mat-sidenav-content fxFlex="1 1 95%">
+      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding>
 
         <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
           <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
@@ -25,8 +39,8 @@
           </o-table>
         </div>
         <div fxFlex="5">
-          <button mat-stroked-button (click)="sidenav.toggle()" class="tableConfBtn" #btnConf>
-            <mat-icon>filter_list</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
+          <button mat-stroked-button (click)="sidenav.toggle()" class="table-conf-btn" id="table-conf-btn-id">
+            <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
           </button>
         </div>
 

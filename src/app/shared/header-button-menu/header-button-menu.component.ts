@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ExpandedStateService } from '../services/expanded-state.service';
+import { CollapsibleStateService } from '../services/collapsible-state.service';
 
 @Component({
   selector: 'header-button-menu',
@@ -18,7 +18,7 @@ export class HeaderButtonMenuComponent {
   private expanded: boolean = true;
 
   constructor(
-    protected expandedService: ExpandedStateService
+    protected expandedService: CollapsibleStateService
   ) { }
 
   ngAfterViewInit() {
