@@ -1,0 +1,127 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFlexFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-basic')"
+  (showSource)="onShowSource(grid, ex)" class="list-examples">
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
+      <mat-sidenav fxFlex mode="side" position="end" #sidenav class="sidenav">
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
+            <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon layout-margin>tune</mat-icon>
+              <span> {{ 'GRID.CONFIGURATION' | oTranslate }}</span>
+            </div>
+            <div fxLayoutAlign="end center" fxFlex>
+              <button mat-button (click)="sidenav.toggle()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <o-column attr="conf" title="Configuration" fxFlex="40" layout-align="center" layout-padding>
+            <mat-form-field>
+              <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+              <mat-form-field fxFlex="50">
+                <input matInput #colsInput type="number" placeholder="{{ 'GRID.NUM_COLUMNS' | oTranslate }}" [(ngModel)]="columns" min="1">
+              </mat-form-field>
+              <mat-form-field fxFlex="50">
+                <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}" [(ngModel)]="gutterSize" min="1">
+              </mat-form-field>
+            </div>
+            <div fxLayout="column">
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+                <mat-slide-toggle #showControlsToggle [checked]="true" fxFlex>
+                  {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
+                </mat-slide-toggle>
+                <mat-slide-toggle #showFooterToggle [checked]="true" fxFlex>
+                  {{ 'GRID.SHOW_FOOTER' | oTranslate }}
+                </mat-slide-toggle>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+                <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+                  {{ 'REFRESH_BUTTON' | oTranslate }}
+                </mat-slide-toggle>
+                <mat-slide-toggle #insertButtonToggle [checked]="false" fxFlex>
+                  {{ 'INSERT_BUTTON' | oTranslate }}
+                </mat-slide-toggle>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+                <mat-slide-toggle #showPageSizeToggle [checked]="true" fxFlex>
+                  {{ 'GRID.SHOW_PAGINATION' | oTranslate }}
+                </mat-slide-toggle>
+                <mat-form-field fxFlex>
+                  <input matInput #pageSizeInput type="number" placeholder="{{ 'GRID.PAGE_SIZE' | oTranslate }}" [(ngModel)]="pagesize" min="1">
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+                <mat-slide-toggle #showSortToggle [checked]="true" fxFlex>
+                  {{ 'GRID.SHOW_SORT' | oTranslate }}
+                </mat-slide-toggle>
+                <mat-form-field fxFlex>
+                  <mat-select placeholder="Sort column" [(ngModel)]="sortColumn" (change)="reloadGridData(grid)">
+                    <mat-option *ngFor="let column of ['name','email']" [value]="column">
+                      {{ column }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+                <mat-slide-toggle #quickFilterToggle [checked]="true" fxFlex>
+                  {{ 'QUICK_FILTER' | oTranslate }}
+                </mat-slide-toggle>
+                <mat-slide-toggle #paginationControlsToggle [checked]="false" fxFlex>
+                  {{ 'GRID.PAGINATION_CONTROLS' | oTranslate }}
+                </mat-slide-toggle>
+              </div>
+
+            </div>
+          </o-column>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding>
+          <div fxFlex="90%" fxLayoutAlign="center center">
+            <o-column elevation="1" fxFlex layout-align="center">
+              <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()"
+                columns="id;name;username;email;companyname;phone;website" keys="id" [cols]="columns" [query-rows]="pagesize"
+                [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16" [orderable]="showSortToggle.checked"
+                [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email" [sort-column]="sortColumn"
+                [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
+                [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value"
+                [show-footer]="showFooterToggle.checked" [insert-button]="insertButtonToggle.checked" fixed-header="yes"
+                [ngStyle]="{'height':'600px'}">
+                <o-grid-item *ngFor="let list of grid.dataArray">
+                  <o-column layout-padding class="container-item">
+                    <img [src]="list.thumbnailUrl" style="margin-top:8px">
+                    <h4>{{ list.name }}</h4>
+                    <div class="phone">
+                      <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+                    </div>
+                    <div class="email">
+                      <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+                    </div>
+                    <div class="domain">
+                      <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
+                    </div>
+                    <div class="website">
+                      <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+                    </div>
+                    <div class="body">
+                      {{list.body}}
+                    </div>
+                  </o-column>
+                </o-grid-item>
+              </o-grid>
+            </o-column>
+          </div>
+          <div fxFlex="10%">
+            <button mat-stroked-button (click)="sidenav.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
+              <mat-icon>tune</mat-icon> {{ 'GRID.CONFIGURATION' | oTranslate }}
+            </button>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+
+</example-comp>
