@@ -62,20 +62,7 @@ export class TableBasicComponent {
   private innerWidth: any;
 
   ngAfterViewInit(): void {
-    this.innerWidth = window.innerWidth;
-    if (this.innerWidth >= 1920) {
-      this.sidenav.opened = true;
-      this.sidenav.mode = "side";
-      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
-    }
-    else {
-      this.sidenav.mode = "over";
-      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(150px, 40px)";
-      if (this.innerWidth <= 1279) {
-        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
-      }
-    }
-
+    this.styleChangeOnResize();
   }
 
   getFiles(key: string) {
@@ -113,6 +100,10 @@ export class TableBasicComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
+    this.styleChangeOnResize();
+  }
+
+  styleChangeOnResize(): void {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth >= 1920) {
       this.sidenav.mode = "side";

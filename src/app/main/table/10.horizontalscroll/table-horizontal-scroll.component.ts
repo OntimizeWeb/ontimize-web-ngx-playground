@@ -28,23 +28,15 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
     if (this.table) {
       this.table.updateScrolledState();
     }
-    this.innerWidth = window.innerWidth;
-    if (this.innerWidth >= 1920) {
-      this.sidenav.opened = true;
-      this.sidenav.mode = "side";
-      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
-    }
-    else {
-      this.sidenav.mode = "over";
-      document.getElementById("table-conf-btn-id").style.transform = "rotate(90deg) translate(80px, 40px)";
-      if (this.innerWidth <= 1279) {
-        document.getElementById("table-conf-btn-id").style.transform = "rotate(0)";
-      }
-    }
+    this.styleChangeOnResize();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
+    this.styleChangeOnResize();
+  }
+
+  styleChangeOnResize(): void {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth >= 1920) {
       this.sidenav.mode = "side";
