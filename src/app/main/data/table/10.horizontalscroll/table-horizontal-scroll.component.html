@@ -3,18 +3,7 @@
   <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
     <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
       <div fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
-            <mat-icon layout-margin>tune</mat-icon>
-            <span> {{ 'TABLE.CONFIGURATION' | oTranslate }}</span>
-          </div>
-          <div fxLayoutAlign="end center" fxFlex>
-            <button mat-button (click)="sidenav.toggle()">
-              <mat-icon>close</mat-icon>
-            </button>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
+        <configuration-header comp-name="TABLE"></configuration-header>
         <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
           <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
             {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}

@@ -3,18 +3,7 @@
   <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
     <mat-sidenav mode="over" position="end" #sidenav class="sidenav" fxFlex>
       <div fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
-            <mat-icon layout-margin>tune</mat-icon>
-            <span> {{ 'TABLE.CONFIGURATION' | oTranslate }}</span>
-          </div>
-          <div fxLayoutAlign="end center" fxFlex>
-            <button mat-button (click)="sidenav.toggle()">
-              <mat-icon>close</mat-icon>
-            </button>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
+        <configuration-header comp-name="TABLE"></configuration-header>
         <o-column attr="conf" title="Configuration" fxFlex="100" layout-padding layout-align="start">
           <mat-form-field>
             <input matInput #pageSizeOptionsInput placeholder="{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}" value="5;10;15"

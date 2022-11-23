@@ -4,18 +4,7 @@
   <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding>
     <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
       <mat-sidenav mode="side" position="end" #sidenav class="sidenav">
-        <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
-            <mat-icon layout-margin>tune</mat-icon>
-            <span> {{ 'TABLE.CONFIGURATION' | oTranslate }}</span>
-          </div>
-          <div fxLayoutAlign="end center" fxFlex>
-            <button mat-button (click)="sidenav.toggle()">
-              <mat-icon>close</mat-icon>
-            </button>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
+        <configuration-header comp-name="TABLE"></configuration-header>
         <mat-form-field layout-margin>
           <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
         </mat-form-field>

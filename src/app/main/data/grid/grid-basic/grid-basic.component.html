@@ -4,18 +4,7 @@
     <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
       <mat-sidenav fxFlex mode="side" position="end" #sidenav class="sidenav">
         <div fxLayout="column">
-          <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
-            <div fxFlex fxLayout="row" fxLayoutAlign="start center">
-              <mat-icon layout-margin>tune</mat-icon>
-              <span> {{ 'GRID.CONFIGURATION' | oTranslate }}</span>
-            </div>
-            <div fxLayoutAlign="end center" fxFlex>
-              <button mat-button (click)="sidenav.toggle()">
-                <mat-icon>close</mat-icon>
-              </button>
-            </div>
-          </div>
-          <mat-divider></mat-divider>
+          <configuration-header comp-name="GRID"></configuration-header>
           <o-column attr="conf" title="Configuration" fxFlex="40" layout-align="center" layout-padding>
             <mat-form-field>
               <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
