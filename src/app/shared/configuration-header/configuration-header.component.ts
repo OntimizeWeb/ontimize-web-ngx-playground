@@ -7,13 +7,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   inputs: ['compName: comp-name'],
   encapsulation: ViewEncapsulation.None
 })
-export class ConfigurationHeaderComponent implements OnInit {
+export class ConfigurationHeaderComponent {
 
   private compName: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
