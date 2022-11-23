@@ -1,46 +1,73 @@
 <example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-fixed')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-column elevation="1" fxFlex="60" layout-align="center">
-      <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-        keys="id" [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes"
-        query-rows="8" grid-item-height="1:2" quick-filter="yes">
-        <o-grid-item *ngFor="let list of grid.dataArray">
-          <o-column layout-padding class="container-item">
-            <img [src]="list.thumbnailUrl" style="margin-top:8px">
-            <h4>{{ list.name }}</h4>
-            <div class="phone">
-              <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
+      <mat-sidenav fxFlex mode="side" position="end" #sidenav class="sidenav">
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
+            <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon layout-margin>tune</mat-icon>
+              <span> {{ 'GRID.CONFIGURATION' | oTranslate }}</span>
             </div>
-            <div class="email">
-              <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+            <div fxLayoutAlign="end center" fxFlex>
+              <button mat-button (click)="sidenav.toggle()">
+                <mat-icon>close</mat-icon>
+              </button>
             </div>
-            <div class="domain">
-              <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
-            </div>
-            <div class="website">
-              <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
-            </div>
-            <div class="body">
-              {{list.body}}
-            </div>
+          </div>
+          <o-column attr="conf" title="Configuration" fxFlex="40" layout-align="center" layout-padding>
+            <mat-form-field>
+              <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
+            </mat-form-field>
+            <o-column fxFlex layout-padding>
+              <mat-slide-toggle #fixedHeaderToggle [checked]="true">
+                {{ 'GRID.BUTTON.FIXED' | oTranslate }}
+              </mat-slide-toggle>
+              <mat-form-field>
+                <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="600" type="number">
+              </mat-form-field>
+            </o-column>
           </o-column>
-        </o-grid-item>
-      </o-grid>
-    </o-column>
-    <o-column attr="conf" title="{{ 'GRID.CONFIGURATION' | oTranslate }}" fxFlex="40" layout-align="center"
-      layout-padding>
-      <mat-form-field>
-        <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
-      </mat-form-field>
-      <o-column fxFlex layout-padding>
-        <mat-slide-toggle #fixedHeaderToggle [checked]="true">
-          {{ 'GRID.BUTTON.FIXED' | oTranslate }}
-        </mat-slide-toggle>
-        <mat-form-field>
-          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="600" type="number">
-        </mat-form-field>
-      </o-column>
-    </o-column>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding>
+          <div fxFlex="90%" fxLayoutAlign="center center">
+            <o-column elevation="1" fxFlex="60" layout-align="center">
+              <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
+                keys="id" [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
+                grid-item-height="1:2" quick-filter="yes">
+                <o-grid-item *ngFor="let list of grid.dataArray">
+                  <o-column layout-padding class="container-item">
+                    <img [src]="list.thumbnailUrl" style="margin-top:8px">
+                    <h4>{{ list.name }}</h4>
+                    <div class="phone">
+                      <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+                    </div>
+                    <div class="email">
+                      <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+                    </div>
+                    <div class="domain">
+                      <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
+                    </div>
+                    <div class="website">
+                      <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+                    </div>
+                    <div class="body">
+                      {{list.body}}
+                    </div>
+                  </o-column>
+                </o-grid-item>
+              </o-grid>
+            </o-column>
+          </div>
+          <div fxFlex="10%">
+            <button mat-stroked-button (click)="sidenav.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
+              <mat-icon>tune</mat-icon> {{ 'GRID.CONFIGURATION' | oTranslate }}
+            </button>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
 </example-comp>
