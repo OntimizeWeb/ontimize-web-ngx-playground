@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { DummyService } from 'src/app/shared/services/dummy.service';
-import { ConfigurationHeaderComponent } from '../../../shared/configuration-header/configuration-header.component';
+import { DataStructureComponent } from '../../../shared/data-structure/data-structure.component';
 
 import { SharedModule } from '../../../shared/shared.module';
 import { TableBasicComponent } from './01.basic/table-basic.component';

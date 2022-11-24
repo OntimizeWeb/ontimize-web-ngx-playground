@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ConfigMenu } from '../../config-menu.class';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -37,7 +36,7 @@ const LIST_ITEM_CARD_IMAGE_TS_DATA = `
   templateUrl: './list-item-card-image.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemCardImageComponent extends ConfigMenu {
+export class ListItemCardImageComponent {
 
   iconPosition: String = 'right';
 
@@ -81,15 +80,6 @@ export class ListItemCardImageComponent extends ConfigMenu {
       'data': LIST_ITEM_CARD_IMAGE_TS_DATA
     }
   };
-
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("list-conf-btn-id", "80");
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("list-conf-btn-id", "80");
-  }
 
   onAction1() {
     alert('onAction1');

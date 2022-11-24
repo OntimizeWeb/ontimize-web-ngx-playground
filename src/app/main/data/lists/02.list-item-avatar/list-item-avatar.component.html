@@ -1,10 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [files]="files" (showSource)="onShowSource(list, ex)"
   class="list-examples">
-  <mat-sidenav-container fxFLex layout-padding layout-align="start" class="sidenav-container">
-    <mat-sidenav fxFlex mode="side" position="end" #sidenav class="sidenav">
-      <div fxLayout="column">
-        <configuration-header comp-name="LIST"></configuration-header>
-        <o-column title="Configuration" elevation="0" fxFlex="50" layout-padding layout-align="center">
+  <data-structure comp-name="LIST" #sidenavComp>
+        <o-column title="Configuration" elevation="0" layout-padding layout-align="center" menu>
           <div fxLayout="row" layout-padding fxLayoutAlign="center">
             <mat-form-field fxFlex="95">
               <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
@@ -61,10 +58,9 @@
             </div>
           </o-column>
         </o-column>
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlex="1 1 90%">
-      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start">
+
+
+      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start" content>
         <div fxFlex="90%" fxLayoutAlign="center center">
           <o-column elevation="1" fxFlex layout-align="center">
             <o-list #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
@@ -83,12 +79,11 @@
           </o-column>
         </div>
         <div fxFlex="10%">
-          <button mat-stroked-button (click)="sidenav.toggle()" class="list-config-btn" id="list-conf-btn-id">
+          <button mat-stroked-button (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
             <mat-icon>tune</mat-icon> {{ 'LIST.CONFIGURATION' | oTranslate }}
           </button>
         </div>
       </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+    </data-structure>
 
 </example-comp>

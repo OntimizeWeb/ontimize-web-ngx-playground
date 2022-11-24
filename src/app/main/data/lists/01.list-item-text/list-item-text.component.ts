@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ConfigMenu } from '../../config-menu.class';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -36,7 +35,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
   templateUrl: './list-item-text.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemTextComponent extends ConfigMenu {
+export class ListItemTextComponent {
 
   iconPosition: String = 'right';
   protected staticData = ListsUtils.getListData(10);
@@ -59,15 +58,6 @@ export class ListItemTextComponent extends ConfigMenu {
       'data': LIST_ITEM_TEXT_TS_DATA
     }
   };
-
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("list-conf-btn-id", "80");
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("list-conf-btn-id", "80");
-  }
 
   addToFavorites(itemData, avatarItem) {
     if (avatarItem.icon === 'star') {

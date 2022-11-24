@@ -9,37 +9,3 @@
     padding: 3px;
   }
 }
-
-.sidenav-container {
-  background-color: transparent;
-  width: 100%;
-
-  .mat-sidenav-content {
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .list-conf-btn {
-    margin-top: 80px;
-    transform: rotate(90deg) translate(80px, 40px);
-    padding: 0 20px 0 10px;
-  }
-
-  .sidenav {
-    padding: 10px;
-  }
-}
-
-.example-comp {
-
-  section {
-    height: 100%;
-
-    .playground-examples {
-
-      >div {
-        height: 100%;
-      }
-    }
-  }
-}

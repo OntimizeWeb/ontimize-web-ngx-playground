@@ -2,43 +2,14 @@
   padding: 3px;
 }
 
-.sidenav-container {
-  background-color: transparent;
-
-  .mat-sidenav-content{
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .table-conf-btn{
-    margin-top: 80px;
-    transform: rotate(90deg) translate(80px, 40px);
-    padding: 0 20px 0 10px;
-  }
-
-  .sidenav{
-    padding: 10px;
-  }
-}
-
-.max-height{
-  height: 100%;
-}
-
-.example-comp{
-
-  section{
-    height: 100%;
-
-    .playground-examples{
-
-      >div{
-        height: 100%;
-      }
-    }
-  }
-}
-
 .main-container{
   overflow: hidden;
+}
+
+data-structure > div{
+  height: 100%;
+
+  >mat-sidenav-container{
+    height: 100%;
+  }
 }

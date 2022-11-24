@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -8,7 +7,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-horizontal-scroll',
   templateUrl: 'table-horizontal-scroll.component.html'
 })
-export class TableHorizontalScrollComponent extends ConfigMenu implements AfterViewInit {
+export class TableHorizontalScrollComponent implements AfterViewInit {
 
 
   @ViewChild('horizontalScrollToggle', { static: false })
@@ -23,13 +22,8 @@ export class TableHorizontalScrollComponent extends ConfigMenu implements AfterV
     if (this.table) {
       this.table.updateScrolledState();
     }
-    this.styleChangeOnResize("table-conf-btn-id", "80");
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("table-conf-btn-id", "80");
-  }
 
 
   onToggleChange(val) {

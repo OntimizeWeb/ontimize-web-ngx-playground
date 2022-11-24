@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
-import { ConfigMenu } from '../../config-menu.class';
+import { Component, ViewChild } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
 
@@ -7,7 +6,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-fixed',
   templateUrl: 'table-fixed.component.html'
 })
-export class TableFixedComponent extends ConfigMenu {
+export class TableFixedComponent {
 
   @ViewChild('fixedHeaderToggle', { static: false })
   fixedHeaderToggle: any = true;
@@ -27,16 +26,6 @@ export class TableFixedComponent extends ConfigMenu {
       height: this.tableHeight.nativeElement.value,
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
-  }
-
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("table-conf-btn-id", "80");
-
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("table-conf-btn-id", "80");
   }
 
 }

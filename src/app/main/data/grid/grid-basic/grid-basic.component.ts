@@ -1,7 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
-import { ConfigMenu } from '../../config-menu.class';
 import { GridUtils } from '../grid.utils';
 
 @Component({
@@ -9,21 +8,12 @@ import { GridUtils } from '../grid.utils';
   templateUrl: './grid-basic.component.html',
   styleUrls: ['./grid-basic.component.scss']
 })
-export class GridBasicComponent extends ConfigMenu {
+export class GridBasicComponent {
 
   public columns = 4;
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
-
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
-  }
 
   getStaticData() {
     return GridUtils.getData('o-grid-basic');

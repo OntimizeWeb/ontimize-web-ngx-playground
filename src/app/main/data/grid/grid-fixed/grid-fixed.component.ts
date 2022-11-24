@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
-import { ConfigMenu } from '../../config-menu.class';
+import { Component, ViewChild } from '@angular/core';
 
 import { GridUtils } from '../grid.utils';
 
@@ -9,19 +8,11 @@ import { GridUtils } from '../grid.utils';
   styleUrls: ['./grid-fixed.component.scss']
 })
 
-export class GridFixedComponent extends ConfigMenu {
+export class GridFixedComponent {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
 
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
-  }
 
   getStaticData() {
     return GridUtils.getData('o-grid-fixed');

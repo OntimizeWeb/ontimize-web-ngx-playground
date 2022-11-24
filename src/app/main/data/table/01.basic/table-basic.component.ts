@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
-import { ConfigMenu } from '../../config-menu.class';
+import { Component, ViewChild } from '@angular/core';
 
 import { TableUtils } from '../table-utils';
 
@@ -7,7 +6,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-basic',
   templateUrl: 'table-basic.component.html'
 })
-export class TableBasicComponent extends ConfigMenu {
+export class TableBasicComponent {
 
   @ViewChild('titleInput', { static: false })
   titleInput: any;
@@ -55,15 +54,6 @@ export class TableBasicComponent extends ConfigMenu {
   horizontalScrollToggle: any;
 
   public data = TableUtils.getCustomers();
-
-  ngAfterViewInit(): void {
-    this.styleChangeOnResize("table-conf-btn-id", "80");
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize("table-conf-btn-id", "80");
-  }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
