@@ -4,6 +4,7 @@ import {
   DEFAULT_OUTPUTS_O_TABLE_CELL_EDITOR,
   OBaseTableCellEditor,
   OTableColumnComponent,
+  Util,
 } from 'ontimize-web-ngx';
 
 
@@ -32,7 +33,7 @@ export class OTableCellEditorCustomComponent extends OBaseTableCellEditor implem
   @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
   @ViewChild('input', { static: false }) inputRef: ElementRef;
 
-  id = Math.random();
+  id = Util.randomNumber();
   constructor(protected injector: Injector) {
     super(injector);
     this.type = 'custom';
@@ -47,7 +48,4 @@ export class OTableCellEditorCustomComponent extends OBaseTableCellEditor implem
     super.startEdition(data);
   }
 
-  fileSelected() {
-
-  }
 }

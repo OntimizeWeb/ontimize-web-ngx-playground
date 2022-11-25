@@ -1,19 +1,8 @@
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
 
-  <!-- <div [formGroup]="formGroup" class="o-table-cell-editor-date">
-    <mat-form-field floatPlaceholder="never">
-
-      <input #input matInput type="number" min="5" max="19" [placeholder]="getPlaceholder()" [formControl]="formControl" [required]="orequired">
-
-    </mat-form-field>
-  </div>
-
--->
-
   <o-form show-header="no" editable-detail="yes">
     <o-file-input attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)"
       ></o-file-input>
 
-    <!-- <o-text-input attr="asdf"></o-text-input> -->
   </o-form>
 </ng-template>

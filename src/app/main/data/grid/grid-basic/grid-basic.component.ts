@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
