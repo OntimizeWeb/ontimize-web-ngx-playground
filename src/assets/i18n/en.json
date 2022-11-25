@@ -122,7 +122,7 @@
   "GRID.SHOW_SORT": "Show sort",
   "GRID.SHOW_FOOTER": "Show footer",
   "GRID.DEFAULT_COLS_VALUE": "Default columns for row",
-  "GRID.CONFIGURATION": "Configuration",
+  "GRID.CONFIGURATION": "Grid configuration",
   "GRID.SHOW_CONTROLS": "Show toolbar",
   "GRID.PAGINATION": "Pagination",
   "GRID.NUM_COLUMNS": "Columns per row",

@@ -20,12 +20,16 @@ export class DataStructureComponent extends ConfigMenu{
   }
 
   ngAfterViewInit(): void {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
+    this.styleChangeOnResize("grid-conf-btn-id", "100", "50");
+    this.styleChangeOnResize("list-conf-btn-id", "100", "50");
+    this.styleChangeOnResize("table-conf-btn-id", "100", "50");
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.styleChangeOnResize("grid-conf-btn-id", "80", "0");
+    this.styleChangeOnResize("grid-conf-btn-id", "100", "50");
+    this.styleChangeOnResize("list-conf-btn-id", "100", "50");
+    this.styleChangeOnResize("table-conf-btn-id", "100", "50");
   }
 
 }

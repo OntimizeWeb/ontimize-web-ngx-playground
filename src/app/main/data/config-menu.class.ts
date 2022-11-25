@@ -13,11 +13,11 @@ export class ConfigMenu{
       if (this.innerWidth >= 1920) {
         this.sidenav.opened = true;
         this.sidenav.mode = "side";
-        document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px, 40px)";
+        document.getElementById(id).style.transform = "rotate(90deg)";
       }
       else {
         this.sidenav.mode = "over";
-        document.getElementById(id).style.transform = "rotate(90deg)  translate(" + translate_x + "px, 40px)";
+        document.getElementById(id).style.transform = "rotate(90deg)";
         if (this.innerWidth <= 1279) {
           document.getElementById(id).style.transform = "rotate(0)";
         }
@@ -28,11 +28,11 @@ export class ConfigMenu{
       if (this.innerWidth >= 1920) {
         this.sidenav.opened = true;
         this.sidenav.mode = "side";
-        document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px, " + translate_y + "px)";
+        document.getElementById(id).style.transform = "rotate(90deg)";
       }
       else {
         this.sidenav.mode = "over";
-        document.getElementById(id).style.transform = "rotate(90deg)  translate(" + translate_x + "px, " + translate_y + "px)";
+        document.getElementById(id).style.transform = "rotate(90deg)";
         if (this.innerWidth <= 1279) {
           document.getElementById(id).style.transform = "rotate(0)";
         }
