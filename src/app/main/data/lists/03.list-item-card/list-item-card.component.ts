@@ -38,7 +38,7 @@ const LIST_ITEM_CARD_TS_DATA = `
 })
 export class ListItemCardComponent {
 
-  iconPosition: String = 'right';
+  iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData();
 
   @ViewChild('listTitle', { static: false })

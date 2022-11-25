@@ -38,7 +38,7 @@ const LIST_ITEM_CARD_IMAGE_TS_DATA = `
 })
 export class ListItemCardImageComponent {
 
-  iconPosition: String = 'right';
+  iconPosition: string = 'right';
 
   @ViewChild('listTitle', { static: false })
   listTitle: any;

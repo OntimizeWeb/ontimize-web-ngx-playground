@@ -36,7 +36,7 @@ const LIST_ITEM_AVATAR_TS_DATA = `
 })
 export class ListItemAvatarComponent {
 
-  iconPosition: String = 'right';
+  iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData(5);
 
   @ViewChild('listTitle', { static: false })

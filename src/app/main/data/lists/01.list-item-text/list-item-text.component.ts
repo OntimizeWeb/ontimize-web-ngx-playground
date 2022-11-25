@@ -37,7 +37,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
 })
 export class ListItemTextComponent {
 
-  iconPosition: String = 'right';
+  iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData(10);
 
   @ViewChild('iconToggle', { static: false })
