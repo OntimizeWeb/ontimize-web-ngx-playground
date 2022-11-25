@@ -1,80 +1,93 @@
-<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="30px" class="card-container">
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="30px" class="card-container">
   <a routerLink="/main/inputs">
-    <mat-card>
-      <mat-card-header>Overview</mat-card-header>
-      <mat-card-content>Inputs overview home page.</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="overview" header="Overview" content="Inputs overview home page."></inputs-card>
   </a>
   <a routerLink="/main/inputs/checkbox">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.CHECKBOX.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="checkbox" header="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" content="{{ 'INPUTS.CHECKBOX.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/combo">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.COMBO' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.COMBO.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="combo" header="{{ 'INPUT.BUTTON.COMBO' | oTranslate }}" content="{{ 'INPUTS.COMBO.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/currency">
+    <inputs-card comp-name="currency" header="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" content="{{ 'INPUTS.CURRENCY.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/date">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.DATE' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.DATE.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="date" header="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" content="{{ 'INPUTS.DATE.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/daterange">
+    <inputs-card comp-name="daterange" header="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" content="{{ 'INPUTS.DATERANGE.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/email">
+    <inputs-card comp-name="email" header="{{ 'INPUT.BUTTON.EMAIL' | oTranslate }}" content="{{ 'INPUTS.EMAIL.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/file">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.FILE' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.FILE.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="file" header="{{ 'INPUT.BUTTON.FILE' | oTranslate }}" content="{{ 'INPUTS.FILE.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/hour">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.HOUR' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.HOUR.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="hour" header="{{ 'INPUT.BUTTON.HOUR' | oTranslate }}" content="{{ 'INPUTS.HOUR.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/html">
+    <inputs-card comp-name="html" header="{{ 'INPUT.BUTTON.HTML' | oTranslate }}" content="{{ 'INPUTS.HTML.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/integer">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.INTEGER.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="integer" header="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}" content="{{ 'INPUTS.INTEGER.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/listpicker">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.LISTPICKER.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+      <inputs-card comp-name="listpicker" header="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" content="{{ 'INPUTS.LISTPICKER.DESC' | oTranslate }}">
+      </inputs-card>
   </a>
   <a routerLink="/main/inputs/nif">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.NIF' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.NIF.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+      <inputs-card comp-name="nif" header="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" content="{{ 'INPUTS.NIF.DESC' | oTranslate }}">
+      </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/password">
+      <inputs-card comp-name="password" header="{{ 'INPUT.BUTTON.PASSWORD' | oTranslate }}" content="{{ 'INPUTS.PASSWORD.DESC' | oTranslate }}">
+      </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/percent">
+      <inputs-card comp-name="percentage" header="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" content="{{ 'INPUTS.PERCENT.DESC' | oTranslate }}">
+      </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/phone">
+      <inputs-card comp-name="phone" header="{{ 'INPUT.BUTTON.PHONE' | oTranslate }}" content="{{ 'INPUTS.PHONE.DESC' | oTranslate }}">
+      </inputs-card>
   </a>
   <a routerLink="/main/inputs/radio">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.RADIO' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.RADIO.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="radio" header="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" content="{{ 'INPUTS.RADIO.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/real">
+    <inputs-card comp-name="real" header="{{ 'INPUT.BUTTON.REAL' | oTranslate }}" content="{{ 'INPUTS.REAL.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/slidetoggle">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.SLIDETOGGLE.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="slidetoggle" header="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" content="{{ 'INPUTS.SLIDETOGGLE.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/slider">
+    <inputs-card comp-name="slider" header="{{ 'INPUT.BUTTON.SLIDER' | oTranslate }}" content="{{ 'INPUTS.SLIDER.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/text">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.TEXT' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.TEXT.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="text" header="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" content="{{ 'INPUTS.TEXT.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/time">
-    <mat-card>
-      <mat-card-header>{{ 'INPUT.BUTTON.TIME' | oTranslate }}</mat-card-header>
-      <mat-card-content>{{ 'INPUTS.TIME.DESC' | oTranslate }}</mat-card-content>
-    </mat-card>
+    <inputs-card comp-name="time" header="{{ 'INPUT.BUTTON.TIME' | oTranslate }}" content="{{ 'INPUTS.TIME.DESC' | oTranslate }}">
+    </inputs-card>
+  </a>
+  <a routerLink="/main/inputs/textarea">
+    <inputs-card comp-name="textarea" header="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}" content="{{ 'INPUTS.TEXTAREA.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
 </div>

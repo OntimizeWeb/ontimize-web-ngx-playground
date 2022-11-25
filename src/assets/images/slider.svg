@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133" height="91" viewBox="0 0 133 91">
+  <defs>
+    <filter id="Rectángulo_6441" x="0" y="0" width="133" height="91" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_6470" data-name="Rectángulo 6470" width="12.735" height="15.595" fill="rgba(0,0,0,0.74)"/>
+    </clipPath>
+  </defs>
+  <g id="Ilustracion_Slider" data-name="Ilustracion Slider" transform="translate(-391.5 -708.5)">
+    <g transform="matrix(1, 0, 0, 1, 391.5, 708.5)" filter="url(#Rectángulo_6441)">
+      <g id="Rectángulo_6441-2" data-name="Rectángulo 6441" transform="translate(1.5 0.5)" fill="#fff" stroke="rgba(0,0,0,0.12)" stroke-width="1">
+        <rect width="130" height="88" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="129" height="87" rx="1.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Elipse" transform="translate(-929.385 245.475)">
+      <g id="Grupo_3942" data-name="Grupo 3942" transform="translate(1350 512.465)">
+        <g id="Grupo_3941" data-name="Grupo 3941" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path id="Trazado_7179" data-name="Trazado 7179" d="M6.314,15.595c1.832-1.951,3.426-3.511,4.859-5.206A6.03,6.03,0,0,0,10.551,1.7a6.065,6.065,0,0,0-8.4-.021,6.176,6.176,0,0,0-.782,8.556c1.433,1.787,3.105,3.383,4.946,5.359" transform="translate(0 0)" fill="rgba(0,0,0,0.74)"/>
+          <path id="Trazado_7180" data-name="Trazado 7180" d="M6.314,15.595c-1.84-1.976-3.512-3.573-4.946-5.359A6.176,6.176,0,0,1,2.15,1.679a6.065,6.065,0,0,1,8.4.021,6.03,6.03,0,0,1,.622,8.688c-1.432,1.7-3.026,3.255-4.859,5.206" transform="translate(0 0)" fill="rgba(0,0,0,0.74)"/>
+        </g>
+      </g>
+      <text id="_26" data-name="26" transform="translate(1351.868 521.747)" fill="#fff" font-size="7" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">26</tspan></text>
+    </g>
+    <g id="item2" transform="translate(405 776)">
+      <path id="Trazado_7084" data-name="Trazado 7084" d="M18835.146,195h24.018" transform="translate(-18835.146 -195)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+      <path id="Trazado_7178" data-name="Trazado 7178" d="M18835.143,195h86.234" transform="translate(-18815.377 -195)" fill="none" stroke="rgba(64,64,64,0.3)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+    <g id="item_1" data-name="item 1" transform="translate(405 745)">
+      <path id="Trazado_7084-2" data-name="Trazado 7084" d="M18835.145,195h68.086" transform="translate(-18835.145 -195)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+      <path id="Trazado_7178-2" data-name="Trazado 7178" d="M18835.145,195h59.531" transform="translate(-18788.676 -195)" fill="none" stroke="rgba(64,64,64,0.3)" stroke-linecap="round" stroke-width="1.51"/>
+      <circle id="Elipse_1168" data-name="Elipse 1168" cx="4" cy="4" r="4" transform="translate(62.25 -4)" fill="#363636"/>
+    </g>
+    <g id="Grupo_3928" data-name="Grupo 3928" transform="translate(405 725)">
+      <path id="Trazado_7084-3" data-name="Trazado 7084" d="M18835.145,195h40" transform="translate(-18835.145 -195)" fill="none" stroke="rgba(0,0,0,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+  </g>
+</svg>

@@ -3,27 +3,8 @@ a {
 }
 
 .card-container {
-  margin: 50px;
+  margin: 40px;
+  margin-right: 0;
   flex-wrap: wrap;
   row-gap: 30px;
-
-  mat-card {
-    width: 240px;
-    height: 100px;
-
-    mat-card-header {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 10px 0 10px 0;
-
-      ::ng-deep .mat-card-header-text {
-        margin: 0px;
-      }
-    }
-
-    mat-card-content {
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-  }
 }

@@ -9,11 +9,12 @@ import { HeaderButtonMenuComponent } from './header-button-menu/header-button-me
 import { CollapsibleStateService } from './services/collapsible-state.service';
 import { CollapsibleMenuComponent } from './collapsible-menu/collapsible-menu.component';
 import { DataStructureComponent } from './data-structure/data-structure.component';
+import { InputsCardComponent } from './inputs-card/inputs-card.component';
 
 @NgModule({
   imports: [OntimizeWebModule, AngularHighlightJsModule],
-  declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent],
+  declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent],
   providers: [NavigationBarService, CollapsibleStateService],
-  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent]
+  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent]
 })
 export class SharedModule { }

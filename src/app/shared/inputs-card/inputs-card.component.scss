@@ -1,0 +1,25 @@
+mat-card {
+  width: 272px;
+  height: 248px;
+
+  .img-container{
+    height: 114px;
+  }
+
+  .mat-card-header-text {
+    margin: 0px;
+
+    mat-card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0 10px 0;
+    }
+  }
+
+
+
+  mat-card-content {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
