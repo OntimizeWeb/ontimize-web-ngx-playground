@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -7,7 +9,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-horizontal-scroll',
   templateUrl: 'table-horizontal-scroll.component.html'
 })
-export class TableHorizontalScrollComponent implements AfterViewInit {
+export class TableHorizontalScrollComponent extends ConfigMenu implements AfterViewInit {
 
 
   @ViewChild('horizontalScrollToggle', { static: false })
@@ -17,6 +19,10 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
 
   @ViewChild('table', { static: false })
   table: OTableComponent;
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   ngAfterViewInit(): void {
     if (this.table) {

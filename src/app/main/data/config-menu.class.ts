@@ -4,7 +4,7 @@ import { ConfigCollapsibleStateService } from "../../shared/services/config-coll
 
 export class ConfigMenu {
   @ViewChild('sidenav', { static: false })
-  private sidenav: MatSidenav;
+  public sidenav: MatSidenav;
 
   private innerWidth: any;
   public btnVisibility: boolean;
@@ -14,6 +14,12 @@ export class ConfigMenu {
   ) { }
 
   ngOnInit(): void {
+    if (window.innerWidth >= 1920) {
+      this.btnVisibility = false;
+    }
+    else {
+      this.btnVisibility = true;
+    }
     this.configExpandedService.onStateChange((val) => {
       this.btnVisibility = !val;
     });
@@ -26,12 +32,13 @@ export class ConfigMenu {
       this.sidenav.mode = "side";
       document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
     }
+    else if (this.innerWidth <= 1279) {
+      this.sidenav.mode = "over";
+      document.getElementById(id).style.transform = "rotate(0)";
+    }
     else {
       this.sidenav.mode = "over";
       document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
-      if (this.innerWidth <= 1279) {
-        document.getElementById(id).style.transform = "rotate(0)";
-      }
     }
   }
 }

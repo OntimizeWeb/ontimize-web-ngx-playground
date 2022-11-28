@@ -7,15 +7,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   inputs: ['header: header', 'content: content', 'compName: comp-name'],
   encapsulation: ViewEncapsulation.None
 })
-export class InputsCardComponent implements OnInit {
+export class InputsCardComponent {
 
   private header: string;
   private content: string;
   private compName: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -6,7 +8,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-basic',
   templateUrl: 'table-basic.component.html'
 })
-export class TableBasicComponent {
+export class TableBasicComponent extends ConfigMenu {
 
   @ViewChild('titleInput', { static: false })
   titleInput: any;
@@ -54,6 +56,10 @@ export class TableBasicComponent {
   horizontalScrollToggle: any;
 
   public data = TableUtils.getCustomers();
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);

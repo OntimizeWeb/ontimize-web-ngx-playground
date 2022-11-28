@@ -1,4 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -36,7 +38,7 @@ const LIST_ITEM_CARD_TS_DATA = `
   templateUrl: './list-item-card.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemCardComponent {
+export class ListItemCardComponent extends ConfigMenu {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData();
@@ -73,6 +75,10 @@ export class ListItemCardComponent {
       'data': LIST_ITEM_CARD_TS_DATA
     }
   };
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   onAction1() {
     alert('onAction1');

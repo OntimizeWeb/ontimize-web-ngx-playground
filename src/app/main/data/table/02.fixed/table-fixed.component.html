@@ -35,7 +35,7 @@
 
       </div>
       <div fxFlex="7%">
-        <button mat-stroked-button (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
+        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
           <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
         </button>
       </div>

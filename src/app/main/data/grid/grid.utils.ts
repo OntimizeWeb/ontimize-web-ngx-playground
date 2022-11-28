@@ -1,6 +1,3 @@
-import { CollapsibleStateService } from "../../../shared/services/collapsible-state.service";
-import { ConfigCollapsibleStateService } from "../../../shared/services/config-collapsible-state.service";
-
 const FAKE_USERS = [
   {
     'id': 1,

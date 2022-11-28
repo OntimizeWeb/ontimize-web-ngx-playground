@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ConfigCollapsibleStateService } from '../../../shared/services/config-collapsible-state.service';
 
 @Component({
   selector: 'grid',

@@ -1,4 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -35,7 +37,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
   templateUrl: './list-item-text.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemTextComponent {
+export class ListItemTextComponent extends ConfigMenu {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData(10);
@@ -58,6 +60,10 @@ export class ListItemTextComponent {
       'data': LIST_ITEM_TEXT_TS_DATA
     }
   };
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   addToFavorites(itemData, avatarItem) {
     if (avatarItem.icon === 'star') {

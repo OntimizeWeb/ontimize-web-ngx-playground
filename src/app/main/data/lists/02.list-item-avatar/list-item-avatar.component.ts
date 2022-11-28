@@ -1,4 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -34,7 +36,7 @@ const LIST_ITEM_AVATAR_TS_DATA = `
   templateUrl: './list-item-avatar.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemAvatarComponent {
+export class ListItemAvatarComponent extends ConfigMenu {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData(5);
@@ -69,6 +71,10 @@ export class ListItemAvatarComponent {
       'data': LIST_ITEM_AVATAR_TS_DATA
     }
   };
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   getStaticData() {
     return this.staticData;

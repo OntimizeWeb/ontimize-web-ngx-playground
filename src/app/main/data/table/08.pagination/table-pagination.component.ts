@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -6,11 +8,15 @@ import { TableUtils } from '../table-utils';
   selector: 'table-pagination',
   templateUrl: 'table-pagination.component.html'
 })
-export class TablePaginationComponent {
+export class TablePaginationComponent extends ConfigMenu {
   @ViewChild('pageSizeOptionsInput', { static: false })
   pageSizeOptionsInput: any;
 
   public data = TableUtils.getBranches();
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
