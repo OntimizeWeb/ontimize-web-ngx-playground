@@ -7,10 +7,10 @@
             <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
           </mat-form-field>
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
-            <mat-form-field fxFlex="50">
+            <mat-form-field>
               <input matInput #colsInput type="number" placeholder="{{ 'GRID.NUM_COLUMNS' | oTranslate }}" [(ngModel)]="columns" min="1">
             </mat-form-field>
-            <mat-form-field fxFlex="50">
+            <mat-form-field>
               <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}" [(ngModel)]="gutterSize" min="1">
             </mat-form-field>
           </div>
@@ -65,9 +65,9 @@
 
 
 
-        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start" layout-padding content>
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
           <div fxFlex="90%" fxLayoutAlign="center center">
-            <o-column elevation="1" fxFlex layout-align="center">
+            <o-column elevation="1" fxFlex="99%" layout-align="center">
               <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()"
                 columns="id;name;username;email;companyname;phone;website" keys="id" [cols]="columns" [query-rows]="pagesize"
                 [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16" [orderable]="showSortToggle.checked"
@@ -101,7 +101,7 @@
             </o-column>
           </div>
           <div fxFlex="10%">
-            <button mat-stroked-button (click)="sidenavComp.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
+            <button *ngIf="btnVisibility" mat-stroked-button (click)="sidenavComp.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
               <mat-icon>tune</mat-icon> {{ 'GRID.CONFIGURATION' | oTranslate }}
             </button>
           </div>

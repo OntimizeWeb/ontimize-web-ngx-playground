@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 import { DummyService } from './shared/services/dummy.service';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
+import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
@@ -33,6 +34,7 @@ export function getDummyServiceProvider(injector: Injector) {
   ],
   providers: [
     { provide: CollapsibleStateService },
+    { provide: ConfigCollapsibleStateService },
     { provide: APP_CONFIG, useValue: CONFIG },
     {
       provide: 'DummyService',

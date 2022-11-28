@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 import { GridUtils } from '../grid.utils';
 
 @Component({
@@ -8,12 +10,16 @@ import { GridUtils } from '../grid.utils';
   templateUrl: './grid-basic.component.html',
   styleUrls: ['./grid-basic.component.scss']
 })
-export class GridBasicComponent {
+export class GridBasicComponent extends ConfigMenu {
 
   public columns = 4;
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
+
+  constructor(protected configExpandedService: ConfigCollapsibleStateService){
+    super(configExpandedService);
+  }
 
   getStaticData() {
     return GridUtils.getData('o-grid-basic');

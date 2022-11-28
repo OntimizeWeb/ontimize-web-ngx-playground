@@ -1,3 +1,6 @@
+import { CollapsibleStateService } from "../../../shared/services/collapsible-state.service";
+import { ConfigCollapsibleStateService } from "../../../shared/services/config-collapsible-state.service";
+
 const FAKE_USERS = [
   {
     'id': 1,
@@ -344,6 +347,7 @@ export class GridUtils {
   public static HTML_DATA_GRID = HTML_DATA_GRID;
   public static HTML_DATA_GRID_FIXED = HTML_DATA_GRID_FIXED;
   public static HTML_DATA_GRID_HYBRID = HTML_DATA_GRID_HYBRID;
+
   public static getData(type) {
     switch (type) {
       case

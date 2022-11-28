@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
+import { ConfigMenu } from '../../config-menu.class';
 
 import { GridUtils } from '../grid.utils';
 
@@ -8,11 +10,14 @@ import { GridUtils } from '../grid.utils';
   styleUrls: ['./grid-fixed.component.scss']
 })
 
-export class GridFixedComponent {
+export class GridFixedComponent extends ConfigMenu {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
 
+  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
+    super(configExpandedService);
+  }
 
   getStaticData() {
     return GridUtils.getData('o-grid-fixed');
