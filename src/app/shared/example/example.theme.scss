@@ -7,11 +7,11 @@
 
   .example-comp {
     & > section {
-      background: white;
+      background: mat-color($background);
       box-shadow: 2px 0 4px rgba(0, 0, 0, .2);
 
       .playground-toolbar.mat-toolbar {
-        background: white;
+        background: mat-color($background);
         color: #212121;
         border-bottom: 1px solid #e0e0e0;
 

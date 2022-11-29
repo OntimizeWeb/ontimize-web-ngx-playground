@@ -31,8 +31,17 @@
             "styles": [
               "node_modules/highlight.js/styles/solarized-light.css",
               "node_modules/ontimize-web-ngx/ontimize.scss",
-              "src/assets/css/app.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/assets/themes/ontimize.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              },
+              {
+                "input": "src/assets/themes/ontimize-dark.scss",
+                "lazy": true,
+                "bundleName": "assets/themes"
+              }
             ],
             "scripts": []
           },
