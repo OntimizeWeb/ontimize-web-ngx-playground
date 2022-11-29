@@ -23,6 +23,9 @@ export class DataStructureComponent extends ConfigMenu {
   toggle() {
     this.sidenav.toggle(!this.sidenav.opened);
     this.configExpandedService.setState(this.sidenav.opened);
+  }
+
+  formatButton() {
     if (this.route.url.includes("grid")) {
       this.styleChangeOnResize("grid-conf-btn-id", "100", "50");
     }
@@ -37,29 +40,19 @@ export class DataStructureComponent extends ConfigMenu {
   ngAfterViewInit(): void {
     this.sidenav.closedStart.subscribe(() => {
       this.configExpandedService.setState(this.sidenav.opened);
+      this.formatButton();
     });
-    if (this.route.url.includes("grid")) {
-      this.styleChangeOnResize("grid-conf-btn-id", "100", "50", true);
-    }
-    else if (this.route.url.includes("list")) {
-      this.styleChangeOnResize("list-conf-btn-id", "100", "50", true);
-    }
-    else if (this.route.url.includes("table")) {
-      this.styleChangeOnResize("table-conf-btn-id", "100", "50", true);
-    }
+    /*this.sidenav._closedStream.subscribe(() => {
+      this.configExpandedService.setState(this.sidenav.opened);
+      this.formatButton();
+    });*/
+    this.formatButton();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    if (this.route.url.includes("grid")) {
-      this.styleChangeOnResize("grid-conf-btn-id", "100", "50");
-    }
-    else if (this.route.url.includes("list")) {
-      this.styleChangeOnResize("list-conf-btn-id", "100", "50");
-    }
-    else if (this.route.url.includes("table")) {
-      this.styleChangeOnResize("table-conf-btn-id", "100", "50");
-    }
+    this.formatButton();
+
   }
 
 }
