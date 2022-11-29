@@ -68,5 +68,7 @@ $custom-table-typography: (
   large-row-font-size: mat-typography-level(11px, 11px, 400)
 );
 
+$typography: map-merge($custom-typography, $custom-table-typography);
+
 $theme: map_merge($theme, (background: $background));
 @import '../css/app.scss';
