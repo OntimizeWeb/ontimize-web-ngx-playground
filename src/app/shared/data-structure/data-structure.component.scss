@@ -3,24 +3,27 @@
   width: 100%;
 
   .mat-sidenav-content {
-    overflow: hidden;
     width: 100%;
+
+    >div{
+      height: 100%;
+      >div{
+        overflow: auto;
+        max-width: 100%;
+      }
+    }
   }
 
   .table-conf-btn,
   .list-conf-btn,
   .grid-conf-btn {
-    transform: rotate(90deg) translate(100px, 50px);
+    transform: rotate(90deg) translate(75px, 50px);
     padding: 0 20px 0 10px;
   }
 
   .sidenav {
     padding: 10px;
   }
-}
-
-.mat-drawer-content {
-  overflow: hidden;
 }
 
 table-basic,
