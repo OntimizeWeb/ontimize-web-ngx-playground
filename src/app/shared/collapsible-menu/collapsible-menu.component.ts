@@ -11,7 +11,7 @@ import { CollapsibleStateService } from '../services/collapsible-state.service';
 export class CollapsibleMenuComponent implements OnInit {
 
   @ViewChild("collapsible", { static: false }) collapsible: OColumnCollapsibleComponent;
-  private expanded: boolean = true;
+  public expanded: boolean = true;
 
   constructor(
     protected expandedService: CollapsibleStateService

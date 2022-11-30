@@ -12,12 +12,12 @@ import { ConfigCollapsibleStateService } from '../services/config-collapsible-st
 })
 export class DataStructureComponent extends ConfigMenu {
 
+  public compName: string;
   constructor(
     protected configExpandedService: ConfigCollapsibleStateService,
     protected route: Router
   ) {
     super(configExpandedService);
-
   }
 
   toggle() {
