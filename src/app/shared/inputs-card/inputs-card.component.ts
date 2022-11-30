@@ -9,8 +9,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class InputsCardComponent {
 
-  private header: string;
-  private content: string;
-  private compName: string;
+  public header: string;
+  public content: string;
+  public compName: string;
 
 }

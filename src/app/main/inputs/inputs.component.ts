@@ -12,7 +12,7 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 })
 export class InputsComponent implements OnInit {
 
-  private selectedComponent: string;
+  public selectedComponent: string;
 
   constructor(
     protected navigationService: NavigationBarService,

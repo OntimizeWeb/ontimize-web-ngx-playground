@@ -13,9 +13,9 @@ import { CollapsibleStateService } from '../services/collapsible-state.service';
 })
 export class HeaderButtonMenuComponent {
 
-  private compName: string;
-  private compDesc: string;
-  private expanded: boolean = true;
+  public compName: string;
+  public compDesc: string;
+  public expanded: boolean = true;
 
   constructor(
     protected expandedService: CollapsibleStateService
