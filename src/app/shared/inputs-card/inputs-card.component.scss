@@ -2,24 +2,39 @@ mat-card {
   width: 272px;
   height: 248px;
 
-  .img-container{
+  .img-container {
     height: 114px;
+  }
+
+  .new {
+    margin: 10px 0 5px 0;
+    margin-left: auto;
+    padding: 4px;
+    align-self: right;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 4px;
+    border-color: #00000033;
+    background-color: #EAEAEA;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
   }
 
   .mat-card-header-text {
     margin: 0px;
 
     mat-card-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 10px 0 10px 0;
+      font-size: 18px !important;
+      margin: 16px 0 5px 0 !important;
+      color: black;
     }
   }
 
-
-
   mat-card-content {
+    font-size: 13px;
     margin-top: auto;
     margin-bottom: auto;
+    color: #00000099;
   }
 }

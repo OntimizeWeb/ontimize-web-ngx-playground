@@ -31,7 +31,7 @@ export const routes: Routes = [
   { path: 'home', data: { oAppHeaderTitle: 'Inputs home' }, component: InputsHomeComponent},
   {
     path: '', component: InputsComponent, children: [
-      { path: '', data: { oAppHeaderTitle: 'Inputs overview' }, component: InputOverviewComponent },
+      { path: 'overview', data: { oAppHeaderTitle: 'Inputs overview' }, component: InputOverviewComponent },
       { path: 'text', data: { oAppHeaderTitle: 'Text field' }, component: InputTextComponent },
       { path: 'date', data: { oAppHeaderTitle: 'Date field' }, component: InputDateComponent },
       { path: 'daterange', data: { oAppHeaderTitle: 'Date range field' }, component: InputDateRangeComponent },

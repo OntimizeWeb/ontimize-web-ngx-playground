@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="30px" class="card-container">
-  <a routerLink="/main/inputs">
-    <inputs-card comp-name="overview" header="Overview" content="Inputs overview home page."></inputs-card>
+  <a routerLink="/main/inputs/overview">
+    <inputs-card comp-name="overview" header="{{ 'INPUTS.OVERVIEW' | oTranslate }}" content="{{ 'INPUTS.OVERVIEW.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/checkbox">
     <inputs-card comp-name="checkbox" header="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" content="{{ 'INPUTS.CHECKBOX.DESC' | oTranslate }}">
@@ -43,24 +44,24 @@
     </inputs-card>
   </a>
   <a routerLink="/main/inputs/listpicker">
-      <inputs-card comp-name="listpicker" header="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" content="{{ 'INPUTS.LISTPICKER.DESC' | oTranslate }}">
-      </inputs-card>
+    <inputs-card comp-name="listpicker" header="{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}" content="{{ 'INPUTS.LISTPICKER.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/nif">
-      <inputs-card comp-name="nif" header="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" content="{{ 'INPUTS.NIF.DESC' | oTranslate }}">
-      </inputs-card>
+    <inputs-card comp-name="nif" header="{{ 'INPUT.BUTTON.NIF' | oTranslate }}" content="{{ 'INPUTS.NIF.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/password">
-      <inputs-card comp-name="password" header="{{ 'INPUT.BUTTON.PASSWORD' | oTranslate }}" content="{{ 'INPUTS.PASSWORD.DESC' | oTranslate }}">
-      </inputs-card>
+    <inputs-card comp-name="password" header="{{ 'INPUT.BUTTON.PASSWORD' | oTranslate }}" content="{{ 'INPUTS.PASSWORD.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/percent">
-      <inputs-card comp-name="percentage" header="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" content="{{ 'INPUTS.PERCENT.DESC' | oTranslate }}">
-      </inputs-card>
+    <inputs-card comp-name="percentage" header="{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}" content="{{ 'INPUTS.PERCENT.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/phone">
-      <inputs-card comp-name="phone" header="{{ 'INPUT.BUTTON.PHONE' | oTranslate }}" content="{{ 'INPUTS.PHONE.DESC' | oTranslate }}">
-      </inputs-card>
+    <inputs-card new="true" comp-name="phone" header="{{ 'INPUT.BUTTON.PHONE' | oTranslate }}" content="{{ 'INPUTS.PHONE.DESC' | oTranslate }}">
+    </inputs-card>
   </a>
   <a routerLink="/main/inputs/radio">
     <inputs-card comp-name="radio" header="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" content="{{ 'INPUTS.RADIO.DESC' | oTranslate }}">
@@ -71,7 +72,8 @@
     </inputs-card>
   </a>
   <a routerLink="/main/inputs/slidetoggle">
-    <inputs-card comp-name="slidetoggle" header="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" content="{{ 'INPUTS.SLIDETOGGLE.DESC' | oTranslate }}">
+    <inputs-card comp-name="slidetoggle" header="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}"
+      content="{{ 'INPUTS.SLIDETOGGLE.DESC' | oTranslate }}">
     </inputs-card>
   </a>
   <a routerLink="/main/inputs/slider">
