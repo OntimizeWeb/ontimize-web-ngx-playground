@@ -7,7 +7,7 @@ export const environment = {
   versions: {
     core: '8.8.0',
     gallery: '8.1.0',
-    theming: '8.3.0'
+    theming: '8.4.0'
   }
 };
 
