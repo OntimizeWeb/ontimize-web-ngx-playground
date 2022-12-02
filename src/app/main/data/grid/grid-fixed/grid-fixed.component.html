@@ -16,7 +16,7 @@
     </o-column>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="90%" fxLayoutAlign="center center">
+      <div fxFlex="90%" fxLayoutAlign="center center" class="container">
         <o-column elevation="1" fxFlex layout-align="center">
           <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
             [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"

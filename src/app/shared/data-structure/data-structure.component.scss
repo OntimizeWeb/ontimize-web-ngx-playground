@@ -4,10 +4,11 @@
 
   .mat-sidenav-content {
     width: 100%;
+    overflow: hidden;
 
     >div{
       height: 100%;
-      >div{
+      >.container{
         overflow: auto;
         max-width: 100%;
       }
