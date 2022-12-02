@@ -2,16 +2,16 @@
   (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
   <data-structure comp-name="TABLE" #sidenavComp>
 
-    <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding menu>
+    <div menu layout-margin>
       <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
         {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
       </mat-slide-toggle>
-    </o-column>
+    </div>
 
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding content>
 
-      <div fxFlex="60" fxLayout="column" fxLayoutAlign="center stretch">
+      <div fxFlex="95" fxLayout="column" fxLayoutAlign="center stretch">
         <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
           columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
           query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding

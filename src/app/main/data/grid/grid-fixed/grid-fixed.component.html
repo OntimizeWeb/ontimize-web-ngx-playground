@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-fixed')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
   <data-structure comp-name="GRID" #sidenavComp>
-    <o-column attr="conf" title="Configuration" layout-align="center" layout-padding menu>
+  <div menu layout-margin fxLayout="column">
       <mat-form-field>
         <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
       </mat-form-field>
@@ -13,7 +13,7 @@
           <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="600" type="number">
         </mat-form-field>
       </o-column>
-    </o-column>
+  </div>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
       <div fxFlex="90%" fxLayoutAlign="center center" class="container">

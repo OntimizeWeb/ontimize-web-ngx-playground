@@ -2,19 +2,19 @@
   (showSource)="onShowSource('o-table-fixed', table, ex)">
 
   <data-structure comp-name="TABLE" #sidenavComp>
-    <o-column attr="conf" title="Configuration" elevation="0" fxFlex layout-padding menu>
+    <div menu layout-margin>
       <mat-form-field>
         <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
       </mat-form-field>
       <mat-slide-toggle #fixedHeaderToggle [checked]="true">
         {{ 'TABLE.BUTTON.FIXED' | oTranslate }}
       </mat-slide-toggle>
-    </o-column>
+    </div>
 
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between stretch" layout-padding content>
 
-      <div fxFlex="93%" fxLayout="column" fxLayoutAlign="center stretch">
+      <div fxFlex="95" fxLayout="column" fxLayoutAlign="start stretch">
 
         <o-table #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
@@ -34,7 +34,7 @@
         </o-table>
 
       </div>
-      <div fxFlex="7%">
+      <div fxFlex="5">
         <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
           <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
         </button>

@@ -2,7 +2,7 @@
   (showSource)="onShowSource(grid, ex)" class="list-examples">
 
       <data-structure comp-name="GRID" #sidenavComp>
-        <o-column attr="conf" title="Configuration" layout-align="center" layout-padding menu>
+        <div menu layout-margin>
           <mat-form-field>
             <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
           </mat-form-field>
@@ -61,7 +61,7 @@
             </div>
 
           </div>
-        </o-column>
+        </div>
 
 
 

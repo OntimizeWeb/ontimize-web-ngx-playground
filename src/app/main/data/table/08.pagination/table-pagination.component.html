@@ -2,15 +2,15 @@
   (showSource)="onShowSource('o-table-paginator', table, ex)">
   <data-structure comp-name="TABLE" #sidenavComp>
 
-    <o-column attr="conf" title="Configuration" fxFlex="100" layout-padding layout-align="start" menu>
+    <div menu layout-margin>
       <mat-form-field>
         <input matInput #pageSizeOptionsInput placeholder="{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}" value="5;10;15"
           (change)="onEmptySetDefault()">
       </mat-form-field>
-    </o-column>
+    </div>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding content>
-      <div fxFlex="93%" fxLayout="column" fxLayoutAlign="center stretch">
+      <div fxFlex="95" fxLayout="column" fxLayoutAlign="center stretch">
         <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
           visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no"
           export-button="no" [static-data]="data" layout-padding fxFill edition-mode="none" detail-mode="none">
@@ -19,7 +19,7 @@
           <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
         </o-table>
       </div>
-      <div fxFlex="7%">
+      <div fxFlex="5">
         <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
           <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
         </button>
