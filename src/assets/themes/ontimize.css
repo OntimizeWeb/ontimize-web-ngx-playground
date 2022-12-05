@@ -3711,8 +3711,10 @@ ul.list-grid-container {
 
 .example-comp > section {
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); }
+  .example-comp > section .mat-toolbar {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.87); }
   .example-comp > section .playground-toolbar.mat-toolbar {
-    color: #212121;
     border-bottom: 1px solid #e0e0e0; }
     .example-comp > section .playground-toolbar.mat-toolbar .comp-description {
       color: #616161; }
@@ -3725,6 +3727,18 @@ ul.list-grid-container {
 .active {
   border-color: #1464a5;
   background-color: #b9d1e4; }
+
+#collapsible .menu-item {
+  color: rgba(0, 0, 0, 0.87); }
+
+.new {
+  color: rgba(0, 0, 0, 0.87); }
+
+mat-card-title {
+  color: rgba(0, 0, 0, 0.87); }
+
+mat-card-content {
+  color: rgba(0, 0, 0, 0.87); }
 
 /*
 * Other app styles

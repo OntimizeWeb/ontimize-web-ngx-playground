@@ -16,10 +16,14 @@
     .mat-expansion-panel-header {
       background-color: mat-color($background);
     }
+
+    .menu-item{
+      color: mat-color($foreground, text);
+    }
+
   }
 
   .main-container{
     background-color: mat-color($background);
   }
-
 }

@@ -21,6 +21,8 @@
 @include example-component-theme($theme);
 @import '../../app/main/main-theme.scss';
 @include main-theme($theme);
+@import '../../app/shared/inputs-card/inputs-card.theme.scss';
+@include inputs-card-theme($theme);
 /*
 * Other app styles
 */

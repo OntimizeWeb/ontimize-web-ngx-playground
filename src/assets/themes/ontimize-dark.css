@@ -3715,8 +3715,10 @@ ul.list-grid-container {
 
 .example-comp > section {
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); }
+  .example-comp > section .mat-toolbar {
+    background-color: transparent;
+    color: white; }
   .example-comp > section .playground-toolbar.mat-toolbar {
-    color: #212121;
     border-bottom: 1px solid #e0e0e0; }
     .example-comp > section .playground-toolbar.mat-toolbar .comp-description {
       color: #616161; }
@@ -3729,6 +3731,18 @@ ul.list-grid-container {
 .active {
   border-color: #8ab2d2;
   background-color: #dce8f2; }
+
+#collapsible .menu-item {
+  color: white; }
+
+.new {
+  color: white; }
+
+mat-card-title {
+  color: white; }
+
+mat-card-content {
+  color: white; }
 
 /*
 * Other app styles

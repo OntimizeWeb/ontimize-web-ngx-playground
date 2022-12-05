@@ -6,13 +6,18 @@
   $foreground: map-get($theme, foreground);
 
   .example-comp {
-    & > section {
+
+    &>section {
       background: mat-color($background);
       box-shadow: 2px 0 4px rgba(0, 0, 0, .2);
 
+      .mat-toolbar {
+        background-color: transparent;
+        color: mat-color($foreground, text);
+      }
+
       .playground-toolbar.mat-toolbar {
         background: mat-color($background);
-        color: #212121;
         border-bottom: 1px solid #e0e0e0;
 
         .comp-description {

@@ -15,9 +15,6 @@ mat-card {
     border-width: 1px;
     border-style: dashed;
     border-radius: 4px;
-    border-color: #00000033;
-    background-color: #EAEAEA;
-    color: black;
     font-size: 15px;
     font-weight: bold;
   }
@@ -28,7 +25,6 @@ mat-card {
     mat-card-title {
       font-size: 18px !important;
       margin: 16px 0 5px 0 !important;
-      color: black;
     }
   }
 
@@ -36,6 +32,5 @@ mat-card {
     font-size: 13px;
     margin-top: auto;
     margin-bottom: auto;
-    color: #00000099;
   }
 }
