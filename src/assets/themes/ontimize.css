@@ -3719,6 +3719,13 @@ ul.list-grid-container {
   .example-comp > section .playground-tabs {
     border-bottom: 1px solid #e0e0e0; }
 
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.active {
+  border-color: #1464a5;
+  background-color: #b9d1e4; }
+
 /*
 * Other app styles
 */

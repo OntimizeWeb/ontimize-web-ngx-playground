@@ -1,41 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "node_modules/@angular/material/theming";
 
-@mixin main-theme($theme, $typography) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+.application-layout-content-wrapper {
+  padding: 0 !important;
+}
 
-  .application-layout-content-wrapper {
-    padding: 0 !important;
-  }
+.left-border {
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  border-color: #0000001E;
+  padding-left: 10px;
+  overflow: auto;
+}
 
-  .active {
-    border-color: mat-color($primary, 500);
-    background-color: mat-color($primary, 100);
-  }
-
-  #collapsible{
-    .mat-expansion-panel-header{
-      background-color: mat-color($background);
-    }
-  }
-  .left-border {
-    border-style: solid;
-    border-width: 0 0 0 1px;
-    border-color: #0000001E;
-    padding-left: 10px;
-    overflow: auto;
-  }
-
-  .main-container {
-    background-color: mat-color($background);
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    max-height: max-content;
-    margin: 10px;
-    overflow: auto;
-  }
+.main-container {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  max-height: max-content;
+  margin: 10px;
+  overflow: auto;
 }
