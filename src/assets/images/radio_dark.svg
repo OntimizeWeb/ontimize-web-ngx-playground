@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="99" viewBox="0 0 115 99">
+  <defs>
+    <filter id="Rectángulo_121212" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_W16_" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_BC6_" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Ilustracion_Radio" data-name="Ilustracion Radio" transform="translate(-1650.5 -444.5)">
+    <g id="Bg">
+      <g transform="matrix(1, 0, 0, 1, 1650.5, 444.5)" filter="url(#Rectángulo_121212)">
+        <g id="Rectángulo_121212-2" data-name="Rectángulo #121212" transform="translate(1.5 0.5)" fill="#121212" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <rect width="112" height="96" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 1650.5, 444.5)" filter="url(#Rectángulo_W16_)">
+        <g id="Rectángulo_W16_2" data-name="Rectángulo W16%" transform="translate(1.5 0.5)" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <rect width="112" height="96" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 1650.5, 444.5)" filter="url(#Rectángulo_BC6_)">
+        <g id="Rectángulo_BC6_2" data-name="Rectángulo BC6%" transform="translate(1.5 0.5)" fill="rgba(20,100,165,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <rect width="112" height="96" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <path id="Trazado_7116" data-name="Trazado 7116" d="M18835.143,195h96" transform="translate(-17175.143 270)" fill="none" stroke="rgba(255,255,255,0.12)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7117" data-name="Trazado 7117" d="M18835.145,195h48" transform="translate(-17175.145 262)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <g id="Grupo_3916" data-name="Grupo 3916" transform="translate(652 262.5)">
+      <path id="Trazado_7084" data-name="Trazado 7084" d="M18835.145,195h64" transform="translate(-17803.145 23.5)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+    <g id="Grupo_3917" data-name="Grupo 3917" transform="translate(652 281.5)">
+      <path id="Trazado_7084-2" data-name="Trazado 7084" d="M18835.145,195h64" transform="translate(-17803.145 23.5)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+    <g id="Grupo_3918" data-name="Grupo 3918" transform="translate(652 301.5)">
+      <path id="Trazado_7084-3" data-name="Trazado 7084" d="M18835.145,195h64" transform="translate(-17803.145 23.5)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+    <g id="radio_button_checked_black_24dp_1_" data-name="radio_button_checked_black_24dp (1)" transform="translate(1660 473)">
+      <path id="Trazado_7118" data-name="Trazado 7118" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7119" data-name="Trazado 7119" d="M8.821,5.41a3.41,3.41,0,1,0,3.41,3.41A3.412,3.412,0,0,0,8.821,5.41Zm0-3.41a6.821,6.821,0,1,0,6.821,6.821A6.823,6.823,0,0,0,8.821,2Zm0,12.277a5.456,5.456,0,1,1,5.456-5.456A5.455,5.455,0,0,1,8.821,14.277Z" transform="translate(-0.821 -0.821)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+    <g id="radio_button_unchecked_black_24dp_1_" data-name="radio_button_unchecked_black_24dp (1)" transform="translate(1660 492)">
+      <path id="Trazado_7120" data-name="Trazado 7120" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7121" data-name="Trazado 7121" d="M8.672,2a6.672,6.672,0,1,0,6.672,6.672A6.675,6.675,0,0,0,8.672,2Zm0,12.01A5.338,5.338,0,1,1,14.01,8.672,5.336,5.336,0,0,1,8.672,14.01Z" transform="translate(-0.672 -0.672)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+    <g id="radio_button_unchecked_black_24dp_1_2" data-name="radio_button_unchecked_black_24dp (1)" transform="translate(1660 512)">
+      <path id="Trazado_7120-2" data-name="Trazado 7120" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7121-2" data-name="Trazado 7121" d="M8.583,2a6.583,6.583,0,1,0,6.583,6.583A6.586,6.586,0,0,0,8.583,2Zm0,11.85A5.267,5.267,0,1,1,13.85,8.583,5.265,5.265,0,0,1,8.583,13.85Z" transform="translate(-0.583 -0.583)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+  </g>
+</svg>

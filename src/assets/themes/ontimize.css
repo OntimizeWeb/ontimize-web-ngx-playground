@@ -3740,6 +3740,9 @@ mat-card-title {
 mat-card-content {
   color: rgba(0, 0, 0, 0.87); }
 
+.img-container {
+  background-color: #e0e0e0; }
+
 /*
 * Other app styles
 */

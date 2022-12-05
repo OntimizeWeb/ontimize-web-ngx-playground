@@ -3744,6 +3744,9 @@ mat-card-title {
 mat-card-content {
   color: white; }
 
+.img-container {
+  background-color: #212121; }
+
 /*
 * Other app styles
 */

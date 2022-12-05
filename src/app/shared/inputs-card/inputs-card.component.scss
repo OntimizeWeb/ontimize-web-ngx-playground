@@ -1,10 +1,12 @@
 mat-card {
   width: 272px;
-  height: 248px;
+  height: 272px;
   margin: 15px;
+  padding: 0 !important;
 
   .img-container {
-    height: 114px;
+    height: 120px;
+    margin: 0;
   }
 
   .new {
@@ -19,12 +21,17 @@ mat-card {
     font-weight: bold;
   }
 
-  .mat-card-header-text {
-    margin: 0px;
+  mat-card-header {
+    margin-left: 20px;
+    margin-right: 20px;
 
-    mat-card-title {
-      font-size: 18px !important;
-      margin: 16px 0 5px 0 !important;
+    .mat-card-header-text {
+      margin: 0px;
+
+      mat-card-title {
+        font-size: 18px !important;
+        margin: 16px 0 5px 0 !important;
+      }
     }
   }
 
@@ -32,5 +39,7 @@ mat-card {
     font-size: 13px;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }

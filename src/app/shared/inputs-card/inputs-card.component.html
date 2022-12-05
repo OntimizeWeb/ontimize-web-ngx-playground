@@ -1,6 +1,7 @@
 <mat-card>
   <div fxLayoutAlign="center center" layout-margin class="img-container">
-    <img alt="Component image" src="../../../assets/images/{{compName}}.svg">
+    <img *ngIf="!dark" alt="Component image" src="../../../assets/images/{{compName}}.svg">
+    <img *ngIf="dark" alt="Component image" src="../../../assets/images/{{compName}}_dark.svg">
   </div>
   <mat-divider></mat-divider>
   <mat-card-header>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163" height="37" viewBox="0 0 163 37">
+  <defs>
+    <filter id="bg_121212" x="0" y="0" width="163" height="37" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_w16_" x="0" y="0" width="163" height="37" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Bc_6_" x="0" y="0" width="163" height="37" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Ilustracion_File" data-name="Ilustracion File" transform="translate(-681.5 -451.5)">
+    <g id="Bg">
+      <g transform="matrix(1, 0, 0, 1, 681.5, 451.5)" filter="url(#bg_121212)">
+        <g id="bg_121212-2" data-name="bg #121212" transform="translate(1.5 0.5)" fill="#121212" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <rect width="160" height="34" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="159" height="33" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 681.5, 451.5)" filter="url(#Rectángulo_w16_)">
+        <g id="Rectángulo_w16_2" data-name="Rectángulo w16%" transform="translate(1.5 0.5)" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+          <rect width="160" height="34" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="159" height="33" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 681.5, 451.5)" filter="url(#Bc_6_)">
+        <g id="Bc_6_2" data-name="Bc 6%" transform="translate(1.5 0.5)" fill="rgba(20,100,165,0.06)" stroke="rgba(0,0,0,0.12)" stroke-width="1">
+          <rect width="160" height="34" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="159" height="33" rx="1.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <path id="Trazado_7106" data-name="Trazado 7106" d="M18835.145,195h16" transform="translate(-18144.145 265)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+    <text id="_" data-name="*" transform="translate(711 466)" fill="rgba(255,255,255,0.74)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">*</tspan></text>
+    <g id="attachment_black_24dp" transform="translate(821 481.124) rotate(-90)">
+      <path id="Trazado_7187" data-name="Trazado 7187" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7188" data-name="Trazado 7188" d="M2,10.237A3.521,3.521,0,0,1,5.753,7h7.164a2.562,2.562,0,0,1,2.729,2.354,2.562,2.562,0,0,1-2.729,2.354h-5.8a1.6,1.6,0,0,1-1.706-1.471A1.6,1.6,0,0,1,7.117,8.765h5.117V9.942H7.056a.3.3,0,0,0,0,.588h5.861a1.285,1.285,0,0,0,1.365-1.177,1.285,1.285,0,0,0-1.365-1.177H5.753a2.245,2.245,0,0,0-2.388,2.06A2.245,2.245,0,0,0,5.753,12.3h6.482v1.177H5.753A3.521,3.521,0,0,1,2,10.237Z" transform="translate(-0.823 -1.87)" fill="rgba(255,255,255,0.6)"/>
+    </g>
+    <path id="Trazado_7189" data-name="Trazado 7189" d="M18835.146,195h56" transform="translate(-18144.145 281)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+  </g>
+</svg>
