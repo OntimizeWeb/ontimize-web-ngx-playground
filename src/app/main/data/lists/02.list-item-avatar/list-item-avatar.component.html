@@ -61,7 +61,7 @@
 
 
       <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start" content>
-        <div fxFlex="90" fxLayoutAlign="center center" class="container">
+        <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
           <o-column elevation="1" fxFlex layout-align="center">
             <o-list fxFlex #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
               [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
@@ -78,7 +78,7 @@
             </o-list>
           </o-column>
         </div>
-        <div fxFlex="10">
+        <div class="conf-button-div">
           <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
             <mat-icon>tune</mat-icon> {{ 'LIST.CONFIGURATION' | oTranslate }}
           </button>

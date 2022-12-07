@@ -85,7 +85,7 @@
     </div>
     <div content>
       <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start">
-        <div fxFlex="93%" fxLayoutAlign="center center">
+        <div fxFlex="1 0" fxLayoutAlign="center center">
           <o-table #table attr="tableBasic" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
             visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
             [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
@@ -108,7 +108,7 @@
           </o-table>
         </div>
 
-        <div fxFlex="7%">
+        <div class="conf-button-div">
           <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
             <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
           </button>

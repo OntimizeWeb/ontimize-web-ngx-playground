@@ -11,7 +11,7 @@
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding content>
 
-      <div fxFlex="95" fxLayout="column" fxLayoutAlign="center stretch">
+      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
         <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
           columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
           query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
@@ -24,7 +24,7 @@
           <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
         </o-table>
       </div>
-      <div fxFlex="5">
+      <div class="conf-button-div">
         <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
           <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
         </button>

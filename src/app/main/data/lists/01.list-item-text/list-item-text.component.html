@@ -105,11 +105,11 @@
           </o-list>
         </o-column>
       </div>
-
-        <button fxFlex="0 1 auto" mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
+      <div class="conf-button-div">
+        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
           <mat-icon>tune</mat-icon> {{ 'LIST.CONFIGURATION' | oTranslate }}
         </button>
-
+      </div>
     </div>
   </data-structure>
 

@@ -8,9 +8,6 @@
   $foreground: map-get($theme, foreground);
 
   #collapsible {
-    .mat-expansion-panel-header {
-      background-color: mat-color($background);
-    }
 
     .menu-item{
       color: mat-color($foreground, text);
