@@ -451,5 +451,6 @@
   "INPUTS.INPUTS": "Inputs overview",
   "INPUTS.INPUTS.DESC": "A group of components for getting information from the user",
   "INPUTS.OVERVIEW": "Overview",
-  "INPUTS.OVERVIEW.DESC": "Inputs overview home page."
+  "INPUTS.OVERVIEW.DESC": "Inputs overview home page.",
+  "CONSOLE.LOG": "Console log"
 }

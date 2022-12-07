@@ -23,6 +23,8 @@
 @include main-theme($theme);
 @import '../../app/shared/inputs-card/inputs-card.theme.scss';
 @include inputs-card-theme($theme);
+@import '../../app/shared/collapsible-menu/collapsible-menu.theme.scss';
+@include collapsible-menu-theme($theme);
 /*
 * Other app styles
 */

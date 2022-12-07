@@ -2,3 +2,12 @@ label.input-comp-title {
   font-size: 20px;
   padding-bottom: 6px;
 }
+
+.hide-overflow {
+  form {
+    >div {
+      overflow: hidden;
+    }
+  }
+
+}

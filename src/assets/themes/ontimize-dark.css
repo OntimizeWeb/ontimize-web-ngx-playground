@@ -3732,9 +3732,6 @@ ul.list-grid-container {
   border-color: #8ab2d2;
   background-color: #dce8f2; }
 
-#collapsible .menu-item {
-  color: white; }
-
 .new {
   color: white; }
 
@@ -3746,6 +3743,12 @@ mat-card-content {
 
 .img-container {
   background-color: #212121; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+#collapsible .menu-item {
+  color: white; }
 
 /*
 * Other app styles
