@@ -4,7 +4,7 @@
 
     <o-column elevation="1" fxFlex layout-align="center">
 
-      <o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
+      <o-list fxFlex #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
 
         <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
           <mat-card-header>
