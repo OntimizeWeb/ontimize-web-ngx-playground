@@ -29,15 +29,7 @@ export class DataStructureComponent extends ConfigMenu {
   }
 
   formatButton() {
-    if (this.route.url.includes("grid")) {
-      this.styleChangeOnResize("grid-conf-btn-id", "75", "50");
-    }
-    else if (this.route.url.includes("list")) {
-      this.styleChangeOnResize("list-conf-btn-id", "75", "50");
-    }
-    else if (this.route.url.includes("table")) {
-      this.styleChangeOnResize("table-conf-btn-id", "75", "50");
-    }
+    this.styleChangeOnResize(this.compName.toLowerCase + "-conf-btn-id", "75", "50");
   }
 
   ngAfterViewInit(): void {
@@ -49,15 +41,7 @@ export class DataStructureComponent extends ConfigMenu {
       this.configExpandedService.setState(true);
     });
 
-    if (this.route.url.includes("grid")) {
-      this.styleChangeOnResize("grid-conf-btn-id", "75", "50", true);
-    }
-    else if (this.route.url.includes("list")) {
-      this.styleChangeOnResize("list-conf-btn-id", "75", "50", true);
-    }
-    else if (this.route.url.includes("table")) {
-      this.styleChangeOnResize("table-conf-btn-id", "75", "50", true);
-    }
+    this.styleChangeOnResize(this.compName.toLowerCase + "-conf-btn-id", "75", "50", true);
   }
 
   @HostListener('window:resize', ['$event'])

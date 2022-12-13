@@ -15,11 +15,10 @@ const FAKE_USERS = [
     'companyname': 'Romaguera-Crona',
     'companycatchPhrase': 'Multi-layered client-server neural-net',
     'companybs': 'harness real-time e-markets',
-    'thumbnailUrl': 'assets/images/placehold/100-30ac17.png',
-    'image': 'assets/images/placehold/600-30ac17.png',
+    'thumbnailUrl': 'assets/images/people/m1.jpg',
+    'image': 'assets/images/people/m1.jpg',
     'body': `laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora
-    quo necessitatibus\ndolor
-    quam autem quasi\nreiciendis et nam sapiente accusantium`
+    quo necessitatibus`
   },
   {
     'id': 2,
@@ -37,8 +36,8 @@ const FAKE_USERS = [
     'companyname': 'Deckow-Crist',
     'companycatchPhrase': 'Proactive didactic contingency',
     'companybs': 'synergize scalable supply-chains',
-    'thumbnailUrl': 'assets/images/placehold/100-dff9f6.png',
-    'image': 'assets/images/placehold/600-dff9f6.png',
+    'thumbnailUrl': 'assets/images/people/m2.jpg',
+    'image': 'assets/images/people/m2.jpg',
     'body': `est natus enim nihil est dolore omnis voluptatem
      numquam\net omnis occaecati quod ullam at\nvoluptatem error
      expedita pariatur\nnihil sint nostrum voluptatem reiciendis et`
@@ -59,12 +58,11 @@ const FAKE_USERS = [
     'companyname': 'Romaguera-Jacobson',
     'companycatchPhrase': 'Face to face bifurcated interface',
     'companybs': 'e-enable strategic applications',
-    'thumbnailUrl': 'assets/images/placehold/100-1941e9.png',
-    'image': 'assets/images/placehold/600-1941e9.png',
+    'thumbnailUrl': 'assets/images/people/w1.jpg',
+    'image': 'assets/images/people/w1.jpg',
     'body': `quia molestiae reprehenderit quasi aspernatur\naut expedita
     occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe
-     quia accusamus maiores nam est\ncum et ducimus et vero voluptates
-      excepturi deleniti ratione`
+     quia accusamus maiores nam est`
   },
   {
     'id': 4,
@@ -82,8 +80,8 @@ const FAKE_USERS = [
     'companyname': 'Robel-Corkery',
     'companycatchPhrase': 'Multi-tiered zero tolerance productivity',
     'companybs': 'transition cutting-edge web services',
-    'thumbnailUrl': 'assets/images/placehold/100-39e985.png',
-    'image': 'assets/images/placehold/600-39e985.png',
+    'thumbnailUrl': 'assets/images/people/w2.jpg',
+    'image': 'assets/images/people/w2.jpg',
     'body': `non et atque\noccaecati deserunt quas accusantium unde odit
     nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net
     qui rerum deleniti ut occaecati`
@@ -104,8 +102,8 @@ const FAKE_USERS = [
     'companyname': 'Keebler LLC',
     'companycatchPhrase': 'User-centric fault-tolerant solution',
     'companybs': 'revolutionize end-to-end systems',
-    'thumbnailUrl': 'assets/images/placehold/100-7735a.png',
-    'image': 'assets/images/placehold/600-7735a.png',
+    'thumbnailUrl': 'assets/images/people/m3.jpg',
+    'image': 'assets/images/people/m3.jpg',
     'body': `harum non quasi et ratione\ntempore iure ex voluptates
     in ratione\nharum architecto fugit inventore cupiditate\nvoluptates
     magni quo et`
@@ -126,11 +124,9 @@ const FAKE_USERS = [
     'companyname': 'Considine-Lockman',
     'companycatchPhrase': 'Synchronised bottom-line interface',
     'companybs': 'e-enable innovative applications',
-    'thumbnailUrl': 'assets/images/placehold/100-aef555.png',
-    'image': 'assets/images/placehold/600-aef555.png',
-    'body': `laudantium enim quasi est quidem magnam voluptate´
-    ipsam eos\ntempora quo necessitatibus\ndolor quam autem
-    quasi\nreiciendis et nam sapiente accusantium`
+    'thumbnailUrl': 'assets/images/people/m4.jpg',
+    'image': 'assets/images/people/m4.jpg',
+    'body': `laudantium enim quasi est quidem`
   },
   {
     'id': 7,
@@ -148,8 +144,8 @@ const FAKE_USERS = [
     'companyname': 'Johns Group',
     'companycatchPhrase': 'Configurable multimedia task-force',
     'companybs': 'generate enterprise e-tailers',
-    'thumbnailUrl': 'assets/images/placehold/100-c672a0.png',
-    'image': 'assets/images/placehold/600-c672a0.png',
+    'thumbnailUrl': 'assets/images/people/m5.jpg',
+    'image': 'assets/images/people/m5.jpg',
     'body': `est natus enim nihil est dolore omnis voluptatem numquam\net
     omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil
      sint nostrum voluptatem reiciendis et`
@@ -170,12 +166,11 @@ const FAKE_USERS = [
     'companyname': 'Abernathy Group',
     'companycatchPhrase': 'Implemented secondary concept',
     'companybs': 'e-enable extensible e-tailers',
-    'thumbnailUrl': 'assets/images/placehold/100-412ffd.png',
-    'image': 'assets/images/placehold/600-412ffd.png',
+    'thumbnailUrl': 'assets/images/people/m6.jpg',
+    'image': 'assets/images/people/m6.jpg',
     'body': `quia molestiae reprehenderit quasi aspernatur\naut
     expedita occaecati aliquam eveniet laudantium\nomnis quibusdam
-    delectus saepe quia accusamus maiores nam est\ncum et ducimus
-    et vero voluptates excepturi deleniti ratione`
+    delectus saepe quia accusamus maiores nam est`
   },
   {
     'id': 9,
@@ -193,8 +188,8 @@ const FAKE_USERS = [
     'companyname': 'Yost and Sons',
     'companycatchPhrase': 'Switchable contextually-based project',
     'companybs': 'aggregate real-time technologies',
-    'thumbnailUrl': 'assets/images/placehold/100-15c072.png',
-    'image': 'assets/images/placehold/600-15c072.png',
+    'thumbnailUrl': 'assets/images/people/w3.jpg',
+    'image': 'assets/images/people/w3.jpg',
     'body': `non et atque\noccaecati deserunt quas accusantium unde
      odit nobis qui voluptatem\nquia voluptas consequuntur itaque
      dolor\net qui rerum deleniti ut occaecati`
@@ -215,11 +210,10 @@ const FAKE_USERS = [
     'companyname': 'Hoeger LLC',
     'companycatchPhrase': 'Centralized empowering task-force',
     'companybs': 'target end-to-end models',
-    'thumbnailUrl': 'assets/images/placehold/100-e65eee.png',
-    'image': 'assets/images/placehold/600-e65eee.png',
+    'thumbnailUrl': 'assets/images/people/w4.jpg',
+    'image': 'assets/images/people/w4.jpg',
     'body': `harum non quasi et ratione\ntempore iure ex voluptates in
-      ratione\nharum architecto fugit inventore cupiditate\nvoluptates
-       magni quo et`
+      ratione\nharum architecto fugit inventore cupiditate`
   }];
 
 const FAKE_DATAHYBRID = [
