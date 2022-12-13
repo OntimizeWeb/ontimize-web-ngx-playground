@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ThemeService } from '../theme.service';
 
 @Component({
@@ -15,9 +16,10 @@ export class InputsCardComponent {
   public compName: string;
   public new: boolean = false;
   public dark: boolean;
+  private onThemeUpdate: Subscription;
 
   constructor(protected _themeService: ThemeService) {
-    _themeService.onThemeUpdate.subscribe(() => {
+    this.onThemeUpdate = _themeService.onThemeUpdate.subscribe(() => {
       const currentTheme = this._themeService.getStoredTheme();
       currentTheme.isDark ? this.dark = true : this.dark = false;
     });
@@ -28,6 +30,8 @@ export class InputsCardComponent {
     currentTheme.isDark ? this.dark = true : this.dark = false;
   }
 
-
+  ngOnDestroy(): void {
+    this.onThemeUpdate.unsubscribe();
+  }
 
 }

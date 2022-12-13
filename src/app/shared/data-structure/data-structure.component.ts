@@ -1,5 +1,6 @@
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ConfigMenu } from '../../main/data/config-menu.class';
 import { ConfigCollapsibleStateService } from '../services/config-collapsible-state.service';
 
@@ -13,6 +14,9 @@ import { ConfigCollapsibleStateService } from '../services/config-collapsible-st
 export class DataStructureComponent extends ConfigMenu {
 
   public compName: string;
+  private closedStard: Subscription;
+  private openedStard: Subscription;
+
   constructor(
     protected configExpandedService: ConfigCollapsibleStateService,
     protected route: Router
@@ -37,11 +41,11 @@ export class DataStructureComponent extends ConfigMenu {
   }
 
   ngAfterViewInit(): void {
-    this.sidenav.closedStart.subscribe(() => {
+    this.closedStard = this.sidenav.closedStart.subscribe(() => {
       this.configExpandedService.setState(false);
       setTimeout(() => { this.formatButton(); }, 10);
     });
-    this.sidenav.openedStart.subscribe(() => {
+    this.openedStard = this.sidenav.openedStart.subscribe(() => {
       this.configExpandedService.setState(true);
     });
 
@@ -60,6 +64,11 @@ export class DataStructureComponent extends ConfigMenu {
   onResize(event) {
     this.formatButton();
 
+  }
+
+  ngOnDestroy(): void {
+    this.closedStard.unsubscribe();
+    this.openedStard.unsubscribe();
   }
 
 }

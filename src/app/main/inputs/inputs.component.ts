@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { OTranslateService } from 'ontimize-web-ngx';
+import { Subscription } from 'rxjs';
 
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 
@@ -13,13 +14,14 @@ import { NavigationBarService } from '../../shared/navigation-bar.service';
 export class InputsComponent implements OnInit {
 
   public selectedComponent: string;
+  private routerSubscription: Subscription;
 
   constructor(
     protected navigationService: NavigationBarService,
     protected translateService: OTranslateService,
     protected router: Router
   ) {
-    router.events.subscribe((val) => {
+    this.routerSubscription = router.events.subscribe((val) => {
       this.selectedComponent = this.router.url.split("/")[this.router.url.split("/").length - 1].toUpperCase();
     });
   }
@@ -31,4 +33,8 @@ export class InputsComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
+  ngOnDestroy(): void {
+    this.routerSubscription.unsubscribe();
+
+  }
 }
