@@ -2,7 +2,7 @@
 
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
 
-    <o-column elevation="1" fxFlex layout-align="center">
+    <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
 
       <o-list fxFlex #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
 
@@ -18,7 +18,7 @@
 
       </o-list>
 
-    </o-column>
+    </div>
 
   </div>
 </example-comp>

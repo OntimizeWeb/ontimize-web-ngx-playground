@@ -67,7 +67,7 @@
 
         <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
           <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
-            <o-column elevation="1" fxFlex="1 1 auto" layout-align="center">
+            <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
               <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()"
                 columns="id;name;username;email;companyname;phone;website" keys="id" [cols]="columns" [query-rows]="pagesize"
                 [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16" [orderable]="showSortToggle.checked"
@@ -98,7 +98,7 @@
                   </o-column>
                 </o-grid-item>
               </o-grid>
-            </o-column>
+            </div>
           </div>
           <div class="conf-button-div">
             <button *ngIf="btnVisibility" mat-stroked-button (click)="sidenavComp.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
