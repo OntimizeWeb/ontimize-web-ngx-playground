@@ -1,97 +1,99 @@
-<div fxLayout="column" fxLayoutAlign="center top">
+<div fxLayout="row" class="main-container bg-level-06">
+  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
 
-  <example-comp comp-name="BUTTON" [files]="getFiles('buttons')">
+    <example-comp comp-name="BUTTON" [files]="getFiles('buttons')">
 
-    <div fxLayout="column" layout-padding>
-      <div fxLayout="row">
-        <o-button attr="basic1" type="BASIC" label="BASIC" layout-padding></o-button>
-        <o-button attr="basic2" type="BASIC" label="Primary" layout-padding color="primary"></o-button>
-        <o-button attr="basic3" type="BASIC" label="Accent" layout-padding color="accent"></o-button>
-        <o-button attr="basic4" type="BASIC" label="Warn" layout-padding color="warn"></o-button>
-        <o-button attr="basic5" type="BASIC" label="Disabled" layout-padding enabled="no"></o-button>
+      <div fxLayout="column" layout-padding>
+        <div fxLayout="row">
+          <o-button attr="basic1" type="BASIC" label="BASIC" layout-padding></o-button>
+          <o-button attr="basic2" type="BASIC" label="Primary" layout-padding color="primary"></o-button>
+          <o-button attr="basic3" type="BASIC" label="Accent" layout-padding color="accent"></o-button>
+          <o-button attr="basic4" type="BASIC" label="Warn" layout-padding color="warn"></o-button>
+          <o-button attr="basic5" type="BASIC" label="Disabled" layout-padding enabled="no"></o-button>
+        </div>
+
+        <div fxLayout="row">
+          <o-button attr="raised1" type="RAISED" label="RAISED" layout-padding></o-button>
+          <o-button attr="raised2" type="RAISED" label="Primary" layout-padding color="primary"></o-button>
+          <o-button attr="raised3" type="RAISED" label="Accent" layout-padding color="accent"></o-button>
+          <o-button attr="raised4" type="RAISED" label="Warn" layout-padding color="warn"></o-button>
+          <o-button attr="raised5" type="RAISED" label="Disabled" layout-padding enabled="no"></o-button>
+        </div>
+        <div fxLayout="row">
+          <o-button attr="stroked1" type="STROKED" label="STROKED" layout-padding></o-button>
+          <o-button attr="stroked2" type="STROKED" label="Primary" layout-padding color="primary"></o-button>
+          <o-button attr="stroked3" type="STROKED" label="Accent" layout-padding color="accent"></o-button>
+          <o-button attr="stroked4" type="STROKED" label="Warn" layout-padding color="warn"></o-button>
+          <o-button attr="stroked5" type="STROKED" label="Disabled" layout-padding enabled="no"></o-button>
+        </div>
+
+        <div fxLayout="row">
+          <o-button attr="flat1" type="FLAT" label="FLAT" layout-padding></o-button>
+          <o-button attr="flat2" type="FLAT" label="Primary" layout-padding color="primary"></o-button>
+          <o-button attr="flat3" type="FLAT" label="Accent" layout-padding color="accent"></o-button>
+          <o-button attr="flat4" type="FLAT" label="Warn" layout-padding color="warn"></o-button>
+          <o-button attr="flat5" type="FLAT" label="Disabled" layout-padding enabled="no"></o-button>
+        </div>
+
+        <div fxLayout="row">
+          <o-button attr="icon1" type="ICON" icon="add" layout-padding></o-button>
+          <o-button attr="icon2" type="ICON" icon="add" layout-padding color="primary"></o-button>
+          <o-button attr="icon3" type="ICON" icon="add" layout-padding color="accent"></o-button>
+          <o-button attr="icon4" type="ICON" icon="add" layout-padding color="warn"></o-button>
+          <o-button attr="icon5" type="ICON" icon="add" layout-padding enabled="no"></o-button>
+        </div>
+
+        <div fxLayout="row">
+          <o-button attr="fab1" type="FAB" icon="power_setting" layout-padding></o-button>
+          <o-button attr="fab2" type="FAB" icon="power_setting" layout-padding color="primary"></o-button>
+          <o-button attr="fab3" type="FAB" icon="power_setting" layout-padding color="accent"></o-button>
+          <o-button attr="fab4" type="FAB" icon="power_setting" layout-padding color="warn"></o-button>
+          <o-button attr="fab5" type="FAB" icon="power_setting" layout-padding enabled="no"></o-button>
+        </div>
+
+        <div fxLayout="row">
+          <o-button attr="fab-mini1" type="FAB-MINI" icon="power_setting" layout-padding></o-button>
+          <o-button attr="fab-mini2" type="FAB-MINI" icon="power_setting" layout-padding color="primary"></o-button>
+          <o-button attr="fab-mini3" type="FAB-MINI" icon="power_setting" layout-padding color="accent"></o-button>
+          <o-button attr="fab-mini4" type="FAB-MINI" icon="power_setting" layout-padding color="warn"></o-button>
+          <o-button attr="fab-mini5" type="FAB-MINI" icon="power_setting" layout-padding enabled="no"></o-button>
+        </div>
       </div>
 
-      <div fxLayout="row">
-        <o-button attr="raised1" type="RAISED" label="RAISED" layout-padding></o-button>
-        <o-button attr="raised2" type="RAISED" label="Primary" layout-padding color="primary"></o-button>
-        <o-button attr="raised3" type="RAISED" label="Accent" layout-padding color="accent"></o-button>
-        <o-button attr="raised4" type="RAISED" label="Warn" layout-padding color="warn"></o-button>
-        <o-button attr="raised5" type="RAISED" label="Disabled" layout-padding enabled="no"></o-button>
+    </example-comp>
+    <example-comp comp-name="ICON_POSITION" [files]="getFiles('button-icon-position')">
+      <div fxLayout="row wrap">
+        <o-button attr="iconposition1" type="BASIC" color="primary" label="icon-position='left'" layout-padding icon="arrow_forward_ios">
+        </o-button>
+        <o-button attr="iconposition2" type="RAISED" color="primary" label="icon-position='right'" layout-padding icon="arrow_forward_ios"
+          icon-position="right"></o-button>
+        <o-button attr="iconposition3" type="STROKED" color="primary" label="icon-position='top'" layout-padding icon="arrow_forward_ios"
+          icon-position="top"></o-button>
+        <o-button attr="iconposition4" type="FLAT" color="primary" label="icon-position='bottom'" layout-padding icon="arrow_forward_ios"
+          icon-position="bottom">
+        </o-button>
       </div>
-      <div fxLayout="row">
-        <o-button attr="stroked1" type="STROKED" label="STROKED" layout-padding></o-button>
-        <o-button attr="stroked2" type="STROKED" label="Primary" layout-padding color="primary"></o-button>
-        <o-button attr="stroked3" type="STROKED" label="Accent" layout-padding color="accent"></o-button>
-        <o-button attr="stroked4" type="STROKED" label="Warn" layout-padding color="warn"></o-button>
-        <o-button attr="stroked5" type="STROKED" label="Disabled" layout-padding enabled="no"></o-button>
-      </div>
+    </example-comp>
 
-      <div fxLayout="row">
-        <o-button attr="flat1" type="FLAT" label="FLAT" layout-padding></o-button>
-        <o-button attr="flat2" type="FLAT" label="Primary" layout-padding color="primary"></o-button>
-        <o-button attr="flat3" type="FLAT" label="Accent" layout-padding color="accent"></o-button>
-        <o-button attr="flat4" type="FLAT" label="Warn" layout-padding color="warn"></o-button>
-        <o-button attr="flat5" type="FLAT" label="Disabled" layout-padding enabled="no"></o-button>
-      </div>
 
-      <div fxLayout="row">
-        <o-button attr="icon1" type="ICON" icon="add" layout-padding></o-button>
-        <o-button attr="icon2" type="ICON" icon="add" layout-padding color="primary"></o-button>
-        <o-button attr="icon3" type="ICON" icon="add" layout-padding color="accent"></o-button>
-        <o-button attr="icon4" type="ICON" icon="add" layout-padding color="warn"></o-button>
-        <o-button attr="icon5" type="ICON" icon="add" layout-padding enabled="no"></o-button>
-      </div>
+    <example-comp comp-name="IMAGE_ICON" [files]="getFiles('button-image-icon')">
+      <o-button label="Image icon" layout-padding image="./assets/images/visa.png"></o-button>
+    </example-comp>
 
-      <div fxLayout="row">
-        <o-button attr="fab1" type="FAB" icon="power_setting" layout-padding></o-button>
-        <o-button attr="fab2" type="FAB" icon="power_setting" layout-padding color="primary"></o-button>
-        <o-button attr="fab3" type="FAB" icon="power_setting" layout-padding color="accent"></o-button>
-        <o-button attr="fab4" type="FAB" icon="power_setting" layout-padding color="warn"></o-button>
-        <o-button attr="fab5" type="FAB" icon="power_setting" layout-padding enabled="no"></o-button>
+    <example-comp comp-name="BUTTON_TOGGLE" [files]="getFiles('button-toggle')">
+      <div fxLayout="column" fxLayoutAlign="spce-around start" layout-padding>
+        <o-button-toggle attr="singleToggle" label="Toggle me!" layout-padding></o-button-toggle>
+
+        <o-button-toggle-group attr="toggleGroup" layout="row" multiple="no" value="car" layout-padding>
+          <o-button-toggle attr="toggle1" value="bike" icon="directions_bike"></o-button-toggle>
+          <o-button-toggle attr="toggle2" value="car" icon="directions_car"></o-button-toggle>
+          <o-button-toggle attr="toggle3" value="train" icon="directions_railway"></o-button-toggle>
+          <o-button-toggle attr="toggle4" value="boat" icon="directions_boat" enabled="no"></o-button-toggle>
+        </o-button-toggle-group>
+
       </div>
 
-      <div fxLayout="row">
-        <o-button attr="fab-mini1" type="FAB-MINI" icon="power_setting" layout-padding></o-button>
-        <o-button attr="fab-mini2" type="FAB-MINI" icon="power_setting" layout-padding color="primary"></o-button>
-        <o-button attr="fab-mini3" type="FAB-MINI" icon="power_setting" layout-padding color="accent"></o-button>
-        <o-button attr="fab-mini4" type="FAB-MINI" icon="power_setting" layout-padding color="warn"></o-button>
-        <o-button attr="fab-mini5" type="FAB-MINI" icon="power_setting" layout-padding enabled="no"></o-button>
-      </div>
-    </div>
+    </example-comp>
 
-  </example-comp>
-  <example-comp comp-name="ICON_POSITION" [files]="getFiles('button-icon-position')">
-    <div fxLayout="row wrap">
-      <o-button attr="iconposition1" type="BASIC" color="primary" label="icon-position='left'" layout-padding icon="arrow_forward_ios">
-      </o-button>
-      <o-button attr="iconposition2" type="RAISED" color="primary" label="icon-position='right'" layout-padding icon="arrow_forward_ios"
-        icon-position="right"></o-button>
-      <o-button attr="iconposition3" type="STROKED" color="primary" label="icon-position='top'" layout-padding icon="arrow_forward_ios"
-        icon-position="top"></o-button>
-      <o-button attr="iconposition4" type="FLAT" color="primary" label="icon-position='bottom'" layout-padding icon="arrow_forward_ios"
-        icon-position="bottom">
-      </o-button>
-    </div>
-  </example-comp>
-
-
-  <example-comp comp-name="IMAGE_ICON" [files]="getFiles('button-image-icon')">
-    <o-button label="Image icon" layout-padding image="./assets/images/visa.png"></o-button>
-  </example-comp>
-
-  <example-comp comp-name="BUTTON_TOGGLE" [files]="getFiles('button-toggle')">
-    <div fxLayout="column" fxLayoutAlign="spce-around start" layout-padding>
-      <o-button-toggle attr="singleToggle" label="Toggle me!" layout-padding></o-button-toggle>
-
-      <o-button-toggle-group attr="toggleGroup" layout="row" multiple="no" value="car" layout-padding>
-        <o-button-toggle attr="toggle1" value="bike" icon="directions_bike"></o-button-toggle>
-        <o-button-toggle attr="toggle2" value="car" icon="directions_car"></o-button-toggle>
-        <o-button-toggle attr="toggle3" value="train" icon="directions_railway"></o-button-toggle>
-        <o-button-toggle attr="toggle4" value="boat" icon="directions_boat" enabled="no"></o-button-toggle>
-      </o-button-toggle-group>
-
-    </div>
-
-  </example-comp>
-
+  </div>
 </div>
