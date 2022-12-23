@@ -9,10 +9,11 @@ export const MENU_CONFIG: MenuRootItem[] = [
     name: 'DATA',
     icon: 'storage',
     opened: false,
+    route: 'main/data/home',
     items: [
-      { id: 'grid', name: 'GRID.COMPONENT', route: '/main/grid', icon: 'view_module' },
-      { id: 'list', name: 'LIST.COMPONENT', route: '/main/lists', icon: 'list' },
-      { id: 'table', name: 'TABLE.COMPONENT', route: '/main/table', icon: 'storage' }
+      { id: 'grid', name: 'GRID.COMPONENT', route: '/main/data/grid', icon: 'view_module' },
+      { id: 'list', name: 'LIST.COMPONENT', route: '/main/data/lists', icon: 'list' },
+      { id: 'table', name: 'TABLE.COMPONENT', route: '/main/data/table', icon: 'storage' }
     ]
   },
   {
