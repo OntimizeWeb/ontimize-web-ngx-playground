@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ngx';
 
-import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 const HTML_DATA = `
 <div [oContextMenu]="myOContextMenu" class="clickable" fxLayoutAlign="center center" layout-padding>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OSnackBarConfig, OTranslateService, SnackBarService } from 'ontimize-web-ngx';
 
-import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 const HTML_DATA = `
   <o-button attr="snackbar" type="raised" label="SNACKBAR" layout-padding (click)="showSnackbar($event)"></o-button>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService, ODialogConfig, OTranslateService } from 'ontimize-web-ngx';
 
-import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 const HTML_DATA = `
   <o-button attr="alert" type="RAISED" label="ALERT_DIALOG" layout-padding (click)="showAlert($event)" ></o-button>

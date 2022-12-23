@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ngx';
 
-import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 const HTML_DATA = `
 <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" tooltip="{tooltip}"
