@@ -27,18 +27,26 @@ export class ConfigMenu {
 
   styleChangeOnResize(id: string, translate_x: string, translate_y: string, sidenavOpened?: boolean): void {
     this.innerWidth = window.innerWidth;
+    const elemById = document.getElementById(id);
     if (this.innerWidth >= 1920) {
       this.sidenav.opened = sidenavOpened != null ? sidenavOpened : this.sidenav.opened;
       this.sidenav.mode = "side";
-      document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+      if (elemById) {
+        elemById.style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+      }
+
     }
     else if (this.innerWidth <= 1279) {
       this.sidenav.mode = "over";
-      document.getElementById(id).style.transform = "rotate(0)";
+      if (elemById) {
+        elemById.style.transform = "rotate(0)";
+      }
     }
     else {
       this.sidenav.mode = "over";
-      document.getElementById(id).style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+      if (elemById) {
+        elemById.style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+      }
     }
   }
 }

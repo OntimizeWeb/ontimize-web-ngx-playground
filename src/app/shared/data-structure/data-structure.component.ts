@@ -29,7 +29,7 @@ export class DataStructureComponent extends ConfigMenu {
   }
 
   formatButton() {
-    this.styleChangeOnResize(this.compName.toLowerCase + "-conf-btn-id", "75", "50");
+    this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", "75", "50");
   }
 
   ngAfterViewInit(): void {
@@ -41,7 +41,7 @@ export class DataStructureComponent extends ConfigMenu {
       this.configExpandedService.setState(true);
     });
 
-    this.styleChangeOnResize(this.compName.toLowerCase + "-conf-btn-id", "75", "50", true);
+    this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", "75", "50", true);
   }
 
   @HostListener('window:resize', ['$event'])
