@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { LayoutManagerOverviewComponent } from './00.overview/layout-manager-overview.component';
 import { LayoutManagerTabgroupComponent } from './01.tabgroup/layout-manager-tabgroup.component';
 import { LayoutManagerDialogComponent } from './02.dialog/layout-manager-dialog.component';

@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { ExampleComponent } from '../../../shared/example/example.component';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const HTML_DATA = `
 <o-{layout} attr="container" title="{title}" icon="{icon}" layout-align="{layoutAlign}" elevation="{elevation}" appearance="{appearance}">

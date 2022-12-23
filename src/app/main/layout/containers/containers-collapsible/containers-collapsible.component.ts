@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { ExampleComponent } from '../../../shared/example/example.component';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const HTML_DATA = `
 <o-{layout}-collapsible attr="container" title="{title}" icon="{icon}" layout-align="{layoutAlign}" elevation="{elevation}"

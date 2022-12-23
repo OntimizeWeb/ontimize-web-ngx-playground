@@ -32,9 +32,10 @@ export const MENU_CONFIG: MenuRootItem[] = [
     name: 'LAYOUT',
     icon: 'layers',
     opened: false,
+    route: 'main/layout/home',
     items: [
-      { id: 'layout-manager', name: 'LAYOUT_MANAGER', route: '/main/layout-manager', icon: 'layers' },
-      { id: 'containers', name: 'CONTAINERS', route: '/main/containers', icon: 'format_align_center' }
+      { id: 'layout-manager', name: 'LAYOUT_MANAGER', route: '/main/layout/layout-manager', icon: 'layers' },
+      { id: 'containers', name: 'CONTAINERS', route: '/main/layout/containers', icon: 'format_align_center' }
     ]
   },
   {
