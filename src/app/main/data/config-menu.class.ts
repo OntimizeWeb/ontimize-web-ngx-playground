@@ -25,14 +25,14 @@ export class ConfigMenu {
     });
   }
 
-  styleChangeOnResize(id: string, translate_x: string, translate_y: string, sidenavOpened?: boolean): void {
+  styleChangeOnResize(id: string, sidenavOpened?: boolean): void {
     this.innerWidth = window.innerWidth;
     const elemById = document.getElementById(id);
     if (this.innerWidth >= 1920) {
       this.sidenav.opened = sidenavOpened != null ? sidenavOpened : this.sidenav.opened;
       this.sidenav.mode = "side";
       if (elemById) {
-        elemById.style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+        elemById.style.transform = "rotate(90deg)";
       }
 
     }
@@ -45,7 +45,7 @@ export class ConfigMenu {
     else {
       this.sidenav.mode = "over";
       if (elemById) {
-        elemById.style.transform = "rotate(90deg) translate(" + translate_x + "px," + translate_y + "px)";
+        elemById.style.transform = "rotate(90deg)";
       }
     }
   }
