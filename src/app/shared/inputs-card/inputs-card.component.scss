@@ -7,11 +7,15 @@ mat-card {
   .img-container {
     height: 120px;
     margin: 0;
+
+    .mat-icon {
+      height: 80%;
+      width: 75%;
+    }
   }
 
   .new {
-    margin: 10px 0 5px 0;
-    margin-left: auto;
+    margin: 10px 0 5px auto;
     padding: 4px;
     align-self: right;
     border-width: 1px;
@@ -26,20 +30,17 @@ mat-card {
     margin-right: 20px;
 
     .mat-card-header-text {
-      margin: 0px;
+      margin: 0;
 
       mat-card-title {
         font-size: 18px !important;
-        margin: 16px 0 5px 0 !important;
+        margin: 16px 0 5px !important;
       }
     }
   }
 
   mat-card-content {
     font-size: 13px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: auto 20px;
   }
 }

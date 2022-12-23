@@ -1308,6 +1308,577 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/*
+*
+*  Responsive attributes
+*
+*  References:
+*  1) https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties#flex
+*  2) https://css-tricks.com/almanac/properties/f/flex/
+*  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
+*  5) http://godban.com.ua/projects/flexgrid
+*
+*/
+/*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJbecmNE.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJnecmNE.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*
+*
+*  Responsive attributes
+*
+*  References:
+*  1) https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties#flex
+*  2) https://css-tricks.com/almanac/properties/f/flex/
+*  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
+*  5) http://godban.com.ua/projects/flexgrid
+*
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.report-on-demand-sidenav .mat-expansion-panel {
+  background-color: #303030; }
+
+[layout-padding-vertical] {
+  padding: 4px 0; }
+
+[layout-margin-vertical] {
+  margin: 4px 0; }
+
+[layout-padding-horizontal] {
+  padding: 0 14px; }
+
+[layout-margin-horizontal] {
+  margin: 0 14px; }
+
+[layout-padding-left] {
+  padding-left: 14px; }
+
+[layout-margin-left] {
+  margin-left: 14px; }
+
+[layout-padding-right] {
+  padding-right: 14px; }
+
+[layout-margin-right] {
+  margin-right: 14px; }
+
+[layout-padding-top] {
+  padding-top: 4px; }
+
+[layout-margin-top] {
+  margin-top: 4px; }
+
+[layout-padding-bottom] {
+  padding-bottom: 4px; }
+
+[layout-margin-bottom] {
+  margin-bottom: 4px; }
+
+/* CONTAINER */
+.rounded-panel,
+.standalone-chart-container,
+.standalone-form-container .o-form-content-wrapper {
+  background: #424242;
+  border-radius: 2px; }
+
+.standalone-chart-container {
+  margin-top: 48px; }
+
+.standalone-form-container .inner-form {
+  padding: 16px; }
+
+/* APP SIDENAV */
+.o-app-sidenav {
+  font-weight: 400;
+  color: #aaaaaa; }
+
+/* USER INFO */
+o-app-header .o-app-header-title {
+  font-weight: 700; }
+
+.o-app-header {
+  background-color: #424242; }
+
+/* FORM */
+.o-form-toolbar .mat-toolbar {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
+  background-color: #303030;
+  border-radius: 2px;
+  min-height: initial; }
+
+/* TABS */
+.mat-tab-group .mat-tab-label,
+.mat-tab-group .mat-tab-link {
+  opacity: .75; }
+  .mat-tab-group .mat-tab-label.mat-tab-label-active,
+  .mat-tab-group .mat-tab-link.mat-tab-label-active {
+    opacity: .95; }
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-header {
+  border: none; }
+  .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+    background: #686868;
+    padding: 0; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
+      text-overflow: clip;
+      position: relative; }
+      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
+        width: 12px;
+        background: linear-gradient(to right, transparent, #686868 100%);
+        height: 100%;
+        position: absolute;
+        right: 0; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+      border-left: 1px solid rgba(255, 255, 255, 0.12); }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
+      padding: 0 8px;
+      width: 100%; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
+      background: #424242; }
+      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
+        background: linear-gradient(to right, transparent, #424242 100%); }
+  .mat-tab-group.o-tab-ontimize > .mat-tab-header mat-ink-bar {
+    display: none; }
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+  background: #424242;
+  border-radius: 2px;
+  border-top: none;
+  border-top-left-radius: initial; }
+
+.mat-tab-group.mat-tab-group .mat-tab-body-wrapper {
+  padding: 8px; }
+
+/* BUTTON */
+button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-raised-button, button.mat-stroked-button {
+  border-radius: 2px; }
+
+/* TABLE */
+.ontimize-table.o-table {
+  font-weight: 400; }
+  .ontimize-table.o-table .o-table-container {
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    /*Toolbar*/ }
+    .ontimize-table.o-table .o-table-container .o-table-toolbar {
+      margin: 0 0 4px;
+      padding-top: 8px; }
+    .ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
+      background: rgba(255, 255, 255, 0.12); }
+    .ontimize-table.o-table .o-table-container thead tr th {
+      font-weight: 700; }
+    .ontimize-table.o-table .o-table-container tbody tr.even,
+    .ontimize-table.o-table .o-table-container thead tr {
+      background-color: inherit; }
+    .ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+    .ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+      background-color: #8ab2d2; }
+    .ontimize-table.o-table .o-table-container .mat-header-cell {
+      font-weight: 700; }
+  .ontimize-table.o-table .mat-paginator {
+    background: inherit; }
+  .ontimize-table.o-table .mat-table .mat-header-row .mat-header-cell {
+    font-weight: 700; }
+
+.ontimize-table.o-table.o-table-fixed .o-scrollable-container {
+  height: 100%;
+  overflow-y: auto; }
+
+.mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+  padding: 2px 0; }
+
+.mat-menu-panel.o-search-input-menu .mat-checkbox {
+  padding: 2px 0; }
+
+.o-table-quickfilter-menu .mat-checkbox {
+  font-size: 14px; }
+  .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
+    width: 16px;
+    height: 16px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-header-cell {
+  font-weight: 600; }
+  .o-table.o-table .o-table-container .mat-table .mat-header-cell .column-filter-icon {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px; }
+
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
+  height: 30px;
+  border: none;
+  padding: 0 6px;
+  border-radius: 0; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
+    border: none;
+    border-radius: 0; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+    border: none;
+    border-radius: 0; }
+
+.o-table.o-table .o-table-container .mat-table .mat-form-field .mat-form-field-infix {
+  border-top: 0; }
+
+.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:not(.o-column-image):first-of-type {
+  padding-left: 12px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:last-of-type {
+  padding-right: 12px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-cell.mat-column-select,
+.o-table.o-table .o-table-container .mat-table .mat-header-cell.mat-column-select {
+  padding: 0 0 0 12px; }
+
+.o-table-export-dialog.o-table-export-dialog .mat-raised-button {
+  width: 68px;
+  height: 68px;
+  min-width: 68px; }
+  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-button-wrapper > div {
+    line-height: 1; }
+  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-icon {
+    padding: 0 6px 6px;
+    width: 38px;
+    height: 38px;
+    font-size: 38px; }
+
+.mat-form-field.mat-form-field {
+  font-size: 14px; }
+  .mat-form-field.mat-form-field.mat-form-field-invalid .mat-error {
+    display: none; }
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .icon-btn,
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon-button,
+  .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-suffix .mat-icon-button {
+    height: 1.4em;
+    width: 1.4em; }
+  .mat-form-field.mat-form-field.input-image.icon-field .mat-input-infix.mat-form-field-infix {
+    line-height: 16px; }
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
+    height: 20px;
+    width: 20px; }
+  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon-button .mat-icon,
+  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button .mat-icon {
+    font-size: 140%; }
+  .mat-form-field.mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0em; }
+  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon,
+  .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon {
+    font-size: 140%;
+    height: 1em; }
+  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button {
+    height: 1.4em;
+    width: 1.4em; }
+    .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button .mat-icon,
+    .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button .mat-icon {
+      height: 1em;
+      line-height: 1; }
+  .mat-form-field.mat-form-field .mat-form-field-infix {
+    padding: 0.3em 0;
+    border-top: 0.75em solid transparent; }
+  .mat-form-field.mat-form-field .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.05em) scale(0.75);
+    width: 133.33333%; }
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.04999em) scale(0.75);
+    width: 133.33334%; }
+  .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
+    top: -0.75em;
+    padding-top: 0.75em; }
+  .mat-form-field.mat-form-field .mat-form-field-label {
+    top: 1.05em; }
+  .mat-form-field.mat-form-field .mat-form-field-underline {
+    bottom: 0em; }
+  .mat-form-field.mat-form-field .mat-form-field-subscript-wrapper {
+    font-size: 75%;
+    margin-top: 0.4em;
+    top: calc(100% - 0em); }
+
+.o-combo mat-select {
+  line-height: normal; }
+
+.o-checkbox .mat-checkbox {
+  font-size: 14px; }
+  .o-checkbox .mat-checkbox .mat-checkbox-ripple {
+    left: calc(50% - 17px);
+    top: calc(50% - 17px);
+    height: 34px;
+    width: 34px; }
+
+.o-checkbox .mat-checkbox-inner-container {
+  width: 15px;
+  height: 15px; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0.105em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.35em 0; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.25em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0.105em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-top: 0.4em;
+  top: calc(100% - 0.14em); }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0.25em 0.25em 0 0.25em !important; }
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.25em 0 0.3em !important; }
+
+.mat-form-field-appearance-fill .mat-form-field-label {
+  top: 1em !important;
+  margin-top: -0.5em !important; }
+
+.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.5em) scale(0.75) !important;
+  width: 133.33333%; }
+
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.5em) scale(0.75) !important;
+  width: 133.33333%; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding-bottom: 0; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.3em 0; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
+  top: 1.05em;
+  margin-top: -0.25em; }
+
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.8em) scale(0.75);
+  width: 133.33333%; }
+
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.79999em) scale(0.75);
+  width: 133.33334%; }
+
+.mat-form-field-appearance-standard .mat-form-field-flex {
+  padding: 0.25em 0.25em 0 0.25em !important; }
+
+.o-column > .o-container > .o-container-title,
+.o-row > .o-container > .o-container-title {
+  line-height: 30px;
+  height: 30px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+  padding-left: 4px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 10px 6px 6px; }
+
+.o-column > .o-container .o-container-scroll.o-container-gap,
+.o-row > .o-container .o-container-scroll.o-container-gap {
+  padding: 10px 6px 6px; }
+
+.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+  padding: 12px; }
+
+.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 12px; }
+
+/* O-APP-LAYOUT */
+.o-app-sidenav.o-app-sidenav .o-app-header .sidenav-toggle {
+  padding: 8px; }
+
+/* MD-TAB-GROUP */
+.mat-tab-group.mat-tab-group > .mat-tab-header .mat-tab-label {
+  height: 32px; }
+
+/* MAT-PAGINATOR */
+.mat-paginator-container {
+  min-height: 0; }
+  .mat-paginator-container .mat-paginator-page-size {
+    align-items: center; }
+    .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select {
+      margin: 6px 0; }
+      .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
+        transform: initial; }
+      .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
+        border-top: 0; }
+  .mat-paginator-container .mat-paginator-range-actions {
+    min-height: 0; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.after, .mat-tooltip-panel .o-tooltip.mat-tooltip.right {
+  margin-left: 5px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.before, .mat-tooltip-panel .o-tooltip.mat-tooltip.left {
+  margin-right: 5px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.above {
+  margin-bottom: -15px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.below {
+  margin-top: 5px; }
+
+.o-filter-by-column-dialog .select-all-checkbox {
+  margin-top: 10px; }
+
+@media (max-width: 599px) {
+  .o-list-picker-dialog.o-list-picker-dialog .mat-dialog-content.o-list-picker-has-filter {
+    max-height: calc(100% - 105px);
+    min-height: calc(100% - 105px); } }
+
+.o-search-input-menu .mat-checkbox {
+  font-size: 14px; }
+  .o-search-input-menu .mat-checkbox .mat-checkbox-inner-container {
+    width: 16px;
+    height: 16px; }
+
+[layout-padding] > [flex-lt-md],
+[layout-padding] > [flex-sm] {
+  padding: 2px; }
+
+[layout-padding],
+[layout-padding] > [flex-gt-sm],
+[layout-padding] > [flex-lt-lg],
+[layout-padding] > [flex-md],
+[layout-padding] > [flex] {
+  padding: 4px; }
+
+[layout-padding] > [flex-gt-md],
+[layout-padding] > [flex-lg] {
+  padding: 8px; }
+
+[layout-margin] > [flex-lt-md],
+[layout-margin] > [flex-sm] {
+  margin: 2px; }
+
+[layout-margin],
+[layout-margin] > [flex-gt-sm],
+[layout-margin] > [flex-lt-lg],
+[layout-margin] > [flex-md],
+[layout-margin] > [flex] {
+  margin: 4px; }
+
+[layout-margin] > [flex-gt-md],
+[layout-margin] > [flex-lg] {
+  margin: 8px; }
+
+[layout-wrap] {
+  flex-wrap: wrap; }
+
+[layout-nowrap] {
+  flex-wrap: nowrap; }
+
+[layout-padding-vertical] {
+  padding: 4px 0; }
+
+[layout-margin-vertical] {
+  margin: 4px 0; }
+
+[layout-padding-horizontal] {
+  padding: 0 14px; }
+
+[layout-margin-horizontal] {
+  margin: 0 14px; }
+
+[layout-padding-left] {
+  padding-left: 14px; }
+
+[layout-margin-left] {
+  margin-left: 14px; }
+
+[layout-padding-right] {
+  padding-right: 14px; }
+
+[layout-margin-right] {
+  margin-right: 14px; }
+
+[layout-padding-top] {
+  padding-top: 4px; }
+
+[layout-margin-top] {
+  margin-top: 4px; }
+
+[layout-padding-bottom] {
+  padding-bottom: 4px; }
+
+[layout-margin-bottom] {
+  margin-bottom: 4px; }
+
+.o-form .o-form-toolbar .o-form-toolbar-header {
+  min-height: 36px;
+  max-height: 36px;
+  padding: 0 4px;
+  box-shadow: none;
+  font-size: 16px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
+    height: 28px;
+    padding: 8px;
+    min-height: 72px;
+    max-height: 72px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
+    border-radius: 0; }
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-icon-button,
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-icon-button {
+      height: 30px;
+      line-height: 30px;
+      width: 30px; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -1377,66 +1948,63 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-size: 24px; }
 
 .mat-h1, .mat-headline, .mat-typography h1 {
-  font: 400 24px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 24px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h2, .mat-title, .mat-typography h2 {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 16px/28px Poppins, "Helvetica Neue", sans-serif;
+  font: 600 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h4, .mat-subheading-1, .mat-typography h4 {
-  font: 400 15px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 14px/18px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h5, .mat-typography h5 {
-  font: 400 calc(14px * 0.83)/20px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 calc(12px * 0.83)/15px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 12px; }
 
 .mat-h6, .mat-typography h6 {
-  font: 400 calc(14px * 0.67)/20px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 calc(12px * 0.67)/15px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 12px; }
 
 .mat-body-strong, .mat-body-2 {
-  font: 500 14px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-body, .mat-body-1, .mat-typography {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
   .mat-body p, .mat-body-1 p, .mat-typography p {
     margin: 0 0 12px; }
 
 .mat-small, .mat-caption {
-  font: 400 12px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 11px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-display-4, .mat-typography .mat-display-4 {
-  font: 300 112px/112px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.05em;
+  font: 300 84px/92px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 56px; }
 
 .mat-display-3, .mat-typography .mat-display-3 {
-  font: 400 56px/56px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.02em;
+  font: 400 42px/42px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-display-2, .mat-typography .mat-display-2 {
-  font: 400 45px/48px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.005em;
+  font: 400 34px/36px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-display-1, .mat-typography .mat-display-1 {
-  font: 400 34px/40px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 26px/30px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-bottom-sheet-container {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button,
 .mat-flat-button, .mat-fab, .mat-mini-fab {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-button-toggle {
@@ -1450,20 +2018,20 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 500; }
 
 .mat-card-header .mat-card-title {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .mat-card-subtitle,
 .mat-card-content {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-checkbox {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-checkbox-layout .mat-checkbox-label {
-  line-height: 24px; }
+  line-height: 18px; }
 
 .mat-chip {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
   .mat-chip .mat-chip-trailing-icon.mat-icon,
   .mat-chip .mat-chip-remove.mat-icon {
@@ -1473,11 +2041,11 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-header-cell {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-cell, .mat-footer-cell {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-calendar {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
@@ -1487,7 +2055,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 
 .mat-calendar-body-label,
 .mat-calendar-period-button {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-calendar-table-header th {
@@ -1495,29 +2063,26 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 400; }
 
 .mat-dialog-title {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400; }
 
 .mat-expansion-panel-content {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field {
-  font-size: inherit;
-  font-weight: 400;
-  line-height: 1.125;
-  font-family: Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 14px/1 Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field-wrapper {
-  padding-bottom: 1.34375em; }
+  padding-bottom: 1.25em; }
 
 .mat-form-field-prefix .mat-icon,
 .mat-form-field-suffix .mat-icon {
   font-size: 150%;
-  line-height: 1.125; }
+  line-height: 1; }
 
 .mat-form-field-prefix .mat-icon-button,
 .mat-form-field-suffix .mat-icon-button {
@@ -1525,120 +2090,120 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   width: 1.5em; }
   .mat-form-field-prefix .mat-icon-button .mat-icon,
   .mat-form-field-suffix .mat-icon-button .mat-icon {
-    height: 1.125em;
-    line-height: 1.125; }
+    height: 1em;
+    line-height: 1; }
 
 .mat-form-field-infix {
   padding: 0.5em 0;
-  border-top: 0.84375em solid transparent; }
+  border-top: 0.75em solid transparent; }
 
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.34375em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.34374em) scale(0.75);
+  transform: translateY(-1.24999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-label-wrapper {
-  top: -0.84375em;
-  padding-top: 0.84375em; }
+  top: -0.75em;
+  padding-top: 0.75em; }
 
 .mat-form-field-label {
-  top: 1.34375em; }
+  top: 1.25em; }
 
 .mat-form-field-underline {
-  bottom: 1.34375em; }
+  bottom: 1.25em; }
 
 .mat-form-field-subscript-wrapper {
   font-size: 75%;
   margin-top: 0.66667em;
-  top: calc(100% - 1.79167em); }
+  top: calc(100% - 1.66667em); }
 
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 0.4375em 0; }
+  padding: 0.5em 0; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
-  -ms-transform: translateY(-1.28125em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.001px);
+  -ms-transform: translateY(-1.25em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00101px);
-  -ms-transform: translateY(-1.28124em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00101px);
+  -ms-transform: translateY(-1.24999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00102px);
-  -ms-transform: translateY(-1.28123em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00102px);
+  -ms-transform: translateY(-1.24998em) scale(0.75);
   width: 133.33335%; }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  top: 1.28125em; }
+  top: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
-  margin-top: 0.54167em;
+  margin-top: 0.66667em;
   top: calc(100% - 1.66667em); }
 
 @media print {
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.28122em) scale(0.75); }
+    transform: translateY(-1.24997em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.28121em) scale(0.75); }
+    transform: translateY(-1.24996em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.2812em) scale(0.75); } }
+    transform: translateY(-1.24995em) scale(0.75); } }
 
 .mat-form-field-appearance-fill .mat-form-field-infix {
   padding: 0.25em 0 0.75em 0; }
 
 .mat-form-field-appearance-fill .mat-form-field-label {
-  top: 1.09375em;
+  top: 1em;
   margin-top: -0.5em; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.59375em) scale(0.75);
+  transform: translateY(-0.5em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-0.59374em) scale(0.75);
+  transform: translateY(-0.49999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1em 0; }
 
 .mat-form-field-appearance-outline .mat-form-field-label {
-  top: 1.84375em;
+  top: 1.75em;
   margin-top: -0.25em; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.59375em) scale(0.75);
+  transform: translateY(-1.5em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.59374em) scale(0.75);
+  transform: translateY(-1.49999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-grid-tile-header,
 .mat-grid-tile-footer {
-  font-size: 14px; }
+  font-size: 12px; }
   .mat-grid-tile-header .mat-line,
   .mat-grid-tile-footer .mat-line {
     white-space: nowrap;
@@ -1648,20 +2213,20 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     box-sizing: border-box; }
     .mat-grid-tile-header .mat-line:nth-child(n+2),
     .mat-grid-tile-footer .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 input.mat-input-element {
-  margin-top: -0.0625em; }
+  margin-top: 0em; }
 
 .mat-menu-item {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400; }
 
 .mat-paginator,
 .mat-paginator-page-size .mat-select-trigger {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px; }
+  font-size: 11px; }
 
 .mat-radio-button {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
@@ -1670,31 +2235,31 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-select-trigger {
-  height: 1.125em; }
+  height: 1em; }
 
 .mat-slide-toggle-content {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-slider-thumb-label-text {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-stepper-vertical, .mat-stepper-horizontal {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-step-label {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400; }
 
 .mat-step-sub-label-error {
   font-weight: normal; }
 
 .mat-step-label-error {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-step-label-selected {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
 
 .mat-tab-group {
@@ -1702,7 +2267,7 @@ input.mat-input-element {
 
 .mat-tab-label, .mat-tab-link {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-toolbar,
@@ -1712,7 +2277,7 @@ input.mat-input-element {
 .mat-toolbar h4,
 .mat-toolbar h5,
 .mat-toolbar h6 {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0; }
 
 .mat-tooltip {
@@ -1733,7 +2298,7 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-list-base .mat-list-item {
-  font-size: 16px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1741,10 +2306,10 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 14px; }
+      font-size: 12px; }
 
 .mat-list-base .mat-list-option {
-  font-size: 16px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1752,15 +2317,15 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 14px; }
+      font-size: 12px; }
 
 .mat-list-base .mat-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
 
 .mat-list-base[dense] .mat-list-item {
-  font-size: 12px; }
+  font-size: 11px; }
   .mat-list-base[dense] .mat-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1768,10 +2333,10 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base[dense] .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 .mat-list-base[dense] .mat-list-option {
-  font-size: 12px; }
+  font-size: 11px; }
   .mat-list-base[dense] .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1779,23 +2344,23 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base[dense] .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 .mat-list-base[dense] .mat-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-option {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 16px; }
+  font-size: 14px; }
 
 .mat-optgroup-label {
-  font: 500 14px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-simple-snackbar {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-simple-snackbar-action {
   line-height: 1;
@@ -1809,7 +2374,7 @@ input.mat-input-element {
 .mat-tree-node,
 .mat-nested-tree-node {
   font-weight: 400;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-ripple {
   overflow: hidden;
@@ -3364,8 +3929,8 @@ textarea {
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-title {
   border-bottom: 1px solid #8ab2d2;
-  line-height: 16px;
-  font-size: 16px; }
+  line-height: 14px;
+  font-size: 14px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-title .mat-icon {
@@ -3379,7 +3944,7 @@ textarea {
 .o-dialog-class .mat-dialog-container .mat-dialog-content,
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-content {
-  font-size: 14px; }
+  font-size: 12px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] {
@@ -3390,18 +3955,18 @@ textarea {
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > * {
-      font-size: 14px; }
+      font-size: 12px; }
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 /*global styles about drag/drop in dialogs table*/
 .cdk-drag-preview {
   width: 100%;
   display: block; }
   .cdk-drag-preview .mat-list-item-content {
-    font-size: 14px;
+    font-size: 12px;
     color: white;
     padding: 6px;
     flex-direction: row;
@@ -3648,7 +4213,7 @@ textarea {
 .o-row > .o-container > .mat-expansion-panel-header .o-container-title span,
 .o-row-collapsible > .o-container > .o-container-title span,
 .o-row-collapsible > .o-container > .mat-expansion-panel-header .o-container-title span {
-  font-size: inherit;
+  font-size: 14px;
   font-weight: 400; }
 
 .o-column-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title,
@@ -4038,7 +4603,7 @@ textarea:disabled {
     background-color: rgba(48, 48, 48, 0.29); }
   .o-card-menu-item .o-card-menu-item-title {
     color: #8ab2d2;
-    font-size: 20px; }
+    font-size: 18px; }
   .o-card-menu-item .mat-button {
     color: #8ab2d2;
     background: #dce8f2; }
@@ -4365,7 +4930,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   font-size: 24px;
   font-weight: bold; }
   .o-form .o-form-toolbar .o-form-toolbar-header .o-form-navigation span {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: normal; }
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
@@ -4736,7 +5301,7 @@ o-row.o-row {
   o-column.o-column .o-container > .mat-expansion-panel-header .o-container-title span,
   o-row.o-row .o-container > .o-container-title span,
   o-row.o-row .o-container > .mat-expansion-panel-header .o-container-title span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold; }
   o-column.o-column .o-container .o-container-scroll.o-container-gap,
   o-row.o-row .o-container .o-container-scroll.o-container-gap {
