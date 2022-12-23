@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'media',
-  templateUrl: './media.component.html',
+  selector: 'image',
+  templateUrl: './image.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class MediaComponent  {
+export class ImageComponent  {
 
 }

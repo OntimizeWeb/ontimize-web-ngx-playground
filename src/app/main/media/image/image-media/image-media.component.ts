@@ -8,10 +8,10 @@ const HTML_DATA = `
 
 @Component({
   selector: 'image',
-  templateUrl: './image.component.html',
+  templateUrl: './image-media.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ImageComponent {
+export class ImageMediaComponent {
 
   @ViewChild('showControlToggle', { static: false })
   showControlToggle: any = true;
@@ -76,7 +76,7 @@ export class ImageComponent {
       enabled: this.enabledToggle.checked,
       readOnly: this.readOnlyToggle.checked
     };
-    exampleComp.html = ImageComponent.getHtml(itemData);
+    exampleComp.html = ImageMediaComponent.getHtml(itemData);
   }
 
 }

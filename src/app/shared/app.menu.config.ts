@@ -21,9 +21,10 @@ export const MENU_CONFIG: MenuRootItem[] = [
     name: 'MEDIA',
     icon: 'image',
     opened: false,
+    route: 'main/media/home',
     items: [
-      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media', icon: 'image' },
-      { id: 'gallery', name: 'GALLERY.COMPONENT', route: '/main/gallery', icon: 'perm_media' }
+      { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media/image', icon: 'image' },
+      { id: 'gallery', name: 'GALLERY.COMPONENT', route: '/main/media/gallery', icon: 'perm_media' }
     ]
   },
   {
