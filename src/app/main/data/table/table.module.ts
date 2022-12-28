@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { OChartModule } from 'ontimize-web-ngx-charts';
 import { DummyService } from 'src/app/shared/services/dummy.service';
 
 import { SharedModule } from '../../../shared/shared.module';
@@ -45,7 +46,8 @@ import { TableComponent } from './table.component';
     SharedModule,
     OntimizeWebModule,
     TableRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    OChartModule
   ],
   declarations: [
     TableComponent,
