@@ -618,6 +618,9 @@
   "sqlTypes": {
     "gold": 4,
     "silver": 4,
-    "bronze": 4
+    "bronze": 4,
+    "age": 4,
+    "year": 4,
+    "total": 4
   }
 }
