@@ -78,7 +78,7 @@
                 [ngStyle]="{'height':'700px'}">
                 <o-grid-item *ngFor="let list of grid.dataArray">
                   <o-column layout-padding class="container-item">
-                    <img alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
+                    <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
                     <h4>{{ list.name }}</h4>
                     <div class="phone">
                       <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
