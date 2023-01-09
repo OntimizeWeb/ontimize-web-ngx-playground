@@ -32,7 +32,7 @@ export class DataStructureComponent extends ConfigMenu {
     this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id");
   }
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this.closedStard = this.sidenav.closedStart.subscribe(() => {
       this.configExpandedService.setState(false);
       setTimeout(() => { this.formatButton(); }, 10);
