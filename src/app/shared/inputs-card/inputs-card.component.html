@@ -1,8 +1,9 @@
 <mat-card class="inputs-mat-card">
   <div fxLayoutAlign="center center" layout-margin class="img-container">
-    <mat-icon *ngIf="!dark" svgIcon="ontimize:{{compName}}"></mat-icon>
-    <mat-icon *ngIf="dark" svgIcon="ontimize:{{compName}}_dark"></mat-icon>
-
+    <!--<mat-icon *ngIf="!dark" svgIcon="ontimize:{{compName}}"></mat-icon>
+    <mat-icon *ngIf="dark" svgIcon="ontimize:{{compName}}_dark"></mat-icon>-->
+    <img src="../../../assets/images/menu/{{compName}}.svg" *ngIf="!dark">
+    <img src="../../../assets/images/menu/dark/{{compName}}_dark.svg" *ngIf="dark">
   </div>
   <mat-divider></mat-divider>
   <mat-card-header>
