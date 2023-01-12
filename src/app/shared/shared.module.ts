@@ -11,9 +11,10 @@ import { CollapsibleMenuComponent } from './collapsible-menu/collapsible-menu.co
 import { DataStructureComponent } from './data-structure/data-structure.component';
 import { InputsCardComponent } from './inputs-card/inputs-card.component';
 import { ConfigCollapsibleStateService } from './services/config-collapsible-state.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  imports: [OntimizeWebModule, AngularHighlightJsModule],
+  imports: [OntimizeWebModule, AngularHighlightJsModule, MatButtonModule],
   declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent],
   providers: [NavigationBarService, CollapsibleStateService, ConfigCollapsibleStateService],
   exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent]

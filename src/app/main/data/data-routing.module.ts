@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataHomeComponent } from './data-home/data-home.component';
 
 export const routes: Routes = [
-  { path: 'home', data: { oAppHeaderTitle: 'Data home' }, component: DataHomeComponent },
+  { path: 'home', data: { oAppHeaderTitle: 'Data' }, component: DataHomeComponent },
   { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
   { path: 'lists', loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule) },
   { path: 'grid', loadChildren: () => import('./grid/grid.module').then(m => m.GridModule) }

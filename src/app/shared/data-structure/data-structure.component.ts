@@ -32,7 +32,7 @@ export class DataStructureComponent extends ConfigMenu {
     this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id");
   }
 
-  ngAfterContentInit(): void {
+  ngAfterViewInit(): void {
     this.closedStard = this.sidenav.closedStart.subscribe(() => {
       this.configExpandedService.setState(false);
       setTimeout(() => { this.formatButton(); }, 10);
@@ -40,8 +40,11 @@ export class DataStructureComponent extends ConfigMenu {
     this.openedStard = this.sidenav.openedStart.subscribe(() => {
       this.configExpandedService.setState(true);
     });
+    setTimeout(() => this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", true), 10);
+  }
 
-    this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", true);
+  ngAfterContentInit(): void {
+
   }
 
   @HostListener('window:resize', ['$event'])

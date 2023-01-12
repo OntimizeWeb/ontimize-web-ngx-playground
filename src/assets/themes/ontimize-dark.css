@@ -5368,15 +5368,13 @@ ul.list-grid-container {
         font-size: .8em; }
 
 .example-comp > section {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12); }
+  box-shadow: none; }
   .example-comp > section .mat-toolbar {
     background-color: transparent;
     color: white; }
   .example-comp > section .playground-toolbar.mat-toolbar {
-    background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid #e0e0e0; }
-    .example-comp > section .playground-toolbar.mat-toolbar .comp-description {
-      color: #616161; }
+    background-color: transparent;
+    border-bottom: 2px solid #8ab2d2; }
   .example-comp > section .playground-tabs {
     border-bottom: 1px solid #e0e0e0; }
 

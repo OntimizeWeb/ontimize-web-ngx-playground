@@ -1,35 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="131" height="92.5" viewBox="0 0 131 92.5">
   <defs>
-    <filter id="_121212" x="0" y="8.5" width="131" height="84" filterUnits="userSpaceOnUse">
+    <filter id="W14_" x="0" y="8.5" width="131" height="84" filterUnits="userSpaceOnUse">
       <feOffset dy="1" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="0.5" result="blur"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="W14_" x="0" y="8.5" width="131" height="84" filterUnits="userSpaceOnUse">
+    <filter id="BC_6_" x="0" y="8.5" width="131" height="84" filterUnits="userSpaceOnUse">
       <feOffset dy="1" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur-2"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="BC_6_" x="0" y="8.5" width="131" height="84" filterUnits="userSpaceOnUse">
-      <feOffset dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="0.5" result="blur-3"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-3"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
   </defs>
   <g id="ilustracion_Form_layout_manger_1" data-name="ilustracion Form layout manger 1" transform="translate(-80.5 -17)">
     <g id="bg">
-      <g transform="matrix(1, 0, 0, 1, 80.5, 17)" filter="url(#_121212)">
-        <g id="_121212-2" data-name="#121212" transform="translate(1.5 9)" fill="#121212">
-          <path d="M0,0H128V81H0Z" stroke="none"/>
-          <path d="M 1 1 L 1 80 L 127 80 L 127 1 L 1 1 M 0 0 L 128 0 L 128 81 L 0 81 L 0 0 Z" stroke="none" fill="rgba(255,255,255,0.12)"/>
-        </g>
-      </g>
+      <path id="_121212" data-name="#121212" d="M0,0H128V81H0Z" transform="translate(82 26)" fill="#121212"/>
+      <path id="_121212_-_Contorno" data-name="#121212 - Contorno" d="M1,1V80H127V1H1M0,0H128V81H0Z" transform="translate(82 26)" fill="rgba(255,255,255,0.12)"/>
       <g transform="matrix(1, 0, 0, 1, 80.5, 17)" filter="url(#W14_)">
         <path id="W14_2" data-name="W14%" d="M0,0H128V81H0Z" transform="translate(1.5 9)" fill="rgba(255,255,255,0.14)"/>
       </g>
@@ -37,15 +26,11 @@
         <path id="BC_6_2" data-name="BC 6%" d="M0,0H128V81H0Z" transform="translate(1.5 9)" fill="rgba(20,100,165,0.06)"/>
       </g>
     </g>
-    <g id="Trazado_7279" data-name="Trazado 7279" transform="translate(82 17)" fill="#2f3438">
-      <path d="M0,0H38V10H0Z" stroke="none"/>
-      <path d="M 1 1 L 1 9 L 37 9 L 37 1 L 1 1 M 0 0 L 38 0 L 38 10 L 0 10 L 0 0 Z" stroke="none" fill="rgba(255,255,255,0.12)"/>
-    </g>
-    <g id="Trazado_7272" data-name="Trazado 7272" transform="translate(119 17)" fill="#2f3438">
-      <path d="M0,0H38V10H0Z" stroke="none"/>
-      <path d="M 1 1 L 1 9 L 37 9 L 37 1 L 1 1 M 0 0 L 38 0 L 38 10 L 0 10 L 0 0 Z" stroke="none" fill="rgba(255,255,255,0.12)"/>
-    </g>
-    <path id="Trazado_7267" data-name="Trazado 7267" d="M18835.145,195h16" transform="translate(-18741.645 -172.5)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
-    <path id="Trazado_7268" data-name="Trazado 7268" d="M18835.145,195h16" transform="translate(-18704.645 -172.5)" fill="none" stroke="rgba(255,255,255,0.38)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7279" data-name="Trazado 7279" d="M0,0H38V10H0Z" transform="translate(82 17)" fill="#2f3438"/>
+    <path id="Trazado_7279_-_Contorno" data-name="Trazado 7279 - Contorno" d="M1,1V9H37V1H1M0,0H38V10H0Z" transform="translate(82 17)" fill="rgba(255,255,255,0.12)"/>
+    <path id="Trazado_7272" data-name="Trazado 7272" d="M0,0H38V10H0Z" transform="translate(119 17)" fill="#2f3438"/>
+    <path id="Trazado_7272_-_Contorno" data-name="Trazado 7272 - Contorno" d="M1,1V9H37V1H1M0,0H38V10H0Z" transform="translate(119 17)" fill="rgba(255,255,255,0.12)"/>
+    <path id="Trazado_7267" data-name="Trazado 7267" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18741.645 -172.5)" fill="rgba(255,255,255,0.74)"/>
+    <path id="Trazado_7268" data-name="Trazado 7268" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18704.645 -172.5)" fill="rgba(255,255,255,0.38)"/>
   </g>
 </svg>
