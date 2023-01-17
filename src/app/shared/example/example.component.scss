@@ -5,9 +5,9 @@
 
   .playground-toolbar {
     font-size: 18px;
-    margin: 0 30px 0 30px;
     padding: 0;
-    width: calc(100% - 60px);
+    margin: 0 10px 0 10px;
+    width: calc(100% - 20px);
 
     >div>span {
       font-weight: 600;
@@ -20,7 +20,7 @@
   }
 
   .playground-tabs{
-    margin: 10px 48px 10px 48px;
+    margin: 10px 25px 10px 25px;
   }
 
 
@@ -45,7 +45,7 @@
   }
 
   .playground-examples {
-    margin: 20px 48px 10px 48px;
+    margin: 20px 25px 10px 25px;
 
     .input-comp-title{
       font-size: 17px;
