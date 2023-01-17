@@ -1350,7 +1350,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-style: normal;
   font-weight: 400;
   src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /*it's necessary redefined the font size of the checkbox*/
 /*
@@ -1640,6 +1640,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     top: calc(100% - 0em); }
 
 .o-combo mat-select {
+  line-height: normal; }
+
+.o-phone-input mat-select {
   line-height: normal; }
 
 .o-checkbox .mat-checkbox {
@@ -4152,6 +4155,18 @@ textarea {
 .o-mat-menu.mat-menu-panel {
   min-height: auto; }
 
+/* CHART FONT */
+o-chart .nvd3 text {
+  font: 400 11px Poppins, "Helvetica Neue", sans-serif;
+  fill: white; }
+
+o-chart .nvd3 .nv-discretebar .nv-groups text,
+o-chart .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: white; }
+
+o-chart .nvd3 .nv-axis path {
+  stroke: white; }
+
 .toolbar-breadcrumb {
   background-color: #212121; }
   .toolbar-breadcrumb a {
@@ -4348,6 +4363,9 @@ textarea:disabled {
 
 .o-table .o-table-menu-button {
   color: rgba(255, 255, 255, 0.7); }
+
+.o-table .mat-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: rgba(255, 255, 255, 0.18); }
 
 .o-table .mat-table .mat-header-row .mat-header-cell {
   color: white; }
@@ -5312,6 +5330,31 @@ o-row.o-row.top-separator {
   margin-top: 14px; }
 
 /*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #1e2022; }
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #242729; }
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #323436; }
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #383b3d; }
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: #3d3f41; }
+
 .o-form-content-wrapper[layout-padding],
 .o-form-toolbar[layout-padding] {
   padding: 0; }
@@ -5353,15 +5396,13 @@ ul.list-grid-container {
         font-size: .8em; }
 
 .example-comp > section {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12); }
+  box-shadow: none; }
   .example-comp > section .mat-toolbar {
     background-color: transparent;
     color: white; }
   .example-comp > section .playground-toolbar.mat-toolbar {
-    background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid #e0e0e0; }
-    .example-comp > section .playground-toolbar.mat-toolbar .comp-description {
-      color: #616161; }
+    background-color: transparent;
+    border-bottom: 2px solid #8ab2d2; }
   .example-comp > section .playground-tabs {
     border-bottom: 1px solid #e0e0e0; }
 

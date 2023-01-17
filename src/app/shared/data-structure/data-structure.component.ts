@@ -40,8 +40,11 @@ export class DataStructureComponent extends ConfigMenu {
     this.openedStard = this.sidenav.openedStart.subscribe(() => {
       this.configExpandedService.setState(true);
     });
+    setTimeout(() => this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", true), 10);
+  }
 
-    this.styleChangeOnResize(this.compName.toLowerCase() + "-conf-btn-id", true);
+  ngAfterContentInit(): void {
+
   }
 
   @HostListener('window:resize', ['$event'])

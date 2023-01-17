@@ -8,7 +8,7 @@
   .example-comp {
     & > section {
       background: mat-color($background);
-      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+      box-shadow: none;
 
       .mat-toolbar {
         background-color: transparent;
@@ -16,12 +16,9 @@
       }
 
       .playground-toolbar.mat-toolbar {
-        background: rgba(0,0,0,.03);
-        border-bottom: 1px solid #e0e0e0;
+        background-color: transparent;
+        border-bottom: 2px solid mat-color($primary);
 
-        .comp-description {
-          color: #616161;
-        }
       }
 
       .playground-tabs {

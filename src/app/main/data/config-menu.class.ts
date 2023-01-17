@@ -39,7 +39,7 @@ export class ConfigMenu {
     else if (this.innerWidth <= 1279) {
       this.sidenav.mode = "over";
       if (elemById) {
-        elemById.style.transform = "rotate(0)";
+        elemById.style.transform = "rotate(0) translate(80px, 0)";
       }
     }
     else {

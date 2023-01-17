@@ -1,57 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="99" viewBox="0 0 115 99">
-  <defs>
-    <filter id="Rectángulo_121212" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
-      <feOffset dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="0.5" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectángulo_W_14_" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
-      <feOffset dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-2"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="RectánguloBC_6_" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
-      <feOffset dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="0.5" result="blur-3"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-3"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g id="Ilustración_Date_Range" data-name="Ilustración Date Range" transform="translate(-19670.5 198.5)">
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="96" viewBox="0 0 112 96">
+  <g id="Ilustración_Date_Range" data-name="Ilustración Date Range" transform="translate(-19672 198)">
     <g id="bg" transform="translate(18648 -381)">
-      <g transform="matrix(1, 0, 0, 1, 1022.5, 182.5)" filter="url(#Rectángulo_121212)">
-        <g id="Rectángulo_121212-2" data-name="Rectángulo #121212" transform="translate(1.5 0.5)" fill="#121212" stroke="rgba(255,255,255,0.12)" stroke-width="1">
-          <rect width="112" height="96" rx="2" stroke="none"/>
-          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
-        </g>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 1022.5, 182.5)" filter="url(#Rectángulo_W_14_)">
-        <g id="Rectángulo_W_14_2" data-name="Rectángulo W 14%" transform="translate(1.5 0.5)" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
-          <rect width="112" height="96" rx="2" stroke="none"/>
-          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
-        </g>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 1022.5, 182.5)" filter="url(#RectánguloBC_6_)">
-        <g id="RectánguloBC_6_2" data-name="RectánguloBC 6%" transform="translate(1.5 0.5)" fill="rgba(20,100,165,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1">
-          <rect width="112" height="96" rx="2" stroke="none"/>
-          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
-        </g>
-      </g>
+      <rect id="Rectángulo_121212" data-name="Rectángulo #121212" width="112" height="96" rx="2" transform="translate(1024 183)" fill="#121212"/>
+      <path id="Rectángulo_121212_-_Contorno" data-name="Rectángulo #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
+      <rect id="Rectángulo_W_14_" data-name="Rectángulo W 14%" width="112" height="96" rx="2" transform="translate(1024 183)" fill="rgba(255,255,255,0.16)"/>
+      <path id="Rectángulo_W_14_-_Contorno" data-name="Rectángulo W 14% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
+      <rect id="RectánguloBC_6_" data-name="RectánguloBC 6%" width="112" height="96" rx="2" transform="translate(1024 183)" fill="rgba(20,100,165,0.06)"/>
+      <path id="RectánguloBC_6_-_Contorno" data-name="RectánguloBC 6% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
     </g>
-    <path id="Trazado_7191" data-name="Trazado 7191" d="M18835.145,195h64" transform="translate(844.855 -380.5)" fill="none" stroke="rgba(255,255,255,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7191" data-name="Trazado 7191" d="M18899.145,195.755h-64a.755.755,0,1,1,0-1.51h64a.755.755,0,1,1,0,1.51Z" transform="translate(844.855 -380.5)" fill="rgba(255,255,255,0.74)"/>
     <g id="Días_semana" data-name="Días semana" transform="translate(18664 -890.891)">
-      <path id="Trazado_7138" data-name="Trazado 7138" d="M18835.145,195h8" transform="translate(-17818.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7139" data-name="Trazado 7139" d="M18835.145,195h8" transform="translate(-17803.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7140" data-name="Trazado 7140" d="M18835.145,195h8" transform="translate(-17789.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7141" data-name="Trazado 7141" d="M18835.145,195h8" transform="translate(-17774.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7142" data-name="Trazado 7142" d="M18835.145,195h8" transform="translate(-17760.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7143" data-name="Trazado 7143" d="M18835.145,195h8" transform="translate(-17745.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7144" data-name="Trazado 7144" d="M18835.145,195h8" transform="translate(-17731.645 524.891)" fill="none" stroke="rgba(255,255,255,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+      <path id="Trazado_7138" data-name="Trazado 7138" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17818.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7139" data-name="Trazado 7139" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17803.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7140" data-name="Trazado 7140" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17789.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7141" data-name="Trazado 7141" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17774.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7142" data-name="Trazado 7142" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17760.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7143" data-name="Trazado 7143" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17745.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      <path id="Trazado_7144" data-name="Trazado 7144" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17731.645 524.891)" fill="rgba(255,255,255,0.6)"/>
     </g>
     <g id="chevron_left_black_24dp_1_" data-name="chevron_left_black_24dp (1)" transform="translate(19778.168 -177.196) rotate(180)">
       <path id="Trazado_7080" data-name="Trazado 7080" d="M0,0H16V16H0Z" fill="none"/>
