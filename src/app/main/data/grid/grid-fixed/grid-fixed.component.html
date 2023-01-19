@@ -16,34 +16,32 @@
     </div>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
-        <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
-          <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
-            [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
-            grid-item-height="1:2" quick-filter="yes">
-            <o-grid-item *ngFor="let list of grid.dataArray">
-              <o-column layout-padding class="container-item">
-                <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
-                <h4>{{ list.name }}</h4>
-                <div class="phone">
-                  <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
-                </div>
-                <div class="email">
-                  <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
-                </div>
-                <div class="domain">
-                  <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
-                </div>
-                <div class="website">
-                  <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
-                </div>
-                <div class="body">
-                  {{list.body}}
-                </div>
-              </o-column>
-            </o-grid-item>
-          </o-grid>
-        </div>
+      <div fxFlex="1 1 auto" fxLayoutAlign="start start">
+        <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
+          [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
+          grid-item-height="1:2" quick-filter="yes" class="grid-class">
+          <o-grid-item *ngFor="let list of grid.dataArray">
+            <div layout-padding class="container-item">
+              <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
+              <h4>{{ list.name }}</h4>
+              <div class="phone">
+                <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+              </div>
+              <div class="email">
+                <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+              </div>
+              <div class="domain">
+                <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
+              </div>
+              <div class="website">
+                <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+              </div>
+              <div class="body">
+                {{list.body}}
+              </div>
+            </div>
+          </o-grid-item>
+        </o-grid>
       </div>
       <div class="conf-button-div">
         <button *ngIf="btnVisibility" mat-stroked-button (click)="sidenavComp.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
