@@ -1,11 +1,16 @@
-.grid-class{
+.grid-class {
   width: 100%;
+}
+
+.mat-grid-tile {
+  width: 180px;
+  height: 405px;
 }
 
 .container-item {
   width: 180px;
-  height: 500px;
-  overflow-y: auto;
+  height: 405px;
+  overflow-y: hidden;
 
   .name {
     margin: 8px 0;
@@ -31,7 +36,7 @@
       padding-right: 8px;
     }
 
-    span {
+    div {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;

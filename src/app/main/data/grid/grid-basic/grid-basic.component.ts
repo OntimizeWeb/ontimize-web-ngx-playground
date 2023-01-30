@@ -12,7 +12,7 @@ import { GridUtils } from '../grid.utils';
 })
 export class GridBasicComponent extends ConfigMenu {
 
-  public columns = 3;
+  public columns = 4;
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
