@@ -2,19 +2,34 @@
   padding: 3px;
 }
 
-.main-container{
+.main-container {
   overflow: hidden;
 }
 
-data-structure > div{
+data-structure>div {
   height: 100%;
 
-  >mat-sidenav-container{
+  >mat-sidenav-container {
     height: 100%;
   }
 }
 
-example-component{
+example-component {
   display: block;
   height: 100%;
+}
+
+table-basic {
+  .sidenav-container {
+    height: 810px !important;
+
+    .sidenav {
+      height: 810px;
+
+      .mat-drawer-inner-container {
+        overflow: hidden;
+
+      }
+    }
+  }
 }
