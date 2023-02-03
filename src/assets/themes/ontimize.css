@@ -1642,6 +1642,9 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 .o-combo mat-select {
   line-height: normal; }
 
+.o-phone-input mat-select {
+  line-height: normal; }
+
 .o-checkbox .mat-checkbox {
   font-size: 14px; }
   .o-checkbox .mat-checkbox .mat-checkbox-ripple {

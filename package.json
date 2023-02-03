@@ -37,7 +37,7 @@
     "ontimize-web-ngx": "8.9.0",
     "ontimize-web-ngx-charts": "^8.1.0",
     "ontimize-web-ngx-gallery": "8.1.0",
-    "ontimize-web-ngx-theming": "8.4.0",
+    "ontimize-web-ngx-theming": "8.4.1",
     "rxjs": "~6.4.0",
     "tslib": "~1.10.0",
     "zone.js": "~0.9.1"

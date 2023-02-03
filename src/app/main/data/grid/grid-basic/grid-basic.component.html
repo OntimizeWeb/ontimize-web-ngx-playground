@@ -73,7 +73,7 @@
           [sort-column]="sortColumn" [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
           [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value" [show-footer]="showFooterToggle.checked"
           [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'700px'}">
-          <o-grid-item *ngFor="let list of grid.dataArray">
+          <o-grid-item *ngFor="let list of grid.dataArray" grid-item-height="400px">
             <div layout-padding class="container-item">
               <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
               <h4>{{ list.name }}</h4>
