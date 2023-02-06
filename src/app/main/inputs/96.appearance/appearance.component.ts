@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MatCheckbox } from '@angular/material';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 const CUSTOM_INPUT_HTML_DATA = `
 <o-text-input attr="attr" [float-label]="{floatLabel}" [appearance]="{appearanceValue}" [label]="{labelValue}"
