@@ -10,7 +10,7 @@ import { GridUtils } from '../grid.utils';
 
 export class GridFixedComponent {
 
-  @ViewChild('height', { static: false })
+  @ViewChild('height')
   gridHeight: any;
 
   getStaticData() {

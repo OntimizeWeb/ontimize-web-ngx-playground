@@ -8,49 +8,49 @@ import { TableUtils } from '../table-utils';
 })
 export class TableBasicComponent {
 
-  @ViewChild('titleInput', { static: false })
+  @ViewChild('titleInput')
   titleInput: any;
 
-  @ViewChild('controlsToggle', { static: false })
+  @ViewChild('controlsToggle')
   controlsToggle: any;
 
-  @ViewChild('titleToggle', { static: false })
+  @ViewChild('titleToggle')
   titleToggle: any;
 
-  @ViewChild('quickFilterToggle', { static: false })
+  @ViewChild('quickFilterToggle')
   quickFilterToggle: any;
 
-  @ViewChild('filterCaseSensitiveToggle', { static: false })
+  @ViewChild('filterCaseSensitiveToggle')
   filterCaseSensitive: any;
 
-  @ViewChild('buttonAddToggle', { static: false })
+  @ViewChild('buttonAddToggle')
   buttonAddToggle: any;
 
-  @ViewChild('buttonRemoveToggle', { static: false })
+  @ViewChild('buttonRemoveToggle')
   buttonRemoveToggle: any;
 
-  @ViewChild('buttonRefreshToggle', { static: false })
+  @ViewChild('buttonRefreshToggle')
   buttonRefreshToggle: any;
 
-  @ViewChild('selectMultipleToggle', { static: false })
+  @ViewChild('selectMultipleToggle')
   selectMultipleToggle: any;
 
-  @ViewChild('exportButtonToggle', { static: false })
+  @ViewChild('exportButtonToggle')
   exportButtonToggle: any;
 
-  @ViewChild('columnsVisibilityToggle', { static: false })
+  @ViewChild('columnsVisibilityToggle')
   columnsVisibilityToggle: any;
 
-  @ViewChild('showTextToggle', { static: false })
+  @ViewChild('showTextToggle')
   showTextToggle: any;
 
-  @ViewChild('paginationToggle', { static: false })
+  @ViewChild('paginationToggle')
   paginationToggle: any;
 
-  @ViewChild('autoAdjustToggle', { static: false })
+  @ViewChild('autoAdjustToggle')
   autoAdjustToggle: any;
 
-  @ViewChild('horizontalScrollToggle', { static: false })
+  @ViewChild('horizontalScrollToggle')
   horizontalScrollToggle: any;
 
   public data = TableUtils.getCustomers();

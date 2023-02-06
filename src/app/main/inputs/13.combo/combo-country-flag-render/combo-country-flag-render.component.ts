@@ -9,7 +9,7 @@ import { OComboCustomRenderer } from 'ontimize-web-ngx';
 
 export class OComboCountryFlagRendererComponent extends OComboCustomRenderer {
 
-  @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);

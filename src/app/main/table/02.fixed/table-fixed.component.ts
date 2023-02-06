@@ -8,10 +8,10 @@ import { TableUtils } from '../table-utils';
 })
 export class TableFixedComponent {
 
-  @ViewChild('fixedHeaderToggle', { static: false })
+  @ViewChild('fixedHeaderToggle')
   fixedHeaderToggle: any = true;
 
-  @ViewChild('height', { static: false })
+  @ViewChild('height')
   tableHeight: any;
 
   public data = TableUtils.getAccountsTableFixed().slice();

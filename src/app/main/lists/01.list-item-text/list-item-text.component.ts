@@ -40,9 +40,9 @@ export class ListItemTextComponent {
   iconPosition: String = 'right';
   protected staticData = ListsUtils.getListData(10);
 
-  @ViewChild('iconToggle', { static: false })
+  @ViewChild('iconToggle')
   iconToggle: any;
-  @ViewChild('itemIcon', { static: false })
+  @ViewChild('itemIcon')
   itemIcon: any;
 
   insertButtonPosition = 'bottom';

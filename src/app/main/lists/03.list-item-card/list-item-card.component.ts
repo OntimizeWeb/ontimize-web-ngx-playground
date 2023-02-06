@@ -41,25 +41,25 @@ export class ListItemCardComponent {
   iconPosition: String = 'right';
   protected staticData = ListsUtils.getListData();
 
-  @ViewChild('listTitle', { static: false })
+  @ViewChild('listTitle')
   listTitle: any;
-  @ViewChild('insertButtonToggle', { static: false })
+  @ViewChild('insertButtonToggle')
   insertButtonToggle: any;
-  @ViewChild('refreshButtonToggle', { static: false })
+  @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
-  @ViewChild('quickFilterToggle', { static: false })
+  @ViewChild('quickFilterToggle')
   quickFilterToggle: any;
-  @ViewChild('showImageToggle', { static: false })
+  @ViewChild('showImageToggle')
   showImageToggle: any;
-  @ViewChild('action1Toggle', { static: false })
+  @ViewChild('action1Toggle')
   action1Toggle: any;
-  @ViewChild('action2Toggle', { static: false })
+  @ViewChild('action2Toggle')
   action2Toggle: any;
-  @ViewChild('rowHeight', { static: false })
+  @ViewChild('rowHeight')
   rowHeight: any;
-  @ViewChild('actionText1', { static: false })
+  @ViewChild('actionText1')
   actionText1: any;
-  @ViewChild('actionText2', { static: false })
+  @ViewChild('actionText2')
   actionText2: any;
 
   files = {

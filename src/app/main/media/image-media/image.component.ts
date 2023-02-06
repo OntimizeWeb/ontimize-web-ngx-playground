@@ -13,19 +13,19 @@ const HTML_DATA = `
 })
 export class ImageComponent {
 
-  @ViewChild('showControlToggle', { static: false })
+  @ViewChild('showControlToggle')
   showControlToggle: any = true;
 
-  @ViewChild('showFullscreenToggle', { static: false })
+  @ViewChild('showFullscreenToggle')
   showFullscreenToggle: any = false;
 
-  @ViewChild('autoFitToggle', { static: false })
+  @ViewChild('autoFitToggle')
   autoFitToggle: any = false;
 
-  @ViewChild('readOnlyToggle', { static: false })
+  @ViewChild('readOnlyToggle')
   readOnlyToggle: any = false;
 
-  @ViewChild('enabledToggle', { static: false })
+  @ViewChild('enabledToggle')
   enabledToggle: any = false;
 
   height = '';

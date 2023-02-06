@@ -40,33 +40,33 @@ export class ListItemCardImageComponent {
 
   iconPosition: String = 'right';
 
-  @ViewChild('listTitle', { static: false })
+  @ViewChild('listTitle')
   listTitle: any;
-  @ViewChild('refreshButtonToggle', { static: false })
+  @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
-  @ViewChild('imageToggle', { static: false })
+  @ViewChild('imageToggle')
   imageToggle: any;
-  @ViewChild('insertButtonToggle', { static: false })
+  @ViewChild('insertButtonToggle')
   insertButtonToggle: any;
-  @ViewChild('avatarToggle', { static: false })
+  @ViewChild('avatarToggle')
   avatarToggle: any;
-  @ViewChild('collapsibleToggle', { static: false })
+  @ViewChild('collapsibleToggle')
   collapsibleToggle: any;
-  @ViewChild('collapsedToggle', { static: false })
+  @ViewChild('collapsedToggle')
   collapsedToggle: any;
-  @ViewChild('action1Toggle', { static: false })
+  @ViewChild('action1Toggle')
   action1Toggle: any;
-  @ViewChild('action1Text', { static: false })
+  @ViewChild('action1Text')
   action1Text: any;
-  @ViewChild('action2Toggle', { static: false })
+  @ViewChild('action2Toggle')
   action2Toggle: any;
-  @ViewChild('action2Text', { static: false })
+  @ViewChild('action2Text')
   action2Text: any;
-  @ViewChild('iconToggle', { static: false })
+  @ViewChild('iconToggle')
   iconToggle: any;
-  @ViewChild('icon', { static: false })
+  @ViewChild('icon')
   icon: any;
-  @ViewChild('rowHeight', { static: false })
+  @ViewChild('rowHeight')
   rowHeight: any;
 
   files = {
