@@ -4,7 +4,7 @@ import css from 'highlight.js/lib/languages/css';
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
-import { OGalleryModule } from 'ontimize-web-ngx-gallery';
+//import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +28,7 @@ export function getDummyServiceProvider(injector: Injector) {
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule,
-    OGalleryModule
+    //OGalleryModule
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },

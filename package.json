@@ -33,7 +33,6 @@
     "highlight.js": "^9.5.0",
     "node-sass": "^4.14.1",
     "ontimize-web-ngx": "file:../ontimize-web-ngx/dist/ontimize-web-ngx-9.0.0.tgz",
-    "ontimize-web-ngx-gallery": "8.1.0",
     "ontimize-web-ngx-theming": "^8.4.0",
     "rxjs": "~6.6.7",
     "tslib": "^1.10.0",
