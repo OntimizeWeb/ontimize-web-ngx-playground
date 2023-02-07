@@ -30,8 +30,6 @@ export function getDummyServiceProvider(injector: Injector) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    OntimizeWebTranslateModule,
-    OPermissionsModule,
     OntimizeWebModule,
     AppRoutingModule,
     //OGalleryModule
