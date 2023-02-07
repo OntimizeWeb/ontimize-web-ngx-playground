@@ -33,7 +33,7 @@ export class HighlightComponent implements OnInit, OnDestroy {
       if (copyBtn.length) {
         const self = this;
         const element = copyBtn[0];
-        this.clipboard = new window['Clipboard'](element);
+        this.clipboard = new window['Clipboard']();
         this.clipboard.on('success', function (e) {
           self.showTooltip(e.trigger, 'Copied!');
         });

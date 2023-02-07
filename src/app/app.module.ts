@@ -1,9 +1,12 @@
 import { Injector, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import hljs from 'highlight.js/lib/highlight';
 import css from 'highlight.js/lib/languages/css';
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule, OPermissionsModule, OntimizeWebTranslateModule } from 'ontimize-web-ngx';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +28,10 @@ export function getDummyServiceProvider(injector: Injector) {
     AppComponent,
   ],
   imports: [
-    ONTIMIZE_MODULES,
+    BrowserModule,
+    BrowserAnimationsModule,
+    OntimizeWebTranslateModule,
+    OPermissionsModule,
     OntimizeWebModule,
     AppRoutingModule,
     //OGalleryModule
