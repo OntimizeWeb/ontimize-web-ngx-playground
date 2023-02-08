@@ -10,6 +10,6 @@ import { HighlightComponent } from './highlight/highlight.component';
   imports: [OntimizeWebModule, AngularHighlightJsModule],
   declarations: [ExampleComponent, HighlightComponent],
   providers: [NavigationBarService],
-  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent]
+  exports: [ExampleComponent, HighlightComponent]
 })
 export class SharedModule { }
