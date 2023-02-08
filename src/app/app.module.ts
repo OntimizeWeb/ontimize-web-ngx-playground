@@ -19,10 +19,6 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('xml', xml);
 
 
-export function getDummyServiceProvider(injector: Injector) {
-  return new DummyService(injector);
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,17 +26,15 @@ export function getDummyServiceProvider(injector: Injector) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    // OntimizeWebTranslateModule,
+    // OPermissionsModule,
     OntimizeWebModule,
     AppRoutingModule,
     //OGalleryModule
   ],
   providers: [
     { provide: APP_CONFIG, useValue: CONFIG },
-    {
-      provide: 'DummyService',
-      useFactory: getDummyServiceProvider,
-      deps: [Injector]
-    },
+    { provide: 'DummyService', useValue: DummyService },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
