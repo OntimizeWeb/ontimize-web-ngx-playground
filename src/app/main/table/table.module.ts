@@ -17,22 +17,13 @@ import { TableInsertableRowComponent } from './11.insertablerow/table-insertable
 import { TableAlignmentComponent } from './12.alignment/table-alignment.component';
 import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
 import { TableRowExpandableBasicComponent } from './14.expandableRow/basic/table-row-expandable-basic.component';
-import {
-  TableRowExpandableWithContainerComponent
-} from './14.expandableRow/expandable-container/table-row-expandable-with-expandable-container.component';
-import {
-  TableRowExpandableFunctionAsyncComponent
-} from './14.expandableRow/expandable-function-async/table-row-expandable-function-async.component';
-import {
-  TableRowExpandableFunctionSyncComponent
-} from './14.expandableRow/expandable-function-sync/table-row-expandable-function-sync.component';
+import { TableRowExpandableWithContainerComponent } from './14.expandableRow/expandable-container/table-row-expandable-with-expandable-container.component';
+import { TableRowExpandableFunctionAsyncComponent } from './14.expandableRow/expandable-function-async/table-row-expandable-function-async.component';
+import { TableRowExpandableFunctionSyncComponent } from './14.expandableRow/expandable-function-sync/table-row-expandable-function-sync.component';
 import { TableRowExpandableMultipleComponent } from './14.expandableRow/multiple/table-row-expandable-multiple.component';
 import { TableRowExpandableComponent } from './14.expandableRow/table-row-expandable.component';
-import {
-  TableRowExpandableWithoutButtonComponent
-} from './14.expandableRow/without-button/table-row-expandable-without-button.component';
+import { TableRowExpandableWithoutButtonComponent } from './14.expandableRow/without-button/table-row-expandable-without-button.component';
 import { TableRowGroupComponent } from './15.rowGrouping/table-row-group.component';
-import { OTableCellEditorCustomComponent } from './edit/o-table-cell-editor-custom.component';
 import { OTableColumnRendererBalanceComponent } from './renderer/o-table-column-renderer-balance.component';
 import { OTableColumnRendererCardTypeComponent } from './renderer/o-table-column-renderer-cardtype.component';
 import { OTableColumnRendererTotalReadyComponent } from './renderer/o-table-column-renderer-totalready.component';
@@ -50,6 +41,9 @@ import { TableComponent } from './table.component';
     TableBasicComponent,
     TableFixedComponent,
     TableRendererComponent,
+    OTableColumnRendererCardTypeComponent,
+    OTableColumnRendererBalanceComponent,
+    OTableColumnRendererTotalReadyComponent,
     TableCustomRendererComponent,
     TableEditorComponent,
     TableTotalComponent,
@@ -58,12 +52,8 @@ import { TableComponent } from './table.component';
     TableContextMenuComponent,
     TableHorizontalScrollComponent,
     TableInsertableRowComponent,
-    OTableCellEditorCustomComponent,
     TableAlignmentComponent,
     TableMultipleSortComponent,
-    OTableColumnRendererCardTypeComponent,
-    OTableColumnRendererBalanceComponent,
-    OTableColumnRendererTotalReadyComponent,
     TableRowExpandableBasicComponent,
     TableRowExpandableFunctionSyncComponent,
     TableRowExpandableFunctionAsyncComponent,
