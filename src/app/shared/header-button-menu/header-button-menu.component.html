@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="start center" class="header-container">
+  <div fxLayout="column" fxLayoutAlign="start start">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button *ngIf="!expanded" (click)="expand()" class="col-button">
+        <mat-icon svgIcon="ontimize:menu"></mat-icon>
+      </button>
+
+      <h3>{{compName}}</h3>
+    </div>
+    <p *ngIf="expanded">{{compDesc}}</p>
+    <p *ngIf="!expanded" class="description">{{compDesc}}</p>
+  </div>
+</div>

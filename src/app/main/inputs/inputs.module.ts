@@ -34,6 +34,7 @@ import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsRoutingModule } from './inputs-routing.module';
 import { InputsComponent } from './inputs.component';
 
@@ -79,7 +80,8 @@ import { InputsComponent } from './inputs.component';
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,
-    InputPhoneComponent
+    InputPhoneComponent,
+    InputsHomeComponent
   ]
 })
 export class InputsModule { }

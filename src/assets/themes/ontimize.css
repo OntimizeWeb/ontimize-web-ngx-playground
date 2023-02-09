@@ -1,6 +1,16 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
+/*Sidenav background-color*/
+/* Foreground color */
+/*Application background-color*/
+/*Sidenav background-color*/
+/* Light theme */
+/* Dark theme */
 .mat-badge-content {
   font-weight: 600;
   font-size: 12px;
@@ -584,8 +594,15 @@ textarea.cdk-textarea-autosize-measuring {
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
 .report-on-demand-sidenav .mat-expansion-panel {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
+
+.title-sidenav-content {
+  background-color: #ffffff; }
 
 [layout-padding-vertical] {
   padding: 4px 0; }
@@ -651,7 +668,7 @@ o-app-header .o-app-header-title {
 /* FORM */
 .o-form-toolbar .mat-toolbar {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-  background-color: #fafafa;
+  background-color: #e4e6e8;
   border-radius: 2px;
   min-height: initial; }
 
@@ -740,9 +757,642 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 .mat-menu-panel.o-search-input-menu .mat-checkbox {
   padding: 2px 0; }
 
+/*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #e6e7e9; }
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #f2f2f2; }
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #f6f6f6; }
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #fafafa; }
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: white; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 /*
-* After define theme, it is necessary to transfer color to Ontimize Web framework
+*
+*  Responsive attributes
+*
+*  References:
+*  1) https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties#flex
+*  2) https://css-tricks.com/almanac/properties/f/flex/
+*  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
+*  5) http://godban.com.ua/projects/flexgrid
+*
 */
+/*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJbecmNE.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJnecmNE.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/*it's necessary redefined the font size of the checkbox*/
+/*
+  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
+   set line-height to normal as user-agent set in the inputs
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*
+*
+*  Responsive attributes
+*
+*  References:
+*  1) https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties#flex
+*  2) https://css-tricks.com/almanac/properties/f/flex/
+*  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
+*  5) http://godban.com.ua/projects/flexgrid
+*
+*/
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
+.report-on-demand-sidenav .mat-expansion-panel {
+  background-color: #e4e6e8; }
+
+.title-sidenav-content {
+  background-color: #ffffff; }
+
+[layout-padding-vertical] {
+  padding: 4px 0; }
+
+[layout-margin-vertical] {
+  margin: 4px 0; }
+
+[layout-padding-horizontal] {
+  padding: 0 14px; }
+
+[layout-margin-horizontal] {
+  margin: 0 14px; }
+
+[layout-padding-left] {
+  padding-left: 14px; }
+
+[layout-margin-left] {
+  margin-left: 14px; }
+
+[layout-padding-right] {
+  padding-right: 14px; }
+
+[layout-margin-right] {
+  margin-right: 14px; }
+
+[layout-padding-top] {
+  padding-top: 4px; }
+
+[layout-margin-top] {
+  margin-top: 4px; }
+
+[layout-padding-bottom] {
+  padding-bottom: 4px; }
+
+[layout-margin-bottom] {
+  margin-bottom: 4px; }
+
+/* CONTAINER */
+.rounded-panel,
+.standalone-chart-container,
+.standalone-form-container .o-form-content-wrapper {
+  background: white;
+  border-radius: 2px; }
+
+.standalone-chart-container {
+  margin-top: 48px; }
+
+.standalone-form-container .inner-form {
+  padding: 16px; }
+
+/* APP SIDENAV */
+.o-app-sidenav {
+  font-weight: 400;
+  color: #aaaaaa; }
+
+/* USER INFO */
+o-app-header .o-app-header-title {
+  font-weight: 700; }
+
+.o-app-header {
+  background-color: white; }
+
+/* FORM */
+.o-form-toolbar .mat-toolbar {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
+  background-color: #e4e6e8;
+  border-radius: 2px;
+  min-height: initial; }
+
+/* TABS */
+.mat-tab-group .mat-tab-label,
+.mat-tab-group .mat-tab-link {
+  opacity: .75; }
+  .mat-tab-group .mat-tab-label.mat-tab-label-active,
+  .mat-tab-group .mat-tab-link.mat-tab-label-active {
+    opacity: .95; }
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-header {
+  border: none; }
+  .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+    background: #D7DDE0;
+    padding: 0; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
+      text-overflow: clip;
+      position: relative; }
+      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
+        width: 12px;
+        background: linear-gradient(to right, transparent, #D7DDE0 100%);
+        height: 100%;
+        position: absolute;
+        right: 0; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+      border-left: 1px solid rgba(0, 0, 0, 0.12); }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
+      padding: 0 8px;
+      width: 100%; }
+    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
+      background: white; }
+      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
+        background: linear-gradient(to right, transparent, white 100%); }
+  .mat-tab-group.o-tab-ontimize > .mat-tab-header mat-ink-bar {
+    display: none; }
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+  background: white;
+  border-radius: 2px;
+  border-top: none;
+  border-top-left-radius: initial; }
+
+.mat-tab-group.mat-tab-group .mat-tab-body-wrapper {
+  padding: 8px; }
+
+/* BUTTON */
+button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-raised-button, button.mat-stroked-button {
+  border-radius: 2px; }
+
+/* TABLE */
+.ontimize-table.o-table {
+  font-weight: 400; }
+  .ontimize-table.o-table .o-table-container {
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    /*Toolbar*/ }
+    .ontimize-table.o-table .o-table-container .o-table-toolbar {
+      margin: 0 0 4px;
+      padding-top: 8px; }
+    .ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
+      background: rgba(0, 0, 0, 0.12); }
+    .ontimize-table.o-table .o-table-container thead tr th {
+      font-weight: 700; }
+    .ontimize-table.o-table .o-table-container tbody tr.even,
+    .ontimize-table.o-table .o-table-container thead tr {
+      background-color: inherit; }
+    .ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+    .ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+      background-color: #1464a5; }
+    .ontimize-table.o-table .o-table-container .mat-header-cell {
+      font-weight: 700; }
+  .ontimize-table.o-table .mat-paginator {
+    background: inherit; }
+  .ontimize-table.o-table .mat-table .mat-header-row .mat-header-cell {
+    font-weight: 700; }
+
+.ontimize-table.o-table.o-table-fixed .o-scrollable-container {
+  height: 100%;
+  overflow-y: auto; }
+
+.mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+  padding: 2px 0; }
+
+.mat-menu-panel.o-search-input-menu .mat-checkbox {
+  padding: 2px 0; }
+
+/*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #e6e7e9; }
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #f2f2f2; }
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #f6f6f6; }
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #fafafa; }
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: white; }
+
+.o-table-quickfilter-menu .mat-checkbox {
+  font-size: 14px; }
+  .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
+    width: 16px;
+    height: 16px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-header-cell {
+  font-weight: 600; }
+  .o-table.o-table .o-table-container .mat-table .mat-header-cell .column-filter-icon {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px; }
+
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
+  height: 30px;
+  border: none;
+  padding: 0 6px;
+  border-radius: 0; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
+    border: none;
+    border-radius: 0; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+    border: none;
+    border-radius: 0; }
+
+.o-table.o-table .o-table-container .mat-table .mat-form-field .mat-form-field-infix {
+  border-top: 0; }
+
+.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:not(.o-column-image):first-of-type {
+  padding-left: 12px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:last-of-type {
+  padding-right: 12px; }
+
+.o-table.o-table .o-table-container .mat-table .mat-cell.mat-column-select,
+.o-table.o-table .o-table-container .mat-table .mat-header-cell.mat-column-select {
+  padding: 0 0 0 12px; }
+
+.o-table-export-dialog.o-table-export-dialog .mat-raised-button {
+  width: 68px;
+  height: 68px;
+  min-width: 68px; }
+  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-button-wrapper > div {
+    line-height: 1; }
+  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-icon {
+    padding: 0 6px 6px;
+    width: 38px;
+    height: 38px;
+    font-size: 38px; }
+
+.mat-form-field.mat-form-field {
+  font-size: 14px; }
+  .mat-form-field.mat-form-field.mat-form-field-invalid .mat-error {
+    display: none; }
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .icon-btn,
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon-button,
+  .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-suffix .mat-icon-button {
+    height: 1.4em;
+    width: 1.4em; }
+  .mat-form-field.mat-form-field.input-image.icon-field .mat-input-infix.mat-form-field-infix {
+    line-height: 16px; }
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
+    height: 20px;
+    width: 20px; }
+  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon-button .mat-icon,
+  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button .mat-icon {
+    font-size: 140%; }
+  .mat-form-field.mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0em; }
+  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon,
+  .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon {
+    font-size: 140%;
+    height: 1em; }
+  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button {
+    height: 1.4em;
+    width: 1.4em; }
+    .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button .mat-icon,
+    .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button .mat-icon {
+      height: 1em;
+      line-height: 1; }
+  .mat-form-field.mat-form-field .mat-form-field-infix {
+    padding: 0.3em 0;
+    border-top: 0.75em solid transparent; }
+  .mat-form-field.mat-form-field .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.05em) scale(0.75);
+    width: 133.33333%; }
+  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.04999em) scale(0.75);
+    width: 133.33334%; }
+  .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
+    top: -0.75em;
+    padding-top: 0.75em; }
+  .mat-form-field.mat-form-field .mat-form-field-label {
+    top: 1.05em; }
+  .mat-form-field.mat-form-field .mat-form-field-underline {
+    bottom: 0em; }
+  .mat-form-field.mat-form-field .mat-form-field-subscript-wrapper {
+    font-size: 75%;
+    margin-top: 0.4em;
+    top: calc(100% - 0em); }
+
+.o-combo mat-select {
+  line-height: normal; }
+
+.o-phone-input mat-select {
+  line-height: normal; }
+
+.o-checkbox .mat-checkbox {
+  font-size: 14px; }
+  .o-checkbox .mat-checkbox .mat-checkbox-ripple {
+    left: calc(50% - 17px);
+    top: calc(50% - 17px);
+    height: 34px;
+    width: 34px; }
+
+.o-checkbox .mat-checkbox-inner-container {
+  width: 15px;
+  height: 15px; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0.105em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.35em 0; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.25em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0.105em; }
+
+.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-top: 0.4em;
+  top: calc(100% - 0.14em); }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0.25em 0.25em 0 0.25em !important; }
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.25em 0 0.3em !important; }
+
+.mat-form-field-appearance-fill .mat-form-field-label {
+  top: 1em !important;
+  margin-top: -0.5em !important; }
+
+.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.5em) scale(0.75) !important;
+  width: 133.33333%; }
+
+.mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.5em) scale(0.75) !important;
+  width: 133.33333%; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding-bottom: 0; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.3em 0; }
+
+.mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
+  top: 1.05em;
+  margin-top: -0.25em; }
+
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.8em) scale(0.75);
+  width: 133.33333%; }
+
+.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.79999em) scale(0.75);
+  width: 133.33334%; }
+
+.mat-form-field-appearance-standard .mat-form-field-flex {
+  padding: 0.25em 0.25em 0 0.25em !important; }
+
+.o-column > .o-container > .o-container-title,
+.o-row > .o-container > .o-container-title {
+  line-height: 30px;
+  height: 30px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+  padding-left: 4px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 10px 6px 6px; }
+
+.o-column > .o-container .o-container-scroll.o-container-gap,
+.o-row > .o-container .o-container-scroll.o-container-gap {
+  padding: 10px 6px 6px; }
+
+.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+  padding: 12px; }
+
+.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 12px; }
+
+/* O-APP-LAYOUT */
+.o-app-sidenav.o-app-sidenav .o-app-header .sidenav-toggle {
+  padding: 8px; }
+
+/* MD-TAB-GROUP */
+.mat-tab-group.mat-tab-group > .mat-tab-header .mat-tab-label {
+  height: 32px; }
+
+/* MAT-PAGINATOR */
+.mat-paginator-container {
+  min-height: 0; }
+  .mat-paginator-container .mat-paginator-page-size {
+    align-items: center; }
+    .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select {
+      margin: 6px 0; }
+      .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
+        transform: initial; }
+      .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
+        border-top: 0; }
+  .mat-paginator-container .mat-paginator-range-actions {
+    min-height: 0; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.after, .mat-tooltip-panel .o-tooltip.mat-tooltip.right {
+  margin-left: 5px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.before, .mat-tooltip-panel .o-tooltip.mat-tooltip.left {
+  margin-right: 5px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.above {
+  margin-bottom: -15px; }
+
+.mat-tooltip-panel .o-tooltip.mat-tooltip.below {
+  margin-top: 5px; }
+
+.o-filter-by-column-dialog .select-all-checkbox {
+  margin-top: 10px; }
+
+@media (max-width: 599px) {
+  .o-list-picker-dialog.o-list-picker-dialog .mat-dialog-content.o-list-picker-has-filter {
+    max-height: calc(100% - 105px);
+    min-height: calc(100% - 105px); } }
+
+.o-search-input-menu .mat-checkbox {
+  font-size: 14px; }
+  .o-search-input-menu .mat-checkbox .mat-checkbox-inner-container {
+    width: 16px;
+    height: 16px; }
+
+[layout-padding] > [flex-lt-md],
+[layout-padding] > [flex-sm] {
+  padding: 2px; }
+
+[layout-padding],
+[layout-padding] > [flex-gt-sm],
+[layout-padding] > [flex-lt-lg],
+[layout-padding] > [flex-md],
+[layout-padding] > [flex] {
+  padding: 4px; }
+
+[layout-padding] > [flex-gt-md],
+[layout-padding] > [flex-lg] {
+  padding: 8px; }
+
+[layout-margin] > [flex-lt-md],
+[layout-margin] > [flex-sm] {
+  margin: 2px; }
+
+[layout-margin],
+[layout-margin] > [flex-gt-sm],
+[layout-margin] > [flex-lt-lg],
+[layout-margin] > [flex-md],
+[layout-margin] > [flex] {
+  margin: 4px; }
+
+[layout-margin] > [flex-gt-md],
+[layout-margin] > [flex-lg] {
+  margin: 8px; }
+
+[layout-wrap] {
+  flex-wrap: wrap; }
+
+[layout-nowrap] {
+  flex-wrap: nowrap; }
+
+[layout-padding-vertical] {
+  padding: 4px 0; }
+
+[layout-margin-vertical] {
+  margin: 4px 0; }
+
+[layout-padding-horizontal] {
+  padding: 0 14px; }
+
+[layout-margin-horizontal] {
+  margin: 0 14px; }
+
+[layout-padding-left] {
+  padding-left: 14px; }
+
+[layout-margin-left] {
+  margin-left: 14px; }
+
+[layout-padding-right] {
+  padding-right: 14px; }
+
+[layout-margin-right] {
+  margin-right: 14px; }
+
+[layout-padding-top] {
+  padding-top: 4px; }
+
+[layout-margin-top] {
+  margin-top: 4px; }
+
+[layout-padding-bottom] {
+  padding-bottom: 4px; }
+
+[layout-margin-bottom] {
+  margin-bottom: 4px; }
+
+.o-form .o-form-toolbar .o-form-toolbar-header {
+  min-height: 36px;
+  max-height: 36px;
+  padding: 0 4px;
+  box-shadow: none;
+  font-size: 16px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
+    height: 28px;
+    padding: 8px;
+    min-height: 72px;
+    max-height: 72px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
+    border-radius: 0; }
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-icon-button,
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-icon-button {
+      height: 30px;
+      line-height: 30px;
+      width: 30px; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
@@ -815,66 +1465,63 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-size: 24px; }
 
 .mat-h1, .mat-headline, .mat-typography h1 {
-  font: 400 24px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 24px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h2, .mat-title, .mat-typography h2 {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h3, .mat-subheading-2, .mat-typography h3 {
-  font: 400 16px/28px Poppins, "Helvetica Neue", sans-serif;
+  font: 600 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h4, .mat-subheading-1, .mat-typography h4 {
-  font: 400 15px/24px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 14px/18px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
 .mat-h5, .mat-typography h5 {
-  font: 400 calc(14px * 0.83)/20px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 calc(12px * 0.83)/15px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 12px; }
 
 .mat-h6, .mat-typography h6 {
-  font: 400 calc(14px * 0.67)/20px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 calc(12px * 0.67)/15px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 12px; }
 
 .mat-body-strong, .mat-body-2 {
-  font: 500 14px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-body, .mat-body-1, .mat-typography {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
   .mat-body p, .mat-body-1 p, .mat-typography p {
     margin: 0 0 12px; }
 
 .mat-small, .mat-caption {
-  font: 400 12px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 11px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-display-4, .mat-typography .mat-display-4 {
-  font: 300 112px/112px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.05em;
+  font: 300 84px/92px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 56px; }
 
 .mat-display-3, .mat-typography .mat-display-3 {
-  font: 400 56px/56px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.02em;
+  font: 400 42px/42px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-display-2, .mat-typography .mat-display-2 {
-  font: 400 45px/48px Poppins, "Helvetica Neue", sans-serif;
-  letter-spacing: -0.005em;
+  font: 400 34px/36px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-display-1, .mat-typography .mat-display-1 {
-  font: 400 34px/40px Poppins, "Helvetica Neue", sans-serif;
+  font: 400 26px/30px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-bottom-sheet-container {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button,
 .mat-flat-button, .mat-fab, .mat-mini-fab {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-button-toggle {
@@ -888,20 +1535,20 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 500; }
 
 .mat-card-header .mat-card-title {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .mat-card-subtitle,
 .mat-card-content {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-checkbox {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-checkbox-layout .mat-checkbox-label {
-  line-height: 24px; }
+  line-height: 18px; }
 
 .mat-chip {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
   .mat-chip .mat-chip-trailing-icon.mat-icon,
   .mat-chip .mat-chip-remove.mat-icon {
@@ -911,11 +1558,11 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-header-cell {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-cell, .mat-footer-cell {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-calendar {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
@@ -925,7 +1572,7 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 
 .mat-calendar-body-label,
 .mat-calendar-period-button {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-calendar-table-header th {
@@ -933,29 +1580,26 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   font-weight: 400; }
 
 .mat-dialog-title {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400; }
 
 .mat-expansion-panel-content {
-  font: 400 14px/20px Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field {
-  font-size: inherit;
-  font-weight: 400;
-  line-height: 1.125;
-  font-family: Poppins, "Helvetica Neue", sans-serif; }
+  font: 400 14px/1 Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-form-field-wrapper {
-  padding-bottom: 1.34375em; }
+  padding-bottom: 1.25em; }
 
 .mat-form-field-prefix .mat-icon,
 .mat-form-field-suffix .mat-icon {
   font-size: 150%;
-  line-height: 1.125; }
+  line-height: 1; }
 
 .mat-form-field-prefix .mat-icon-button,
 .mat-form-field-suffix .mat-icon-button {
@@ -963,120 +1607,120 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
   width: 1.5em; }
   .mat-form-field-prefix .mat-icon-button .mat-icon,
   .mat-form-field-suffix .mat-icon-button .mat-icon {
-    height: 1.125em;
-    line-height: 1.125; }
+    height: 1em;
+    line-height: 1; }
 
 .mat-form-field-infix {
   padding: 0.5em 0;
-  border-top: 0.84375em solid transparent; }
+  border-top: 0.75em solid transparent; }
 
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.34375em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.34374em) scale(0.75);
+  transform: translateY(-1.24999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-label-wrapper {
-  top: -0.84375em;
-  padding-top: 0.84375em; }
+  top: -0.75em;
+  padding-top: 0.75em; }
 
 .mat-form-field-label {
-  top: 1.34375em; }
+  top: 1.25em; }
 
 .mat-form-field-underline {
-  bottom: 1.34375em; }
+  bottom: 1.25em; }
 
 .mat-form-field-subscript-wrapper {
   font-size: 75%;
   margin-top: 0.66667em;
-  top: calc(100% - 1.79167em); }
+  top: calc(100% - 1.66667em); }
 
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding: 0.4375em 0; }
+  padding: 0.5em 0; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
-  -ms-transform: translateY(-1.28125em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.001px);
+  -ms-transform: translateY(-1.25em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00101px);
-  -ms-transform: translateY(-1.28124em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00101px);
+  -ms-transform: translateY(-1.24999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00102px);
-  -ms-transform: translateY(-1.28123em) scale(0.75);
+  transform: translateY(-1.25em) scale(0.75) perspective(100px) translateZ(0.00102px);
+  -ms-transform: translateY(-1.24998em) scale(0.75);
   width: 133.33335%; }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  top: 1.28125em; }
+  top: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 1.25em; }
 
 .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
-  margin-top: 0.54167em;
+  margin-top: 0.66667em;
   top: calc(100% - 1.66667em); }
 
 @media print {
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    transform: translateY(-1.28122em) scale(0.75); }
+    transform: translateY(-1.24997em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.28121em) scale(0.75); }
+    transform: translateY(-1.24996em) scale(0.75); }
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-    transform: translateY(-1.2812em) scale(0.75); } }
+    transform: translateY(-1.24995em) scale(0.75); } }
 
 .mat-form-field-appearance-fill .mat-form-field-infix {
   padding: 0.25em 0 0.75em 0; }
 
 .mat-form-field-appearance-fill .mat-form-field-label {
-  top: 1.09375em;
+  top: 1em;
   margin-top: -0.5em; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.59375em) scale(0.75);
+  transform: translateY(-0.5em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-0.59374em) scale(0.75);
+  transform: translateY(-0.49999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1em 0; }
 
 .mat-form-field-appearance-outline .mat-form-field-label {
-  top: 1.84375em;
+  top: 1.75em;
   margin-top: -0.25em; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-1.59375em) scale(0.75);
+  transform: translateY(-1.5em) scale(0.75);
   width: 133.33333%; }
 
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
-  transform: translateY(-1.59374em) scale(0.75);
+  transform: translateY(-1.49999em) scale(0.75);
   width: 133.33334%; }
 
 .mat-grid-tile-header,
 .mat-grid-tile-footer {
-  font-size: 14px; }
+  font-size: 12px; }
   .mat-grid-tile-header .mat-line,
   .mat-grid-tile-footer .mat-line {
     white-space: nowrap;
@@ -1086,20 +1730,20 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     box-sizing: border-box; }
     .mat-grid-tile-header .mat-line:nth-child(n+2),
     .mat-grid-tile-footer .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 input.mat-input-element {
-  margin-top: -0.0625em; }
+  margin-top: 0em; }
 
 .mat-menu-item {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400; }
 
 .mat-paginator,
 .mat-paginator-page-size .mat-select-trigger {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px; }
+  font-size: 11px; }
 
 .mat-radio-button {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
@@ -1108,31 +1752,31 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-select-trigger {
-  height: 1.125em; }
+  height: 1em; }
 
 .mat-slide-toggle-content {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-slider-thumb-label-text {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-stepper-vertical, .mat-stepper-horizontal {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-step-label {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400; }
 
 .mat-step-sub-label-error {
   font-weight: normal; }
 
 .mat-step-label-error {
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-step-label-selected {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
 
 .mat-tab-group {
@@ -1140,7 +1784,7 @@ input.mat-input-element {
 
 .mat-tab-label, .mat-tab-link {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500; }
 
 .mat-toolbar,
@@ -1150,7 +1794,7 @@ input.mat-input-element {
 .mat-toolbar h4,
 .mat-toolbar h5,
 .mat-toolbar h6 {
-  font: 500 20px/32px Poppins, "Helvetica Neue", sans-serif;
+  font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0; }
 
 .mat-tooltip {
@@ -1171,7 +1815,7 @@ input.mat-input-element {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-list-base .mat-list-item {
-  font-size: 16px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1179,10 +1823,10 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 14px; }
+      font-size: 12px; }
 
 .mat-list-base .mat-list-option {
-  font-size: 16px; }
+  font-size: 14px; }
   .mat-list-base .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1190,15 +1834,15 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 14px; }
+      font-size: 12px; }
 
 .mat-list-base .mat-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500; }
 
 .mat-list-base[dense] .mat-list-item {
-  font-size: 12px; }
+  font-size: 11px; }
   .mat-list-base[dense] .mat-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1206,10 +1850,10 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base[dense] .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 .mat-list-base[dense] .mat-list-option {
-  font-size: 12px; }
+  font-size: 11px; }
   .mat-list-base[dense] .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
@@ -1217,23 +1861,23 @@ input.mat-input-element {
     display: block;
     box-sizing: border-box; }
     .mat-list-base[dense] .mat-list-option .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 .mat-list-base[dense] .mat-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500; }
 
 .mat-option {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 16px; }
+  font-size: 14px; }
 
 .mat-optgroup-label {
-  font: 500 14px/24px Poppins, "Helvetica Neue", sans-serif; }
+  font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-simple-snackbar {
   font-family: Poppins, "Helvetica Neue", sans-serif;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-simple-snackbar-action {
   line-height: 1;
@@ -1247,7 +1891,7 @@ input.mat-input-element {
 .mat-tree-node,
 .mat-nested-tree-node {
   font-weight: 400;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .mat-ripple {
   overflow: hidden;
@@ -1396,7 +2040,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-pseudo-checkbox {
   color: rgba(0, 0, 0, 0.54); }
   .mat-pseudo-checkbox::after {
-    color: #fafafa; }
+    color: #e4e6e8; }
 
 .mat-pseudo-checkbox-disabled {
   color: #b0b0b0; }
@@ -1495,7 +2139,7 @@ textarea.cdk-textarea-autosize-measuring {
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }
 
 .mat-app-background {
-  background-color: #fafafa;
+  background-color: #e4e6e8;
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-theme-loaded-marker {
@@ -1534,7 +2178,7 @@ textarea.cdk-textarea-autosize-measuring {
   display: none; }
 
 .mat-badge-disabled .mat-badge-content {
-  background: #b9b9b9;
+  background: #8d8f90;
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-badge-content {
@@ -1688,7 +2332,7 @@ textarea.cdk-textarea-autosize-measuring {
   .mat-button.mat-warn, .mat-icon-button.mat-warn, .mat-stroked-button.mat-warn {
     color: #f44336; }
   .mat-button.mat-primary[disabled], .mat-button.mat-accent[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-icon-button.mat-primary[disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-stroked-button.mat-primary[disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled] {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(0, 0, 0, 0.38); }
   .mat-button.mat-primary .mat-button-focus-overlay, .mat-icon-button.mat-primary .mat-button-focus-overlay, .mat-stroked-button.mat-primary .mat-button-focus-overlay {
     background-color: #1464a5; }
   .mat-button.mat-accent .mat-button-focus-overlay, .mat-icon-button.mat-accent .mat-button-focus-overlay, .mat-stroked-button.mat-accent .mat-button-focus-overlay {
@@ -1702,7 +2346,7 @@ textarea.cdk-textarea-autosize-measuring {
     background-color: currentColor; }
 
 .mat-button-focus-overlay {
-  background: black; }
+  background: rgba(0, 0, 0, 0.6); }
 
 .mat-stroked-button:not([disabled]) {
   border-color: rgba(0, 0, 0, 0.12); }
@@ -1717,7 +2361,7 @@ textarea.cdk-textarea-autosize-measuring {
   .mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
     color: white; }
   .mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(0, 0, 0, 0.38); }
   .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
     background-color: #1464a5; }
   .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
@@ -1792,7 +2436,7 @@ textarea.cdk-textarea-autosize-measuring {
     color: rgba(0, 0, 0, 0.87); }
 
 .mat-button-toggle-disabled {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.38);
   background-color: #eeeeee; }
   .mat-button-toggle-disabled.mat-button-toggle-appearance-standard {
     background: white; }
@@ -1818,16 +2462,16 @@ textarea.cdk-textarea-autosize-measuring {
   border-color: rgba(0, 0, 0, 0.54); }
 
 .mat-checkbox-checkmark {
-  fill: #fafafa; }
+  fill: #e4e6e8; }
 
 .mat-checkbox-checkmark-path {
-  stroke: #fafafa !important; }
+  stroke: #e4e6e8 !important; }
   @media (-ms-high-contrast: black-on-white) {
     .mat-checkbox-checkmark-path {
       stroke: #000 !important; } }
 
 .mat-checkbox-mixedmark {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
   background-color: #1464a5; }
@@ -1856,7 +2500,7 @@ textarea.cdk-textarea-autosize-measuring {
     background: none; } }
 
 .mat-checkbox .mat-ripple-element {
-  background-color: black; }
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
@@ -1883,7 +2527,7 @@ textarea.cdk-textarea-autosize-measuring {
   .mat-chip.mat-standard-chip.mat-chip-disabled {
     opacity: 0.4; }
   .mat-chip.mat-standard-chip::after {
-    background: black; }
+    background: rgba(0, 0, 0, 0.6); }
 
 .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
   background-color: #1464a5;
@@ -1932,12 +2576,12 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-calendar-arrow {
-  border-top-color: rgba(0, 0, 0, 0.54); }
+  border-top-color: rgba(0, 0, 0, 0.6); }
 
 .mat-datepicker-toggle,
 .mat-datepicker-content .mat-calendar-next-button,
 .mat-datepicker-content .mat-calendar-previous-button {
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.6); }
 
 .mat-calendar-table-header {
   color: rgba(0, 0, 0, 0.38); }
@@ -2043,7 +2687,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: rgba(0, 0, 0, 0.54); }
 
 .mat-expansion-panel-header[aria-disabled='true'] {
-  color: rgba(0, 0, 0, 0.26); }
+  color: rgba(0, 0, 0, 0.38); }
   .mat-expansion-panel-header[aria-disabled='true'] .mat-expansion-panel-header-title,
   .mat-expansion-panel-header[aria-disabled='true'] .mat-expansion-panel-header-description {
     color: inherit; }
@@ -2226,7 +2870,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 .mat-menu-item .mat-icon-no-color,
 .mat-menu-item-submenu-trigger::after {
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.6); }
 
 .mat-menu-item:hover:not([disabled]),
 .mat-menu-item.cdk-program-focused:not([disabled]),
@@ -2243,12 +2887,12 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 .mat-paginator-decrement,
 .mat-paginator-increment {
-  border-top: 2px solid rgba(0, 0, 0, 0.54);
-  border-right: 2px solid rgba(0, 0, 0, 0.54); }
+  border-top: 2px solid rgba(0, 0, 0, 0.6);
+  border-right: 2px solid rgba(0, 0, 0, 0.6); }
 
 .mat-paginator-first,
 .mat-paginator-last {
-  border-top: 2px solid rgba(0, 0, 0, 0.54); }
+  border-top: 2px solid rgba(0, 0, 0, 0.6); }
 
 .mat-icon-button[disabled] .mat-paginator-decrement,
 .mat-icon-button[disabled] .mat-paginator-increment,
@@ -2334,7 +2978,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-radio-button .mat-ripple-element {
-  background-color: black; }
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .mat-select-value {
   color: rgba(0, 0, 0, 0.87); }
@@ -2371,7 +3015,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-drawer-container {
-  background-color: #fafafa;
+  background-color: #e4e6e8;
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-drawer {
@@ -2426,7 +3070,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   background-color: #f44336; }
 
 .mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
-  background-color: black; }
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .mat-slide-toggle-thumb {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -2436,7 +3080,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-track-background {
-  background-color: rgba(0, 0, 0, 0.26); }
+  background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-primary .mat-slider-track-fill,
 .mat-primary .mat-slider-thumb,
@@ -2472,31 +3116,31 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-slider-disabled .mat-slider-track-background,
 .mat-slider-disabled .mat-slider-track-fill,
 .mat-slider-disabled .mat-slider-thumb {
-  background-color: rgba(0, 0, 0, 0.26); }
+  background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-disabled:hover .mat-slider-track-background {
-  background-color: rgba(0, 0, 0, 0.26); }
+  background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-min-value .mat-slider-focus-ring {
   background-color: rgba(0, 0, 0, 0.12); }
 
 .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb,
 .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb-label {
-  background-color: rgba(0, 0, 0, 0.87); }
+  background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb,
 .mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb-label {
-  background-color: rgba(0, 0, 0, 0.26); }
+  background-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
-  border-color: rgba(0, 0, 0, 0.26);
+  border-color: rgba(0, 0, 0, 0.38);
   background-color: transparent; }
 
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
   border-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover.mat-slider-disabled .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused.mat-slider-disabled .mat-slider-thumb {
-  border-color: rgba(0, 0, 0, 0.26); }
+  border-color: rgba(0, 0, 0, 0.38); }
 
 .mat-slider-has-ticks .mat-slider-wrapper::after {
   border-color: rgba(0, 0, 0, 0.7); }
@@ -2690,7 +3334,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   background-color: rgba(255, 255, 255, 0.12); }
 
 .mat-toolbar {
-  background: whitesmoke;
+  background: #eff1f3;
   color: rgba(0, 0, 0, 0.87); }
   .mat-toolbar.mat-primary {
     background: #1464a5;
@@ -2734,7 +3378,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 body,
 html {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 button,
 html,
@@ -2745,15 +3389,15 @@ textarea {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   background-color: transparent;
   opacity: 1.0; }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 0;
-  background-color: transparent; }
+  background-color: #c7c7c7; }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
@@ -2798,8 +3442,8 @@ textarea {
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-title {
   border-bottom: 1px solid #1464a5;
-  line-height: 16px;
-  font-size: 16px; }
+  line-height: 14px;
+  font-size: 14px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-title .mat-icon {
@@ -2813,7 +3457,7 @@ textarea {
 .o-dialog-class .mat-dialog-container .mat-dialog-content,
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-content {
-  font-size: 14px; }
+  font-size: 12px; }
   .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] {
@@ -2824,23 +3468,23 @@ textarea {
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > * {
-      font-size: 14px; }
+      font-size: 12px; }
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2) {
-      font-size: 12px; }
+      font-size: 11px; }
 
 /*global styles about drag/drop in dialogs table*/
 .cdk-drag-preview {
   width: 100%;
   display: block; }
   .cdk-drag-preview .mat-list-item-content {
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(0, 0, 0, 0.87);
     padding: 6px;
     flex-direction: row;
     align-items: center;
-    background-color: #fafafa;
+    background-color: #e4e6e8;
     display: flex;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -2857,38 +3501,50 @@ textarea {
 .mat-checkbox .mat-checkbox-label {
   color: rgba(0, 0, 0, 0.87); }
 
-/*BUTTONS HOVER*/
-.mat-dialog-actions .o-table-button,
-.mat-dialog-actions button,
-.o-form .o-form-toolbar .o-table-button,
-.o-form .o-form-toolbar button,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button {
-  margin: 0 8px; }
-  .mat-dialog-actions .o-table-button:first-child,
-  .mat-dialog-actions button:first-child,
-  .o-form .o-form-toolbar .o-table-button:first-child,
-  .o-form .o-form-toolbar button:first-child,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button:first-child,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:first-child {
+o-data-toolbar.o-grid-toolbar button.o-grid-button,
+o-data-toolbar.o-list-toolbar button.o-list-button,
+o-data-toolbar.o-table-toolbar .buttons .o-table-button,
+o-data-toolbar.o-table-toolbar .buttons button {
+  margin: 0 4px; }
+  o-data-toolbar.o-grid-toolbar button.o-grid-button:first-child,
+  o-data-toolbar.o-list-toolbar button.o-list-button:first-child,
+  o-data-toolbar.o-table-toolbar .buttons .o-table-button:first-child,
+  o-data-toolbar.o-table-toolbar .buttons button:first-child {
     margin-left: 0; }
-  .mat-dialog-actions .o-table-button:last-child,
-  .mat-dialog-actions button:last-child,
-  .o-form .o-form-toolbar .o-table-button:last-child,
-  .o-form .o-form-toolbar button:last-child,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button:last-child,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:last-child {
+  o-data-toolbar.o-grid-toolbar button.o-grid-button:last-child,
+  o-data-toolbar.o-list-toolbar button.o-list-button:last-child,
+  o-data-toolbar.o-table-toolbar .buttons .o-table-button:last-child,
+  o-data-toolbar.o-table-toolbar .buttons button:last-child {
     margin-right: 0; }
 
+.mat-dialog-actions button,
+.o-form .o-form-toolbar button {
+  margin: 0 8px; }
+  .mat-dialog-actions button:first-child,
+  .o-form .o-form-toolbar button:first-child {
+    margin-left: 0; }
+  .mat-dialog-actions button:last-child,
+  .o-form .o-form-toolbar button:last-child {
+    margin-right: 0; }
+
+/*BUTTONS HOVER*/
 .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
   color: #0b488a;
   background-color: #b9d1e4;
   border-color: transparent; }
@@ -2905,14 +3561,30 @@ textarea {
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
     color: #1464a5;
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
@@ -2923,11 +3595,21 @@ textarea {
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default,
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default,
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
   color: #1464a5;
   background-color: #ffffff; }
   .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
@@ -2946,16 +3628,36 @@ textarea {
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-list .o-list-toolbar button.o-list-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #0b488a;
     background-color: #b9d1e4;
     border-color: transparent; }
@@ -2981,8 +3683,7 @@ textarea {
   .o-button button.mat-stroked-button:not([disabled]).mat-accent:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-accent .mat-button-focus-overlay {
     color: #0b488a;
-    background-color: #b9d1e4;
-    border-color: transparent; }
+    background-color: #b9d1e4; }
 
 .o-form .o-form-toolbar button.mat-stroked-button,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button {
@@ -3021,8 +3722,20 @@ textarea {
 .o-mat-menu.mat-menu-panel {
   min-height: auto; }
 
+/* CHART FONT */
+o-chart .nvd3 text {
+  font: 400 11px Poppins, "Helvetica Neue", sans-serif;
+  fill: rgba(0, 0, 0, 0.87); }
+
+o-chart .nvd3 .nv-discretebar .nv-groups text,
+o-chart .nvd3 .nv-multibarHorizontal .nv-groups text {
+  fill: rgba(0, 0, 0, 0.87); }
+
+o-chart .nvd3 .nv-axis path {
+  stroke: rgba(0, 0, 0, 0.87); }
+
 .toolbar-breadcrumb {
-  background-color: whitesmoke; }
+  background-color: #eff1f3; }
   .toolbar-breadcrumb a {
     color: #1464a5; }
   .toolbar-breadcrumb mat-icon {
@@ -3082,7 +3795,7 @@ textarea {
 .o-row > .o-container > .mat-expansion-panel-header .o-container-title span,
 .o-row-collapsible > .o-container > .o-container-title span,
 .o-row-collapsible > .o-container > .mat-expansion-panel-header .o-container-title span {
-  font-size: inherit;
+  font-size: 14px;
   font-weight: 400; }
 
 .o-column-collapsible > .o-container .o-container-title.mat-expansion-panel-header-title,
@@ -3130,7 +3843,7 @@ textarea {
   border-color: rgba(0, 0, 0, 0.12); }
 
 .o-form-toolbar-header {
-  background-color: whitesmoke; }
+  background-color: #eff1f3; }
 
 /* outline appearance */
 .mat-form-field {
@@ -3144,16 +3857,16 @@ textarea {
   .mat-form-field:not(.mat-form-field-disabled) .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled) .read-only .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled) .svg-icon {
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(0, 0, 0, 0.6); }
   .mat-form-field:not(.mat-form-field-disabled) .placeholder {
-    color: rgba(0, 0, 0, 0.54); }
+    color: rgba(0, 0, 0, 0.6); }
   .mat-form-field:not(.mat-form-field-disabled).accent .icon-btn,
   .mat-form-field:not(.mat-form-field-disabled).accent .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled).accent .read-only .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled).accent .svg-icon {
     color: #1464a5; }
   .mat-form-field .mat-disabled {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(0, 0, 0, 0.38); }
   .mat-form-field.mat-form-field-appearance-ontimize.read-only .mat-select-disabled .mat-select-value {
     color: inherit; }
   .mat-form-field.mat-form-field-appearance-ontimize.read-only .mat-form-field-underline {
@@ -3213,10 +3926,13 @@ textarea:disabled {
   background: rgba(0, 0, 0, 0.24); }
 
 .o-table .spinner-container {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 .o-table .o-table-menu-button {
   color: rgba(0, 0, 0, 0.54); }
+
+.o-table .mat-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: rgba(0, 0, 0, 0.18); }
 
 .o-table .mat-table .mat-header-row .mat-header-cell {
   color: rgba(0, 0, 0, 0.87); }
@@ -3255,7 +3971,7 @@ textarea:disabled {
 
 .o-table .mat-table .mat-footer-row.o-table-aggregate {
   font-weight: bold;
-  background-color: #e0e0e0; }
+  background-color: #eff1f3; }
 
 .o-table .mat-table .mat-footer-row .mat-cell.o-column-currency, .o-table .mat-table .mat-footer-row .mat-cell.o-column-integer, .o-table .mat-table .mat-footer-row .mat-cell.o-column-real,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-currency,
@@ -3283,7 +3999,7 @@ textarea:disabled {
 
 .o-table .mat-table.editable-row-table .mat-row,
 .o-table .mat-table.totals-table .mat-row {
-  background-color: rgba(224, 224, 224, 0.9); }
+  background-color: rgba(239, 241, 243, 0.9); }
 
 .o-table .mat-table.totals-table .mat-header-row {
   display: none !important; }
@@ -3299,11 +4015,11 @@ textarea:disabled {
 
 .o-table .o-table-body.horizontal-scroll::-webkit-scrollbar-thumb {
   border: 6px solid;
-  border-color: #fafafa; }
+  border-color: #e4e6e8; }
 
 .o-table .o-table-body.horizontal-scroll::-webkit-scrollbar-thumb:hover {
   border: 4px solid;
-  border-color: #fafafa; }
+  border-color: #e4e6e8; }
 
 .o-table-visible-columns-dialog .mat-list-item.dnd-sortable-drag {
   background: #e3ecf4; }
@@ -3412,7 +4128,7 @@ textarea:disabled {
 
 .o-list-container .o-list-row-action .mat-checkbox-inner-container,
 .o-list-container .o-list-item-icon {
-  color: rgba(0, 0, 0, 0.54); }
+  color: rgba(0, 0, 0, 0.6); }
 
 .o-list-picker-dialog mat-toolbar .o-list-picker-search {
   font-size: 16px; }
@@ -3469,10 +4185,10 @@ textarea:disabled {
   background: white;
   border: 1px solid rgba(20, 100, 165, 0.17); }
   .o-card-menu-item .o-card-menu-item-main {
-    background-color: rgba(250, 250, 250, 0.29); }
+    background-color: rgba(228, 230, 232, 0.29); }
   .o-card-menu-item .o-card-menu-item-title {
     color: #1464a5;
-    font-size: 20px; }
+    font-size: 18px; }
   .o-card-menu-item .mat-button {
     color: #1464a5;
     background: #b9d1e4; }
@@ -3504,13 +4220,13 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .o-form-layout-split-pane .spinner-container,
 .o-form-layout-split-pane .o-split-pane-secondary-content {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 .o-form-layout-tabgroup .spinner-container {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 .o-form-layout-tabgroup .mat-tab-group .mat-tab-label .mat-icon:hover {
-  background-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.38);
   border-radius: 50%; }
 
 .o-form-layout-tabgroup .mat-tab-group .mat-tab-label.mat-tab-label-active .mat-icon:hover {
@@ -3548,7 +4264,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   background: transparent; }
 
 .o-grid .o-grid-container .o-loading-blocker .o-spinner-container {
-  background-color: #fafafa; }
+  background-color: #e4e6e8; }
 
 [layout-padding-vertical] {
   padding: 4px 0; }
@@ -3593,7 +4309,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 * styles
 */
 .md-drppicker {
-  background-color: #fafafa;
+  background-color: #e4e6e8;
   /* ranges */ }
   .md-drppicker:after, .md-drppicker:before {
     border-bottom-color: rgba(0, 0, 0, 0.12); }
@@ -3613,7 +4329,7 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
       font-size: 80%;
       color: #ccc; }
   .md-drppicker td.off, .md-drppicker td.off.end-date, .md-drppicker td.off.in-range, .md-drppicker td.off.start-date {
-    background-color: #fafafa;
+    background-color: #e4e6e8;
     border-color: transparent;
     color: #999999; }
   .md-drppicker td.in-range {
@@ -3673,6 +4389,620 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
     background-color: rgba(0, 0, 0, 0.12);
     color: rgba(0, 0, 0, 0.87); }
 
+.o-image .o-image-content .o-image-display-container.o-image-drag-and-drop:not(.o-image-drag-and-drop-required) {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='rgba(0, 0, 0, 0.54)' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e"); }
+
+.o-image .o-image-content .o-image-display-container.o-image-drag-and-drop.o-file-dragging {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='rgba(0, 0, 0, 0.54)' stroke-width='2' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e"); }
+
+.o-image .o-image-content .o-image-display-container.o-image-drag-and-drop-required:not(.o-file-dragging) {
+  border-color: #f44336; }
+
+.o-image .o-image-content .o-image-display-container .o-image-button-remove {
+  background-color: #e4e6e8; }
+  .o-image .o-image-content .o-image-display-container .o-image-button-remove:hover {
+    background-color: rgba(0, 0, 0, 0.38); }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/*Application background-color*/
+/*Sidenav background-color*/
+/* Foreground color */
+/*Application background-color*/
+/*Sidenav background-color*/
+.mat-checkbox-frame {
+  border-color: rgba(0, 0, 0, 0.54); }
+
+.mat-checkbox-checkmark {
+  fill: #e4e6e8; }
+
+.mat-checkbox-checkmark-path {
+  stroke: #e4e6e8 !important; }
+  @media (-ms-high-contrast: black-on-white) {
+    .mat-checkbox-checkmark-path {
+      stroke: #000 !important; } }
+
+.mat-checkbox-mixedmark {
+  background-color: #e4e6e8; }
+
+.mat-checkbox-checked.mat-primary .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.mat-checkbox-checked.mat-warn .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background {
+  background-color: #f44336; }
+
+.mat-checkbox-disabled.mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-disabled.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: #b0b0b0; }
+
+.mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+  border-color: #b0b0b0; }
+
+.mat-checkbox-disabled .mat-checkbox-label {
+  color: rgba(0, 0, 0, 0.54); }
+
+@media (-ms-high-contrast: active) {
+  .mat-checkbox-disabled {
+    opacity: .5; } }
+
+@media (-ms-high-contrast: active) {
+  .mat-checkbox-background {
+    background: none; } }
+
+.mat-checkbox .mat-ripple-element {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
+  background: rgba(0, 0, 0, 0.6); }
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: rgba(0, 0, 0, 0.6); }
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element {
+  background: #f44336; }
+
+.mat-pseudo-checkbox {
+  color: rgba(0, 0, 0, 0.54); }
+  .mat-pseudo-checkbox::after {
+    color: #e4e6e8; }
+
+.mat-pseudo-checkbox-disabled {
+  color: #b0b0b0; }
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: rgba(0, 0, 0, 0.6); }
+
+.mat-accent .mat-pseudo-checkbox-checked,
+.mat-accent .mat-pseudo-checkbox-indeterminate,
+.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox-indeterminate {
+  background: rgba(0, 0, 0, 0.6); }
+
+.mat-warn .mat-pseudo-checkbox-checked,
+.mat-warn .mat-pseudo-checkbox-indeterminate {
+  background: #f44336; }
+
+.mat-pseudo-checkbox-checked.mat-pseudo-checkbox-disabled,
+.mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-disabled {
+  background: #b0b0b0; }
+
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
+  border-radius: 2px; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
+    border-radius: 2px; }
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+    border-radius: 2px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+  padding-left: 4px; }
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 10px 6px 6px; }
+
+.o-column > .o-container .o-container-scroll.o-container-gap,
+.o-row > .o-container .o-container-scroll.o-container-gap {
+  padding: 10px 6px 6px; }
+
+.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+  padding: 12px; }
+
+.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 12px; }
+
+.o-form .o-form-toolbar .o-form-toolbar-header {
+  border-radius: 2px;
+  min-height: 64px;
+  max-height: 64px;
+  padding: 0 24px;
+  font-size: 24px;
+  font-weight: bold; }
+  .o-form .o-form-toolbar .o-form-toolbar-header .o-form-navigation span {
+    font-size: 14px;
+    font-weight: normal; }
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
+    border-radius: 2px; }
+
+.o-form.flat-form-toolbar .o-form-toolbar .o-form-toolbar-header {
+  box-shadow: none;
+  background-color: transparent; }
+
+.main-form-container > .o-form form.inner-form {
+  height: 100%; }
+
+o-column.o-column.main-form-container.container-gap > .o-container:first-child > .o-container-scroll:first-child,
+o-row.o-row.main-form-container.container-gap > .o-container:first-child > .o-container-scroll:first-child {
+  padding: 0 16px 16px; }
+
+o-column.o-column.main-form-container.container-gap .o-form.flat-form-toolbar:first-child .o-form-toolbar .o-form-toolbar-header,
+o-row.o-row.main-form-container.container-gap .o-form.flat-form-toolbar:first-child .o-form-toolbar .o-form-toolbar-header {
+  padding: 0; }
+
+.o-app-header nav.o-app-header-primary {
+  background-color: #eff1f3; }
+
+.o-app-header nav.o-app-header-accent {
+  background-color: #eff1f3; }
+
+.o-app-header nav .o-app-header-title {
+  color: #1464a5; }
+
+.o-app-sidenav {
+  font-weight: 400; }
+  .o-app-sidenav .o-app-sidenav-menu-group a,
+  .o-app-sidenav .o-app-sidenav-menu-item a {
+    margin-left: 0 !important;
+    border-left: 8px solid transparent; }
+  .o-app-sidenav .o-app-sidenav-menu-group:not([disabled='true']),
+  .o-app-sidenav .o-app-sidenav-menu-item:not([disabled='true']) {
+    border-left-color: transparent; }
+    .o-app-sidenav .o-app-sidenav-menu-group:not([disabled='true']) a:hover,
+    .o-app-sidenav .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
+      color: rgba(0, 0, 0, 0.87);
+      background-color: #e9ebed;
+      border-left: 8px solid #1464a5; }
+    .o-app-sidenav .o-app-sidenav-menu-group:not([disabled='true']) a.o-app-sidenav-viewer-sidenav-item-selected,
+    .o-app-sidenav .o-app-sidenav-menu-item:not([disabled='true']) a.o-app-sidenav-viewer-sidenav-item-selected {
+      color: rgba(0, 0, 0, 0.87);
+      background-color: #eceef0;
+      border-left: 8px solid #1464a5; }
+  .o-app-sidenav .o-app-sidenav-sidenav {
+    background: #eff1f3;
+    /* Side Navigation Level Styles */ }
+    .o-app-sidenav .o-app-sidenav-sidenav .sidenav-toggle {
+      color: rgba(0, 0, 0, 0.6); }
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item {
+      color: rgba(0, 0, 0, 0.87); }
+      .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info {
+        color: inherit; }
+        .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info:focus, .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info:hover {
+          color: inherit; }
+        .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info .o-user-info-menu-item .o-user-info-item {
+          background: rgba(255, 255, 255, 0.74); }
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-1 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul {
+      background: #e6e7e9; }
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-1 .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
+      background-color: #e6e7e9; }
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-2 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul,
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-3 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul,
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-4 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul {
+      background: #dcdee0; }
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-2 .o-app-sidenav-menu-item:not([disabled='true']) a:hover,
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-3 .o-app-sidenav-menu-item:not([disabled='true']) a:hover,
+    .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-4 .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
+      background-color: #dcdee0; }
+    .o-app-sidenav .o-app-sidenav-sidenav li a {
+      color: rgba(0, 0, 0, 0.87); }
+
+o-app-sidenav.o-app-sidenav .o-app-sidenav-container .o-app-header,
+o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container .o-app-header {
+  /*box-shadow: none;*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #eff1f3; }
+
+o-app-sidenav.o-app-sidenav .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav,
+o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav {
+  box-shadow: none;
+  border-right: none; }
+  o-app-sidenav.o-app-sidenav .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul,
+  o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul {
+    box-shadow: none;
+    background: none; }
+
+o-app-sidenav.o-app-sidenav .mat-menu-panel,
+o-app-sidenav.o-app-sidenav.header-layout .mat-menu-panel {
+  border: 1px solid rgba(0, 0, 0, 0.12); }
+
+o-app-sidenav.o-app-sidenav .o-app-header .o-user-info .o-user-info-wrapper,
+o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-info-wrapper {
+  font-weight: 500; }
+
+.mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+  background: #eff1f3; }
+
+.mat-tab-group .mat-tab-label.mat-tab-label-active {
+  color: rgba(0, 0, 0, 0.87); }
+
+/* MAT PAGINATOR*/
+.mat-paginator {
+  color: rgba(0, 0, 0, 0.87); }
+
+.ontimize-table.o-table {
+  background: white; }
+  .ontimize-table.o-table tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+  .ontimize-table.o-table thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+    background-color: rgba(0, 0, 0, 0.6); }
+  .ontimize-table.o-table .o-table-button .mat-icon {
+    color: rgba(0, 0, 0, 0.6); }
+
+.o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
+  cursor: pointer;
+  background-color: #f5f5f5; }
+
+.o-table .mat-table .mat-row.selected {
+  background: #eaeaea; }
+
+.o-table .mat-table .mat-row .mat-cell {
+  color: rgba(0, 0, 0, 0.87); }
+
+/* FORM */
+.o-form .o-form-toolbar {
+  margin-bottom: 24px; }
+  .o-form .o-form-toolbar .o-form-toolbar-header {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
+    background-color: white; }
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
+      margin-right: 32px; }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
+button.mat-stroked-button:not([disabled]).mat-button-base {
+  border-color: rgba(0, 0, 0, 0.32); }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-primary,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-primary,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
+button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary,
+button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary,
+button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"],
+button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] {
+  color: #1464a5;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.32); }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-icon {
+    color: #1464a5; }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-primary:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"]:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"] .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
+    color: #1464a5;
+    background-color: #b9d1e4;
+    border-color: rgba(0, 0, 0, 0.32); }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
+button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent,
+button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default,
+button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
+button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
+  color: #1464a5;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.32); }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon {
+    color: #1464a5; }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
+    color: #1464a5;
+    background-color: #b9d1e4;
+    border-color: rgba(0, 0, 0, 0.32); }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn,
+button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn {
+  color: #f44336;
+  border-color: rgba(0, 0, 0, 0.32); }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn:hover {
+    background-color: #ffcdd2;
+    border-color: rgba(0, 0, 0, 0.32); }
+
+.o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger),
+.o-grid .o-grid-toolbar button.mat-icon-button:not(.mat-menu-trigger),
+.o-list .o-list-toolbar button.mat-icon-button:not(.mat-menu-trigger),
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button.mat-icon-button:not(.mat-menu-trigger) {
+  border-color: rgba(0, 0, 0, 0.32);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  line-height: 30px; }
+
+.o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger) {
+  margin: 0 6px; }
+
+o-column.o-column,
+o-row.o-row {
+  background: white;
+  border-radius: 2px; }
+  o-column.o-column .o-container .o-container-title,
+  o-row.o-row .o-container .o-container-title {
+    padding: 20px 0; }
+  o-column.o-column .o-container > .o-container-header,
+  o-column.o-column .o-container > .o-container-title,
+  o-column.o-column .o-container > .mat-expansion-panel-header,
+  o-row.o-row .o-container > .o-container-header,
+  o-row.o-row .o-container > .o-container-title,
+  o-row.o-row .o-container > .mat-expansion-panel-header {
+    border-bottom: none;
+    color: rgba(0, 0, 0, 0.87); }
+    o-column.o-column .o-container > .o-container-header .mat-tab-label,
+    o-column.o-column .o-container > .o-container-header .mat-tab-link,
+    o-column.o-column .o-container > .o-container-title .mat-tab-label,
+    o-column.o-column .o-container > .o-container-title .mat-tab-link,
+    o-column.o-column .o-container > .mat-expansion-panel-header .mat-tab-label,
+    o-column.o-column .o-container > .mat-expansion-panel-header .mat-tab-link,
+    o-row.o-row .o-container > .o-container-header .mat-tab-label,
+    o-row.o-row .o-container > .o-container-header .mat-tab-link,
+    o-row.o-row .o-container > .o-container-title .mat-tab-label,
+    o-row.o-row .o-container > .o-container-title .mat-tab-link,
+    o-row.o-row .o-container > .mat-expansion-panel-header .mat-tab-label,
+    o-row.o-row .o-container > .mat-expansion-panel-header .mat-tab-link {
+      color: rgba(0, 0, 0, 0.87); }
+  o-column.o-column .o-container > .o-container-title span,
+  o-column.o-column .o-container > .mat-expansion-panel-header .o-container-title span,
+  o-row.o-row .o-container > .o-container-title span,
+  o-row.o-row .o-container > .mat-expansion-panel-header .o-container-title span {
+    font-size: 18px;
+    font-weight: bold; }
+  o-column.o-column .o-container .o-container-scroll.o-container-gap,
+  o-row.o-row .o-container .o-container-scroll.o-container-gap {
+    padding: 12px 16px 16px; }
+
+o-column.o-column.top-separator,
+o-row.o-row.top-separator {
+  margin-top: 14px; }
+
+/*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #e6e7e9; }
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #f2f2f2; }
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #f6f6f6; }
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #fafafa; }
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: white; }
+
+.o-form-content-wrapper[layout-padding],
+.o-form-toolbar[layout-padding] {
+  padding: 0; }
+
 /*
 * Import application themes.
 */
@@ -3710,14 +5040,40 @@ ul.list-grid-container {
         font-size: .8em; }
 
 .example-comp > section {
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); }
+  box-shadow: none; }
+  .example-comp > section .mat-toolbar {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.87); }
   .example-comp > section .playground-toolbar.mat-toolbar {
-    color: #212121;
-    border-bottom: 1px solid #e0e0e0; }
-    .example-comp > section .playground-toolbar.mat-toolbar .comp-description {
-      color: #616161; }
+    background-color: transparent;
+    border-bottom: 2px solid #1464a5; }
   .example-comp > section .playground-tabs {
     border-bottom: 1px solid #e0e0e0; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.active {
+  border-color: #1464a5;
+  background-color: #b9d1e4; }
+
+.new {
+  color: rgba(0, 0, 0, 0.87); }
+
+mat-card-title {
+  color: rgba(0, 0, 0, 0.87); }
+
+mat-card-content {
+  color: rgba(0, 0, 0, 0.87); }
+
+.img-container {
+  background-color: #e0e0e0; }
+
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+#collapsible .menu-item {
+  color: rgba(0, 0, 0, 0.87); }
 
 /*
 * Other app styles

@@ -1,0 +1,15 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <collapsible-menu>
+    <a class="menu-item" routerLink="/main/layout/layout-manager/tab" routerLinkActive="active" fxFlex>{{ 'LAYOUT_MANAGER.TABGROUP' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/layout/layout-manager/dialog" routerLinkActive="active" fxFlex>{{ 'LAYOUT_MANAGER.DIALOG' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/layout/layout-manager/split-pane" routerLinkActive="active" fxFlex>{{ 'LAYOUT_MANAGER.SPLITPANE' | oTranslate
+      }}</a>
+  </collapsible-menu>
+
+  <div fxFlex="100%" class="left-border">
+    <header-button-menu comp-name="{{ 'LAYOUT_MANAGER' | oTranslate }}" comp-desc="{{ 'LAYOUT_MANAGER.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

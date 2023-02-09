@@ -1,0 +1,15 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
+    <example-comp comp-name="DIALOG.COMPONENT" [files]="getFiles()" fxFill>
+
+      <div fxLayout="row" layout-padding fxFill class="dialog-buttons-container">
+        <o-button attr="alert" type="RAISED" label="DIALOG.ALERT_DIALOG" layout-padding (click)="showAlert($event)"></o-button>
+        <o-button attr="info" type="RAISED" label="DIALOG.INFO_DIALOG" layout-padding (click)="showInfo($event)"></o-button>
+        <o-button attr="warn" type="RAISED" label="DIALOG.WARNING_DIALOG" layout-padding (click)="showWarning($event)"></o-button>
+        <o-button attr="error" type="RAISED" label="DIALOG.ERROR_DIALOG" layout-padding (click)="showError($event)"></o-button>
+        <o-button attr="confirm" type="RAISED" label="DIALOG.CONFIRM_DIALOG" layout-padding (click)="showConfirm($event)"></o-button>
+      </div>
+
+    </example-comp>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [files]="files" (showSource)="onShowSource(list, ex)"
+  class="list-examples">
+  <data-structure comp-name="LIST" #sidenavComp>
+        <div menu layout-margin>
+          <div fxLayout="row" layout-padding fxLayoutAlign="center">
+            <mat-form-field fxFlex="95">
+              <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+            <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+              {{ 'REFRESH_BUTTON' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle #quickFilterToggle checked="true" fxFlex layout-padding>
+              {{ 'QUICK_FILTER' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+            <mat-slide-toggle #selectableToggle fxFlex>
+              {{ 'SELECTABLE' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle #denseToggle [checked]="list.odense" fxFlex>
+              {{ 'DENSE' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+            <mat-slide-toggle #insertButtonToggle fxFlex>
+              {{ 'INSERT_BUTTON' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle #deleteButtonToggle fxFlex>
+              {{ 'DELETE_BUTTON' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+          <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-slide-toggle #editButtonInRowToggle fxFlex>
+                {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
+              </mat-slide-toggle>
+              <mat-form-field [hidden]="!editButtonInRowToggle.checked" fxFlex>
+                <input matInput #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-slide-toggle #detailButtonInRowToggle fxFlex>
+                {{ 'DETAIL_BUTTON_IN_ROW' | oTranslate }}
+              </mat-slide-toggle>
+              <mat-form-field [hidden]="!detailButtonInRowToggle.checked" fxFlex>
+                <input matInput #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-slide-toggle #iconToggle fxFlex>
+                {{ 'SHOW_ICON' | oTranslate }}
+              </mat-slide-toggle>
+              <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
+                <input matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
+              </mat-form-field>
+            </div>
+          </o-column>
+        </div>
+
+
+      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start" content>
+        <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
+          <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
+            <o-list fxFlex="100" #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
+              [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
+              [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked"
+              [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"
+              [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
+              [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
+              <o-list-item *ngFor="let row of list.dataArray">
+                <o-list-item-avatar #avatarItem avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
+                  secondary-text="{{ row.email }}" [icon]="iconToggle.checked ? itemIcon.value : undefined"
+                  (icon-action)="addToFavorites(row, avatarItem)">
+                </o-list-item-avatar>
+              </o-list-item>
+            </o-list>
+          </div>
+        </div>
+        <div class="conf-button-div">
+          <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
+            <mat-icon>tune</mat-icon> {{ 'LIST.CONFIGURATION' | oTranslate }}
+          </button>
+        </div>
+      </div>
+    </data-structure>
+
+</example-comp>

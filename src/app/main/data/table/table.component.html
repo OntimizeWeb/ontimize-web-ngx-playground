@@ -1,0 +1,29 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <collapsible-menu>
+    <a class="menu-item" routerLink="/main/data/table/basic" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/fixed" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/renderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/custrenderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/editor" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.EDITORS' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/total" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/calculatedcolumn" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CALCULATED_COLUMN' | oTranslate
+      }}</a>
+    <a class="menu-item" routerLink="/main/data/table/pagination" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.PAGINATION' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/contextmenu" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CONTEXT_MENU' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/horizontalscroll" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate
+      }}</a>
+    <a class="menu-item" routerLink="/main/data/table/insertablerow" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.INSERTABLE_ROW' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/align" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ALIGN' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/multipleSort" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.MULTIPLE_SORT' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/rowexpandable" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_EXPANDABLE' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/data/table/rowgroup" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_GROUPING' | oTranslate }} <span
+        class="new">new</span></a>
+  </collapsible-menu>
+
+  <div fxFlex="calc(100% - 300px)" class="left-border">
+    <header-button-menu comp-name="{{ 'TABLE.COMPONENT' | oTranslate }}" comp-desc="{{ 'TABLE.COMPONENT.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

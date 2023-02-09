@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="99" viewBox="0 0 115 99">
+  <defs>
+    <filter id="Rectángulo_6422" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Ilustración_List" data-name="Ilustración List" transform="translate(-3915.5 -89.5)">
+    <g id="Ilustracion_List" data-name="Ilustracion List" transform="translate(2893 -93)">
+      <g transform="matrix(1, 0, 0, 1, 1022.5, 182.5)" filter="url(#Rectángulo_6422)">
+        <g id="Rectángulo_6422-2" data-name="Rectángulo 6422" transform="translate(1.5 0.5)" fill="#fff" stroke="rgba(0,0,0,0.12)" stroke-width="1">
+          <rect width="112" height="96" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="111" height="95" rx="1.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="Grupo_3982" data-name="Grupo 3982" transform="translate(7 4)">
+      <g id="item1" transform="translate(2907.091 -96)">
+        <path id="Trazado_7092" data-name="Trazado 7092" d="M18835.145,195h64" transform="translate(-17805.145 9)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7091" data-name="Trazado 7091" d="M18835.145,195h16" transform="translate(-17805.145 3)" fill="none" stroke="rgba(0,0,0,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7262" data-name="Trazado 7262" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(1014.909 195)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+    </g>
+    <g id="Grupo_3983" data-name="Grupo 3983" transform="translate(7 24)">
+      <g id="item1-2" data-name="item1" transform="translate(2907.091 -96)">
+        <path id="Trazado_7092-2" data-name="Trazado 7092" d="M18835.145,195h64" transform="translate(-17805.145 9)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7091-2" data-name="Trazado 7091" d="M18835.145,195h16" transform="translate(-17805.145 3)" fill="none" stroke="rgba(0,0,0,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7262-2" data-name="Trazado 7262" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(1014.909 195)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+    </g>
+    <g id="Grupo_3984" data-name="Grupo 3984" transform="translate(7 44)">
+      <g id="item1-3" data-name="item1" transform="translate(2907.091 -96)">
+        <path id="Trazado_7092-3" data-name="Trazado 7092" d="M18835.145,195h64" transform="translate(-17805.145 9)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7091-3" data-name="Trazado 7091" d="M18835.145,195h16" transform="translate(-17805.145 3)" fill="none" stroke="rgba(0,0,0,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7262-3" data-name="Trazado 7262" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(1014.909 195)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+    </g>
+    <g id="Grupo_3985" data-name="Grupo 3985" transform="translate(7 60)">
+      <g id="item1-4" data-name="item1" transform="translate(2907.091 -92)">
+        <path id="Trazado_7092-4" data-name="Trazado 7092" d="M18835.145,195h64" transform="translate(-17805.145 9)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7091-4" data-name="Trazado 7091" d="M18835.145,195h16" transform="translate(-17805.145 3)" fill="none" stroke="rgba(0,0,0,0.6)" stroke-linecap="round" stroke-width="1.51"/>
+        <path id="Trazado_7262-4" data-name="Trazado 7262" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(1014.909 195)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+    </g>
+  </g>
+</svg>

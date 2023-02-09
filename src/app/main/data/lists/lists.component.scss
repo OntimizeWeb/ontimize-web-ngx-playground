@@ -1,0 +1,15 @@
+.list-examples {
+  [hidden] {
+    visibility: hidden !important;
+  }
+
+  height: 100%;
+
+  .padding-3 {
+    padding: 3px;
+  }
+}
+
+.container{
+  max-height: 100%;
+}

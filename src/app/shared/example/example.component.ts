@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
 
 export interface IFiles {
@@ -47,6 +47,8 @@ export class ExampleComponent {
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
+
+  private colCollapsed: boolean;
 
   constructor(
     protected cd: ChangeDetectorRef

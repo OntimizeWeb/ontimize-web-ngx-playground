@@ -10,15 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 import { DummyService } from './shared/services/dummy.service';
+import { CollapsibleStateService } from './shared/services/collapsible-state.service';
+import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('xml', xml);
 
-
-export function getDummyServiceProvider(injector: Injector) {
-  return new DummyService(injector);
-}
 
 @NgModule({
   declarations: [
@@ -31,12 +29,10 @@ export function getDummyServiceProvider(injector: Injector) {
     OGalleryModule
   ],
   providers: [
+    { provide: CollapsibleStateService },
+    { provide: ConfigCollapsibleStateService },
     { provide: APP_CONFIG, useValue: CONFIG },
-    {
-      provide: 'DummyService',
-      useFactory: getDummyServiceProvider,
-      deps: [Injector]
-    },
+    { provide: 'DummyService', useValue: DummyService },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
