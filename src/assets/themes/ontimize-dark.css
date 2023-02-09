@@ -1,6 +1,9 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 /*Application background-color*/
 /*Sidenav background-color*/
 /* Foreground color */
@@ -4652,10 +4655,10 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
 
 .o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
   cursor: pointer;
-  background-color: #f5f5f5; }
+  background-color: #ffffff1f; }
 
 .o-table .mat-table .mat-row.selected {
-  background: #eaeaea; }
+  background: #f1f6fa80; }
 
 .o-table .mat-table .mat-row .mat-cell {
   color: rgba(255, 255, 255, 0.87); }
@@ -4668,6 +4671,15 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
     background-color: #424242; }
     .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
       margin-right: 32px; }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
+button.mat-stroked-button:not([disabled]).mat-button-base {
+  border-color: rgba(255, 255, 255, 0.32); }
 
 .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="0"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
@@ -4777,83 +4789,68 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"]:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="true"] .mat-button-focus-overlay {
     color: #8ab2d2;
-    background-color: #dce8f2;
-    border-color: transparent; }
+    background-color: rgba(138, 178, 210, 0.04);
+    border-color: rgba(255, 255, 255, 0.32); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.o-form .o-form-toolbar button:not([disabled]).mat-button-base,
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"], .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.o-grid .o-grid-footer button:not([disabled]).mat-button-base,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.o-list .o-list-toolbar > button:not([disabled]).mat-button-base,
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent,
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default,
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"],
-button.mat-stroked-button:not([disabled]).mat-button-base,
 button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent,
 button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default,
 button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"],
 button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] {
-  color: rgba(255, 255, 255, 0.87);
+  color: #8ab2d2;
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.32); }
-  .mat-dialog-actions button:not([disabled]).mat-button-base .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base .mat-icon,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  .o-grid .o-grid-footer button:not([disabled]).mat-button-base .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base .mat-icon,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base .mat-icon,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon,
-  button.mat-stroked-button:not([disabled]).mat-button-base .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-icon {
     color: #8ab2d2; }
-  .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
-  .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"]:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base:hover,
-  .o-form .o-form-toolbar button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4862,8 +4859,6 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .o-grid .o-grid-footer button:not([disabled]).mat-button-base:hover,
-  .o-grid .o-grid-footer button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4872,8 +4867,6 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base:hover,
-  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4882,8 +4875,6 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base:hover,
-  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent:hover,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4892,8 +4883,6 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base:hover,
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4902,8 +4891,6 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="1"] .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay,
-  button.mat-stroked-button:not([disabled]).mat-button-base:hover,
-  button.mat-stroked-button:not([disabled]).mat-button-base .mat-button-focus-overlay,
   button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default:hover,
@@ -4913,8 +4900,27 @@ button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-resu
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"]:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #8ab2d2;
-    background-color: #dce8f2;
-    border-color: transparent; }
+    background-color: rgba(138, 178, 210, 0.04);
+    border-color: rgba(255, 255, 255, 0.32); }
+
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn,
+.o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn,
+.o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn,
+.o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn,
+.o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn,
+button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn {
+  color: #f44336;
+  border-color: rgba(255, 255, 255, 0.32); }
+  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
+  .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn:hover,
+  button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn:hover {
+    background-color: rgba(244, 67, 54, 0.04);
+    border-color: rgba(255, 255, 255, 0.32); }
 
 .o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger),
 .o-grid .o-grid-toolbar button.mat-icon-button:not(.mat-menu-trigger),
