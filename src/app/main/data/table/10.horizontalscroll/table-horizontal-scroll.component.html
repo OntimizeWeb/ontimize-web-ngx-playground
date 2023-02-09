@@ -1,0 +1,36 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [files]="getFiles('o-table-horizontal-scroll')"
+  (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
+  <data-structure comp-name="TABLE" #sidenavComp>
+
+    <div menu layout-margin>
+      <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
+        {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+      </mat-slide-toggle>
+    </div>
+
+
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding content>
+
+      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
+        <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+          columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
+          query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
+          edition-mode="none" detail-mode="none">
+          <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
+            <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+            </o-table-cell-renderer-image>
+          </o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
+        </o-table>
+      </div>
+      <div class="conf-button-div">
+        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
+          <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
+        </button>
+      </div>
+
+
+    </div>
+  </data-structure>
+</example-comp>

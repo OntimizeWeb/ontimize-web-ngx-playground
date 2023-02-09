@@ -13,7 +13,7 @@ import { ThemeService } from '../shared/theme.service';
 export class MainComponent implements OnInit {
   protected sectionTitle = '';
 
-  light: boolean;
+  public light: boolean;
 
   constructor(
     protected injector: Injector,

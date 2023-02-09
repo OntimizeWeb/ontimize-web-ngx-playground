@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="99" viewBox="0 0 115 99">
+  <defs>
+    <filter id="Trazado_7127" x="0" y="0" width="115" height="99" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Ilustración_Checkbox" data-name="Ilustración Checkbox" transform="translate(-706.5 -180.5)">
+    <g transform="matrix(1, 0, 0, 1, 706.5, 180.5)" filter="url(#Trazado_7127)">
+      <g id="Trazado_7127-2" data-name="Trazado 7127" transform="translate(1.5 0.5)" fill="#fff">
+        <path d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" stroke="none"/>
+        <path d="M 2 1 C 1.448600769042969 1 1 1.448600769042969 1 2 L 1 94 C 1 94.55139923095703 1.448600769042969 95 2 95 L 110 95 C 110.551399230957 95 111 94.55139923095703 111 94 L 111 2 C 111 1.448600769042969 110.551399230957 1 110 1 L 2 1 M 2 0 L 110 0 C 111.1045684814453 0 112 0.8954315185546875 112 2 L 112 94 C 112 95.10456848144531 111.1045684814453 96 110 96 L 2 96 C 0.8954315185546875 96 0 95.10456848144531 0 94 L 0 2 C 0 0.8954315185546875 0.8954315185546875 0 2 0 Z" stroke="none" fill="rgba(0,0,0,0.12)"/>
+      </g>
+    </g>
+    <path id="Trazado_7070" data-name="Trazado 7070" d="M18835.145,195h64" transform="translate(-18093.145 22.5)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7073" data-name="Trazado 7073" d="M18835.145,195h64" transform="translate(-18093.145 42.5)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7074" data-name="Trazado 7074" d="M18835.145,195h64" transform="translate(-18093.145 62.5)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <g id="check_box-24px" transform="translate(716 209)">
+      <path id="Trazado_7071" data-name="Trazado 7071" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7072" data-name="Trazado 7072" d="M13.778,3H4.347A1.347,1.347,0,0,0,3,4.347v9.431a1.347,1.347,0,0,0,1.347,1.347h9.431a1.347,1.347,0,0,0,1.347-1.347V4.347A1.347,1.347,0,0,0,13.778,3ZM7.715,12.431,4.347,9.063l.95-.95,2.418,2.412,5.113-5.113.95.957Z" transform="translate(-1.063 -1.063)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+    <g id="check_box-24px-2" data-name="check_box-24px" transform="translate(716 229)">
+      <path id="Trazado_7071-2" data-name="Trazado 7071" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7072-2" data-name="Trazado 7072" d="M13.778,3H4.347A1.347,1.347,0,0,0,3,4.347v9.431a1.347,1.347,0,0,0,1.347,1.347h9.431a1.347,1.347,0,0,0,1.347-1.347V4.347A1.347,1.347,0,0,0,13.778,3ZM7.715,12.431,4.347,9.063l.95-.95,2.418,2.412,5.113-5.113.95.957Z" transform="translate(-1.063 -1.063)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+    <g id="check_box_outline_blank_black_24dp" transform="translate(716 249)">
+      <path id="Trazado_7082" data-name="Trazado 7082" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7083" data-name="Trazado 7083" d="M13.577,4.322v9.255H4.322V4.322h9.255m0-1.322H4.322A1.326,1.326,0,0,0,3,4.322v9.255A1.326,1.326,0,0,0,4.322,14.9h9.255A1.326,1.326,0,0,0,14.9,13.577V4.322A1.326,1.326,0,0,0,13.577,3Z" transform="translate(-0.949 -0.949)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+    <path id="Trazado_7128" data-name="Trazado 7128" d="M18835.143,195h96" transform="translate(-18119.143 6)" fill="none" stroke="rgba(0,0,0,0.12)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7129" data-name="Trazado 7129" d="M18835.145,195h48" transform="translate(-18119.145 -2)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+  </g>
+</svg>

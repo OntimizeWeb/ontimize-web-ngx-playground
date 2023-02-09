@@ -1,0 +1,18 @@
+@import "node_modules/@angular/material/theming";
+
+@mixin collapsible-menu-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  #collapsible {
+
+    .menu-item{
+      color: mat-color($foreground, text);
+    }
+
+  }
+
+}

@@ -1,0 +1,30 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_PAGINACION" [files]="getFiles('o-table-paginator')"
+  (showSource)="onShowSource('o-table-paginator', table, ex)">
+  <data-structure comp-name="TABLE" #sidenavComp>
+
+    <div menu layout-margin>
+      <mat-form-field style="width:100%;">
+        <input matInput #pageSizeOptionsInput placeholder="{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}" value="5;10;15"
+          (change)="onEmptySetDefault()">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding content>
+      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
+        <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
+          visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no"
+          export-button="no" [static-data]="data" layout-padding fxFill edition-mode="none" detail-mode="none">
+          <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
+          <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
+        </o-table>
+      </div>
+      <div class="conf-button-div">
+        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
+          <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
+        </button>
+      </div>
+
+    </div>
+  </data-structure>
+</example-comp>

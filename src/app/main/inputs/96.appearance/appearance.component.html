@@ -1,6 +1,6 @@
-<example-comp  #ex comp-name="INPUTS.CONFIGURATION" comp-desc="INPUTS.CONFIGURATION.DESC" collapsible="no"
+<example-comp  #ex comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" collapsible="no"
   [files]="customInputFiles" (showSource)="onShowSource('customInput', input, ex)">
-  <o-form editable-detail="no" show-header="no" layout-direction="row">
+  <o-form editable-detail="no" show-header="no" layout-direction="row" class="hide-overflow">
     <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
       <o-text-input  #input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
         [placeholder]="placeholder.value" read-only="no" clear-button="yes"
@@ -8,7 +8,7 @@
       </o-text-input>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start start" fxFlex="50">
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start start" fxFlex="50" layout-padding>
 
       <mat-form-field>
         <input matInput #label placeholder="Label" value="Label value">

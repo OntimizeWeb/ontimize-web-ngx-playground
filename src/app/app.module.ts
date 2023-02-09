@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 import { DummyService } from './shared/services/dummy.service';
+import { CollapsibleStateService } from './shared/services/collapsible-state.service';
+import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 export function getHighlightLanguages() {
@@ -32,6 +34,8 @@ export function getHighlightLanguages() {
     //OGalleryModule
   ],
   providers: [
+    { provide: CollapsibleStateService },
+    { provide: ConfigCollapsibleStateService },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
     ...ONTIMIZE_PROVIDERS,

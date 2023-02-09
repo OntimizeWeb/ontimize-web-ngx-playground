@@ -1,0 +1,14 @@
+<mat-card class="inputs-mat-card">
+  <div fxLayoutAlign="center center" layout-margin class="img-container">
+    <mat-icon *ngIf="!dark" svgIcon="ontimize:{{compName}}"></mat-icon>
+    <mat-icon *ngIf="dark" svgIcon="ontimize:{{compName}}_dark"></mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-header>
+    <mat-card-title>
+      {{header}}
+    </mat-card-title>
+    <div *ngIf="new" class="new">NEW</div>
+  </mat-card-header>
+  <mat-card-content>{{content}}</mat-card-content>
+</mat-card>
