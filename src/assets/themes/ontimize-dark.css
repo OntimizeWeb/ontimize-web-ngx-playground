@@ -3406,7 +3406,7 @@ textarea {
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
   -webkit-box-shadow: none;
-  background-color: #c5d9e9;
+  background-color: #8ab2d2;
   opacity: 1.0; }
 
 .o-loading {
@@ -3664,7 +3664,7 @@ o-data-toolbar.o-table-toolbar .buttons button {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base[ng-reflect-dialog-result="false"] .mat-button-focus-overlay {
     color: #6d99c1;
     background-color: rgba(138, 178, 210, 0.04);
-    border-color: transparent; }
+    border-color: rgba(255, 255, 255, 0.12); }
 
 .o-form .o-form-toolbar [o-form-toolbar-buttons] > * {
   margin: 0 8px; }
