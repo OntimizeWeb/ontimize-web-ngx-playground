@@ -17,8 +17,15 @@ import {
 })
 export class HighlightComponent {
   templateContent;
+  templateType;
+  templateTypeArray:Array<string>;
 
-
+  ngOnInit(): void {
+    this.templateTypeArray = this.parseTemplateType();
+  }
+  parseTemplateType() {
+    return [this.templateType === 'scss' ? 'css' : this.templateType];
+  }
 
   showTooltip() {
     // TODO show tooltip (solve problem of repainting that does not show tooltip)
