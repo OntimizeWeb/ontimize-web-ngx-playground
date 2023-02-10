@@ -1,4 +1,4 @@
-import { GalleryModule } from './gallery/gallery.module';
+// import { GalleryModule } from './gallery/gallery.module';
 import { ImageModule } from './image/image.module';
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
@@ -13,7 +13,7 @@ import { MediaRoutingModule } from './media-routing.module';
     OntimizeWebModule,
     MediaRoutingModule,
     ImageModule,
-    GalleryModule
+    // GalleryModule
   ],
   declarations: [
     MediaHomeComponent

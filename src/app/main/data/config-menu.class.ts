@@ -1,5 +1,5 @@
 import { ViewChild } from "@angular/core";
-import { MatSidenav } from "@angular/material";
+import { MatSidenav } from "@angular/material/sidenav";
 import { ConfigCollapsibleStateService } from "../../shared/services/config-collapsible-state.service";
 
 export class ConfigMenu {
