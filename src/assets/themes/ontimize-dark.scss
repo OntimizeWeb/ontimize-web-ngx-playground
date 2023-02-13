@@ -26,5 +26,4 @@ $accent: $primary;
 
 /* Dark theme */
 $theme: fashion-mat-dark-theme($primary, $accent);
-@import 'node_modules/highlight.js/styles/solarized-dark.css';
 @import '../css/app.scss';
