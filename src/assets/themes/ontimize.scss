@@ -42,5 +42,4 @@ $accent: mat-palette($mat-custom-accent);
 
 /* Light theme */
 $theme: fashion-mat-light-theme($primary, $accent);
-@import 'node_modules/highlight.js/styles/solarized-light.css';
 @import '../css/app.scss';
