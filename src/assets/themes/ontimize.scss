@@ -4,8 +4,7 @@
 @include mat-core();
 
 /* Color definitions */
-$mat-custom-primary: (
-  50 : #e3ecf4,
+$mat-custom-primary: (50 : #e3ecf4,
   100 : #b9d1e4,
   200 : #8ab2d2,
   300 : #5b93c0,
@@ -19,11 +18,9 @@ $mat-custom-primary: (
   A200 : #75a7ff,
   A400 : #4286ff,
   A700 : #2876ff,
-  contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff)
-);
+  contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff));
 
-$mat-custom-accent: (
-  50 : #e3ecf4,
+$mat-custom-accent: (50 : #e3ecf4,
   100 : #b9d1e4,
   200 : #8ab2d2,
   300 : #5b93c0,
@@ -37,8 +34,7 @@ $mat-custom-accent: (
   A200 : #75a7ff,
   A400 : #4286ff,
   A700 : #2876ff,
-  contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff)
-);
+  contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff));
 
 // Define a theme.
 $primary: mat-palette($mat-custom-primary);
@@ -46,4 +42,5 @@ $accent: mat-palette($mat-custom-accent);
 
 /* Light theme */
 $theme: fashion-mat-light-theme($primary, $accent);
+@import 'node_modules/highlight.js/styles/solarized-light.css';
 @import '../css/app.scss';

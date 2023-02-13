@@ -11,6 +11,7 @@
 /*Sidenav background-color*/
 /* Light theme */
 /* Dark theme */
+@import url(node_modules/highlight.js/styles/solarized-light.css);
 .mat-badge-content {
   font-weight: 600;
   font-size: 12px;
