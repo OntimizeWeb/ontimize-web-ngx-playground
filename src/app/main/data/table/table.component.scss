@@ -16,6 +16,7 @@ example-component {
 }
 
 table-basic {
+  height: calc(100% - 67px);
   .sidenav-container {
     height: 810px !important;
 

@@ -30,3 +30,9 @@ a.active .new {
   font-size: 15px;
   font-weight: bold;
 }
+
+input-radio{
+  .o-container-scroll{
+    overflow: hidden !important;
+  }
+}
