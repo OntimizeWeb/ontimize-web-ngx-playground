@@ -176,7 +176,7 @@ const FAKE_USERS = [
     'id': 9,
     'name': 'Glenna Reichert',
     'username': 'Delphine',
-    'email': 'Chaim_McDermott@dana.io',
+    'email': 'Chaim_McDermo@dana.io',
     'street': 'Dayna Park',
     'suite': 'Suite 449',
     'city': 'Bartholomebury',

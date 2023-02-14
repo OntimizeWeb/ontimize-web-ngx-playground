@@ -1,5 +1,5 @@
 <example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
-  <o-form editable-detail="no" show-header="no" layout-direction="column">
+  <o-form editable-detail="no" show-header="no" layout-direction="column" class="hide-overflow">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-checkbox attr="check" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValue()"></o-checkbox>
@@ -18,7 +18,7 @@
 </example-comp>
 
 <example-comp comp-name="INPUTS.CHECKBOXBOOLEANTYPE" comp-desc="INPUTS.CHECKBOXBOOLEANTYPE.DESC" [files]="filesValueType">
-  <o-form #form2 editable-detail="no" show-header="no" layout-direction="row">
+  <o-form #form2 editable-detail="no" show-header="no" layout-direction="row" class="hide-overflow">
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.CHECKBOXBOOLEANTYPE_NUMBER' | oTranslate }}</label>
       <o-checkbox attr="check4" boolean-type="number" label="{{ 'INPUT.BUTTON.CHECKBOX' | oTranslate }}" [data]="getValueBooleanType('number')"

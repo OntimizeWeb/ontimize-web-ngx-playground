@@ -19,7 +19,7 @@
       <div fxFlex="1 1 100%" fxLayoutAlign="start start">
         <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
           [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
-          grid-item-height="400px" quick-filter="yes" class="grid-class">
+          grid-item-height="400px" quick-filter="yes" fxFlex>
           <o-grid-item *ngFor="let list of grid.dataArray">
             <div layout-padding class="container-item">
               <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
