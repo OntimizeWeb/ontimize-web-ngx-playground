@@ -1,9 +1,6 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
-/* Theme for the ripple elements.*/
-/* stylelint-disable material/no-prefixes */
-/* stylelint-enable */
 /*Application background-color*/
 /*Sidenav background-color*/
 /* Foreground color */
@@ -3872,11 +3869,11 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 
 .mat-checkbox-checked.mat-primary .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
-  background-color: rgba(255, 255, 255, 0.6); }
+  background-color: #b0b0b0; }
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-  background-color: rgba(255, 255, 255, 0.6); }
+  background-color: #b0b0b0; }
 
 .mat-checkbox-checked.mat-warn .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-warn .mat-checkbox-background {
