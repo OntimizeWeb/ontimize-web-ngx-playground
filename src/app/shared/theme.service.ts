@@ -10,6 +10,8 @@ export interface DocsSiteTheme {
   href_dark: string;
   isDark?: boolean;
   isDefault?: boolean;
+  highlight: string;
+  highlight_dark: string;
 }
 
 @Injectable({
@@ -25,6 +27,8 @@ export class ThemeService {
       accent: '#1464a5',
       href: 'ontimize.css',
       href_dark: 'ontimize-dark.css',
+      highlight: 'solarized-light.css',
+      highlight_dark: 'solarized-dark.css',
       isDefault: true
     }
   ];
@@ -57,8 +61,10 @@ export class ThemeService {
 
     if (theme.isDark) {
       this._styleManager.setStyle('theme', `./assets/themes/${theme.href_dark}`);
+      this._styleManager.setStyle('theme-highlight', `./assets/themes/${theme.highlight_dark}`);
     } else {
       this._styleManager.setStyle('theme', `./assets/themes/${theme.href}`);
+      this._styleManager.setStyle('theme-highlight', `./assets/themes/${theme.highlight}`);
     }
 
     this.currentTheme.isDark = theme.isDark;
