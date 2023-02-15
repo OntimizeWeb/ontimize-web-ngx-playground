@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -14,6 +15,8 @@ const opt = {
 @NgModule({
   imports: [RouterModule.forRoot(routes, opt)],
   exports: [RouterModule],
-  providers: []
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } }
+  ]
 })
 export class AppRoutingModule { }
