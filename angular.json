@@ -29,7 +29,6 @@
               }
             ],
             "styles": [
-              "node_modules/highlight.js/styles/solarized-light.css",
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
               "src/styles.scss"

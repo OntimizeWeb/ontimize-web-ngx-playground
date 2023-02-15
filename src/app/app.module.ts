@@ -1,8 +1,4 @@
-import { Injector, NgModule } from '@angular/core';
-import hljs from 'highlight.js/lib/highlight';
-import css from 'highlight.js/lib/languages/css';
-import typescript from 'highlight.js/lib/languages/typescript';
-import xml from 'highlight.js/lib/languages/xml';
+import { NgModule } from '@angular/core';
 import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
@@ -12,17 +8,24 @@ import { CONFIG } from './app.config';
 import { DummyService } from './shared/services/dummy.service';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
-hljs.registerLanguage('typescript', typescript);
-hljs.registerLanguage('css', css);
-hljs.registerLanguage('xml', xml);
-
-
+/**
+ * Import specific languages to avoid importing everything
+ */
+export function getHighlightLanguages() {
+  return {
+    typescript: () => import('highlight.js/lib/languages/typescript'),
+    css: () => import('highlight.js/lib/languages/css'),
+    xml: () => import('highlight.js/lib/languages/xml')
+  };
+}
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    HighlightModule,
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule,
@@ -33,6 +36,12 @@ hljs.registerLanguage('xml', xml);
     { provide: ConfigCollapsibleStateService },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        languages: getHighlightLanguages()
+      }
+    },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
