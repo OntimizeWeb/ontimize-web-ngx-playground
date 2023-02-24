@@ -3412,7 +3412,7 @@ textarea:disabled {
 
 .o-table .mat-table .mat-footer-row.o-table-aggregate {
   font-weight: bold;
-  background-color: black; }
+  background-color: #2d2f31; }
 
 .o-table .mat-table .mat-footer-row .mat-cell.o-column-currency, .o-table .mat-table .mat-footer-row .mat-cell.o-column-integer, .o-table .mat-table .mat-footer-row .mat-cell.o-column-real,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-currency,
@@ -3440,7 +3440,7 @@ textarea:disabled {
 
 .o-table .mat-table.editable-row-table .mat-row,
 .o-table .mat-table.totals-table .mat-row {
-  background-color: rgba(0, 0, 0, 0.9); }
+  background-color: rgba(45, 47, 49, 0.9); }
 
 .o-table .mat-table.totals-table .mat-header-row {
   display: none !important; }
@@ -3994,13 +3994,13 @@ o-row.o-row.main-form-container.container-gap .o-form.flat-form-toolbar:first-ch
   padding: 0; }
 
 .o-app-header nav.o-app-header-primary {
-  background-color: black; }
+  background-color: #242729; }
 
 .o-app-header nav.o-app-header-accent {
-  background-color: black; }
+  background-color: #242729; }
 
 .o-app-header nav .o-app-header-title {
-  color: #8ab2d2; }
+  color: rgba(255, 255, 255, 0.74); }
 
 .o-app-sidenav {
   font-weight: 400; }
@@ -4013,21 +4013,21 @@ o-row.o-row.main-form-container.container-gap .o-form.flat-form-toolbar:first-ch
     border-left-color: transparent; }
     .o-app-sidenav .o-app-sidenav-menu-group:not([disabled='true']) a:hover,
     .o-app-sidenav .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
-      color: rgba(255, 255, 255, 0.87);
-      background-color: #030303;
+      color: rgba(255, 255, 255, 0.74);
+      background-color: #26292b;
       border-left: 8px solid #8ab2d2; }
     .o-app-sidenav .o-app-sidenav-menu-group:not([disabled='true']) a.o-app-sidenav-viewer-sidenav-item-selected,
     .o-app-sidenav .o-app-sidenav-menu-item:not([disabled='true']) a.o-app-sidenav-viewer-sidenav-item-selected {
-      color: rgba(255, 255, 255, 0.87);
-      background-color: #020202;
+      color: rgba(255, 255, 255, 0.74);
+      background-color: #25282a;
       border-left: 8px solid #8ab2d2; }
   .o-app-sidenav .o-app-sidenav-sidenav {
-    background: black;
+    background: #242729;
     /* Side Navigation Level Styles */ }
     .o-app-sidenav .o-app-sidenav-sidenav .sidenav-toggle {
-      color: rgba(255, 255, 255, 0.6); }
+      color: rgba(255, 255, 255, 0.74); }
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item {
-      color: rgba(255, 255, 255, 0.87); }
+      color: rgba(255, 255, 255, 0.74); }
       .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info {
         color: inherit; }
         .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info:focus, .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info:hover {
@@ -4035,17 +4035,17 @@ o-row.o-row.main-form-container.container-gap .o-form.flat-form-toolbar:first-ch
         .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-item.o-user-info .o-user-info-menu-item .o-user-info-item {
           background: rgba(0, 0, 0, 0.74); }
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-1 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul {
-      background: #050505; }
+      background: #272a2b; }
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-1 .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
-      background-color: #050505; }
+      background-color: #272a2b; }
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-2 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul,
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-3 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul,
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-4 .o-app-sidenav-menugroup.opened + .o-app-sidenav-menugroup-items-container ul {
-      background: #0a0a0a; }
+      background: #2a2c2e; }
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-2 .o-app-sidenav-menu-item:not([disabled='true']) a:hover,
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-3 .o-app-sidenav-menu-item:not([disabled='true']) a:hover,
     .o-app-sidenav .o-app-sidenav-sidenav .o-app-sidenav-menu-group-level-4 .o-app-sidenav-menu-item:not([disabled='true']) a:hover {
-      background-color: #0a0a0a; }
+      background-color: #2a2c2e; }
     .o-app-sidenav .o-app-sidenav-sidenav li a {
       color: rgba(255, 255, 255, 0.87); }
 
@@ -4053,7 +4053,7 @@ o-app-sidenav.o-app-sidenav .o-app-sidenav-container .o-app-header,
 o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container .o-app-header {
   /*box-shadow: none;*/
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: black; }
+  background-color: #242729; }
 
 o-app-sidenav.o-app-sidenav .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav,
 o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container mat-sidenav.mat-drawer.o-app-sidenav-sidenav {
@@ -4073,7 +4073,7 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
   font-weight: 500; }
 
 .mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
-  background: black; }
+  background: #2d2f31; }
 
 .mat-tab-group .mat-tab-label.mat-tab-label-active {
   color: rgba(255, 255, 255, 0.87); }
@@ -4087,8 +4087,6 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
   .ontimize-table.o-table tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
   .ontimize-table.o-table thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
     background-color: rgba(255, 255, 255, 0.6); }
-  .ontimize-table.o-table .o-table-button .mat-icon {
-    color: rgba(255, 255, 255, 0.6); }
 
 .o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
   cursor: pointer;
@@ -4098,7 +4096,7 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
   background: #f1f6fa80; }
 
 .o-table .mat-table .mat-row .mat-cell {
-  color: rgba(255, 255, 255, 0.87); }
+  color: rgba(255, 255, 255, 0.6); }
 
 /* FORM */
 .o-form .o-form-toolbar {
@@ -4109,6 +4107,7 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
     .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
       margin-right: 32px; }
 
+/* Buttons */
 .mat-dialog-actions button:not([disabled]).mat-button-base,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base,

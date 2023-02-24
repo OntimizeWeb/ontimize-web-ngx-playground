@@ -3,19 +3,22 @@
 
   <data-structure comp-name="GRID" #sidenavComp>
     <div menu layout-margin>
-      <mat-form-field>
-        <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
+      <mat-form-field layout-padding>
+        <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
+        <input matInput #gridTitle value="Grid">
       </mat-form-field>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
-        <mat-form-field>
-          <input matInput #colsInput type="number" placeholder="{{ 'GRID.NUM_COLUMNS' | oTranslate }}" [(ngModel)]="columns" min="1">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+        <mat-form-field layout-padding>
+          <mat-label>{{ 'GRID.NUM_COLUMNS' | oTranslate }}</mat-label>
+          <input matInput #colsInput type="number" [(ngModel)]="columns" min="1">
         </mat-form-field>
-        <mat-form-field>
-          <input matInput #gutterSizeInput type="number" placeholder="{{ 'GRID.GUTTER_SIZE' | oTranslate }}" [(ngModel)]="gutterSize" min="1">
+        <mat-form-field layout-padding>
+          <mat-label>{{ 'GRID.GUTTER_SIZE' | oTranslate }}</mat-label>
+          <input matInput #gutterSizeInput type="number" [(ngModel)]="gutterSize" min="1">
         </mat-form-field>
       </div>
       <div fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
           <mat-slide-toggle #showControlsToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
@@ -23,7 +26,7 @@
             {{ 'GRID.SHOW_FOOTER' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
           <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
             {{ 'REFRESH_BUTTON' | oTranslate }}
           </mat-slide-toggle>
@@ -31,15 +34,16 @@
             {{ 'INSERT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
           <mat-slide-toggle #showPageSizeToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_PAGINATION' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field fxFlex>
-            <input matInput #pageSizeInput type="number" placeholder="{{ 'GRID.PAGE_SIZE' | oTranslate }}" [(ngModel)]="pagesize" min="1">
+            <mat-label>{{ 'GRID.PAGE_SIZE' | oTranslate }}</mat-label>
+            <input matInput #pageSizeInput type="number" [(ngModel)]="pagesize" min="1">
           </mat-form-field>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
           <mat-slide-toggle #showSortToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_SORT' | oTranslate }}
           </mat-slide-toggle>
@@ -51,7 +55,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
           <mat-slide-toggle #quickFilterToggle [checked]="true" fxFlex>
             {{ 'QUICK_FILTER' | oTranslate }}
           </mat-slide-toggle>

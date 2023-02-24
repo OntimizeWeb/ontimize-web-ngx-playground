@@ -16,21 +16,6 @@ o-text-input {
   margin-bottom: 5px;
 }
 
-a.active .new {
-  color: black;
-}
-
-.new {
-  margin: 5px 5px 5px auto;
-  padding: 0 2px 0 2px;
-  align-self: right;
-  border-width: 1px;
-  border-style: dashed;
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
 input-radio{
   .o-container-scroll{
     overflow: hidden !important;
