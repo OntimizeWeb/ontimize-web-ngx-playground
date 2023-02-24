@@ -4,7 +4,8 @@
   <data-structure comp-name="TABLE" #sidenavComp>
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
-        <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="400" type="number">
+        <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
+        <input matInput #height value="400" type="number">
       </mat-form-field>
       <mat-slide-toggle #fixedHeaderToggle [checked]="true">
         {{ 'TABLE.BUTTON.FIXED' | oTranslate }}

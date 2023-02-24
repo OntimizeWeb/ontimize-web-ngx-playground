@@ -23,14 +23,17 @@
   }
 
   .menu-item {
-    display: flex;
+    display: block;
     padding-left: 10px;
-    align-items: center;
+    padding-top: 5px;
     text-decoration: none;
-    width: 100%;
+    width: 200px;
     height: 32px;
     max-height: 32px;
     font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .mat-expansion-panel-header {

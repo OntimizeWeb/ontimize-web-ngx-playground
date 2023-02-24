@@ -4,7 +4,8 @@
   <data-structure comp-name="TABLE" #sidenavComp>
     <div menu>
       <mat-form-field layout-margin>
-        <input matInput #titleInput placeholder="{{ 'TITLE' | oTranslate }}" value="Table">
+        <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
+        <input matInput #titleInput value="Table">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <mat-slide-toggle #titleToggle checked="true" fxFlex>
