@@ -10,7 +10,7 @@
   </defs>
   <g id="ilustracion_Tooltip" data-name="ilustracion Tooltip" transform="translate(-1232.5 -479.5)">
     <g id="Ilustracion_Text" data-name="Ilustracion Text" transform="translate(547 7)">
-      <g id="Integer" transform="translate(4 21)">
+      <g id="tooltip" transform="translate(4 21)">
         <g transform="matrix(1, 0, 0, 1, 681.5, 451.5)" filter="url(#Rectángulo_6445)">
           <g id="Rectángulo_6445-2" data-name="Rectángulo 6445" transform="translate(1.5 0.5)" fill="#fff" stroke="rgba(0,0,0,0.12)" stroke-width="1">
             <rect width="160" height="34" rx="2" stroke="none"/>
