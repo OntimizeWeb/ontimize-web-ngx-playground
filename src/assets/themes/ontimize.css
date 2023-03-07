@@ -4375,6 +4375,9 @@ ul.list-grid-container {
   border-color: #1464a5;
   background-color: #b9d1e4; }
 
+layout-manager .left-border {
+  background-color: #e6e7e9; }
+
 .new {
   color: rgba(0, 0, 0, 0.87); }
 
