@@ -15,8 +15,6 @@ const opt = {
 @NgModule({
   imports: [RouterModule.forRoot(routes, opt)],
   exports: [RouterModule],
-  providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } }
-  ]
+  providers: []
 })
 export class AppRoutingModule { }
