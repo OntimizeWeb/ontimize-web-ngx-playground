@@ -23,6 +23,7 @@
   "DIALOG.WARNING_DIALOG": "Warning dialog",
   "DIALOG.ERROR_DIALOG": "Error dialog",
   "DIALOG.CONFIRM_DIALOG": "Confirm dialog",
+  "DIALOG.CUSTOM_DIALOG": "Custom dialog",
   "COLUMN": "Column",
   "ROW": "Row",
   "TITLE": "Title",
