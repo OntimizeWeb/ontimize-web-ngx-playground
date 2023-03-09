@@ -74,9 +74,8 @@
         </div>
       </div>
       <div class="conf-button-div">
-        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id">
-          <mat-icon>tune</mat-icon> {{ 'LIST.CONFIGURATION' | oTranslate }}
-        </button>
+        <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="btnVisibility"
+          (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id"></o-button>
       </div>
     </div>
   </data-structure>

@@ -21,9 +21,8 @@
         </o-table>
       </div>
       <div class="conf-button-div">
-        <button mat-stroked-button *ngIf="btnVisibility" (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id">
-          <mat-icon>tune</mat-icon> {{ 'TABLE.CONFIGURATION' | oTranslate }}
-        </button>
+        <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="btnVisibility"
+          (click)="sidenavComp.toggle()" class="table-conf-btn" id="table-conf-btn-id"></o-button>
       </div>
 
     </div>
