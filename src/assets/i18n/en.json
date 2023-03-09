@@ -58,7 +58,6 @@
   "ACTION_2": "Button 2",
   "LIST.COMPONENT": "List",
   "LIST.COMPONENT.DESC": "A container component that wraps and formats a series of line items.",
-  "LIST.CONFIGURATION": "List configuration",
   "LIST.LIST_ITEM_TEXT": "Text item",
   "LIST.LIST_ITEM_AVATAR": "Avatar item",
   "LIST.LIST_ITEM_CARD": "Card item",
@@ -68,7 +67,6 @@
   "LIST.INSERT_BUTTON_POSITION":"Insert button position",
   "TABLE.COMPONENT": "Table",
   "TABLE.COMPONENT.DESC": "A component for displaying tabular data.",
-  "TABLE.CONFIGURATION": "Table configuration",
   "TABLE.BUTTON.ADD": "Insert button",
   "TABLE.BUTTON.REFRESH": "Refresh button",
   "TABLE.BUTTON.REMOVE": "Remove button",
@@ -127,7 +125,6 @@
   "GRID.SHOW_SORT": "Show sort",
   "GRID.SHOW_FOOTER": "Show footer",
   "GRID.DEFAULT_COLS_VALUE": "Default columns for row",
-  "GRID.CONFIGURATION": "Grid configuration",
   "GRID.SHOW_CONTROLS": "Show toolbar",
   "GRID.PAGINATION": "Pagination",
   "GRID.NUM_COLUMNS": "Columns per row",
@@ -468,5 +465,6 @@
   "INPUTS.OVERVIEW": "Overview",
   "INPUTS.OVERVIEW.DESC": "Inputs overview home page.",
   "CONSOLE.LOG": "Console log",
-  "ABOUT": "About"
+  "ABOUT": "About",
+  "BUTTON.CONFIGURATION": "Configuration"
 }

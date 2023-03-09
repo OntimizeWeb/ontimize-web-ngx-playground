@@ -32,7 +32,7 @@ export class ConfigMenu {
       this.sidenav.opened = sidenavOpened != null ? sidenavOpened : this.sidenav.opened;
       this.sidenav.mode = "side";
       if (elemById) {
-        elemById.style.transform = "rotate(90deg)";
+        elemById.style.transform = "rotate(-90deg)";
       }
 
     }
@@ -45,7 +45,7 @@ export class ConfigMenu {
     else {
       this.sidenav.mode = "over";
       if (elemById) {
-        elemById.style.transform = "rotate(90deg)";
+        elemById.style.transform = "rotate(-90deg)";
       }
     }
   }
