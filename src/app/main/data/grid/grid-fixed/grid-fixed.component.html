@@ -18,7 +18,7 @@
     </div>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 1 100%" fxLayoutAlign="start start">
+      <div fxFlex="1 1 100%" fxLayoutAlign="start start" class="width">
         <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
           [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
           grid-item-height="400px" quick-filter="yes" fxFlex>
