@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
@@ -16,6 +17,9 @@ export class GridBasicComponent extends ConfigMenu {
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
+
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
 
   constructor(protected configExpandedService: ConfigCollapsibleStateService){
     super(configExpandedService);
@@ -60,4 +64,9 @@ export class GridBasicComponent extends ConfigMenu {
     }, 0);
   }
 
+  toggleSidenav(click: string) {
+    if (click == "click") {
+      this.dataStructure.toggle();
+    }
+  }
 }

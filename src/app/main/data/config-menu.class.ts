@@ -49,4 +49,8 @@ export class ConfigMenu {
       }
     }
   }
+
+  toggle() {
+    this.sidenav.toggle(!this.sidenav.opened);
+  }
 }

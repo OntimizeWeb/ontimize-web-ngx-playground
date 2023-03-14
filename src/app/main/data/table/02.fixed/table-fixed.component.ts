@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -15,6 +16,9 @@ export class TableFixedComponent extends ConfigMenu {
 
   @ViewChild('height', { static: false })
   tableHeight: any;
+
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
 
   public data = TableUtils.getAccountsTableFixed().slice();
 
@@ -34,4 +38,9 @@ export class TableFixedComponent extends ConfigMenu {
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }
 
+  toggleSidenav(click: string) {
+    if (click == "click") {
+      this.dataStructure.toggle();
+    }
+  }
 }

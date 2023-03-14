@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -55,6 +56,9 @@ export class TableBasicComponent extends ConfigMenu {
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any;
 
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
+
   public data = TableUtils.getCustomers();
 
   constructor(protected configExpandedService: ConfigCollapsibleStateService) {
@@ -94,8 +98,11 @@ export class TableBasicComponent extends ConfigMenu {
     console.log('actionClick');
   }
 
-
-
-
+  toggleSidenav(click: string) {
+    if (click == "click") {
+      this.dataStructure.toggle();
+    }
+  }
 
 }
+
