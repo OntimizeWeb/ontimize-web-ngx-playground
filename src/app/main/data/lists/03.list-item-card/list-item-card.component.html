@@ -73,10 +73,7 @@
           </o-list>
         </div>
       </div>
-      <div class="conf-button-div">
-        <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="btnVisibility"
-          (click)="sidenavComp.toggle()" class="list-conf-btn" id="list-conf-btn-id"></o-button>
-      </div>
+      <configuration-button (confBtnClick)="toggleSidenav($event)"></configuration-button>
     </div>
   </data-structure>
 </example-comp>
