@@ -112,9 +112,7 @@ export class ListItemAvatarComponent extends ConfigMenu {
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_AVATAR_HTML_DATA, list, itemData);
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
-      this.dataStructure.toggle();
-    }
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }

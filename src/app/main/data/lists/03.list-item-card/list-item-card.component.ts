@@ -113,9 +113,7 @@ export class ListItemCardComponent extends ConfigMenu {
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_HTML_DATA, list, itemData);
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
+  toggleSidenav() {
       this.dataStructure.toggle();
-    }
   }
 }

@@ -98,10 +98,8 @@ export class TableBasicComponent extends ConfigMenu {
     console.log('actionClick');
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
+  toggleSidenav() {
       this.dataStructure.toggle();
-    }
   }
 
 }

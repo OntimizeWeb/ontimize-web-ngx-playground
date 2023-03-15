@@ -38,9 +38,7 @@ export class TableFixedComponent extends ConfigMenu {
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
-      this.dataStructure.toggle();
-    }
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }

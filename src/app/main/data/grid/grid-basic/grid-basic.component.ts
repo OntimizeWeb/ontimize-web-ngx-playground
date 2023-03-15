@@ -64,9 +64,7 @@ export class GridBasicComponent extends ConfigMenu {
     }, 0);
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
-      this.dataStructure.toggle();
-    }
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }

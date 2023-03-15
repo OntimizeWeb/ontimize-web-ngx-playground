@@ -49,9 +49,7 @@ export class GridFixedComponent extends ConfigMenu {
     }, 0);
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
-      this.dataStructure.toggle();
-    }
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }

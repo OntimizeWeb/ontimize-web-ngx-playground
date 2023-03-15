@@ -28,16 +28,14 @@ export class TablePaginationComponent extends ConfigMenu {
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     exampleComp.html = TableUtils.getHtml(key, table, {});
-    this.pageSizeOptionsInput =  this.pageSizeOptionsInput.nativeElement.value;
+    this.pageSizeOptionsInput = this.pageSizeOptionsInput.nativeElement.value;
   }
 
   onEmptySetDefault() {
     this.pageSizeOptionsInput.nativeElement.value = this.pageSizeOptionsInput.nativeElement.value != '' ? this.pageSizeOptionsInput.nativeElement.value : "5;10;15";
   }
 
-  toggleSidenav(click: string) {
-    if (click == "click") {
-      this.dataStructure.toggle();
-    }
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }

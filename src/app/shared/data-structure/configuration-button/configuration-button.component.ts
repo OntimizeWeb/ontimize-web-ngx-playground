@@ -8,7 +8,7 @@ import { ConfigCollapsibleStateService } from '../../services/config-collapsible
 })
 export class ConfigurationButtonComponent implements OnInit {
 
-  @Output() confBtnClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() confBtnClick: EventEmitter<void> = new EventEmitter();
 
   public btnVisibility: boolean;
 
@@ -28,6 +28,6 @@ export class ConfigurationButtonComponent implements OnInit {
   }
 
   toggle() {
-    this.confBtnClick.emit("click");
+    this.confBtnClick.emit();
   }
 }

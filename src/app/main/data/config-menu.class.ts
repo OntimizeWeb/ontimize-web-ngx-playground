@@ -43,7 +43,7 @@ export class ConfigMenu {
       }
     }
     else {
-      this.sidenav.mode = "over";
+      this.sidenav.mode = "side";
       if (elemById) {
         elemById.style.transform = "rotate(-90deg)";
       }
