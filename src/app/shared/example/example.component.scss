@@ -8,7 +8,7 @@
     padding: 0;
     margin: 0 10px 0 10px;
     width: calc(100% - 20px);
-    height: 50px;
+    max-height: 64px;
 
     >div>span {
       font-weight: 600;

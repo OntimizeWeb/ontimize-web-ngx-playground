@@ -15,6 +15,7 @@ example-component {
   height: 100%;
 }
 
+/*
 table-basic {
   height: calc(100% - 67px);
   .sidenav-container {
@@ -26,6 +27,26 @@ table-basic {
       .mat-drawer-inner-container {
         overflow: hidden;
 
+      }
+    }
+  }
+}*/
+table-basic {
+  height: fit-content;
+
+  section {
+    height: fit-content;
+
+    .sidenav-container {
+      height: fit-content;
+
+      .sidenav {
+        height: fit-content;
+
+        .mat-drawer-inner-container {
+          overflow: hidden;
+          height: fit-content;
+        }
       }
     }
   }
