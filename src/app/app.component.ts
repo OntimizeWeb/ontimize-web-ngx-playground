@@ -38,7 +38,8 @@ export class AppComponent {
         this.ontimizeMatIconRegistry.addOntimizeSvgIcon(current, 'assets/images/menu/' + current + '.svg');
         this.ontimizeMatIconRegistry.addOntimizeSvgIcon(current + '_dark', 'assets/images/menu/dark/' + current + '_dark.svg');
       })
-
+      this.ontimizeMatIconRegistry.addOntimizeSvgIcon('home_dark', 'assets/images/home_dark.svg');
+      this.ontimizeMatIconRegistry.addOntimizeSvgIcon('home_light', 'assets/images/home_light.svg');
     }
   }
 

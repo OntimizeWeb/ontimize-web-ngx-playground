@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -14,6 +15,8 @@ export class GridFixedComponent extends ConfigMenu {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
 
   constructor(protected configExpandedService: ConfigCollapsibleStateService) {
     super(configExpandedService);
@@ -46,4 +49,7 @@ export class GridFixedComponent extends ConfigMenu {
     }, 0);
   }
 
+  toggleSidenav() {
+    this.dataStructure.toggle();
+  }
 }
