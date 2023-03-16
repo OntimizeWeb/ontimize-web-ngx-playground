@@ -1,4 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -59,7 +60,8 @@ export class ListItemAvatarComponent extends ConfigMenu {
   iconToggle: any;
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
-
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
   files = {
     'html': {
       'data': LIST_ITEM_AVATAR_HTML_DATA
@@ -110,4 +112,7 @@ export class ListItemAvatarComponent extends ConfigMenu {
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_AVATAR_HTML_DATA, list, itemData);
   }
 
+  toggleSidenav() {
+    this.dataStructure.toggle();
+  }
 }

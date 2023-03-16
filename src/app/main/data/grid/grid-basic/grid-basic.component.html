@@ -96,11 +96,7 @@
           </o-grid-item>
         </o-grid>
       </div>
-      <div class="conf-button-div">
-        <button *ngIf="btnVisibility" mat-stroked-button (click)="sidenavComp.toggle()" class="grid-conf-btn" id="grid-conf-btn-id">
-          <mat-icon>tune</mat-icon> {{ 'GRID.CONFIGURATION' | oTranslate }}
-        </button>
-      </div>
+      <configuration-button (confBtnClick)="toggleSidenav()"></configuration-button>
     </div>
   </data-structure>
 

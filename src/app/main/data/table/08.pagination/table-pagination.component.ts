@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -12,6 +13,9 @@ export class TablePaginationComponent extends ConfigMenu {
   @ViewChild('pageSizeOptionsInput', { static: false })
   pageSizeOptionsInput: any;
 
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
+
   public data = TableUtils.getBranches();
 
   constructor(protected configExpandedService: ConfigCollapsibleStateService) {
@@ -24,10 +28,14 @@ export class TablePaginationComponent extends ConfigMenu {
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     exampleComp.html = TableUtils.getHtml(key, table, {});
-    this.pageSizeOptionsInput =  this.pageSizeOptionsInput.nativeElement.value;
+    this.pageSizeOptionsInput = this.pageSizeOptionsInput.nativeElement.value;
   }
 
   onEmptySetDefault() {
     this.pageSizeOptionsInput.nativeElement.value = this.pageSizeOptionsInput.nativeElement.value != '' ? this.pageSizeOptionsInput.nativeElement.value : "5;10;15";
+  }
+
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 }
