@@ -1,69 +1,59 @@
 <o-column title="INTRODUCTION" class="bg-level-1" fxFlexFill>
-  <div layout-padding>
-    <h2>What is Ontimize Web?</h2>
-    <p class="body-text">
-      Ontimize Web is web application framework based on Angular for building bussiness software. Ontimize Web makes use of Angular
-      framework and its UI Component framework (Angular Material) to provide a set of reusable, well-teste and accesible
-      components apart from a number of standard services and functionalities.
-    </p>
-  </div>
-
-  <div layout-padding>
-    <h2>Keep up to date</h2>
-    <p class="body-text" style="margin-bottom:0px;">
-      Please refer to our changelog for up-to-date listings of all improvements and breaking changes.
-    </p>
-    <div fxLayout="row" fxLayoutAlign="center">
-      <a class="vertical-padding-8 changelog" href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/CHANGELOG.md" target="_blank">
-        <div layout-padding fxLayout="row" fxLayoutAlign="center">
-          <mat-icon class="mat-48">access_time</mat-icon>
-          <span>CHANGELOG</span>
-        </div>
+  <div fxLayout="row">
+    <div layout-padding fxFlex="60">
+      <h3>What is Ontimize Web?</h3>
+      <p class="body-text">
+        Ontimize Web is web application framework based on Angular for building bussiness software. Ontimize Web makes use of Angular
+        framework and its UI Component framework (Angular Material) to provide a set of reusable, well-teste and accesible
+        components apart from a number of standard services and functionalities.
+      </p>
+      <h3>Keep up to date</h3>
+      <p class="body-text">
+        Please refer to our changelog for up-to-date listings of all improvements and breaking changes.
+      </p>
+      <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/CHANGELOG.md" target="_blank">
+        <o-button type="STROKED" label="CHANGELOG" layout-padding color="primary" icon="access_time"></o-button>
       </a>
+      <h3>Related topics</h3>
+      <p class="body-text">
+        Here are some interesting reading topics that can help you better understand how to develop with Ontimize Web.
+      </p>
+    </div>
+    <div layout-padding fxFlex="40" fxLayoutAlign="center center">
+      <img src="../../../assets/images/home_light.svg" *ngIf="!is_dark_theme">
+      <img src="../../../assets/images/home_dark.svg" *ngIf="is_dark_theme">
     </div>
   </div>
 
-  <mat-divider></mat-divider>
-
-  <div layout-padding>
-    <h2>Related topics</h2>
-    <p class="body-text">
-      Here are some interesting reading topics that can help you better understand how to develop with Ontimize Web.
-    </p>
-
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <h5>Angular documentation</h5>
-      <a href="https://angular.io/docs/ts/latest/" target="_blank">
-        <mat-icon>launch</mat-icon>
-      </a>
-    </div>
-    <p class="body-text">
-      Angular is the new improved version of the ever popular JavaScript framework AngularJS. Angular is a re-imagining of
-      Angular applying all lessons learned from v1.x and promotes a component based architecture while leveraging new features
-      of ES2015 (or TypeScript) like classes and modules.
-    </p>
-
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <h5>Google's Material Desing</h5>
-      <a href="http://www.google.com/design/spec/material-design/" target="_blank">
-        <mat-icon>launch</mat-icon>
-      </a>
-    </div>
-    <p class="body-text">
-      Material Design is a specification for a unified system of visual, motion, and interaction design that adapts across different
-      devices and different screen sizes.
-    </p>
-
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <h5>TypeScript documentation</h5>
-      <a href="http://www.typescriptlang.org/docs/tutorial.html" target="_blank">
-        <mat-icon>launch</mat-icon>
-      </a>
-    </div>
-    <p class="body-text">
-      TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    </p>
-
+  <div fxLayout="row" fxLayoutGap="45px" layout-padding>
+    <mat-card fxFlex="33">
+      <mat-card-header>Angular documentation</mat-card-header>
+      <mat-card-content>Angular is the new improved version of the ever popular JavaScript framework AngularJS. Angular is a re-imagining of
+        Angular applying all lessons learned from v1.x and promotes a component based architecture while leveraging new features
+        of ES2015 (or TypeScript) like classes and modules.</mat-card-content>
+      <mat-card-footer fxLayoutAlign="center flex-end">
+        <a href="https://angular.io/docs/ts/latest/" target="_blank">
+          <o-button type="BASIC" label="Angular documentation link" layout-padding color="primary"></o-button>
+        </a>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card fxFlex="33">
+      <mat-card-header>Google's Material Desing</mat-card-header>
+      <mat-card-content>Material Design is a specification for a unified system of visual, motion, and interaction design that adapts across different
+      devices and different screen sizes.</mat-card-content>
+      <mat-card-footer fxLayoutAlign="center flex-end">
+        <a href="http://www.google.com/design/spec/material-design/" target="_blank">
+          <o-button type="BASIC" label="Google's Material Desing link" layout-padding color="primary"></o-button>
+        </a>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card fxFlex="33">
+      <mat-card-header>TypeScript documentation</mat-card-header>
+      <mat-card-content>TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.</mat-card-content>
+      <mat-card-footer fxLayoutAlign="center flex-end">
+        <a href="http://www.typescriptlang.org/docs/tutorial.html" target="_blank">
+          <o-button type="BASIC" label="TypeScript documentation link" layout-padding color="primary"></o-button>
+        </a>
+      </mat-card-footer>
+    </mat-card>
   </div>
-
-</o-column>

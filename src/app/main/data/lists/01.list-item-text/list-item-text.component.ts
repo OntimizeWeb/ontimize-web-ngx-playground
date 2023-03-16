@@ -1,4 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
 import { ConfigMenu } from '../../config-menu.class';
 
@@ -47,6 +48,9 @@ export class ListItemTextComponent extends ConfigMenu {
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
 
+  @ViewChild('sidenavComp', { static: false })
+  dataStructure: DataStructureComponent;
+
   insertButtonPosition = 'bottom';
 
   files = {
@@ -88,6 +92,10 @@ export class ListItemTextComponent extends ConfigMenu {
     }
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
+  }
+
+  toggleSidenav() {
+    this.dataStructure.toggle();
   }
 
 }
