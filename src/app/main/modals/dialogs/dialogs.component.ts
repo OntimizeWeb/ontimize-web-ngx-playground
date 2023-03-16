@@ -35,35 +35,20 @@ export class DialogsComponent implements OnInit {
     }
 
     showInfo(evt: any) {
-      if (this.dialogService) {
-        const config: ODialogConfig = {
-          icon: 'alarm',
-          okButtonText: 'It rocks!'
-        };
-        this.dialogService.info('Info dialog title',
-          'This is an amazing "Information" dialog', config);
+        this.dialogService.info('Info dialog title', 'This is an amazing "Information" dialog');
       }
     }
 
 
     showWarning(evt: any) {
       if (this.dialogService) {
-        const config: ODialogConfig = {
-          icon: 'alarm',
-          okButtonText: 'It rocks!'
-        };
-        this.dialogService.warn('Warning dialog title', 'This is an amazing "Warning" dialog',
-          config);
+        this.dialogService.warn('Warning dialog title', 'This is an amazing "Warning" dialog');
       }
     }
 
     showError(evt: any) {
       if (this.dialogService) {
-        const config: ODialogConfig = {
-          icon: 'alarm',
-          okButtonText: 'It rocks!'
-        };
-        this.dialogService.error('Error dialog title', 'This is an amazing "Error" dialog', config);
+        this.dialogService.error('Error dialog title', 'This is an amazing "Error" dialog');
       }
     }
 
@@ -72,6 +57,16 @@ export class DialogsComponent implements OnInit {
         this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?');
       }
     }
+
+    showCustom(evt: any) {
+    if (this.dialogService) {
+      const config: ODialogConfig = {
+        icon: 'alarm',
+        okButtonText: 'It rocks!'
+      };
+      this.dialogService.alert('Custom dialog title', 'This is an amazing "Custom" dialog', config);
+    }
+  }
 
     getFiles() {
       return {
@@ -115,40 +110,37 @@ export class DialogsComponent implements OnInit {
 
   showInfo(evt: any) {
     if (this.dialogService) {
-      const config: ODialogConfig = {
-        icon: 'alarm',
-        okButtonText: 'It rocks!'
-      };
       this.dialogService.info('Info dialog title',
-        'This is an amazing "Information" dialog', config);
+        'This is an amazing "Information" dialog');
     }
   }
 
 
   showWarning(evt: any) {
     if (this.dialogService) {
-      const config: ODialogConfig = {
-        icon: 'alarm',
-        okButtonText: 'It rocks!'
-      };
-      this.dialogService.warn('Warning dialog title', 'This is an amazing "Warning" dialog',
-        config);
+      this.dialogService.warn('Warning dialog title', 'This is an amazing "Warning" dialog');
     }
   }
 
   showError(evt: any) {
     if (this.dialogService) {
-      const config: ODialogConfig = {
-        icon: 'alarm',
-        okButtonText: 'It rocks!'
-      };
-      this.dialogService.error('Error dialog title', 'This is an amazing "Error" dialog', config);
+      this.dialogService.error('Error dialog title', 'This is an amazing "Error" dialog');
     }
   }
 
   showConfirm(evt: any) {
     if (this.dialogService) {
       this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?');
+    }
+  }
+
+  showCustom(evt: any) {
+    if (this.dialogService) {
+      const config: ODialogConfig = {
+        icon: 'alarm',
+        okButtonText: 'It rocks!'
+      };
+      this.dialogService.alert('Custom dialog title', 'This is an amazing "Custom" dialog', config);
     }
   }
 

@@ -12,11 +12,11 @@
         </div>
 
         <o-column attr="conf" title="{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}" fxFlex="50" layout-padding layout-align="center">
-          <mat-form-field>
+          <mat-form-field layout-padding>
             <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field layout-padding>
             <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
               <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
                 {{positionOption}}
@@ -24,11 +24,11 @@
             </mat-select>
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field layout-padding>
             <input #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field layout-padding>
             <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
           </mat-form-field>
         </o-column>

@@ -3,23 +3,25 @@
   <data-structure comp-name="GRID" #sidenavComp>
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
-        <input matInput #gridTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Grid">
+        <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
+        <input matInput #gridTitle value="Grid">
       </mat-form-field>
       <o-column fxFlex layout-padding>
         <mat-slide-toggle #fixedHeaderToggle [checked]="true">
           {{ 'GRID.BUTTON.FIXED' | oTranslate }}
         </mat-slide-toggle>
         <mat-form-field>
-          <input matInput #height placeholder="{{ 'HEIGHT' | oTranslate }}" value="600" type="number">
+          <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
+          <input matInput #height value="600" type="number">
         </mat-form-field>
       </o-column>
     </div>
 
     <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 1 100%" fxLayoutAlign="start start">
+      <div fxFlex="1 1 100%" fxLayoutAlign="start start" class="width">
         <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname" keys="id"
           [fixed-header]="fixedHeaderToggle.checked" [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="8"
-          grid-item-height="400px" quick-filter="yes" class="grid-class">
+          grid-item-height="400px" quick-filter="yes" fxFlex>
           <o-grid-item *ngFor="let list of grid.dataArray">
             <div layout-padding class="container-item">
               <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">

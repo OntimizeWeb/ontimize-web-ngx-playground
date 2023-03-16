@@ -8,7 +8,7 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Ilustración_Checkbox" data-name="Ilustración Checkbox" transform="translate(-706.5 -180.5)">
+  <g id="Ilustracion_Checkbox" data-name="Ilustracion Checkbox" transform="translate(-706.5 -180.5)">
     <g transform="matrix(1, 0, 0, 1, 706.5, 180.5)" filter="url(#Trazado_7127)">
       <g id="Trazado_7127-2" data-name="Trazado 7127" transform="translate(1.5 0.5)" fill="#fff">
         <path d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" stroke="none"/>

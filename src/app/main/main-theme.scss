@@ -12,4 +12,9 @@
     background-color: mat-color($primary, 100);
   }
 
+  layout-manager {
+    .left-border {
+      background-color: mat-color($background, level-0);
+    }
+  }
 }

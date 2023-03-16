@@ -9,21 +9,19 @@
     </filter>
   </defs>
   <g id="Ilustracion_Dialog" data-name="Ilustracion Dialog" transform="translate(-391.5 -467.5)">
-    <g id="Ilustracion_SnackBar" data-name="Ilustracion  SnackBar" transform="translate(-631 25)">
-      <g transform="matrix(1, 0, 0, 1, 1022.5, 442.5)" filter="url(#Trazado_7172)">
-        <g id="Trazado_7172-2" data-name="Trazado 7172" transform="translate(1.5 0.5)" fill="#fff">
-          <path d="M2,0H110a1.856,1.856,0,0,1,2,1.667V78.333A1.856,1.856,0,0,1,110,80H2a1.856,1.856,0,0,1-2-1.667V1.667A1.856,1.856,0,0,1,2,0Z" stroke="none"/>
-          <path d="M 2 1 C 1.410690307617188 1 1 1.351341247558594 1 1.666664123535156 L 1 78.33333587646484 C 1 78.64865875244141 1.410690307617188 79 2 79 L 110 79 C 110.5893096923828 79 111 78.64865875244141 111 78.33333587646484 L 111 1.666664123535156 C 111 1.351341247558594 110.5893096923828 1 110 1 L 2 1 M 2 0 L 110 0 C 111.1045684814453 0 112 0.746185302734375 112 1.666664123535156 L 112 78.33333587646484 C 112 79.25381469726562 111.1045684814453 80 110 80 L 2 80 C 0.8954315185546875 80 0 79.25381469726562 0 78.33333587646484 L 0 1.666664123535156 C 0 0.746185302734375 0.8954315185546875 0 2 0 Z" stroke="none" fill="rgba(0,0,0,0.12)"/>
-        </g>
+    <g transform="matrix(1, 0, 0, 1, 391.5, 467.5)" filter="url(#Trazado_7172)">
+      <g id="Trazado_7172-2" data-name="Trazado 7172" transform="translate(1.5 0.5)" fill="#fff">
+        <path d="M2,0H110a1.856,1.856,0,0,1,2,1.667V78.333A1.856,1.856,0,0,1,110,80H2a1.856,1.856,0,0,1-2-1.667V1.667A1.856,1.856,0,0,1,2,0Z" stroke="none"/>
+        <path d="M 2 1 C 1.410690307617188 1 1 1.351341247558594 1 1.666664123535156 L 1 78.33333587646484 C 1 78.64865875244141 1.410690307617188 79 2 79 L 110 79 C 110.5893096923828 79 111 78.64865875244141 111 78.33333587646484 L 111 1.666664123535156 C 111 1.351341247558594 110.5893096923828 1 110 1 L 2 1 M 2 0 L 110 0 C 111.1045684814453 0 112 0.746185302734375 112 1.666664123535156 L 112 78.33333587646484 C 112 79.25381469726562 111.1045684814453 80 110 80 L 2 80 C 0.8954315185546875 80 0 79.25381469726562 0 78.33333587646484 L 0 1.666664123535156 C 0 0.746185302734375 0.8954315185546875 0 2 0 Z" stroke="none" fill="rgba(0,0,0,0.12)"/>
       </g>
-      <path id="Trazado_7110" data-name="Trazado 7110" d="M18835.143,195h96" transform="translate(-17803.143 272)" fill="none" stroke="rgba(0,0,0,0.12)" stroke-linecap="round" stroke-width="1.51"/>
-      <path id="Trazado_7111" data-name="Trazado 7111" d="M18835.145,195h40" transform="translate(-17802.645 261.5)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
-      <g id="item_3" data-name="item 3" transform="translate(1047.283 525)">
-        <path id="Trazado_7084" data-name="Trazado 7084" d="M18835.145,195h84.426" transform="translate(-18849.428 -240)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
-      </g>
-      <g id="item_3-2" data-name="item 3" transform="translate(1047.283 535)">
-        <path id="Trazado_7084-2" data-name="Trazado 7084" d="M18835.145,195h66.361" transform="translate(-18849.428 -240)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
-      </g>
+    </g>
+    <path id="Trazado_7110" data-name="Trazado 7110" d="M18835.143,195h96" transform="translate(-18434.143 297)" fill="none" stroke="rgba(0,0,0,0.12)" stroke-linecap="round" stroke-width="1.51"/>
+    <path id="Trazado_7111" data-name="Trazado 7111" d="M18835.145,195h40" transform="translate(-18433.645 286.5)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    <g id="item_3" data-name="item 3" transform="translate(416.283 550)">
+      <path id="Trazado_7084" data-name="Trazado 7084" d="M18835.145,195h84.426" transform="translate(-18849.428 -240)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
+    </g>
+    <g id="item_3-2" data-name="item 3" transform="translate(416.283 560)">
+      <path id="Trazado_7084-2" data-name="Trazado 7084" d="M18835.145,195h66.361" transform="translate(-18849.428 -240)" fill="none" stroke="rgba(0,0,0,0.74)" stroke-linecap="round" stroke-width="1.51"/>
     </g>
     <g id="close_black_24dp_1_" data-name="close_black_24dp (1)" transform="translate(487 476)">
       <path id="Trazado_7236" data-name="Trazado 7236" d="M0,0H10V10H0Z" fill="none"/>

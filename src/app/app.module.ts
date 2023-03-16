@@ -9,6 +9,7 @@ import { DummyService } from './shared/services/dummy.service';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
 
 /**
  * Import specific languages to avoid importing everything
@@ -42,6 +43,7 @@ export function getHighlightLanguages() {
         languages: getHighlightLanguages()
       }
     },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
