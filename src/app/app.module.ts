@@ -34,8 +34,8 @@ export function getHighlightLanguages() {
     //OGalleryModule
   ],
   providers: [
-    { provide: CollapsibleStateService },
-    { provide: ConfigCollapsibleStateService },
+    { provide: CollapsibleStateService, useValue: undefined },
+    { provide: ConfigCollapsibleStateService, useValue: undefined },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
     ...ONTIMIZE_PROVIDERS,

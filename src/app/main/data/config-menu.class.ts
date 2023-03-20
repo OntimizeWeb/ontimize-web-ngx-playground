@@ -1,7 +1,8 @@
-import { ViewChild } from "@angular/core";
+import { ViewChild, Directive } from "@angular/core";
 import { MatSidenav } from "@angular/material/sidenav";
 import { ConfigCollapsibleStateService } from "../../shared/services/config-collapsible-state.service";
 
+@Directive()
 export class ConfigMenu {
   @ViewChild('sidenav', { static: false })
   public sidenav: MatSidenav;
