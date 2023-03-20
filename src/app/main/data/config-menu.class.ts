@@ -42,6 +42,12 @@ export class ConfigMenu {
         elemById.style.transform = "rotate(0) translate(80px, 0)";
       }
     }
+    else if (this.innerWidth == 1280) {
+      this.sidenav.mode = "over";
+      if (elemById) {
+        elemById.style.transform = "rotate(-90deg)";
+      }
+    }
     else {
       this.sidenav.mode = "side";
       if (elemById) {
