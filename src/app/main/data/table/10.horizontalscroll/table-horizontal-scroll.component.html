@@ -9,10 +9,10 @@
     </div>
 
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding content>
+    <div fxLayout="row" fxLayoutAlign="space-around stretch" layout-padding content>
 
-      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
-        <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+      <div fxFlex="1 1 calc(100% - 32px)" fxLayout="column" fxLayoutAlign="center stretch">
+        <o-table class="padding-right" #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
           columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
           query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
           edition-mode="none" detail-mode="none">

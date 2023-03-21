@@ -60,10 +60,10 @@
         </div>
 
 
-      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between start" content>
+      <div fxLayout="row" fxLayoutAlign="space-between start" content>
         <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
           <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
-            <o-list fxFlex="100" #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
+            <o-list class="padding-right" fxFlex="100" #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
               [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
               [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked"
               [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"

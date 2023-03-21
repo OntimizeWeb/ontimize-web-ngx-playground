@@ -2,14 +2,16 @@
   max-width: 32px;
   min-width: 32px;
   width: 32px;
-  padding: 4px 0 4px 20px;
   height: 160px;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   margin-right: 30px;
 }
 
 .conf-btn {
-  transform: rotate(-90deg) translate(75px, 50px);
+  padding-bottom: 34px;
+  padding-right: 54px;
+  transform: rotate(-90deg);
 }

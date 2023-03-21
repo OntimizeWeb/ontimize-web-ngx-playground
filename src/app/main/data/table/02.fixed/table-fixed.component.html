@@ -13,11 +13,11 @@
     </div>
 
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-between stretch" layout-padding content>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" layout-padding content>
 
-      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="start stretch">
+      <div fxFlex="1 1 calc(100% - 32px)" fxLayout="column" fxLayoutAlign="start stretch">
 
-        <o-table #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
+        <o-table class="padding-right" #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
           columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
           visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false" quick-filter="yes"
           insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{'height.px':height.value}"

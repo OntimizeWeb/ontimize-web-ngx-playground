@@ -10,9 +10,9 @@
       </mat-form-field>
     </div>
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="start stretch" layout-padding content>
-      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
-        <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
+    <div fxLayout="row" fxLayoutAlign="start stretch" layout-padding content>
+      <div fxFlex="1 1 calc(100% - 32px)" fxLayout="column" fxLayoutAlign="center stretch">
+        <o-table class="padding-right" #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
           visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no"
           export-button="no" [static-data]="data" layout-padding fxFill edition-mode="none" detail-mode="none">
           <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>

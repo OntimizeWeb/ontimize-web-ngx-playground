@@ -67,9 +67,9 @@
       </div>
     </div>
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding content>
       <div fxFlex="1 1 100%" fxLayoutAlign="start start" class="container">
-        <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
+        <o-grid class="padding-right" #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
           keys="id" [cols]="columns" [query-rows]="pagesize" [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16"
           [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email"
           [sort-column]="sortColumn" [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"

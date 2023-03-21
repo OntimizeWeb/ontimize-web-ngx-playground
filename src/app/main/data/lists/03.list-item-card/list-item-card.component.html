@@ -58,10 +58,10 @@
     </div>
 
 
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
+    <div fxLayout="row" fxLayoutAlign="center start" layout-padding content>
       <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
         <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
-          <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
+          <o-list class="padding-right" #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
             [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
             row-height="medium" detail-mode="none">
             <o-list-item *ngFor="let row of list.dataArray">

@@ -31,22 +31,12 @@ export class ConfigMenu {
     if (this.innerWidth >= 1920) {
       this.sidenav.opened = sidenavOpened != null ? sidenavOpened : this.sidenav.opened;
       this.sidenav.mode = "side";
-      if (elemById) {
-        elemById.style.transform = "rotate(-90deg)";
-      }
-
     }
-    else if (this.innerWidth <= 1279) {
+    else if (this.innerWidth <= 1280) {
       this.sidenav.mode = "over";
-      if (elemById) {
-        elemById.style.transform = "rotate(0) translate(80px, 0)";
-      }
     }
     else {
       this.sidenav.mode = "side";
-      if (elemById) {
-        elemById.style.transform = "rotate(-90deg)";
-      }
     }
   }
 
