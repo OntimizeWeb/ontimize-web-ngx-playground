@@ -8,7 +8,7 @@
             <span>Configuration</span>
           </div>
           <div fxLayoutAlign="end center" fxFlex>
-            <button mat-icon-button	(click)="toggle()">
+            <button mat-icon-button (click)="toggle()">
               <mat-icon>close</mat-icon>
             </button>
           </div>
@@ -19,7 +19,10 @@
     </mat-sidenav>
 
     <mat-sidenav-content fxFlex>
-      <ng-content select="[content]"></ng-content>
+      <div fxLayout="row" fxFlex="100%">
+        <ng-content select="[content]" fxFlex></ng-content>
+        <configuration-button (confBtnClick)="toggle()"></configuration-button>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
