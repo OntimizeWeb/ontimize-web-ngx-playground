@@ -10,7 +10,7 @@
 
 
     <div content>
-      <o-table class="padding-right" #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+      <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
         columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
         query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
         edition-mode="none" detail-mode="none">

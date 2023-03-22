@@ -67,38 +67,36 @@
       </div>
     </div>
 
-    <div fxLayout="row" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 1 100%" fxLayoutAlign="start start" class="container">
-        <o-grid class="padding-right" #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
-          keys="id" [cols]="columns" [query-rows]="pagesize" [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16"
-          [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email"
-          [sort-column]="sortColumn" [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
-          [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value" [show-footer]="showFooterToggle.checked"
-          [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'700px'}" grid-item-height="400px" fxFlex>
-          <o-grid-item *ngFor="let list of grid.dataArray">
-            <div layout-padding class="container-item">
-              <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
-              <h4>{{ list.name }}</h4>
-              <div class="phone">
-                <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
-              </div>
-              <div class="email">
-                <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
-              </div>
-              <div class="domain">
-                <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
-              </div>
-              <div class="website">
-                <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
-              </div>
-              <div class="body">
-                {{list.body}}
-              </div>
+    <div content>
+      <o-grid #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()"
+        columns="id;name;username;email;companyname;phone;website" keys="id" [cols]="columns" [query-rows]="pagesize"
+        [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16" [orderable]="showSortToggle.checked"
+        [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email" [sort-column]="sortColumn"
+        [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
+        [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value" [show-footer]="showFooterToggle.checked"
+        [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'700px'}" grid-item-height="400px" fxFlex>
+        <o-grid-item *ngFor="let list of grid.dataArray">
+          <div layout-padding class="container-item">
+            <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
+            <h4>{{ list.name }}</h4>
+            <div class="phone">
+              <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
             </div>
-          </o-grid-item>
-        </o-grid>
-      </div>
-      <configuration-button (confBtnClick)="toggleSidenav()"></configuration-button>
+            <div class="email">
+              <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
+            </div>
+            <div class="domain">
+              <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
+            </div>
+            <div class="website">
+              <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
+            </div>
+            <div class="body">
+              {{list.body}}
+            </div>
+          </div>
+        </o-grid-item>
+      </o-grid>
     </div>
   </data-structure>
 

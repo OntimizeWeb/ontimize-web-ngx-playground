@@ -19,9 +19,11 @@
     </mat-sidenav>
 
     <mat-sidenav-content fxFlex>
-      <div fxLayout="row" fxFlex="100%">
-        <ng-content select="[content]" fxFlex></ng-content>
-        <configuration-button (confBtnClick)="toggle()"></configuration-button>
+      <div fxLayout="row" fxLayoutAlign="space-between" fxFlex="100%">
+        <div fxFlex="1 1 auto" class="overflow">
+          <ng-content select="[content]" ></ng-content>
+        </div>
+        <configuration-button (confBtnClick)="toggle()" fxFlex="0 1 auto"></configuration-button>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

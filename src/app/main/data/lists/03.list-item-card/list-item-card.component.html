@@ -58,22 +58,17 @@
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
-        <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
-          <o-list class="padding-right" #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
-            [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
-            row-height="medium" detail-mode="none">
-            <o-list-item *ngFor="let row of list.dataArray">
-              <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
-                image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
-                [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
-              </o-list-item-card>
-            </o-list-item>
-          </o-list>
-        </div>
-      </div>
-      <configuration-button (confBtnClick)="toggleSidenav()"></configuration-button>
+    <div content>
+      <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
+        [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked"
+        [insert-button]="insertButtonToggle.checked" row-height="medium" detail-mode="none">
+        <o-list-item *ngFor="let row of list.dataArray">
+          <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
+            image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
+            [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
+          </o-list-item-card>
+        </o-list-item>
+      </o-list>
     </div>
   </data-structure>
 </example-comp>
