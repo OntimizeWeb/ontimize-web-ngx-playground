@@ -1,8 +1,5 @@
-import { Component, HostListener, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { ConfigMenu } from '../../main/data/config-menu.class';
-import { ConfigCollapsibleStateService } from '../services/config-collapsible-state.service';
+import { Component, HostListener, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'data-structure',
@@ -11,43 +8,40 @@ import { ConfigCollapsibleStateService } from '../services/config-collapsible-st
   inputs: ['compName: comp-name'],
   encapsulation: ViewEncapsulation.None
 })
-export class DataStructureComponent extends ConfigMenu {
+export class DataStructureComponent {
 
-  public compName: string;
-  private closedStard: Subscription;
-  private openedStard: Subscription;
+  @ViewChild('sidenav', { static: false })
+  public sidenav: MatSidenav;
 
-  constructor(
-    protected configExpandedService: ConfigCollapsibleStateService,
-    protected route: Router
-  ) {
-    super(configExpandedService);
-  }
+  private innerWidth: any;
 
-  formatButton() {
-    this.styleChangeOnResize("conf-btn-id");
+  constructor() { }
+
+  styleChangeOnResize(init?:boolean): void {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 1280) {
+      this.sidenav.mode = "over";
+    }
+    else if (this.innerWidth >= 1920 && init) {
+      this.sidenav.mode = "side";
+      this.sidenav.opened = true;
+    }
+    else {
+      this.sidenav.mode = "side";
+    }
   }
 
   ngAfterViewInit(): void {
-    this.closedStard = this.sidenav.closedStart.subscribe(() => {
-      this.configExpandedService.setState(false);
-      setTimeout(() => { this.formatButton(); }, 10);
-    });
-    this.openedStard = this.sidenav.openedStart.subscribe(() => {
-      this.configExpandedService.setState(true);
-    });
-    setTimeout(() => this.styleChangeOnResize("conf-btn-id", true), 10);
+    this.styleChangeOnResize(true);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.formatButton();
-
+    this.styleChangeOnResize();
   }
 
-  ngOnDestroy(): void {
-    this.closedStard.unsubscribe();
-    this.openedStard.unsubscribe();
+  toggle() {
+    this.sidenav.toggle(!this.sidenav.opened);
   }
 
 }

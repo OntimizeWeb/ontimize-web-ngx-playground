@@ -8,15 +8,12 @@
         <input matInput #pageSizeOptionsInput value="5;10;15" (change)="onEmptySetDefault()">
       </mat-form-field>
     </div>
-
-    <div fxLayout="row" fxLayoutAlign="start stretch" layout-padding content>
-      <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
-        visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no"
-        export-button="no" [static-data]="data" layout-padding fxFill edition-mode="none" detail-mode="none">
-        <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
-        <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
-        <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
-      </o-table>
-    </div>
+    <o-table content #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"
+      visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE" sort-columns="NAME" keys="OFFICEID" query-rows="5" insert-button="no" refresh-button="no"
+      export-button="no" [static-data]="data" fxFill edition-mode="none" detail-mode="none">
+      <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
+      <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
+    </o-table>
   </data-structure>
 </example-comp>

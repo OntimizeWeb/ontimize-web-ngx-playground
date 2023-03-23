@@ -72,10 +72,7 @@
         </mat-radio-group>
       </o-column>
     </div>
-
-
-    <div content>
-      <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
+      <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
         [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"
         row-height="medium" detail-mode="none">
         <o-list-item *ngFor="let row of list.dataArray">
@@ -88,7 +85,5 @@
           </o-list-item-card-image>
         </o-list-item>
       </o-list>
-    </div>
-
   </data-structure>
 </example-comp>
