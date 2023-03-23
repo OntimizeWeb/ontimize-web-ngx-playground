@@ -1,7 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -39,7 +37,7 @@ const LIST_ITEM_CARD_TS_DATA = `
   templateUrl: './list-item-card.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemCardComponent extends ConfigMenu {
+export class ListItemCardComponent {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData();
@@ -79,9 +77,7 @@ export class ListItemCardComponent extends ConfigMenu {
     }
   };
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   onAction1() {
     alert('onAction1');
@@ -113,7 +109,4 @@ export class ListItemCardComponent extends ConfigMenu {
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_HTML_DATA, list, itemData);
   }
 
-  toggleSidenav() {
-      this.dataStructure.toggle();
-  }
 }

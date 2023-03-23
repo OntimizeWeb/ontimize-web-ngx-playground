@@ -1,7 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -38,7 +36,7 @@ const LIST_ITEM_TEXT_TS_DATA = `
   templateUrl: './list-item-text.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class ListItemTextComponent extends ConfigMenu {
+export class ListItemTextComponent {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData(10);
@@ -65,9 +63,7 @@ export class ListItemTextComponent extends ConfigMenu {
     }
   };
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   addToFavorites(itemData, avatarItem) {
     if (avatarItem.icon === 'star') {
@@ -92,10 +88,6 @@ export class ListItemTextComponent extends ConfigMenu {
     }
 
     exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
-  }
-
-  toggleSidenav() {
-    this.dataStructure.toggle();
   }
 
 }

@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -9,7 +7,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-basic',
   templateUrl: 'table-basic.component.html'
 })
-export class TableBasicComponent extends ConfigMenu {
+export class TableBasicComponent {
 
   @ViewChild('titleInput', { static: false })
   titleInput: any;
@@ -61,9 +59,7 @@ export class TableBasicComponent extends ConfigMenu {
 
   public data = TableUtils.getCustomers();
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
@@ -96,10 +92,6 @@ export class TableBasicComponent extends ConfigMenu {
 
   actionClick() {
     console.log('actionClick');
-  }
-
-  toggleSidenav() {
-      this.dataStructure.toggle();
   }
 
 }

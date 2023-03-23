@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { GridUtils } from '../grid.utils';
 
@@ -11,16 +9,14 @@ import { GridUtils } from '../grid.utils';
   styleUrls: ['./grid-fixed.component.scss']
 })
 
-export class GridFixedComponent extends ConfigMenu {
+export class GridFixedComponent {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
   @ViewChild('sidenavComp', { static: false })
   dataStructure: DataStructureComponent;
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   getStaticData() {
     return GridUtils.getData('o-grid-fixed');
@@ -49,7 +45,4 @@ export class GridFixedComponent extends ConfigMenu {
     }, 0);
   }
 
-  toggleSidenav() {
-    this.dataStructure.toggle();
-  }
 }
