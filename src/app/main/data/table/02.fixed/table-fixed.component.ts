@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -9,7 +7,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-fixed',
   templateUrl: 'table-fixed.component.html'
 })
-export class TableFixedComponent extends ConfigMenu {
+export class TableFixedComponent {
 
   @ViewChild('fixedHeaderToggle', { static: false })
   fixedHeaderToggle: any = true;
@@ -22,9 +20,7 @@ export class TableFixedComponent extends ConfigMenu {
 
   public data = TableUtils.getAccountsTableFixed().slice();
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
@@ -38,7 +34,4 @@ export class TableFixedComponent extends ConfigMenu {
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
   }
 
-  toggleSidenav() {
-    this.dataStructure.toggle();
-  }
 }

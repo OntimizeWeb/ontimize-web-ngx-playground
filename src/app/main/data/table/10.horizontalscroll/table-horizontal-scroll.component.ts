@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 
 import { TableUtils } from '../table-utils';
 
@@ -10,7 +8,7 @@ import { TableUtils } from '../table-utils';
   selector: 'table-horizontal-scroll',
   templateUrl: 'table-horizontal-scroll.component.html'
 })
-export class TableHorizontalScrollComponent extends ConfigMenu implements AfterViewInit {
+export class TableHorizontalScrollComponent implements AfterViewInit {
 
 
   @ViewChild('horizontalScrollToggle', { static: false })
@@ -24,9 +22,7 @@ export class TableHorizontalScrollComponent extends ConfigMenu implements AfterV
   @ViewChild('sidenavComp', { static: false })
   dataStructure: DataStructureComponent;
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService) {
-    super(configExpandedService);
-  }
+  constructor() { }
 
   ngAfterViewInit(): void {
     if (this.table) {
@@ -52,10 +48,6 @@ export class TableHorizontalScrollComponent extends ConfigMenu implements AfterV
       horizontalScroll: this.horizontalScrollToggle.checked
     };
     exampleComp.html = TableUtils.getHtml(key, table, itemData);
-  }
-
-  toggleSidenav() {
-    this.dataStructure.toggle();
   }
 
 }

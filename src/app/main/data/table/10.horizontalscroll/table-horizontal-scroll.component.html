@@ -7,26 +7,16 @@
         {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
       </mat-slide-toggle>
     </div>
-
-
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="space-around stretch" layout-padding content>
-
-      <div fxFlex="1 0" fxLayout="column" fxLayoutAlign="center stretch">
-        <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
-          columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
-          query-on-init="no" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
-          edition-mode="none" detail-mode="none">
-          <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
-            <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-            </o-table-cell-renderer-image>
-          </o-table-column>
-          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
-        </o-table>
-      </div>
-      <configuration-button (confBtnClick)="toggleSidenav()"></configuration-button>
-
-
-    </div>
+    <o-table content #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+      columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no"
+      insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding edition-mode="none"
+      detail-mode="none">
+      <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+        </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
+    </o-table>
   </data-structure>
 </example-comp>

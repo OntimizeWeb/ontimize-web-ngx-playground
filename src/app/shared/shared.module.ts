@@ -12,12 +12,10 @@ import { InputsCardComponent } from './inputs-card/inputs-card.component';
 import { ConfigCollapsibleStateService } from './services/config-collapsible-state.service';
 import { HighlightModule } from 'ngx-highlightjs';
 import { MatButtonModule } from '@angular/material/button';
-import { ConfigurationButtonComponent } from './data-structure/configuration-button/configuration-button.component';
-
 @NgModule({
   imports: [OntimizeWebModule, HighlightModule, MatButtonModule],
-  declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent, ConfigurationButtonComponent],
+  declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent],
   providers: [NavigationBarService, CollapsibleStateService, ConfigCollapsibleStateService],
-  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent, ConfigurationButtonComponent]
+  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, DataStructureComponent, InputsCardComponent]
 })
 export class SharedModule { }

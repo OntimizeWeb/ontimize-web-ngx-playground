@@ -28,6 +28,10 @@
   }
 }
 
+.overflow {
+  overflow: auto;
+}
+
 table-basic,
 table-fixed,
 table-pagination,
@@ -54,4 +58,9 @@ list-item-avatar {
       }
     }
   }
+}
+
+.conf-btn {
+  transform: rotate(-90deg) translate(-67px, -59px);
+  height: fit-content;
 }

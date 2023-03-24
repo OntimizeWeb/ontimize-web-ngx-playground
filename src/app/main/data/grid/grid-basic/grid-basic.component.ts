@@ -2,8 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
-import { ConfigCollapsibleStateService } from '../../../../shared/services/config-collapsible-state.service';
-import { ConfigMenu } from '../../config-menu.class';
 import { GridUtils } from '../grid.utils';
 
 @Component({
@@ -11,7 +9,7 @@ import { GridUtils } from '../grid.utils';
   templateUrl: './grid-basic.component.html',
   styleUrls: ['./grid-basic.component.scss']
 })
-export class GridBasicComponent extends ConfigMenu {
+export class GridBasicComponent {
 
   public columns = 4;
   public pagesize = 8;
@@ -21,9 +19,7 @@ export class GridBasicComponent extends ConfigMenu {
   @ViewChild('sidenavComp', { static: false })
   dataStructure: DataStructureComponent;
 
-  constructor(protected configExpandedService: ConfigCollapsibleStateService){
-    super(configExpandedService);
-  }
+  constructor(){ }
 
   getStaticData() {
     return GridUtils.getData('o-grid-basic');
@@ -64,7 +60,4 @@ export class GridBasicComponent extends ConfigMenu {
     }, 0);
   }
 
-  toggleSidenav() {
-    this.dataStructure.toggle();
-  }
 }

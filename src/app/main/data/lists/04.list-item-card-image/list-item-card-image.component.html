@@ -72,28 +72,18 @@
         </mat-radio-group>
       </o-column>
     </div>
-
-
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center start" layout-padding content>
-      <div fxFlex="1 0 auto" fxLayoutAlign="center center" class="container">
-        <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
-          <o-list #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
-            [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no" row-height="medium"
-            detail-mode="none">
-            <o-list-item *ngFor="let row of list.dataArray">
-              <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}"
-                [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined" [image]="imageToggle.checked ? row.image : undefined"
-                [action-1-text]="action1Toggle.checked ? action1Text.value : undefined"
-                [action-2-text]="action2Toggle.checked ? action2Text.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()"
-                [icon]="iconToggle.checked ? icon.value : undefined" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
-                [collapsed]="collapsedToggle.checked">
-              </o-list-item-card-image>
-            </o-list-item>
-          </o-list>
-        </div>
-      </div>
-      <configuration-button (confBtnClick)="toggleSidenav()"></configuration-button>
-    </div>
-
+      <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
+        [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"
+        row-height="medium" detail-mode="none">
+        <o-list-item *ngFor="let row of list.dataArray">
+          <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}"
+            [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined" [image]="imageToggle.checked ? row.image : undefined"
+            [action-1-text]="action1Toggle.checked ? action1Text.value : undefined"
+            [action-2-text]="action2Toggle.checked ? action2Text.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()"
+            [icon]="iconToggle.checked ? icon.value : undefined" (icon-action)="onIconAction()" [collapsible]="collapsibleToggle.checked"
+            [collapsed]="collapsedToggle.checked">
+          </o-list-item-card-image>
+        </o-list-item>
+      </o-list>
   </data-structure>
 </example-comp>
