@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { TableUtils } from '../table-utils';
 
@@ -12,7 +12,7 @@ export class TablePaginationComponent {
   pageSizeOptionsInput: any;
 
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
 
   public data = TableUtils.getBranches();
 

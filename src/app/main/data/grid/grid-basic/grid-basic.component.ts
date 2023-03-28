@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
@@ -17,7 +17,7 @@ export class GridBasicComponent {
   public gutterSize = 1;
 
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
 
   constructor(){ }
 

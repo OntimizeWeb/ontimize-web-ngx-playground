@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { TableUtils } from '../table-utils';
 
@@ -20,7 +20,7 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   table: OTableComponent;
 
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
 
   constructor() { }
 

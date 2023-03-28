@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [files]="getFiles('o-table-horizontal-scroll')"
   (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
-  <data-structure comp-name="TABLE" #sidenavComp>
+  <screen-configuration comp-name="TABLE" #sidenavComp>
 
     <div menu layout-margin>
       <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
@@ -18,5 +18,5 @@
       <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
       <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="no"></o-table-column>
     </o-table>
-  </data-structure>
+  </screen-configuration>
 </example-comp>

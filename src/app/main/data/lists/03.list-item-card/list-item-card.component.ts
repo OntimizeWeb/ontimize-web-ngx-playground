@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -63,7 +63,7 @@ export class ListItemCardComponent {
   @ViewChild('actionText2', { static: false })
   actionText2: any;
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
 
   files = {
     'html': {

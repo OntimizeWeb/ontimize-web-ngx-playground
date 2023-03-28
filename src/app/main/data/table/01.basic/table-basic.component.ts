@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { TableUtils } from '../table-utils';
 
@@ -55,7 +55,7 @@ export class TableBasicComponent {
   horizontalScrollToggle: any;
 
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
 
   public data = TableUtils.getCustomers();
 

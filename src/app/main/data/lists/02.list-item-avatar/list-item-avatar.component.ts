@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
+import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
 
 import { ListsUtils } from '../lists-utils';
 
@@ -59,7 +59,7 @@ export class ListItemAvatarComponent {
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
   @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
+  dataStructure: ScreenConfigurationComponent;
   files = {
     'html': {
       'data': LIST_ITEM_AVATAR_HTML_DATA
