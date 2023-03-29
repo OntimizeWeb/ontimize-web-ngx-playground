@@ -1,6 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
-
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CARD_HTML_DATA = `

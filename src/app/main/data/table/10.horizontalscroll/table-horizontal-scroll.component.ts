@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
-import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({

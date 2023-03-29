@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({

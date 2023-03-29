@@ -1,6 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { ScreenConfigurationComponent } from '../../../../shared/screen-configuration/screen-configuration.component';
-
+import { Component } from '@angular/core';
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
 
