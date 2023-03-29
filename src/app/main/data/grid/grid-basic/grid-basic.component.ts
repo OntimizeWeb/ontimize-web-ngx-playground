@@ -16,9 +16,6 @@ export class GridBasicComponent {
   public sortColumn;
   public gutterSize = 1;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   constructor(){ }
 
   getStaticData() {

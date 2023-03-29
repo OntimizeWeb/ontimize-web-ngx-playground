@@ -54,9 +54,6 @@ export class TableBasicComponent {
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   public data = TableUtils.getCustomers();
 
   constructor() { }

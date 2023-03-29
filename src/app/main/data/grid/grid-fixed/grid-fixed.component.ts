@@ -13,8 +13,6 @@ export class GridFixedComponent {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
 
   constructor() { }
 

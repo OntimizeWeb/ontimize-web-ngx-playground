@@ -15,9 +15,6 @@ export class TableFixedComponent {
   @ViewChild('height', { static: false })
   tableHeight: any;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   public data = TableUtils.getAccountsTableFixed().slice();
 
   constructor() { }

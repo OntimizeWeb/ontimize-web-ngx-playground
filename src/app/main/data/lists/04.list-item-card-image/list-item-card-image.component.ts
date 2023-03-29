@@ -69,8 +69,6 @@ export class ListItemCardImageComponent {
   icon: any;
   @ViewChild('rowHeight', { static: false })
   rowHeight: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
 
   files = {
     'html': {

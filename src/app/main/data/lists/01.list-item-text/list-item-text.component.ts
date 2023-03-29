@@ -46,9 +46,6 @@ export class ListItemTextComponent {
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   insertButtonPosition = 'bottom';
 
   files = {

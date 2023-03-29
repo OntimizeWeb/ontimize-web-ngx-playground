@@ -58,8 +58,6 @@ export class ListItemAvatarComponent {
   iconToggle: any;
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
   files = {
     'html': {
       'data': LIST_ITEM_AVATAR_HTML_DATA

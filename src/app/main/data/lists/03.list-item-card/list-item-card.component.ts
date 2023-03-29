@@ -62,8 +62,6 @@ export class ListItemCardComponent {
   actionText1: any;
   @ViewChild('actionText2', { static: false })
   actionText2: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
 
   files = {
     'html': {

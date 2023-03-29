@@ -11,9 +11,6 @@ export class TablePaginationComponent {
   @ViewChild('pageSizeOptionsInput', { static: false })
   pageSizeOptionsInput: any;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   public data = TableUtils.getBranches();
 
   constructor() { }

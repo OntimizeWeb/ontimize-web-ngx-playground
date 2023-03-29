@@ -19,9 +19,6 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
   @ViewChild('table', { static: false })
   table: OTableComponent;
 
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: ScreenConfigurationComponent;
-
   constructor() { }
 
   ngAfterViewInit(): void {
