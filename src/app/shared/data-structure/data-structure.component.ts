@@ -13,11 +13,11 @@ export class DataStructureComponent {
   @ViewChild('sidenav', { static: false })
   public sidenav: MatSidenav;
 
-  private innerWidth: any;
+  //private innerWidth: any;
 
   constructor() { }
 
-  styleChangeOnResize(init?:boolean): void {
+  /*styleChangeOnResize(init?:boolean): void {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 1280) {
       this.sidenav.mode = "over";
@@ -38,7 +38,7 @@ export class DataStructureComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.styleChangeOnResize();
-  }
+  }*/
 
   toggle() {
     this.sidenav.toggle(!this.sidenav.opened);
