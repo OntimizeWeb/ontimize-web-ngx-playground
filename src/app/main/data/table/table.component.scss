@@ -1,32 +1,3 @@
 .padding-3 {
   padding: 3px;
 }
-
-screen-configuration>div {
-  height: 100%;
-
-  >mat-sidenav-container {
-    height: 100%;
-  }
-}
-
-example-component {
-  display: block;
-  height: 100%;
-}
-
-table-basic {
-  height: calc(100% - 67px);
-  .sidenav-container {
-    height: 810px !important;
-
-    .sidenav {
-      height: 810px;
-
-      .mat-drawer-inner-container {
-        overflow: hidden;
-
-      }
-    }
-  }
-}
