@@ -1,6 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CARD_HTML_DATA = `
@@ -62,8 +60,6 @@ export class ListItemCardComponent {
   actionText1: any;
   @ViewChild('actionText2', { static: false })
   actionText2: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   files = {
     'html': {
