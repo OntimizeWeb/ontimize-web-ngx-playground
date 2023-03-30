@@ -10,7 +10,6 @@ import { CollapsibleStateService } from './shared/services/collapsible-state.ser
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
-import { CustomBreakPointsProvider } from './shared/custom-breakpoints/data-structure-breakpoints';
 
 /**
  * Import specific languages to avoid importing everything
@@ -45,7 +44,6 @@ export function getHighlightLanguages() {
       }
     },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
-    CustomBreakPointsProvider,
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
