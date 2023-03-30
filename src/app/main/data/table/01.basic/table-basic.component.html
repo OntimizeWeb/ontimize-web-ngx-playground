@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [files]="getFiles('o-table')"
   (showSource)="onShowSource('o-table', table, ex)">
 
-  <data-structure comp-name="TABLE" #sidenavComp>
+  <screen-configuration comp-name="TABLE" #sidenavComp>
     <div menu>
       <mat-form-field layout-margin>
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
@@ -108,6 +108,6 @@
       </o-table-column>
     </o-table>
 
-  </data-structure>
+  </screen-configuration>
 
 </example-comp>

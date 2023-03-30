@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -10,9 +8,6 @@ import { TableUtils } from '../table-utils';
 export class TablePaginationComponent {
   @ViewChild('pageSizeOptionsInput', { static: false })
   pageSizeOptionsInput: any;
-
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   public data = TableUtils.getBranches();
 

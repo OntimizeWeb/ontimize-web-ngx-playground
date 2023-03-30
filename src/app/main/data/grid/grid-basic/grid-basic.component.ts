@@ -1,6 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
+import { Component } from '@angular/core';
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
 
@@ -15,9 +13,6 @@ export class GridBasicComponent {
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
-
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   constructor(){ }
 

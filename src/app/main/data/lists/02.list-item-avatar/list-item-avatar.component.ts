@@ -1,6 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_AVATAR_HTML_DATA = `
@@ -58,8 +56,6 @@ export class ListItemAvatarComponent {
   iconToggle: any;
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
   files = {
     'html': {
       'data': LIST_ITEM_AVATAR_HTML_DATA

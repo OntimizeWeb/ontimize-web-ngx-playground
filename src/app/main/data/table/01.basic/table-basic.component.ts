@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -53,9 +51,6 @@ export class TableBasicComponent {
 
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any;
-
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   public data = TableUtils.getCustomers();
 

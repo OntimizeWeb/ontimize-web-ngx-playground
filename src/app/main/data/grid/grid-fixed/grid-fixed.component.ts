@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { GridUtils } from '../grid.utils';
 
 @Component({
@@ -13,8 +11,6 @@ export class GridFixedComponent {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   constructor() { }
 
