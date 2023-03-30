@@ -1,4 +1,4 @@
-import { Component, HostListener, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material';
 import { Subscription } from 'rxjs';
