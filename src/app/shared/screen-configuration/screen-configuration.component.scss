@@ -32,33 +32,24 @@
   overflow: auto;
 }
 
-/*table-basic,
-table-fixed,
-table-pagination,
-table-horizontal-scroll,
-list-item-card,
-list-item-card-image,
-list-item-avatar {*/
+.example-comp {
 
-  .example-comp {
+  section {
+    height: 100%;
 
-    section {
-      height: 100%;
+    .playground-examples {
+      >screen-configuration {
+        >div {
+          height: 100%;
 
-      .playground-examples {
-        >screen-configuration {
-          >div {
+          >.sidenav-container {
             height: 100%;
-
-            >.sidenav-container {
-              height: 100%;
-            }
           }
         }
       }
     }
   }
-//}
+}
 
 .conf-btn {
   transform: rotate(-90deg) translate(-67px, -59px);
