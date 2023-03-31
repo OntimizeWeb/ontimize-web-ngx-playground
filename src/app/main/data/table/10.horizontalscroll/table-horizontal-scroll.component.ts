@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -18,9 +16,6 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
 
   @ViewChild('table', { static: false })
   table: OTableComponent;
-
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   constructor() { }
 

@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataStructureComponent } from '../../../../shared/data-structure/data-structure.component';
-
 import { TableUtils } from '../table-utils';
 
 @Component({
@@ -14,9 +12,6 @@ export class TableFixedComponent {
 
   @ViewChild('height', { static: false })
   tableHeight: any;
-
-  @ViewChild('sidenavComp', { static: false })
-  dataStructure: DataStructureComponent;
 
   public data = TableUtils.getAccountsTableFixed().slice();
 

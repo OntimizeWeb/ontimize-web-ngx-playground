@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_PAGINACION" [files]="getFiles('o-table-paginator')"
   (showSource)="onShowSource('o-table-paginator', table, ex)">
-  <data-structure comp-name="TABLE" #sidenavComp>
+  <screen-configuration comp-name="TABLE" #sidenavComp>
 
     <div menu layout-margin>
       <mat-form-field style="width:100%;">
@@ -15,5 +15,5 @@
       <o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
       <o-table-paginator [page-size-options]="pageSizeOptionsInput.value"></o-table-paginator>
     </o-table>
-  </data-structure>
+  </screen-configuration>
 </example-comp>

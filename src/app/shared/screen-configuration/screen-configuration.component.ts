@@ -2,13 +2,13 @@ import { Component, HostListener, ViewChild, ViewEncapsulation } from '@angular/
 import { MatSidenav } from '@angular/material';
 
 @Component({
-  selector: 'data-structure',
-  templateUrl: './data-structure.component.html',
-  styleUrls: ['./data-structure.component.scss'],
+  selector: 'screen-configuration',
+  templateUrl: './screen-configuration.component.html',
+  styleUrls: ['./screen-configuration.component.scss'],
   inputs: ['compName: comp-name'],
   encapsulation: ViewEncapsulation.None
 })
-export class DataStructureComponent {
+export class ScreenConfigurationComponent {
 
   @ViewChild('sidenav', { static: false })
   public sidenav: MatSidenav;

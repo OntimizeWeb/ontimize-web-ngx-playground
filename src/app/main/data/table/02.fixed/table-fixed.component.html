@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_FIXED" [files]="getFiles('o-table-fixed')"
   (showSource)="onShowSource('o-table-fixed', table, ex)">
-  <data-structure comp-name="TABLE" #sidenavComp>
+  <screen-configuration comp-name="TABLE" #sidenavComp>
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
         <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
@@ -26,5 +26,5 @@
       </o-table-columns-grouping>
       <o-table-column-aggregate attr="BALANCE" title="sum:"></o-table-column-aggregate>
     </o-table>
-  </data-structure>
+  </screen-configuration>
 </example-comp>
