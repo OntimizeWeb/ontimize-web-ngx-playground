@@ -16,7 +16,6 @@ export class ScreenConfigurationComponent {
   public sidenav: MatSidenav;
   protected subscription: Subscription = new Subscription();
   protected media: MediaObserver;
-  //private innerWidth: any;
 
   constructor(injector: Injector) {
     this.media = injector.get(MediaObserver);
@@ -36,9 +35,9 @@ export class ScreenConfigurationComponent {
           case 'xs':
           case 'sm':
           case 'md':
+          case 'lg':
             this.sidenav.mode = "over";
             break;
-          case 'lg':
           case 'xl':
             this.sidenav.mode = "side";
         }
