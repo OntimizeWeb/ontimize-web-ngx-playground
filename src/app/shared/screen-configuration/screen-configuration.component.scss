@@ -64,3 +64,20 @@ list-item-avatar {*/
   transform: rotate(-90deg) translate(-67px, -59px);
   height: fit-content;
 }
+
+list-item-text,
+list-item-avatar,
+list-item-card,
+list-item-card-image {
+  .conf-btn {
+    transform: rotate(-90deg) translate(-74px, -59px);
+    height: fit-content;
+  }
+}
+
+grid {
+  .conf-btn {
+    transform: rotate(-90deg) translate(-59px, -59px);
+    height: fit-content;
+  }
+}
