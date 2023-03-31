@@ -3,33 +3,38 @@
 
     <example-comp #ex comp-name="TOOLTIP" fxFill
       (showSource)="onShowSource(ex, tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
+
       <screen-configuration>
-        <o-column menu attr="conf" title="{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}" fxFlex layout-padding layout-align="center">
-          <mat-form-field layout-padding>
-            <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
-          </mat-form-field>
+        <o-form editable-detail="no" show-header="no" layout-direction="row">
+          <div content fxLayout="column" fxLayoutAlign="center center" fxFlex>
+            <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
+              [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value" [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
+          </div>
 
-          <mat-form-field layout-padding>
-            <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
-              <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
-                {{positionOption}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <o-column menu attr="conf" title="{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}" fxFlex layout-padding layout-align="center">
+            <mat-form-field layout-padding>
+              <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
+            </mat-form-field>
 
-          <mat-form-field layout-padding>
-            <input #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
-          </mat-form-field>
+            <mat-form-field layout-padding>
+              <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
+                <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+                  {{positionOption}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field layout-padding>
-            <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
-          </mat-form-field>
-        </o-column>
-        <div content fxLayout="column" fxLayoutAlign="center center" fxFlex>
-          <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
-            [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value"
-            [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
-        </div>
+            <mat-form-field layout-padding>
+              <input #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
+            </mat-form-field>
+
+            <mat-form-field layout-padding>
+              <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
+            </mat-form-field>
+          </o-column>
+
+
+        </o-form>
       </screen-configuration>
     </example-comp>
   </div>
