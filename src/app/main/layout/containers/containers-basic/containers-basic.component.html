@@ -16,22 +16,8 @@
   </div>
 
   <example-comp #ex comp-name="CONTAINERS" [files]="getFiles()" (showSource)="onShowSource(ex)" fxFill>
-    <div fxLayout="row" fxLayoutAlign="space-around stretch" fxFill>
-
-      <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
-        [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
-        <div layout-padding style="background-color:#3498db;">One</div>
-        <div layout-padding style="background-color:#e74c3c;">Two</div>
-        <div layout-padding style="background-color:#f9c922;">Three</div>
-      </o-row>
-      <o-column *ngIf="layout === 'column'" attr="col1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
-        [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
-        <div layout-padding style="background-color:#3498db;">One</div>
-        <div layout-padding style="background-color:#e74c3c;">Two</div>
-        <div layout-padding style="background-color:#f9c922;">Three</div>
-      </o-column>
-
-      <o-column attr="conf" title="Configuration" elevation="0" fxFlex="40" layout-padding>
+    <screen-configuration>
+      <o-column menu attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
         <mat-form-field>
           <input #title matInput placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
         </mat-form-field>
@@ -60,7 +46,20 @@
           </div>
         </div>
       </o-column>
-
-    </div>
+      <div content>
+        <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
+          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55" style="height:183px">
+          <div layout-padding style="background-color:#3498db;">One</div>
+          <div layout-padding style="background-color:#e74c3c;">Two</div>
+          <div layout-padding style="background-color:#f9c922;">Three</div>
+        </o-row>
+        <o-column *ngIf="layout === 'column'" attr="col1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
+          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
+          <div layout-padding style="background-color:#3498db;">One</div>
+          <div layout-padding style="background-color:#e74c3c;">Two</div>
+          <div layout-padding style="background-color:#f9c922;">Three</div>
+        </o-column>
+      </div>
+    </screen-configuration>
   </example-comp>
 </div>

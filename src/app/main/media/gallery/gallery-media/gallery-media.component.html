@@ -1,12 +1,6 @@
 <example-comp #ex1 collapsible="no" collapsed="no" comp-name="GALLERY.COMPONENT" [files]="files" (showSource)="onShowSource('gallery1',ex1)">
-  <p layout-padding>{{ 'GALLERY.AD' | oTranslate }}</p>
-  <div fxLayout="row" layout-padding>
-    <div fxFlex="60">
-      <div style="overflow:auto; height:100%; width:100%">
-        <o-gallery #demoGaleria [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
-      </div>
-    </div>
-    <div fxFlex="40">
+  <screen-configuration>
+    <div menu fxFlex>
       <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION' | oTranslate }}" elevation="0" layout-padding layout-align="center"
         expanded="true">
         <mat-slide-toggle (change)="demoGaleria.changeImageSize()" checked="false">{{ 'GALLERY.IMAGESIZE' | oTranslate}}</mat-slide-toggle>
@@ -53,5 +47,14 @@
       </o-column-collapsible>
 
     </div>
-  </div>
+    <div content>
+      <p layout-padding>{{ 'GALLERY.AD' | oTranslate }}</p>
+
+      <div fxFlex>
+        <div style="overflow:auto; height:100%; width:100%">
+          <o-gallery #demoGaleria [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
+        </div>
+      </div>
+    </div>
+  </screen-configuration>
 </example-comp>
