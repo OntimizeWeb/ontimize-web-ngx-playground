@@ -1,7 +1,7 @@
 .sidenav-container {
   background-color: transparent;
   width: 100%;
-  height: 100%;
+  height: fit-content;
 
   .mat-sidenav-content {
     width: 100%;
@@ -32,28 +32,15 @@
   overflow: auto;
 }
 
-table-basic,
-table-fixed,
-table-pagination,
-table-horizontal-scroll,
-list-item-card,
-list-item-card-image,
-list-item-avatar {
+.example-comp {
 
-  .example-comp {
+  .playground-examples {
+    >screen-configuration {
+      >div {
+        height: 100%;
 
-    section {
-      height: 100%;
-
-      .playground-examples {
-        >screen-configuration {
-          >div {
-            height: 100%;
-
-            >.sidenav-container {
-              height: 100%;
-            }
-          }
+        >.sidenav-container {
+          height: 100%;
         }
       }
     }
