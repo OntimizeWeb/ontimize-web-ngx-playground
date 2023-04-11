@@ -1,6 +1,6 @@
 .example-comp {
   &>section {
-    margin: 20px 4px;
+    //height: calc(100% - 77px);
   }
 
   .playground-toolbar {

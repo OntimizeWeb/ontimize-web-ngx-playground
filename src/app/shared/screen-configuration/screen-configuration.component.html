@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="space-between start">
   <mat-sidenav-container fxFLex layout-align="start" class="sidenav-container">
-    <mat-sidenav position="end" #sidenav class="sidenav">
+    <mat-sidenav #sidenav position="end" class="sidenav">
       <div fxLayout="column">
         <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
           <div fxFlex fxLayout="row" fxLayoutAlign="start center">
@@ -20,7 +20,7 @@
 
     <mat-sidenav-content fxFlex>
       <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div fxFlex="1 1 calc(100% - 42px)" class="overflow">
+        <div fxFlex="1 1 calc(100% - 42px)">
           <ng-content select="[content]"></ng-content>
         </div>
         <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="!sidenav.opened" (click)="toggle()"

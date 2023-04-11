@@ -58,7 +58,7 @@
         </div>
       </o-column>
     </div>
-    <o-list content fxFlex="100" #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
+    <o-list content fxFlex #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
       [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
       [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked"
       [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"

@@ -1,5 +1,7 @@
-import { Component, HostListener, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'screen-configuration',
@@ -12,32 +14,41 @@ export class ScreenConfigurationComponent {
 
   @ViewChild('sidenav', { static: false })
   public sidenav: MatSidenav;
+  protected subscription: Subscription = new Subscription();
+  protected media: MediaObserver;
 
-  private innerWidth: any;
-
-  constructor() { }
-
-  styleChangeOnResize(init?:boolean): void {
-    this.innerWidth = window.innerWidth;
-    if (this.innerWidth <= 1280) {
-      this.sidenav.mode = "over";
-    }
-    else if (this.innerWidth >= 1920 && init) {
-      this.sidenav.mode = "side";
-      this.sidenav.opened = true;
-    }
-    else {
-      this.sidenav.mode = "side";
-    }
+  constructor(injector: Injector) {
+    this.media = injector.get(MediaObserver);
   }
 
   ngAfterViewInit(): void {
-    this.styleChangeOnResize(true);
+    this.subscribeToMediaChanges();
+    if (this.media.isActive("xl")) {
+      this.sidenav.opened = true;
+    }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.styleChangeOnResize();
+  public subscribeToMediaChanges(): void {
+    this.subscription.add(this.media.asObservable().subscribe((change: MediaChange[]) => {
+      if (change && change[0]) {
+        switch (change[0].mqAlias) {
+          case 'xs':
+          case 'sm':
+          case 'md':
+          case 'lg':
+            this.sidenav.mode = "over";
+            break;
+          case 'xl':
+            this.sidenav.mode = "side";
+        }
+      }
+    }));
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   toggle() {
