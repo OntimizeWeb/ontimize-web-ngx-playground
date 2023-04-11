@@ -46,9 +46,9 @@
           </div>
         </div>
       </o-column>
-      <div content>
+      <div content class="max-height">
         <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
-          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55" style="height:183px">
+          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
           <div layout-padding style="background-color:#3498db;">One</div>
           <div layout-padding style="background-color:#e74c3c;">Two</div>
           <div layout-padding style="background-color:#f9c922;">Three</div>
