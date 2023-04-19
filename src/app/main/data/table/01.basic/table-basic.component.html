@@ -23,29 +23,37 @@
           {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-row title=" {{ 'ROW_HEIGHT' | oTranslate }}">
-        <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
-          matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" fxLayoutAlign="space-around center" fxFlex="100">
-          <mat-radio-button value="large" class="padding-3">
-            {{ 'LARGE' | oTranslate }}
-          </mat-radio-button>
-          <mat-radio-button value="medium" class="padding-3">
-            {{ 'MEDIUM' | oTranslate }}
-          </mat-radio-button>
-          <mat-radio-button value="small" class="padding-3">
-            {{ 'SMALL' | oTranslate }}
-          </mat-radio-button>
-        </mat-radio-group>
-      </o-row>
-      <o-row title="{{ 'TABLE.FILTER' | oTranslate }}">
-        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex>
-          {{ 'TABLE.FILTER' | oTranslate }}
-        </mat-slide-toggle>
-        <mat-slide-toggle #filterCaseSensitiveToggle checked="false" fxFlex>
-          {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
-        </mat-slide-toggle>
-      </o-row>
-      <o-column-collapsible title="{{ 'TABLE.MENU' | oTranslate }}" expanded="no">
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
+            matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" fxLayoutAlign="space-around center" fxFlex="100">
+            <mat-radio-button value="large" class="padding-3">
+              {{ 'LARGE' | oTranslate }}
+            </mat-radio-button>
+            <mat-radio-button value="medium" class="padding-3">
+              {{ 'MEDIUM' | oTranslate }}
+            </mat-radio-button>
+            <mat-radio-button value="small" class="padding-3">
+              {{ 'SMALL' | oTranslate }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'TABLE.FILTER' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-slide-toggle #quickFilterToggle checked="true" fxFlex>
+            {{ 'TABLE.FILTER' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle #filterCaseSensitiveToggle checked="false" fxFlex>
+            {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </div>
+      <o-column-collapsible title="{{ 'TABLE.MENU' | oTranslate }}" expanded="no" class="menu-title-collapsible">
         <div fxLayout="column" fxLayoutAlign="start start">
           <mat-slide-toggle #selectMultipleToggle checked="false" fxFlex>
             {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
@@ -80,11 +88,15 @@
           </div>
         </div>
       </o-column-collapsible>
-      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}">
-        <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
-          {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
-        </mat-slide-toggle>
-      </o-column>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
+            {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </div>
     </div>
 
     <o-table content #table attr="tableBasic" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
