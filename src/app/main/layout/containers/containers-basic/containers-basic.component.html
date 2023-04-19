@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="center top" layout-padding>
+<div fxLayout="column" layout-padding>
   <div layout-padding>
     <h3>Overview</h3>
     <p>According to layout of the container (row or column) the children can be distributed using the <code>layout-align</code>
@@ -46,7 +46,7 @@
           </div>
         </div>
       </o-column>
-      <div content class="max-height">
+      <div content>
         <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
           [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
           <div layout-padding style="background-color:#3498db;">One</div>

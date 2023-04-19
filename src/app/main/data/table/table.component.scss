@@ -2,7 +2,10 @@
   padding: 3px;
 }
 
-table-basic {
+table-basic,
+table-fixed,
+table-pagination,
+table-horizontal-scroll {
   display: block;
   height: calc(100% - 79px);
 

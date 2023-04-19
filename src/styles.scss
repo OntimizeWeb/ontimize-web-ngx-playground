@@ -14,9 +14,28 @@
   width: 100%;
   height: 100%;
   max-height: max-content;
-  overflow: auto;
 
   >div {
     padding-left: 16px;
+  }
+}
+
+app-tooltip {
+
+  .example-comp {
+    height: 100%;
+
+    >section {
+      height: 100%;
+
+      screen-configuration {
+        display: block;
+        height: 100%;
+
+        >div {
+          height: 100% !important;
+        }
+      }
+    }
   }
 }

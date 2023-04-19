@@ -1,5 +1,6 @@
 .containers-basic,
 .containers-collapsible {
+
   .radio-group-horizontal .mat-radio-button {
     padding-right: 8px;
   }
@@ -20,6 +21,50 @@
   }
 }
 
-.max-height {
-  min-height: 500px;
+.containers-collapsible {
+  display: block;
+  height: calc(100% - 119px);
+
+  .example-comp {
+    height: 100%;
+
+    &>section {
+      height: 100%;
+
+      screen-configuration {
+        display: block;
+        height: 100%;
+
+        >div {
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.containers-basic {
+  display: block;
+  height: calc(100% - 77px);
+
+  >div {
+    height: calc(100% - 85px);
+
+    .example-comp {
+      height: 100%;
+
+      &>section {
+        height: 100%;
+
+        screen-configuration {
+          display: block;
+          height: 100%;
+
+          >div {
+            height: 100% !important;
+          }
+        }
+      }
+    }
+  }
 }
