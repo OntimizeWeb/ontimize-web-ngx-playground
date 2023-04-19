@@ -5,7 +5,9 @@
       (showSource)="onShowSource(ex, tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
 
       <screen-configuration>
-        <o-column menu attr="conf" title="{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}" fxFlex layout-padding layout-align="center">
+        <div fxLayout="column" menu>
+          <span class="menu-title">{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}</span>
+          <mat-divider></mat-divider>
           <mat-form-field layout-padding>
             <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
           </mat-form-field>
@@ -25,7 +27,7 @@
           <mat-form-field layout-padding>
             <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
           </mat-form-field>
-        </o-column>
+        </div>
         <o-form content editable-detail="no" show-header="no" layout-direction="row">
           <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
             <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"

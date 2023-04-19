@@ -8,7 +8,9 @@
 
 <example-comp #ex comp-name="CONTAINERS.COLLAPSIBLES" [files]="getFiles()" (showSource)="onShowSource(ex)" fxFill>
   <screen-configuration>
-    <o-column menu attr="conf" title="Configuration" elevation="0" fxFlex layout-padding>
+    <div fxLayout="column" menu>
+      <span class="menu-title">Configuration</span>
+      <mat-divider></mat-divider>
       <mat-form-field>
         <input #title matInput placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
       </mat-form-field>
@@ -24,7 +26,7 @@
       <mat-slide-toggle #appearance>{{ 'APPEARANCE_OUTLINE' | oTranslate }}</mat-slide-toggle>
 
       <span class="alignment" layout-padding>Layout align (<code>layout-align</code>): {{ getLayoutAlign() }}</span>
-
+      <mat-divider></mat-divider>
       <div fxLayout="row" fxLayoutAlign="space-around stretch">
         <div fxLayout="column" fxFlex layout-padding>
           <span class="alignment-label">Alignment in Layout Direction ({{getMainDirection()}})</span>
@@ -39,7 +41,7 @@
           </mat-radio-group>
         </div>
       </div>
-    </o-column>
+    </div>
     <div content>
       <o-row-collapsible *ngIf="layout === 'row'" attr="row1" [title]="title.value" [description]="description.value" [icon]="icon.value"
         [layout-align]="getLayoutAlign()" [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">

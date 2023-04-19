@@ -26,38 +26,3 @@ table-horizontal-scroll {
     }
   }
 }
-
-.menu-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.menu-title-collapsible {
-  .o-container-title {
-    >span {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-  }
-}
-
-.o-column-collapsible {
-  margin-top: 10px;
-
-  >.o-container {
-    .mat-expansion-panel-header {
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-
-      .o-container-title {
-        >span {
-          padding-left: 0 !important;
-          font-size: 16px;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-}
