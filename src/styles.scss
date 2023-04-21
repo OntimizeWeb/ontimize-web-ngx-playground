@@ -41,15 +41,15 @@ app-tooltip {
 }
 
 .menu-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .menu-title-collapsible {
   .o-container-title {
     >span {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       margin-top: 10px;
     }
@@ -63,14 +63,22 @@ app-tooltip {
     .mat-expansion-panel-header {
       padding-left: 0 !important;
       margin-left: 0 !important;
+      border-bottom-style: solid !important;
+      border-bottom-width: 1px !important;
+      border-radius: 0 !important;
 
       .o-container-title {
         >span {
           padding-left: 0 !important;
-          font-size: 16px !important;
+          font-size: 14px !important;
           font-weight: 600 !important;
         }
       }
     }
   }
+}
+
+.mat-slide-toggle,
+.mat-radio-group {
+  font-size: 14px;
 }

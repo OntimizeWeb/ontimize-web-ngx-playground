@@ -26,3 +26,7 @@ table-horizontal-scroll {
     }
   }
 }
+
+.width-max {
+  width: calc(100% - 8px);
+}

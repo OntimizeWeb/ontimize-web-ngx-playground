@@ -42,9 +42,8 @@
             <input matInput #actionText2 placeholder="action-2-text" value="ACTION 2">
           </mat-form-field>
         </div>
-        <span>
-          {{ 'ROW_HEIGHT' | oTranslate }}
-        </span>
+        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
+        <mat-divider></mat-divider>
         <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
           <mat-radio-button value="large" class="padding-3">
             {{ 'LARGE' | oTranslate }}

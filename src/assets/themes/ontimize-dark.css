@@ -4380,6 +4380,9 @@ ul.list-grid-container {
 layout-manager .left-border {
   background-color: #1e2022; }
 
+.o-column-collapsible > .o-container .mat-expansion-panel-header {
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important; }
+
 .new {
   color: rgba(255, 255, 255, 0.87); }
 
