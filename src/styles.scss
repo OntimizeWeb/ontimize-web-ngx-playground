@@ -28,12 +28,15 @@ app-tooltip {
     >section {
       height: 100%;
 
-      screen-configuration {
-        display: block;
-        height: 100%;
+      .playground-examples {
 
-        >div {
-          height: 100% !important;
+        >screen-configuration {
+          display: block;
+          height: 100%;
+
+          >div {
+            height: 100%;
+          }
         }
       }
     }
@@ -41,7 +44,6 @@ app-tooltip {
 }
 
 .menu-title {
-  font-size: 14px;
   font-weight: 600;
   margin-top: 18px;
 }
@@ -49,7 +51,6 @@ app-tooltip {
 .menu-title-collapsible {
   .o-container-title {
     >span {
-      font-size: 14px;
       font-weight: 600;
       margin-top: 10px;
     }
@@ -59,26 +60,26 @@ app-tooltip {
 .o-column-collapsible {
   margin-top: 10px;
 
-  >.o-container {
+  >.o-container.mat-expansion-panel,
+  >.o-container.mat-expansion-panel:not(.mat-expanded) {
+
     .mat-expansion-panel-header {
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-      border-bottom-style: solid !important;
-      border-bottom-width: 1px !important;
-      border-radius: 0 !important;
+      padding-left: 0;
+      margin-left: 0;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-radius: 0;
 
       .o-container-title {
         >span {
-          padding-left: 0 !important;
-          font-size: 14px !important;
-          font-weight: 600 !important;
+          padding-left: 0;
+          font-weight: 600;
         }
       }
     }
   }
 }
 
-.mat-slide-toggle,
-.mat-radio-group {
+body {
   font-size: 14px;
 }

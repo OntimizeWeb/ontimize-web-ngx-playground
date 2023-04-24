@@ -19,9 +19,9 @@
   }
 
   .o-column-collapsible {
-    >.o-container {
+    >.o-container.mat-expansion-panel {
       .mat-expansion-panel-header {
-        border-bottom-color: mat-color($foreground, divider) !important;
+        border-bottom-color: mat-color($foreground, divider);
       }
     }
   }
