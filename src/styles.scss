@@ -20,28 +20,6 @@
   }
 }
 
-app-tooltip {
-
-  .example-comp {
-    height: 100%;
-
-    >section {
-      height: 100%;
-
-      .playground-examples {
-
-        >screen-configuration {
-          display: block;
-          height: 100%;
-
-          >div {
-            height: 100%;
-          }
-        }
-      }
-    }
-  }
-}
 
 .menu-title {
   font-weight: 600;
@@ -83,6 +61,7 @@ body {
   font-size: 14px;
 }
 
+app-tooltip,
 table-basic,
 table-fixed,
 table-pagination,
@@ -108,4 +87,6 @@ table-horizontal-scroll,
       }
     }
   }
+
+
 }
