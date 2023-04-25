@@ -1,13 +1,14 @@
 <div fxLayout="row" class="main-container bg-level-1">
   <collapsible-menu>
-  <a class="menu-item" routerLink="/main/layout/containers/basic" routerLinkActive="active" fxFlex>{{ 'CONTAINERS.BASIC' | oTranslate }}</a>
-  <a class="menu-item" routerLink="/main/layout/containers/collapsible" routerLinkActive="active" fxFlex>{{ 'CONTAINERS.COLLAPSIBLE' | oTranslate }}</a>
-</collapsible-menu>
+    <a class="menu-item" routerLink="/main/layout/containers/basic" routerLinkActive="active" fxFlex>{{ 'CONTAINERS.BASIC' | oTranslate }}</a>
+    <a class="menu-item" routerLink="/main/layout/containers/collapsible" routerLinkActive="active" fxFlex>{{ 'CONTAINERS.COLLAPSIBLE' | oTranslate
+      }}</a>
+  </collapsible-menu>
 
-<div fxFlex="calc(100% - 300px)" class="left-border">
-  <header-button-menu comp-name="{{ 'CONTAINERS' | oTranslate }}" comp-desc="{{ 'CONTAINERS.DESC' | oTranslate }}">
-  </header-button-menu>
-  <router-outlet></router-outlet>
-</div>
+  <div fxFlex="calc(100% - 300px)" class="left-border" fxLayout="column" fxFlex>
+    <header-button-menu comp-name="{{ 'CONTAINERS' | oTranslate }}" comp-desc="{{ 'CONTAINERS.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
 
 </div>

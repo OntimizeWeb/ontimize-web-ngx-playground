@@ -1,4 +1,4 @@
-<div fxLayout="column" layout-padding>
+<div fxLayout="column" layout-padding fxFlex>
   <div layout-padding>
     <h3>Overview</h3>
     <p>According to layout of the container (row or column) the children can be distributed using the <code>layout-align</code>
@@ -15,7 +15,7 @@
     </mat-radio-group>
   </div>
 
-  <example-comp #ex comp-name="CONTAINERS" [files]="getFiles()" (showSource)="onShowSource(ex)" fxFill>
+  <example-comp #ex comp-name="CONTAINERS" [files]="getFiles()" (showSource)="onShowSource(ex)" >
     <screen-configuration>
       <div fxLayout="column" menu>
         <span class="menu-title">Configuration</span>
