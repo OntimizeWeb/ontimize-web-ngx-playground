@@ -21,7 +21,7 @@
   .o-column-collapsible {
     >.o-container.mat-expansion-panel {
       .mat-expansion-panel-header {
-        border-bottom-color: mat-color($foreground, divider);
+        border-bottom-color: mat-color($foreground, divider) !important;
       }
     }
   }
