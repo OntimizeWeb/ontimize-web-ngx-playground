@@ -20,8 +20,6 @@ list-item-text {
       overflow: auto;
 
       >.o-list-content {
-        max-height: none !important;
-
         .mat-list {
           height: fit-content;
           overflow: hidden;

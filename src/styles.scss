@@ -82,3 +82,30 @@ app-tooltip {
 body {
   font-size: 14px;
 }
+
+table-basic,
+table-fixed,
+table-pagination,
+table-horizontal-scroll,
+.containers-collapsible,
+.containers-basic {
+
+  .example-comp {
+    height: 100%;
+
+    &>section {
+      height: 100%;
+
+      .playground-examples {
+        screen-configuration {
+          display: block;
+          height: 100%;
+
+          >div {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,30 +2,7 @@
   padding: 3px;
 }
 
-table-basic,
-table-fixed,
-table-pagination,
-table-horizontal-scroll {
-  display: block;
-  height: calc(100% - 79px);
 
-  .example-comp {
-    height: 100%;
-
-    &>section {
-      height: 100%;
-
-      screen-configuration {
-        display: block;
-        height: 100%;
-
-        >div {
-          height: 100% !important;
-        }
-      }
-    }
-  }
-}
 
 .width-max {
   width: calc(100% - 8px);
