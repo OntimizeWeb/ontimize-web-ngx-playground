@@ -17,4 +17,10 @@
       background-color: mat-color($background, level-0);
     }
   }
+
+  o-column-collapsible.o-column-collapsible>.o-container.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
+    border-bottom-color: mat-color($foreground, divider);
+  }
+
+
 }

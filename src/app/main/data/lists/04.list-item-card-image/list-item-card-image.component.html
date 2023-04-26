@@ -15,7 +15,9 @@
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
           <mat-slide-toggle #imageToggle checked="true" fxFlex>
             {{ 'IMAGE' | oTranslate }}
@@ -56,9 +58,8 @@
             <input matInput #icon placeholder="icon" value="share">
           </mat-form-field>
         </div>
-        <span>
-          {{ 'ROW_HEIGHT' | oTranslate }}
-        </span>
+        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
+        <mat-divider></mat-divider>
         <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
           <mat-radio-button value="large" class="padding-3">
             {{ 'LARGE' | oTranslate }}
@@ -70,7 +71,7 @@
             {{ 'SMALL' | oTranslate }}
           </mat-radio-button>
         </mat-radio-group>
-      </o-column>
+      </div>
     </div>
       <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
         [static-data]="getStaticData()" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"

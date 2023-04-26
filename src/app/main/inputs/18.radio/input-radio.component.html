@@ -7,13 +7,13 @@
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-row>
+      <div fxLayout="row">
         <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
           [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"></o-radio>
         <o-radio attr="radio-editable2" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
           [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
           layout="row"></o-radio>
-      </o-row>
+      </div>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>

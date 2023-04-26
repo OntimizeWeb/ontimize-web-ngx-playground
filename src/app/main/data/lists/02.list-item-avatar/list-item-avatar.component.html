@@ -31,7 +31,10 @@
           {{ 'DELETE_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <o-column layout-padding layout-align="start" title="{{ 'ITEM_CONFIGURATION' | oTranslate }}" elevation="0">
+
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center center">
           <mat-slide-toggle #editButtonInRowToggle fxFlex>
             {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
@@ -56,9 +59,9 @@
             <input matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
           </mat-form-field>
         </div>
-      </o-column>
+      </div>
     </div>
-    <o-list content fxFlex="100" #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
+    <o-list content fxFlex #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
       [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
       [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked"
       [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"

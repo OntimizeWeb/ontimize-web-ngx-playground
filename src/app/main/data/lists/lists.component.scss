@@ -17,3 +17,18 @@
 img.mat-card-image.ng-star-inserted {
   width: 50%;
 }
+list-item-text {
+  .o-list {
+    >.o-list-container {
+      overflow: auto;
+
+      >.o-list-content {
+        .mat-list {
+          height: fit-content;
+          overflow: hidden;
+        }
+      }
+
+    }
+  }
+}

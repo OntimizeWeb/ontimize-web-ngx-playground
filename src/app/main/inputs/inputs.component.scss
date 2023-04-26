@@ -17,7 +17,7 @@ o-text-input {
 }
 
 input-radio{
-  .o-container-scroll{
-    overflow: hidden !important;
+  .scrolling.o-scroll{
+    overflow: hidden;
   }
 }
