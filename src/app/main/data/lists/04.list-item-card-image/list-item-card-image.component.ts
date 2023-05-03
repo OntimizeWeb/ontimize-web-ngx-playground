@@ -95,7 +95,7 @@ export class ListItemCardImageComponent {
   }
 
   getStaticData() {
-    return ListsUtils.getListData(1);
+    return ListsUtils.getListData(3);
   }
 
   onShowSource(list?: any, exampleComp?: any) {
