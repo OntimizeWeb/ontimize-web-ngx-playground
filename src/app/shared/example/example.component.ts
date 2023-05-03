@@ -63,6 +63,12 @@ export class ExampleComponent {
     }
   }
 
+  public updateCode(): void {
+    if (this.showSource) {
+      this.onShowSource.emit();
+    }
+  }
+
   ngAfterViewInit() {
     this.aditionalTabs = this.files.files;
   }
