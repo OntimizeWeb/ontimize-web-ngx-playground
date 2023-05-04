@@ -4,9 +4,9 @@
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
         <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
-        <input matInput #height value="400" type="number">
+        <input (change)="ex.updateCode()" matInput #height value="400" type="number">
       </mat-form-field>
-      <mat-slide-toggle #fixedHeaderToggle [checked]="true">
+      <mat-slide-toggle (change)="ex.updateCode()" #fixedHeaderToggle [checked]="true">
         {{ 'TABLE.BUTTON.FIXED' | oTranslate }}
       </mat-slide-toggle>
     </div>

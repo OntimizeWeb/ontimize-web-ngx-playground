@@ -8,6 +8,8 @@ export interface IFiles {
   files?: any[];
 }
 
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
 @Component({
   selector: 'example-comp',
   styleUrls: ['example.component.scss'],
@@ -29,6 +31,7 @@ export interface IFiles {
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class ExampleComponent {
 
   aditionalTabs: any[];
@@ -63,8 +66,9 @@ export class ExampleComponent {
     }
   }
 
-  public updateCode(): void {
+  public async updateCode(): Promise<void> {
     if (this.showSource) {
+      await sleep(50);
       this.onShowSource.emit();
     }
   }

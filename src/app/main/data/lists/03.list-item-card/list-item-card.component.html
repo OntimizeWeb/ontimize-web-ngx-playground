@@ -4,47 +4,47 @@
     <div menu layout-margin>
       <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
-          <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+          <input (change)="ex.updateCode()" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+        <mat-slide-toggle (change)="ex.updateCode()" #refreshButtonToggle [checked]="true" fxFlex>
           {{ 'REFRESH_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle #quickFilterToggle checked="true" fxFlex layout-padding>
+        <mat-slide-toggle (change)="ex.updateCode()" #quickFilterToggle checked="true" fxFlex layout-padding>
           {{ 'QUICK_FILTER' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle #insertButtonToggle fxFlex>
+        <mat-slide-toggle (change)="ex.updateCode()" #insertButtonToggle fxFlex>
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <div fxLayout="column">
         <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
-        <mat-slide-toggle #showImageToggle checked="true">
+        <mat-slide-toggle (change)="ex.updateCode()" #showImageToggle checked="true">
           {{ 'SHOW_IMAGE' | oTranslate }}
         </mat-slide-toggle>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle #action1Toggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="ex.updateCode()" #action1Toggle checked="true" fxFlex>
             {{ 'ACTION_1' | oTranslate }}
           </mat-slide-toggle>
-          <mat-form-field [hidden]="!action1Toggle.checked" fxFlex>
+          <mat-form-field (change)="ex.updateCode()" [hidden]="!action1Toggle.checked" fxFlex>
             <input matInput #actionText1 placeholder="action-1-text" value="ACTION 1">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle #action2Toggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="ex.updateCode()" #action2Toggle checked="true" fxFlex>
             {{ 'ACTION_2' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!action2Toggle.checked" fxFlex>
-            <input matInput #actionText2 placeholder="action-2-text" value="ACTION 2">
+            <input (change)="ex.updateCode()" matInput #actionText2 placeholder="action-2-text" value="ACTION 2">
           </mat-form-field>
         </div>
         <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
         <mat-divider></mat-divider>
-        <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
+        <mat-radio-group (change)="ex.updateCode()" #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
           <mat-radio-button value="large" class="padding-3">
             {{ 'LARGE' | oTranslate }}
           </mat-radio-button>
