@@ -12,6 +12,9 @@
     "production-aot-server": "ng build --prod=true  --baseHref=/ontimizeweb/v8/playground/",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
   },
+  "resolutions": {
+    "webpack": "^5.0.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.14",
