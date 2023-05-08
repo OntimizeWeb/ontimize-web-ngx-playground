@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
+import { ɵCssKeyframesDriver } from '@angular/animations/browser';
 
 @Component({
   selector: 'grid-basic',
@@ -13,6 +14,9 @@ export class GridBasicComponent {
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
+
+  @ViewChild('grid', { static: false })
+  grid: any;
 
   constructor(){ }
 
@@ -28,6 +32,11 @@ export class GridBasicComponent {
     exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID, grid);
   }
 
+  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+    let htmlData: string = GridUtils.HTML_DATA_GRID;
+    htmlData = htmlData.replace("{" + key + "}", value);
+    exampleComp.html = this.replaceHtml(htmlData, this.grid);
+  }
 
   public replaceHtml(html: string, grid?: any) {
     if (grid) {

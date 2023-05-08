@@ -8,8 +8,6 @@ export interface IFiles {
   files?: any[];
 }
 
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-
 @Component({
   selector: 'example-comp',
   styleUrls: ['example.component.scss'],
@@ -66,9 +64,8 @@ export class ExampleComponent {
     }
   }
 
-  public async updateCode(): Promise<void> {
+  public updateCode() {
     if (this.showSource) {
-      await sleep(50);
       this.onShowSource.emit();
     }
   }

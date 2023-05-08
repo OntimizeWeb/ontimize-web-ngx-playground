@@ -19,7 +19,7 @@
       </div>
       <div fxLayout="column">
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="ex.updateCode()" #showControlsToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'controls', $event.checked)" #showControlsToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
           <mat-slide-toggle (change)="ex.updateCode()" #showFooterToggle [checked]="true" fxFlex>
