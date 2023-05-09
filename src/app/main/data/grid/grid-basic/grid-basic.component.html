@@ -5,16 +5,16 @@
     <div menu layout-margin>
       <mat-form-field layout-padding>
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
-        <input (change)="ex.updateCode()" matInput #gridTitle value="Grid">
+        <input (change)="updateCodeValue(ex, 'title', $event.target.value)" matInput #gridTitle value="Grid">
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
         <mat-form-field layout-padding>
           <mat-label>{{ 'GRID.NUM_COLUMNS' | oTranslate }}</mat-label>
-          <input (change)="ex.updateCode()" matInput #colsInput type="number" [(ngModel)]="columns" min="1">
+          <input (change)="updateCodeValue(ex, 'columns', $event.target.value)" matInput #colsInput type="number" [(ngModel)]="columns" min="1">
         </mat-form-field>
         <mat-form-field layout-padding>
           <mat-label>{{ 'GRID.GUTTER_SIZE' | oTranslate }}</mat-label>
-          <input (change)="ex.updateCode()" matInput #gutterSizeInput type="number" [(ngModel)]="gutterSize" min="1">
+          <input (change)="updateCodeValue(ex, 'gutterSize', $event.target.value)" matInput #gutterSizeInput type="number" [(ngModel)]="gutterSize" min="1">
         </mat-form-field>
       </div>
       <div fxLayout="column">
@@ -22,33 +22,33 @@
           <mat-slide-toggle (change)="updateCodeValue(ex, 'controls', $event.checked)" #showControlsToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="ex.updateCode()" #showFooterToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'footer', $event.checked)" #showFooterToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_FOOTER' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="ex.updateCode()" #refreshButtonToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
             {{ 'REFRESH_BUTTON' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="ex.updateCode()" #insertButtonToggle [checked]="false" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'insertButton', $event.checked)" #insertButtonToggle [checked]="false" fxFlex>
             {{ 'INSERT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="ex.updateCode()" #showPageSizeToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'showPageSize', $event.checked)" #showPageSizeToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_PAGINATION' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field fxFlex>
             <mat-label>{{ 'GRID.PAGE_SIZE' | oTranslate }}</mat-label>
-            <input (change)="ex.updateCode()" matInput #pageSizeInput type="number" [(ngModel)]="pagesize" min="1">
+            <input (change)="updateCodeValue(ex, 'queryRows', $event.target.value)" matInput #pageSizeInput type="number" [(ngModel)]="pagesize" min="1">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="ex.updateCode()" #showSortToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'orderable', $event.checked)" #showSortToggle [checked]="true" fxFlex>
             {{ 'GRID.SHOW_SORT' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field fxFlex>
-            <mat-select (selectionChange)="ex.updateCode()" placeholder="Sort column" [(ngModel)]="sortColumn" (change)="reloadGridData(grid)">
+            <mat-select (selectionChange)="updateCodeValue(ex, 'sortColumn', $event.value)" placeholder="Sort column" [(ngModel)]="sortColumn" (change)="reloadGridData(grid)">
               <mat-option *ngFor="let column of ['name','email']" [value]="column">
                 {{ column }}
               </mat-option>
@@ -56,10 +56,10 @@
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="ex.updateCode()" #quickFilterToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'quickfilter', $event.checked)" #quickFilterToggle [checked]="true" fxFlex>
             {{ 'QUICK_FILTER' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="ex.updateCode()" #paginationControlsToggle [checked]="false" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'paginationControls', $event.checked)" #paginationControlsToggle [checked]="false" fxFlex>
             {{ 'GRID.PAGINATION_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
         </div>

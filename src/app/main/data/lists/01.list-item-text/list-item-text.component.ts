@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_TEXT_HTML_DATA = `
 <o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
@@ -43,6 +44,8 @@ export class ListItemTextComponent {
   iconToggle: any;
   @ViewChild('itemIcon', { static: false })
   itemIcon: any;
+  @ViewChild('list', { static: false })
+  list: any;
 
   insertButtonPosition = 'bottom';
 
@@ -70,6 +73,20 @@ export class ListItemTextComponent {
 
   getStaticData() {
     return this.staticData;
+  }
+
+  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+    let htmlData: string = LIST_ITEM_TEXT_HTML_DATA;
+    const itemData: any = {
+      iconPosition: this.iconPosition
+    };
+    if (this.iconToggle.checked) {
+      itemData.icon = (this.itemIcon && this.itemIcon.nativeElement.value) ?
+        this.itemIcon.nativeElement.value : '';
+    }
+    htmlData = htmlData.replace("{" + key + "}", value);
+    exampleComp.html = undefined;
+    exampleComp.html = ListsUtils.replaceHtml(htmlData, this.list, itemData);
   }
 
   onShowSource(list?: any, exampleComp?: any) {

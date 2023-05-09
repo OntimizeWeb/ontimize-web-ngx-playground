@@ -5,47 +5,47 @@
     <div menu layout-margin>
       <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
-          <input (change)="ex.updateCode()" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+          <input (change)="updateCodeValue(ex, 'title', $event.target.value)" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle (change)="ex.updateCode()" #refreshButtonToggle [checked]="true" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
           {{ 'REFRESH_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle (change)="ex.updateCode()" #quickFilterToggle checked="true" fxFlex layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'quickFilter', $event.checked)" #quickFilterToggle [checked]="true" fxFlex layout-padding>
           {{ 'QUICK_FILTER' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle (change)="ex.updateCode()" #selectableToggle fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'selectable', $event.checked)" #selectableToggle fxFlex>
           {{ 'SELECTABLE' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle (change)="ex.updateCode()" #denseToggle [checked]="list.odense" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'dense', $event.checked)" #denseToggle [checked]="list.odense" fxFlex>
           {{ 'DENSE' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle (change)="ex.updateCode()" #insertButtonToggle fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'insertButton', $event.checked)" #insertButtonToggle fxFlex>
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
         <mat-form-field *ngIf="insertButtonToggle.checked" fxFlex>
           <mat-label>{{'LIST.INSERT_BUTTON_POSITION' | oTranslate}}</mat-label>
-          <mat-select (selectionChange)="ex.updateCode()" [(value)]="insertButtonPosition">
+          <mat-select (selectionChange)="updateCodeValue(ex, 'insertButtonPosition', $event.value)" [(value)]="insertButtonPosition">
             <mat-option value="top">Top</mat-option>
             <mat-option value="bottom">Bottom</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle (change)="ex.updateCode()" #deleteButtonToggle fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'deleteButton', $event.checked)" #deleteButtonToggle fxFlex>
           {{ 'DELETE_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle (change)="ex.updateCode()" #showTextToggle checked="false" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'showTextButton', $event.checked)" #showTextToggle checked="false" fxFlex>
           {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
         </mat-slide-toggle>
       </div>
       <div layout-padding>
-        <mat-slide-toggle (change)="ex.updateCode()" #paginationButtonToggle fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue(ex, 'paginationControls', $event.checked)" #paginationButtonToggle fxFlex>
           {{ 'LIST.PAGINATION_CONTROLS' | oTranslate }}
         </mat-slide-toggle>
       </div>
@@ -54,27 +54,27 @@
         <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle (change)="ex.updateCode()" #editButtonInRowToggle fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'editButtonInRow', $event.checked)" #editButtonInRowToggle fxFlex>
             {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!editButtonInRowToggle.checked" fxFlex>
-            <input (change)="ex.updateCode()" matInput #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
+            <input (change)="updateCodeValue(ex, 'editButtonInRowIcon', $event.target.value)" matInput #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle (change)="ex.updateCode()" #detailButtonInRowToggle fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue(ex, 'detailButtonInRow', $event.checked)" #detailButtonInRowToggle fxFlex>
             {{ 'DETAIL_BUTTON_IN_ROW' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!detailButtonInRowToggle.checked" fxFlex>
-            <input (change)="ex.updateCode()" matInput #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
+            <input (change)="updateCodeValue(ex, 'detailButtonInRowIcon', $event.target.value)" matInput #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="column" fxFlex>
-            <mat-slide-toggle (change)="ex.updateCode()" #iconToggle>
+            <mat-slide-toggle #iconToggle>
               {{ 'SHOW_ICON' | oTranslate }}
             </mat-slide-toggle>
-            <mat-radio-group (change)="ex.updateCode()" *ngIf="iconToggle.checked" layout-padding [value]="iconPosition" (change)="iconPosition = $event.value" fxFlex>
+            <mat-radio-group (change)="iconPosition = $event.value; updateCodeValue(ex, 'iconPosition', $event.target.value)" *ngIf="iconToggle.checked" layout-padding [value]="iconPosition" fxFlex>
               <mat-radio-button value="left" class="padding-3">
                 {{ 'LEFT' | oTranslate }}
               </mat-radio-button>
@@ -84,7 +84,7 @@
             </mat-radio-group>
           </div>
           <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
-            <input (change)="ex.updateCode()" matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
+            <input (change)="updateCodeValue(ex, 'icon', $event.target.value)" matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
           </mat-form-field>
         </div>
       </div>

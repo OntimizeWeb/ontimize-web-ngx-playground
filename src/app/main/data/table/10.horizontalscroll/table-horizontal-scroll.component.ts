@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
 import { TableUtils } from '../table-utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 @Component({
   selector: 'table-horizontal-scroll',
@@ -36,6 +37,18 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
+  }
+
+  updateCodeValue(exampleComp: ExampleComponent, key: string, value: string) {
+    const itemData: any = {
+      horizontalScroll: this.horizontalScrollToggle.checked
+    };
+    for (let item in itemData) {
+      if (item === key) {
+        item = value;
+      }
+    }
+    exampleComp.html = TableUtils.getHtml('o-table-horizontal-scroll', this.table, itemData);
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { TableUtils } from '../table-utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 @Component({
   selector: 'table-basic',
@@ -52,6 +53,9 @@ export class TableBasicComponent {
   @ViewChild('horizontalScrollToggle', { static: false })
   horizontalScrollToggle: any;
 
+  @ViewChild('table', { static: false })
+  table: any;
+
   public data = TableUtils.getCustomers();
 
   constructor() { }
@@ -60,6 +64,30 @@ export class TableBasicComponent {
     return TableUtils.getFiles(key);
   }
 
+  updateCodeValue(exampleComp: ExampleComponent, key: string, value: string) {
+    const itemData: any = {
+      titleInput: this.titleInput.nativeElement.value,
+      controlsToggle: this.controlsToggle.checked,
+      titleToggle: this.titleToggle.checked,
+      filter: this.quickFilterToggle.checked,
+      filterCaseSensitive: this.filterCaseSensitive.checked,
+      exportButtonToggle: this.exportButtonToggle.checked,
+      columnsVisibilityToggle: this.columnsVisibilityToggle.checked,
+      selectMultipleToggle: this.selectMultipleToggle.checked,
+      buttonAddToggle: this.buttonAddToggle.checked,
+      buttonRemoveToggle: this.buttonRemoveToggle.checked,
+      buttonRefreshToggle: this.buttonRefreshToggle.checked,
+      showTextToggle: this.showTextToggle.checked,
+      autoAdjust: this.autoAdjustToggle.checked,
+      horizontalScroll: this.horizontalScrollToggle.checked
+    };
+    for (let item in itemData) {
+      if (item === key) {
+        item = value;
+      }
+    }
+    exampleComp.html = TableUtils.getHtml('o-table', this.table, itemData);
+  }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     const itemData: any = {

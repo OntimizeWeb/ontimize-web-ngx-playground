@@ -5,7 +5,7 @@
     <div menu layout-margin>
       <mat-form-field style="width:100%;">
         <mat-label>{{ 'TABLE.PAGINATION.PAGE_SIZE_OPTIONS' | oTranslate }}</mat-label>
-        <input (change)="ex.updateCode()" matInput #pageSizeOptionsInput value="5;10;15" (change)="onEmptySetDefault()">
+        <input matInput #pageSizeOptionsInput value="5;10;15" (change)="onEmptySetDefault()">
       </mat-form-field>
     </div>
     <o-table content #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no"

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { GridUtils } from '../grid.utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 @Component({
   selector: 'grid-fixed',
@@ -11,6 +12,9 @@ export class GridFixedComponent {
 
   @ViewChild('height', { static: false })
   gridHeight: any;
+
+  @ViewChild('grid', { static: false })
+  grid: any;
 
   constructor() { }
 
@@ -24,6 +28,12 @@ export class GridFixedComponent {
 
   onShowSource(grid?: any, exampleComp?: any) {
     exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID_FIXED, grid);
+  }
+
+  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+    let htmlData: string = GridUtils.HTML_DATA_GRID_FIXED;
+    htmlData = htmlData.replace("{" + key + "}", value);
+    exampleComp.html = this.replaceHtml(htmlData, this.grid);
   }
 
   public replaceHtml(html: string, grid?: any) {
