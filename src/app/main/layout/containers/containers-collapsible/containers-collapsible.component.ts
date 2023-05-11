@@ -26,6 +26,7 @@ export class ContainersCollapsibleComponent {
   public layout: string = 'row';
   protected layoutHorizontal = 'start';
   protected layoutVertical = 'stretch';
+  html: string;
 
   @ViewChild('title', { static: true })
   public titleInput: any;
@@ -90,7 +91,13 @@ export class ContainersCollapsibleComponent {
   }
 
   onShowSource(exampleComp: ExampleComponent) {
-    exampleComp.html = this.getHTML();
+    this.html = this.getHTML();
+  }
+
+  updateCodeValue(key: string, value) {
+    let htmlData: string = HTML_DATA;
+    htmlData = htmlData.replace("{" + key + "}", value);
+    this.html = this.getHTML();
   }
 
   getHTML() {

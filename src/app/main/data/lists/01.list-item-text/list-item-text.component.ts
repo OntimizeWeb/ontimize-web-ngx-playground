@@ -46,7 +46,7 @@ export class ListItemTextComponent {
   itemIcon: any;
   @ViewChild('list', { static: false })
   list: any;
-
+  html: string;
   insertButtonPosition = 'bottom';
 
   files = {
@@ -75,7 +75,7 @@ export class ListItemTextComponent {
     return this.staticData;
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+  updateCodeValue(key: string, value) {
     let htmlData: string = LIST_ITEM_TEXT_HTML_DATA;
     const itemData: any = {
       iconPosition: this.iconPosition
@@ -85,8 +85,7 @@ export class ListItemTextComponent {
         this.itemIcon.nativeElement.value : '';
     }
     htmlData = htmlData.replace("{" + key + "}", value);
-    exampleComp.html = undefined;
-    exampleComp.html = ListsUtils.replaceHtml(htmlData, this.list, itemData);
+    this.html = ListsUtils.replaceHtml(htmlData, this.list, itemData);
   }
 
   onShowSource(list?: any, exampleComp?: any) {
@@ -99,7 +98,7 @@ export class ListItemTextComponent {
         this.itemIcon.nativeElement.value : '';
     }
 
-    exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
+    this.html = ListsUtils.replaceHtml(LIST_ITEM_TEXT_HTML_DATA, list, itemData);
   }
 
 }

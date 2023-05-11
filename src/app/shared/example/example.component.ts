@@ -18,7 +18,8 @@ export interface IFiles {
     'files',
     'collapsible',
     'collapsed',
-    'tabHeight: tab-height'
+    'tabHeight: tab-height',
+    'html'
   ],
   outputs: [
     'onShowSource : showSource'
@@ -59,12 +60,6 @@ export class ExampleComponent {
 
   toggleShowSource() {
     this.showSource = !this.showSource;
-    if (this.showSource) {
-      this.onShowSource.emit();
-    }
-  }
-
-  public updateCode() {
     if (this.showSource) {
       this.onShowSource.emit();
     }

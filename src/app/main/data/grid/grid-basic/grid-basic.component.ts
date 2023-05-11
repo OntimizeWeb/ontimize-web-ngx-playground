@@ -14,6 +14,7 @@ export class GridBasicComponent {
   public pagesize = 8;
   public sortColumn;
   public gutterSize = 1;
+  html: string;
 
   @ViewChild('grid', { static: false })
   grid: any;
@@ -29,13 +30,13 @@ export class GridBasicComponent {
   }
 
   onShowSource(grid?: any, exampleComp?: ExampleComponent) {
-    exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID, grid);
+    this.html = this.replaceHtml(GridUtils.HTML_DATA_GRID, grid);
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+  updateCodeValue(key: string, value) {
     let htmlData: string = GridUtils.HTML_DATA_GRID;
     htmlData = htmlData.replace("{" + key + "}", value);
-    exampleComp.html = this.replaceHtml(htmlData, this.grid);
+    this.html = this.replaceHtml(htmlData, this.grid);
   }
 
   public replaceHtml(html: string, grid?: any) {

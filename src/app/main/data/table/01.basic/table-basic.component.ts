@@ -8,6 +8,8 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 })
 export class TableBasicComponent {
 
+  html: string;
+
   @ViewChild('titleInput', { static: false })
   titleInput: any;
 
@@ -64,7 +66,7 @@ export class TableBasicComponent {
     return TableUtils.getFiles(key);
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value: string) {
+  updateCodeValue(key: string, value: string) {
     const itemData: any = {
       titleInput: this.titleInput.nativeElement.value,
       controlsToggle: this.controlsToggle.checked,
@@ -86,7 +88,7 @@ export class TableBasicComponent {
         item = value;
       }
     }
-    exampleComp.html = TableUtils.getHtml('o-table', this.table, itemData);
+    this.html = TableUtils.getHtml('o-table', this.table, itemData);
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
@@ -106,7 +108,7 @@ export class TableBasicComponent {
       autoAdjust: this.autoAdjustToggle.checked,
       horizontalScroll: this.horizontalScrollToggle.checked
     };
-    exampleComp.html = TableUtils.getHtml(key, table, itemData);
+    this.html = TableUtils.getHtml(key, table, itemData);
   }
 
   onAction1() {

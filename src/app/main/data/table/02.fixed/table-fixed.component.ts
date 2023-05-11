@@ -8,6 +8,8 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 })
 export class TableFixedComponent {
 
+  html: string;
+
   @ViewChild('fixedHeaderToggle', { static: false })
   fixedHeaderToggle: any = true;
 
@@ -25,7 +27,7 @@ export class TableFixedComponent {
     return TableUtils.getFiles(key);
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value: string) {
+  updateCodeValue(key: string, value: string) {
     const itemData: any = {
       fixedHeader: this.fixedHeaderToggle.checked,
       height: this.tableHeight.nativeElement.value,
@@ -35,7 +37,7 @@ export class TableFixedComponent {
         item = value;
       }
     }
-    exampleComp.html = TableUtils.getHtml('o-table-fixed', this.table, itemData);
+    this.html = TableUtils.getHtml('o-table-fixed', this.table, itemData);
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
@@ -43,7 +45,7 @@ export class TableFixedComponent {
       fixedHeader: this.fixedHeaderToggle.checked,
       height: this.tableHeight.nativeElement.value,
     };
-    exampleComp.html = TableUtils.getHtml(key, table, itemData);
+    this.html = TableUtils.getHtml(key, table, itemData);
   }
 
 }

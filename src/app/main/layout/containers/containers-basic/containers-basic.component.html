@@ -15,34 +15,34 @@
     </mat-radio-group>
   </div>
 
-  <example-comp #ex comp-name="CONTAINERS" [files]="getFiles()" (showSource)="onShowSource(ex)" >
+  <example-comp #ex comp-name="CONTAINERS" [html]="html" [files]="getFiles()" (showSource)="onShowSource(ex)" >
     <screen-configuration>
       <div fxLayout="column" menu>
         <span class="menu-title">Configuration</span>
         <mat-divider></mat-divider>
         <mat-form-field>
-          <input (change)="ex.updateCode()" #title matInput placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
+          <input (change)="updateCodeValue('title', $event.target.value)" #title matInput placeholder="{{ 'TITLE' | oTranslate }}" value="Title">
         </mat-form-field>
         <mat-form-field>
-          <input (change)="ex.updateCode()" matInput #icon placeholder="{{ 'CONTAINER_ICON' | oTranslate }}" value="check">
+          <input (change)="updateCodeValue('icon', $event.target.value)" matInput #icon placeholder="{{ 'CONTAINER_ICON' | oTranslate }}" value="check">
         </mat-form-field>
         <mat-form-field>
-          <input (change)="ex.updateCode()" matInput #elevation placeholder="{{ 'ELEVATION' | oTranslate }}" type="number" value="1" min="0" max="12">
+          <input (change)="updateCodeValue('elevation', $event.target.value)" matInput #elevation placeholder="{{ 'ELEVATION' | oTranslate }}" type="number" value="1" min="0" max="12">
         </mat-form-field>
-        <mat-slide-toggle (change)="ex.updateCode()" #appearance>{{ 'APPEARANCE_OUTLINE' | oTranslate }}</mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('appearance', $event.checked)" #appearance>{{ 'APPEARANCE_OUTLINE' | oTranslate }}</mat-slide-toggle>
 
         <span class="alignment" layout-padding>Layout align (<code>layout-align</code>): {{ getLayoutAlign() }}</span>
         <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="space-around stretch">
           <div fxLayout="column" fxFlex layout-padding>
             <span class="alignment-label">Alignment in Layout Direction ({{getMainDirection()}})</span>
-            <mat-radio-group (change)="ex.updateCode()" class="radio-group-vertical" #layHor (change)="onLayoutHorizontalChange($event)">
+            <mat-radio-group class="radio-group-vertical" #layHor (change)="onLayoutHorizontalChange($event)">
               <mat-radio-button *ngFor="let d of dataHorizontal" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
             </mat-radio-group>
           </div>
           <div fxLayout="column" fxFlex layout-padding>
             <span class="alignment-label">Alignment in Perpendicular Direction ({{getSecondaryDirection()}})</span>
-            <mat-radio-group (change)="ex.updateCode()" class="radio-group-vertical" #layVer (change)="onLayoutVerticalChange($event)">
+            <mat-radio-group class="radio-group-vertical" #layVer (change)="onLayoutVerticalChange($event)">
               <mat-radio-button *ngFor="let d of dataVertical" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
             </mat-radio-group>
           </div>

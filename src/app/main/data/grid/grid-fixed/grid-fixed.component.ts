@@ -10,6 +10,8 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 
 export class GridFixedComponent {
 
+  html: string;
+
   @ViewChild('height', { static: false })
   gridHeight: any;
 
@@ -27,13 +29,13 @@ export class GridFixedComponent {
   }
 
   onShowSource(grid?: any, exampleComp?: any) {
-    exampleComp.html = this.replaceHtml(GridUtils.HTML_DATA_GRID_FIXED, grid);
+    this.html = this.replaceHtml(GridUtils.HTML_DATA_GRID_FIXED, grid);
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+  updateCodeValue(key: string, value) {
     let htmlData: string = GridUtils.HTML_DATA_GRID_FIXED;
     htmlData = htmlData.replace("{" + key + "}", value);
-    exampleComp.html = this.replaceHtml(htmlData, this.grid);
+    this.html = this.replaceHtml(htmlData, this.grid);
   }
 
   public replaceHtml(html: string, grid?: any) {
