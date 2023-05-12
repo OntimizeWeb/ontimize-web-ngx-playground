@@ -39,13 +39,14 @@ export class TooltipComponent implements OnInit {
     this.navigationService.setTitle(title);
   }
 
-  updateCodeValue(exampleComp: ExampleComponent, key: string, value) {
+  updateCodeValue(key: string, value) {
     let htmlData: string = HTML_DATA;
     htmlData = htmlData.replace("{" + key + "}", value);
-    this.html = htmlData.replace('{tooltip}', this.tooltip.nativeElement.value)
-      .replace('{tooltipPosition}', this.position.nativeElement.value)
+    let htmlReplace = htmlData.replace('{tooltip}', this.tooltip.nativeElement.value)
+      .replace('{tooltipPosition}', this.position.value)
       .replace('{tooltipShowDelay}', this.showDelay.nativeElement.value)
       .replace('{tooltipHideDelay}', this.hideDelay.nativeElement.value);
+    this.html = htmlReplace;
   }
 
   onShowSource(exampleComp: ExampleComponent, tooltip: string, position: string, showDelay: string, hideDelay: string) {

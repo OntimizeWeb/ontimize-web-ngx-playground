@@ -22,7 +22,7 @@
 
       <div fxLayoutGap="8px">
         <label>Float label: </label>
-        <mat-radio-group (change)="updateCodeValue('floatLabel', $event.target.value)" #floatLabel [(ngModel)]="floatLabelValue" fxLayoutGap="8px">
+        <mat-radio-group (change)="updateCodeValue('floatLabel', $event.value)" #floatLabel [(ngModel)]="floatLabelValue" fxLayoutGap="8px">
           <mat-radio-button value="auto">Auto</mat-radio-button>
           <mat-radio-button value="always">Always</mat-radio-button>
           <mat-radio-button value="never">Never</mat-radio-button>
@@ -31,7 +31,7 @@
 
       <div fxLayoutGap="8px">
         <label>Appearance: </label>
-        <mat-radio-group (change)="updateCodeValue('appearanceValue', $event.target.value)" #appearance [(ngModel)]="appearanceValue" fxLayoutGap="8px">
+        <mat-radio-group (change)="updateCodeValue('appearanceValue', $event.value)" #appearance [(ngModel)]="appearanceValue" fxLayoutGap="8px">
           <mat-radio-button value="legacy">Legacy</mat-radio-button>
           <mat-radio-button value="standard">Standard</mat-radio-button>
           <mat-radio-button value="fill">Fill</mat-radio-button>
