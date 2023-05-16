@@ -49,7 +49,7 @@ export class TooltipComponent implements OnInit {
     this.html = htmlReplace;
   }
 
-  onShowSource(exampleComp: ExampleComponent, tooltip: string, position: string, showDelay: string, hideDelay: string) {
+  onShowSource(tooltip: string, position: string, showDelay: string, hideDelay: string) {
     let tpl = HTML_DATA;
     tpl = tpl.replace('{tooltip}', tooltip)
       .replace('{tooltipPosition}', position)
