@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "node_modules/@angular/material/theming";
 
 @mixin main-theme($theme) {
@@ -8,8 +9,8 @@
   $foreground: map-get($theme, foreground);
 
   .active {
-    border-color: mat-color($primary, 500);
-    background-color: mat-color($primary, 100);
+    border-color: mat.get-color-from-palette($primary, 500);
+    background-color: mat.get-color-from-palette($primary, 100);
   }
 
 }
