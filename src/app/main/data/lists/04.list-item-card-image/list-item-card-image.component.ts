@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_CARD_IMAGE_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
@@ -38,6 +39,7 @@ const LIST_ITEM_CARD_IMAGE_TS_DATA = `
 export class ListItemCardImageComponent {
 
   iconPosition: string = 'right';
+  html: string;
 
   @ViewChild('listTitle', { static: false })
   listTitle: any;
@@ -67,6 +69,8 @@ export class ListItemCardImageComponent {
   icon: any;
   @ViewChild('rowHeight', { static: false })
   rowHeight: any;
+  @ViewChild('list', { static: false })
+  list: any;
 
   files = {
     'html': {
@@ -98,6 +102,27 @@ export class ListItemCardImageComponent {
     return ListsUtils.getListData(3);
   }
 
+  updateCodeValue(key: string, value) {
+    let htmlData: string = LIST_ITEM_CARD_IMAGE_HTML_DATA;
+    const itemData: any = {
+      iconPosition: this.iconPosition
+    };
+    htmlData = htmlData.replace("{" + key + "}", value);
+    itemData.image = this.imageToggle.checked;
+    itemData.avatar = this.avatarToggle.checked ? '{{ row.thumbnailUrl }}' : '';
+    itemData.collapsible = this.collapsibleToggle.checked;
+    itemData.collapsed = this.collapsedToggle.checked;
+    itemData.action1 = (this.action1Toggle.checked && this.action1Text && this.action1Text.nativeElement.value)
+      ? this.action1Text.nativeElement.value : '';
+    itemData.action2 = (this.action2Toggle.checked && this.action2Text && this.action2Text.nativeElement.value)
+      ? this.action2Text.nativeElement.value : '';
+    if (this.iconToggle.checked) {
+      itemData.icon = (this.icon && this.icon.nativeElement.value) ?
+        this.icon.nativeElement.value : '';
+    }
+    this.html = ListsUtils.replaceHtml(htmlData, this.list, itemData);
+  }
+
   onShowSource(list?: any, exampleComp?: any) {
     const itemData: any = {
       iconPosition: this.iconPosition
@@ -119,7 +144,7 @@ export class ListItemCardImageComponent {
         this.icon.nativeElement.value : '';
     }
 
-    exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_IMAGE_HTML_DATA, list, itemData);
+    this.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_IMAGE_HTML_DATA, list, itemData);
   }
 
 }

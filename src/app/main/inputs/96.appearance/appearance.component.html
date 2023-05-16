@@ -1,8 +1,8 @@
 <example-comp  #ex comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" collapsible="no"
-  [files]="customInputFiles" (showSource)="onShowSource('customInput', input, ex)">
+  [html]="html" [files]="customInputFiles" (showSource)="onShowSource('customInput', input, ex)">
   <o-form editable-detail="no" show-header="no" layout-direction="row" class="hide-overflow">
     <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
-      <o-text-input  #input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
+      <o-text-input (change)="ex.updateCode()" #input attr="attr" [float-label]="floatLabelValue" [appearance]="appearanceValue" [label]="label.value"
         [placeholder]="placeholder.value" read-only="no" clear-button="yes"
         [hide-required-marker]="hideRequiredMarker.checked" required="yes">
       </o-text-input>
@@ -11,18 +11,18 @@
     <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start start" fxFlex="50" layout-padding>
 
       <mat-form-field>
-        <input matInput #label placeholder="Label" value="Label value">
+        <input (change)="updateCodeValue('labelValue', $event.target.value)" matInput #label placeholder="Label" value="Label value">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput #placeholder placeholder="Placeholder" value="Placeholder value">
+        <input (change)="updateCodeValue('placeholderValue', $event.target.value)" matInput #placeholder placeholder="Placeholder" value="Placeholder value">
       </mat-form-field>
 
-      <mat-checkbox #hideRequiredMarker>Hide required marker</mat-checkbox>
+      <mat-checkbox (change)="updateCodeValue('hideRequiredMarker', $event.checked)" #hideRequiredMarker>Hide required marker</mat-checkbox>
 
       <div fxLayoutGap="8px">
         <label>Float label: </label>
-        <mat-radio-group #floatLabel [(ngModel)]="floatLabelValue" fxLayoutGap="8px">
+        <mat-radio-group (change)="updateCodeValue('floatLabel', $event.value)" #floatLabel [(ngModel)]="floatLabelValue" fxLayoutGap="8px">
           <mat-radio-button value="auto">Auto</mat-radio-button>
           <mat-radio-button value="always">Always</mat-radio-button>
           <mat-radio-button value="never">Never</mat-radio-button>
@@ -31,7 +31,7 @@
 
       <div fxLayoutGap="8px">
         <label>Appearance: </label>
-        <mat-radio-group #appearance [(ngModel)]="appearanceValue" fxLayoutGap="8px">
+        <mat-radio-group (change)="updateCodeValue('appearanceValue', $event.value)" #appearance [(ngModel)]="appearanceValue" fxLayoutGap="8px">
           <mat-radio-button value="legacy">Legacy</mat-radio-button>
           <mat-radio-button value="standard">Standard</mat-radio-button>
           <mat-radio-button value="fill">Fill</mat-radio-button>

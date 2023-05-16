@@ -1,18 +1,18 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-fixed')"
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-fixed')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
   <screen-configuration comp-name="GRID" #sidenavComp>
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
-        <input matInput #gridTitle value="Grid">
+        <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Grid">
       </mat-form-field>
       <o-column fxFlex layout-padding>
-        <mat-slide-toggle #fixedHeaderToggle [checked]="true">
+        <mat-slide-toggle (change)="updateCodeValue('fixedHeader', $event.checked)" #fixedHeaderToggle [checked]="true">
           {{ 'GRID.BUTTON.FIXED' | oTranslate }}
         </mat-slide-toggle>
         <mat-form-field>
           <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
-          <input matInput #height value="600" type="number">
+          <input (change)="updateCodeValue('height', $event.target.value)" matInput #height value="600" type="number">
         </mat-form-field>
       </o-column>
     </div>

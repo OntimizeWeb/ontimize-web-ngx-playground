@@ -1,17 +1,17 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CARD_IMAGE" [files]="files" (showSource)="onShowSource(list, ex)"
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CARD_IMAGE" [html]="html" [files]="files" (showSource)="onShowSource(list, ex)"
   class="list-examples">
   <screen-configuration comp-name="LIST" #sidenavComp>
     <div menu layout-margin>
       <div fxLayout="row" layout-padding fxLayoutAlign="center">
         <mat-form-field fxFlex="95">
-          <input matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+          <input (change)="updateCodeValue('title', $event.target.value)" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
         </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-        <mat-slide-toggle #refreshButtonToggle [checked]="true" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue('refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
           {{ 'REFRESH_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle #insertButtonToggle fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle fxFlex>
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
       </div>
@@ -19,43 +19,43 @@
         <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
         <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-          <mat-slide-toggle #imageToggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('imageToggle', $event.checked)" #imageToggle checked="true" fxFlex>
             {{ 'IMAGE' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle #avatarToggle fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('avatarToggle', $event.checked)" #avatarToggle fxFlex>
             {{ 'AVATAR' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
-          <mat-slide-toggle #collapsibleToggle fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('collapsibleToggle', $event.checked)" #collapsibleToggle fxFlex>
             {{ 'COLLAPSIBLE' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle #collapsedToggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('collapsedToggle', $event.checked)" #collapsedToggle checked="true" fxFlex>
             {{ 'COLLAPSED' | oTranslate }}
           </mat-slide-toggle>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle #action1Toggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('action1', $event.checked)" #action1Toggle checked="true" fxFlex>
             {{ 'ACTION_1' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!action1Toggle.checked" fxFlex>
-            <input matInput #action1Text placeholder="action-1-text" value="ACTION 1">
+            <input (change)="updateCodeValue('actionText1', $event.target.value)" matInput #action1Text placeholder="action-1-text" value="ACTION 1">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle #action2Toggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('action2', $event.checked)" #action2Toggle checked="true" fxFlex>
             {{ 'ACTION_2' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!action2Toggle.checked" fxFlex>
-            <input matInput #action2Text placeholder="action-2-text" value="ACTION 2">
+            <input (change)="updateCodeValue('actionText2', $event.target.value)" matInput #action2Text placeholder="action-2-text" value="ACTION 2">
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <mat-slide-toggle #iconToggle fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('showIcon', $event.checked)" #iconToggle fxFlex>
             {{ 'SHOW_ICON' | oTranslate }}
           </mat-slide-toggle>
           <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
-            <input matInput #icon placeholder="icon" value="share">
+            <input (change)="updateCodeValue('icon', $event.target.value)" matInput #icon placeholder="icon" value="share">
           </mat-form-field>
         </div>
         <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>

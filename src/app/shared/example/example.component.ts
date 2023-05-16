@@ -18,7 +18,8 @@ export interface IFiles {
     'files',
     'collapsible',
     'collapsed',
-    'tabHeight: tab-height'
+    'tabHeight: tab-height',
+    'html'
   ],
   outputs: [
     'onShowSource : showSource'
@@ -29,6 +30,7 @@ export interface IFiles {
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class ExampleComponent {
 
   aditionalTabs: any[];

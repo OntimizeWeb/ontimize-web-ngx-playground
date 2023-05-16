@@ -1,4 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const HTML_DATA = `
   <o-image attr="image" data="http://placekitten.com/1920/1080" height="{height}" width="{width}"
@@ -12,6 +13,8 @@ const HTML_DATA = `
   encapsulation: ViewEncapsulation.None
 })
 export class ImageMediaComponent {
+
+  html: string;
 
   @ViewChild('showControlToggle', { static: false })
   showControlToggle: any = true;
@@ -66,6 +69,24 @@ export class ImageMediaComponent {
     return tpl;
   }
 
+  updateCodeValue(key: string, value: string) {
+    const itemData: any = {
+      showControl: this.showControlToggle.checked,
+      showFullscreen: this.showFullscreenToggle.checked,
+      autoFit: this.autoFitToggle.checked,
+      height: this.height ? this.height : '',
+      width: this.width ? this.width : '',
+      enabled: this.enabledToggle.checked,
+      readOnly: this.readOnlyToggle.checked
+    };
+    for (let item in itemData) {
+      if (item === key) {
+        item = value;
+      }
+    }
+    this.html = ImageMediaComponent.getHtml(itemData);
+  }
+
   onShowSource(key: string, exampleComp: any) {
     const itemData: any = {
       showControl: this.showControlToggle.checked,
@@ -76,7 +97,7 @@ export class ImageMediaComponent {
       enabled: this.enabledToggle.checked,
       readOnly: this.readOnlyToggle.checked
     };
-    exampleComp.html = ImageMediaComponent.getHtml(itemData);
+    this.html = ImageMediaComponent.getHtml(itemData);
   }
 
 }

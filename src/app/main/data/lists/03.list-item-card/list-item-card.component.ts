@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
+import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_CARD_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
@@ -39,6 +40,7 @@ export class ListItemCardComponent {
 
   iconPosition: string = 'right';
   protected staticData = ListsUtils.getListData();
+  html: string;
 
   @ViewChild('listTitle', { static: false })
   listTitle: any;
@@ -60,6 +62,8 @@ export class ListItemCardComponent {
   actionText1: any;
   @ViewChild('actionText2', { static: false })
   actionText2: any;
+  @ViewChild('list', { static: false })
+  list: any;
 
   files = {
     'html': {
@@ -91,6 +95,16 @@ export class ListItemCardComponent {
     return this.staticData;
   }
 
+  updateCodeValue(key: string, value) {
+    let htmlData: string = LIST_ITEM_CARD_HTML_DATA;
+    const itemData: any = {};
+    htmlData = htmlData.replace("{" + key + "}", value);
+    itemData.showImage = this.showImageToggle.checked;
+    itemData.actionText1 = this.actionText1.nativeElement.value;
+    itemData.actionText2 = this.actionText2.nativeElement.value;
+    this.html = ListsUtils.replaceHtml(htmlData, this.list, itemData);
+  }
+
   onShowSource(list?: any, exampleComp?: any) {
     const itemData: any = {};
 
@@ -102,7 +116,7 @@ export class ListItemCardComponent {
     itemData.actionText1 = this.actionText1.nativeElement.value;
     itemData.actionText2 = this.actionText2.nativeElement.value;
 
-    exampleComp.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_HTML_DATA, list, itemData);
+    this.html = ListsUtils.replaceHtml(LIST_ITEM_CARD_HTML_DATA, list, itemData);
   }
 
 }

@@ -1,28 +1,28 @@
-<example-comp #ex1 collapsible="no" collapsed="no" comp-name="IMAGE.COMPONENT" [files]="files" (showSource)="onShowSource('image1',ex1)">
+<example-comp #ex1 collapsible="no" collapsed="no" comp-name="IMAGE.COMPONENT" [html]="html" [files]="files" (showSource)="onShowSource('image1',ex1)">
   <screen-configuration>
     <div fxLayout="column" menu>
       <span class="menu-title">{{ 'IMAGE.CONFIGURATION' | oTranslate }}</span>
       <mat-divider></mat-divider>
-      <mat-slide-toggle #showControlToggle checked="true">
+      <mat-slide-toggle (change)="updateCodeValue('showControl', $event.checked)" #showControlToggle checked="true">
         {{ 'IMAGE.SHOW_CONTROL' | oTranslate }}
       </mat-slide-toggle>
-      <mat-slide-toggle #showFullscreenToggle checked="false">
+      <mat-slide-toggle (change)="updateCodeValue('showFullscreen', $event.checked)" #showFullscreenToggle checked="false">
         {{ 'IMAGE.SHOW_FULLSCREEN' | oTranslate }}
       </mat-slide-toggle>
-      <mat-slide-toggle #autoFitToggle checked="true">
+      <mat-slide-toggle (change)="updateCodeValue('autoFit', $event.checked)" #autoFitToggle checked="true">
         {{ 'IMAGE.SIZE_ADJUST' | oTranslate }}
       </mat-slide-toggle>
-      <mat-slide-toggle #enabledToggle checked="true">
+      <mat-slide-toggle (change)="updateCodeValue('enabled', $event.checked)" #enabledToggle checked="true">
         {{ 'IMAGE.ENABLED' | oTranslate }}
       </mat-slide-toggle>
-      <mat-slide-toggle #readOnlyToggle checked="false">
+      <mat-slide-toggle (change)="updateCodeValue('readOnly', $event.checked)" #readOnlyToggle checked="false">
         {{ 'IMAGE.READ_ONLY' | oTranslate }}
       </mat-slide-toggle>
       <mat-form-field>
-        <input matInput placeholder="{{ 'IMAGE.HEIGHT' | oTranslate }}" [(ngModel)]="height">
+        <input (change)="updateCodeValue('height', $event.target.value)" matInput placeholder="{{ 'IMAGE.HEIGHT' | oTranslate }}" [(ngModel)]="height">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="{{ 'IMAGE.WIDTH' | oTranslate }}" [(ngModel)]="width">
+        <input (change)="updateCodeValue('width', $event.target.value)" matInput placeholder="{{ 'IMAGE.WIDTH' | oTranslate }}" [(ngModel)]="width">
       </mat-form-field>
     </div>
 

@@ -1,19 +1,19 @@
 <div fxLayout="row" class="main-container bg-level-1">
   <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
 
-    <example-comp #ex comp-name="TOOLTIP" fxFill
-      (showSource)="onShowSource(ex, tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
+    <example-comp #ex comp-name="TOOLTIP" fxFill [html]="html"
+      (showSource)="onShowSource(tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
 
       <screen-configuration>
         <div fxLayout="column" menu>
           <span class="menu-title">{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}</span>
           <mat-divider></mat-divider>
           <mat-form-field layout-padding>
-            <input #tooltipInput matInput value="tooltip" placeholder="tooltip">
+            <input (change)="updateCodeValue('tooltip', $event.target.value)" #tooltipInput matInput value="tooltip" placeholder="tooltip">
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <mat-select #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
+            <mat-select (selectionChange)="updateCodeValue('tooltipPosition', $event.value)" #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
               <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
                 {{positionOption}}
               </mat-option>
@@ -21,11 +21,11 @@
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <input #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
+            <input (change)="updateCodeValue('tooltipShowDelay', $event.target.value)" #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <input #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
+            <input (change)="updateCodeValue('tooltipHideDelay', $event.target.value)" #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
           </mat-form-field>
         </div>
         <o-form content editable-detail="no" show-header="no" layout-direction="row">

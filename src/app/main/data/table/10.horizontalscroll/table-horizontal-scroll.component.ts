@@ -25,8 +25,6 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
     }
   }
 
-
-
   onToggleChange(val) {
     if (this.table) {
       this.table.horizontalScroll = val.checked;
