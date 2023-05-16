@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';;
 import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +30,7 @@ export function getHighlightLanguages() {
     OntimizeWebModule,
     AppRoutingModule,
     HighlightModule,
-    OGalleryModule
+    //OGalleryModule
   ],
   providers: [
     { provide: CollapsibleStateService, useValue: undefined },

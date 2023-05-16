@@ -5,14 +5,13 @@ import { GalleryComponent } from './gallery.component';
 import { GalleryMediaComponent } from './gallery-media/gallery-media.component';
 import { GalleryExampleComponent } from './gallery-example/gallery-example.component';;
 import { SharedModule } from '../../../shared/shared.module';
-import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
     GalleryRoutingModule,
-    OGalleryModule
+    //OGalleryModule
   ],
   declarations: [
     GalleryComponent,
