@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "production": "ng build --configuration production=true --baseHref=/",
     "production-aot-server": "ng build --configuration production=true  --baseHref=/ontimizeweb/v8/playground/",
-    "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
+    "build:themes": "npx sass --load-path=node_modules/ --watch ./src/assets/themes:/src/assets/themes "
   },
   "resolutions": {
     "webpack": "^5.0.0"
@@ -34,7 +34,6 @@
     "@angular/upgrade": "~12.2.17",
     "highlight.js": "^11.7.0",
     "ngx-highlightjs": "^4.1.0-beta",
-    "node-sass": "^4.14.1",
     "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-12.0.0.tgz",
     "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-12.0.0.tgz",
     "rxjs": "~6.6.7",
@@ -60,6 +59,8 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "sass": "^1.62.1",
+    "sass-migrator": "^1.7.3"
   }
 }
