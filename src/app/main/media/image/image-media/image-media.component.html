@@ -1,0 +1,39 @@
+<example-comp #ex1 collapsible="no" collapsed="no" comp-name="IMAGE.COMPONENT" [html]="html" [files]="files" (showSource)="onShowSource('image1',ex1)">
+  <screen-configuration>
+    <div fxLayout="column" menu>
+      <span class="menu-title">{{ 'IMAGE.CONFIGURATION' | oTranslate }}</span>
+      <mat-divider></mat-divider>
+      <mat-slide-toggle (change)="updateCodeValue('showControl', $event.checked)" #showControlToggle checked="true">
+        {{ 'IMAGE.SHOW_CONTROL' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle (change)="updateCodeValue('showFullscreen', $event.checked)" #showFullscreenToggle checked="false">
+        {{ 'IMAGE.SHOW_FULLSCREEN' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle (change)="updateCodeValue('autoFit', $event.checked)" #autoFitToggle checked="true">
+        {{ 'IMAGE.SIZE_ADJUST' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle (change)="updateCodeValue('enabled', $event.checked)" #enabledToggle checked="true">
+        {{ 'IMAGE.ENABLED' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle (change)="updateCodeValue('readOnly', $event.checked)" #readOnlyToggle checked="false">
+        {{ 'IMAGE.READ_ONLY' | oTranslate }}
+      </mat-slide-toggle>
+      <mat-form-field>
+        <input (change)="updateCodeValue('height', $event.target.value)" matInput placeholder="{{ 'IMAGE.HEIGHT' | oTranslate }}" [(ngModel)]="height">
+      </mat-form-field>
+      <mat-form-field>
+        <input (change)="updateCodeValue('width', $event.target.value)" matInput placeholder="{{ 'IMAGE.WIDTH' | oTranslate }}" [(ngModel)]="width">
+      </mat-form-field>
+    </div>
+
+
+    <div content fxFlex>
+      <div style="overflow:auto;">
+        <o-image data="http://placekitten.com/1920/1080" [height]="height" [width]="width" [auto-fit]="autoFitToggle.checked"
+          [enabled]="enabledToggle.checked" [read-only]="readOnlyToggle.checked" [show-controls]="showControlToggle.checked"
+          [full-screen-button]="showFullscreenToggle.checked" empty-image="./assets/images/no-image.png"></o-image>
+      </div>
+    </div>
+
+  </screen-configuration>
+</example-comp>

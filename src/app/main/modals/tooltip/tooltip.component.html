@@ -1,0 +1,41 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
+
+    <example-comp #ex comp-name="TOOLTIP" fxFill [html]="html"
+      (showSource)="onShowSource(tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
+
+      <screen-configuration>
+        <div fxLayout="column" menu>
+          <span class="menu-title">{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}</span>
+          <mat-divider></mat-divider>
+          <mat-form-field layout-padding>
+            <input (change)="updateCodeValue('tooltip', $event.target.value)" #tooltipInput matInput value="tooltip" placeholder="tooltip">
+          </mat-form-field>
+
+          <mat-form-field layout-padding>
+            <mat-select (selectionChange)="updateCodeValue('tooltipPosition', $event.value)" #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
+              <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+                {{positionOption}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field layout-padding>
+            <input (change)="updateCodeValue('tooltipShowDelay', $event.target.value)" #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
+          </mat-form-field>
+
+          <mat-form-field layout-padding>
+            <input (change)="updateCodeValue('tooltipHideDelay', $event.target.value)" #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
+          </mat-form-field>
+        </div>
+        <o-form content editable-detail="no" show-header="no" layout-direction="row">
+          <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+            <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
+              [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value"
+              [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
+          </div>
+        </o-form>
+      </screen-configuration>
+    </example-comp>
+  </div>
+</div>

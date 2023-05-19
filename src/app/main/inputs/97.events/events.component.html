@@ -1,4 +1,4 @@
-<example-comp comp-name="INPUTS.EVENTS" comp-desc="INPUTS.EVENTS.DESC" [files]="files">
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxFlex fxLayout="row" fxLayoutAlign="space-around center" style="padding:24px">
       <mat-checkbox #printOnChange [checked]="true">onChange</mat-checkbox>
@@ -8,8 +8,8 @@
       <mat-checkbox #printClick [checked]="true">click</mat-checkbox>
     </div>
 
-    <div fxLayout="row" fxLayoutAlign="space-around start">
-      <div fxLayout="column" fxFlex="40" fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+      <div fxLayout="column" fxFlex fxLayoutAlign="start stretch">
 
         <!-- INPUT-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -17,7 +17,7 @@
             (onValueChange)="onValueChange($event)" (onChange)="onChange(input)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(input)"
             (onBlur)="onBlur(input)" (click)="onClick(input)">
           </o-text-input>
-          <button fxFlex mat-raised-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
+          <button fxFlex mat-raised-button (click)="setValue(input, 'James Alam')"><span class="ellipsis">setValue James Alam</span></button>
         </div>
         <!-- CURRENCY-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -25,7 +25,7 @@
             (onValueChange)="onValueChange($event)" (onChange)="onChange(currency)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(currency)"
             (onBlur)="onBlur(currency)" (click)="onClick(currency)">
           </o-currency-input>
-          <button fxFlex mat-raised-button (click)="setValue(currency, 50)">setValue 50</button>
+          <button fxFlex mat-raised-button (click)="setValue(currency, 50)"><span class="ellipsis">setValue 50</span></button>
         </div>
         <!-- INTEGER-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -33,7 +33,7 @@
             (onValueChange)="onValueChange($event)" (onChange)="onChange(integer)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(integer)"
             (onBlur)="onBlur(integer)" (click)="onClick(integer)">
           </o-integer-input>
-          <button fxFlex mat-raised-button (click)="setValue(integer, 50)">setValue 50</button>
+          <button fxFlex mat-raised-button (click)="setValue(integer, 50)"><span class="ellipsis">setValue 50</span></button>
         </div>
         <!-- REAL-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -41,7 +41,7 @@
             (onValueChange)="onValueChange($event)" (onChange)="onChange(real)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(real)"
             (onBlur)="onBlur(real)" (click)="onClick(real)">
           </o-real-input>
-          <button fxFlex mat-raised-button (click)="setValue(real, 50)">setValue 50</button>
+          <button fxFlex mat-raised-button (click)="setValue(real, 50)"><span class="ellipsis">setValue 50</span></button>
         </div>
         <!-- PERCENT-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -49,7 +49,7 @@
             (onValueChange)="onValueChange($event)" (onChange)="onChange(percent)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(percent)"
             (onBlur)="onBlur(percent)" (click)="onClick(percent)">
           </o-percent-input>
-          <button fxFlex mat-raised-button (click)="setValue(percent, 0.66)">setValue 0.66</button>
+          <button fxFlex mat-raised-button (click)="setValue(percent, 0.66)"><span class="ellipsis">setValue 0.66</span></button>
         </div>
         <!-- DATE-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -57,7 +57,7 @@
             min="01/01/1980" max="01/01/2020" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange(date)"
             (onFocus)="onFocus(date)" (onBlur)="onBlur(date)" (click)="onClick(date)">
           </o-date-input>
-          <button fxFlex mat-raised-button (click)="setValue(date, 1538524800000)">setValue 2018-10-03</button>
+          <button fxFlex mat-raised-button (click)="setValue(date, 1538524800000)"><span class="ellipsis">setValue 2018-10-03</span></button>
         </div>
         <!-- HOUR-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -65,7 +65,7 @@
             clear-button="yes" format="24" (onChange)="onChange(hour)" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"
             (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)" (click)="onClick(hour)">
           </o-hour-input>
-          <button fxFlex mat-raised-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
+          <button fxFlex mat-raised-button (click)="setValue(hour, '08:00 PM')"><span class="ellipsis">setValue 08:00 PM</span></button>
         </div>
         <!-- COMBO-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -73,10 +73,10 @@
             columns="key;value" visible-columns="value" required="yes" read-only="false" (onValueChange)="onValueChange($event)" fxFlex="70"
             (onChange)="onChange(combo)">
           </o-combo>
-          <button fxFlex mat-raised-button (click)="setValue(combo,4)">setValue Germany</button>
+          <button fxFlex mat-raised-button (click)="setValue(combo,4)"><span class="ellipsis">setValue Germany</span></button>
         </div>
       </div>
-      <div fxLayout="column" fxFlex="40" fxLayoutAlign="start stretch">
+      <div fxLayout="column" fxFlex fxLayoutAlign="start stretch">
         <!-- LISKPICKER-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-list-picker #listpicker attr="listpicker" label="INPUT.BUTTON.LISTPICKER" [static-data]="getDataArray()" [data]="getValue('listpicker')"
@@ -84,7 +84,7 @@
             (onValueChange)="onValueChange($event)" fxFlex="70" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)"
             (onBlur)="onBlur(listpicker)" (click)="onClick(listpicker)">
           </o-list-picker>
-          <button fxFlex mat-raised-button (click)="setValue(listpicker, '4')">setValue Germany</button>
+          <button fxFlex mat-raised-button (click)="setValue(listpicker, '4')"><span class="ellipsis">setValue Germany</span></button>
         </div>
 
         <!-- RADIO-->
@@ -92,20 +92,20 @@
           <o-radio #radio attr="radio" label="Radio" [static-data]="getDataArray()" [data]="getValue('radio')" value-column="key" columns="key;value"
             visible-columns="value" fxFlex="70" (onChange)="onChange(radio)" (onValueChange)="onValueChange($event)" read-only="no" layout="row">
           </o-radio>
-          <button fxFlex mat-raised-button (click)="setValue(radio, '4')">setValue Germany</button>
+          <button fxFlex mat-raised-button (click)="setValue(radio, '4')"><span class="ellipsis">setValue Germany</span></button>
         </div>
         <!-- TIME-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-time-input #time attr="time" label="INPUT.BUTTON.TIME" [data]="getValue('time')" read-only="no" required="yes" clear-button="yes"
             format="24" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange(time)" (onFocus)="onFocus(time)"
             (onBlur)="onBlur(time)" (click)="onClick(time)"></o-time-input>
-          <button fxFlex mat-raised-button (click)="setValue(time,1535358788828)">setValue 1535358788828</button>
+          <button fxFlex mat-raised-button (click)="setValue(time,1535358788828)"><span class="ellipsis">setValue 1535358788828</span></button>
         </div>
         <!-- SLIDER-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-slider #slider attr="slider" label="INPUT.SLIDER" [data]="getValue('slider')" read-only="no" read-only="no"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(slider)" fxFlex="70"></o-slider>
-          <button fxFlex mat-raised-button (click)="setValue(slider,85)">setValue 85</button>
+          <button fxFlex mat-raised-button (click)="setValue(slider,85)"><span class="ellipsis">setValue 85</span></button>
         </div>
         <!-- FILE-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
@@ -117,7 +117,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-checkbox #check attr="checkbox" label="INPUT.BUTTON.CHECKBOX" [data]="getValue('checkbox')" read-only="no"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(check)" fxFlex="70"></o-checkbox>
-          <button fxFlex mat-raised-button (click)="setValue(check,false)">setValue false</button>
+          <button fxFlex mat-raised-button (click)="setValue(check,false)"><span class="ellipsis">setValue false</span></button>
         </div>
         <!-- DATERAGE-->
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">

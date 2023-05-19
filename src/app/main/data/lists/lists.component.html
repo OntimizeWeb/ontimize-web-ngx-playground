@@ -1,0 +1,16 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <collapsible-menu>
+  <a class="menu-item" routerLink="/main/data/lists/list-item-text" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_TEXT' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/data/lists/list-item-avatar" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_AVATAR' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/data/lists/list-item-card" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CARD' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/data/lists/list-item-card-image" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CARD_IMAGE' | oTranslate }}</a>
+  <a class="menu-item" routerLink="/main/data/lists/list-item-custom" routerLinkActive="active" fxFlex>{{ 'LIST.LIST_ITEM_CUSTOM' | oTranslate }}</a>
+</collapsible-menu>
+
+<div fxFlex="calc(100% - 300px)" class="left-border">
+  <header-button-menu comp-name="{{ 'LIST.COMPONENT' | oTranslate }}" comp-desc="{{ 'LIST.COMPONENT.DESC' | oTranslate }}">
+  </header-button-menu>
+  <router-outlet></router-outlet>
+</div>
+
+</div>

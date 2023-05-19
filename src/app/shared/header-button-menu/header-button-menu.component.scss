@@ -1,0 +1,29 @@
+.header-container {
+  margin-top: 10px;
+
+  .col-button {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    padding: 3px;
+    margin: 0 10px 0 10px;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #0000001E;
+  }
+
+  h3 {
+    margin: 3px 3px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .description{
+    margin-left: 55px;
+  }
+}

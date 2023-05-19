@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { ImageExamplesComponent } from './image-examples/image-examples.component';
-import { ImageComponent } from './image-media/image.component';
-import { MediaComponent } from './media.component';
+import { MediaHomeComponent } from './media-home/media-home.component';
 
 export const routes: Routes = [
-  {
-    path: '', component: MediaComponent,
-    children: [
-      { path: '', redirectTo: 'playground', pathMatch: 'prefix' },
-      { path: 'playground', component: ImageComponent },
-      { path: 'examples', component: ImageExamplesComponent }
-    ]
-  }
+  { path: 'home', data: { oAppHeaderTitle: 'Media' }, component: MediaHomeComponent },
+  { path: 'image', loadChildren: () => import('./image/image.module').then(m => m.ImageModule) },
+  { path: 'gallery', loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule) }
 ];
 
 @NgModule({

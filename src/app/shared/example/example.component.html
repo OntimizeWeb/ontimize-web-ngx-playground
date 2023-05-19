@@ -1,5 +1,4 @@
 <section fxLayout="column" fxLayoutAlign="start stretch">
-
   <mat-toolbar fxLayout="row" color="primary" class="playground-toolbar">
     <div fxLayout="column" fxFlex>
       <span>{{ compName | oTranslate }}</span>
@@ -15,7 +14,7 @@
   </mat-toolbar>
 
   <div fxLayout *ngIf="showSource" [style.height]="tabHeight">
-    <mat-tab-group fxFlex class="playground-tabs" fxFill>
+    <mat-tab-group fxFlex="1 1 100" class="playground-tabs" fxFill>
       <mat-tab label="{{ 'html' | uppercase }}" *ngIf="html">
         <highlight-comp [template-content]="html" template-type="html"></highlight-comp>
       </mat-tab>
@@ -31,8 +30,7 @@
     </mat-tab-group>
   </div>
   <!-- Live Demos -->
-  <div fxFlex="grow" [class.collapsed]="collapsed" [class.collapsible]="collapsible" class="playground-examples">
+  <div fxFlex="grow" [class.collapsed]="collapsed" [class.collapsible]="collapsible" class="playground-examples bg-level-1">
     <ng-content></ng-content>
   </div>
-
 </section>

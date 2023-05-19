@@ -6,8 +6,9 @@
   $foreground: map-get($theme, foreground);
 
   // Colors
+
   ul.list-grid-container {
-    background: #ffffff;
+    background: mat-color($background);
 
     li.list-grid-button {
       a {

@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatCheckbox } from '@angular/material';
+import { ExampleComponent } from '../../../shared/example/example.component';
 
 const CUSTOM_INPUT_HTML_DATA = `
 <o-text-input attr="attr" [float-label]="{floatLabel}" [appearance]="{appearanceValue}" [label]="{labelValue}"
@@ -86,6 +87,8 @@ getValueCurr() {
 })
 export class AppearanceComponent {
 
+  html: string;
+
   @ViewChild('label', { static: false }) label: ElementRef;
   @ViewChild('placeholder', { static: false }) placeholder: ElementRef;
   @ViewChild('hideRequiredMarker', { static: false }) hideRequiredMarker: MatCheckbox;
@@ -166,6 +169,27 @@ export class AppearanceComponent {
     return 2;
   }
 
+  updateCodeValue(key: string, value: string) {
+    const itemData: any = {
+      floatLabel: this.floatLabelValue,
+      appearanceValue: this.appearanceValue,
+      labelValue: this.label.nativeElement.value,
+      placeholderValue: this.placeholder.nativeElement.value,
+      hideRequiredMarker: this.hideRequiredMarker.checked
+
+    };
+    for (let item in itemData) {
+      if (item === key) {
+        item = value;
+      }
+    }
+    this.html = CUSTOM_INPUT_HTML_DATA
+      .replace('{floatLabel}', itemData.floatLabel)
+      .replace('{appearanceValue}', itemData.appearanceValue)
+      .replace('{labelValue}', itemData.labelValue)
+      .replace('{placeholderValue}', itemData.placeholderValue)
+      .replace('{hideRequiredMarker}', itemData.hideRequiredMarker);
+  }
 
   onShowSource(key: string, input?: any, exampleComp?: any) {
     const itemData: any = {
@@ -176,7 +200,7 @@ export class AppearanceComponent {
       hideRequiredMarker: this.hideRequiredMarker.checked
 
     };
-    exampleComp.html = CUSTOM_INPUT_HTML_DATA
+    this.html = CUSTOM_INPUT_HTML_DATA
       .replace('{floatLabel}', itemData.floatLabel)
       .replace('{appearanceValue}', itemData.appearanceValue)
       .replace('{labelValue}', itemData.labelValue)

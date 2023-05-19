@@ -1,0 +1,78 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_AVATAR" [html]="html" [files]="files" (showSource)="onShowSource(list, ex)"
+  class="list-examples">
+  <screen-configuration comp-name="LIST" #sidenavComp>
+    <div menu layout-margin>
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
+        <mat-form-field fxFlex="95">
+          <input (change)="updateCodeValue('title', $event.target.value)" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
+          {{ 'REFRESH_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('quickFilter', $event.checked)" #quickFilterToggle checked="true" fxFlex layout-padding>
+          {{ 'QUICK_FILTER' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('selectable', $event.checked)" #selectableToggle fxFlex>
+          {{ 'SELECTABLE' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('dense', $event.checked)" #denseToggle [checked]="list.odense" fxFlex>
+          {{ 'DENSE' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle fxFlex>
+          {{ 'INSERT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('deleteButton', $event.checked)" #deleteButtonToggle fxFlex>
+          {{ 'DELETE_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle (change)="updateCodeValue('editButtonInRow', $event.checked)" #editButtonInRowToggle fxFlex>
+            {{ 'EDIT_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!editButtonInRowToggle.checked" fxFlex>
+            <input (change)="updateCodeValue('editButtonInRowIcon', $event.target.value)" matInput #editButtonInRowIconInput placeholder="{{ 'EDIT_BUTTON_IN_ROW_ICON' | oTranslate }}" value="edit">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle (change)="updateCodeValue('detailButtonInRow', $event.checked)" #detailButtonInRowToggle fxFlex>
+            {{ 'DETAIL_BUTTON_IN_ROW' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!detailButtonInRowToggle.checked" fxFlex>
+            <input (change)="updateCodeValue('detailButtonInRowIcon', $event.target.value)" matInput #detailButtonInRowIconInput placeholder="{{ 'DETAIL_BUTTON_IN_ROW_ICON' | oTranslate }}" value="chevron_right">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle (change)="updateCodeValue('showIcon', $event.checked)" #iconToggle fxFlex>
+            {{ 'SHOW_ICON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!iconToggle.checked" fxFlex>
+            <input (change)="updateCodeValue('icon', $event.target.value)" matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <o-list content fxFlex #list attr="list" columns="id;name;username;email" keys="id" quick-filter-columns="name;username;email"
+      [static-data]="getStaticData()" [title]="listTitle.value" [refresh-button]="refreshButtonToggle.checked"
+      [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked" [delete-button]="deleteButtonToggle.checked"
+      [selectable]="selectableToggle.checked" [dense]="denseToggle.checked" [detail-button-in-row]="detailButtonInRowToggle.checked"
+      [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
+      [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none">
+      <o-list-item *ngFor="let row of list.dataArray">
+        <o-list-item-avatar #avatarItem avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
+          secondary-text="{{ row.email }}" [icon]="iconToggle.checked ? itemIcon.value : undefined" (icon-action)="addToFavorites(row, avatarItem)">
+        </o-list-item-avatar>
+      </o-list-item>
+    </o-list>
+  </screen-configuration>
+
+</example-comp>

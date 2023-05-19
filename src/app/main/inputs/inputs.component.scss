@@ -1,6 +1,23 @@
 label.input-comp-title {
-  // font-weight: bold;
   font-size: 20px;
-  // color: #464646;
   padding-bottom: 6px;
+}
+
+.hide-overflow {
+  form {
+    >div {
+      overflow: hidden;
+    }
+  }
+
+}
+
+o-text-input {
+  margin-bottom: 5px;
+}
+
+input-radio{
+  .scrolling.o-scroll{
+    overflow: hidden;
+  }
 }

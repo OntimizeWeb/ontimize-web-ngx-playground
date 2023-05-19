@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { InputConverter } from 'ontimize-web-ngx';
 
 export interface IFiles {
@@ -18,7 +18,8 @@ export interface IFiles {
     'files',
     'collapsible',
     'collapsed',
-    'tabHeight: tab-height'
+    'tabHeight: tab-height',
+    'html'
   ],
   outputs: [
     'onShowSource : showSource'
@@ -29,6 +30,7 @@ export interface IFiles {
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class ExampleComponent {
 
   aditionalTabs: any[];
@@ -47,6 +49,8 @@ export class ExampleComponent {
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
 
   private tplData: Object;
+
+  private colCollapsed: boolean;
 
   constructor(
     protected cd: ChangeDetectorRef

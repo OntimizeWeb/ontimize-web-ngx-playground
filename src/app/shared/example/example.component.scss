@@ -1,12 +1,27 @@
 .example-comp {
-  & > section {
-    margin: 12px;
+
+  .playground-toolbar {
+    font-size: 18px;
+    padding: 0;
+    margin: 0 10px 0 0;
+    width: calc(100% - 20px);
+    height: 50px;
+    min-height: 50px;
+
+    >div>span {
+      font-weight: 600;
+    }
+
+    .comp-description {
+      font-size: 16px;
+      font-weight: 100;
+    }
   }
 
-  .playground-toolbar .comp-description {
-    font-size: .8em;
-    line-height: 1em;
+  .playground-tabs{
+    margin: 10px 25px 10px 25px;
   }
+
 
   .collapsible {
     overflow: hidden;
@@ -28,4 +43,13 @@
     height: 100%;
   }
 
+  .playground-examples {
+    margin: 10px 25px 20px 25px;
+
+    .input-comp-title{
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+  }
 }

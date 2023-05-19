@@ -7,17 +7,18 @@
 
   .example-comp {
     & > section {
-      background: white;
-      box-shadow: 2px 0 4px rgba(0, 0, 0, .2);
+      background: mat-color($background);
+      box-shadow: none;
+
+      .mat-toolbar {
+        background-color: transparent;
+        color: mat-color($foreground, text);
+      }
 
       .playground-toolbar.mat-toolbar {
-        background: white;
-        color: #212121;
-        border-bottom: 1px solid #e0e0e0;
+        background-color: transparent;
+        border-bottom: 2px solid mat-color($primary);
 
-        .comp-description {
-          color: #616161;
-        }
       }
 
       .playground-tabs {
