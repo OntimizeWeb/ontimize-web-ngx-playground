@@ -1353,12 +1353,12 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
 }
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.8emoutline-dedupe) scale(0.75);
-  width: 133.3333333333%outline-dedupe;
+  transform: translateY(-0.8em) scale(0.75);
+  width: 133.3333333333%;
 }
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-  transform: translateY(-0.8emoutline-dedupe) scale(0.75);
-  width: 133.3333333333%outline-dedupe;
+  transform: translateY(-0.79999em) scale(0.75);
+  width: 133.3333433333%;
 }
 
 .mat-form-field-appearance-standard .mat-form-field-flex {
