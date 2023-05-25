@@ -1,21 +1,23 @@
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-@include ontimize-theme-styles($theme);
-// //Include ontimize-lite theme
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-@include ontimize-theme-styles-lite($theme, $lite-typography);
+@use 'ontimize-web-ngx-theming/ontimize-theme.scss';
+@use 'ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+@use 'ontimize-web-ngx-theming/implatform-fashion-theme';
+@use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
+
+//Include ontimize theme styles
+@include ontimize-theme.ontimize-theme-styles($theme);
+
+//Include ontimize-lite theme
+@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
 
 // After define theme, it is necessary to transfer color to Ontimize Web framework
-@import 'node_modules/ontimize-web-ngx/theme.scss';
-@include o-material-theme($theme, $lite-typography);
+@include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
 
 //Include implatform-fashion style
-@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
-// $lite-typography: $default-typography;
-@include implatform-fashion-theme-styles($theme, $lite-typography);
+@include implatform-fashion-theme.implatform-fashion-theme-styles($theme);
 
-/*
-* Import application themes.
-*/
+// /*
+// * Import application themes.
+// */
 @import './list-grid.theme.scss';
 @include list-grid-theme($theme);
 @import '../../app/shared/example/example.theme.scss';

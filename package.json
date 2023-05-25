@@ -3,14 +3,14 @@
   "version": "12.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4801",
-    "build": "ng build",
+    "start": "ng serve --port 4801 && npm run build:themes",
+    "build": "ng build && npm run build:themes",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "production": "ng build --configuration production=true --baseHref=/",
     "production-aot-server": "ng build --configuration production=true  --baseHref=/ontimizeweb/v8/playground/",
-    "build:themes": "npx sass --load-path=node_modules/ --watch ./src/assets/themes:/src/assets/themes "
+    "build:themes": "npx sass --load-path=node_modules/ --watch  --error-css ./src/assets/themes:./src/assets/themes "
   },
   "resolutions": {
     "webpack": "^5.0.0"

@@ -1,5 +1,4 @@
-@use '~@angular/material' as mat;
-@import "node_modules/@angular/material/theming";
+@use '@angular/material' as mat;
 
 @mixin collapsible-menu-theme($theme) {
   $primary: map-get($theme, primary);
@@ -10,7 +9,7 @@
 
   #collapsible {
 
-    .menu-item{
+    .menu-item {
       color: mat.get-color-from-palette($foreground, text);
     }
 
