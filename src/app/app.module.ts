@@ -29,8 +29,7 @@ export function getHighlightLanguages() {
     BrowserAnimationsModule,
     OntimizeWebModule,
     AppRoutingModule,
-    HighlightModule,
-    //OGalleryModule
+    HighlightModule
   ],
   providers: [
     { provide: CollapsibleStateService, useValue: undefined },
