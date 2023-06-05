@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
-import * as moment from 'moment';
+import moment from 'moment';
 
 const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">

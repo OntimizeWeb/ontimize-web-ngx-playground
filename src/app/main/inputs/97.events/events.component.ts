@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
-import * as moment from 'moment';
+import moment from 'moment';
 import { OFormDataComponent, OValueChangeEvent } from 'ontimize-web-ngx';
 
 const HTML_DATA = `
