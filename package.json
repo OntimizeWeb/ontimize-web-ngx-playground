@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "12.0.0",
+  "version": "13.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4801",
@@ -34,8 +34,8 @@
     "@angular/upgrade": "~12.2.17",
     "highlight.js": "^11.7.0",
     "ngx-highlightjs": "^4.1.0-beta",
-    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-12.0.0.tgz",
-    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-12.0.0.tgz",
+    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-13.0.0.tgz",
+    "ontimize-web-ngx-theming": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-theming/dist/ontimize-web-ngx-theming-13.0.0.tgz",
     "ontimize-web-ngx-gallery": "C:/work/ontimize web/15.x.x/ontimize-web-ngx-gallery/dist/ontimize-web-ngx-gallery-12.0.0.tgz",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
