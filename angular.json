@@ -119,9 +119,21 @@
               "devServerTarget": "ontimize-web-ngx-playground:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-playground"
+  "defaultProject": "ontimize-web-ngx-playground",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
