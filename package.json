@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --configuration production=true --baseHref=/",
-    "production-aot-server": "ng build --configuration production=true  --baseHref=/ontimizeweb/v8/playground/",
+    "watch": "ng build --watch --configuration development",
+    "production": "ng build --baseHref=/",
+    "production-aot-server": "ng build --baseHref=/ontimizeweb/v8/playground/",
     "build:themes": "npx sass --load-path=node_modules/ --watch  --error-css ./src/assets/themes:./src/assets/themes "
   },
   "resolutions": {
