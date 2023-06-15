@@ -3,7 +3,7 @@
   "version": "14.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4801",
+    "start": "npm run build:themes && ng serve --port 4801",
     "build": "npm run build:themes && ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +11,7 @@
     "watch": "npm run build:themes && ng build --watch --configuration development",
     "production": "ng build --baseHref=/",
     "production-aot-server": "ng build --baseHref=/ontimizeweb/v8/playground/",
-    "build:themes": "npx sass --load-path=node_modules/ –-no-source-map  --error-css ./src/assets/themes:./src/assets/themes "
+    "build:themes": "npx sass --no-source-map --load-path=node_modules/ --error-css ./src/assets/themes:./src/assets/themes"
   },
   "private": true,
   "dependencies": {
