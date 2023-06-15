@@ -596,7 +596,7 @@ input.mat-input-element {
   border-radius: 50%;
   pointer-events: none;
   transition: opacity, transform 0ms cubic-bezier(0, 0, 0.2, 1);
-  transform: scale(0);
+  transform: scale3d(0, 0, 0);
 }
 .cdk-high-contrast-active .mat-ripple-element {
   display: none;
@@ -687,6 +687,10 @@ input.mat-input-element {
   visibility: visible;
 }
 
+.cdk-overlay-backdrop-noop-animation {
+  transition: none;
+}
+
 .cdk-overlay-connected-position-bounding-box {
   position: absolute;
   z-index: 1000;
@@ -732,9 +736,47 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .mat-focus-indicator {
   position: relative;
 }
+.mat-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-focus-indicator-display, none);
+  border: var(--mat-focus-indicator-border-width, 3px) var(--mat-focus-indicator-border-style, solid) var(--mat-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-focus-indicator-border-radius, 4px);
+}
+.mat-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-focus-indicator-display: block;
+}
 
 .mat-mdc-focus-indicator {
   position: relative;
+}
+.mat-mdc-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-mdc-focus-indicator-display, none);
+  border: var(--mat-mdc-focus-indicator-border-width, 3px) var(--mat-mdc-focus-indicator-border-style, solid) var(--mat-mdc-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-mdc-focus-indicator-border-radius, 4px);
+}
+.mat-mdc-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-mdc-focus-indicator-display: block;
 }
 
 /*Application background-color*/
@@ -2214,7 +2256,7 @@ input.mat-input-element {
   border-radius: 50%;
   pointer-events: none;
   transition: opacity, transform 0ms cubic-bezier(0, 0, 0.2, 1);
-  transform: scale(0);
+  transform: scale3d(0, 0, 0);
 }
 .cdk-high-contrast-active .mat-ripple-element {
   display: none;
@@ -2305,6 +2347,10 @@ input.mat-input-element {
   visibility: visible;
 }
 
+.cdk-overlay-backdrop-noop-animation {
+  transition: none;
+}
+
 .cdk-overlay-connected-position-bounding-box {
   position: absolute;
   z-index: 1000;
@@ -2350,9 +2396,47 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .mat-focus-indicator {
   position: relative;
 }
+.mat-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-focus-indicator-display, none);
+  border: var(--mat-focus-indicator-border-width, 3px) var(--mat-focus-indicator-border-style, solid) var(--mat-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-focus-indicator-border-radius, 4px);
+}
+.mat-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-focus-indicator-display: block;
+}
 
 .mat-mdc-focus-indicator {
   position: relative;
+}
+.mat-mdc-focus-indicator::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  display: var(--mat-mdc-focus-indicator-display, none);
+  border: var(--mat-mdc-focus-indicator-border-width, 3px) var(--mat-mdc-focus-indicator-border-style, solid) var(--mat-mdc-focus-indicator-border-color, transparent);
+  border-radius: var(--mat-mdc-focus-indicator-border-radius, 4px);
+}
+.mat-mdc-focus-indicator:focus::before {
+  content: "";
+}
+
+.cdk-high-contrast-active {
+  --mat-mdc-focus-indicator-display: block;
 }
 
 .mat-ripple-element {
@@ -6091,5 +6175,3 @@ mat-card-content {
 /*
 * Other app styles
 */
-
-/*# sourceMappingURL=ontimize-dark.css.map */
