@@ -288,6 +288,7 @@ export class InputDateComponent {
         break;
       case 'timestamp':
         result = this.dateValue.valueOf();
+        break;
       default:
         break;
     }
@@ -308,6 +309,7 @@ export class InputDateComponent {
         break;
       case 'timestamp':
         result = this.minDateValue.valueOf();
+        break;
       default:
         break;
     }
@@ -328,6 +330,7 @@ export class InputDateComponent {
         break;
       case 'timestamp':
         result = this.maxDateValue.valueOf();
+        break;
       default:
         break;
     }
