@@ -80,6 +80,7 @@ const DATE_TS_DATA = `
           break;
         case 'timestamp':
           result = this.dateValue.valueOf();
+          break;
         default:
           break;
       }
@@ -123,6 +124,7 @@ const DATE_TS_DATA_MIN_MAX = `
           break;
         case 'timestamp':
           result = this.dateValue.valueOf();
+          break;
         default:
           break;
       }
@@ -143,6 +145,7 @@ const DATE_TS_DATA_MIN_MAX = `
           break;
         case 'timestamp':
           result = this.minDateValue.valueOf();
+          break;
         default:
           break;
       }
@@ -163,6 +166,7 @@ const DATE_TS_DATA_MIN_MAX = `
           break;
         case 'timestamp':
           result = this.maxDateValue.valueOf();
+          break;
         default:
           break;
       }
