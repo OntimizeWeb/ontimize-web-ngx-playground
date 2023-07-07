@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "scripts": {
     "ng": "ng",
     "start": "npm run build:themes && ng serve --port 4801",
