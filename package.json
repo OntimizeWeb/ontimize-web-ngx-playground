@@ -2,8 +2,6 @@
   "name": "ontimize-web-ngx-playground",
   "version": "8.3.0-SNAPSHOT-0",
   "scripts": {
-    "xxx": "rimraf node_modules/ontimize-web-ngx && npm install",
-    "zzz": "npm run xxx && npm start",
     "ng": "ng",
     "start": "ng serve --port 4801",
     "build": "ng build",
