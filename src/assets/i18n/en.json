@@ -179,6 +179,8 @@
   "INPUTS.DATE.VALUE_TYPE.STRING": "String",
   "INPUTS.DATE.VALUE_TYPE.DATE": "Date",
   "INPUTS.DATE.VALUE_TYPE.ISO-8601": "ISO-8601",
+  "INPUTS.DATE.VALUE_TYPE_MIN_MAX": "Min and max values",
+  "INPUTS.DATE.VALUE_TYPE_MIN_MAX.DESC": "The min and max values must have the same 'value-type'",
   "INPUTS.INTEGER": "Integer inputs",
   "INPUTS.INTEGER.DESC": "A component for getting or displaying formatted integer numbers submitted by the user.",
   "INPUTS.REAL": "Real inputs",
