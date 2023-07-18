@@ -1,6 +1,6 @@
-@use 'ontimize-web-ngx-theming/ontimize-theme.scss';
-@use 'ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-@use 'ontimize-web-ngx-theming/implatform-fashion-theme';
+@use 'ontimize-web-ngx/theming/ontimize-theme.scss';
+@use 'ontimize-web-ngx/theming/ontimize-theme-lite.scss';
+@use 'ontimize-web-ngx/theming/implatform-fashion-theme.scss';
 @use 'ontimize-web-ngx/theme.scss'as ontimize-web-ngx-theme;
 
 //Include ontimize theme styles
@@ -13,7 +13,7 @@
 @include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
 
 //Include implatform-fashion style
-@include implatform-fashion-theme.implatform-fashion-theme-styles($theme);
+// @include implatform-fashion-theme.implatform-fashion-theme-styles($theme);
 
 // /*
 // * Import application themes.
