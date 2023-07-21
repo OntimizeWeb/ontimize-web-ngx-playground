@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { AsyncValidatorFn, FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { ErrorData } from 'ontimize-web-ngx';
 
@@ -51,13 +51,13 @@ const VALIDATORS_TS_DATA = `
 
     validatorsErrorsArray: ErrorData[] = [{
       name: 'requiredLowercaseA',
-      text: 'Must contain a lowercase \'a\''
+      text: 'Must contain a lowercase "a"'
     }, {
       name: 'requiredUppercaseA',
-      text: 'Must contain a uppercase \'A\''
+      text: 'Must contain a uppercase "A"'
     }, {
       name: 'requiredB',
-      text: 'Must contain a \'b\''
+      text: 'Must contain a "b"'
     }];
 
     constructor() {
@@ -137,13 +137,13 @@ const ASYNC_VALIDATORS_TS_DATA = `
 
     validatorsErrorsArray: ErrorData[] = [{
       name: 'requiredLowercaseA',
-      text: 'Must contain a lowercase \'a\''
+      text: 'Must contain a lowercase "a"'
     }, {
       name: 'requiredUppercaseA',
-      text: 'Must contain a uppercase \'A\''
+      text: 'Must contain a uppercase "A"'
     }, {
       name: 'requiredB',
-      text: 'Must contain a \'b\''
+      text: 'Must contain a "b"'
     }];
 
     asyncBValidator: AsyncValidatorFn;
@@ -262,13 +262,13 @@ export class ValidatorsComponent {
   validatorsArray: ValidatorFn[] = [];
   validatorsErrorsArray: ErrorData[] = [{
     name: 'requiredLowercaseA',
-    text: 'Must contain a lowercase \'a\''
+    text: 'Must contain a lowercase "a"'
   }, {
     name: 'requiredUppercaseA',
-    text: 'Must contain a uppercase \'A\''
+    text: 'Must contain a uppercase "A"'
   }, {
     name: 'requiredB',
-    text: 'Must contain a \'b\''
+    text: 'Must contain a "b"'
   }];
 
   asyncValidatorsArray: AsyncValidatorFn[] = [];
