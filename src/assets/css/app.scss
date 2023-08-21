@@ -13,11 +13,11 @@
 @include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
 
 //Include implatform-fashion style
-// @include implatform-fashion-theme.implatform-fashion-theme-styles($theme);
+@include implatform-fashion-theme.implatform-fashion-theme-styles($theme, ontimize-theme-lite.$typography);
 
-// /*
-// * Import application themes.
-// */
+/*
+* Import application themes.
+*/
 @import './list-grid.theme.scss';
 @include list-grid-theme($theme);
 @import '../../app/shared/example/example.theme.scss';
