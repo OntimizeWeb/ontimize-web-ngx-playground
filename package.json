@@ -35,10 +35,12 @@
     "@angular/upgrade": "^15.2.9",
     "highlight.js": "^11.7.0",
     "ngx-highlightjs": "^4.1.0-beta",
-    "ontimize-web-ngx": "C:/work/ontimize web/15.x.x/ontimize-web-ngx/dist/ontimize-web-ngx-15.0.0.tgz",
-    "rxjs": "~6.6.7",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.11.4"
+    "moment": "^2.18.1",
+    "ontimize-web-ngx": "ontimize-web-ngx-15.0.0-SNAPSHOT-1.tgz",
+    "ontimize-web-ngx-gallery": "ontimize-web-ngx-gallery-15.0.0.tgz",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.9",
