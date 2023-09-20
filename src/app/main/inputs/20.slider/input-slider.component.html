@@ -2,30 +2,23 @@
   <o-form editable-detail="false" show-header="no">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" [data]="getValue()"></o-slider>
+      <o-slider attr="slider" [data]="getValue()" ></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider #slider attr="slider-editable" [data]="getValue()" read-only="no" read-only="no"></o-slider>
+      <o-slider #slider attr="slider-editable" [data]="getValue()" read-only="no"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-slider attr="slider-disabled" enabled="no" [data]="getValue()"></o-slider>
     </div>
   </o-form>
-  <o-form editable-detail="false" show-header="no" layout-direction="row">
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" [data]="getValue()" layout="column" color="warn"></o-slider>
-    </div>
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider attr="slider-editable" [data]="getValue()" read-only="no" layout="column" color="warn" max="100" min="0" thumb-label="true"
-        tick-interval="auto"></o-slider>
-    </div>
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-slider attr="slider-disabled" enabled="no" layout="column" color="warn" [data]="getValue()"></o-slider>
+</example-comp>
+<example-comp comp-name="INPUT.SLIDER.FORMATING_THUMBLABEL" [files]="files_formatting_thumblabel">
+  <o-form editable-detail="false" show-header="no">
+    <div fxLayout="column" layout-padding fxFlex="80">
+      <o-slider attr="slider-editable" [data]="getValue()" read-only="no" color="warn" max="100" min="0" thumb-label="true"
+        show-tick-marks="yes" [display-with]="formatLabel"  class="example-body"></o-slider>
     </div>
   </o-form>
 </example-comp>

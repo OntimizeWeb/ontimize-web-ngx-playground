@@ -165,6 +165,7 @@
   "INPUT.BUTTON.DATERANGE": "Date range",
   "INPUTS.SLIDER": "Slider",
   "INPUTS.SLIDER.DESC": "A component allows for the selection of a value from a range.",
+  "INPUT.SLIDER.FORMATING_THUMBLABEL":"Formatting the thumb label",
   "INPUT.COMBO": "Combo",
   "INPUT.COMBO.SEARCH": "Combo with search",
   "INPUT.COMBOMULTIPLE": "Combo multiple",

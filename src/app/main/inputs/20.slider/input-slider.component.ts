@@ -1,39 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 const SLIDE_HTML_DATA = `
-<o-form editable-detail="false" show-header="no">
+ <o-form editable-detail="false" show-header="no">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-slider attr="slider" [data]="getValue()"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider #slider attr="slider-editable" [data]="getValue()"
-        read-only="no"></o-slider>
+      <o-slider #slider attr="slider-editable" [data]="getValue()" read-only="no"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-slider attr="slider-disabled" enabled="no" [data]="getValue()"></o-slider>
     </div>
   </o-form>
-  <o-form editable-detail="false" show-header="no" layout-direction="row">
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" [data]="getValue()" layout="column" color="warn"></o-slider>
-    </div>
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider attr="slider-editable" [data]="getValue()" read-only="no"
-         layout="column" color="warn" max="100" min="0" thumb-label="true"
-        tick-interval="auto"></o-slider>
-    </div>
-    <div fxLayout="column" layout-padding fxFlex="30">
-      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-slider attr="slider-disabled" enabled="no" layout="column" color="warn"
-        [data]="getValue()"></o-slider>
+`;
+const SLIDE_FORMATTING_THUMBLABEL_HTML_DATA = `
+   <o-form editable-detail="false" show-header="no">
+    <div fxLayout="column" layout-padding fxFlex="80">
+      <o-slider attr="slider-editable" [data]="getValue()" read-only="no" color="warn" max="100" min="0" thumb-label="true"
+        show-tick-marks="yes" [display-with]="formatLabel"></o-slider>
     </div>
   </o-form>
-
 `;
 
 const SLIDE_TS_DATA = `
@@ -63,7 +52,9 @@ export class InputSliderComponent {
 
 @Component({
   selector: 'input-slider',
-  templateUrl: './input-slider.component.html'
+  templateUrl: './input-slider.component.html',
+  styleUrls: ['./input-slider.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class InputSliderComponent {
 
@@ -79,11 +70,23 @@ export class InputSliderComponent {
     }
   };
 
+  files_formatting_thumblabel = {
+    'html': {
+      'data': SLIDE_FORMATTING_THUMBLABEL_HTML_DATA
+    },
+    'scss': {
+      'data': undefined
+    },
+    'typescript': {
+      'data': SLIDE_TS_DATA
+    }
+  };
+
   getValue() {
     return 10;
   }
 
-  formatLabel(value: number | null) {
+  formatLabel(value: number) {
     if (!value) {
       return 0;
     }
