@@ -3,16 +3,15 @@ on:
   push:
     branches: [feature/test-deploy-demo]
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Checkout code'
+      - name: "Checkout code"
         uses: actions/checkout@v3
 
-      - name: 'Cache node modules'
+      - name: "Cache node modules"
         uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -29,7 +28,7 @@ jobs:
         run: |
           npm i --legacy-peer-deps
           npm run production
-          tar -cvf dist.tar dist/*
+          mkdir -p dist/ftp && tar -cvf dist/ftp/dist.tar dist/*
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -38,5 +37,5 @@ jobs:
           username: ${{ secrets.OWEB_CLOUD_DEMOS_USERNAME }}
           password: ${{ secrets.OWEB_CLOUD_DEMOS_PASSWORD }}
           protocol: ftps
-          local-dir: ftp-demos/playground15-snapshot/
-          
+          local-dir: dist/ftp/
+          server-dir: ftp-demos/playground15-snapshot/
