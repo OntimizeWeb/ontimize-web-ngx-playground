@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';;
-import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { APP_CONFIG, ONTIMIZE_PROVIDERS, O_MAT_ERROR_OPTIONS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -44,7 +44,7 @@ export function getHighlightLanguages() {
         languages: getHighlightLanguages()
       }
     },
-
+    { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } }
   ],
   bootstrap: [AppComponent]
 })
