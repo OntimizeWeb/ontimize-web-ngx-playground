@@ -6,11 +6,11 @@
 //Include ontimize theme styles
 @include ontimize-theme.ontimize-theme-styles($theme);
 
-//Include ontimize-lite theme
-@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
-
 // After define theme, it is necessary to transfer color to Ontimize Web framework
 @include ontimize-web-ngx-theme.o-material-theme($theme, ontimize-theme-lite.$typography);
+
+//Include ontimize-lite theme
+@include ontimize-theme-lite.ontimize-theme-styles-lite($theme);
 
 //Include implatform-fashion style
 @include implatform-fashion-theme.implatform-fashion-theme-styles($theme, ontimize-theme-lite.$typography);
