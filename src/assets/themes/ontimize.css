@@ -1870,28 +1870,28 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   margin-bottom: 4px;
 }
 
-mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-checkbox .mdc-checkbox {
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox {
   padding: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
   margin: calc((var(--mdc-checkbox-touch-target-size, 16px) - var(--mdc-checkbox-icon-size)) / 2);
 }
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__background {
   top: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
   left: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
   height: var(--mdc-checkbox-icon-size, 16px);
   width: var(--mdc-checkbox-icon-size, 16px);
 }
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control {
   top: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
   right: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
   left: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
   width: var(--mdc-checkbox-touch-target-size, 16px);
   height: var(--mdc-checkbox-touch-target-size, 16px);
 }
-mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mat-mdc-checkbox-touch-target {
   height: var(--mdc-checkbox-touch-target-size, 16px);
   width: var(--mdc-checkbox-touch-target-size, 16px);
 }
@@ -2131,682 +2131,6 @@ o-row.o-row.bg-level-08 {
 o-column.o-column.bg-level-1,
 o-row.o-row.bg-level-1 {
   background-color: white;
-}
-
-/* INCLUDE ONTIMIZE LITE */
-.report-on-demand-sidenav .mat-expansion-panel {
-  background-color: #e4e6e8;
-}
-
-.title-sidenav-content {
-  background-color: #ffffff;
-}
-
-[layout-padding-vertical] {
-  padding: 4px 0;
-}
-
-[layout-margin-vertical] {
-  margin: 4px 0;
-}
-
-[layout-padding-horizontal] {
-  padding: 0 14px;
-}
-
-[layout-margin-horizontal] {
-  margin: 0 14px;
-}
-
-[layout-padding-left] {
-  padding-left: 14px;
-}
-
-[layout-margin-left] {
-  margin-left: 14px;
-}
-
-[layout-padding-right] {
-  padding-right: 14px;
-}
-
-[layout-margin-right] {
-  margin-right: 14px;
-}
-
-[layout-padding-top] {
-  padding-top: 4px;
-}
-
-[layout-margin-top] {
-  margin-top: 4px;
-}
-
-[layout-padding-bottom] {
-  padding-bottom: 4px;
-}
-
-[layout-margin-bottom] {
-  margin-bottom: 4px;
-}
-
-mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-checkbox .mdc-checkbox {
-  padding: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  margin: calc((var(--mdc-checkbox-touch-target-size, 16px) - var(--mdc-checkbox-icon-size)) / 2);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
-  top: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  left: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
-  height: var(--mdc-checkbox-icon-size, 16px);
-  width: var(--mdc-checkbox-icon-size, 16px);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
-  top: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  right: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  left: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
-  width: var(--mdc-checkbox-touch-target-size, 16px);
-  height: var(--mdc-checkbox-touch-target-size, 16px);
-}
-mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
-  height: var(--mdc-checkbox-touch-target-size, 16px);
-  width: var(--mdc-checkbox-touch-target-size, 16px);
-}
-
-.mdc-list[dense] .mat-mdc-list-base {
-  --mdc-list-list-item-one-line-container-height: 44px;
-  --mdc-list-list-item-two-line-container-height: 60px;
-  --mdc-list-list-item-three-line-container-height: 84px;
-}
-.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-one-line {
-  height: 52px;
-}
-.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines {
-  height: 68px;
-}
-.mdc-list[dense] [mat-list-icon] {
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  padding: 4px;
-}
-
-.mat-mdc-radio-button .mdc-radio {
-  padding: calc((36px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (36px - 20px) / 2);
-  left: calc(-1 * (36px - 20px) / 2);
-  width: 36px;
-  height: 36px;
-}
-.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((36px - 36px) / 2);
-  right: calc((36px - 36px) / 2);
-  left: calc((36px - 36px) / 2);
-  width: 36px;
-  height: 36px;
-}
-
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
-  color: #303030;
-  background-color: #b9d1e4;
-  border-color: transparent;
-}
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
-.mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
-  color: #1464a5;
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
-}
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
-  color: #1464a5;
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
-}
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
-  color: #303030;
-  background-color: #b9d1e4;
-  border-color: transparent;
-}
-
-/* CONTAINER */
-.rounded-panel,
-.standalone-chart-container,
-.standalone-form-container .o-form-content-wrapper {
-  background: white;
-  border-radius: 2px;
-}
-
-.standalone-chart-container {
-  margin-top: 48px;
-}
-
-.standalone-form-container .inner-form {
-  padding: 16px;
-}
-
-/* APP SIDENAV */
-.o-app-sidenav {
-  font-weight: 400;
-  color: #aaaaaa;
-}
-
-/* USER INFO */
-o-app-header .o-app-header-title {
-  font-weight: 700;
-}
-
-.o-app-header {
-  background-color: white;
-}
-
-/* FORM */
-.o-form-toolbar .mat-toolbar {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-  background-color: #e4e6e8;
-  border-radius: 2px;
-  min-height: initial;
-}
-
-/* TABS */
-.mat-mdc-tab-group .mdc-tab,
-.mat-mdc-tab-group .mat-mdc-tab-link {
-  opacity: 0.75;
-}
-.mat-mdc-tab-group .mdc-tab.mdc-tab--active,
-.mat-mdc-tab-group .mat-mdc-tab-link.mdc-tab--active {
-  opacity: 0.95;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
-  background: #D7DDE0;
-  padding: 0;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label {
-  text-overflow: clip;
-  position: relative;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label span.gradient-layer {
-  width: 12px;
-  background: linear-gradient(to right, transparent, #D7DDE0 100%);
-  height: 100%;
-  position: absolute;
-  right: 0;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mdc-tab--active):not(:last-child) + .mdc-tab:not(.mdc-tab--active) .mdc-tab__content .mdc-tab__text-label {
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content {
-  width: 100%;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content .mdc-tab__text-label {
-  padding: 0 8px;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active {
-  background: white;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active span.tab-label span.gradient-layer {
-  background: linear-gradient(to right, transparent, white 100%);
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mdc-tab-indicator__content--underline {
-  border: none;
-}
-.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-body-wrapper {
-  background: white;
-  border-radius: 2px;
-  border-top: none;
-  border-top-left-radius: initial;
-}
-.mat-mdc-tab-group.mat-mdc-tab-group .mat-mdc-tab-body-wrapper {
-  padding: 8px;
-}
-
-/* BUTTON */
-button.mat-mdc-button, button.mat-mdc-unelevated-button, button.mat-mdc-icon-button, button.mat-mdc-raised-button, button.mat-mdc-outlined-button {
-  border-radius: 2px;
-}
-
-/* TABLE */
-.ontimize-table.o-table {
-  font-weight: 400;
-}
-.ontimize-table.o-table .o-table-container {
-  border: none;
-  border-radius: 2px;
-  box-sizing: border-box;
-  /*Toolbar*/
-  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
-}
-.ontimize-table.o-table .o-table-container .o-table-toolbar {
-  margin: 0 0 4px;
-  padding-top: 8px;
-}
-.ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
-  background: rgba(0, 0, 0, 0.12);
-}
-.ontimize-table.o-table .o-table-container thead tr th {
-  font-weight: 700;
-}
-.ontimize-table.o-table .o-table-container tbody tr.even,
-.ontimize-table.o-table .o-table-container thead tr {
-  background-color: inherit;
-}
-.ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-.ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-  background-color: #1464a5;
-}
-.ontimize-table.o-table .o-table-container .mat-mdc-header-cell {
-  font-weight: 700;
-}
-.ontimize-table.o-table .mat-mdc-paginator {
-  background: inherit;
-}
-.ontimize-table.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
-  font-weight: 700;
-}
-
-.ontimize-table.o-table.o-table-fixed .o-scrollable-container {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox,
-.mat-mdc-menu-panel.o-search-input-menu .mat-mdc-checkbox {
-  padding: 2px 0;
-}
-
-/*background levels */
-.bg-level-0,
-o-column.o-column.bg-level-0,
-o-row.o-row.bg-level-0 {
-  background-color: #e6e7e9;
-}
-
-.bg-level-04,
-o-column.o-column.bg-level-04,
-o-row.o-row.bg-level-04 {
-  background-color: #f2f2f2;
-}
-
-.bg-level-06,
-o-column.o-column.bg-level-06,
-o-row.o-row.bg-level-06 {
-  background-color: #f6f6f6;
-}
-
-.bg-level-08,
-o-column.o-column.bg-level-08,
-o-row.o-row.bg-level-08 {
-  background-color: #fafafa;
-}
-
-.bg-level-1,
-o-column.o-column.bg-level-1,
-o-row.o-row.bg-level-1 {
-  background-color: white;
-}
-
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell {
-  font-weight: 600;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell .column-filter-icon {
-  margin-right: 4px;
-  width: 16px;
-  height: 16px;
-}
-
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button {
-  height: 30px;
-  border: none;
-  padding: 0 6px;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button.disabled {
-  border: none;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button:not(.disabled):hover {
-  border: none;
-  border-radius: 0;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field {
-  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field .mat-form-field-infix {
-  border-top: 0;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:not(.o-column-image):first-of-type {
-  padding-left: 12px;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:last-of-type {
-  padding-right: 12px;
-}
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-cell.mat-column-select,
-.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell.mat-column-select {
-  padding: 0 0 0 12px;
-}
-
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button {
-  width: 68px;
-  height: 68px;
-  min-width: 68px;
-  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
-}
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-button-wrapper > div {
-  line-height: 1;
-}
-.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-icon {
-  padding: 0 6px 6px;
-  width: 38px;
-  height: 38px;
-  font-size: 38px;
-}
-
-.mat-mdc-form-field .mat-mdc-form-field-infix {
-  min-height: 40px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
-  top: 20px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
-  --mat-mdc-form-field-label-transform: translateY(
-          -26.75px)
-          scale(var(--mat-mdc-form-field-floating-label-scale, 0.75));
-  transform: var(--mat-mdc-form-field-label-transform);
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio {
-  padding: calc((28px - 20px) / 2);
-  margin: 0;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
-  top: calc(-1 * (28px - 20px) / 2);
-  left: calc(-1 * (28px - 20px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
-  top: calc((28px - 28px) / 2);
-  right: calc((28px - 28px) / 2);
-  left: calc((28px - 28px) / 2);
-  width: 28px;
-  height: 28px;
-}
-.mat-mdc-form-field .mat-mdc-radio-touch-target {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper {
-  display: none;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
-  min-height: auto;
-  padding-bottom: 4px;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-floating-label {
-  display: block;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-select-arrow-wrapper {
-  height: auto;
-}
-.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-  min-height: auto;
-  padding-top: 14px;
-}
-
-.o-column > .o-container > .o-container-title,
-.o-row > .o-container > .o-container-title {
-  line-height: 30px;
-  height: 30px;
-}
-
-.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
-.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-  padding-left: 4px;
-}
-
-.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
-.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
-  padding: 10px 6px 6px;
-}
-
-.o-column > .o-container .o-container-scroll.o-container-gap,
-.o-row > .o-container .o-container-scroll.o-container-gap {
-  padding: 10px 6px 6px;
-}
-
-.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
-.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
-  padding: 12px;
-}
-
-.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
-.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
-  padding: 12px;
-}
-
-/* O-APP-LAYOUT */
-.o-app-sidenav.o-app-sidenav .o-app-header .sidenav-toggle {
-  padding: 8px;
-}
-
-/* MD-TAB-GROUP */
-mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
-  height: 32px;
-}
-
-/* MAT-PAGINATOR */
-.mat-mdc-paginator-container {
-  min-height: 0;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size {
-  align-items: center;
-  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select {
-  margin: 6px 0;
-  /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
-  transform: initial;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
-  border-top: 0;
-}
-.mat-mdc-paginator-container .mat-mdc-paginator-range-actions {
-  min-height: 0;
-}
-
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.after, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.right {
-  margin-left: 5px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.before, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.left {
-  margin-right: 5px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.above {
-  margin-bottom: -15px;
-}
-.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.below {
-  margin-top: 5px;
-}
-
-.o-filter-by-column-dialog .select-all-checkbox {
-  margin-top: 10px;
-}
-
-@media (max-width: 599px) {
-  .o-list-picker-dialog.o-list-picker-dialog .mat-mdc-dialog-content.o-list-picker-has-filter {
-    max-height: calc(100% - 105px);
-    min-height: calc(100% - 105px);
-  }
-}
-[layout-padding] > [flex-lt-md],
-[layout-padding] > [flex-sm] {
-  padding: 2px;
-}
-
-[layout-padding],
-[layout-padding] > [flex-gt-sm],
-[layout-padding] > [flex-lt-lg],
-[layout-padding] > [flex-md],
-[layout-padding] > [flex] {
-  padding: 4px;
-}
-
-[layout-padding] > [flex-gt-md],
-[layout-padding] > [flex-lg] {
-  padding: 8px;
-}
-
-[layout-margin] > [flex-lt-md],
-[layout-margin] > [flex-sm] {
-  margin: 2px;
-}
-
-[layout-margin],
-[layout-margin] > [flex-gt-sm],
-[layout-margin] > [flex-lt-lg],
-[layout-margin] > [flex-md],
-[layout-margin] > [flex] {
-  margin: 4px;
-}
-
-[layout-margin] > [flex-gt-md],
-[layout-margin] > [flex-lg] {
-  margin: 8px;
-}
-
-[layout-wrap] {
-  flex-wrap: wrap;
-}
-
-[layout-nowrap] {
-  flex-wrap: nowrap;
-}
-
-[layout-padding-vertical] {
-  padding: 4px 0;
-}
-
-[layout-margin-vertical] {
-  margin: 4px 0;
-}
-
-[layout-padding-horizontal] {
-  padding: 0 14px;
-}
-
-[layout-margin-horizontal] {
-  margin: 0 14px;
-}
-
-[layout-padding-left] {
-  padding-left: 14px;
-}
-
-[layout-margin-left] {
-  margin-left: 14px;
-}
-
-[layout-padding-right] {
-  padding-right: 14px;
-}
-
-[layout-margin-right] {
-  margin-right: 14px;
-}
-
-[layout-padding-top] {
-  padding-top: 4px;
-}
-
-[layout-margin-top] {
-  margin-top: 4px;
-}
-
-[layout-padding-bottom] {
-  padding-bottom: 4px;
-}
-
-[layout-margin-bottom] {
-  margin-bottom: 4px;
-}
-
-.o-form .o-form-toolbar .o-form-toolbar-header {
-  min-height: 36px;
-  max-height: 36px;
-  padding: 0 4px;
-  box-shadow: none;
-  font-size: 16px;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
-  height: 28px;
-  padding: 8px;
-  min-height: 72px;
-  max-height: 72px;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
-  border-radius: 0;
-}
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-mdc-icon-button,
-.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-mdc-icon-button {
-  height: 30px;
-  line-height: 30px;
-  width: 30px;
-}
-
-.mat-mdc-paginator .mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-}
-
-mat-checkbox.mat-mdc-checkbox,
-.mat-mdc-checkbox .mdc-checkbox {
-  padding: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  margin: calc((var(--mdc-checkbox-touch-target-size, 19px) - var(--mdc-checkbox-icon-size)) / 2);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__background,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
-  top: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  left: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
-  height: var(--mdc-checkbox-icon-size, 15px);
-  width: var(--mdc-checkbox-icon-size, 15px);
-}
-mat-checkbox.mat-mdc-checkbox .mdc-checkbox__native-control,
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
-  top: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  right: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  left: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
-  width: var(--mdc-checkbox-touch-target-size, 19px);
-  height: var(--mdc-checkbox-touch-target-size, 19px);
-}
-mat-checkbox.mat-mdc-checkbox .mat-mdc-checkbox-touch-target,
-.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target {
-  height: var(--mdc-checkbox-touch-target-size, 19px);
-  width: var(--mdc-checkbox-touch-target-size, 19px);
 }
 
 .mat-ripple-element {
@@ -6226,7 +5550,8 @@ textarea {
 .o-form-layout-dialog-overlay .mat-mdc-dialog-container .mat-mdc-dialog-content .mat-mdc-selection-list[dense] .mat-mdc-list-option-checkbox-before,
 .o-list-picker-dialog .mat-mdc-dialog-container .mat-mdc-dialog-content .mdc-list[dense] .mat-mdc-list-option-checkbox-before,
 .o-list-picker-dialog .mat-mdc-dialog-container .mat-mdc-dialog-content .mat-mdc-selection-list[dense] .mat-mdc-list-option-checkbox-before {
-  align-self: auto;
+  display: flex;
+  align-items: center;
   padding-right: 0px;
   margin-right: 0px;
 }
@@ -6259,7 +5584,6 @@ textarea {
 }
 .mat-mdc-list[dense] .mat-mdc-list-item .mdc-list-item__primary-text,
 .mat-mdc-list[dense] .mat-mdc-list-item .mdc-list-item__secondary-text {
-  height: 16px;
   margin-bottom: 0;
   font-size: 11px;
 }
@@ -6407,19 +5731,17 @@ o-data-toolbar.o-grid-toolbar button.o-grid-button:last-child, o-data-toolbar.o-
 .o-form .o-form-toolbar button.mat-mdc-outlined-button,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-mdc-outlined-button {
   padding: 0 6px;
-  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
-  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
 }
-.o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-button-wrapper .mat-icon,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-mdc-outlined-button .mat-button-wrapper .mat-icon {
+.o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-mdc-button-wrapper .mat-icon,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-mdc-outlined-button .mat-mdc-button-wrapper .mat-icon {
   margin-right: 4px;
   font-size: 20px;
   width: 20px;
   height: 20px;
   line-height: 20px;
 }
-.o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-button-wrapper span,
-.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-mdc-outlined-button .mat-button-wrapper span {
+.o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-mdc-button-wrapper span,
+.ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-mdc-outlined-button .mat-mdc-button-wrapper span {
   flex: 1;
 }
 
@@ -6441,6 +5763,10 @@ o-data-toolbar.o-grid-toolbar button.o-grid-button:last-child, o-data-toolbar.o-
   margin-left: 8px;
 }
 .mat-mdc-paginator button.mat-mdc-icon-button .mat-mdc-paginator-icon {
+  width: 20px;
+}
+.mat-mdc-paginator button.mat-mdc-icon-button .mat-mdc-button-touch-target {
+  height: 20px;
   width: 20px;
 }
 
@@ -7026,12 +6352,15 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .o-form-layout-tabgroup .spinner-container {
   background-color: #e4e6e8;
 }
-.o-form-layout-tabgroup .mat-mdc-tab-group .mdc-tab .mat-icon:hover {
+.o-form-layout-tabgroup .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab .mat-icon:hover {
   background-color: rgba(0, 0, 0, 0.38);
   border-radius: 50%;
 }
-.o-form-layout-tabgroup .mat-mdc-tab-group .mdc-tab.mdc-tab--active .mat-icon:hover {
+.o-form-layout-tabgroup .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab.mdc-tab--active .mat-icon:hover {
   background-color: rgba(20, 100, 165, 0.4);
+}
+.o-form-layout-tabgroup .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .o-bar-menu {
@@ -7256,6 +6585,694 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 }
 .o-image .o-image-content .o-image-display-container .o-image-button-remove:hover {
   background-color: rgba(0, 0, 0, 0.38);
+}
+
+/* INCLUDE ONTIMIZE LITE */
+.report-on-demand-sidenav .mat-expansion-panel {
+  background-color: #e4e6e8;
+}
+
+.title-sidenav-content {
+  background-color: #ffffff;
+}
+
+[layout-padding-vertical] {
+  padding: 4px 0;
+}
+
+[layout-margin-vertical] {
+  margin: 4px 0;
+}
+
+[layout-padding-horizontal] {
+  padding: 0 14px;
+}
+
+[layout-margin-horizontal] {
+  margin: 0 14px;
+}
+
+[layout-padding-left] {
+  padding-left: 14px;
+}
+
+[layout-margin-left] {
+  margin-left: 14px;
+}
+
+[layout-padding-right] {
+  padding-right: 14px;
+}
+
+[layout-margin-right] {
+  margin-right: 14px;
+}
+
+[layout-padding-top] {
+  padding-top: 4px;
+}
+
+[layout-margin-top] {
+  margin-top: 4px;
+}
+
+[layout-padding-bottom] {
+  padding-bottom: 4px;
+}
+
+[layout-margin-bottom] {
+  margin-bottom: 4px;
+}
+
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox {
+  padding: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
+  margin: calc((var(--mdc-checkbox-touch-target-size, 16px) - var(--mdc-checkbox-icon-size)) / 2);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__background {
+  top: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
+  left: calc((var(--mdc-checkbox-ripple-size, 20px) - var(--mdc-checkbox-icon-size, 16px)) / 2);
+  height: var(--mdc-checkbox-icon-size, 16px);
+  width: var(--mdc-checkbox-icon-size, 16px);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control {
+  top: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
+  right: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
+  left: calc((20px - var(--mdc-checkbox-touch-target-size, 16px)) / 2);
+  width: var(--mdc-checkbox-touch-target-size, 16px);
+  height: var(--mdc-checkbox-touch-target-size, 16px);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mat-mdc-checkbox-touch-target {
+  height: var(--mdc-checkbox-touch-target-size, 16px);
+  width: var(--mdc-checkbox-touch-target-size, 16px);
+}
+
+.mdc-list[dense] .mat-mdc-list-base {
+  --mdc-list-list-item-one-line-container-height: 44px;
+  --mdc-list-list-item-two-line-container-height: 60px;
+  --mdc-list-list-item-three-line-container-height: 84px;
+}
+.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-one-line, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-one-line {
+  height: 52px;
+}
+.mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines, .mdc-list[dense] .mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines {
+  height: 68px;
+}
+.mdc-list[dense] [mat-list-icon] {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.mat-mdc-radio-button .mdc-radio {
+  padding: calc((36px - 20px) / 2);
+  margin: 0;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
+  top: calc(-1 * (36px - 20px) / 2);
+  left: calc(-1 * (36px - 20px) / 2);
+  width: 36px;
+  height: 36px;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
+  top: calc((36px - 36px) / 2);
+  right: calc((36px - 36px) / 2);
+  left: calc((36px - 36px) / 2);
+  width: 36px;
+  height: 36px;
+}
+
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+  color: #303030;
+  background-color: #b9d1e4;
+  border-color: transparent;
+}
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
+.mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
+  color: #1464a5;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
+  color: #1464a5;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
+.mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
+  color: #303030;
+  background-color: #b9d1e4;
+  border-color: transparent;
+}
+
+/* CONTAINER */
+.rounded-panel,
+.standalone-chart-container,
+.standalone-form-container .o-form-content-wrapper {
+  background: white;
+  border-radius: 2px;
+}
+
+.standalone-chart-container {
+  margin-top: 48px;
+}
+
+.standalone-form-container .inner-form {
+  padding: 16px;
+}
+
+/* APP SIDENAV */
+.o-app-sidenav {
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+/* USER INFO */
+o-app-header .o-app-header-title {
+  font-weight: 700;
+}
+
+.o-app-header {
+  background-color: white;
+}
+
+/* FORM */
+.o-form-toolbar .mat-toolbar {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
+  background-color: #e4e6e8;
+  border-radius: 2px;
+  min-height: initial;
+}
+
+/* TABS */
+.mat-mdc-tab-group .mdc-tab,
+.mat-mdc-tab-group .mat-mdc-tab-link {
+  opacity: 0.75;
+}
+.mat-mdc-tab-group .mdc-tab.mdc-tab--active,
+.mat-mdc-tab-group .mat-mdc-tab-link.mdc-tab--active {
+  opacity: 0.95;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab {
+  background: #D7DDE0;
+  padding: 0;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label {
+  text-overflow: clip;
+  position: relative;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab span.tab-label span.gradient-layer {
+  width: 12px;
+  background: linear-gradient(to right, transparent, #D7DDE0 100%);
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab:not(.mdc-tab--active):not(:last-child) + .mdc-tab:not(.mdc-tab--active) .mdc-tab__content .mdc-tab__text-label {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content {
+  width: 100%;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab .mdc-tab__content .mdc-tab__text-label {
+  padding: 0 8px;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active {
+  background: white;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab.mdc-tab--active span.tab-label span.gradient-layer {
+  background: linear-gradient(to right, transparent, white 100%);
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mdc-tab-indicator__content--underline {
+  border: none;
+}
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-body-wrapper {
+  background: white;
+  border-radius: 2px;
+  border-top: none;
+  border-top-left-radius: initial;
+}
+.mat-mdc-tab-group.mat-mdc-tab-group .mat-mdc-tab-body-wrapper {
+  padding: 8px;
+}
+
+/* BUTTON */
+button.mat-mdc-button, button.mat-mdc-unelevated-button, button.mat-mdc-icon-button, button.mat-mdc-raised-button, button.mat-mdc-outlined-button {
+  border-radius: 2px;
+}
+
+/* TABLE */
+.ontimize-table.o-table {
+  font-weight: 400;
+}
+.ontimize-table.o-table .o-table-container {
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  /*Toolbar*/
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+}
+.ontimize-table.o-table .o-table-container .o-table-toolbar {
+  margin: 0 0 4px;
+  padding-top: 8px;
+}
+.ontimize-table.o-table .o-table-container .o-table-menu .o-table-option-active {
+  background: rgba(0, 0, 0, 0.12);
+}
+.ontimize-table.o-table .o-table-container thead tr th {
+  font-weight: 700;
+}
+.ontimize-table.o-table .o-table-container tbody tr.even,
+.ontimize-table.o-table .o-table-container thead tr {
+  background-color: inherit;
+}
+.ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+.ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+  background-color: #1464a5;
+}
+.ontimize-table.o-table .o-table-container .mat-mdc-header-cell {
+  font-weight: 700;
+}
+.ontimize-table.o-table .mat-mdc-paginator {
+  background: inherit;
+}
+.ontimize-table.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
+  font-weight: 700;
+}
+
+.ontimize-table.o-table.o-table-fixed .o-scrollable-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox,
+.mat-mdc-menu-panel.o-search-input-menu .mat-mdc-checkbox {
+  padding: 2px 0;
+}
+
+/*background levels */
+.bg-level-0,
+o-column.o-column.bg-level-0,
+o-row.o-row.bg-level-0 {
+  background-color: #e6e7e9;
+}
+
+.bg-level-04,
+o-column.o-column.bg-level-04,
+o-row.o-row.bg-level-04 {
+  background-color: #f2f2f2;
+}
+
+.bg-level-06,
+o-column.o-column.bg-level-06,
+o-row.o-row.bg-level-06 {
+  background-color: #f6f6f6;
+}
+
+.bg-level-08,
+o-column.o-column.bg-level-08,
+o-row.o-row.bg-level-08 {
+  background-color: #fafafa;
+}
+
+.bg-level-1,
+o-column.o-column.bg-level-1,
+o-row.o-row.bg-level-1 {
+  background-color: white;
+}
+
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell {
+  font-weight: 600;
+}
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell .column-filter-icon {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button {
+  height: 30px;
+  border: none;
+  padding: 0 6px;
+  border-radius: 0;
+}
+o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button.disabled {
+  border: none;
+  border-radius: 0;
+}
+o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button:not(.disabled):hover {
+  border: none;
+  border-radius: 0;
+}
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+}
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-form-field .mat-form-field-infix {
+  border-top: 0;
+}
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:not(.o-column-image):first-of-type {
+  padding-left: 12px;
+}
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:last-of-type {
+  padding-right: 12px;
+}
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-cell.mat-column-select,
+o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell.mat-column-select {
+  padding: 0 0 0 12px;
+}
+
+.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button {
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+}
+.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-button-wrapper > div {
+  line-height: 1;
+}
+.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-icon {
+  padding: 0 6px 6px;
+  width: 38px;
+  height: 38px;
+  font-size: 38px;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-infix {
+  min-height: 40px;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  top: 20px;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  --mat-mdc-form-field-label-transform: translateY(
+          -26.75px)
+          scale(var(--mat-mdc-form-field-floating-label-scale, 0.75));
+  transform: var(--mat-mdc-form-field-label-transform);
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.mat-mdc-form-field .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label {
+  display: none;
+}
+.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio {
+  padding: calc((28px - 20px) / 2);
+  margin: 0;
+}
+.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__background::before {
+  top: calc(-1 * (28px - 20px) / 2);
+  left: calc(-1 * (28px - 20px) / 2);
+  width: 28px;
+  height: 28px;
+}
+.mat-mdc-form-field .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
+  top: calc((28px - 28px) / 2);
+  right: calc((28px - 28px) / 2);
+  left: calc((28px - 28px) / 2);
+  width: 28px;
+  height: 28px;
+}
+.mat-mdc-form-field .mat-mdc-radio-touch-target {
+  display: none;
+}
+.mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .icon-btn svg, .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .mat-icon-button svg,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button svg,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-prefix .mat-mdc-icon-button svg {
+  height: 100%;
+  width: 100%;
+}
+.mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .icon-btn .mat-mdc-button-touch-target, .mat-mdc-form-field.icon-field .mat-mdc-form-field-icon-suffix .mat-icon-button .mat-mdc-button-touch-target,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button .mat-mdc-button-touch-target,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-icon-prefix .mat-mdc-icon-button .mat-mdc-button-touch-target {
+  width: 20px;
+  height: 20px;
+}
+.mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
+  min-height: auto;
+  padding-bottom: 4px;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-floating-label {
+  display: block;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mat-mdc-select-arrow-wrapper {
+  height: auto;
+}
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  min-height: auto;
+  padding-top: 14px;
+}
+
+.o-column > .o-container > .o-container-title,
+.o-row > .o-container > .o-container-title {
+  line-height: 30px;
+  height: 30px;
+}
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+  padding-left: 4px;
+}
+
+.o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 10px 6px 6px;
+}
+
+.o-column > .o-container .o-container-scroll.o-container-gap,
+.o-row > .o-container .o-container-scroll.o-container-gap {
+  padding: 10px 6px 6px;
+}
+
+.o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+.o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+  padding: 12px;
+}
+
+.o-column-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll,
+.o-row-collapsible.o-appearance-outline > .o-container.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body > .o-container-scroll {
+  padding: 12px;
+}
+
+/* O-APP-LAYOUT */
+.o-app-sidenav.o-app-sidenav .o-app-header .sidenav-toggle {
+  padding: 8px;
+}
+
+/* MD-TAB-GROUP */
+mat-tab-group.mat-mdc-tab-group > .mat-mdc-tab-header .mat-mdc-tab {
+  height: 32px;
+}
+
+/* MAT-PAGINATOR */
+.mat-mdc-paginator-container {
+  min-height: 0;
+}
+.mat-mdc-paginator-container .mat-mdc-paginator-page-size {
+  align-items: center;
+  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
+  /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version. */
+}
+.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select {
+  margin: 6px 0;
+  /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+}
+.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
+  transform: initial;
+}
+.mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
+  border-top: 0;
+}
+.mat-mdc-paginator-container .mat-mdc-paginator-range-actions {
+  min-height: 0;
+}
+
+.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.after, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.right {
+  margin-left: 5px;
+}
+.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.before, .mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.left {
+  margin-right: 5px;
+}
+.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.above {
+  margin-bottom: -15px;
+}
+.mat-mdc-tooltip-panel .o-tooltip.mat-mdc-tooltip.below {
+  margin-top: 5px;
+}
+
+.o-filter-by-column-dialog .select-all-checkbox {
+  margin-top: 10px;
+}
+
+@media (max-width: 599px) {
+  .o-list-picker-dialog.o-list-picker-dialog .mat-mdc-dialog-content.o-list-picker-has-filter {
+    max-height: calc(100% - 105px);
+    min-height: calc(100% - 105px);
+  }
+}
+[layout-padding] > [flex-lt-md],
+[layout-padding] > [flex-sm] {
+  padding: 2px;
+}
+
+[layout-padding],
+[layout-padding] > [flex-gt-sm],
+[layout-padding] > [flex-lt-lg],
+[layout-padding] > [flex-md],
+[layout-padding] > [flex] {
+  padding: 4px;
+}
+
+[layout-padding] > [flex-gt-md],
+[layout-padding] > [flex-lg] {
+  padding: 8px;
+}
+
+[layout-margin] > [flex-lt-md],
+[layout-margin] > [flex-sm] {
+  margin: 2px;
+}
+
+[layout-margin],
+[layout-margin] > [flex-gt-sm],
+[layout-margin] > [flex-lt-lg],
+[layout-margin] > [flex-md],
+[layout-margin] > [flex] {
+  margin: 4px;
+}
+
+[layout-margin] > [flex-gt-md],
+[layout-margin] > [flex-lg] {
+  margin: 8px;
+}
+
+[layout-wrap] {
+  flex-wrap: wrap;
+}
+
+[layout-nowrap] {
+  flex-wrap: nowrap;
+}
+
+[layout-padding-vertical] {
+  padding: 4px 0;
+}
+
+[layout-margin-vertical] {
+  margin: 4px 0;
+}
+
+[layout-padding-horizontal] {
+  padding: 0 14px;
+}
+
+[layout-margin-horizontal] {
+  margin: 0 14px;
+}
+
+[layout-padding-left] {
+  padding-left: 14px;
+}
+
+[layout-margin-left] {
+  margin-left: 14px;
+}
+
+[layout-padding-right] {
+  padding-right: 14px;
+}
+
+[layout-margin-right] {
+  margin-right: 14px;
+}
+
+[layout-padding-top] {
+  padding-top: 4px;
+}
+
+[layout-margin-top] {
+  margin-top: 4px;
+}
+
+[layout-padding-bottom] {
+  padding-bottom: 4px;
+}
+
+[layout-margin-bottom] {
+  margin-bottom: 4px;
+}
+
+.o-form .o-form-toolbar .o-form-toolbar-header {
+  min-height: 36px;
+  max-height: 36px;
+  padding: 0 4px;
+  box-shadow: none;
+  font-size: 16px;
+}
+.o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
+  height: 28px;
+  padding: 8px;
+  min-height: 72px;
+  max-height: 72px;
+}
+.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
+.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
+  border-radius: 0;
+}
+.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-mdc-icon-button,
+.o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-mdc-icon-button {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+}
+
+.mat-mdc-paginator .mat-mdc-form-field .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox {
+  padding: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+  margin: calc((var(--mdc-checkbox-touch-target-size, 19px) - var(--mdc-checkbox-icon-size)) / 2);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__background {
+  top: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+  left: calc((var(--mdc-checkbox-ripple-size, 19px) - var(--mdc-checkbox-icon-size, 15px)) / 2);
+  height: var(--mdc-checkbox-icon-size, 15px);
+  width: var(--mdc-checkbox-icon-size, 15px);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control {
+  top: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  right: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  left: calc((20px - var(--mdc-checkbox-touch-target-size, 19px)) / 2);
+  width: var(--mdc-checkbox-touch-target-size, 19px);
+  height: var(--mdc-checkbox-touch-target-size, 19px);
+}
+mat-checkbox.mat-mdc-checkbox .mdc-checkbox .mat-mdc-checkbox-touch-target,
+.mdc-list-item.mat-mdc-list-option .mdc-checkbox .mat-mdc-checkbox-touch-target {
+  height: var(--mdc-checkbox-touch-target-size, 19px);
+  width: var(--mdc-checkbox-touch-target-size, 19px);
 }
 
 /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
