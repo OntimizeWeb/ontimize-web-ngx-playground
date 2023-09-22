@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
-import { InputConverter } from 'ontimize-web-ngx';
+import { BooleanInputConverter } from 'ontimize-web-ngx';
 
 export interface IFiles {
   html?: any;
@@ -38,10 +38,10 @@ export class ExampleComponent {
   _files: IFiles = {};
   tabHeight: string = '350px';
 
-  @InputConverter()
+  @BooleanInputConverter()
   collapsible: boolean = false;
 
-  @InputConverter()
+  @BooleanInputConverter()
   collapsed: boolean = false;
 
   onShowSource: EventEmitter<any> = new EventEmitter<any>();
