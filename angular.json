@@ -142,7 +142,8 @@
     ],
     "cache": {
       "enabled": false
-    }
+    },
+    "analytics": false
   },
   "schematics": {
     "@angular-eslint/schematics:application": {
