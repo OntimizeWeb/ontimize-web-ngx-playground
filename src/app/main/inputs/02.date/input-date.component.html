@@ -1,0 +1,88 @@
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-date-input attr="date" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue()"></o-date-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-date-input attr="date2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('string')" read-only="no" required="yes"
+        text-input-enabled="no" value-type="string">
+      </o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-date-input attr="date3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" enabled="no" [data]="getValue()">
+      </o-date-input>
+    </div>
+  </o-form>
+</example-comp>
+<example-comp comp-name="INPUTS.DATE.CUSTOM_DATE_CLASS" comp-desc="INPUTS.DATE.CUSTOM_DATE_CLASS.DESC" [files]="customDateClassFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <o-date-input attr="customDateClass" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" read-only="no" required="yes"
+        [date-class]="customDateClass">
+      </o-date-input>
+    </div>
+  </o-form>
+</example-comp>
+
+<example-comp comp-name="INPUTS.DATE.VALUE_TYPE" comp-desc="INPUTS.DATE.VALUE_TYPE.DESC" [files]="valueTypeFiles">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.TIMESTAMP' | oTranslate }}</label>
+      <o-date-input value-type="timestamp" attr="valueTypeInput" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('timestamp')"
+        read-only="no" required="yes">
+      </o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
+      <o-date-input value-type="string" attr="valueTypeInput2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('string')"
+        read-only="no" required="yes"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.DATE' | oTranslate }}</label>
+      <o-date-input value-type="date" attr="valueTypeInput3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')" read-only="no"
+        required="yes"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.ISO-8601' | oTranslate }}</label>
+      <o-date-input value-type="iso-8601" attr="valueTypeInput4" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('ISO-8601')"
+        read-only="no" required="yes"></o-date-input>
+    </div>
+  </o-form>
+</example-comp>
+
+
+<example-comp comp-name="INPUTS.DATE.VALUE_TYPE_MIN_MAX" comp-desc="INPUTS.DATE.VALUE_TYPE_MIN_MAX.DESC" [files]="valueTypeFilesMinMax">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.TIMESTAMP' | oTranslate }}</label>
+      <o-date-input value-type="timestamp" attr="minMaxInput" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('timestamp')"
+        read-only="no" required="yes" [min]="getMinValue('timestamp')" [max]="getMaxValue('timestamp')">
+      </o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
+      <o-date-input value-type="string" attr="minMaxInput2" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('string')"
+        read-only="no" required="yes" [min]="getMinValue('string')" [max]="getMaxValue('string')"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.DATE' | oTranslate }}</label>
+      <o-date-input value-type="date" attr="minMaxInput3" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('date')" read-only="no"
+        required="yes" [min]="getMinValue('date')" [max]="getMaxValue('date')"></o-date-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.ISO-8601' | oTranslate }}</label>
+      <o-date-input value-type="iso-8601" attr="minMaxInput4" label="{{ 'INPUT.BUTTON.DATE' | oTranslate }}" [data]="getValue('ISO-8601')"
+        read-only="no" required="yes" [min]="getMinValue('ISO-8601')" [max]="getMaxValue('ISO-8601')"></o-date-input>
+    </div>
+  </o-form>
+</example-comp>

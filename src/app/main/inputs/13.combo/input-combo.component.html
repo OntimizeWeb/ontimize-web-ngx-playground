@@ -1,0 +1,227 @@
+<mat-tab-group>
+  <mat-tab label="{{'INPUTS.COMBO.GENERAL_TAB' | oTranslate}}">
+    <example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="ComboCodeExamples.files">
+      <o-form show-header="no">
+        <div fxLayout="column" layout-padding>
+          <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+          <o-combo attr="combo" read-only="yes" label="Select country" [static-data]="MockData.countriesArray"
+            [data]="MockData.selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
+            visible-columns="countryText">
+          </o-combo>
+        </div>
+        <div fxLayout="row" layout-padding fxLayoutGap="8px">
+          <div fxLayout="column" fxFlex>
+            <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+            <o-combo attr="combo-editable" label="Select country" [static-data]="MockData.countriesArray"
+              [data]="MockData.selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
+              visible-columns="countryText" required="yes" fxFlex>
+            </o-combo>
+          </div>
+          <div fxLayout="column" fxFlex>
+            <label class="input-comp-title">{{ 'INPUTS.COMBO.SEARCH' | oTranslate }}</label>
+            <o-combo attr="combo-searchable" label="Select country" [static-data]="MockData.countriesArray"
+              [data]="MockData.selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
+              visible-columns="countryText" required="yes" searchable="yes" fxFlex>
+            </o-combo>
+          </div>
+        </div>
+        <div fxLayout="column" layout-padding>
+          <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+          <o-combo attr="combo-disabled" label="Select country" enabled="no" [static-data]="MockData.countriesArray"
+            [data]="MockData.selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
+            visible-columns="countryText">
+          </o-combo>
+        </div>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_MULTIPLE" comp-desc="INPUTS.COMBO.DESC_MULTIPLE"
+      [files]="ComboCodeExamples.files_multiple">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo-multiple" label="Select countries" [static-data]="MockData.countriesArray"
+          [data]="MockData.selectedCountriesCode" value-column="countryCode" columns="countryCode;countryText"
+          visible-columns="countryText" required="yes" multiple="yes" fxFlex>
+        </o-combo>
+
+        <div fxLayout="column">
+          <label class="input-comp-title">Sum up the trigger label</label>
+          <o-combo attr="combo-multiple-trigger-label" label="Select countries" [static-data]="MockData.countriesArray"
+            [data]="MockData.selectedCountriesCode" value-column="countryCode" columns="countryCode;countryText"
+            visible-columns="countryText" required="yes" multiple="yes" multiple-trigger-label="yes">
+          </o-combo>
+        </div>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_MORE_INPUTS" comp-desc="INPUTS.COMBO_MORE_INPUTS.DESC"
+      [files]="ComboCodeExamples.files_more_inputs">
+      <o-form show-header="no" layout-padding layout-direction="row">
+
+        <div fxLayout="column" fxFlex>
+          <label class="input-comp-title">{{ 'INPUTS.COMBO.NULL_SELECTION' | oTranslate }}</label>
+          <o-combo attr="combo-null-selection" label="Select country" [static-data]="MockData.countriesArray"
+            [data]="MockData.selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
+            visible-columns="countryText" required="yes" null-selection="no">
+          </o-combo>
+        </div>
+
+        <div fxLayout="column" fxFlex fxFlexOffset="8px">
+          <label class="input-comp-title">{{ 'INPUTS.COMBO.TRANSLATE' | oTranslate }}</label>
+          <o-combo attr="combo-translate" label="Select value" [static-data]="MockData.translationsArray"
+            [data]="MockData.selectedTranslationCode" value-column="itemCode" columns="itemCode;itemTranslationKey"
+            visible-columns="itemTranslationKey" required="yes" translate="yes">
+          </o-combo>
+        </div>
+      </o-form>
+    </example-comp>
+  </mat-tab>
+
+  <mat-tab label="{{'INPUTS.COMBO.RENDERERS_TAB' | oTranslate}}">
+    <example-comp comp-name="INPUTS.COMBO_CURRENCY_RENDERER" [files]="ComboCodeExamples.files_currency_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select value" [static-data]="MockData.integersArray"
+          [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
+          visible-columns="integerValue" required="yes" fxFlex>
+          <o-combo-renderer-currency></o-combo-renderer-currency>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_REAL_RENDERER" [files]="ComboCodeExamples.files_real_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select value" [static-data]="MockData.integersArray"
+          [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
+          visible-columns="integerValue" required="yes" fxFlex>
+          <o-combo-renderer-real></o-combo-renderer-real>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_INTEGER_RENDERER" [files]="ComboCodeExamples.files_integer_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select value" [static-data]="MockData.integersArray"
+          [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
+          visible-columns="integerValue" required="yes" fxFlex>
+          <o-combo-renderer-integer></o-combo-renderer-integer>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_BOOLEAN_RENDERER" [files]="ComboCodeExamples.files_boolean_render">
+      <o-form show-header="no" layout-padding>
+
+        <o-combo attr="combo" label="Select value" [static-data]="MockData.booleanArray"
+          [data]="MockData.selectedBooleanCode" value-column="booleanCode" columns="booleanCode;booleanValue"
+          visible-columns="booleanValue" required="yes" fxFlex>
+          <o-combo-renderer-boolean boolean-type="number" render-true-value="Yes" render-false-value="No">
+          </o-combo-renderer-boolean>
+        </o-combo>
+
+        <o-combo attr="combo-string" label="Select value" [static-data]="MockData.booleanArray"
+          [data]="MockData.selectedBooleanString" value-column="booleanString" columns="booleanString;booleanValue"
+          visible-columns="booleanValue" required="yes" fxFlex>
+          <o-combo-renderer-boolean boolean-type="string" true-value="trueString" false-value="falseString"
+            render-true-value="True" render-false-value="False">
+          </o-combo-renderer-boolean>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_PERCENTAGE_RENDERER" [files]="ComboCodeExamples.files_percentage_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select value" [static-data]="MockData.percentagesArray"
+          [data]="MockData.selectedPercentageCode" value-column="percentageCode"
+          columns="percentageCode;percentageValue" visible-columns="percentageValue" required="yes" fxFlex>
+          <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_DATE_RENDERER" [files]="ComboCodeExamples.files_date_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select date" [static-data]="MockData.datesArray" [data]="MockData.selectedDateCode"
+          value-column="dateCode" columns="dateCode;dateValue" visible-columns="dateValue" required="yes" fxFlex>
+          <o-combo-renderer-date format="YYYY-MM-DD"></o-combo-renderer-date>
+        </o-combo>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_ICON_RENDERER" [files]="ComboCodeExamples.files_icon_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo" label="Select sport" [static-data]="MockData.sportsArray"
+          [data]="MockData.selectedSportCode" value-column="sportCode" columns="sportCode;sportDescription;sportIcon"
+          visible-columns="sportDescription" required="yes" fxFlex>
+          <o-combo-renderer-icon icon-column="sportIcon" icon-position="right"></o-combo-renderer-icon>
+        </o-combo>
+      </o-form>
+    </example-comp>
+  </mat-tab>
+
+  <mat-tab label="{{'INPUTS.COMBO.CUSTOM_RENDERERS_TAB' | oTranslate}}">
+    <example-comp comp-name="INPUTS.COMBO_CUSTOM_RENDERER" comp-desc="INPUTS.COMBO_CUSTOM_RENDERER.DESC"
+      [files]="ComboCodeExamples.files_custom_render">
+      <o-form show-header="no" layout-padding>
+        <div fxLayout="row" fxLayoutGap="8px">
+          <o-combo attr="combo" label="Select custom value" [static-data]="MockData.integersArray"
+            [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
+            visible-columns="integerValue" required="yes" fxFlex>
+            <combo-custom-render></combo-custom-render>
+          </o-combo>
+        </div>
+      </o-form>
+    </example-comp>
+
+    <example-comp comp-name="INPUTS.COMBO_MULTIPLE_CUSTOM_RENDERER"
+      [files]="ComboCodeExamples.files_multiple_custom_render">
+      <o-form show-header="no" layout-padding>
+        <o-combo attr="combo-editable-multiple-search" label="Select custom values"
+          [static-data]="MockData.integersArray" [data]="MockData.selectedIntegerValues" value-column="integerCode"
+          columns="integerCode;integerValue" visible-columns="integerValue" required="yes" multiple="yes" fxFlex>
+          <combo-custom-render></combo-custom-render>
+        </o-combo>
+      </o-form>
+    </example-comp>
+  </mat-tab>
+
+  <mat-tab label="{{'INPUTS.COMBO.LOCKER_TAB' | oTranslate}}">
+    <ng-template matTabContent>
+      <example-comp comp-name="INPUTS.COMBO.LOCKER" comp-desc="INPUTS.COMBO.LOCKER.DESC"
+        [files]="ComboCodeExamples.files_combo_locker">
+        <o-form show-header="no" layout-padding>
+          <o-combo attr="combo-locker" oLocker label="Select customer" service-type="DummyService"
+            query-method="queryWithDelay" service="customers" entity="customer" value-column="CUSTOMERID" [data]="19487"
+            columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " fxFlex>
+          </o-combo>
+        </o-form>
+      </example-comp>
+
+      <example-comp comp-name="INPUTS.COMBO.LOCKER.DISABLED" comp-desc="INPUTS.COMBO.LOCKER.DISABLED.DESC"
+        [files]="ComboCodeExamples.files_combo_locker_disabled">
+        <o-form show-header="no" layout-padding>
+          <o-combo attr="combo-locker" oLocker oLockerMode="disable" label="Select customer" service-type="DummyService"
+            query-method="queryWithDelay" service="customers" entity="customer" value-column="CUSTOMERID" [data]="19487"
+            columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " fxFlex>
+          </o-combo>
+        </o-form>
+      </example-comp>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="{{'INPUTS.COMBO.QUERY_ON_EVENT' | oTranslate}}">
+    <ng-template matTabContent>
+      <example-comp comp-name="INPUTS.COMBO.QUERY_ON_EVENT" comp-desc="INPUTS.COMBO.QUERY_ON_EVENT.DESC"
+        [files]="ComboCodeExamples.files_combo_query_on_event">
+        <o-form show-header="no">
+          <o-combo #comboCountry attr="comboCountry" label="Select Country" service-type="DummyService"
+          query-method="query" service="comboCountry" entity="comboCountry" value-column="CountryId"
+          columns="CountryId,CountryName" visible-columns="CountryName" keys="CountryId">
+          </o-combo>
+          <o-combo #comboState attr="comboState" label="Select State" service-type="DummyService"
+          query-method="query" service="comboState" entity="comboState" value-column="StateId"
+          columns="StateID,StateName,CountryId" visible-columns="StateName" keys="StateId" [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+          </o-combo>
+        </o-form>
+      </example-comp>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

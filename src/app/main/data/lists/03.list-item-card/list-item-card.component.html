@@ -1,0 +1,71 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CARD" [html]="html" [files]="files" (showSource)="onShowSource(list, ex)"
+  class="list-examples">
+  <screen-configuration comp-name="LIST" #sidenavComp>
+    <div menu layout-margin>
+      <div fxLayout="row" layout-padding fxLayoutAlign="center">
+        <mat-form-field fxFlex="95">
+          <input (change)="updateCodeValue('title', $event.target.value)" matInput #listTitle placeholder="{{ 'TITLE' | oTranslate }}" value="List">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
+          {{ 'REFRESH_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('quickFilter', $event.checked)" #quickFilterToggle checked="true" fxFlex layout-padding>
+          {{ 'QUICK_FILTER' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle fxFlex>
+          {{ 'INSERT_BUTTON' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <mat-slide-toggle (change)="updateCodeValue('showImage', $event.checked)" #showImageToggle checked="true">
+          {{ 'SHOW_IMAGE' | oTranslate }}
+        </mat-slide-toggle>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle (change)="updateCodeValue('action1', $event.checked)" #action1Toggle checked="true" fxFlex>
+            {{ 'ACTION_1' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!action1Toggle.checked" fxFlex>
+            <input (change)="updateCodeValue('actionText1', $event.target.value)" matInput #actionText1 placeholder="action-1-text" value="ACTION 1">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-slide-toggle (change)="updateCodeValue('action2', $event.checked)" #action2Toggle checked="true" fxFlex>
+            {{ 'ACTION_2' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-form-field [hidden]="!action2Toggle.checked" fxFlex>
+            <input (change)="updateCodeValue('actionText2', $event.target.value)" matInput #actionText2 placeholder="action-2-text" value="ACTION 2">
+          </mat-form-field>
+        </div>
+        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <mat-radio-group #rowHeight fxLayout="column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
+          <mat-radio-button value="large" class="padding-3">
+            {{ 'LARGE' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="medium" class="padding-3">
+            {{ 'MEDIUM' | oTranslate }}
+          </mat-radio-button>
+          <mat-radio-button value="small" class="padding-3">
+            {{ 'SMALL' | oTranslate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
+      [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
+      row-height="medium" detail-mode="none">
+      <o-list-item *ngFor="let row of list.dataArray">
+        <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
+          image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
+          [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
+        </o-list-item-card>
+      </o-list-item>
+    </o-list>
+  </screen-configuration>
+</example-comp>

@@ -1,0 +1,55 @@
+<example-comp #ex1 collapsible="no" collapsed="no" comp-name="GALLERY.COMPONENT" [files]="files" (showSource)="onShowSource('gallery1',ex1)">
+  <screen-configuration>
+    <div menu fxFlex>
+      <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION' | oTranslate }}" elevation="0" layout-padding layout-align="center"
+        expanded="true">
+        <mat-slide-toggle (change)="demoGaleria.changeImageSize()" checked="false">{{ 'GALLERY.IMAGESIZE' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeImage()" checked="true">{{ 'GALLERY.IMAGE' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeImageArrows()" checked="true">{{ 'GALLERY.IMAGEARROWS' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeImageSwipe()" checked="true">{{ 'GALLERY.IMAGE_SWIPE' | oTranslate}}</mat-slide-toggle>
+        <mat-form-field>
+          <input matInput #newWidth placeholder="{{ 'GALLERY.WIDTH' | oTranslate }}" (keyup.enter)="demoGaleria.changeWidth(newWidth.value)">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput #newHeight placeholder="{{ 'GALLERY.HEIGHT' | oTranslate }}" (keyup.enter)="demoGaleria.changeHeight(newHeight.value)">
+        </mat-form-field>
+      </o-column-collapsible>
+      <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION_THUMBNAIL' | oTranslate }}" elevation="0" layout-padding
+        layout-align="center" expanded="true">
+        <mat-slide-toggle (change)="demoGaleria.changeThumbnails()" checked="true">{{ 'GALLERY.THUMB' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeThumbPosition()" checked="false">{{ 'GALLERY.THUMBPOST' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeThumbnailSize()" checked="false">{{ 'GALLERY.THUMBSIZE' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changeThumbnailsSwipe()" checked="true">{{ 'GALLERY.SWIPE_THUMBNAILS' | oTranslate}}
+        </mat-slide-toggle>
+      </o-column-collapsible>
+      <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION_PREVIEW' | oTranslate }}" elevation="0" layout-padding layout-align="center"
+        expanded="no">
+        <mat-slide-toggle (change)="demoGaleria.changePreview()" checked="true">{{ 'GALLERY.PREVIEW' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewArrows()" checked="true">{{ 'GALLERY.PREVIEWARROWS' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewAutoPlay()" checked="false">{{ 'GALLERY.PREVIEWAUTOPLAY' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewCloseonClick()" checked="true">{{ 'GALLERY.PREVIEWCLOSECLICK' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewCloseonEsc()" checked="true">{{ 'GALLERY.PREVIEWCLOSEESC' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewDescription()" checked="false">{{ 'GALLERY.PREVIEWDESCRIPTION' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewDownload()" checked="true">{{ 'GALLERY.PREVIEWDOWNLOAD' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewFullscreen()" checked="true">{{ 'GALLERY.PREVIEWFULLSCREEN' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewKeyboardNavigation()" checked="true">{{ 'GALLERY.PREVIEWKEYBOARD' | oTranslate}}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewRotate()" checked="true">{{ 'GALLERY.PREVIEWROTATE' | oTranslate}}</mat-slide-toggle>
+        <mat-slide-toggle (change)="demoGaleria.changePreviewZoom()" checked="true">{{ 'GALLERY.PREVIEWZOOM' | oTranslate}}</mat-slide-toggle>
+
+        <mat-slide-toggle (change)="demoGaleria.changePreviewSwipe()" checked="true">{{ 'GALLERY.SWIPE_PREVIEW' | oTranslate}}</mat-slide-toggle>
+
+      </o-column-collapsible>
+
+    </div>
+    <div content fxLayout="column">
+      <p layout-padding>{{ 'GALLERY.AD' | oTranslate }}</p>
+      <o-gallery #demoGaleria [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
+    </div>
+  </screen-configuration>
+</example-comp>

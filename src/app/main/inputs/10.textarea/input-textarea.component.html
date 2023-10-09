@@ -1,0 +1,17 @@
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-textarea-input attr="textarea" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}" [data]="getValue()" rows="10"></o-textarea-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-textarea-input attr="textarea2" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}" [data]="getValue()" read-only="no"
+        rows="10" ></o-textarea-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-textarea-input attr="textarea3" label="{{ 'INPUT.BUTTON.TEXTAREA' | oTranslate }}" enabled="no" [data]="getValue()" rows="10"></o-textarea-input>
+    </div>
+  </o-form>
+</example-comp>

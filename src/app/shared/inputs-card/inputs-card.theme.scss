@@ -1,0 +1,26 @@
+@mixin inputs-card-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .new {
+    border-color: mat-color($foreground);
+    background-color: mat-color($background);
+    color: mat-color($foreground, text);
+  }
+
+  mat-card-title {
+    color: mat-color($foreground, text);
+  }
+
+  mat-card-content {
+    color: mat-color($foreground, text);
+  }
+
+  .img-container{
+    background-color: mat-color($background, selected-button);
+  }
+
+}

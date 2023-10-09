@@ -1,0 +1,125 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [html]="html" [files]="getFiles('o-table')"
+  (showSource)="onShowSource('o-table', table, ex)" fxFill>
+
+  <screen-configuration comp-name="TABLE" #sidenavComp>
+    <div menu>
+      <mat-form-field layout-margin class="width-max">
+        <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
+        <input (change)="updateCodeValue('titleInput', $event.target.value)" matInput #titleInput value="Table">
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-slide-toggle (change)="updateCodeValue('titleToggle', $event.checked)" #titleToggle checked="true" fxFlex>
+          {{ 'TABLE.SHOW_TITLE' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('controlsToggle', $event.checked)" #controlsToggle checked="true" fxFlex>
+          {{ 'TABLE.CONTROLS' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-slide-toggle (change)="updateCodeValue('autoAdjustToggle', $event.checked)" #autoAdjustToggle checked="false" fxFlex>
+          {{ 'TABLE.AUTOADJUST' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-slide-toggle (change)="updateCodeValue('horizontalScrollToggle', $event.checked)" #horizontalScrollToggle checked="false" fxFlex>
+          {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
+        </mat-slide-toggle>
+      </div>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
+            matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" fxLayoutAlign="space-around center" fxFlex="100">
+            <mat-radio-button value="large" class="padding-3">
+              {{ 'LARGE' | oTranslate }}
+            </mat-radio-button>
+            <mat-radio-button value="medium" class="padding-3">
+              {{ 'MEDIUM' | oTranslate }}
+            </mat-radio-button>
+            <mat-radio-button value="small" class="padding-3">
+              {{ 'SMALL' | oTranslate }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'TABLE.FILTER' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-slide-toggle (change)="updateCodeValue('quickFilterToggle', $event.checked)" #quickFilterToggle checked="true" fxFlex>
+            {{ 'TABLE.FILTER' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle (change)="updateCodeValue('filterCaseSensitiveToggle', $event.checked)" #filterCaseSensitiveToggle checked="false" fxFlex>
+            {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </div>
+      <o-column-collapsible title="{{ 'TABLE.MENU' | oTranslate }}" expanded="no" class="menu-title-collapsible">
+        <div fxLayout="column" fxLayoutAlign="start start">
+          <mat-slide-toggle (change)="updateCodeValue('selectMultipleToggle', $event.checked)" #selectMultipleToggle checked="false" fxFlex>
+            {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle (change)="updateCodeValue('exportButtonToggle', $event.checked)" #exportButtonToggle checked="true" fxFlex>
+            {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-slide-toggle (change)="updateCodeValue('columnsVisibilityToggle', $event.checked)" #columnsVisibilityToggle checked="true" fxFlex>
+            {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </o-column-collapsible>
+      <o-column-collapsible title="{{ 'BUTTONS' | oTranslate }}" expanded="no">
+        <div fxLayout="row">
+          <div fxLayout="column" fxLayoutAlign="start start">
+            <mat-slide-toggle (change)="updateCodeValue('buttonAddToggle', $event.checked)" #buttonAddToggle [checked]="false" fxFlex>
+              {{ 'TABLE.BUTTON.ADD' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle (change)="updateCodeValue('buttonRefreshToggle', $event.checked)" #buttonRefreshToggle [checked]="false" fxFlex>
+              {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="start start">
+            <mat-slide-toggle (change)="updateCodeValue('buttonRemoveToggle', $event.checked)" #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" fxFlex>
+              {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
+            </mat-slide-toggle>
+            <mat-slide-toggle (change)="updateCodeValue('showTextToggle', $event.checked)" #showTextToggle checked="true" fxFlex>
+              {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
+            </mat-slide-toggle>
+          </div>
+        </div>
+      </o-column-collapsible>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+        <div fxLayout="row">
+          <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
+            {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+
+    <o-table content #table attr="tableBasic" [title]="titleInput.value" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;NOTES"
+      visible-columns="PHOTO;NAME;SURNAME;NOTES;action" sort-columns="SURNAME" query-on-init="false" [quick-filter]="quickFilterToggle.checked"
+      [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
+      [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
+      [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
+      [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" row-height="medium"
+      pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
+      edition-mode="none" detail-mode="none">
+
+      <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
+      <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm" tooltip="yes"></o-table-button>
+      <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="yes">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+        </o-table-cell-renderer-image>
+      </o-table-column>
+      <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+      <o-table-column attr="action" width="64px">
+        <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
+      </o-table-column>
+    </o-table>
+
+  </screen-configuration>
+
+</example-comp>

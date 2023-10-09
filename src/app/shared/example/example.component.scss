@@ -1,0 +1,55 @@
+.example-comp {
+
+  .playground-toolbar {
+    font-size: 18px;
+    padding: 0;
+    margin: 0 10px 0 0;
+    width: calc(100% - 20px);
+    height: 50px;
+    min-height: 50px;
+
+    >div>span {
+      font-weight: 600;
+    }
+
+    .comp-description {
+      font-size: 16px;
+      font-weight: 100;
+    }
+  }
+
+  .playground-tabs{
+    margin: 10px 25px 10px 25px;
+  }
+
+
+  .collapsible {
+    overflow: hidden;
+    -webkit-transition: max-height 1.8s;
+    -moz-transition: max-height 1.8s;
+    transition: max-height 1.8s;
+    max-height: 2500px;
+
+    &.collapsed {
+      max-height: 0;
+    }
+  }
+
+  .o-form form.inner-form {
+    position: relative;
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+
+  .playground-examples {
+    margin: 10px 25px 20px 25px;
+
+    .input-comp-title{
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+  }
+}

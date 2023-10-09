@@ -1,0 +1,27 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_AGGRETATE" [files]="getFiles('o-table-aggregate')"
+  (showSource)="onShowSource('o-table-aggregate', table, ex)">
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+    <o-table fxFill #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
+      visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" layout-padding title="PRODUCTS" [static-data]="data" query-on-init="false"
+      quick-filter="yes" insert-button="no" refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
+
+      <o-table-columns-filter columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"></o-table-columns-filter>
+
+      <o-table-column attr="UNITPRICE" title="UNITPRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right">
+      </o-table-column>
+      <o-table-column attr="UNITSINORDER" title="UNITSINORDER" type="integer"></o-table-column>
+      <o-table-column attr="UNITSINSTOCK" title="UNITSINSTOCK" type="integer"></o-table-column>
+
+      <o-table-column-aggregate attr="UNITPRICE" title="(Total)"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="UNITSINORDER" aggregate="avg" title="(Avg)"></o-table-column-aggregate>
+      <o-table-column-aggregate attr="UNITSINSTOCK" aggregate="min" title="(Min)"></o-table-column-aggregate>
+        <!-- Grouping columns -->
+        <o-table-columns-grouping>
+          <o-table-columns-grouping-column attr="UNITPRICE" aggregate="sum"> </o-table-columns-grouping-column>
+          <o-table-columns-grouping-column attr="UNITSINSTOCK" aggregate="avg"> </o-table-columns-grouping-column>
+          <o-table-columns-grouping-column attr="TOTALSTOCK" aggregate="sum"> </o-table-columns-grouping-column>
+        </o-table-columns-grouping>
+    </o-table>
+  </div>
+</example-comp>

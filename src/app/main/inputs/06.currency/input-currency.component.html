@@ -1,0 +1,19 @@
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+      <o-currency-input attr="currency" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" [data]="getValue()"
+        min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-currency-input attr="currency2" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" [data]="getValue()"
+        read-only="no" min="2" required="yes" min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+      <o-currency-input attr="currency3" label="{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}" enabled="no" [data]="getValue()"
+        min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
+    </div>
+  </o-form>
+</example-comp>
