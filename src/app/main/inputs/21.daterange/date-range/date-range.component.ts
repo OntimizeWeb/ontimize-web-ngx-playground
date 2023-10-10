@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatLegacySlideToggle as MatSlideToggle } from '@angular/material/legacy-slide-toggle';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 import * as moment from 'moment';
 
 const DATE_HTML_DATA = `

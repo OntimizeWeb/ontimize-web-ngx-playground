@@ -75,11 +75,11 @@
 [layout-margin-bottom] {
   margin-bottom: 4px; }
 
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-mdc-outlined-button.mat-mdc-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
   color: #303030;
   background-color: #b9d1e4;
   border-color: transparent; }
-  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-mdc-outlined-button.mat-mdc-button-base:hover,
   .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
@@ -87,10 +87,11 @@
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
 
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
+.mat-mdc-dialog-actions button:not([disabled]).o-button-default.cancel {
   color: #1464a5;
   background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.12); }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
   .mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
     color: #303030;
@@ -130,50 +131,58 @@ o-app-header .o-app-header-title {
   min-height: initial; }
 
 /* TABS */
-.mat-tab-group .mat-tab-label,
-.mat-tab-group .mat-tab-link {
+.mat-mdc-tab-group .mat-tab-label,
+.mat-tab-group .mat-mdc-tab-link {
   opacity: .75; }
-  .mat-tab-group .mat-tab-label.mat-tab-label-active,
-  .mat-tab-group .mat-tab-link.mat-tab-label-active {
+  .mat-mdc-tab-group .mat-tab-label.mat-tab-label-active,
+  .mat-tab-group .mat-mdc-tab-link.mat-tab-label-active {
     opacity: .95; }
 
-.mat-tab-group.o-tab-ontimize > .mat-tab-header {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header {
   border: none; }
-  .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+  .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label {
     background: #D7DDE0;
     padding: 0; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
       text-overflow: clip;
       position: relative; }
-      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
+      /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+      .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
         width: 12px;
         background: linear-gradient(to right, transparent, #D7DDE0 100%);
         height: 100%;
         position: absolute;
         right: 0; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
       border-left: 1px solid rgba(0, 0, 0, 0.12); }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
       padding: 0 8px;
       width: 100%; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
       background: white; }
-      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
+      /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+      .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
         background: linear-gradient(to right, transparent, white 100%); }
-  .mat-tab-group.o-tab-ontimize > .mat-tab-header mat-ink-bar {
+  .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header mat-ink-bar {
     display: none; }
 
-.mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
   background: white;
   border-radius: 2px;
   border-top: none;
   border-top-left-radius: initial; }
 
-.mat-tab-group.mat-tab-group .mat-tab-body-wrapper {
+.mat-mdc-tab-group.mat-tab-group .mat-tab-body-wrapper {
   padding: 8px; }
 
 /* BUTTON */
-button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-raised-button, button.mat-stroked-button {
+button.mat-mdc-button, button.mat-mdc-unelevated-button, button.mat-mdc-icon-button, button.mat-mdc-raised-button, button.mat-mdc-outlined-button {
   border-radius: 2px; }
 
 /* TABLE */
@@ -194,24 +203,25 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     .ontimize-table.o-table .o-table-container tbody tr.even,
     .ontimize-table.o-table .o-table-container thead tr {
       background-color: inherit; }
+    /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
     .ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
     .ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
       background-color: #1464a5; }
-    .ontimize-table.o-table .o-table-container .mat-header-cell {
+    .ontimize-table.o-table .o-table-container .mat-mdc-header-cell {
       font-weight: 700; }
-  .ontimize-table.o-table .mat-paginator {
+  .ontimize-table.o-table .mat-mdc-paginator {
     background: inherit; }
-  .ontimize-table.o-table .mat-table .mat-header-row .mat-header-cell {
+  .ontimize-table.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
     font-weight: 700; }
 
 .ontimize-table.o-table.o-table-fixed .o-scrollable-container {
   height: 100%;
   overflow-y: auto; }
 
-.mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox {
   padding: 2px 0; }
 
-.mat-menu-panel.o-search-input-menu .mat-checkbox {
+.mat-mdc-menu-panel.o-search-input-menu .mat-mdc-checkbox {
   padding: 2px 0; }
 
 /*background levels */
@@ -350,11 +360,11 @@ o-row.o-row.bg-level-1 {
 [layout-margin-bottom] {
   margin-bottom: 4px; }
 
-.mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
+.mat-dialog-actions button:not([disabled]).o-button-primary.mat-mdc-outlined-button.mat-mdc-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary {
   color: #303030;
   background-color: #b9d1e4;
   border-color: transparent; }
-  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base:hover,
+  .mat-dialog-actions button:not([disabled]).o-button-primary.mat-mdc-outlined-button.mat-mdc-button-base:hover,
   .mat-dialog-actions button:not([disabled]).o-button-primary.mat-stroked-button.mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
@@ -362,10 +372,11 @@ o-row.o-row.bg-level-1 {
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
 
-.mat-dialog-actions button:not([disabled]).o-button-default.cancel {
+.mat-mdc-dialog-actions button:not([disabled]).o-button-default.cancel {
   color: #1464a5;
   background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.12); }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-dialog-actions button:not([disabled]).o-button-default.cancel:hover,
   .mat-dialog-actions button:not([disabled]).o-button-default.cancel .mat-button-focus-overlay {
     color: #303030;
@@ -405,50 +416,58 @@ o-app-header .o-app-header-title {
   min-height: initial; }
 
 /* TABS */
-.mat-tab-group .mat-tab-label,
-.mat-tab-group .mat-tab-link {
+.mat-mdc-tab-group .mat-tab-label,
+.mat-tab-group .mat-mdc-tab-link {
   opacity: .75; }
-  .mat-tab-group .mat-tab-label.mat-tab-label-active,
-  .mat-tab-group .mat-tab-link.mat-tab-label-active {
+  .mat-mdc-tab-group .mat-tab-label.mat-tab-label-active,
+  .mat-tab-group .mat-mdc-tab-link.mat-tab-label-active {
     opacity: .95; }
 
-.mat-tab-group.o-tab-ontimize > .mat-tab-header {
+.mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header {
   border: none; }
-  .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label {
+  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+  .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label {
     background: #D7DDE0;
     padding: 0; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label span.tab-label {
       text-overflow: clip;
       position: relative; }
-      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
+      /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+      .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label span.tab-label span.gradient-layer {
         width: 12px;
         background: linear-gradient(to right, transparent, #D7DDE0 100%);
         height: 100%;
         position: absolute;
         right: 0; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label:not(.mat-tab-label-active):not(:last-child) + .mat-tab-label:not(.mat-tab-label-active) .mat-tab-label-content {
       border-left: 1px solid rgba(0, 0, 0, 0.12); }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label .mat-tab-label-content {
       padding: 0 8px;
       width: 100%; }
-    .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+    .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active {
       background: white; }
-      .mat-tab-group.o-tab-ontimize > .mat-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
+      /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+      .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header .mat-tab-label-container .mat-tab-label.mat-tab-label-active span.tab-label span.gradient-layer {
         background: linear-gradient(to right, transparent, white 100%); }
-  .mat-tab-group.o-tab-ontimize > .mat-tab-header mat-ink-bar {
+  .mat-mdc-tab-group.o-tab-ontimize > .mat-mdc-tab-header mat-ink-bar {
     display: none; }
 
-.mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
   background: white;
   border-radius: 2px;
   border-top: none;
   border-top-left-radius: initial; }
 
-.mat-tab-group.mat-tab-group .mat-tab-body-wrapper {
+.mat-mdc-tab-group.mat-tab-group .mat-tab-body-wrapper {
   padding: 8px; }
 
 /* BUTTON */
-button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-raised-button, button.mat-stroked-button {
+button.mat-mdc-button, button.mat-mdc-unelevated-button, button.mat-mdc-icon-button, button.mat-mdc-raised-button, button.mat-mdc-outlined-button {
   border-radius: 2px; }
 
 /* TABLE */
@@ -469,24 +488,25 @@ button.mat-button, button.mat-flat-button, button.mat-icon-button, button.mat-ra
     .ontimize-table.o-table .o-table-container tbody tr.even,
     .ontimize-table.o-table .o-table-container thead tr {
       background-color: inherit; }
+    /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
     .ontimize-table.o-table .o-table-container tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
     .ontimize-table.o-table .o-table-container thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
       background-color: #1464a5; }
-    .ontimize-table.o-table .o-table-container .mat-header-cell {
+    .ontimize-table.o-table .o-table-container .mat-mdc-header-cell {
       font-weight: 700; }
-  .ontimize-table.o-table .mat-paginator {
+  .ontimize-table.o-table .mat-mdc-paginator {
     background: inherit; }
-  .ontimize-table.o-table .mat-table .mat-header-row .mat-header-cell {
+  .ontimize-table.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
     font-weight: 700; }
 
 .ontimize-table.o-table.o-table-fixed .o-scrollable-container {
   height: 100%;
   overflow-y: auto; }
 
-.mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+.mat-mdc-menu-panel.o-table-quickfilter-menu .mat-mdc-checkbox {
   padding: 2px 0; }
 
-.mat-menu-panel.o-search-input-menu .mat-checkbox {
+.mat-mdc-menu-panel.o-search-input-menu .mat-mdc-checkbox {
   padding: 2px 0; }
 
 /*background levels */
@@ -515,174 +535,194 @@ o-column.o-column.bg-level-1,
 o-row.o-row.bg-level-1 {
   background-color: white; }
 
-.o-table-quickfilter-menu .mat-checkbox {
+.o-table-quickfilter-menu .mat-mdc-checkbox {
   font-size: 14px; }
-  .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+  .o-table-quickfilter-menu .mat-mdc-checkbox .mat-checkbox-inner-container {
     width: 16px;
     height: 16px; }
 
-.o-table.o-table .o-table-container .mat-table .mat-header-cell {
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell {
   font-weight: 600; }
-  .o-table.o-table .o-table-container .mat-table .mat-header-cell .column-filter-icon {
+  .o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-header-cell .column-filter-icon {
     margin-right: 4px;
     width: 16px;
     height: 16px; }
 
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button {
   height: 30px;
   border: none;
   padding: 0 6px;
   border-radius: 0; }
-  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button.disabled {
     border: none;
     border-radius: 0; }
-  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button:not(.disabled):hover {
     border: none;
     border-radius: 0; }
 
-.o-table.o-table .o-table-container .mat-table .mat-form-field .mat-form-field-infix {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.o-table.o-table .o-table-container .mat-table .mat-mdc-form-field .mat-form-field-infix {
   border-top: 0; }
 
-.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:not(.o-column-image):first-of-type {
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:not(.o-column-image):first-of-type {
   padding-left: 12px; }
 
-.o-table.o-table .o-table-container .mat-table .mat-row .mat-cell:last-of-type {
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-row .mat-mdc-cell:last-of-type {
   padding-right: 12px; }
 
-.o-table.o-table .o-table-container .mat-table .mat-cell.mat-column-select,
-.o-table.o-table .o-table-container .mat-table .mat-header-cell.mat-column-select {
+.o-table.o-table .o-table-container .mat-mdc-table .mat-mdc-cell.mat-column-select,
+.o-table.o-table .o-table-container .mat-table .mat-mdc-header-cell.mat-column-select {
   padding: 0 0 0 12px; }
 
-.o-table-export-dialog.o-table-export-dialog .mat-raised-button {
+.o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button {
   width: 68px;
   height: 68px;
   min-width: 68px; }
-  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-button-wrapper > div {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-button-wrapper > div {
     line-height: 1; }
-  .o-table-export-dialog.o-table-export-dialog .mat-raised-button .mat-icon {
+  .o-table-export-dialog.o-table-export-dialog .mat-mdc-raised-button .mat-icon {
     padding: 0 6px 6px;
     width: 38px;
     height: 38px;
     font-size: 38px; }
 
-.mat-form-field.mat-form-field {
+.mat-mdc-form-field.mat-form-field {
   font-size: 14px; }
-  .mat-form-field.mat-form-field.mat-form-field-invalid .mat-error {
+  .mat-mdc-form-field.mat-form-field.mat-form-field-invalid .mat-mdc-form-field-error {
     display: none; }
   .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .icon-btn,
-  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon-button,
+  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-mdc-icon-button,
   .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-prefix .mat-icon-button,
   .mat-form-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-suffix .mat-icon-button {
     height: 1.4em;
     width: 1.4em; }
-  .mat-form-field.mat-form-field.input-image.icon-field .mat-input-infix.mat-form-field-infix {
+  .mat-mdc-form-field.mat-form-field.input-image.icon-field .mat-input-infix.mat-form-field-infix {
     line-height: 16px; }
-  .mat-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
+  .mat-mdc-form-field.mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
     height: 20px;
     width: 20px; }
-  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon-button .mat-icon,
+  .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-mdc-icon-button .mat-icon,
   .mat-form-field.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button .mat-icon {
     font-size: 140%; }
-  .mat-form-field.mat-form-field .mat-form-field-wrapper {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-wrapper {
     padding-bottom: 0em; }
-  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon,
+  .mat-mdc-form-field.mat-form-field .mat-form-field-prefix .mat-icon,
   .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon {
     font-size: 140%;
     height: 1.125em; }
-  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field.mat-form-field .mat-form-field-prefix .mat-mdc-icon-button,
   .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button {
     height: 1.4em;
     width: 1.4em; }
-    .mat-form-field.mat-form-field .mat-form-field-prefix .mat-icon-button .mat-icon,
+    .mat-form-field.mat-form-field .mat-form-field-prefix .mat-mdc-icon-button .mat-icon,
     .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon-button .mat-icon {
       height: 1.125em;
       line-height: 1.125; }
-  .mat-form-field.mat-form-field .mat-form-field-infix {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-infix {
     padding: 0.3em 0;
     border-top: 0.84375em solid transparent; }
-  .mat-form-field.mat-form-field .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  .mat-mdc-form-field.mat-form-field .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.14375em) scale(0.75);
     width: 133.33333%; }
-  .mat-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.14374em) scale(0.75);
     width: 133.33334%; }
-  .mat-form-field.mat-form-field .mat-form-field-label-wrapper {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-label-wrapper {
     top: -0.84375em;
     padding-top: 0.84375em; }
-  .mat-form-field.mat-form-field .mat-form-field-underline {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-underline {
     bottom: 0em; }
-  .mat-form-field.mat-form-field .mat-form-field-subscript-wrapper {
+  .mat-mdc-form-field.mat-form-field .mat-form-field-subscript-wrapper {
     font-size: 75%;
     margin-top: 0.4em;
     top: calc(100% - 0em); }
 
-.o-checkbox .mat-checkbox {
+.o-checkbox .mat-mdc-checkbox {
   font-size: 14px; }
-  .o-checkbox .mat-checkbox .mat-checkbox-ripple {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+  .o-checkbox .mat-mdc-checkbox .mat-checkbox-ripple {
     left: calc(50% - 17px);
     top: calc(50% - 17px);
     height: 34px;
     width: 34px; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .o-checkbox .mat-checkbox-inner-container {
   width: 15px;
   height: 15px; }
 
-.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 0.105em; }
 
-.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.2875em 0; }
 
-.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-label {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-legacy .mat-form-field-label {
   top: 1.3em; }
 
-.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 0.105em; }
 
-.mat-form-field.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
   margin-top: 0.275em;
   top: calc(100% - 0.14em); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0.25em 0.25em 0 0.25em !important; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-infix {
   padding: 0.25em 0 0.3em !important; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-label {
   top: 1.09375em !important;
   margin-top: -0.5em !important; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.59375em) scale(0.75) !important;
   width: 133.33333%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.59375em) scale(0.75) !important;
   width: 133.33333%; }
 
-.mat-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-outline .mat-form-field-wrapper {
   padding-bottom: 0; }
 
-.mat-form-field.mat-form-field-appearance-outline .mat-form-field-infix {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 0.3em 0; }
 
-.mat-form-field.mat-form-field-appearance-outline .mat-form-field-label {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-outline .mat-form-field-label {
   top: 1.14375em;
   margin-top: -0.25em; }
 
-.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-mdc-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.89375em) scale(0.75);
   width: 133.33333%; }
 
-.mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.89374em) scale(0.75);
   width: 133.33334%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-standard .mat-form-field-flex {
   padding: 0.25em 0.25em 0 0.25em !important; }
 
@@ -716,46 +756,50 @@ o-row.o-row.bg-level-1 {
   padding: 8px; }
 
 /* MD-TAB-GROUP */
-.mat-tab-group.mat-tab-group > .mat-tab-header .mat-tab-label {
+.mat-mdc-tab-group.mat-tab-group > .mat-mdc-tab-header .mat-tab-label {
   height: 32px; }
 
 /* MAT-PAGINATOR */
-.mat-paginator-container {
+.mat-mdc-paginator-container {
   min-height: 0; }
-  .mat-paginator-container .mat-paginator-page-size {
+  .mat-mdc-paginator-container .mat-mdc-paginator-page-size {
     align-items: center; }
-    .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select {
+    /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version.*/
+    .mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select {
       margin: 6px 0; }
-      .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
+      /* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version.*/
+      .mat-mdc-paginator-container .mat-mdc-paginator-page-size .mat-paginator-page-size-select .mat-select-arrow-wrapper {
         transform: initial; }
+      /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
       .mat-paginator-container .mat-paginator-page-size .mat-paginator-page-size-select .mat-form-field-infix {
         border-top: 0; }
-  .mat-paginator-container .mat-paginator-range-actions {
+  .mat-mdc-paginator-container .mat-mdc-paginator-range-actions {
     min-height: 0; }
 
-.mat-tooltip-panel .o-tooltip.mat-tooltip.after, .mat-tooltip-panel .o-tooltip.mat-tooltip.right {
+.mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.after, .mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.right {
   margin-left: 5px; }
 
-.mat-tooltip-panel .o-tooltip.mat-tooltip.before, .mat-tooltip-panel .o-tooltip.mat-tooltip.left {
+.mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.before, .mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.left {
   margin-right: 5px; }
 
-.mat-tooltip-panel .o-tooltip.mat-tooltip.above {
+.mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.above {
   margin-bottom: -15px; }
 
-.mat-tooltip-panel .o-tooltip.mat-tooltip.below {
+.mat-mdc-tooltip-panel .o-tooltip.mat-tooltip.below {
   margin-top: 5px; }
 
 .o-filter-by-column-dialog .select-all-checkbox {
   margin-top: 10px; }
 
 @media (max-width: 599px) {
-  .o-list-picker-dialog.o-list-picker-dialog .mat-dialog-content.o-list-picker-has-filter {
+  .o-list-picker-dialog.o-list-picker-dialog .mat-mdc-dialog-content.o-list-picker-has-filter {
     max-height: calc(100% - 105px);
     min-height: calc(100% - 105px); } }
 
-.o-search-input-menu .mat-checkbox {
+.o-search-input-menu .mat-mdc-checkbox {
   font-size: 14px; }
-  .o-search-input-menu .mat-checkbox .mat-checkbox-inner-container {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+  .o-search-input-menu .mat-mdc-checkbox .mat-checkbox-inner-container {
     width: 16px;
     height: 16px; }
 
@@ -845,7 +889,7 @@ o-row.o-row.bg-level-1 {
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button,
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled] {
     border-radius: 0; }
-    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-icon-button,
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-mdc-icon-button,
     .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button[disabled].mat-icon-button {
       height: 30px;
       line-height: 30px;
@@ -925,19 +969,19 @@ o-row.o-row.bg-level-1 {
 .mat-badge-large .mat-badge-content {
   font-size: 24px; }
 
-.mat-h1, .mat-headline, .mat-typography h1 {
+.mat-h1, .mat-headline-5, .mat-typography h1 {
   font: 400 24px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
-.mat-h2, .mat-title, .mat-typography h2 {
+.mat-h2, .mat-headline-6, .mat-typography h2 {
   font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
-.mat-h3, .mat-subheading-2, .mat-typography h3 {
+.mat-h3, .mat-subtitle-1, .mat-typography h3 {
   font: 600 14px/21px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
-.mat-h4, .mat-subheading-1, .mat-typography h4 {
+.mat-h4, .mat-body-1, .mat-typography h4 {
   font: 400 14px/18px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 16px; }
 
@@ -949,80 +993,82 @@ o-row.o-row.bg-level-1 {
   font: 400 calc(12px * 0.67)/15px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 12px; }
 
-.mat-body-strong, .mat-body-2 {
+.mat-body-strong, .mat-subtitle-2 {
   font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-body, .mat-body-1, .mat-typography {
+.mat-body, .mat-body-2, .mat-typography {
   font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
-  .mat-body p, .mat-body-1 p, .mat-typography p {
+  .mat-body p, .mat-body-2 p, .mat-typography p {
     margin: 0 0 12px; }
 
 .mat-small, .mat-caption {
   font: 400 11px/15px Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-display-4, .mat-typography .mat-display-4 {
+.mat-headline-1, .mat-typography .mat-display-4 {
   font: 300 84px/92px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 56px; }
 
-.mat-display-3, .mat-typography .mat-display-3 {
+.mat-headline-2, .mat-typography .mat-display-3 {
   font: 400 42px/42px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
-.mat-display-2, .mat-typography .mat-display-2 {
+.mat-headline-3, .mat-typography .mat-display-2 {
   font: 400 34px/36px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
-.mat-display-1, .mat-typography .mat-display-1 {
+.mat-headline-4, .mat-typography .mat-display-1 {
   font: 400 26px/30px Poppins, "Helvetica Neue", sans-serif;
   margin: 0 0 64px; }
 
 .mat-bottom-sheet-container {
   font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button,
-.mat-flat-button, .mat-fab, .mat-mini-fab {
+.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-icon-button, .mat-mdc-outlined-button,
+.mat-mdc-unelevated-button, .mat-mdc-fab, .mat-mdc-mini-fab {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-weight: 500; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-card {
+.mat-mdc-card {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-card-title {
+.mat-mdc-card-title {
   font-size: 24px;
   font-weight: 500; }
 
-.mat-card-header .mat-card-title {
+.mat-mdc-card-header .mat-mdc-card-title {
   font-size: 18px; }
 
-.mat-card-subtitle,
-.mat-card-content {
+.mat-mdc-card-subtitle,
+.mat-mdc-card-content {
   font-size: 12px; }
 
-.mat-checkbox {
+.mat-mdc-checkbox {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-layout .mat-checkbox-label {
   line-height: 18px; }
 
-.mat-chip {
+.mat-mdc-chip {
   font-size: 12px;
   font-weight: 500; }
-  .mat-chip .mat-chip-trailing-icon.mat-icon,
+  .mat-mdc-chip .mat-chip-trailing-icon.mat-icon,
   .mat-chip .mat-chip-remove.mat-icon {
     font-size: 18px; }
 
-.mat-table {
+.mat-mdc-table {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-header-cell {
+.mat-mdc-header-cell {
   font-size: 11px;
   font-weight: 500; }
 
-.mat-cell, .mat-footer-cell {
+.mat-mdc-cell, .mat-mdc-footer-cell {
   font-size: 12px; }
 
 .mat-calendar {
@@ -1040,7 +1086,7 @@ o-row.o-row.bg-level-1 {
   font-size: 9px;
   font-weight: 400; }
 
-.mat-dialog-title {
+.mat-mdc-dialog-title {
   font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif; }
 
 .mat-expansion-panel-header {
@@ -1051,129 +1097,157 @@ o-row.o-row.bg-level-1 {
 .mat-expansion-panel-content {
   font: 400 12px/15px Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-form-field {
+.mat-mdc-form-field {
   font: 400 14px/1.125 Poppins, "Helvetica Neue", sans-serif; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-wrapper {
   padding-bottom: 1.34375em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-prefix .mat-icon,
 .mat-form-field-suffix .mat-icon {
   font-size: 150%;
   line-height: 1.125; }
 
-.mat-form-field-prefix .mat-icon-button,
+.mat-form-field-prefix .mat-mdc-icon-button,
 .mat-form-field-suffix .mat-icon-button {
   height: 1.5em;
   width: 1.5em; }
-  .mat-form-field-prefix .mat-icon-button .mat-icon,
+  .mat-form-field-prefix .mat-mdc-icon-button .mat-icon,
   .mat-form-field-suffix .mat-icon-button .mat-icon {
     height: 1.125em;
     line-height: 1.125; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-infix {
   padding: 0.5em 0;
   border-top: 0.84375em solid transparent; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-1.34375em) scale(0.75);
   width: 133.33333%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
   transform: translateY(-1.34374em) scale(0.75);
   width: 133.33334%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-label-wrapper {
   top: -0.84375em;
   padding-top: 0.84375em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-label {
   top: 1.34375em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-underline {
   bottom: 1.34375em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-subscript-wrapper {
   font-size: 75%;
   margin-top: 0.66667em;
   top: calc(100% - 1.79167em); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 1.25em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.4375em 0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
   -ms-transform: translateY(-1.28125em) scale(0.75);
   width: 133.33333%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
   transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00101px);
   -ms-transform: translateY(-1.28124em) scale(0.75);
   width: 133.33334%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
   transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.00102px);
   -ms-transform: translateY(-1.28123em) scale(0.75);
   width: 133.33335%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-label {
   top: 1.28125em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   bottom: 1.25em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
   margin-top: 0.54167em;
   top: calc(100% - 1.66667em); }
 
 @media print {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
   .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
     transform: translateY(-1.28122em) scale(0.75); }
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
 .mat-form-field-label {
     transform: translateY(-1.28121em) scale(0.75); }
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
   .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
     transform: translateY(-1.2812em) scale(0.75); } }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-infix {
   padding: 0.25em 0 0.75em 0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-label {
   top: 1.09375em;
   margin-top: -0.5em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-0.59375em) scale(0.75);
   width: 133.33333%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
   transform: translateY(-0.59374em) scale(0.75);
   width: 133.33334%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1em 0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline .mat-form-field-label {
   top: 1.84375em;
   margin-top: -0.25em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
   transform: translateY(-1.59375em) scale(0.75);
   width: 133.33333%; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
 .mat-form-field-label {
   transform: translateY(-1.59374em) scale(0.75);
@@ -1193,31 +1267,35 @@ o-row.o-row.bg-level-1 {
     .mat-grid-tile-footer .mat-line:nth-child(n+2) {
       font-size: 11px; }
 
-input.mat-input-element {
+input.mat-mdc-input-element {
   margin-top: -0.0625em; }
 
-.mat-menu-item {
+.mat-mdc-menu-item {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 12px;
   font-weight: 400; }
 
-.mat-paginator,
-.mat-paginator-page-size .mat-select-trigger {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-paginator,
+.mat-mdc-paginator-page-size .mat-select-trigger {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 11px; }
 
-.mat-radio-button {
+.mat-mdc-radio-button {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-select {
+.mat-mdc-select {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 .mat-select-trigger {
   height: 1.125em; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
 .mat-slide-toggle-content {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-thumb-label-text {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 11px;
@@ -1240,10 +1318,11 @@ input.mat-input-element {
   font-size: 12px;
   font-weight: 500; }
 
-.mat-tab-group {
+.mat-mdc-tab-group {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-tab-label, .mat-tab-link {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-label, .mat-mdc-tab-link {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-weight: 500; }
@@ -1258,89 +1337,97 @@ input.mat-input-element {
   font: 500 18px/24px Poppins, "Helvetica Neue", sans-serif;
   margin: 0; }
 
-.mat-tooltip {
+.mat-mdc-tooltip {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 10px;
   padding-top: 6px;
   padding-bottom: 6px; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of tooltip that may no longer apply for the MDC version.*/
 .mat-tooltip-handset {
   font-size: 14px;
   padding-top: 8px;
   padding-bottom: 8px; }
 
-.mat-list-item {
+.mat-mdc-list-item {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
 .mat-list-option {
   font-family: Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-list-base .mat-list-item {
+.mat-mdc-list-base .mat-mdc-list-item {
   font-size: 14px; }
-  .mat-list-base .mat-list-item .mat-line {
+  .mat-mdc-list-base .mat-mdc-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     box-sizing: border-box; }
-    .mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+    .mat-mdc-list-base .mat-mdc-list-item .mat-line:nth-child(n+2) {
       font-size: 12px; }
 
-.mat-list-base .mat-list-option {
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+.mat-mdc-list-base .mat-list-option {
   font-size: 14px; }
-  .mat-list-base .mat-list-option .mat-line {
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+  .mat-mdc-list-base .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     box-sizing: border-box; }
-    .mat-list-base .mat-list-option .mat-line:nth-child(n+2) {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+    .mat-mdc-list-base .mat-list-option .mat-line:nth-child(n+2) {
       font-size: 12px; }
 
-.mat-list-base .mat-subheader {
+.mat-mdc-list-base .mat-mdc-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 12px;
   font-weight: 500; }
 
-.mat-list-base[dense] .mat-list-item {
+.mat-mdc-list-base[dense] .mat-mdc-list-item {
   font-size: 11px; }
-  .mat-list-base[dense] .mat-list-item .mat-line {
+  .mat-mdc-list-base[dense] .mat-mdc-list-item .mat-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     box-sizing: border-box; }
-    .mat-list-base[dense] .mat-list-item .mat-line:nth-child(n+2) {
+    .mat-mdc-list-base[dense] .mat-mdc-list-item .mat-line:nth-child(n+2) {
       font-size: 11px; }
 
-.mat-list-base[dense] .mat-list-option {
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+.mat-mdc-list-base[dense] .mat-list-option {
   font-size: 11px; }
-  .mat-list-base[dense] .mat-list-option .mat-line {
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+  .mat-mdc-list-base[dense] .mat-list-option .mat-line {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     box-sizing: border-box; }
-    .mat-list-base[dense] .mat-list-option .mat-line:nth-child(n+2) {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+    .mat-mdc-list-base[dense] .mat-list-option .mat-line:nth-child(n+2) {
       font-size: 11px; }
 
-.mat-list-base[dense] .mat-subheader {
+.mat-mdc-list-base[dense] .mat-mdc-subheader {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 11px;
   font-weight: 500; }
 
-.mat-option {
+.mat-mdc-option {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 14px; }
 
-.mat-optgroup-label {
+.mat-mdc-optgroup-label {
   font: 500 12px/18px Poppins, "Helvetica Neue", sans-serif; }
 
-.mat-simple-snackbar {
+.mat-mdc-simple-snack-bar {
   font-family: Poppins, "Helvetica Neue", sans-serif;
   font-size: 12px; }
 
-.mat-simple-snackbar-action {
+.mat-mdc-snack-bar-action {
   line-height: 1;
   font-family: inherit;
   font-size: inherit;
@@ -1471,31 +1558,37 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.1); }
 
-.mat-option {
+.mat-mdc-option {
   color: rgba(0, 0, 0, 0.87); }
-  .mat-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled) {
+  .mat-mdc-option:hover:not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled) {
     background: rgba(0, 0, 0, 0.04); }
-  .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled) {
+  /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version.*/
+  .mat-mdc-option.mat-selected:not(.mat-mdc-option-multiple):not(.mat-option-disabled) {
     background: rgba(0, 0, 0, 0.04); }
-  .mat-option.mat-active {
+  .mat-mdc-option.mat-active {
     background: rgba(0, 0, 0, 0.04);
     color: rgba(0, 0, 0, 0.87); }
-  .mat-option.mat-option-disabled {
+  /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version.*/
+  .mat-mdc-option.mat-option-disabled {
     color: rgba(0, 0, 0, 0.38); }
 
-.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+/* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version.*/
+.mat-primary .mat-mdc-option.mat-selected:not(.mat-option-disabled) {
   color: #1464a5; }
 
-.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+/* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version.*/
+.mat-accent .mat-mdc-option.mat-selected:not(.mat-option-disabled) {
   color: #1464a5; }
 
-.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
+/* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version.*/
+.mat-warn .mat-mdc-option.mat-selected:not(.mat-option-disabled) {
   color: #f44336; }
 
-.mat-optgroup-label {
+.mat-mdc-optgroup-label {
   color: rgba(0, 0, 0, 0.54); }
 
-.mat-optgroup-disabled .mat-optgroup-label {
+/* TODO(mdc-migration): The following rule targets internal classes of optgroup that may no longer apply for the MDC version.*/
+.mat-optgroup-disabled .mat-mdc-optgroup-label {
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-pseudo-checkbox {
@@ -1606,13 +1699,17 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-theme-loaded-marker {
   display: none; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of autocomplete that may no longer apply for the MDC version.*/
 .mat-autocomplete-panel {
   background: white;
   color: rgba(0, 0, 0, 0.87); }
+  /* TODO(mdc-migration): The following rule targets internal classes of autocomplete that may no longer apply for the MDC version.*/
   .mat-autocomplete-panel:not([class*='mat-elevation-z']) {
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+  /* TODO(mdc-migration): The following rule targets internal classes of autocomplete that may no longer apply for the MDC version.*/
   .mat-autocomplete-panel .mat-option.mat-selected:not(.mat-active):not(:hover) {
     background: white; }
+    /* TODO(mdc-migration): The following rule targets internal classes of autocomplete that may no longer apply for the MDC version.*/
     .mat-autocomplete-panel .mat-option.mat-selected:not(.mat-active):not(:hover):not(.mat-option-disabled) {
       color: rgba(0, 0, 0, 0.87); }
 
@@ -1783,257 +1880,304 @@ textarea.cdk-textarea-autosize-measuring {
   background: white;
   color: rgba(0, 0, 0, 0.87); }
 
-.mat-button, .mat-icon-button, .mat-stroked-button {
+.mat-mdc-button, .mat-mdc-icon-button, .mat-mdc-outlined-button {
   color: inherit;
   background: transparent; }
-  .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+  .mat-mdc-button.mat-primary, .mat-mdc-icon-button.mat-primary, .mat-mdc-outlined-button.mat-primary {
     color: #1464a5; }
-  .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+  .mat-mdc-button.mat-accent, .mat-mdc-icon-button.mat-accent, .mat-mdc-outlined-button.mat-accent {
     color: #1464a5; }
-  .mat-button.mat-warn, .mat-icon-button.mat-warn, .mat-stroked-button.mat-warn {
+  .mat-mdc-button.mat-warn, .mat-mdc-icon-button.mat-warn, .mat-mdc-outlined-button.mat-warn {
     color: #f44336; }
-  .mat-button.mat-primary[disabled], .mat-button.mat-accent[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-icon-button.mat-primary[disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-stroked-button.mat-primary[disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled] {
+  .mat-mdc-button.mat-primary[disabled], .mat-button.mat-accent[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-mdc-icon-button.mat-primary[disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-mdc-outlined-button.mat-primary[disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled] {
     color: rgba(0, 0, 0, 0.38); }
-  .mat-button.mat-primary .mat-button-focus-overlay, .mat-icon-button.mat-primary .mat-button-focus-overlay, .mat-stroked-button.mat-primary .mat-button-focus-overlay {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-mdc-button.mat-primary .mat-button-focus-overlay, .mat-mdc-icon-button.mat-primary .mat-button-focus-overlay, .mat-mdc-outlined-button.mat-primary .mat-button-focus-overlay {
     background-color: #1464a5; }
-  .mat-button.mat-accent .mat-button-focus-overlay, .mat-icon-button.mat-accent .mat-button-focus-overlay, .mat-stroked-button.mat-accent .mat-button-focus-overlay {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-mdc-button.mat-accent .mat-button-focus-overlay, .mat-mdc-icon-button.mat-accent .mat-button-focus-overlay, .mat-mdc-outlined-button.mat-accent .mat-button-focus-overlay {
     background-color: #1464a5; }
-  .mat-button.mat-warn .mat-button-focus-overlay, .mat-icon-button.mat-warn .mat-button-focus-overlay, .mat-stroked-button.mat-warn .mat-button-focus-overlay {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-mdc-button.mat-warn .mat-button-focus-overlay, .mat-mdc-icon-button.mat-warn .mat-button-focus-overlay, .mat-mdc-outlined-button.mat-warn .mat-button-focus-overlay {
     background-color: #f44336; }
-  .mat-button[disabled] .mat-button-focus-overlay, .mat-icon-button[disabled] .mat-button-focus-overlay, .mat-stroked-button[disabled] .mat-button-focus-overlay {
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+  .mat-mdc-button[disabled] .mat-button-focus-overlay, .mat-mdc-icon-button[disabled] .mat-button-focus-overlay, .mat-mdc-outlined-button[disabled] .mat-button-focus-overlay {
     background-color: transparent; }
-  .mat-button .mat-ripple-element, .mat-icon-button .mat-ripple-element, .mat-stroked-button .mat-ripple-element {
+  .mat-mdc-button .mat-ripple-element, .mat-mdc-icon-button .mat-ripple-element, .mat-mdc-outlined-button .mat-ripple-element {
     opacity: 0.1;
     background-color: currentColor; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-focus-overlay {
   background: rgba(0, 0, 0, 0.6); }
 
-.mat-stroked-button:not([disabled]) {
+.mat-mdc-outlined-button:not([disabled]) {
   border-color: rgba(0, 0, 0, 0.12); }
 
-.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+.mat-mdc-unelevated-button, .mat-mdc-raised-button, .mat-mdc-fab, .mat-mdc-mini-fab {
   color: rgba(0, 0, 0, 0.87);
   background-color: white; }
-  .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  .mat-mdc-unelevated-button.mat-primary, .mat-mdc-raised-button.mat-primary, .mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary {
     color: white; }
-  .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+  .mat-mdc-unelevated-button.mat-accent, .mat-mdc-raised-button.mat-accent, .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent {
     color: white; }
-  .mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+  .mat-mdc-unelevated-button.mat-warn, .mat-mdc-raised-button.mat-warn, .mat-mdc-fab.mat-warn, .mat-mdc-mini-fab.mat-warn {
     color: white; }
-  .mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
+  .mat-mdc-unelevated-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-mdc-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-mdc-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mdc-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
     color: rgba(0, 0, 0, 0.38); }
-  .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  .mat-mdc-unelevated-button.mat-primary, .mat-mdc-raised-button.mat-primary, .mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary {
     background-color: #1464a5; }
-  .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+  .mat-mdc-unelevated-button.mat-accent, .mat-mdc-raised-button.mat-accent, .mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent {
     background-color: #1464a5; }
-  .mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+  .mat-mdc-unelevated-button.mat-warn, .mat-mdc-raised-button.mat-warn, .mat-mdc-fab.mat-warn, .mat-mdc-mini-fab.mat-warn {
     background-color: #f44336; }
-  .mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
+  .mat-mdc-unelevated-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-mdc-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-mdc-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mdc-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
     background-color: rgba(0, 0, 0, 0.12); }
-  .mat-flat-button.mat-primary .mat-ripple-element, .mat-raised-button.mat-primary .mat-ripple-element, .mat-fab.mat-primary .mat-ripple-element, .mat-mini-fab.mat-primary .mat-ripple-element {
+  .mat-mdc-unelevated-button.mat-primary .mat-ripple-element, .mat-mdc-raised-button.mat-primary .mat-ripple-element, .mat-mdc-fab.mat-primary .mat-ripple-element, .mat-mdc-mini-fab.mat-primary .mat-ripple-element {
     background-color: rgba(255, 255, 255, 0.1); }
-  .mat-flat-button.mat-accent .mat-ripple-element, .mat-raised-button.mat-accent .mat-ripple-element, .mat-fab.mat-accent .mat-ripple-element, .mat-mini-fab.mat-accent .mat-ripple-element {
+  .mat-mdc-unelevated-button.mat-accent .mat-ripple-element, .mat-mdc-raised-button.mat-accent .mat-ripple-element, .mat-mdc-fab.mat-accent .mat-ripple-element, .mat-mdc-mini-fab.mat-accent .mat-ripple-element {
     background-color: rgba(255, 255, 255, 0.1); }
-  .mat-flat-button.mat-warn .mat-ripple-element, .mat-raised-button.mat-warn .mat-ripple-element, .mat-fab.mat-warn .mat-ripple-element, .mat-mini-fab.mat-warn .mat-ripple-element {
+  .mat-mdc-unelevated-button.mat-warn .mat-ripple-element, .mat-mdc-raised-button.mat-warn .mat-ripple-element, .mat-mdc-fab.mat-warn .mat-ripple-element, .mat-mdc-mini-fab.mat-warn .mat-ripple-element {
     background-color: rgba(255, 255, 255, 0.1); }
 
-.mat-stroked-button:not([class*='mat-elevation-z']), .mat-flat-button:not([class*='mat-elevation-z']) {
+.mat-mdc-outlined-button:not([class*='mat-elevation-z']), .mat-mdc-unelevated-button:not([class*='mat-elevation-z']) {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-raised-button:not([class*='mat-elevation-z']) {
+.mat-mdc-raised-button:not([class*='mat-elevation-z']) {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-raised-button:not([disabled]):active:not([class*='mat-elevation-z']) {
+.mat-mdc-raised-button:not([disabled]):active:not([class*='mat-elevation-z']) {
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
 
-.mat-raised-button[disabled]:not([class*='mat-elevation-z']) {
+.mat-mdc-raised-button[disabled]:not([class*='mat-elevation-z']) {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-fab:not([class*='mat-elevation-z']), .mat-mini-fab:not([class*='mat-elevation-z']) {
+.mat-mdc-fab:not([class*='mat-elevation-z']), .mat-mdc-mini-fab:not([class*='mat-elevation-z']) {
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-fab:not([disabled]):active:not([class*='mat-elevation-z']), .mat-mini-fab:not([disabled]):active:not([class*='mat-elevation-z']) {
+.mat-mdc-fab:not([disabled]):active:not([class*='mat-elevation-z']), .mat-mdc-mini-fab:not([disabled]):active:not([class*='mat-elevation-z']) {
   box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12); }
 
-.mat-fab[disabled]:not([class*='mat-elevation-z']), .mat-mini-fab[disabled]:not([class*='mat-elevation-z']) {
+.mat-mdc-fab[disabled]:not([class*='mat-elevation-z']), .mat-mdc-mini-fab[disabled]:not([class*='mat-elevation-z']) {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-standalone,
 .mat-button-toggle-group {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
 .mat-button-toggle-group-appearance-standard {
   box-shadow: none; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle {
   color: rgba(0, 0, 0, 0.38); }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-button-toggle .mat-button-toggle-focus-overlay {
     background-color: rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-appearance-standard {
   color: rgba(0, 0, 0, 0.87);
   background: white; }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-button-toggle-appearance-standard .mat-button-toggle-focus-overlay {
     background-color: black; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
   border-left: solid 1px rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 [dir='rtl'] .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
   border-left: none;
   border-right: solid 1px rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-group-appearance-standard.mat-button-toggle-vertical .mat-button-toggle + .mat-button-toggle {
   border-left: none;
   border-right: none;
   border-top: solid 1px rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-checked {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.54); }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-button-toggle-checked.mat-button-toggle-appearance-standard {
     color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-disabled {
   color: rgba(0, 0, 0, 0.38);
   background-color: #eeeeee; }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-button-toggle-disabled.mat-button-toggle-appearance-standard {
     background: white; }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
   .mat-button-toggle-disabled.mat-button-toggle-checked {
     background-color: #bdbdbd; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
 .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
 .mat-button-toggle-group-appearance-standard {
   border: solid 1px rgba(0, 0, 0, 0.12); }
 
-.mat-card {
+.mat-mdc-card {
   background: white;
   color: rgba(0, 0, 0, 0.87); }
-  .mat-card:not([class*='mat-elevation-z']) {
+  .mat-mdc-card:not([class*='mat-elevation-z']) {
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }
-  .mat-card.mat-card-flat:not([class*='mat-elevation-z']) {
+  /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version.*/
+  .mat-mdc-card.mat-card-flat:not([class*='mat-elevation-z']) {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-card-subtitle {
+.mat-mdc-card-subtitle {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-frame {
   border-color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checkmark {
   fill: #e4e6e8; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checkmark-path {
   stroke: #e4e6e8 !important; }
   @media (-ms-high-contrast: black-on-white) {
+    /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
     .mat-checkbox-checkmark-path {
       stroke: #000 !important; } }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-mixedmark {
   background-color: #e4e6e8; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
   background-color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
   background-color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background {
   background-color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled.mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-disabled.mat-checkbox-indeterminate .mat-checkbox-background {
   background-color: #b0b0b0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
   border-color: #b0b0b0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled .mat-checkbox-label {
   color: rgba(0, 0, 0, 0.54); }
 
 @media (-ms-high-contrast: active) {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
   .mat-checkbox-disabled {
     opacity: 0.5; } }
 
 @media (-ms-high-contrast: active) {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
   .mat-checkbox-background {
     background: none; } }
 
-.mat-checkbox .mat-ripple-element {
+.mat-mdc-checkbox .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.6); }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
   background: #1464a5; }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
   background: #1464a5; }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element {
   background: #f44336; }
 
-.mat-chip.mat-standard-chip {
+.mat-mdc-chip.mat-mdc-standard-chip {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.87); }
-  .mat-chip.mat-standard-chip .mat-chip-remove {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip .mat-chip-remove {
     color: rgba(0, 0, 0, 0.87);
     opacity: 0.4; }
-  .mat-chip.mat-standard-chip:not(.mat-chip-disabled):active {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip:not(.mat-chip-disabled):active {
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }
-  .mat-chip.mat-standard-chip:not(.mat-chip-disabled) .mat-chip-remove:hover {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip:not(.mat-chip-disabled) .mat-chip-remove:hover {
     opacity: 0.54; }
-  .mat-chip.mat-standard-chip.mat-chip-disabled {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-disabled {
     opacity: 0.4; }
-  .mat-chip.mat-standard-chip::after {
+  .mat-mdc-chip.mat-mdc-standard-chip::after {
     background: rgba(0, 0, 0, 0.6); }
 
-.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+.mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-primary {
   background-color: #1464a5;
   color: white; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary .mat-chip-remove {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-primary .mat-chip-remove {
     color: white;
     opacity: 0.4; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-primary .mat-ripple-element {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-primary .mat-ripple-element {
     background: rgba(255, 255, 255, 0.1); }
 
-.mat-chip.mat-standard-chip.mat-chip-selected.mat-warn {
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+.mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-warn {
   background-color: #f44336;
   color: white; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-warn .mat-chip-remove {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-warn .mat-chip-remove {
     color: white;
     opacity: 0.4; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-warn .mat-ripple-element {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-warn .mat-ripple-element {
     background: rgba(255, 255, 255, 0.1); }
 
-.mat-chip.mat-standard-chip.mat-chip-selected.mat-accent {
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+.mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-accent {
   background-color: #1464a5;
   color: white; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-accent .mat-chip-remove {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-accent .mat-chip-remove {
     color: white;
     opacity: 0.4; }
-  .mat-chip.mat-standard-chip.mat-chip-selected.mat-accent .mat-ripple-element {
+  /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+  .mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-accent .mat-ripple-element {
     background: rgba(255, 255, 255, 0.1); }
 
-.mat-table {
+.mat-mdc-table {
   background: white; }
 
-.mat-table thead, .mat-table tbody, .mat-table tfoot,
+.mat-mdc-table thead, .mat-table tbody, .mat-table tfoot,
 mat-header-row, mat-row, mat-footer-row,
 [mat-header-row], [mat-row], [mat-footer-row],
-.mat-table-sticky {
+.mat-mdc-table-sticky {
   background: inherit; }
 
 mat-row, mat-header-row, mat-footer-row,
-th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+th.mat-mdc-header-cell, td.mat-mdc-cell, td.mat-mdc-footer-cell {
   border-bottom-color: rgba(0, 0, 0, 0.12); }
 
-.mat-header-cell {
+.mat-mdc-header-cell {
   color: rgba(0, 0, 0, 0.54); }
 
-.mat-cell, .mat-footer-cell {
+.mat-mdc-cell, .mat-mdc-footer-cell {
   color: rgba(0, 0, 0, 0.87); }
 
 .mat-calendar-arrow {
@@ -2110,7 +2254,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   .mat-datepicker-toggle-active.mat-warn {
     color: #f44336; }
 
-.mat-dialog-container {
+.mat-mdc-dialog-container {
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   background: white;
   color: rgba(0, 0, 0, 0.87); }
@@ -2153,112 +2297,143 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   .mat-expansion-panel-header[aria-disabled='true'] .mat-expansion-panel-header-description {
     color: inherit; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-label {
   color: rgba(0, 0, 0, 0.6); }
 
-.mat-hint {
+.mat-mdc-form-field-hint {
   color: rgba(0, 0, 0, 0.6); }
 
-.mat-form-field.mat-focused .mat-form-field-label {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-focused .mat-form-field-label {
   color: #1464a5; }
-  .mat-form-field.mat-focused .mat-form-field-label.mat-accent {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-focused .mat-form-field-label.mat-accent {
     color: #1464a5; }
-  .mat-form-field.mat-focused .mat-form-field-label.mat-warn {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-focused .mat-form-field-label.mat-warn {
     color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-focused .mat-form-field-required-marker {
   color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-ripple {
   background-color: rgba(0, 0, 0, 0.87); }
 
-.mat-form-field.mat-focused .mat-form-field-ripple {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-focused .mat-form-field-ripple {
   background-color: #1464a5; }
-  .mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-focused .mat-form-field-ripple.mat-accent {
     background-color: #1464a5; }
-  .mat-form-field.mat-focused .mat-form-field-ripple.mat-warn {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-focused .mat-form-field-ripple.mat-warn {
     background-color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
   color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-accent .mat-form-field-infix::after {
   color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid).mat-warn .mat-form-field-infix::after {
   color: #f44336; }
 
-.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-form-field-invalid .mat-form-field-label {
   color: #f44336; }
-  .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent,
+  .mat-mdc-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent,
   .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
     color: #f44336; }
 
-.mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
+.mat-mdc-form-field.mat-form-field-invalid .mat-form-field-ripple,
 .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
   background-color: #f44336; }
 
-.mat-error {
+.mat-mdc-form-field-error {
   color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-label {
   color: rgba(0, 0, 0, 0.54); }
 
-.mat-form-field-appearance-legacy .mat-hint {
+.mat-form-field-appearance-legacy .mat-mdc-form-field-hint {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: rgba(0, 0, 0, 0.42); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.42) 33%, transparent 0%);
   background-size: 4px 100%;
   background-repeat: repeat-x; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-standard .mat-form-field-underline {
   background-color: rgba(0, 0, 0, 0.42); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-standard.mat-form-field-disabled .mat-form-field-underline {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.42) 33%, transparent 0%);
   background-size: 4px 100%;
   background-repeat: repeat-x; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: rgba(0, 0, 0, 0.04); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
   background-color: rgba(0, 0, 0, 0.02); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill .mat-form-field-underline::before {
   background-color: rgba(0, 0, 0, 0.42); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
   color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-underline::before {
   background-color: transparent; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline .mat-form-field-outline-thick {
   color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
   color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-focused.mat-accent .mat-form-field-outline-thick {
   color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-focused.mat-warn .mat-form-field-outline-thick {
   color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
   color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
   color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
   color: rgba(0, 0, 0, 0.06); }
 
@@ -2271,208 +2446,239 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-icon.mat-warn {
   color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-input-element:disabled,
 .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
   color: rgba(0, 0, 0, 0.38); }
 
-.mat-input-element {
+.mat-mdc-input-element {
   caret-color: #1464a5; }
-  .mat-input-element::placeholder {
+  .mat-mdc-input-element::placeholder {
     color: rgba(0, 0, 0, 0.42); }
-  .mat-input-element::-moz-placeholder {
+  .mat-mdc-input-element::-moz-placeholder {
     color: rgba(0, 0, 0, 0.42); }
-  .mat-input-element::-webkit-input-placeholder {
+  .mat-mdc-input-element::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.42); }
-  .mat-input-element:-ms-input-placeholder {
+  .mat-mdc-input-element:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.42); }
 
-.mat-accent .mat-input-element {
+.mat-accent .mat-mdc-input-element {
   caret-color: #1464a5; }
 
-.mat-warn .mat-input-element,
+.mat-warn .mat-mdc-input-element,
 .mat-form-field-invalid .mat-input-element {
   caret-color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .mat-form-field-type-mat-native-select.mat-form-field-invalid .mat-form-field-infix::after {
   color: #f44336; }
 
-.mat-list-base .mat-list-item {
+.mat-mdc-list-base .mat-mdc-list-item {
   color: rgba(0, 0, 0, 0.87); }
 
-.mat-list-base .mat-list-option {
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+.mat-mdc-list-base .mat-list-option {
   color: rgba(0, 0, 0, 0.87); }
 
-.mat-list-base .mat-subheader {
+.mat-mdc-list-base .mat-mdc-subheader {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
 .mat-list-item-disabled {
   background-color: #eeeeee; }
 
 .mat-list-option:hover, .mat-list-option:focus,
-.mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-mdc-list-item:hover,
 .mat-nav-list .mat-list-item:focus,
 .mat-action-list .mat-list-item:hover,
 .mat-action-list .mat-list-item:focus {
   background: rgba(0, 0, 0, 0.04); }
 
-.mat-menu-panel {
+.mat-mdc-menu-panel {
   background: white; }
-  .mat-menu-panel:not([class*='mat-elevation-z']) {
+  .mat-mdc-menu-panel:not([class*='mat-elevation-z']) {
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-menu-item {
+.mat-mdc-menu-item {
   background: transparent;
   color: rgba(0, 0, 0, 0.87); }
-  .mat-menu-item[disabled], .mat-menu-item[disabled]::after {
+  .mat-mdc-menu-item[disabled], .mat-menu-item[disabled]::after {
     color: rgba(0, 0, 0, 0.38); }
 
-.mat-menu-item .mat-icon-no-color,
-.mat-menu-item-submenu-trigger::after {
+.mat-mdc-menu-item .mat-icon-no-color,
+.mat-mdc-menu-item-submenu-trigger::after {
   color: rgba(0, 0, 0, 0.6); }
 
-.mat-menu-item:hover:not([disabled]),
+.mat-mdc-menu-item:hover:not([disabled]),
 .mat-menu-item.cdk-program-focused:not([disabled]),
 .mat-menu-item.cdk-keyboard-focused:not([disabled]),
 .mat-menu-item-highlighted:not([disabled]) {
   background: rgba(0, 0, 0, 0.04); }
 
-.mat-paginator {
+.mat-mdc-paginator {
   background: white; }
 
-.mat-paginator,
-.mat-paginator-page-size .mat-select-trigger {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-paginator,
+.mat-mdc-paginator-page-size .mat-select-trigger {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version.*/
 .mat-paginator-decrement,
 .mat-paginator-increment {
   border-top: 2px solid rgba(0, 0, 0, 0.6);
   border-right: 2px solid rgba(0, 0, 0, 0.6); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of paginator that may no longer apply for the MDC version.*/
 .mat-paginator-first,
 .mat-paginator-last {
   border-top: 2px solid rgba(0, 0, 0, 0.6); }
 
-.mat-icon-button[disabled] .mat-paginator-decrement,
+.mat-mdc-icon-button[disabled] .mat-paginator-decrement,
 .mat-icon-button[disabled] .mat-paginator-increment,
 .mat-icon-button[disabled] .mat-paginator-first,
 .mat-icon-button[disabled] .mat-paginator-last {
   border-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
 .mat-progress-bar-background {
   fill: #b9d1e4; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
 .mat-progress-bar-buffer {
   background-color: #b9d1e4; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
 .mat-progress-bar-fill::after {
   background-color: #1464a5; }
 
-.mat-progress-bar.mat-accent .mat-progress-bar-background {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-accent .mat-progress-bar-background {
   fill: #b9d1e4; }
 
-.mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-accent .mat-progress-bar-buffer {
   background-color: #b9d1e4; }
 
-.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-accent .mat-progress-bar-fill::after {
   background-color: #1464a5; }
 
-.mat-progress-bar.mat-warn .mat-progress-bar-background {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-warn .mat-progress-bar-background {
   fill: #ffcdd2; }
 
-.mat-progress-bar.mat-warn .mat-progress-bar-buffer {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-warn .mat-progress-bar-buffer {
   background-color: #ffcdd2; }
 
-.mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+/* TODO(mdc-migration): The following rule targets internal classes of progress-bar that may no longer apply for the MDC version.*/
+.mat-mdc-progress-bar.mat-warn .mat-progress-bar-fill::after {
   background-color: #f44336; }
 
-.mat-progress-spinner circle, .mat-spinner circle {
+.mat-mdc-progress-spinner circle, .mat-mdc-progress-spinner circle {
   stroke: #1464a5; }
 
-.mat-progress-spinner.mat-accent circle, .mat-spinner.mat-accent circle {
+.mat-mdc-progress-spinner.mat-accent circle, .mat-mdc-progress-spinner.mat-accent circle {
   stroke: #1464a5; }
 
-.mat-progress-spinner.mat-warn circle, .mat-spinner.mat-warn circle {
+.mat-mdc-progress-spinner.mat-warn circle, .mat-mdc-progress-spinner.mat-warn circle {
   stroke: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
 .mat-radio-outer-circle {
   border-color: rgba(0, 0, 0, 0.54); }
 
-.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+.mat-mdc-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
   border-color: #1464a5; }
 
-.mat-radio-button.mat-primary .mat-radio-inner-circle,
+.mat-mdc-radio-button.mat-primary .mat-radio-inner-circle,
 .mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
   background-color: #1464a5; }
 
-.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+.mat-mdc-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: #1464a5; }
 
-.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-mdc-radio-button.mat-accent .mat-radio-inner-circle,
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
   background-color: #1464a5; }
 
-.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+.mat-mdc-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
   border-color: #f44336; }
 
-.mat-radio-button.mat-warn .mat-radio-inner-circle,
+.mat-mdc-radio-button.mat-warn .mat-radio-inner-circle,
 .mat-radio-button.mat-warn .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-warn.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-warn:active .mat-radio-persistent-ripple {
   background-color: #f44336; }
 
-.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
+.mat-mdc-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
 .mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
   border-color: rgba(0, 0, 0, 0.38); }
 
-.mat-radio-button.mat-radio-disabled .mat-radio-ripple .mat-ripple-element,
+.mat-mdc-radio-button.mat-radio-disabled .mat-radio-ripple .mat-ripple-element,
 .mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
   background-color: rgba(0, 0, 0, 0.38); }
 
-.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version.*/
+.mat-mdc-radio-button.mat-radio-disabled .mat-radio-label-content {
   color: rgba(0, 0, 0, 0.38); }
 
-.mat-radio-button .mat-ripple-element {
+.mat-mdc-radio-button .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.6); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 .mat-select-value {
   color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 .mat-select-placeholder {
   color: rgba(0, 0, 0, 0.42); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 .mat-select-disabled .mat-select-value {
   color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 .mat-select-arrow {
   color: rgba(0, 0, 0, 0.54); }
 
-.mat-select-panel {
+.mat-mdc-select-panel {
   background: white; }
-  .mat-select-panel:not([class*='mat-elevation-z']) {
+  .mat-mdc-select-panel:not([class*='mat-elevation-z']) {
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
-  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  .mat-mdc-select-panel .mat-mdc-option.mat-selected:not(.mat-mdc-option-multiple) {
     background: rgba(0, 0, 0, 0.12); }
 
-.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: #1464a5; }
 
-.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-focused.mat-accent .mat-select-arrow {
   color: #1464a5; }
 
-.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-form-field.mat-focused.mat-warn .mat-select-arrow {
   color: #f44336; }
 
-.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-form-field .mat-mdc-select.mat-select-invalid .mat-select-arrow {
   color: #f44336; }
 
-.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+/* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+.mat-mdc-form-field .mat-mdc-select.mat-select-disabled .mat-select-arrow {
   color: rgba(0, 0, 0, 0.38); }
 
 .mat-drawer-container {
@@ -2503,113 +2709,141 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-drawer-backdrop.mat-drawer-shown {
   background-color: rgba(0, 0, 0, 0.6); }
 
-.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: #1464a5; }
 
-.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-checked .mat-slide-toggle-bar {
   background-color: rgba(20, 100, 165, 0.54); }
 
-.mat-slide-toggle.mat-checked .mat-ripple-element {
+.mat-mdc-slide-toggle.mat-checked .mat-ripple-element {
   background-color: #1464a5; }
 
-.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
   background-color: #1464a5; }
 
-.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
   background-color: rgba(20, 100, 165, 0.54); }
 
-.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
+.mat-mdc-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
   background-color: #1464a5; }
 
-.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
   background-color: #f44336; }
 
-.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-bar {
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
+.mat-mdc-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-bar {
   background-color: rgba(244, 67, 54, 0.54); }
 
-.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
+.mat-mdc-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
   background-color: #f44336; }
 
-.mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
+.mat-mdc-slide-toggle:not(.mat-checked) .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.6); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
 .mat-slide-toggle-thumb {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   background-color: #fafafa; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version.*/
 .mat-slide-toggle-bar {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-track-background {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-primary .mat-slider-track-fill,
 .mat-primary .mat-slider-thumb,
 .mat-primary .mat-slider-thumb-label {
   background-color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-primary .mat-slider-thumb-label-text {
   color: white; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-accent .mat-slider-track-fill,
 .mat-accent .mat-slider-thumb,
 .mat-accent .mat-slider-thumb-label {
   background-color: #1464a5; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-accent .mat-slider-thumb-label-text {
   color: white; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-warn .mat-slider-track-fill,
 .mat-warn .mat-slider-thumb,
 .mat-warn .mat-slider-thumb-label {
   background-color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-warn .mat-slider-thumb-label-text {
   color: white; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-focus-ring {
   background-color: rgba(20, 100, 165, 0.2); }
 
-.mat-slider:hover .mat-slider-track-background,
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
+.mat-mdc-slider:hover .mat-slider-track-background,
 .cdk-focused .mat-slider-track-background {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-disabled .mat-slider-track-background,
 .mat-slider-disabled .mat-slider-track-fill,
 .mat-slider-disabled .mat-slider-thumb {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-disabled:hover .mat-slider-track-background {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value .mat-slider-focus-ring {
   background-color: rgba(0, 0, 0, 0.12); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb,
 .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb-label {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb,
 .mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb-label {
   background-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
   border-color: rgba(0, 0, 0, 0.38);
   background-color: transparent; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
   border-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover.mat-slider-disabled .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused.mat-slider-disabled .mat-slider-thumb {
   border-color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-has-ticks .mat-slider-wrapper::after {
   border-color: rgba(0, 0, 0, 0.7); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-horizontal .mat-slider-ticks {
   background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
   background-image: -moz-repeating-linear-gradient(0.0001deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of slider that may no longer apply for the MDC version.*/
 .mat-slider-vertical .mat-slider-ticks {
   background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent); }
 
@@ -2658,140 +2892,151 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-sort-header-arrow {
   color: #757575; }
 
-.mat-tab-nav-bar,
-.mat-tab-header {
+.mat-mdc-tab-nav-bar,
+.mat-mdc-tab-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
 
-.mat-tab-group-inverted-header .mat-tab-nav-bar,
-.mat-tab-group-inverted-header .mat-tab-header {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-group-inverted-header .mat-mdc-tab-nav-bar,
+.mat-tab-group-inverted-header .mat-mdc-tab-header {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: none; }
 
-.mat-tab-label, .mat-tab-link {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-tab-label, .mat-mdc-tab-link {
   color: rgba(0, 0, 0, 0.87); }
-  .mat-tab-label.mat-tab-disabled, .mat-tab-link.mat-tab-disabled {
+  /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+  .mat-tab-label.mat-tab-disabled, .mat-mdc-tab-link.mat-tab-disabled {
     color: rgba(0, 0, 0, 0.38); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 .mat-tab-header-pagination-chevron {
   border-color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
 .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
   border-color: rgba(0, 0, 0, 0.38); }
 
-.mat-tab-group[class*='mat-background-'] .mat-tab-header,
-.mat-tab-nav-bar[class*='mat-background-'] {
+.mat-mdc-tab-group[class*='mat-background-'] .mat-mdc-tab-header,
+.mat-mdc-tab-nav-bar[class*='mat-background-'] {
   border-bottom: none;
   border-top: none; }
 
-.mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-primary .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(185, 209, 228, 0.3); }
 
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+.mat-mdc-tab-group.mat-primary .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #1464a5; }
 
-.mat-tab-group.mat-primary.mat-background-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary.mat-background-primary .mat-ink-bar {
+.mat-mdc-tab-group.mat-primary.mat-background-primary .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-primary.mat-background-primary .mat-ink-bar {
   background-color: white; }
 
-.mat-tab-group.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-accent .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(185, 209, 228, 0.3); }
 
-.mat-tab-group.mat-accent .mat-ink-bar, .mat-tab-nav-bar.mat-accent .mat-ink-bar {
+.mat-mdc-tab-group.mat-accent .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-accent .mat-ink-bar {
   background-color: #1464a5; }
 
-.mat-tab-group.mat-accent.mat-background-accent .mat-ink-bar, .mat-tab-nav-bar.mat-accent.mat-background-accent .mat-ink-bar {
+.mat-mdc-tab-group.mat-accent.mat-background-accent .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-accent.mat-background-accent .mat-ink-bar {
   background-color: white; }
 
-.mat-tab-group.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-warn .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(255, 205, 210, 0.3); }
 
-.mat-tab-group.mat-warn .mat-ink-bar, .mat-tab-nav-bar.mat-warn .mat-ink-bar {
+.mat-mdc-tab-group.mat-warn .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-warn .mat-ink-bar {
   background-color: #f44336; }
 
-.mat-tab-group.mat-warn.mat-background-warn .mat-ink-bar, .mat-tab-nav-bar.mat-warn.mat-background-warn .mat-ink-bar {
+.mat-mdc-tab-group.mat-warn.mat-background-warn .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-warn.mat-background-warn .mat-ink-bar {
   background-color: white; }
 
-.mat-tab-group.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-primary .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(185, 209, 228, 0.3); }
 
-.mat-tab-group.mat-background-primary .mat-tab-header, .mat-tab-group.mat-background-primary .mat-tab-links, .mat-tab-group.mat-background-primary .mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-primary .mat-tab-header, .mat-tab-nav-bar.mat-background-primary .mat-tab-links, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination {
+.mat-mdc-tab-group.mat-background-primary .mat-mdc-tab-header, .mat-tab-group.mat-background-primary .mat-mdc-tab-links, .mat-tab-group.mat-background-primary .mat-tab-header-pagination, .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-header, .mat-tab-nav-bar.mat-background-primary .mat-tab-links, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination {
   background-color: #1464a5; }
 
-.mat-tab-group.mat-background-primary .mat-tab-label, .mat-tab-group.mat-background-primary .mat-tab-link, .mat-tab-nav-bar.mat-background-primary .mat-tab-label, .mat-tab-nav-bar.mat-background-primary .mat-tab-link {
+.mat-mdc-tab-group.mat-background-primary .mat-tab-label, .mat-tab-group.mat-background-primary .mat-mdc-tab-link, .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-label, .mat-tab-nav-bar.mat-background-primary .mat-tab-link {
   color: white; }
-  .mat-tab-group.mat-background-primary .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-primary .mat-tab-link.mat-tab-disabled, .mat-tab-nav-bar.mat-background-primary .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-primary .mat-tab-link.mat-tab-disabled {
+  .mat-mdc-tab-group.mat-background-primary .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-primary .mat-mdc-tab-link.mat-tab-disabled, .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-primary .mat-tab-link.mat-tab-disabled {
     color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-primary .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-primary .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-header-pagination-chevron {
   border-color: white; }
 
-.mat-tab-group.mat-background-primary .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-primary .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-primary .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-primary .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
   border-color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-primary .mat-ripple-element, .mat-tab-nav-bar.mat-background-primary .mat-ripple-element {
+.mat-mdc-tab-group.mat-background-primary .mat-ripple-element, .mat-mdc-tab-nav-bar.mat-background-primary .mat-ripple-element {
   background-color: rgba(255, 255, 255, 0.12); }
 
-.mat-tab-group.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-accent .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(185, 209, 228, 0.3); }
 
-.mat-tab-group.mat-background-accent .mat-tab-header, .mat-tab-group.mat-background-accent .mat-tab-links, .mat-tab-group.mat-background-accent .mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-accent .mat-tab-header, .mat-tab-nav-bar.mat-background-accent .mat-tab-links, .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination {
+.mat-mdc-tab-group.mat-background-accent .mat-mdc-tab-header, .mat-tab-group.mat-background-accent .mat-mdc-tab-links, .mat-tab-group.mat-background-accent .mat-tab-header-pagination, .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-header, .mat-tab-nav-bar.mat-background-accent .mat-tab-links, .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination {
   background-color: #1464a5; }
 
-.mat-tab-group.mat-background-accent .mat-tab-label, .mat-tab-group.mat-background-accent .mat-tab-link, .mat-tab-nav-bar.mat-background-accent .mat-tab-label, .mat-tab-nav-bar.mat-background-accent .mat-tab-link {
+.mat-mdc-tab-group.mat-background-accent .mat-tab-label, .mat-tab-group.mat-background-accent .mat-mdc-tab-link, .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-label, .mat-tab-nav-bar.mat-background-accent .mat-tab-link {
   color: white; }
-  .mat-tab-group.mat-background-accent .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-accent .mat-tab-link.mat-tab-disabled, .mat-tab-nav-bar.mat-background-accent .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-accent .mat-tab-link.mat-tab-disabled {
+  .mat-mdc-tab-group.mat-background-accent .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-accent .mat-mdc-tab-link.mat-tab-disabled, .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-accent .mat-tab-link.mat-tab-disabled {
     color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-accent .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-accent .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-chevron {
   border-color: white; }
 
-.mat-tab-group.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
   border-color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-accent .mat-ripple-element, .mat-tab-nav-bar.mat-background-accent .mat-ripple-element {
+.mat-mdc-tab-group.mat-background-accent .mat-ripple-element, .mat-mdc-tab-nav-bar.mat-background-accent .mat-ripple-element {
   background-color: rgba(255, 255, 255, 0.12); }
 
-.mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-.mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-mdc-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-warn .mat-mdc-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
   background-color: rgba(255, 205, 210, 0.3); }
 
-.mat-tab-group.mat-background-warn .mat-tab-header, .mat-tab-group.mat-background-warn .mat-tab-links, .mat-tab-group.mat-background-warn .mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-warn .mat-tab-header, .mat-tab-nav-bar.mat-background-warn .mat-tab-links, .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination {
+.mat-mdc-tab-group.mat-background-warn .mat-mdc-tab-header, .mat-tab-group.mat-background-warn .mat-mdc-tab-links, .mat-tab-group.mat-background-warn .mat-tab-header-pagination, .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-header, .mat-tab-nav-bar.mat-background-warn .mat-tab-links, .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination {
   background-color: #f44336; }
 
-.mat-tab-group.mat-background-warn .mat-tab-label, .mat-tab-group.mat-background-warn .mat-tab-link, .mat-tab-nav-bar.mat-background-warn .mat-tab-label, .mat-tab-nav-bar.mat-background-warn .mat-tab-link {
+.mat-mdc-tab-group.mat-background-warn .mat-tab-label, .mat-tab-group.mat-background-warn .mat-mdc-tab-link, .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-label, .mat-tab-nav-bar.mat-background-warn .mat-tab-link {
   color: white; }
-  .mat-tab-group.mat-background-warn .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-warn .mat-tab-link.mat-tab-disabled, .mat-tab-nav-bar.mat-background-warn .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-warn .mat-tab-link.mat-tab-disabled {
+  .mat-mdc-tab-group.mat-background-warn .mat-tab-label.mat-tab-disabled, .mat-tab-group.mat-background-warn .mat-mdc-tab-link.mat-tab-disabled, .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-label.mat-tab-disabled, .mat-tab-nav-bar.mat-background-warn .mat-tab-link.mat-tab-disabled {
     color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-warn .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-warn .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-chevron {
   border-color: white; }
 
-.mat-tab-group.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron, .mat-mdc-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
   border-color: rgba(255, 255, 255, 0.4); }
 
-.mat-tab-group.mat-background-warn .mat-ripple-element, .mat-tab-nav-bar.mat-background-warn .mat-ripple-element {
+.mat-mdc-tab-group.mat-background-warn .mat-ripple-element, .mat-mdc-tab-nav-bar.mat-background-warn .mat-ripple-element {
   background-color: rgba(255, 255, 255, 0.12); }
 
 .mat-toolbar {
@@ -2806,20 +3051,21 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   .mat-toolbar.mat-warn {
     background: #f44336;
     color: white; }
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
   .mat-toolbar .mat-form-field-underline,
   .mat-toolbar .mat-form-field-ripple,
   .mat-toolbar .mat-focused .mat-form-field-ripple {
     background-color: currentColor; }
-  .mat-toolbar .mat-form-field-label,
+  .mat-toolbar .mat-mdc-form-field-label,
   .mat-toolbar .mat-focused .mat-form-field-label,
   .mat-toolbar .mat-select-value,
   .mat-toolbar .mat-select-arrow,
   .mat-toolbar .mat-form-field.mat-focused .mat-select-arrow {
     color: inherit; }
-  .mat-toolbar .mat-input-element {
+  .mat-toolbar .mat-mdc-input-element {
     caret-color: currentColor; }
 
-.mat-tooltip {
+.mat-mdc-tooltip {
   background: rgba(97, 97, 97, 0.9); }
 
 .mat-tree {
@@ -2829,12 +3075,12 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .mat-nested-tree-node {
   color: rgba(0, 0, 0, 0.87); }
 
-.mat-snack-bar-container {
+.mat-mdc-snack-bar-container {
   color: rgba(255, 255, 255, 0.7);
   background: #323232;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
-.mat-simple-snackbar-action {
+.mat-mdc-snack-bar-action {
   color: #1464a5; }
 
 body,
@@ -2899,34 +3145,34 @@ textarea {
     transform: rotate(360deg); } }
 
 /* MODAL DIALOG IN O-DIALOG, FORM LAYOUT MANAGER AND LIST-PICKER */
-.o-dialog-class .mat-dialog-container .mat-dialog-title,
+.o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-title,
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-title {
   border-bottom: 1px solid #1464a5;
   line-height: 14px;
   font-size: 14px; }
-  .o-dialog-class .mat-dialog-container .mat-dialog-title .mat-icon,
+  .o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-title .mat-icon,
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title .mat-icon,
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-title .mat-icon {
     color: #1464a5; }
 
-.o-dialog-class .mat-dialog-container .empty-filter-list,
+.o-dialog-class .mat-mdc-dialog-container .empty-filter-list,
 .o-form-layout-dialog-overlay .mat-dialog-container .empty-filter-list,
 .o-list-picker-dialog .mat-dialog-container .empty-filter-list {
   color: rgba(0, 0, 0, 0.38); }
 
-.o-dialog-class .mat-dialog-container .mat-dialog-content,
+.o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-content,
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content,
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-content {
   font-size: 12px; }
-  .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
+  .o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-content .mat-selection-list[dense],
   .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense],
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense],
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-selection-list[dense],
   .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] {
     outline: none; }
-    .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
+    .o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-content .mat-selection-list[dense] .mat-list-item .empty-filter-list,
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-list-item-content > *,
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .empty-filter-list,
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-list-item-content > *,
@@ -2939,7 +3185,7 @@ textarea {
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .empty-filter-list,
     .o-list-picker-dialog .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-list-item-content > * {
       font-size: 12px; }
-    .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
+    .o-dialog-class .mat-mdc-dialog-container .mat-mdc-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-dialog-class .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-selection-list[dense] .mat-list-item .mat-line:nth-child(n+2),
     .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-content .mat-list[dense] .mat-list-item .mat-line:nth-child(n+2),
@@ -2951,6 +3197,7 @@ textarea {
 .cdk-drag-preview {
   width: 100%;
   display: block; }
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
   .cdk-drag-preview .mat-list-item-content {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.87);
@@ -2962,8 +3209,10 @@ textarea {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     border-radius: 2px; }
-    .cdk-drag-preview .mat-list-item-content .mat-list-icon {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+    .cdk-drag-preview .mat-list-item-content .mat-mdc-list-item-icon {
       padding: 4px; }
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
     .cdk-drag-preview .mat-list-item-content .mat-list-text {
       padding-left: 16px;
       width: 100%; }
@@ -2971,7 +3220,8 @@ textarea {
 .cdk-drop-list-dragging .o-drag-list-item-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1); }
 
-.mat-checkbox .mat-checkbox-label {
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-mdc-checkbox .mat-checkbox-label {
   color: rgba(0, 0, 0, 0.87); }
 
 o-data-toolbar.o-grid-toolbar button.o-grid-button,
@@ -2990,18 +3240,18 @@ o-data-toolbar.o-table-toolbar .buttons button {
   o-data-toolbar.o-table-toolbar .buttons button:last-child {
     margin-right: 0; }
 
-.mat-dialog-actions button,
+.mat-mdc-dialog-actions button,
 .o-form .o-form-toolbar button {
   margin: 0 8px; }
-  .mat-dialog-actions button:first-child,
+  .mat-mdc-dialog-actions button:first-child,
   .o-form .o-form-toolbar button:first-child {
     margin-left: 0; }
-  .mat-dialog-actions button:last-child,
+  .mat-mdc-dialog-actions button:last-child,
   .o-form .o-form-toolbar button:last-child {
     margin-right: 0; }
 
 /*BUTTONS HOVER*/
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-primary,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.o-button-primary,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base.mat-primary,
@@ -3013,7 +3263,7 @@ o-data-toolbar.o-table-toolbar .buttons button {
   color: #0b488a;
   background-color: #b9d1e4;
   border-color: transparent; }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-primary:hover,
@@ -3036,7 +3286,7 @@ o-data-toolbar.o-table-toolbar .buttons button {
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base,
 .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base.mat-accent,
 .o-grid .o-grid-toolbar button.o-grid-button:not([disabled]).mat-button-base,
@@ -3047,7 +3297,7 @@ o-data-toolbar.o-table-toolbar .buttons button {
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button:not([disabled]).mat-button-base.mat-accent {
   color: #1464a5;
   background-color: #ffffff; }
-  .mat-dialog-actions button:not([disabled]).mat-button-base:hover,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).o-form-toolbar-button.mat-button-base:hover,
@@ -3075,59 +3325,60 @@ o-data-toolbar.o-table-toolbar .buttons button {
   .o-form .o-form-toolbar [o-form-toolbar-buttons] > *:first-child {
     margin-left: 0; }
 
-.o-button button.mat-stroked-button:not([disabled]).mat-primary {
+.o-button button.mat-mdc-outlined-button:not([disabled]).mat-primary {
   color: #0b488a;
   background-color: #b9d1e4;
   border-color: transparent; }
-  .o-button button.mat-stroked-button:not([disabled]).mat-primary:hover,
+  .o-button button.mat-mdc-outlined-button:not([disabled]).mat-primary:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-primary .mat-button-focus-overlay {
     color: #1464a5;
     background-color: #ffffff;
     border-color: rgba(0, 0, 0, 0.12); }
 
-.o-button button.mat-stroked-button:not([disabled]).mat-accent {
+.o-button button.mat-mdc-outlined-button:not([disabled]).mat-accent {
   color: #1464a5;
   background-color: #ffffff; }
-  .o-button button.mat-stroked-button:not([disabled]).mat-accent:hover,
+  .o-button button.mat-mdc-outlined-button:not([disabled]).mat-accent:hover,
   .o-button button.mat-stroked-button:not([disabled]).mat-accent .mat-button-focus-overlay {
     color: #0b488a;
     background-color: #b9d1e4; }
 
-.o-form .o-form-toolbar button.mat-stroked-button,
+.o-form .o-form-toolbar button.mat-mdc-outlined-button,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button {
   padding: 0 6px; }
-  .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper .mat-icon,
+  .o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-button-wrapper .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper .mat-icon {
     margin-right: 4px;
     font-size: 20px;
     width: 20px;
     height: 20px;
     line-height: 20px; }
-  .o-form .o-form-toolbar button.mat-stroked-button .mat-button-wrapper span,
+  .o-form .o-form-toolbar button.mat-mdc-outlined-button .mat-button-wrapper span,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button button.mat-stroked-button .mat-button-wrapper span {
     flex: 1; }
 
 /*MAT PAGINATION*/
-.mat-paginator .mat-paginator-range-label {
+.mat-mdc-paginator .mat-mdc-paginator-range-label {
   margin: 0 16px; }
 
-.mat-paginator .mat-paginator-page-size-label {
+.mat-mdc-paginator .mat-mdc-paginator-page-size-label {
   margin-right: 16px; }
 
-.mat-paginator button:hover {
+.mat-mdc-paginator button:hover {
   background-color: #b9d1e4;
   border-radius: 50%; }
 
-.mat-paginator button.mat-icon-button {
+.mat-mdc-paginator button.mat-mdc-icon-button {
   height: 20px;
   width: 20px;
   line-height: 20px;
   margin-left: 8px; }
-  .mat-paginator button.mat-icon-button .mat-paginator-icon {
+  .mat-mdc-paginator button.mat-mdc-icon-button .mat-mdc-paginator-icon {
     width: 20px; }
 
 /*MAT MENU*/
-.o-mat-menu.mat-menu-panel {
+/* TODO(mdc-migration): The following rule targets internal classes of menu that may no longer apply for the MDC version.*/
+.o-mat-menu.mat-mdc-menu-panel {
   min-height: auto; }
 
 /* CHART FONT */
@@ -3170,7 +3421,7 @@ o-chart .nvd3 .nv-axis path {
   border-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87); }
   .o-column > .o-container > .o-container-header .mat-tab-label,
-  .o-column > .o-container > .o-container-header .mat-tab-link,
+  .o-column > .o-container > .o-container-header .mat-mdc-tab-link,
   .o-column > .o-container > .o-container-title .mat-tab-label,
   .o-column > .o-container > .o-container-title .mat-tab-link,
   .o-column > .o-container > .mat-expansion-panel-header .mat-tab-label,
@@ -3254,36 +3505,41 @@ o-chart .nvd3 .nv-axis path {
   background-color: #eff1f3; }
 
 /* outline appearance */
-.mat-form-field {
+.mat-mdc-form-field {
   /* OUTLINE APPEARANCE */ }
-  .mat-form-field.mat-form-field-disabled.accent .icon-btn,
+  .mat-mdc-form-field.mat-form-field-disabled.accent .icon-btn,
   .mat-form-field.mat-form-field-disabled.accent .mat-icon,
   .mat-form-field.mat-form-field-disabled.accent .read-only .mat-icon,
   .mat-form-field.mat-form-field-disabled.accent .svg-icon {
     color: rgba(20, 100, 165, 0.42); }
-  .mat-form-field:not(.mat-form-field-disabled) .icon-btn,
+  .mat-mdc-form-field:not(.mat-form-field-disabled) .icon-btn,
   .mat-form-field:not(.mat-form-field-disabled) .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled) .read-only .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled) .svg-icon {
     color: rgba(0, 0, 0, 0.6); }
-  .mat-form-field:not(.mat-form-field-disabled) .placeholder {
+  .mat-mdc-form-field:not(.mat-form-field-disabled) .placeholder {
     color: rgba(0, 0, 0, 0.6); }
-  .mat-form-field:not(.mat-form-field-disabled).accent .icon-btn,
+  .mat-mdc-form-field:not(.mat-form-field-disabled).accent .icon-btn,
   .mat-form-field:not(.mat-form-field-disabled).accent .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled).accent .read-only .mat-icon,
   .mat-form-field:not(.mat-form-field-disabled).accent .svg-icon {
     color: #1464a5; }
-  .mat-form-field .mat-disabled {
+  .mat-mdc-form-field .mat-disabled {
     color: rgba(0, 0, 0, 0.38); }
-  .mat-form-field.mat-form-field-appearance-ontimize.read-only .mat-select-disabled .mat-select-value {
+  /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-form-field-appearance-ontimize.read-only .mat-select-disabled .mat-select-value {
     color: inherit; }
-  .mat-form-field.mat-form-field-appearance-ontimize.read-only .mat-form-field-underline {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-form-field-appearance-ontimize.read-only .mat-form-field-underline {
     background-color: rgba(0, 0, 0, 0.42); }
-  .mat-form-field.mat-form-field-invalid .mat-input-suffix .mat-icon {
+  /* TODO(mdc-migration): The following rule targets internal classes of input that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-form-field-invalid .mat-input-suffix .mat-icon {
     color: #f44336; }
-  .mat-form-field.mat-form-field-appearance-outline .mat-form-field-outline-start {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-form-field-appearance-outline .mat-form-field-outline-start {
     border-radius: 2px 0 0 2px; }
-  .mat-form-field.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+  .mat-mdc-form-field.mat-form-field-appearance-outline .mat-form-field-outline-end {
     border-radius: 0 2px 2px 0; }
 
 input:not([type]):disabled,
@@ -3310,10 +3566,12 @@ textarea:disabled {
   color: #f44336; }
 
 /* CHECKBOX */
-.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-frame {
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-mdc-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-frame {
   border-color: rgba(0, 0, 0, 0.54); }
 
-.mat-checkbox:not(.mat-checkbox-disabled).mat-primary .mat-checkbox-frame {
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+.mat-mdc-checkbox:not(.mat-checkbox-disabled).mat-primary .mat-checkbox-frame {
   border-color: rgba(0, 0, 0, 0.54); }
 
 .alert-icon.info {
@@ -3325,9 +3583,9 @@ textarea:disabled {
 .alert-icon.error {
   color: #f44336; }
 
-.mat-dialog {
+.mat-mdc-dialog {
   background-color: white; }
-  .mat-dialog.mat-content-overflow .mat-actions, .mat-dialog.mat-content-overflow mat-dialog-actions {
+  .mat-mdc-dialog.mat-content-overflow .mat-actions, .mat-dialog.mat-content-overflow mat-dialog-actions {
     border-top-color: rgba(0, 0, 0, 0.12); }
 
 .o-table .o-table-column-resizer span {
@@ -3339,53 +3597,54 @@ textarea:disabled {
 .o-table .o-table-menu-button {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .o-table .mat-table .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
   border-color: rgba(0, 0, 0, 0.18); }
 
-.o-table .mat-table .mat-header-row .mat-header-cell {
+.o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell {
   color: rgba(0, 0, 0, 0.87); }
-  .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon {
+  .o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell .column-filter-icon {
     color: rgba(0, 0, 0, 0.12); }
-  .o-table .mat-table .mat-header-row .mat-header-cell .column-filter-icon-active {
+  .o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell .column-filter-icon-active {
     color: #1464a5; }
-  .o-table .mat-table .mat-header-row .mat-header-cell .o-table-header-indicator-numbered {
+  .o-table .mat-mdc-table .mat-mdc-header-row .mat-mdc-header-cell .o-table-header-indicator-numbered {
     color: rgba(0, 0, 0, 0.54); }
 
-.o-table .mat-table .mat-row.o-table-group-row-level-1 {
+.o-table .mat-mdc-table .mat-mdc-row.o-table-group-row-level-1 {
   font-weight: 900;
   background-color: #b2b2b2; }
 
-.o-table .mat-table .mat-row.o-table-group-row-level-2 {
+.o-table .mat-mdc-table .mat-mdc-row.o-table-group-row-level-2 {
   font-weight: 800;
   background-color: #cccccc; }
 
-.o-table .mat-table .mat-row.o-table-group-row-level-3 {
+.o-table .mat-mdc-table .mat-mdc-row.o-table-group-row-level-3 {
   font-weight: 700;
   background-color: #e8e8e8; }
 
-.o-table .mat-table .mat-row.o-table-group-row-level-4 {
+.o-table .mat-mdc-table .mat-mdc-row.o-table-group-row-level-4 {
   font-weight: 600;
   background-color: #f9f9f9; }
 
-.o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
+.o-table .mat-mdc-table .mat-mdc-row:hover:not(.o-table-group-row) {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.18); }
 
-.o-table .mat-table .mat-row.selected {
+.o-table .mat-mdc-table .mat-mdc-row.selected {
   background: #e3ecf4; }
 
-.o-table .mat-table .mat-row .mat-cell {
+.o-table .mat-mdc-table .mat-mdc-row .mat-mdc-cell {
   color: rgba(0, 0, 0, 0.54); }
 
-.o-table .mat-table .mat-footer-row.o-table-aggregate {
+.o-table .mat-mdc-table .mat-mdc-footer-row.o-table-aggregate {
   font-weight: bold;
   background-color: #eff1f3; }
 
-.o-table .mat-table .mat-footer-row .mat-cell.o-column-currency, .o-table .mat-table .mat-footer-row .mat-cell.o-column-integer, .o-table .mat-table .mat-footer-row .mat-cell.o-column-real,
-.o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-currency,
+.o-table .mat-mdc-table .mat-mdc-footer-row .mat-mdc-cell.o-column-currency, .o-table .mat-table .mat-footer-row .mat-cell.o-column-integer, .o-table .mat-table .mat-footer-row .mat-cell.o-column-real,
+.o-table .mat-table .mat-footer-row .mat-mdc-footer-cell.o-column-currency,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-integer,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-real,
-.o-table .mat-table .mat-row .mat-cell.o-column-currency,
+.o-table .mat-table .mat-mdc-row .mat-cell.o-column-currency,
 .o-table .mat-table .mat-row .mat-cell.o-column-integer,
 .o-table .mat-table .mat-row .mat-cell.o-column-real,
 .o-table .mat-table .mat-row .mat-footer-cell.o-column-currency,
@@ -3393,11 +3652,11 @@ textarea:disabled {
 .o-table .mat-table .mat-row .mat-footer-cell.o-column-real {
   text-align: right; }
 
-.o-table .mat-table .mat-footer-row .mat-cell.o-column-action, .o-table .mat-table .mat-footer-row .mat-cell.o-column-boolean, .o-table .mat-table .mat-footer-row .mat-cell.o-column-date,
-.o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-action,
+.o-table .mat-mdc-table .mat-mdc-footer-row .mat-mdc-cell.o-column-action, .o-table .mat-table .mat-footer-row .mat-cell.o-column-boolean, .o-table .mat-table .mat-footer-row .mat-cell.o-column-date,
+.o-table .mat-table .mat-footer-row .mat-mdc-footer-cell.o-column-action,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-boolean,
 .o-table .mat-table .mat-footer-row .mat-footer-cell.o-column-date,
-.o-table .mat-table .mat-row .mat-cell.o-column-action,
+.o-table .mat-table .mat-mdc-row .mat-cell.o-column-action,
 .o-table .mat-table .mat-row .mat-cell.o-column-boolean,
 .o-table .mat-table .mat-row .mat-cell.o-column-date,
 .o-table .mat-table .mat-row .mat-footer-cell.o-column-action,
@@ -3405,14 +3664,14 @@ textarea:disabled {
 .o-table .mat-table .mat-row .mat-footer-cell.o-column-date {
   text-align: center; }
 
-.o-table .mat-table.editable-row-table .mat-row,
+.o-table .mat-mdc-table.editable-row-table .mat-mdc-row,
 .o-table .mat-table.totals-table .mat-row {
   background-color: rgba(239, 241, 243, 0.9); }
 
-.o-table .mat-table.totals-table .mat-header-row {
+.o-table .mat-mdc-table.totals-table .mat-mdc-header-row {
   display: none !important; }
 
-.o-table .mat-table.totals-table .mat-row {
+.o-table .mat-mdc-table.totals-table .mat-mdc-row {
   font-weight: bold; }
 
 .o-table .o-table-body.horizontal-scroll::-webkit-scrollbar-thumb {
@@ -3429,103 +3688,104 @@ textarea:disabled {
   border: 4px solid;
   border-color: #e4e6e8; }
 
-.o-table-visible-columns-dialog .mat-list-item.dnd-sortable-drag {
+.o-table-visible-columns-dialog .mat-mdc-list-item.dnd-sortable-drag {
   background: #e3ecf4; }
 
-.o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.o-table-quickfilter .quickFilter .mat-mdc-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
   border-right: 1px solid rgba(0, 0, 0, 0.12); }
 
-.o-table .o-table-container .mat-table.small tr.mat-header-row:not(.o-table-insertable) {
+.o-table .o-table-container .mat-mdc-table.small tr.mat-mdc-header-row:not(.o-table-insertable) {
   height: 28px; }
-  .o-table .o-table-container .mat-table.small tr.mat-header-row:not(.o-table-insertable) .mat-header-cell {
+  .o-table .o-table-container .mat-mdc-table.small tr.mat-mdc-header-row:not(.o-table-insertable) .mat-mdc-header-cell {
     font-size: 12px; }
 
-.o-table .o-table-container .mat-table.small tr.mat-row {
+.o-table .o-table-container .mat-mdc-table.small tr.mat-mdc-row {
   height: 28px; }
-  .o-table .o-table-container .mat-table.small tr.mat-row .mat-cell {
+  .o-table .o-table-container .mat-mdc-table.small tr.mat-mdc-row .mat-mdc-cell {
     font-size: 11px; }
-    .o-table .o-table-container .mat-table.small tr.mat-row .mat-cell .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.small tr.mat-mdc-row .mat-mdc-cell .mat-mdc-form-field {
       font-size: 11px; }
 
-.o-table .o-table-container .mat-table.small tr.o-table-insertable.mat-header-row {
+.o-table .o-table-container .mat-mdc-table.small tr.o-table-insertable.mat-mdc-header-row {
   height: 28px; }
-  .o-table .o-table-container .mat-table.small tr.o-table-insertable.mat-header-row .mat-table-sticky {
+  .o-table .o-table-container .mat-mdc-table.small tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky {
     font-size: 11px; }
-    .o-table .o-table-container .mat-table.small tr.o-table-insertable.mat-header-row .mat-table-sticky .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.small tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky .mat-mdc-form-field {
       font-size: 11px; }
 
-.o-table .o-table-container .mat-table.small .o-table-no-results span {
+.o-table .o-table-container .mat-mdc-table.small .o-table-no-results span {
   font-size: 11px;
   line-height: 28px; }
 
-.o-table-context-menu.small .mat-menu-item,
+.o-table-context-menu.small .mat-mdc-menu-item,
 .o-table-menu.small .mat-menu-item {
   line-height: 28px;
   height: 28px; }
 
-.o-table-visible-columns-dialog .mat-list.small .mat-list-item {
+.o-table-visible-columns-dialog .mat-mdc-list.small .mat-mdc-list-item {
   height: 28px; }
 
-.o-table .o-table-container .mat-table.medium tr.mat-header-row:not(.o-table-insertable) {
+.o-table .o-table-container .mat-mdc-table.medium tr.mat-mdc-header-row:not(.o-table-insertable) {
   height: 32px; }
-  .o-table .o-table-container .mat-table.medium tr.mat-header-row:not(.o-table-insertable) .mat-header-cell {
+  .o-table .o-table-container .mat-mdc-table.medium tr.mat-mdc-header-row:not(.o-table-insertable) .mat-mdc-header-cell {
     font-size: 13px; }
 
-.o-table .o-table-container .mat-table.medium tr.mat-row {
+.o-table .o-table-container .mat-mdc-table.medium tr.mat-mdc-row {
   height: 32px; }
-  .o-table .o-table-container .mat-table.medium tr.mat-row .mat-cell {
+  .o-table .o-table-container .mat-mdc-table.medium tr.mat-mdc-row .mat-mdc-cell {
     font-size: 12px; }
-    .o-table .o-table-container .mat-table.medium tr.mat-row .mat-cell .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.medium tr.mat-mdc-row .mat-mdc-cell .mat-mdc-form-field {
       font-size: 12px; }
 
-.o-table .o-table-container .mat-table.medium tr.o-table-insertable.mat-header-row {
+.o-table .o-table-container .mat-mdc-table.medium tr.o-table-insertable.mat-mdc-header-row {
   height: 32px; }
-  .o-table .o-table-container .mat-table.medium tr.o-table-insertable.mat-header-row .mat-table-sticky {
+  .o-table .o-table-container .mat-mdc-table.medium tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky {
     font-size: 12px; }
-    .o-table .o-table-container .mat-table.medium tr.o-table-insertable.mat-header-row .mat-table-sticky .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.medium tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky .mat-mdc-form-field {
       font-size: 12px; }
 
-.o-table .o-table-container .mat-table.medium .o-table-no-results span {
+.o-table .o-table-container .mat-mdc-table.medium .o-table-no-results span {
   font-size: 12px;
   line-height: 32px; }
 
-.o-table-context-menu.medium .mat-menu-item,
+.o-table-context-menu.medium .mat-mdc-menu-item,
 .o-table-menu.medium .mat-menu-item {
   line-height: 32px;
   height: 32px; }
 
-.o-table-visible-columns-dialog .mat-list.medium .mat-list-item {
+.o-table-visible-columns-dialog .mat-mdc-list.medium .mat-mdc-list-item {
   height: 32px; }
 
-.o-table .o-table-container .mat-table.large tr.mat-header-row:not(.o-table-insertable) {
+.o-table .o-table-container .mat-mdc-table.large tr.mat-mdc-header-row:not(.o-table-insertable) {
   height: 40px; }
-  .o-table .o-table-container .mat-table.large tr.mat-header-row:not(.o-table-insertable) .mat-header-cell {
+  .o-table .o-table-container .mat-mdc-table.large tr.mat-mdc-header-row:not(.o-table-insertable) .mat-mdc-header-cell {
     font-size: 15px; }
 
-.o-table .o-table-container .mat-table.large tr.mat-row {
+.o-table .o-table-container .mat-mdc-table.large tr.mat-mdc-row {
   height: 40px; }
-  .o-table .o-table-container .mat-table.large tr.mat-row .mat-cell {
+  .o-table .o-table-container .mat-mdc-table.large tr.mat-mdc-row .mat-mdc-cell {
     font-size: 14px; }
-    .o-table .o-table-container .mat-table.large tr.mat-row .mat-cell .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.large tr.mat-mdc-row .mat-mdc-cell .mat-mdc-form-field {
       font-size: 14px; }
 
-.o-table .o-table-container .mat-table.large tr.o-table-insertable.mat-header-row {
+.o-table .o-table-container .mat-mdc-table.large tr.o-table-insertable.mat-mdc-header-row {
   height: 40px; }
-  .o-table .o-table-container .mat-table.large tr.o-table-insertable.mat-header-row .mat-table-sticky {
+  .o-table .o-table-container .mat-mdc-table.large tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky {
     font-size: 14px; }
-    .o-table .o-table-container .mat-table.large tr.o-table-insertable.mat-header-row .mat-table-sticky .mat-form-field {
+    .o-table .o-table-container .mat-mdc-table.large tr.o-table-insertable.mat-mdc-header-row .mat-mdc-table-sticky .mat-mdc-form-field {
       font-size: 14px; }
 
-.o-table .o-table-container .mat-table.large .o-table-no-results span {
+.o-table .o-table-container .mat-mdc-table.large .o-table-no-results span {
   font-size: 14px;
   line-height: 40px; }
 
-.o-table-context-menu.large .mat-menu-item,
+.o-table-context-menu.large .mat-mdc-menu-item,
 .o-table-menu.large .mat-menu-item {
   line-height: 40px;
   height: 40px; }
 
-.o-table-visible-columns-dialog .mat-list.large .mat-list-item {
+.o-table-visible-columns-dialog .mat-mdc-list.large .mat-mdc-list-item {
   height: 40px; }
 
 .o-list-container .primary-text {
@@ -3534,17 +3794,21 @@ textarea:disabled {
 .o-list-container .secondary-text {
   color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .o-list-container .o-list-row-action .mat-checkbox-inner-container,
 .o-list-container .o-list-item-icon {
   color: rgba(0, 0, 0, 0.6); }
 
 .o-list-picker-dialog mat-toolbar .o-list-picker-search {
   font-size: 16px; }
+  /* TODO(mdc-migration): The following rule targets internal classes of input that may no longer apply for the MDC version.*/
   .o-list-picker-dialog mat-toolbar .o-list-picker-search.o-list-picker-search .mat-input-placeholder,
   .o-list-picker-dialog mat-toolbar .o-list-picker-search .mat-icon {
     color: white; }
+  /* TODO(mdc-migration): The following rule targets internal classes of input that may no longer apply for the MDC version.*/
   .o-list-picker-dialog mat-toolbar .o-list-picker-search.o-list-picker-search .mat-input-underline {
     border-color: rgba(255, 255, 255, 0.78); }
+    /* TODO(mdc-migration): The following rule targets internal classes of input that may no longer apply for the MDC version.*/
     .o-list-picker-dialog mat-toolbar .o-list-picker-search.o-list-picker-search .mat-input-underline .mat-input-ripple {
       background-color: white; }
 
@@ -3597,7 +3861,7 @@ textarea:disabled {
   .o-card-menu-item .o-card-menu-item-title {
     color: #1464a5;
     font-size: 18px; }
-  .o-card-menu-item .mat-button {
+  .o-card-menu-item .mat-mdc-button {
     color: #1464a5;
     background: #b9d1e4; }
   .o-card-menu-item .o-card-menu-item-icon,
@@ -3633,11 +3897,13 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .o-form-layout-tabgroup .spinner-container {
   background-color: #e4e6e8; }
 
-.o-form-layout-tabgroup .mat-tab-group .mat-tab-label .mat-icon:hover {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.o-form-layout-tabgroup .mat-mdc-tab-group .mat-tab-label .mat-icon:hover {
   background-color: rgba(0, 0, 0, 0.38);
   border-radius: 50%; }
 
-.o-form-layout-tabgroup .mat-tab-group .mat-tab-label.mat-tab-label-active .mat-icon:hover {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.o-form-layout-tabgroup .mat-mdc-tab-group .mat-tab-label.mat-tab-label-active .mat-icon:hover {
   background-color: rgba(20, 100, 165, 0.4); }
 
 /*background-color: mat-color($mat-primary);*/
@@ -3778,22 +4044,25 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
   .md-drppicker .ranges ul li:hover {
     background: rgba(0, 0, 0, 0.12); }
 
-.o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base {
+.o-dual-list-selector .o-dual-list-selector-list .mat-mdc-selection-list.mat-mdc-list-base {
   border: 1px solid rgba(0, 0, 0, 0.12); }
-  .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item:not(.mat-list-option) {
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+  .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-mdc-list-base .mat-mdc-list-item:not(.mat-list-option) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-  .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option {
+  /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+  .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-mdc-list-base .mat-mdc-list-item.mat-list-option {
     background: rgba(0, 0, 0, 0.04); }
-    .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base .mat-list-item.mat-list-option[aria-selected="true"] {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version.*/
+    .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-mdc-list-base .mat-mdc-list-item.mat-list-option[aria-selected="true"] {
       background-color: #b9d1e4;
       color: rgba(0, 0, 0, 0.87); }
-  .o-dual-list-selector .o-dual-list-selector-list .mat-selection-list.mat-list-base.cdk-drop-list-dragging {
+  .o-dual-list-selector .o-dual-list-selector-list .mat-mdc-selection-list.mat-mdc-list-base.cdk-drop-list-dragging {
     border-style: dashed;
     border-width: 2px; }
 
-.o-dual-list-selector .o-dual-list-selector-list .mat-mini-fab:not([class*='mat-elevation-z']) {
+.o-dual-list-selector .o-dual-list-selector-list .mat-mdc-mini-fab:not([class*='mat-elevation-z']) {
   box-shadow: none; }
-  .o-dual-list-selector .o-dual-list-selector-list .mat-mini-fab:not([class*='mat-elevation-z']).mat-accent:not([disabled]) {
+  .o-dual-list-selector .o-dual-list-selector-list .mat-mdc-mini-fab:not([class*='mat-elevation-z']).mat-accent:not([disabled]) {
     background-color: rgba(0, 0, 0, 0.12);
     color: rgba(0, 0, 0, 0.87); }
 
@@ -3819,62 +4088,75 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 /* Foreground color */
 /*Application background-color*/
 /*Sidenav background-color*/
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-frame {
   border-color: rgba(0, 0, 0, 0.54); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checkmark {
   fill: #e4e6e8; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checkmark-path {
   stroke: #e4e6e8 !important; }
   @media (-ms-high-contrast: black-on-white) {
+    /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
     .mat-checkbox-checkmark-path {
       stroke: #000 !important; } }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-mixedmark {
   background-color: #e4e6e8; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checked.mat-primary .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
   background-color: #525252; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: #525252; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-checked.mat-warn .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-warn .mat-checkbox-background {
   background-color: #f44336; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled.mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-disabled.mat-checkbox-indeterminate .mat-checkbox-background {
   background-color: #b0b0b0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
   border-color: #b0b0b0; }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 .mat-checkbox-disabled .mat-checkbox-label {
   color: rgba(0, 0, 0, 0.54); }
 
 @media (-ms-high-contrast: active) {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
   .mat-checkbox-disabled {
     opacity: .5; } }
 
 @media (-ms-high-contrast: active) {
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
   .mat-checkbox-background {
     background: none; } }
 
-.mat-checkbox .mat-ripple-element {
+.mat-mdc-checkbox .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.6); }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
   background: rgba(0, 0, 0, 0.6); }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
   background: rgba(0, 0, 0, 0.6); }
 
-.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element,
+.mat-mdc-checkbox-checked:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element,
 .mat-checkbox:active:not(.mat-checkbox-disabled).mat-warn .mat-ripple-element {
   background: #f44336; }
 
@@ -3904,11 +4186,11 @@ ngx-material-timepicker-container ngx-material-timepicker-content .timepicker-di
 .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-disabled {
   background: #b0b0b0; }
 
-.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button {
+.o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button {
   border-radius: 2px; }
-  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button.disabled {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button.disabled {
     border-radius: 2px; }
-  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-button:not(.disabled):hover {
+  .o-table.o-table .o-table-container .o-table-toolbar .buttons .o-table-button .mat-mdc-button:not(.disabled):hover {
     border-radius: 2px; }
 
 .o-column-collapsible > .o-container.mat-expansion-panel .mat-expansion-panel-header,
@@ -4036,7 +4318,7 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-sidenav-container mat-sidenav.m
     box-shadow: none;
     background: none; }
 
-o-app-sidenav.o-app-sidenav .mat-menu-panel,
+o-app-sidenav.o-app-sidenav .mat-mdc-menu-panel,
 o-app-sidenav.o-app-sidenav.header-layout .mat-menu-panel {
   border: 1px solid rgba(0, 0, 0, 0.12); }
 
@@ -4044,33 +4326,37 @@ o-app-sidenav.o-app-sidenav .o-app-header .o-user-info .o-user-info-wrapper,
 o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-info-wrapper {
   font-weight: 500; }
 
-.mat-tab-group .mat-tab-label.mat-tab-label-active {
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+.mat-mdc-tab-group .mat-tab-label.mat-tab-label-active {
   color: rgba(0, 0, 0, 0.87); }
 
 /* MAT PAGINATOR*/
-.mat-paginator {
+.mat-mdc-paginator {
   color: rgba(0, 0, 0, 0.87); }
 
 .ontimize-table.o-table {
   background: white; }
+  /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
   .ontimize-table.o-table tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
   .ontimize-table.o-table thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
     background-color: rgba(0, 0, 0, 0.6); }
 
-.o-table .o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
+.o-table .o-table-quickfilter .quickFilter .mat-mdc-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
   border-color: rgba(0, 0, 0, 0.32); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 .o-table .mat-form-field-appearance-outline .mat-form-field-outline {
   color: rgba(0, 0, 0, 0.32); }
 
-.o-table .mat-table .mat-row:hover:not(.o-table-group-row) {
+.o-table .mat-mdc-table .mat-mdc-row:hover:not(.o-table-group-row) {
   cursor: pointer;
   background-color: #f5f5f5; }
 
-.o-table .mat-table .mat-row.selected {
+.o-table .mat-mdc-table .mat-mdc-row.selected {
   background: #eaeaea; }
 
-.o-table .mat-table .mat-row .mat-cell {
+.o-table .mat-mdc-table .mat-mdc-row .mat-mdc-cell {
   color: rgba(0, 0, 0, 0.6); }
 
 /* FORM */
@@ -4079,20 +4365,20 @@ o-app-sidenav.o-app-sidenav.header-layout .o-app-header .o-user-info .o-user-inf
   .o-form .o-form-toolbar .o-form-toolbar-header {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
     background-color: white; }
-    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
+    .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.o-form-toolbar-back.mat-mdc-icon-button {
       margin-right: 32px; }
 
 /* Buttons */
-.mat-dialog-actions button:not([disabled]).mat-button-base,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base,
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base,
-button.mat-stroked-button:not([disabled]).mat-button-base {
+button.mat-mdc-outlined-button:not([disabled]).mat-button-base {
   border-color: rgba(0, 0, 0, 0.32); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary,
@@ -4103,12 +4389,12 @@ button.mat-stroked-button:not([disabled]).mat-button-base {
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary,
-button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary,
+button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-primary,
 button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary {
   color: #1464a5;
   background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.32); }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-primary .mat-icon,
@@ -4119,10 +4405,10 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary {
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-icon,
-  button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary .mat-icon,
+  button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-primary .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary .mat-icon {
     color: #1464a5; }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary:hover,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-primary:hover,
@@ -4145,14 +4431,14 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay,
-  button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary:hover,
+  button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-primary:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base.mat-primary .mat-button-focus-overlay,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary .mat-button-focus-overlay {
     background-color: #b9d1e4;
     border-color: rgba(0, 0, 0, 0.32); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent,
@@ -4163,11 +4449,11 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-primary {
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default,
-button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent,
+button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent,
 button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default {
   color: rgba(0, 0, 0, 0.87);
   border-color: rgba(0, 0, 0, 0.32); }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent .mat-icon, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-accent .mat-icon,
@@ -4178,10 +4464,10 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default {
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.o-button-default .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-icon,
-  button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-icon,
+  button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent .mat-icon,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default .mat-icon {
     color: #1464a5; }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent:hover,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-accent:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay, .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default:hover,
   .mat-dialog-actions button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-accent:hover,
@@ -4204,7 +4490,7 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default {
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay,
-  button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent:hover,
+  button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-accent:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent .mat-button-focus-overlay,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default:hover,
   button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default .mat-button-focus-overlay {
@@ -4212,29 +4498,29 @@ button.mat-stroked-button:not([disabled]).mat-button-base.o-button-default {
     background-color: #b9d1e4;
     border-color: rgba(0, 0, 0, 0.32); }
 
-.mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn,
+.mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-warn,
 .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn,
 .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn,
 .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn,
 .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn,
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn,
-button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn {
+button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-warn {
   color: #f44336;
   border-color: rgba(0, 0, 0, 0.32); }
-  .mat-dialog-actions button:not([disabled]).mat-button-base.mat-warn:hover,
+  .mat-dialog-actions button:not([disabled]).mat-mdc-button-base.mat-warn:hover,
   .o-form .o-form-toolbar button:not([disabled]).mat-button-base.mat-warn:hover,
   .o-grid .o-grid-footer button:not([disabled]).mat-button-base.mat-warn:hover,
   .o-grid .o-grid-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
   .o-list .o-list-toolbar > button:not([disabled]).mat-button-base.mat-warn:hover,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base.mat-warn:hover,
-  button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn:hover {
+  button.mat-mdc-outlined-button:not([disabled]).mat-button-base.mat-warn:hover {
     background-color: #ffcdd2;
     border-color: rgba(0, 0, 0, 0.32); }
 
-.o-button button.mat-stroked-button:not([disabled]).mat-button-base.mat-accent {
+.o-button button.mat-mdc-outlined-button:not([disabled]).mat-mdc-button-base.mat-accent {
   color: #1464a5; }
 
-.o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger),
+.o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-mdc-icon-button:not(.mat-menu-trigger),
 .o-grid .o-grid-toolbar button.mat-icon-button:not(.mat-menu-trigger),
 .o-list .o-list-toolbar button.mat-icon-button:not(.mat-menu-trigger),
 .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button.mat-icon-button:not(.mat-menu-trigger) {
@@ -4244,7 +4530,7 @@ button.mat-stroked-button:not([disabled]).mat-button-base.mat-warn {
   border-radius: 2px;
   line-height: 30px; }
 
-.o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger) {
+.o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-mdc-icon-button:not(.mat-mdc-menu-trigger) {
   margin: 0 6px; }
 
 o-column.o-column,
@@ -4263,7 +4549,7 @@ o-row.o-row {
     border-bottom: none;
     color: rgba(0, 0, 0, 0.87); }
     o-column.o-column .o-container > .o-container-header .mat-tab-label,
-    o-column.o-column .o-container > .o-container-header .mat-tab-link,
+    o-column.o-column .o-container > .o-container-header .mat-mdc-tab-link,
     o-column.o-column .o-container > .o-container-title .mat-tab-label,
     o-column.o-column .o-container > .o-container-title .mat-tab-link,
     o-column.o-column .o-container > .mat-expansion-panel-header .mat-tab-label,
@@ -4382,9 +4668,11 @@ o-column-collapsible.o-column-collapsible > .o-container.mat-expansion-panel:not
 .new {
   color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version.*/
 mat-card-title {
   color: rgba(0, 0, 0, 0.87); }
 
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version.*/
 mat-card-content {
   color: rgba(0, 0, 0, 0.87); }
 

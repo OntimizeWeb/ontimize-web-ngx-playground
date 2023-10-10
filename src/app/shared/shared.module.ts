@@ -11,7 +11,7 @@ import { ScreenConfigurationComponent } from './screen-configuration/screen-conf
 import { InputsCardComponent } from './inputs-card/inputs-card.component';
 import { ConfigCollapsibleStateService } from './services/config-collapsible-state.service';
 import { HighlightModule } from 'ngx-highlightjs';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   imports: [OntimizeWebModule, HighlightModule, MatButtonModule],
   declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent],

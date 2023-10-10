@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatLegacyCheckbox as MatCheckbox } from '@angular/material/legacy-checkbox';
+import { MatCheckbox } from '@angular/material/checkbox';
 import * as moment from 'moment';
 import { OFormDataComponent, OValueChangeEvent } from 'ontimize-web-ngx';
 

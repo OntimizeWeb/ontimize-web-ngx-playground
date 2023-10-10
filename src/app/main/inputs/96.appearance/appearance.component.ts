@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MatLegacyCheckbox as MatCheckbox } from '@angular/material/legacy-checkbox';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { ExampleComponent } from '../../../shared/example/example.component';
 
 const CUSTOM_INPUT_HTML_DATA = `
