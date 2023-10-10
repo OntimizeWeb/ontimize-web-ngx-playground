@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
 
 /* Color definitions */
@@ -18,7 +19,7 @@ $mat-custom-primary: (50 : #f1f6fa,
   contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, ));
 
 // Define a theme.
-$primary: mat-palette($mat-custom-primary);
+$primary: mat.define-palette($mat-custom-primary);
 $accent: $primary;
 
 /* Dark theme */
