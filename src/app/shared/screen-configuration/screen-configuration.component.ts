@@ -1,6 +1,6 @@
 import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs';
 
 @Component({
