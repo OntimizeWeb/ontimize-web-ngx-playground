@@ -89,9 +89,9 @@ export class AppearanceComponent {
 
   html: string;
 
-  @ViewChild('label', { static: false }) label: ElementRef;
-  @ViewChild('placeholder', { static: false }) placeholder: ElementRef;
-  @ViewChild('hideRequiredMarker', { static: false }) hideRequiredMarker: MatCheckbox;
+  @ViewChild('label') label: ElementRef;
+  @ViewChild('placeholder') placeholder: ElementRef;
+  @ViewChild('hideRequiredMarker') hideRequiredMarker: MatCheckbox;
 
   floatLabelFiles = {
     'html': {

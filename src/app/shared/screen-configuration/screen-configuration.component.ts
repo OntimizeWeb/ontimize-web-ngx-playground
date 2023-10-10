@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class ScreenConfigurationComponent {
 
-  @ViewChild('sidenav', { static: false })
+  @ViewChild('sidenav')
   public sidenav: MatSidenav;
   protected subscription: Subscription = new Subscription();
   protected media: MediaObserver;

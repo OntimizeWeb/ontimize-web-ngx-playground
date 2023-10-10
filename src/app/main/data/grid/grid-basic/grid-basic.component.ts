@@ -16,7 +16,7 @@ export class GridBasicComponent {
   public gutterSize = 1;
   html: string;
 
-  @ViewChild('grid', { static: false })
+  @ViewChild('grid')
   grid: any;
 
   constructor(){ }

@@ -12,10 +12,10 @@ export class GridFixedComponent {
 
   html: string;
 
-  @ViewChild('height', { static: false })
+  @ViewChild('height')
   gridHeight: any;
 
-  @ViewChild('grid', { static: false })
+  @ViewChild('grid')
   grid: any;
 
   constructor() { }

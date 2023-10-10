@@ -30,8 +30,8 @@ export class OTableCellEditorCustomComponent extends OBaseTableCellEditor implem
   public static DEFAULT_INPUTS_O_TABLE_CELL_EDITOR_CUSTOM = DEFAULT_INPUTS_O_TABLE_CELL_EDITOR_CUSTOM;
   public static DEFAULT_OUTPUTS_O_TABLE_CELL_EDITOR_CUSTOM = DEFAULT_OUTPUTS_O_TABLE_CELL_EDITOR_CUSTOM;
 
-  @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
-  @ViewChild('input', { static: false }) inputRef: ElementRef;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('input') inputRef: ElementRef;
 
   id = Util.randomNumber();
   constructor(protected injector: Injector) {
