@@ -1,10 +1,11 @@
-@use '@angular/material' as mat;
+@use '@angular/material'as mat;
+
 @mixin list-grid-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, color, primary);
+  $accent: map-get($theme, color, accent);
+  $warn: map-get($theme, color, warn);
+  $background: map-get($theme, color, background);
+  $foreground: map-get($theme, color, foreground);
 
   // Colors
 
@@ -13,18 +14,18 @@
 
     li.list-grid-button {
       a {
-        color: mat.get-color-from-palette($primary,500);
+        color: mat.get-color-from-palette($primary, 500);
 
         .new {
           background-color: mat.get-color-from-palette($accent);
-          color: mat.get-color-from-palette($accent,100);
+          color: mat.get-color-from-palette($accent, 100);
         }
       }
 
       a.active,
       a:hover {
         color: mat.get-color-from-palette($primary, 800);
-        background-color: mat.get-color-from-palette($accent,100);
+        background-color: mat.get-color-from-palette($accent, 100);
       }
 
       a.active:hover {

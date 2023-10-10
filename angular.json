@@ -13,6 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment",
+              "google-libphonenumber"
+            ],
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,7 +33,7 @@
             ],
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
-              "node_modules/ontimize-web-ngx-charts/styles.scss",
+              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -38,7 +42,12 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -99,6 +108,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
             "scripts": []

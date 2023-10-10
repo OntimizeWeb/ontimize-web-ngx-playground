@@ -1,31 +1,27 @@
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-@include ontimize-theme-styles($theme);
-// //Include ontimize-lite theme
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-@include ontimize-theme-styles-lite($theme, $lite-typography);
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 
-// After define theme, it is necessary to transfer color to Ontimize Web framework
-@import 'node_modules/ontimize-web-ngx/theme.scss';
-@include o-material-theme($theme, $lite-typography);
+// Include ontimize styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
 
-//Include implatform-fashion style
-@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
-// $lite-typography: $default-typography;
-@include implatform-fashion-theme-styles($theme, $lite-typography);
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+}
+
 
 /*
 * Import application themes.
 */
 @import './list-grid.theme.scss';
-@include list-grid-theme($theme);
+@include list-grid-theme(theme.$theme);
 @import '../../app/shared/example/example.theme.scss';
-@include example-component-theme($theme);
+@include example-component-theme(theme.$theme);
 @import '../../app/main/main-theme.scss';
-@include main-theme($theme);
+@include main-theme(theme.$theme);
 @import '../../app/shared/inputs-card/inputs-card.theme.scss';
-@include inputs-card-theme($theme);
+@include inputs-card-theme(theme.$theme);
 @import '../../app/shared/collapsible-menu/collapsible-menu.theme.scss';
-@include collapsible-menu-theme($theme);
+@include collapsible-menu-theme(theme.$theme);
 /*
 * Other app styles
 */

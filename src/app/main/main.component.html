@@ -9,11 +9,11 @@
       <mat-icon>dark_mode</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="light_mode()">
+      <button mat-menu-item (click)="setDarkMode(false)">
         <mat-icon>light_mode</mat-icon>
         <span>Light</span>
       </button>
-      <button mat-menu-item (click)="dark_mode()">
+      <button mat-menu-item (click)="setDarkMode(false)">
         <mat-icon>dark_mode</mat-icon>
         <span>Dark</span>
       </button>

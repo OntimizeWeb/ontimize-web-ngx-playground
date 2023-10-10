@@ -10,6 +10,8 @@ import { CollapsibleStateService } from './shared/services/collapsible-state.ser
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
  * Import specific languages to avoid importing everything
@@ -26,10 +28,11 @@ export function getHighlightLanguages() {
     AppComponent,
   ],
   imports: [
-    HighlightModule,
-    ONTIMIZE_MODULES,
+    BrowserModule,
+    BrowserAnimationsModule,
     OntimizeWebModule,
     AppRoutingModule,
+    HighlightModule,
     OGalleryModule
   ],
   providers: [
