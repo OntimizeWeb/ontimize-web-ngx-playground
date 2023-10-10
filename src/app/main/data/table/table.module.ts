@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { OChartModule } from 'ontimize-web-ngx-charts';
 import { DummyService } from 'src/app/shared/services/dummy.service';
