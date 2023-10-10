@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
+import { ValidatorFn, ValidationErrors, UntypedFormControl } from '@angular/forms';
 
 const VALIDATORS_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -86,7 +86,7 @@ export class ValidatorsComponent {
     this.validatorsArray.push(this.bValidator);
   }
 
-  aValidator(control: FormControl): ValidationErrors {
+  aValidator(control: UntypedFormControl): ValidationErrors {
     let result = {};
     if (control.value && control.value.toString().indexOf('a') === -1) {
       result['requiredLowercaseA'] = true;
@@ -97,7 +97,7 @@ export class ValidatorsComponent {
     return result;
   }
 
-  bValidator(control: FormControl): ValidationErrors {
+  bValidator(control: UntypedFormControl): ValidationErrors {
     if (control.value && control.value.toString().indexOf('b') === -1) {
       return {
         'requiredB': true
