@@ -2,34 +2,34 @@ name: Sonar
 on:
   push:
     branches:
-      - main
-      - 8.x.x
-      - hotfix/8.*
+      - main.15.x
+      - 15.x.x
+      - hotfix/15.*
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: 'Cache node modules'
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Node 12.x
-        uses: actions/setup-node@v1
+      - name: Node 18.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.13.0
+          node-version: 18.10.0
 
-      - name: npm install and npm run build
+      - name: npm install and npm run test-ci
         run: |
           npm i
           npm run test-ci
