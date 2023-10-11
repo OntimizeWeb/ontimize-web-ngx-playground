@@ -3,9 +3,12 @@
 
 // Include ontimize styles
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
+@import '../../app/shared/inputs-card/inputs-card.theme.scss';
+@include inputs-card-theme(theme.$theme);
 
 .o-dark {
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+  @include inputs-card-theme(theme.$dark-theme);
 }
 
 
@@ -18,8 +21,7 @@
 @include example-component-theme(theme.$theme);
 @import '../../app/main/main-theme.scss';
 @include main-theme(theme.$theme);
-@import '../../app/shared/inputs-card/inputs-card.theme.scss';
-@include inputs-card-theme(theme.$theme);
+
 @import '../../app/shared/collapsible-menu/collapsible-menu.theme.scss';
 @include collapsible-menu-theme(theme.$theme);
 /*
