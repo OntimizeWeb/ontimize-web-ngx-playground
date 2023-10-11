@@ -1,25 +1,12 @@
 @use '@angular/material'as mat;
 
 @mixin inputs-card-theme($theme) {
-  $primary: map-get($theme, color, primary);
-  $accent: map-get($theme, color, accent);
-  $warn: map-get($theme, color, warn);
   $background: map-get($theme, color, background);
   $foreground: map-get($theme, color, foreground);
 
   .new {
     border-color: mat.get-color-from-palette($foreground);
     background-color: mat.get-color-from-palette($background);
-    color: mat.get-color-from-palette($foreground, text);
-  }
-
-  /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
-  mat-card-title {
-    color: mat.get-color-from-palette($foreground, text);
-  }
-
-  /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
-  mat-card-content {
     color: mat.get-color-from-palette($foreground, text);
   }
 

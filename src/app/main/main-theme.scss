@@ -5,12 +5,17 @@
   $primary: map-get($theme, color, primary);
   $accent: map-get($theme, color, accent);
   $warn: map-get($theme, color, warn);
+  $typography: map-get($theme, typography);
   $background: map-get($theme, color, background);
   $foreground: map-get($theme, color, foreground);
 
   .active {
     border-color: mat.get-color-from-palette($primary, 500);
     background-color: mat.get-color-from-palette($primary, 100);
+  }
+
+  .mat-mdc-card-content {
+    font-size: mat.font-size($typography, body-2);
   }
 
   layout-manager {

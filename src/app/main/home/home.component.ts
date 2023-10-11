@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     let title = '';
     title = this.translateService.get('INTRODUCTION');
     this.navigationService.setTitle(title);
+    this.is_dark_theme = this.appearanceService.isDarkMode();
     this.onThemeUpdate = this.appearanceService.isDarkMode$.subscribe((darkMode: boolean) => {
       this.is_dark_theme = darkMode;
     });
