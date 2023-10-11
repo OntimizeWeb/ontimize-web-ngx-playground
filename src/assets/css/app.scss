@@ -5,20 +5,20 @@
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
 @import '../../app/shared/inputs-card/inputs-card.theme.scss';
 @include inputs-card-theme(theme.$theme);
+@import '../../app/shared/example/example.theme.scss';
+@include example-component-theme(theme.$theme);
 
 .o-dark {
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
   @include inputs-card-theme(theme.$dark-theme);
+  @include example-component-theme(theme.$dark-theme);
 }
 
 
 /*
 * Import application themes.
 */
-@import './list-grid.theme.scss';
-@include list-grid-theme(theme.$theme);
-@import '../../app/shared/example/example.theme.scss';
-@include example-component-theme(theme.$theme);
+
 @import '../../app/main/main-theme.scss';
 @include main-theme(theme.$theme);
 
