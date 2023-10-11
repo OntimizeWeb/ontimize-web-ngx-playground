@@ -111,7 +111,12 @@
               "src/assets/css/app.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            }
           }
         },
         "e2e": {
