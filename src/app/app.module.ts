@@ -46,7 +46,6 @@ export function getHighlightLanguages() {
         languages: getHighlightLanguages()
       }
     },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]

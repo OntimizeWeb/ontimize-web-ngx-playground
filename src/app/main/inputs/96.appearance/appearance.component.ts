@@ -49,23 +49,22 @@ const PLACEHOLDER_TS_DATA = `
 
 const APPEARANCE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
-  <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+ <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="standard" attr="text_2" label="{{ 'INPUT.APPEARANCE.STANDARD' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="fill" attr="text_2" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="fill" attr="text_3" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="outline" attr="text_3" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="outline" attr="text_4" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-currency-input appearance="fill" attr="currency3" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+    </o-currency-input>
 
-  <o-currency-input appearance="fill" attr="currency3" clear-button="yes" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
-    read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
-
-  <o-currency-input appearance="outline" attr="currency4" clear-button="yes" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
-    read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
+    <o-currency-input appearance="outline" attr="currency4" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+    </o-currency-input>
 </o-form>
 `;
 
@@ -134,7 +133,7 @@ export class AppearanceComponent {
   };
 
   floatLabelValue = 'auto';
-  appearanceValue = 'legacy';
+  appearanceValue = 'fill';
 
   getValueText() {
     return 'John Doe';
