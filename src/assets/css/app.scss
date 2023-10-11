@@ -22,8 +22,6 @@
 @import '../../app/main/main-theme.scss';
 @include main-theme(theme.$theme);
 
-@import '../../app/shared/collapsible-menu/collapsible-menu.theme.scss';
-@include collapsible-menu-theme(theme.$theme);
 /*
 * Other app styles
 */
