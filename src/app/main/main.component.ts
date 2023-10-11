@@ -1,5 +1,5 @@
-import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
-import { AppearanceService, AuthService } from 'ontimize-web-ngx';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AppearanceService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../shared/navigation-bar.service';
 
