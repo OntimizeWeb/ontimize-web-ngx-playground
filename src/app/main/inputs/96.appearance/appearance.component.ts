@@ -13,14 +13,11 @@ const CUSTOM_INPUT_HTML_DATA = `
 const FLOAT_LABEL_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input attr="text" float-label="always" label="{{ 'INPUT.FLOAT_LABEL.ALWAYS' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+   <o-text-input attr="text" float-label="always" label="{{ 'INPUT.FLOAT_LABEL.ALWAYS' | oTranslate }}" read-only="no"
+      clear-button="yes"></o-text-input>
 
-    <o-text-input attr="text2" float-label="never" label="{{ 'INPUT.FLOAT_LABEL.NEVER' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
-
-    <o-text-input attr="text3" float-label="auto" label="{{ 'INPUT.FLOAT_LABEL.AUTO' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input attr="text2" float-label="auto" label="{{ 'INPUT.FLOAT_LABEL.AUTO' | oTranslate }}" read-only="no"
+      clear-button="yes"></o-text-input>
 
   </o-form>
 `;
