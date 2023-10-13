@@ -48,8 +48,12 @@
 }
 
 .conf-btn {
+
   transform: rotate(-90deg) translate(-67px, -59px);
   height: fit-content;
+  .mdc-button__label{
+    display: flex;
+  }
 }
 
 list-item-text,
