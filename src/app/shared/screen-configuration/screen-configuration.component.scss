@@ -1,4 +1,4 @@
-.sidenav-container {
+.mat-drawer-container.sidenav-container {
   background-color: transparent;
   width: 100%;
   height: fit-content;
@@ -51,7 +51,8 @@
 
   transform: rotate(-90deg) translate(-67px, -59px);
   height: fit-content;
-  .mdc-button__label{
+
+  .mdc-button__label {
     display: flex;
   }
 }
