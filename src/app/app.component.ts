@@ -18,9 +18,7 @@ export class AppComponent {
 
   constructor(
     private ontimizeMatIconRegistry: OntimizeMatIconRegistry
-  ) {
-  }
-
+  ) {  }
 
 
   ngOnInit() {

@@ -1,11 +1,7 @@
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  ElementRef,
-  OnDestroy
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
+import { HighlightAutoResult, HighlightLoader } from 'ngx-highlightjs';
+import { AppearanceService } from 'ontimize-web-ngx';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'highlight-comp',
@@ -24,9 +20,23 @@ export class HighlightComponent implements OnInit {
   templateType;
   templateTypeArray: Array<string>;
 
-  constructor(protected elRef: ElementRef) {
+  private onThemeUpdate: Subscription;
+  response: HighlightAutoResult;
+
+  constructor(
+    protected elRef: ElementRef,
+    private hljsLoader: HighlightLoader,
+    private appearanceService: AppearanceService
+  ) {
+    this.loadTheme(this.appearanceService.isDarkMode());
+    this.onThemeUpdate = this.appearanceService.isDarkMode$.subscribe((darkMode: boolean) => {
+      this.loadTheme(darkMode);
+    });
   }
 
+  loadTheme(darkMode: boolean) {
+    this.hljsLoader.setTheme(darkMode ? 'assets/hightlight/github-dark.css' : 'assets/hightlight/github.css');
+  }
   ngOnInit(): void {
     this.templateTypeArray = this.parseTemplateType();
 
@@ -42,6 +52,9 @@ export class HighlightComponent implements OnInit {
     return [this.templateType === 'scss' ? 'css' : this.templateType];
   }
 
+  ngOnDestroy(): void {
+    this.onThemeUpdate.unsubscribe();
+  }
 
 
 }
