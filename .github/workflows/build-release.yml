@@ -59,7 +59,7 @@ jobs:
           echo "Version ${{ steps.project.outputs.version }} is not a properly named for RELEASE"
           exit 1
 
-           - name: GitHub Release / Create release
+      - name: GitHub Release / Create release
         uses: ncipollo/release-action@2792aea87063cfd0d27953ac38e3ab45afacc154
         with:
           commit: ${{ env.BASELINE_BRANCH }}
