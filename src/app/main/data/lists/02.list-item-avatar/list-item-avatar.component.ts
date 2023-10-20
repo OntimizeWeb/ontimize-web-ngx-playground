@@ -40,25 +40,25 @@ export class ListItemAvatarComponent {
   protected staticData = ListsUtils.getListData(5);
   html: string;
 
-  @ViewChild('listTitle', { static: false })
+  @ViewChild('listTitle')
   listTitle: any;
-  @ViewChild('refreshButtonToggle', { static: false })
+  @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
-  @ViewChild('denseToggle', { static: false })
+  @ViewChild('denseToggle')
   denseToggle: any;
-  @ViewChild('insertButtonToggle', { static: false })
+  @ViewChild('insertButtonToggle')
   insertButtonToggle: any;
-  @ViewChild('selectableToggle', { static: false })
+  @ViewChild('selectableToggle')
   selectableToggle: any;
-  @ViewChild('editButtonInRowToggle', { static: false })
+  @ViewChild('editButtonInRowToggle')
   editButtonInRowToggle: any;
-  @ViewChild('detailButtonInRowToggle', { static: false })
+  @ViewChild('detailButtonInRowToggle')
   detailButtonInRowToggle: any;
-  @ViewChild('iconToggle', { static: false })
+  @ViewChild('iconToggle')
   iconToggle: any;
-  @ViewChild('itemIcon', { static: false })
+  @ViewChild('itemIcon')
   itemIcon: any;
-  @ViewChild('list', { static: false })
+  @ViewChild('list')
   list: any;
 
   files = {

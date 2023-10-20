@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MatCheckbox } from '@angular/material';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { ExampleComponent } from '../../../shared/example/example.component';
 
 const CUSTOM_INPUT_HTML_DATA = `
@@ -13,14 +13,11 @@ const CUSTOM_INPUT_HTML_DATA = `
 const FLOAT_LABEL_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input attr="text" float-label="always" label="{{ 'INPUT.FLOAT_LABEL.ALWAYS' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+   <o-text-input attr="text" float-label="always" label="{{ 'INPUT.FLOAT_LABEL.ALWAYS' | oTranslate }}" read-only="no"
+      clear-button="yes"></o-text-input>
 
-    <o-text-input attr="text2" float-label="never" label="{{ 'INPUT.FLOAT_LABEL.NEVER' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
-
-    <o-text-input attr="text3" float-label="auto" label="{{ 'INPUT.FLOAT_LABEL.AUTO' | oTranslate }}"
-      read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input attr="text2" float-label="auto" label="{{ 'INPUT.FLOAT_LABEL.AUTO' | oTranslate }}" read-only="no"
+      clear-button="yes"></o-text-input>
 
   </o-form>
 `;
@@ -49,23 +46,22 @@ const PLACEHOLDER_TS_DATA = `
 
 const APPEARANCE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
-  <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+ <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="standard" attr="text_2" label="{{ 'INPUT.APPEARANCE.STANDARD' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="fill" attr="text_2" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="fill" attr="text_3" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input appearance="outline" attr="text_3" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
+      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
-  <o-text-input appearance="outline" attr="text_4" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" [data]="getValueText()"
-    read-only="no" clear-button="yes"></o-text-input>
+    <o-currency-input appearance="fill" attr="currency3" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+    </o-currency-input>
 
-  <o-currency-input appearance="fill" attr="currency3" clear-button="yes" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
-    read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
-
-  <o-currency-input appearance="outline" attr="currency4" clear-button="yes" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
-    read-only="no" [data]="getValueCurr()" required="yes"></o-currency-input>
+    <o-currency-input appearance="outline" attr="currency4" clear-button="yes"
+      label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+    </o-currency-input>
 </o-form>
 `;
 
@@ -89,9 +85,9 @@ export class AppearanceComponent {
 
   html: string;
 
-  @ViewChild('label', { static: false }) label: ElementRef;
-  @ViewChild('placeholder', { static: false }) placeholder: ElementRef;
-  @ViewChild('hideRequiredMarker', { static: false }) hideRequiredMarker: MatCheckbox;
+  @ViewChild('label') label: ElementRef;
+  @ViewChild('placeholder') placeholder: ElementRef;
+  @ViewChild('hideRequiredMarker') hideRequiredMarker: MatCheckbox;
 
   floatLabelFiles = {
     'html': {
@@ -134,7 +130,7 @@ export class AppearanceComponent {
   };
 
   floatLabelValue = 'auto';
-  appearanceValue = 'legacy';
+  appearanceValue = 'fill';
 
   getValueText() {
     return 'John Doe';

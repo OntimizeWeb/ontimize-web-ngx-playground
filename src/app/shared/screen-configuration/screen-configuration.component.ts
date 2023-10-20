@@ -1,6 +1,6 @@
 import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class ScreenConfigurationComponent {
 
-  @ViewChild('sidenav', { static: false })
+  @ViewChild('sidenav')
   public sidenav: MatSidenav;
   protected subscription: Subscription = new Subscription();
   protected media: MediaObserver;

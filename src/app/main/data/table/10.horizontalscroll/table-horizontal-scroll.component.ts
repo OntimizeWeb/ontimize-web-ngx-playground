@@ -9,12 +9,12 @@ import { TableUtils } from '../table-utils';
 export class TableHorizontalScrollComponent implements AfterViewInit {
 
 
-  @ViewChild('horizontalScrollToggle', { static: false })
+  @ViewChild('horizontalScrollToggle')
   horizontalScrollToggle: any = true;
 
   public data = TableUtils.getCustomers().slice();;
 
-  @ViewChild('table', { static: false })
+  @ViewChild('table')
   table: OTableComponent;
 
   constructor() { }

@@ -1,13 +1,13 @@
 <div fxLayout="row" class="main-container bg-level-1">
   <collapsible-menu>
-  <a class="menu-item" routerLink="/main/media/gallery/playground" routerLinkActive="active" fxFlex>{{ 'Playground' | oTranslate }}</a>
-  <a class="menu-item" routerLink="/main/media/gallery/examples" routerLinkActive="active" fxFlex>{{ 'Examples' | oTranslate }}</a>
-</collapsible-menu>
+    <a mat-button class="menu-item" routerLink="/main/media/gallery/playground" routerLinkActive="active" fxFlex>{{ 'Playground' | oTranslate }}</a>
+    <a mat-button class="menu-item" routerLink="/main/media/gallery/examples" routerLinkActive="active" fxFlex>{{ 'Examples' | oTranslate }}</a>
+  </collapsible-menu>
 
-<div fxFlex="calc(100% - 300px)" class="left-border">
-  <header-button-menu comp-name="{{ 'GALLERY.COMPONENT' | oTranslate }}" comp-desc="{{ 'GALLERY.COMPONENT.DESC' | oTranslate }}">
-  </header-button-menu>
-  <router-outlet></router-outlet>
-</div>
+  <div fxFlex="calc(100% - 300px)" class="left-border">
+    <header-button-menu comp-name="{{ 'GALLERY.COMPONENT' | oTranslate }}" comp-desc="{{ 'GALLERY.COMPONENT.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
 
 </div>

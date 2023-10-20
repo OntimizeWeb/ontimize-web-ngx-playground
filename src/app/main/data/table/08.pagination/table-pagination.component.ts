@@ -6,7 +6,7 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-pagination.component.html'
 })
 export class TablePaginationComponent {
-  @ViewChild('pageSizeOptionsInput', { static: false })
+  @ViewChild('pageSizeOptionsInput')
   pageSizeOptionsInput: any;
 
   public data = TableUtils.getBranches();

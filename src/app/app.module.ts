@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
+import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
-import { DummyService } from './shared/services/dummy.service';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
+import { DummyService } from './shared/services/dummy.service';
 
 /**
  * Import specific languages to avoid importing everything
@@ -26,24 +27,31 @@ export function getHighlightLanguages() {
     AppComponent,
   ],
   imports: [
-    HighlightModule,
-    ONTIMIZE_MODULES,
+    BrowserModule,
+    BrowserAnimationsModule,
     OntimizeWebModule,
     AppRoutingModule,
+    HighlightModule,
     OGalleryModule
   ],
   providers: [
-    { provide: CollapsibleStateService },
-    { provide: ConfigCollapsibleStateService },
+    { provide: CollapsibleStateService, useValue: undefined },
+    { provide: ConfigCollapsibleStateService, useValue: undefined },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
     {
       provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        languages: getHighlightLanguages()
+      useValue: <HighlightOptions>{
+        lineNumbers: true,
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        lineNumbersLoader: () => import('highlightjs-line-numbers.js'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          xml: () => import('highlight.js/lib/languages/xml')
+        }
       }
     },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
     ...ONTIMIZE_PROVIDERS
   ],
   bootstrap: [AppComponent]
