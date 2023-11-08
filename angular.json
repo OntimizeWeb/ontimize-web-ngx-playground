@@ -45,7 +45,10 @@
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
-            "sourceMap": true,
+            "sourceMap": {
+              "scripts": true,
+              "vendor": true
+            },
             "optimization": false,
             "namedChunks": true,
             "stylePreprocessorOptions": {
@@ -137,6 +140,11 @@
           }
         }
       }
+    }
+  },
+  "cli": {
+    "cache": {
+      "enabled": false
     }
   }
 }
