@@ -6,7 +6,7 @@ const LIST_ITEM_AVATAR_HTML_DATA = `
 <o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
   title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
   refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
-  selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
+  selectable="{selectable}" detail-button-in-row="{detailButtonInRow}"
   detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
   edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
 
@@ -44,8 +44,6 @@ export class ListItemAvatarComponent {
   listTitle: any;
   @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
-  @ViewChild('denseToggle')
-  denseToggle: any;
   @ViewChild('insertButtonToggle')
   insertButtonToggle: any;
   @ViewChild('selectableToggle')
@@ -107,7 +105,6 @@ export class ListItemAvatarComponent {
 
     list.title = this.listTitle.nativeElement.value;
     list.refreshButton = this.refreshButtonToggle.checked;
-    list.dense = this.denseToggle.checked;
     list.insertButton = this.insertButtonToggle.checked;
     list.selectable = this.selectableToggle.checked;
 

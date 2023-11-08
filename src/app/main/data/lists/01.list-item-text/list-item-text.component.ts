@@ -1,12 +1,11 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
-import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_TEXT_HTML_DATA = `
 <o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
   title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
   refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
-  selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
+  selectable="{selectable}" detail-button-in-row="{detailButtonInRow}"
   detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
   edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none" pagination-controls="{paginationControls}"
   page-size-options="5;10" insert-button-position="{insertButtonPosition}" show-buttons-text="{showTextButton}">
