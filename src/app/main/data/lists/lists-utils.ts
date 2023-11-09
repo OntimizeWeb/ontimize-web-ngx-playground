@@ -8,7 +8,6 @@ export class ListsUtils {
         .replace('{insertButton}', list.insertButton)
         .replace('{deleteButton}', list.deleteButton)
         .replace('{selectable}', list.selectable)
-        .replace('{dense}', list.dense || false)
         .replace('{detailButtonInRow}', list.detailButtonInRow)
         .replace('{detailButtonInRowIcon}', list.detailButtonInRowIcon || '')
         .replace('{editButtonInRow}', list.editButtonInRow)
