@@ -1,11 +1,7 @@
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  ChangeDetectionStrategy,
-  ElementRef,
-  OnDestroy
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
+import { HighlightAutoResult, HighlightLoader } from 'ngx-highlightjs';
+import { AppearanceService } from 'ontimize-web-ngx';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'highlight-comp',
@@ -18,37 +14,36 @@ import {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HighlightComponent implements OnInit, OnDestroy {
+export class HighlightComponent implements OnInit {
 
-  protected clipboard: any;
   templateContent;
   templateType;
   templateTypeArray: Array<string>;
 
-  constructor(protected elRef: ElementRef) {
+  private onThemeUpdate: Subscription;
+  response: HighlightAutoResult;
+
+  constructor(
+    protected elRef: ElementRef,
+    private hljsLoader: HighlightLoader,
+    private appearanceService: AppearanceService
+  ) {
+    this.loadTheme(this.appearanceService.isDarkMode());
+    this.onThemeUpdate = this.appearanceService.isDarkMode$.subscribe((darkMode: boolean) => {
+      this.loadTheme(darkMode);
+    });
   }
 
+  loadTheme(darkMode: boolean) {
+    this.hljsLoader.setTheme(darkMode ? 'assets/hightlight/github-dark.css' : 'assets/hightlight/github.css');
+  }
   ngOnInit(): void {
     this.templateTypeArray = this.parseTemplateType();
 
-    if (window['Clipboard'] && !this.clipboard) {
-      const copyBtn = this.elRef.nativeElement.querySelectorAll('button#copy-btn');
-      if (copyBtn.length) {
-        const self = this;
-        const element = copyBtn[0];
-        this.clipboard = new window['Clipboard'](element);
-        this.clipboard.on('success', function (e) {
-          self.showTooltip(e.trigger, 'Copied!');
-        });
-        // this.clipboard.on('error', function(e) {
-        //     console.log(e);
-        // });
-      }
 
-    }
   }
 
-  showTooltip(elem, msg) {
+  showTooltip() {
     // TODO show tooltip (solve problem of repainting that does not show tooltip)
     alert('Copied!');
   }
@@ -57,10 +52,9 @@ export class HighlightComponent implements OnInit, OnDestroy {
     return [this.templateType === 'scss' ? 'css' : this.templateType];
   }
 
-  ngOnDestroy() {
-    if (this.clipboard) {
-      this.clipboard.destroy();
-    }
+  ngOnDestroy(): void {
+    this.onThemeUpdate.unsubscribe();
   }
+
 
 }

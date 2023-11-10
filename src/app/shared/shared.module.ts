@@ -12,8 +12,9 @@ import { InputsCardComponent } from './inputs-card/inputs-card.component';
 import { ConfigCollapsibleStateService } from './services/config-collapsible-state.service';
 import { HighlightModule } from 'ngx-highlightjs';
 import { MatButtonModule } from '@angular/material/button';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 @NgModule({
-  imports: [OntimizeWebModule, HighlightModule, MatButtonModule],
+  imports: [OntimizeWebModule, HighlightModule, MatButtonModule, ClipboardModule],
   declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent],
   providers: [NavigationBarService, CollapsibleStateService, ConfigCollapsibleStateService],
   exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent]

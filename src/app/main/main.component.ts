@@ -1,8 +1,7 @@
-import { Component, Injector, OnInit, ViewEncapsulation } from '@angular/core';
-import { AuthService } from 'ontimize-web-ngx';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AppearanceService } from 'ontimize-web-ngx';
 
 import { NavigationBarService } from '../shared/navigation-bar.service';
-import { ThemeService } from '../shared/theme.service';
 
 @Component({
   selector: 'app-main',
@@ -16,43 +15,22 @@ export class MainComponent implements OnInit {
   public light: boolean;
 
   constructor(
-    protected injector: Injector,
     protected navigationService: NavigationBarService,
-    protected _themeService: ThemeService
+    protected appeareanceService: AppearanceService
   ) {
-    const authService = this.injector.get(AuthService);
-    authService.storeSessionInfo({
-      id: 12345,
-      user: 'playground'
-    });
-
   }
 
   ngOnInit() {
     this.navigationService.onTitleChange((title) => {
       this.sectionTitle = title;
     });
-    const currentTheme = this._themeService.getStoredTheme();
-    if (currentTheme.isDark) {
-      this.light = false;
-    }
-    else {
-      this.light = true;
-    }
+    this.light = !this.appeareanceService.isDarkMode();
   }
 
-  light_mode() {
-    const currentTheme = this._themeService.getStoredTheme();
-    currentTheme.isDark = false;
-    this._themeService.installTheme(currentTheme);
-    this.light = true;
+  setDarkMode(darkMode: boolean) {
+    this.appeareanceService.setDarkMode(darkMode)
   }
 
-  dark_mode() {
-    const currentTheme = this._themeService.getStoredTheme();
-    currentTheme.isDark = true;
-    this._themeService.installTheme(currentTheme);
-    this.light = false;
-  }
+
 
 }

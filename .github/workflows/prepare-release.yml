@@ -10,16 +10,16 @@ on:
         default: 'minor'
         type: choice
         options:
-          - 'minor'
-          - 'hotfix'
+          - "minor"
+          - "hotfix"
 
 env:
   NPM_REGISTRY: https://registry.npmjs.org/
   CI_EMAIL: ontimize-web@imatia.com
   CI_USERNAME: ontimize-web
-  MAIN_BRANCH: master
-  DEVELOP_BRANCH: 8.x.x
-  
+  MAIN_BRANCH: main.15.x
+  DEVELOP_BRANCH: 15.x.x
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -31,12 +31,15 @@ jobs:
           if [ "${{ github.event.inputs.RELEASE_TYPE }}" = "hotfix" ]; then
             BASELINE_BRANCH=${{ env.MAIN_BRANCH }}
             isHotfix=1
+            isMinor=0
           else
             BASELINE_BRANCH=${{ env.DEVELOP_BRANCH }}
             isHotfix=0
+            isMinor=1
           fi
           echo "BASELINE_BRANCH=$BASELINE_BRANCH" >> $GITHUB_ENV
           echo "isHotfix=$isHotfix" >> $GITHUB_OUTPUT
+          echo "isMinor=$isMinor" >> $GITHUB_OUTPUT
 
       - name: Checkout merge commit
         uses: actions/checkout@v3
@@ -44,10 +47,10 @@ jobs:
           ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
-      - name: Node 12.x
+      - name: Node 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: 12.13.0
+          node-version: 18.10.0
           registry-url: ${{ env.NPM_REGISTRY }}
 
       - name: obtain package.json version
@@ -62,7 +65,7 @@ jobs:
 
       ## MINOR
       - name: bumping minor version in package.json
-        if: ${{ steps.parameters.outputs.isHotfix == false }}
+        if: ${{ steps.parameters.outputs.isMinor == true }}
         run: |
           version=$(echo "${{ steps.project.outputs.version }}" | sed 's/-SNAPSHOT-[0-9]//')
           npm version $version --no-git-tag-version
@@ -76,7 +79,7 @@ jobs:
           echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
 
       - name: Create release branch
-        if: ${{ steps.parameters.outputs.isHotfix == false }}
+        if: ${{ steps.parameters.outputs.isMinor == true }} || ${{ steps.parameters.outputs.isRC == true }} || ${{ steps.parameters.outputs.isBeta == true }}
         run: |
           version=${{ env.RELEASE_VERSION }}
           git checkout -b release/$version
@@ -110,3 +113,4 @@ jobs:
         run: |
           version=${{ env.RELEASE_VERSION }}
           gh pr create -B ${{ env.MAIN_BRANCH }} -H hotfix/$version --title "Hotfix $version" --body "" --draft --label "release"
+

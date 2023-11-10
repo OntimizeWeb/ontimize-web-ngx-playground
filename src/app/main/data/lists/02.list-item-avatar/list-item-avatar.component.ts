@@ -6,7 +6,7 @@ const LIST_ITEM_AVATAR_HTML_DATA = `
 <o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
   title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
   refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
-  selectable="{selectable}" dense="{dense}" detail-button-in-row="{detailButtonInRow}"
+  selectable="{selectable}" detail-button-in-row="{detailButtonInRow}"
   detail-button-in-row-icon="{detailButtonInRowIcon}" edit-button-in-row="{editButtonInRow}"
   edit-button-in-row-icon="{editButtonInRowIcon}" detail-mode="none">
 
@@ -40,25 +40,23 @@ export class ListItemAvatarComponent {
   protected staticData = ListsUtils.getListData(5);
   html: string;
 
-  @ViewChild('listTitle', { static: false })
+  @ViewChild('listTitle')
   listTitle: any;
-  @ViewChild('refreshButtonToggle', { static: false })
+  @ViewChild('refreshButtonToggle')
   refreshButtonToggle: any;
-  @ViewChild('denseToggle', { static: false })
-  denseToggle: any;
-  @ViewChild('insertButtonToggle', { static: false })
+  @ViewChild('insertButtonToggle')
   insertButtonToggle: any;
-  @ViewChild('selectableToggle', { static: false })
+  @ViewChild('selectableToggle')
   selectableToggle: any;
-  @ViewChild('editButtonInRowToggle', { static: false })
+  @ViewChild('editButtonInRowToggle')
   editButtonInRowToggle: any;
-  @ViewChild('detailButtonInRowToggle', { static: false })
+  @ViewChild('detailButtonInRowToggle')
   detailButtonInRowToggle: any;
-  @ViewChild('iconToggle', { static: false })
+  @ViewChild('iconToggle')
   iconToggle: any;
-  @ViewChild('itemIcon', { static: false })
+  @ViewChild('itemIcon')
   itemIcon: any;
-  @ViewChild('list', { static: false })
+  @ViewChild('list')
   list: any;
 
   files = {
@@ -107,7 +105,6 @@ export class ListItemAvatarComponent {
 
     list.title = this.listTitle.nativeElement.value;
     list.refreshButton = this.refreshButtonToggle.checked;
-    list.dense = this.denseToggle.checked;
     list.insertButton = this.insertButtonToggle.checked;
     list.selectable = this.selectableToggle.checked;
 

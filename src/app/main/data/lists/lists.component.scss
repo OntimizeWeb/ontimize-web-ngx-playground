@@ -14,7 +14,7 @@
   max-height: 100%;
 }
 
-img.mat-card-image {
+img.mat-mdc-card-image {
   width: 50%;
 }
 
@@ -24,7 +24,7 @@ list-item-text {
       overflow: auto;
 
       >.o-list-content {
-        .mat-list {
+        .mat-mdc-list {
           height: fit-content;
           overflow: hidden;
         }

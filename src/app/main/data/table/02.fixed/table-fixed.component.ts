@@ -10,13 +10,13 @@ export class TableFixedComponent {
 
   html: string;
 
-  @ViewChild('fixedHeaderToggle', { static: false })
+  @ViewChild('fixedHeaderToggle')
   fixedHeaderToggle: any = true;
 
-  @ViewChild('height', { static: false })
+  @ViewChild('height')
   tableHeight: any;
 
-  @ViewChild('table', { static: false })
+  @ViewChild('table')
   table: any;
 
   public data = TableUtils.getAccountsTableFixed().slice();

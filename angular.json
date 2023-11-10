@@ -13,12 +13,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment",
+              "google-libphonenumber"
+            ],
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -26,14 +29,33 @@
                 "glob": "**/*",
                 "input": "node_modules/ontimize-web-ngx/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/github*.css",
+                "input": "node_modules/highlight.js/styles/",
+                "output": "/assets/hightlight"
               }
             ],
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
-              "node_modules/ontimize-web-ngx-charts/styles.scss",
+              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": {
+              "scripts": true,
+              "vendor": true
+            },
+            "optimization": false,
+            "namedChunks": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -46,9 +68,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -64,17 +84,13 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ontimize-web-ngx-playground:build",
-            "sourceMap": {
-              "scripts": true,
-              "styles": true,
-              "vendor": true
-            }
+            "browserTarget": "ontimize-web-ngx-playground:build"
           },
           "configurations": {
             "production": {
@@ -100,22 +116,15 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/app.scss",
               "src/styles.scss"
             ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            }
           }
         },
         "e2e": {
@@ -133,5 +142,9 @@
       }
     }
   },
-  "defaultProject": "ontimize-web-ngx-playground"
+  "cli": {
+    "cache": {
+      "enabled": false
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
+
 import { ExampleComponent } from '../../../../shared/example/example.component';
 import { GridUtils } from '../grid.utils';
-import { ɵCssKeyframesDriver } from '@angular/animations/browser';
 
 @Component({
   selector: 'grid-basic',
@@ -16,7 +16,7 @@ export class GridBasicComponent {
   public gutterSize = 1;
   html: string;
 
-  @ViewChild('grid', { static: false })
+  @ViewChild('grid')
   grid: any;
 
   constructor(){ }

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatCheckbox } from '@angular/material';
+import { MatCheckbox } from '@angular/material/checkbox';
 import * as moment from 'moment';
 import { OFormDataComponent, OValueChangeEvent } from 'ontimize-web-ngx';
 
@@ -348,11 +348,11 @@ export class ConsoleLogEvent {
 })
 export class InputEventsComponent {
 
-  @ViewChild('printOnChange', { static: false }) printOnChange: MatCheckbox;
-  @ViewChild('printOnValueChange', { static: false }) printOnValueChange: MatCheckbox;
-  @ViewChild('printOnFocus', { static: false }) printOnFocus: MatCheckbox;
-  @ViewChild('printOnBlur', { static: false }) printOnBlur: MatCheckbox;
-  @ViewChild('printClick', { static: false }) printClick: MatCheckbox;
+  @ViewChild('printOnChange') printOnChange: MatCheckbox;
+  @ViewChild('printOnValueChange') printOnValueChange: MatCheckbox;
+  @ViewChild('printOnFocus') printOnFocus: MatCheckbox;
+  @ViewChild('printOnBlur') printOnBlur: MatCheckbox;
+  @ViewChild('printClick') printClick: MatCheckbox;
   public moment = moment;
   public array: Array<Object> = [{
     'key': 1,

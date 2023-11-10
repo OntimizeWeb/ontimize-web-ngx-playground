@@ -72,7 +72,7 @@ export class GalleryMediaComponent implements OnInit {
     }
   };
 
-  @ViewChild('demoGaleria', { static: false }) demoGaleria: GalleryComponent;
+  @ViewChild('demoGaleria') demoGaleria: GalleryComponent;
 
   public static getHtml(data: any) {
     let tpl = HTML_DATA;

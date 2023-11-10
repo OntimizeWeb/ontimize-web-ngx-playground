@@ -1,4 +1,4 @@
-.sidenav-container {
+.mat-drawer-container.sidenav-container {
   background-color: transparent;
   width: 100%;
   height: fit-content;
@@ -48,8 +48,13 @@
 }
 
 .conf-btn {
+
   transform: rotate(-90deg) translate(-67px, -59px);
   height: fit-content;
+
+  .mdc-button__label {
+    display: flex;
+  }
 }
 
 list-item-text,
