@@ -17,7 +17,15 @@
       <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION_THUMBNAIL' | oTranslate }}" elevation="0" layout-padding
         layout-align="center" expanded="true">
         <mat-slide-toggle (change)="demoGaleria.changeThumbnails()" checked="true">{{ 'GALLERY.THUMB' | oTranslate}}</mat-slide-toggle>
-        <mat-slide-toggle (change)="demoGaleria.changeThumbPosition()" checked="false">{{ 'GALLERY.THUMBPOST' | oTranslate}}</mat-slide-toggle>
+        <mat-form-field>
+          <mat-label>{{ 'GALLERY.THUMBPOST' | oTranslate}}</mat-label>
+          <mat-select value="thumbnails-bottom" (selectionChange)="demoGaleria.changeThumbPosition($event.value)">
+            <mat-option value="thumbnails-top"> TOP</mat-option>
+            <mat-option value="thumbnails-bottom">BOTTOM</mat-option>
+            <mat-option value="thumbnails-left"> LEFT</mat-option>
+            <mat-option value="thumbnails-right"> RIGHT</mat-option>
+          </mat-select>
+        </mat-form-field>
         <mat-slide-toggle (change)="demoGaleria.changeThumbnailSize()" checked="false">{{ 'GALLERY.THUMBSIZE' | oTranslate}}</mat-slide-toggle>
         <mat-slide-toggle (change)="demoGaleria.changeThumbnailsSwipe()" checked="true">{{ 'GALLERY.SWIPE_THUMBNAILS' | oTranslate}}
         </mat-slide-toggle>
@@ -45,6 +53,8 @@
         <mat-slide-toggle (change)="demoGaleria.changePreviewSwipe()" checked="true">{{ 'GALLERY.SWIPE_PREVIEW' | oTranslate}}</mat-slide-toggle>
 
       </o-column-collapsible>
+      <button (click)="demoGaleria.moveThumbnailsLeft()"> moveThumbnailsLeft</button>
+      <button (click)="demoGaleria.moveThumbnailsRight()"> moveThumbnailsRight</button>
 
     </div>
     <div content fxLayout="column">
