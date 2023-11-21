@@ -19,7 +19,7 @@
         <mat-slide-toggle (change)="demoGaleria.changeThumbnails()" checked="true">{{ 'GALLERY.THUMB' | oTranslate}}</mat-slide-toggle>
         <mat-form-field>
           <mat-label>{{ 'GALLERY.THUMBPOST' | oTranslate}}</mat-label>
-          <mat-select value="thumbnails-bottom" (selectionChange)="demoGaleria.changeThumbPosition($event.value)">
+          <mat-select value="thumbnails-bottom" (selectionChange)="changeThumbPosition($event)">
             <mat-option value="thumbnails-top"> TOP</mat-option>
             <mat-option value="thumbnails-bottom">BOTTOM</mat-option>
             <mat-option value="thumbnails-left"> LEFT</mat-option>

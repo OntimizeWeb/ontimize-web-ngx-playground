@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSelectChange } from '@angular/material';
 import { GalleryComponent, GalleryImage, GalleryImageSize, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `
@@ -12,10 +13,8 @@ ngOnInit(): void {
 
   this.galleryOptions = [
     {
-     breakpoint: 1720,
         height: "600px",
         width: "600px",
-        imagePercent: 100,
         thumbnailsColumns: 3
       }
   ];
@@ -91,7 +90,6 @@ export class GalleryMediaComponent implements OnInit {
         breakpoint: 1720,
         height: "600px",
         width: "600px",
-        imagePercent: 100,
         thumbnailsColumns: 3
       }
     ];
@@ -122,6 +120,17 @@ export class GalleryMediaComponent implements OnInit {
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum ex nulla, quis imperdiet ex interdum vel. Duis sit amet placerat purus, quis sodales ante.'
       }
     ];
+  }
+
+  changeThumbPosition(event: MatSelectChange) {
+    if (event.value === 'thumbnails-left' || event.value === 'thumbnails-right') {
+      this.demoGaleria.changeThumbnailsColumns(1);
+      this.demoGaleria.changeThumbnailsRows(3);
+    } else {
+      this.demoGaleria.changeThumbnailsColumns(3);
+      this.demoGaleria.changeThumbnailsRows(1);
+    }
+    this.demoGaleria.changeThumbPosition(event.value)
   }
 
 }
