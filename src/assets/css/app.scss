@@ -13,6 +13,9 @@
 // $lite-typography: $default-typography;
 @include implatform-fashion-theme-styles($theme, $lite-typography);
 
+@import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss';
+@include o-gallery-theme($theme);
+
 /*
 * Import application themes.
 */
