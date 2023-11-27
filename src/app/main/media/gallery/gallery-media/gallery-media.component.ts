@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSelectChange } from '@angular/material';
-import { GalleryComponent, GalleryImage, GalleryImageSize, GalleryOptions } from 'ontimize-web-ngx-gallery';
+import { MatSelect, MatSelectChange } from '@angular/material';
+import { GalleryComponent, GalleryImage, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `
 <o-gallery #demoGaleria [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
@@ -15,7 +15,9 @@ ngOnInit(): void {
     {
         height: "600px",
         width: "600px",
-        thumbnailsColumns: 3
+        thumbnailsColumns: {{thumbnailsColumns}},
+        thumbnailsRows: {{thumbnailsRows}},
+        layout:"{{layout}}"
       }
   ];
 
@@ -59,6 +61,7 @@ export class GalleryMediaComponent implements OnInit {
   galleryOptions: GalleryOptions[];
   galleryImages: GalleryImage[];
 
+  @ViewChild('layout', { static: true }) layout: MatSelect;
   files = {
     'html': {
       'data': HTML_DATA
@@ -78,16 +81,22 @@ export class GalleryMediaComponent implements OnInit {
     return tpl;
   }
 
+  public static getTypescript(data: any) {
+    let tpl = TYPESCRIPT_DATA;
+    return tpl;
+  }
+
   onShowSource(key: string, exampleComp: any) {
-    const itemData: any = {};
-    exampleComp.html = GalleryMediaComponent.getHtml(itemData);
+    let typescriptData = TYPESCRIPT_DATA.replace('{{thumbnailsColumns}}', this.layout.value === 'thumbnails-left' || this.layout.value === 'thumbnails-right'?'1':'3').
+    replace('{{thumbnailsRows}}', this.layout.value === 'thumbnails-left' || this.layout.value === 'thumbnails-right' ? '3' : '1').
+    replace('{{layout}}', this.layout.value);
+    this.files.typescript.data = typescriptData;
   }
 
   ngOnInit(): void {
 
     this.galleryOptions = [
       {
-        breakpoint: 1720,
         height: "600px",
         width: "600px",
         thumbnailsColumns: 3

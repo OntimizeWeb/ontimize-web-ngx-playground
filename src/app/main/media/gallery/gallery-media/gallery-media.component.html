@@ -18,7 +18,7 @@
         layout-align="center" expanded="true">
         <mat-form-field>
           <mat-label>{{ 'GALLERY.THUMBPOST' | oTranslate}}</mat-label>
-          <mat-select value="thumbnails-bottom" (selectionChange)="changeThumbPosition($event)">
+          <mat-select #layout value="thumbnails-bottom" (selectionChange)="changeThumbPosition($event)">
             <mat-option value="thumbnails-top"> TOP</mat-option>
             <mat-option value="thumbnails-bottom">BOTTOM</mat-option>
             <mat-option value="thumbnails-left"> LEFT</mat-option>
