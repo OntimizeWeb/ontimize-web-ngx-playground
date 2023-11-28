@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
       title="CUSTOMERS" [static-data]="data" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="no" export-button="no" layout-padding fxFill detail-mode="none">
+      pagination-controls="no" export-button="no" layout-padding fxFill detail-mode="none" show-charts-on-demand-option="no">
       <o-table-column attr="PHOTO" orderable="no" searchable="no">
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
       </o-table-column>
