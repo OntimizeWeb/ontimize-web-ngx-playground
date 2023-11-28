@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding >
     <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
-      query-rows="10" fixed-header="yes" [show-expandable-icon-function]="hasChilds">
+      query-rows="10" fixed-header="yes" [show-expandable-icon-function]="hasChilds" show-charts-on-demand-option="no">
       <o-table-row-expandable>
         <ng-template let-row>
           <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">

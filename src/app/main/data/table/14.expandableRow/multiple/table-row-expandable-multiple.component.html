@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"
       visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes">
+      pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable multiple="yes">
         <ng-template let-row>
           <div class="example-element-detail">

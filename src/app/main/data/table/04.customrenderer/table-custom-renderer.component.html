@@ -1,15 +1,15 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER_ADVANCE" [files]="getFiles('o-table-renderer-advance')">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
-      visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" layout-padding title="ACCOUNTS" [static-data]="data"
-      sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
-      refresh-button="no" pagination-controls="no" export-button="no"  edition-mode="none" detail-mode="none">
+      visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" layout-padding title="ACCOUNTS" [static-data]="data" sort-columns="ACCOUNT:DESC"
+      query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+      edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
       <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
       <o-table-column attr="NUMCARD" title="NUMCARD" content-align="end">
         <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
       </o-table-column>
-      <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator=","
-        currency-symbol="€" currency-symbol-position="right" content-align="center"></o-table-column>
+      <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right" content-align="center"></o-table-column>
       <o-table-column attr="TOTALREADY" title="TOTALREADY" content-align="end">
         <o-table-column-renderer-totalready></o-table-column-renderer-totalready>
       </o-table-column>
