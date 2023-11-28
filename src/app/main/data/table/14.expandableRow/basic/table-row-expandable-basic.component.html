@@ -1,9 +1,9 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_SIMPLE_TEMPLATE_ROW_EXPANDABLE"
   comp-desc="TABLE.EXAMPLE_SIMPLE_TEMPLATE_ROW_EXPANDABLE_DESC" [files]="getFiles('o-table-row-expandable')">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding >
+  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
-      query-rows="10" fixed-header="yes">
+      query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable>
         <ng-template let-row>
           <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
