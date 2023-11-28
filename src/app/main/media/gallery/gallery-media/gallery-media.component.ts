@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSelect, MatSelectChange } from '@angular/material';
+import { MatSelect, MatSelectChange } from '@angular/material/select';
 import { GalleryComponent, GalleryImage, GalleryOptions } from 'ontimize-web-ngx-gallery';
 
 const HTML_DATA = `

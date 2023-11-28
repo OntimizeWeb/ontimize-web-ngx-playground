@@ -5,7 +5,7 @@
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
 
 @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss';
-@include o-gallery-theme($theme);
+@include o-gallery-theme(theme.$theme);
 
 /*
 * Import application themes.
