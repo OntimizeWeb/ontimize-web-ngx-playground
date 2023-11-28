@@ -1,6 +1,6 @@
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
-// //Include ontimize-lite theme
+// Include ontimize-lite theme
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
 @include ontimize-theme-styles-lite($theme, $lite-typography);
 
@@ -10,7 +10,6 @@
 
 //Include implatform-fashion style
 @import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
-// $lite-typography: $default-typography;
 @include implatform-fashion-theme-styles($theme, $lite-typography);
 
 @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss';
