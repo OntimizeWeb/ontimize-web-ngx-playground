@@ -62,7 +62,7 @@ jobs:
 
       ## MINOR
       - name: bumping minor version in package.json
-        if: ${{ steps.parameters.outputs.isMinor == true }}
+        if: ${{ steps.parameters.outputs.isHotfix == false }}
         run: |
           version=$(echo "${{ steps.project.outputs.version }}" | sed 's/-SNAPSHOT-[0-9]//')
           npm version $version --no-git-tag-version
@@ -76,7 +76,7 @@ jobs:
           echo "RELEASE_VERSION=$(node -pe "require('./package.json')['version']")" >> $GITHUB_ENV
 
       - name: Create release branch
-        if: ${{ steps.parameters.outputs.isMinor == true }}
+        if: ${{ steps.parameters.outputs.isHotfix == false }}
         run: |
           version=${{ env.RELEASE_VERSION }}
           git checkout -b release/$version
