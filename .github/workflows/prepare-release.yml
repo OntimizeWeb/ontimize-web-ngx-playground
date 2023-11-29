@@ -19,7 +19,7 @@ env:
   CI_USERNAME: ontimize-web
   MAIN_BRANCH: master
   DEVELOP_BRANCH: 8.x.x
-  
+
 jobs:
   build:
     runs-on: ubuntu-20.04

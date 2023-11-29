@@ -4,7 +4,7 @@
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
       visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData"
       sort-columns="NUMCARDS:DESC;NAME:ASC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-      pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false">
+      pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false" show-charts-on-demand-option="no">
 
       <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>

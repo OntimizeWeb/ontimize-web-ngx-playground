@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
+import { APP_CONFIG, O_MAT_ERROR_OPTIONS, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
-import { DummyService } from './shared/services/dummy.service';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material';
+import { DummyService } from './shared/services/dummy.service';
 
 /**
  * Import specific languages to avoid importing everything
@@ -43,8 +42,9 @@ export function getHighlightLanguages() {
         languages: getHighlightLanguages()
       }
     },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
-    ...ONTIMIZE_PROVIDERS
+    // { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
+    ...ONTIMIZE_PROVIDERS,
+    { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } },
   ],
   bootstrap: [AppComponent]
 })

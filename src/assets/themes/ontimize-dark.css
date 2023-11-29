@@ -4323,6 +4323,16 @@ o-row.o-row.bg-level-1 {
 .o-form-toolbar[layout-padding] {
   padding: 0; }
 
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+.o-gallery-arrows .o-gallery-icon-content {
+  background-color: #303030; }
+
+o-gallery-preview .o-gallery-arrows .o-gallery-icon-content {
+  background-color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87); }
+
 /*
 * Import application themes.
 */
