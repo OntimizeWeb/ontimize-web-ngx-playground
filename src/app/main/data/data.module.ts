@@ -7,6 +7,8 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { SharedModule } from '../../shared/shared.module';
 import { DataHomeComponent } from './data-home/data-home.component';
 import { DataRoutingModule } from './data-routing.module';
+import { MainModule } from '../main.module';
+import { TreeModule } from './tree/tree.module';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { DataRoutingModule } from './data-routing.module';
     DataRoutingModule,
     TableModule,
     ListsModule,
-    GridModule
+    GridModule,
+    MainModule,
+    TreeModule
   ],
   declarations: [
     DataHomeComponent

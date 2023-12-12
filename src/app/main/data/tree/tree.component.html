@@ -1,0 +1,12 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <collapsible-menu>
+    <a mat-button class="menu-item" routerLink="/main/data/tree/basic" routerLinkActive="active" fxFlex>{{ 'TREE.BUTTON.BASIC' | oTranslate }}</a>
+  </collapsible-menu>
+
+  <div fxFlex="calc(100% - 300px)" class="left-border" fxLayout="column">
+    <header-button-menu comp-name="{{ 'TREE.COMPONENT' | oTranslate }}" comp-desc="{{ 'TREE.COMPONENT.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
