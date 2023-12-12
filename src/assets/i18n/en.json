@@ -485,6 +485,7 @@
   "TREE.BUTTON.BASIC": "Basic",
   "TREE.BUTTON.NODES": "Nodes",
   "TREE.BUTTON.STATIC": "Static data",
+  "TREE.BUTTON.RECURSIVE": "Recursive",
   "TREE.CONTROLS": "Controls",
   "TREE.QUICKFILTER": "Filter",
   "TREE.REFRESH_BUTTON": "Refresh button",
