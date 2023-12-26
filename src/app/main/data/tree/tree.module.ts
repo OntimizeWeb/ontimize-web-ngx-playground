@@ -6,19 +6,22 @@ import { TreeBasicComponent } from './01.basic/tree-basic.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { TreeNodesComponent } from './02.nodes/tree-nodes.component';
 import { TreeRecursiveComponent } from './05.recursive/tree-recursive.component';
+import { DetailModule } from './04.detail/detail.module';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
     OTreeModule,
-    TreeRoutingModule
+    TreeRoutingModule,
+    DetailModule
   ],
   declarations: [
     TreeComponent,
     TreeBasicComponent,
     TreeNodesComponent,
-    TreeRecursiveComponent
+    TreeRecursiveComponent,
+
   ]
 })
 export class TreeModule { }

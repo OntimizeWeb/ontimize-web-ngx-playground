@@ -9,6 +9,10 @@ export class DummyService extends OntimizeService {
   static mappings: object = {
     customer: '/customers-data.json',
     customerRecursive: '/customers-recursive-data.json',
+    customerTree: '/customers-tree-data.json',
+    customerAccountsTree: '/accounts-tree-data.json',
+    conceptsTree: '/concepts-tree-data.json',
+    movementsTypesTree: '/movementtypes-tree-data.json',
     account: '/accounts-data.json',
     customerAccount: '/customer-accounts-data.json',
     accountConcepts: '/concepts-data.json',
