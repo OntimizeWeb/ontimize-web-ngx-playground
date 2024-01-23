@@ -2,30 +2,18 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { OTranslateService, SnackBarService } from 'ontimize-web-ngx';
 
 const TREE_HTML_DATA = `
-<o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService"
-  service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
-  description-columns="SURNAME;NAME" separator=", " query-on-init="true"
-  quick-filter="true" quick-filter-columns="SURNAME;NAME">
+ <o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customer" entity="customerTree" keys="CUSTOMERID"
+    columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" quick-filter="true"
+    quick-filter-columns="SURNAME;NAME" select-all-checkbox="yes">
 
-  <o-tree-node root-title="ACCOUNTS" show-root="no" service-type="DummyService"
-    service="customers" entity="customerAccount" quick-filter-columns="ACCOUNT"
-    columns="ACCOUNTID;CUSTOMERID;ACCOUNT" description-columns="ACCOUNT" keys="ACCOUNTID"
-    parent-keys="CUSTOMERID">
+    <o-tree-node service-type="DummyService" service="customerTree" entity="customerAccount" quick-filter-columns="ACCOUNT"
+      columns="ACCOUNTID;CUSTOMERID;ACCOUNT" visible-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID">
 
-    <o-tree-node root-title="ACCOUNT_CONCEPTS" show-root="no" service-type="DummyService"
-      service="branches" entity="accountConcepts" columns="CONCEPT;ACCOUNTID"
-      quick-filter-columns="CONCEPT" description-columns="CONCEPT" keys="CONCEPT;ACCOUNTID"
-      parent-keys="ACCOUNTID">
-    </o-tree-node>
-
-    <o-tree-node root-title="ACCOUNT_MOVEMENTTYPES" show-root="no" service-type="DummyService"
-      service="branches" entity="accountMovementTypes" columns="DESCRIPTION;ACCOUNTID"
-      description-columns="DESCRIPTION" keys="DESCRIPTION;ACCOUNTID" parent-keys="ACCOUNTID">
-    </o-tree-node>
+      <o-tree-node root-title="ACCOUNT_CONCEPTS" show-root="no" service-type="DummyService" service="branches" entity="accountConcepts"
+        columns="CONCEPT;ACCOUNTID" quick-filter-columns="CONCEPT" visible-columns="CONCEPT" keys="CONCEPT;ACCOUNTID" parent-keys="ACCOUNTID">
+      </o-tree-node>
 
   </o-tree-node>
-
-  </o-tree>
 `;
 
 const TREE_TS_DATA = `
@@ -65,10 +53,6 @@ export class TreeNodesComponent {
       label: 'concepts',
       type: 'typescript',
       data: CONCEPTS_DATA
-    }, {
-      label: 'movement types',
-      type: 'typescript',
-      data: MOVEMENTTYPES_DATA
     }]
   };
 
