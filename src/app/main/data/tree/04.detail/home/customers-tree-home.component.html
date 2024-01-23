@@ -2,11 +2,12 @@
 
   <div fxLayout="row" fxLayoutAlign="center stretch" fxFlexFill>
 
-    <o-tree controls="no" #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID"
-      columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME" separator=", " query-on-init="true" route=":CUSTOMERID">
+    <o-tree controls="no" #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customers" entity="customerTree"
+      keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" route=":CUSTOMERID"
+      select-all-checkbox="yes">
 
-      <o-tree-node root-title="ACCOUNTS" show-root="no" service-type="DummyService" service="customers" entity="customerAccount"
-        columns="ACCOUNTID;CUSTOMERID;ACCOUNT" description-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID" route="accounts/:ACCOUNTID">
+      <o-tree-node service-type="DummyService" service="customers" entity="customerAccount" columns="ACCOUNTID;CUSTOMERID;ACCOUNT"
+        visible-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID" route="accounts/:ACCOUNTID">
       </o-tree-node>
 
     </o-tree>

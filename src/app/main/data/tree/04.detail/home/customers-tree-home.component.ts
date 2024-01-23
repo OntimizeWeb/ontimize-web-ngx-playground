@@ -1,29 +1,24 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router, ActivatedRoute, NavigationStart, GuardsCheckStart } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const TREE_HTML_DATA = `
-<div fxLayout="row" fxLayoutAlign="center stretch" fxFlexFill>
-  <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="25">
 
-    <o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService"
-      service="customers" entity="customer" keys="CUSTOMERID"
-      columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME"
-      separator=", " query-on-init="true" route=":CUSTOMERID">
+  <div fxLayout="row" fxLayoutAlign="center stretch" fxFlexFill>
 
-      <o-tree-node root-title="ACCOUNTS" show-root="no" service-type="DummyService"
-        service="customers" entity="customerAccount" columns="ACCOUNTID;CUSTOMERID;ACCOUNT"
-        description-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID"
-        route="accounts/:ACCOUNTID">
+    <o-tree controls="no" #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customers" entity="customerTree"
+      keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" route=":CUSTOMERID"
+      select-all-checkbox="yes">
+
+      <o-tree-node service-type="DummyService" service="customers" entity="customerAccount" columns="ACCOUNTID;CUSTOMERID;ACCOUNT"
+        visible-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID" route="accounts/:ACCOUNTID">
       </o-tree-node>
 
     </o-tree>
 
+    <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="75">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-
-  <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="75">
-    <router-outlet></router-outlet>
-  </div>
-</div>
 `;
 
 const TREE_TS_DATA = `
