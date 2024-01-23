@@ -1,17 +1,61 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
 const TREE_HTML_DATA = `
-<o-tree #treeview fxFlex service="customers" entity="customer" keys="CUSTOMERID" query-on-init="true"
-  columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME" service-type="DummyService"
-  separator=", " recursive="no" root-title="CUSTOMERS" [title]="{title}"
-  [controls]="{controls}" [quick-filter]="{quickFilter}" [refresh-button]="{refreshButton}"
-  (onNodeSelected)="nodeSelected($event)"
-  (onNodeExpanded)="nodeExpanded($event)"
-  (onNodeCollapsed)="nodeCollapsed($event)">
-</o-tree>
+  <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID"
+      columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no"
+       select-all-checkbox="yes" root-title="CUSTOMERS"
+      [title]="{title}"
+      [controls]="{controls}" [quick-filter]="{quickFilter}" [refresh-button]="{refreshButton}"(onNodeSelected)="nodeSelected($event)"
+      (onNodeExpanded)="nodeExpanded($event)"
+      (onNodeCollapsed)="nodeCollapsed($event)"
+      (onLoadNextLevel)="nextLevelLoaded($event)"
+      (onDataLoaded)="onDataLoaded($event)">
+  </o-tree>
 `;
 
 const TREE_TS_DATA = `
+  @Component({
+    selector: 'tree-basic',
+    templateUrl: './tree-basic.component.html',
+    styleUrls: ['./tree-basic.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    host: {
+      '[class.tree-basic]': 'true'
+    }
+  })
+  export class TreeBasicComponent {
+
+    treeEvents: Array<any> = [];
+
+    nodeSelected(arg: any) {
+      this.treeEvents.push({
+        event: 'onNodeSelected',
+        data: arg
+      });
+    }
+
+    nodeExpanded(arg: any) {
+      this.treeEvents.push({
+        event: 'onNodeExpanded',
+        data: arg
+      });
+    }
+
+    nodeCollapsed(arg: any) {
+      this.treeEvents.push({
+        event: 'onNodeCollapsed',
+        data: arg
+      });
+    }
+
+    onDataLoaded(arg: any) {
+      this.treeEvents.push({
+        event: 'onDataLoaded',
+        data: arg
+      });
+    }
+
+  }
 
 `;
 
@@ -44,14 +88,12 @@ export class TreeBasicComponent {
   treeEvents: Array<any> = [];
 
   files = {
-    // html': {
-    //   data: undefined
-    // },
+
     scss: {
       data: undefined
     },
     typescript: {
-      data: undefined
+      data: TREE_TS_DATA
     }
   };
 
@@ -97,6 +139,13 @@ export class TreeBasicComponent {
   nextLevelLoaded(arg: any) {
     this.treeEvents.push({
       event: 'onLoadNextLevel',
+      data: arg
+    });
+  }
+
+  onDataLoaded(arg: any) {
+    this.treeEvents.push({
+      event: 'onDataLoaded',
       data: arg
     });
   }

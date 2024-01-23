@@ -6,7 +6,7 @@
       columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no" query-on-init="true" root-title="CUSTOMERS"
       [title]="treeTitle.value" [controls]="controlsToggle.checked" [quick-filter]="quickFilterToggle.checked"
       [refresh-button]="refreshButtonToggle.checked" (onNodeSelected)="nodeSelected($event)" (onNodeExpanded)="nodeExpanded($event)"
-      (onNodeCollapsed)="nodeCollapsed($event)" (onLoadNextLevel)="nextLevelLoaded($event)">
+      (onNodeCollapsed)="nodeCollapsed($event)" (onLoadNextLevel)="nextLevelLoaded($event)" (onDataLoaded)="onDataLoaded($event)">
     </o-tree>
 
 
