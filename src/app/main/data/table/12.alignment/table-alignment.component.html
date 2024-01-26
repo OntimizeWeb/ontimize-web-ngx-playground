@@ -3,7 +3,7 @@
     <o-table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
       visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="data" query-on-init="no" insert-button="no" delete-button="no"
       refresh-button="no" selection-mode="none" pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="yes" fxFill
-      layout-padding>
+      layout-padding show-charts-on-demand-option="no">
       <o-table-column attr="NAME" title="NAME" title-align="center"></o-table-column>
       <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" content-align="start"></o-table-column>
       <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
