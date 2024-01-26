@@ -3,7 +3,7 @@
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
     <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer"  keys="CUSTOMERID" select-all-checkbox="yes"
-      columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no" query-on-init="true" root-title="CUSTOMERS"
+     select-all-checkbox-visible="yes"  columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no" query-on-init="true" root-title="CUSTOMERS"
       [title]="treeTitle.value" [controls]="controlsToggle.checked" [quick-filter]="quickFilterToggle.checked"
       [refresh-button]="refreshButtonToggle.checked" (onNodeSelected)="nodeSelected($event)" (onNodeExpanded)="nodeExpanded($event)"
       (onNodeCollapsed)="nodeCollapsed($event)" (onLoadNextLevel)="nextLevelLoaded($event)" (onDataLoaded)="onDataLoaded($event)">
