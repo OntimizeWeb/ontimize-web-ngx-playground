@@ -2,19 +2,18 @@
   (showSource)="onShowSource(ex)">
   <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
 
-    <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer"  keys="CUSTOMERID" select-all-checkbox="yes"
-     select-all-checkbox-visible="yes"  columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no" query-on-init="true" root-title="CUSTOMERS"
-      [title]="treeTitle.value" [controls]="controlsToggle.checked" [quick-filter]="quickFilterToggle.checked"
-      [refresh-button]="refreshButtonToggle.checked" (onNodeSelected)="nodeSelected($event)" (onNodeExpanded)="nodeExpanded($event)"
-      (onNodeCollapsed)="nodeCollapsed($event)" (onLoadNextLevel)="nextLevelLoaded($event)" (onDataLoaded)="onDataLoaded($event)">
+    <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" select-all-checkbox="yes"
+      select-all-checkbox-visible="yes" columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no"
+      query-on-init="true" root-title="CUSTOMERS" [title]="treeTitle.value" [controls]="controlsToggle.checked"
+      [quick-filter]="quickFilterToggle.checked" [refresh-button]="refreshButtonToggle.checked" (onNodeSelected)="nodeSelected($event)"
+      (onNodeExpanded)="nodeExpanded($event)" (onNodeCollapsed)="nodeCollapsed($event)" (onLoadNextLevel)="nextLevelLoaded($event)"
+      (onDataLoaded)="onDataLoaded($event)">
     </o-tree>
 
 
     <o-column attr="conf" title="{{ 'TREE.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="55" layout-padding layout-align="start stretch">
 
       <o-column title="{{ 'TREE.INPUTS' | oTranslate }}" elevation="0" layout-align="center">
-        <!-- <mat-icon svgIcon="ontimize:add"></mat-icon>
-        <mat-icon svgIcon="ontimize:android"></mat-icon> -->
         <mat-form-field fxFlex="50">
           <input matInput #treeTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Tree">
         </mat-form-field>

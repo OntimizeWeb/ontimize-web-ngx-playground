@@ -106,11 +106,10 @@ export class DummyService extends OntimizeService {
   public queryWithDelay(kv?: object, av?: Array<string>, entity?: string, sqltypes?: object): Observable<any> {
     const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
       setTimeout(() => {
-        this.query(kv, av, entity, sqltypes).subscribe((resp: ServiceResponse) => {
-          observer.next(resp);
-        }, err => {
-          observer.error(err);
-        });
+        this.query(kv, av, entity, sqltypes).subscribe({
+          next: (resp: ServiceResponse) => observer.next(resp),
+          error: (err: any) => observer.error(err)
+        })
       }, 3000);
     });
     return dataObservable.pipe(share());

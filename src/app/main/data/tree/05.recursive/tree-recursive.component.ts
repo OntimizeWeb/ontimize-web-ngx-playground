@@ -490,7 +490,6 @@ const TABLE_DATA = `
 @Component({
   selector: 'tree-recursive',
   templateUrl: './tree-recursive.component.html',
-  styleUrls: ['./tree-recursive.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
     '[class.tree-basic]': 'true'
