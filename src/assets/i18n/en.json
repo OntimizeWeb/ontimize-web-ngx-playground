@@ -492,5 +492,15 @@
   "TREE.QUICKFILTER": "Filter",
   "TREE.REFRESH_BUTTON": "Refresh button",
   "TREE.INPUTS": "Inputs",
-  "TREE.OUTPUTS": "Outputs"
+  "TREE.OUTPUTS": "Outputs",
+  "CUSTOMER": "Customer",
+  "CUSTOMERS": "Customers",
+  "DATE_": "Operation date",
+  "CONCEPT": "Concept",
+  "MOVEMENT": "Movement",
+  "MOVEMENTS": "Movements",
+  "MOVEMENTTYPES": "Movement types",
+  "MOVEMENTTYPEID": "Movement types",
+  "TRANSACTIONS": "Transactions",
+  "ENDDATE": "End date"
 }
