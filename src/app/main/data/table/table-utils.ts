@@ -144,7 +144,7 @@ const HTML_DATA = `
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
     select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}"
-    pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no" >
+    pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -166,7 +166,7 @@ const HTML_DATA_TABLE_FIXED = `
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
     quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{ngStyle}"
-    edition-mode="none" detail-mode="none">
+    edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
     <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
     <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
     <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
@@ -184,7 +184,7 @@ const HTML_DATA_RENDERER = `
   <o-table #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
     visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS"
     [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
-    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
+    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
 
     <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION"></o-table-columns-filter>
 
@@ -210,7 +210,7 @@ const HTML_DATA_RENDERER_CUSTOM = `
   <o-table #table attr="table" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"
     visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" attr="accounts" title="ACCOUNTS"
     [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
-    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
+    refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
@@ -234,7 +234,7 @@ const HTML_DATA_EDITORS = `
   <o-table #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
     visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC"
     query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no"
-    detail-mode="none" edition-mode="click" export-button="no">
+    detail-mode="none" edition-mode="click" export-button="no" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
@@ -288,7 +288,7 @@ const HTML_DATA_EDITORS = `
 const HTML_DATA_AGGREGATE = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
     title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
-    pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
+    pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"></o-table-columns-filter>
@@ -317,7 +317,7 @@ const HTML_DATA_AGGREGATE = `
 const HTML_DATA_CALCULATED_COLUMN = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE" visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
     title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
-    pagination-controls="no" export-button="no">
+    pagination-controls="no" export-button="no" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"></o-table-columns-filter>
@@ -352,7 +352,8 @@ const HTML_DATA_CALCULATED_COLUMN = `
 
 const HTML_DATA_PAGINATOR = `
   <o-table #table attr="branches" title="BRANCHES" columns="OFFICEID;NAME;ADDRESS;STARTDATE" pageable="no" visible-columns="OFFICEID;NAME;ADDRESS;STARTDATE"
-    sort-columns="NAME" keys="OFFICEID" insert-button="no" query-rows="5" refresh-button="no" export-button="no" [static-data]="data">
+    sort-columns="NAME" keys="OFFICEID" insert-button="no" query-rows="5" refresh-button="no" export-button="no" [static-data]="data"
+    show-charts-on-demand-option="no">
 
     <!-- Custom definition columns -->
     <o-table-column attr="OFFICEID" title="OFFICEID" width="15%"></o-table-column>
@@ -366,7 +367,7 @@ const HTML_DATA_PAGINATOR = `
 const HTML_DATA_CONTEXT_MENU = `
   <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
     title="CUSTOMERS" [static-data]="data" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
-    pagination-controls="no" export-button="no">
+    pagination-controls="no" export-button="no" show-charts-on-demand-option="no">
 
     <!-- Custom definition columns -->
     <o-table-column attr="PHOTO" orderable="no" searchable="no">
@@ -392,7 +393,7 @@ const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
   <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
     delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
-    edition-mode="none" detail-mode="none">
+    edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
@@ -406,7 +407,7 @@ const HTML_DATA_INSERTABLE_ROW = `
 <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
   visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="data"
   sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-  pagination-controls="no" detail-mode="none" export-button="no">
+  pagination-controls="no" detail-mode="none" export-button="no" show-charts-on-demand-option="no">
 
 
   <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
@@ -426,7 +427,7 @@ const HTML_DATA_ALIGN = `
 <o-table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
   visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" [static-data]="data" query-on-init="no"
   insert-button="no" delete-button="no" refresh-button="no" selection-mode="none" pagination-controls="no"
-  detail-mode="none" export-button="no" auto-align-titles="yes" fxFill layout-padding>
+  detail-mode="none" export-button="no" auto-align-titles="yes" fxFill layout-padding show-charts-on-demand-option="no">
   <o-table-column attr="NAME" title="NAME" title-align="center"></o-table-column>
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" content-align="start"></o-table-column>
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator=","
@@ -441,7 +442,8 @@ const HTML_DATA_MULTIPLE_SORT = `
 <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
   visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData"
   sort-columns="NUMCARDS:DESC;NAME:ASC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false">
+  pagination-controls="no" detail-mode="none" export-button="no" auto-align-titles="true" store-state="false"
+  show-charts-on-demand-option="no">
 
   <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
@@ -458,7 +460,7 @@ const HTML_DATA_MULTIPLE_SORT_FALSE = `
  <o-table fxFill #table attr="table2" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
     visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="tableData" sort-columns="NAME:DESC"
     query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no" detail-mode="none"
-    export-button="no" auto-align-titles="true" multiple-sort="no">
+    export-button="no" auto-align-titles="true" multiple-sort="no" show-charts-on-demand-option="no">
 
     <o-table-column attr="NAME" title="NAME" title-align="center"> </o-table-column>
     <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
@@ -473,7 +475,7 @@ const HTML_DATA_MULTIPLE_SORT_FALSE = `
 const HTML_DATA_ROW_EXPANDABLE_SIMPLE_TEMPLATE = `
   <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
-      query-rows="10" fixed-header="yes">
+      query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable>
         <ng-template let-row>
           <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
@@ -496,13 +498,14 @@ const HTML_DATA_ROW_EXPANDABLE_SIMPLE_TEMPLATE = `
 const HTML_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
   <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
-      store-state="false" query-rows="10" (onClick)="onClick($event)" fixed-header="yes">
+      store-state="false" query-rows="10" (onClick)="onClick($event)" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable expandible-column-visible="no">
         <ng-template let-row>
           <o-expandable-container [targets]="[accountsTable]" [data]="row">
             <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
               columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
-              title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" insert-button="no" delete-button="no" detail-mode="none">
+              title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" insert-button="no" delete-button="no" detail-mode="none"
+              show-charts-on-demand-option="no">
               <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
               <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
               <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
@@ -525,7 +528,7 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
             <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
               columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
               title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
-              detail-mode="none">
+              detail-mode="none" show-charts-on-demand-option="no" show-charts-on-demand-option="no">
               <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
               <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
               <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
@@ -539,7 +542,7 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER = `
 const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_SYNC = `
     <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
     title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
-    query-rows="10" fixed-header="yes" [show-expandable-icon-function]="hasChilds">
+    query-rows="10" fixed-header="yes" [show-expandable-icon-function]="hasChilds" show-charts-on-demand-option="no">
     <o-table-row-expandable>
       <ng-template let-row>
         <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
@@ -560,14 +563,14 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_SYNC = `
 const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_ASYNC = `
     <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
     title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
-    store-state="false" query-rows="10" fixed-header="yes" [show-expandable-icon-function]="context">
+    store-state="false" query-rows="10" fixed-header="yes" [show-expandable-icon-function]="context" show-charts-on-demand-option="no">
     <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
       <ng-template let-row>
         <o-expandable-container [targets]="[accountsTable]" [data]="row">
           <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
             columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
             title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
-            detail-mode="none">
+            detail-mode="none" show-charts-on-demand-option="no">
             <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
             <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
             <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
@@ -582,7 +585,7 @@ const HTML_DATA_BASIC_ROW_GROUPING = `
   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
   columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
   quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-  detail-mode="none" [ngStyle]="{'height':'600px'}">
+  detail-mode="none" [ngStyle]="{'height':'600px'}" show-charts-on-demand-option="no">
     <o-table-columns-grouping columns="country;sport">
       <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
       <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
@@ -595,7 +598,7 @@ const HTML_DATA_BASIC_ROW_GROUPING = `
 const HTML_DATA_MULTIPLE_EXPANDED_ROWS = `
 <o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"
   visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
-  pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes">
+  pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
   <o-table-row-expandable multiple="yes">
     <ng-template let-row>
       <div class="example-element-detail">
@@ -888,12 +891,12 @@ import { TableUtils } from '../../table-utils';
   templateUrl: 'table-row-expandable-function-async.component.html'
 })
 export class TableRowExpandableFunctionAsyncComponent implements OnInit{
-  
+
   service: DummyService;
   context: any;
   //Variable to better perfomance and not looping queries because of change detection.
   cache: Object = {};
-  
+
   constructor( protected injector: Injector ) {
     this.service = this.injector.get(DummyService);
     // Bind context

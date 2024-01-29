@@ -4,7 +4,7 @@
     <o-table fxFill #table attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS"
       visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS" [static-data]="data"
       sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none">
+      pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
 
       <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS">
       </o-table-columns-filter>

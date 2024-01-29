@@ -1,0 +1,19 @@
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="TREE.NODES.COMPONENT" comp-desc="TREE.NODES.COMPONENT.DESC" [files]="files"
+  (showSource)="onShowSource(treeview, ex)" style.height="65%">
+
+  <o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customer" entity="customerTree" keys="CUSTOMERID"
+    columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" quick-filter="true"
+    quick-filter-columns="SURNAME;NAME" select-all-checkbox="yes">
+
+    <o-tree-node service-type="DummyService" service="customerTree" entity="customerAccount" quick-filter-columns="ACCOUNT"
+      columns="ACCOUNTID;CUSTOMERID;ACCOUNT" visible-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID">
+
+      <o-tree-node root-title="ACCOUNT_CONCEPTS" show-root="no" service-type="DummyService" service="branches" entity="accountConcepts"
+        columns="CONCEPT;ACCOUNTID" quick-filter-columns="CONCEPT" visible-columns="CONCEPT" keys="CONCEPT;ACCOUNTID" parent-keys="ACCOUNTID">
+      </o-tree-node>
+
+
+    </o-tree-node>
+  </o-tree>
+
+</example-comp>

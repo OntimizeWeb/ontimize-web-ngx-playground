@@ -6,7 +6,8 @@ export const routes: Routes = [
   { path: 'home', data: { oAppHeaderTitle: 'Data' }, component: DataHomeComponent },
   { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
   { path: 'lists', loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule) },
-  { path: 'grid', loadChildren: () => import('./grid/grid.module').then(m => m.GridModule) }
+  { path: 'grid', loadChildren: () => import('./grid/grid.module').then(m => m.GridModule) },
+  { path: 'tree', loadChildren: () => import('./tree/tree.module').then(m => m.TreeModule) }
 ];
 
 @NgModule({

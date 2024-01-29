@@ -3,7 +3,7 @@
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
       visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
       sort-columns="NAME:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
-      pagination-controls="no" detail-mode="none" export-button="no" >
+      pagination-controls="no" detail-mode="none" export-button="no" show-charts-on-demand-option="no" >
 
       <o-table-columns-filter columns="NAME;BALANCE"></o-table-columns-filter>
       <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date"> </o-table-column>
