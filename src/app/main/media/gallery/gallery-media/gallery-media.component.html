@@ -13,6 +13,10 @@
         <mat-form-field>
           <input matInput #newHeight placeholder="{{ 'GALLERY.HEIGHT' | oTranslate }}" (keyup.enter)="demoGaleria.changeHeight(newHeight.value)">
         </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'GALLERY.RATIO' | oTranslate }}</mat-label>
+          <input matInput #ratioImage placeholder="{{ 'GALLERY.FORMAT_RATIO_TEXT' | oTranslate }}" (keyup.enter)="demoGaleria.changeAspectRatio(ratioImage.value)">
+        </mat-form-field>
       </o-column-collapsible>
       <o-column-collapsible attr="conf" title="{{ 'GALLERY.CONFIGURATION_THUMBNAIL' | oTranslate }}" elevation="0" layout-padding
         layout-align="center" expanded="true">
