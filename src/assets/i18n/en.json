@@ -502,5 +502,7 @@
   "MOVEMENTTYPES": "Movement types",
   "MOVEMENTTYPEID": "Movement types",
   "TRANSACTIONS": "Transactions",
-  "ENDDATE": "End date"
+  "ENDDATE": "End date",
+  "GALLERY.FORMAT_RATIO_TEXT":"Format 4:3",
+  "GALLERY.RATIO": "Aspect ratio"
 }
