@@ -469,5 +469,7 @@
   "INPUTS.OVERVIEW.DESC": "Inputs overview home page.",
   "CONSOLE.LOG": "Console log",
   "ABOUT": "About",
-  "BUTTON.CONFIGURATION": "Configuration"
+  "BUTTON.CONFIGURATION": "Configuration",
+  "GALLERY.FORMAT_RATIO_TEXT":"Format 4:3",
+  "GALLERY.RATIO": "Aspect ratio"
 }
