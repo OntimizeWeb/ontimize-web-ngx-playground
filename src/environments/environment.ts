@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   versions: {
-    core: '15.0.0-rc.0',
-    gallery: '15.0.0'
+    core: '15.0.0',
+    gallery: '15.1.0'
   }
 };
 
