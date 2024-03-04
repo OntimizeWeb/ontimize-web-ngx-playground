@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-playground",
-  "version": "15.2.1",
+  "version": "15.2.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4801",
@@ -32,7 +32,7 @@
     "highlight.js": "^11.7.0",
     "moment": "^2.18.1",
     "ngx-highlightjs": "^8.0.0",
-    "ontimize-web-ngx": "15.0.1",
+    "ontimize-web-ngx": "15.0.2",
     "ontimize-web-ngx-gallery": "15.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
