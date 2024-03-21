@@ -5,8 +5,8 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   ## provided as basic setup. replace as needed
-  repository: 179934523585.dkr.ecr.eu-west-3.amazonaws.com/ontimize-web-playground
-  version: dev.1.0.0-SNAPSHOT.7050694441.1
+  repository: ghcr.io/ontimizeweb/ontimize-web-ngx-playground
+  version: feature-dockerize
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -22,23 +22,23 @@ podSecurityContext: {}
 
 securityContext: {}
 ## liveness/readiness probes. standard ontimize endpoints
-# probePath: /ontimize/health
-# probePort: 8080
-# livenessProbe:
-#   initialDelaySeconds: 60
-#   periodSeconds: 15
-#   successThreshold: 1
-#   timeoutSeconds: 1
-#   ### Optional distinct liveness probe path, if empty the probePath is used
-#   #probePath: /ontimize/health/liveness
-# readinessProbe:
-#   initialDelaySeconds: 70
-#   failureThreshold: 3
-#   periodSeconds: 15
-#   successThreshold: 1
-#   timeoutSeconds: 1
-#   ### Optional distinct readiness probe path, if empty the probePath is used
-#   #probePath: /ontimize/health/readiness
+probePath: /index.html
+probePort: 80
+livenessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 15
+  successThreshold: 1
+  timeoutSeconds: 1
+  ### Optional distinct liveness probe path, if empty the probePath is used
+  probePath: /index.html
+readinessProbe:
+  initialDelaySeconds: 70
+  failureThreshold: 3
+  periodSeconds: 15
+  successThreshold: 1
+  timeoutSeconds: 1
+  ### Optional distinct readiness probe path, if empty the probePath is used
+  probePath: /index.html
 ## Adapt resources if needed
 resources:
   limits:
@@ -60,10 +60,10 @@ configmap:
 
 # Service configuration. Annotations are used by cert-manager to generate certificates using cluster-issuer
 service:
-  name: ontimize-web-ngx-playground
+  name: ontimize-web-ngx-playground-15x
   type: ClusterIP
-  externalPort: 80
-  internalPort: 8080
+  externalPort: 41501
+  internalPort: 80
 ingress:
   enabled: true
   annotations:
