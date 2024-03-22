@@ -71,7 +71,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: cert-manager-letsencrypt-production-route53
-  host: ontimize-web-ngx-playground.dev.imatia.cloud
+  host: ontimize-web-ngx-playground.ontimize.com
   tls:
     secretName: ontimize-web-ngx-playground-tls
     enabled: true
