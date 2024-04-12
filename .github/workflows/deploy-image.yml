@@ -3,7 +3,7 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['8.x.x', 'internal/fixe-deploy-image']
+    branches: ['8.x.x']
     tags:
       - 8.*
 
