@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 const TEXT_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-phone-input fxFlex attr="input" label="phone" [data]="getValue()"></o-phone-input>
+    <o-phone-input attr="input" label="phone" [data]="getValue()"></o-phone-input>
 
     <o-phone-input attr="input2" label="phone" [data]="getValue()" read-only="no"required="yes"></o-phone-input>
 
