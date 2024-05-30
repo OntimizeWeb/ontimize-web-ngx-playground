@@ -9,7 +9,7 @@
     "test-ci": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --configuration production --base-href=/",
+    "production": "ng build --configuration production --base-href=/v15/playground/",
     "production-aot-server": "ng build --configuration production  --base-href=/ontimizeweb/v15/playground/"
   },
   "private": true,
