@@ -9,7 +9,7 @@
     "test-ci": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --prod=true --baseHref=/",
+    "production": "ng build --prod=true --baseHref=/v8/playground/",
     "production-aot-server": "ng build --prod=true  --baseHref=/ontimizeweb/v8/playground/",
     "build:themes": "npx node-sass ./src/assets/themes/ -o ./src/assets/themes/ --recursive"
   },
