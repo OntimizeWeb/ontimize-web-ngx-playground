@@ -17,6 +17,7 @@ import { TableAlignmentComponent } from './12.alignment/table-alignment.componen
 import { TableMultipleSortComponent } from './13.multipleSort/table-multiple-sort.component';
 import { TableRowExpandableComponent } from './14.expandableRow/table-row-expandable.component';
 import { TableRowGroupComponent } from './15.rowGrouping/table-row-group.component';
+import { PivotTableComponent } from './16.pivotTable/pivot-table.component';
 
 export const routes: Routes = [
   {
@@ -36,7 +37,8 @@ export const routes: Routes = [
       { path: 'align', data: { oAppHeaderTitle: 'Table' }, component: TableAlignmentComponent },
       { path: 'multipleSort', data: { oAppHeaderTitle: 'Table' }, component: TableMultipleSortComponent },
       { path: 'rowexpandable', data: { oAppHeaderTitle: 'Table' }, component: TableRowExpandableComponent },
-      { path: 'rowgroup', data: { oAppHeaderTitle: 'Table' }, component: TableRowGroupComponent }
+      { path: 'rowgroup', data: { oAppHeaderTitle: 'Table' }, component: TableRowGroupComponent },
+      { path: 'pivottable', data: { oAppHeaderTitle: 'Table' }, component: PivotTableComponent }
     ]
   }
 ];

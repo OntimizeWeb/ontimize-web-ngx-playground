@@ -39,6 +39,7 @@ import { OTableColumnRendererCardTypeComponent } from './renderer/o-table-column
 import { OTableColumnRendererTotalReadyComponent } from './renderer/o-table-column-renderer-totalready.component';
 import { TableRoutingModule } from './table-routing.module';
 import { TableComponent } from './table.component';
+import { PivotTableComponent } from './16.pivotTable/pivot-table.component';
 
 @NgModule({
   imports: [
@@ -73,7 +74,8 @@ import { TableComponent } from './table.component';
     TableRowExpandableWithContainerComponent,
     TableRowExpandableComponent,
     TableRowExpandableMultipleComponent,
-    TableRowGroupComponent
+    TableRowGroupComponent,
+    PivotTableComponent
   ],
   providers: [DummyService],
 })
