@@ -15,3 +15,16 @@
     </div>
   </o-form>
 </example-comp>
+<example-comp comp-name="INPUT_OPTIONS" comp-desc="INPUT_OPTIONS.DESC" [files]="files1">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.UPPERCASE' | oTranslate }}</label>
+      <o-text-input attr="input4" label="{{ 'INPUT.ENTER.TEXT' | oTranslate }}" read-only="no" string-case="uppercase"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.PATTERN' | oTranslate }}</label>
+      <o-text-input attr="input5" label="{{ 'INPUT.ENTER.NUMBERS' | oTranslate }}" read-only="no" regulate-pattern="^(0|[1-9][0-9]*)$"
+        clear-button="yes"></o-text-input>
+    </div>
+  </o-form>
+</example-comp>

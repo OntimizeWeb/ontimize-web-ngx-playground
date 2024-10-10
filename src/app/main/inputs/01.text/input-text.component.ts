@@ -26,6 +26,16 @@ const TEXT_TS_DATA = `
   }
 `;
 
+const OPTIONS_HTML_DATA = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-text-input attr="input" label="Write some text" read-only="no" string-case="uppercase"></o-text-input>
+
+    <o-text-input attr="input2" label="Enter some numbers" read-only="no" regulate-pattern="^(0|[1-9][0-9]*)$"></o-text-input>
+
+  </o-form>
+`;
+
 @Component({
   selector: 'input-text',
   templateUrl: 'input-text.component.html'
@@ -41,6 +51,18 @@ export class InputTextComponent {
     },
     'typescript': {
       'data': TEXT_TS_DATA
+    }
+  };
+
+  files1 = {
+    'html': {
+      'data': OPTIONS_HTML_DATA
+    },
+    'scss': {
+      'data': undefined
+    },
+    'typescript': {
+      'data': undefined
     }
   };
 
