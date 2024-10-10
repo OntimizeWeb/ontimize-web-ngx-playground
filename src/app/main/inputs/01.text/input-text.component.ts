@@ -31,7 +31,7 @@ const OPTIONS_HTML_DATA = `
 
     <o-text-input attr="input" label="Write some text" read-only="no" string-case="uppercase"></o-text-input>
 
-    <o-text-input attr="input2" label="Enter some numbers" read-only="no" regulate-pattern="^(0|[1-9][0-9]*)$"></o-text-input>
+    <o-text-input attr="input2" label="Enter some numbers" read-only="no" regulate-pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"></o-text-input>
 
   </o-form>
 `;
