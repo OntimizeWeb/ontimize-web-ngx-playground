@@ -499,7 +499,7 @@ const HTML_DATA_ROW_EXPANDABLE_WITHOUT_ACTION_BUTTON = `
   <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
       store-state="false" query-rows="10" (onClick)="onClick($event)" fixed-header="yes" show-charts-on-demand-option="no">
-      <o-table-row-expandable expandible-column-visible="no">
+      <o-table-row-expandable expandable-column-visible="no">
         <ng-template let-row>
           <o-expandable-container [targets]="[accountsTable]" [data]="row">
             <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
