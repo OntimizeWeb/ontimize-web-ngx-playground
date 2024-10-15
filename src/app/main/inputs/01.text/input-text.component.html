@@ -15,3 +15,33 @@
     </div>
   </o-form>
 </example-comp>
+<example-comp comp-name="STRING_CASE" comp-desc="STRING_CASE.DESC" [files]="files1">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DEFAULT' | oTranslate }}</label>
+      <o-text-input attr="input4" label="{{ 'INPUT.ENTER.TEXT' | oTranslate }}" read-only="no" string-case="default"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.UPPERCASE' | oTranslate }}</label>
+      <o-text-input attr="input5" label="{{ 'INPUT.ENTER.TEXT' | oTranslate }}" read-only="no" string-case="uppercase"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.LOWERCASE' | oTranslate }}</label>
+      <o-text-input attr="input6" label="{{ 'INPUT.ENTER.TEXT' | oTranslate }}" read-only="no" string-case="lowercase"></o-text-input>
+    </div>
+  </o-form>
+</example-comp>
+<example-comp comp-name="REGULATE_PATTERN" comp-desc="REGULATE_PATTERN.DESC" [files]="files2">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.PATTERN_NUMBERS' | oTranslate }}</label>
+      <o-text-input attr="input7" label="{{ 'INPUT.ENTER.NUMBERS' | oTranslate }}" read-only="no"
+        regulate-pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$"></o-text-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.PATTERN_LETTERS' | oTranslate }}</label>
+      <o-text-input attr="input8" label="{{ 'INPUT.ENTER.TEXT' | oTranslate }}" read-only="no"
+        regulate-pattern="^[a-zA-Z ]*$"></o-text-input>
+    </div>
+  </o-form>
+</example-comp>
