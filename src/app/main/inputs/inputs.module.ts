@@ -37,6 +37,7 @@ import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsRoutingModule } from './inputs-routing.module';
 import { InputsComponent } from './inputs.component';
+import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 
 @NgModule({
   // providers: [
@@ -77,6 +78,7 @@ import { InputsComponent } from './inputs.component';
     InputSlidetoggleComponent,
     InputSliderComponent,
     InputDateRangeComponent,
+    InputDateRangeLegacyComponent,
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,

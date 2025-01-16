@@ -1,7 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import * as moment from 'moment';
-import { ODateRangeInputComponent } from 'ontimize-web-ngx';
 
 const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -79,8 +78,6 @@ export class InputDateRangeComponent {
 }
 `;
 
-const DATERANGE_HTML_DATA_TYPES = ``;
-
 @Component({
   selector: 'date-range',
   templateUrl: './date-range.component.html',
@@ -88,7 +85,7 @@ const DATERANGE_HTML_DATA_TYPES = ``;
   encapsulation: ViewEncapsulation.None
 })
 
-export class InputDateRangeComponent {
+export class InputDateRangeLegacyComponent {
 
   @ViewChild('mode', { static: true }) mode: MatSlideToggle;
   public selected = {};
@@ -124,29 +121,12 @@ export class InputDateRangeComponent {
     }
   };
 
-  public valueTypeFiles = {
-    html: {
-      data: DATERANGE_HTML_DATA_TYPES
-    },
-    scss: {
-      data: undefined
-    },
-    typescript: {
-      data: DATE_TS_DATA
-    }
-  };
-  valueTimestamp: { startDate: number; endDate: number; };
-  valueString: { startDate: string; endDate: string; };
-  valueDate: { startDate: any; endDate: any; };
-  valueIso8601: { startDate: any; endDate: any; };
-
   onShowSource(key: string, exampleComp?: any) {
     const itemData: any = {
       mode: this.mode.checked ? 'mobile' : 'desktop'
     };
     exampleComp.html = this.getHtml(key, itemData);
   }
-
   public getHtml(key: string, data: any) {
     let tpl = '';
     switch (key) {
@@ -172,32 +152,10 @@ export class InputDateRangeComponent {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-
-
-    this.valueTimestamp = {
-      startDate: this.selected['startDate'].valueOf(),
-      endDate: this.selected['endDate'].valueOf()
-    }
-
-    this.valueString = {
-      startDate: '2019/05/15',
-      endDate: '2019/05/20'
-    };
-    this.valueDate = {
-      startDate: this.selected['startDate'].toDate(),
-      endDate: this.selected['endDate'].toDate()
-    }
-    this.valueIso8601 = {
-      startDate: this.selected['startDate'].toISOString(),
-      endDate: this.selected['endDate'].toISOString()
-    }
   }
 
-
-
-
-  onClick(event, date: ODateRangeInputComponent) {
-    console.log('mostrar valor ', date.getValue())
+  getValue() {
+    return this.selected;
   }
 
 }
