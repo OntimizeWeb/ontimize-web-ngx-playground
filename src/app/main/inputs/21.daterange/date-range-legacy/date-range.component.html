@@ -37,5 +37,18 @@
     </div>
 
   </o-form>
+</example-comp>
 
+<example-comp #ex3 comp-name="INPUTS.DATERANGE.SHOWRANGES" comp-desc="INPUTS.DATERANGE.SHOWRANGES.DESC" [files]="showRangeDateRangeFiles"
+  (showSource)="onShowSource('o-daterange-ranges', ex3)">
+
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-daterange-legacy-input attr="daterange5" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="getValue()"
+        show-ranges="true" format="DD/MM/YYYY" separator=" to " touch-ui="yes" [mode]="mode.checked?'mobile':'desktop'">
+      </o-daterange-legacy-input>
+    </div>
+
+  </o-form>
 </example-comp>

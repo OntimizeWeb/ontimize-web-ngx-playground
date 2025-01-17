@@ -6,20 +6,20 @@ const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-    <o-daterange-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
+    <o-daterange-legacy-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
       [data]="getValue()">
-    </o-daterange-input>
+    </o-daterange-legacy-input>
   </div>
   <div fxLayout="column" layout-padding>
-    <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+    <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
       required="yes" [data]="getValue()" (change)="change($event)"  clear-button="yes"  format="LL" separator=" to " mode="{mode}">
-    </o-daterange-input>
+    </o-daterange-legacy-input>
   </div>
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-    <o-daterange-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no"
+    <o-daterange-legacy-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no"
       [data]="getValue()">
-    </o-daterange-input>
+    </o-daterange-legacy-input>
   </div>
 </o-form>
 `;
@@ -28,10 +28,10 @@ const DATE_HTML_MINMAX = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-    <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+    <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
       required="yes" [data]="getValue()" min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY"
       show-week-numbers="true"  mode="{mode}">
-    </o-daterange-input>
+    </o-daterange-legacy-input>
   </div>
 </o-form>
 `;
@@ -40,10 +40,10 @@ const DATE_HTML_RANGES = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+      <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
         required="yes" [data]="getValue()" show-ranges="true" format="DD/MM/YYYY"
         separator=" to " touch-ui="yes"  mode="{mode}">
-      </o-daterange-input>
+      </o-daterange-legacy-input>
     </div>
   </o-form>
 `;
