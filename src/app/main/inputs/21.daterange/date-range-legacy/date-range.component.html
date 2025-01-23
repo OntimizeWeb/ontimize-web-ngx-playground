@@ -13,6 +13,7 @@
       </o-daterange-legacy-input>
     </div>
     <div fxLayout="column" layout-padding>
+       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="getValue()"
         clear-button="yes" format="LL" separator=" to " [mode]="mode.checked?'mobile':'desktop'">
       </o-daterange-legacy-input>
