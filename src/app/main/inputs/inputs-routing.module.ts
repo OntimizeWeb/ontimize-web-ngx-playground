@@ -1,3 +1,4 @@
+import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: 'overview', data: { oAppHeaderTitle: 'Input fields' }, component: InputOverviewComponent },
       { path: 'text', data: { oAppHeaderTitle: 'Input fields' }, component: InputTextComponent },
       { path: 'date', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateComponent },
+      { path: 'daterangelegacy', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateRangeLegacyComponent },
       { path: 'daterange', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateRangeComponent },
       { path: 'integer', data: { oAppHeaderTitle: 'Input fields' }, component: InputIntegerComponent },
       { path: 'real', data: { oAppHeaderTitle: 'Input fields' }, component: InputRealComponent },

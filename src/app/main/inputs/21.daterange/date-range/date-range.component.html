@@ -9,17 +9,18 @@
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-daterange-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes" [data]="getValue()">
+      <o-daterange-input attr="daterange1" label="INPUT.BUTTON.DATERANGE" required="yes" [data]="valueTimestamp">
       </o-daterange-input>
     </div>
     <div fxLayout="column" layout-padding>
-      <o-daterange-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="getValue()"
-        clear-button="yes" format="LL" separator=" to " [mode]="mode.checked?'mobile':'desktop'">
+      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+      <o-daterange-input attr="daterange2" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="valueTimestamp"
+        format="LL" separator=" to " [touch-ui]="mode.checked">
       </o-daterange-input>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-daterange-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no" [data]="getValue()">
+      <o-daterange-input attr="daterange3" label="INPUT.BUTTON.DATERANGE" enabled="no" [data]="valueTimestamp">
       </o-daterange-input>
     </div>
   </o-form>
@@ -31,23 +32,48 @@
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-daterange-input attr="daterange4" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="getValue()"
-        min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY" show-week-numbers="true" [mode]="mode.checked?'mobile':'desktop'">
+      <o-daterange-input attr="daterange4" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes"
+       format="YYYY/MM/DD" value-type="string" min="2019/05/05" max="2019/05/25"   [touch-ui]="mode.checked" [data]="valueString">
       </o-daterange-input>
     </div>
 
   </o-form>
 </example-comp>
-<example-comp #ex3 comp-name="INPUTS.DATERANGE.SHOWRANGES" comp-desc="INPUTS.DATERANGE.SHOWRANGES.DESC" [files]="showRangeDateRangeFiles"
-  (showSource)="onShowSource('o-daterange-ranges', ex3)">
 
+<example-comp #ex3 comp-name="INPUTS.DATE.CUSTOM_DATE_CLASS" comp-desc="INPUTS.DATE.CUSTOM_DATE_CLASS.DESC" [files]="customDateClassFiles"
+  (showSource)="onShowSource('o-daterange-dateclass', ex3)">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-daterange-input attr="daterange5" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="getValue()"
-        show-ranges="true" format="DD/MM/YYYY" separator=" to " touch-ui="yes" [mode]="mode.checked?'mobile':'desktop'">
+      <o-daterange-input attr="customDateClass" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes"
+        [date-class]="customDateClass" [touch-ui]="mode.checked">
       </o-daterange-input>
     </div>
+  </o-form>
+</example-comp>
 
+<example-comp #ex4 comp-name="INPUTS.DATE.VALUE_TYPE" comp-desc="INPUTS.DATE.VALUE_TYPE.DESC" [files]="valueTypeFiles"  (showSource)="onShowSource('o-daterange-valuetypes', ex4)">
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.TIMESTAMP' | oTranslate }}</label>
+      <o-daterange-input #valueTypeTimestamp value-type="timestamp" attr="valueTypeInput" label="INPUT.BUTTON.DATERANGE"
+        [data]="valueTimestamp" read-only="no" required="yes" clear-button="yes" [touch-ui]="mode.checked">
+      </o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
+      <o-daterange-input value-type="string" format="DD/MM/YYYY" attr="valueTypeInput2" label="INPUT.BUTTON.DATERANGE"
+        [data]="valueString" read-only="no" required="yes" clear-button="yes" [touch-ui]="mode.checked"></o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.DATE' | oTranslate }}</label>
+      <o-daterange-input value-type="date" attr="valueTypeInput3" label="INPUT.BUTTON.DATERANGE" [data]="valueDate" read-only="no"
+        required="yes" clear-button="yes" [touch-ui]="mode.checked"></o-daterange-input>
+    </div>
+
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.ISO-8601' | oTranslate }}</label>
+      <o-daterange-input value-type="iso-8601" attr="valueTypeInput4" label="INPUT.BUTTON.DATERANGE" [data]="valueIso8601"
+        read-only="no" required="yes" clear-button="yes" [touch-ui]="mode.checked"></o-daterange-input>
+    </div>
   </o-form>
 </example-comp>
