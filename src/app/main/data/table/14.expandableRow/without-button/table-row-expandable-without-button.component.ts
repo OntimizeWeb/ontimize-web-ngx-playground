@@ -15,6 +15,6 @@ export class TableRowExpandableWithoutButtonComponent {
   }
 
   onClick(event: OnClickTableEvent) {
-    this.table.toogleRowExpandable(event.row, event.rowIndex, event.mouseEvent);
+    this.table.toggleRowExpandable(event.row, event.mouseEvent);
   }
 }
