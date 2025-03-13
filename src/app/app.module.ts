@@ -11,6 +11,7 @@ import { CONFIG } from './app.config';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { DummyService } from './shared/services/dummy.service';
+import { StarWarsService } from './shared/services/star-wars.service';
 
 /**
  * Import specific languages to avoid importing everything
@@ -39,6 +40,7 @@ export function getHighlightLanguages() {
     { provide: ConfigCollapsibleStateService, useValue: undefined },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
+    { provide:'starwars', useValue:StarWarsService },
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: <HighlightOptions>{
