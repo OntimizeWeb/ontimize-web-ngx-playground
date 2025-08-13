@@ -11,6 +11,11 @@ import { CONFIG } from './app.config';
 import { CollapsibleStateService } from './shared/services/collapsible-state.service';
 import { ConfigCollapsibleStateService } from './shared/services/config-collapsible-state.service';
 import { DummyService } from './shared/services/dummy.service';
+import { StarWarsService } from './shared/services/star-wars.service';
+import { StarsWarsResponseAdapter } from './shared/services/star-wars-response-adapter';
+import { RickAndMortyService } from './shared/services/rickandmortyapi/rickandmorty.service';
+import { RickAndMortyResponseAdapter } from './shared/services/rickandmortyapi/rickandmorty-response.adapter';
+import { RickAndMortyRequestArgumentsAdapter } from './shared/services/rickandmortyapi/rickandmorty-request-adapter';
 
 /**
  * Import specific languages to avoid importing everything
@@ -39,6 +44,11 @@ export function getHighlightLanguages() {
     { provide: ConfigCollapsibleStateService, useValue: undefined },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
+    { provide: 'starwars', useValue: StarWarsService },
+    { provide: 'rickandmorty', useValue: RickAndMortyService },
+    StarsWarsResponseAdapter,
+    RickAndMortyResponseAdapter,
+    RickAndMortyRequestArgumentsAdapter,
     { provide: HIGHLIGHT_OPTIONS,
       useValue: <HighlightOptions>{
         lineNumbers: true,
