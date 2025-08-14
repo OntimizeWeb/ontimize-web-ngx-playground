@@ -1,7 +1,7 @@
 
 
 import { Injectable, Injector } from '@angular/core';
-import { BaseDataService, Observable, Util} from 'ontimize-web-ngx';
+import { BaseDataService, Observable, Util } from 'ontimize-web-ngx';
 import { IRickAndMortyResponse } from './rickandmorty-response.interface';
 import { RickAndMortyResponseAdapter } from './rickandmorty-response.adapter';
 import { RickAndMortyRequestArgumentsAdapter } from './rickandmorty-request-adapter';
@@ -23,19 +23,18 @@ export class RickAndMortyService extends BaseDataService<IRickAndMortyResponse> 
     this.adapter = this.injector.get(RickAndMortyResponseAdapter);
   }
 
-  query(...args: [any, ...any[]]): Observable<IRickAndMortyResponse> {
-    console.log('Argumentos recibidos:', args);
+  query(filter: any, columns: string[], entity: string, sqlTypes: any, pageable?: boolean): Observable<IRickAndMortyResponse> {
 
-    // Ejemplo: Desestructurar los argumentos
-    const [filter, columns, entity, pageable, sqlTypes, pagination, sort ] = args[0];
-
-    const paginationContext = this.getPaginationContext();
-
-
-    const page = paginationContext.pageNumber ?? 0;
-
+    let page;
     const queryParamsToString = this.toQueryParams(filter);
-    const queryParamsString = ((Util.isDefined(filter) && !Util.isObjectEmpty(filter)) ? (queryParamsToString + '&') : '?') + 'page=' + page
+
+    //pageable
+    if (pageable) {
+      const paginationContext = this.getPaginationContext();
+      page = paginationContext.pageNumber ?? 0;
+    }
+
+    const queryParamsString = ((Util.isDefined(filter) && !Util.isObjectEmpty(filter)) ? (queryParamsToString + '&') : '?') + (page ? 'page=' + page : '');
 
     let url = `${this.urlBase}${this.path}${queryParamsString}`;
 
@@ -44,17 +43,18 @@ export class RickAndMortyService extends BaseDataService<IRickAndMortyResponse> 
       url: url,
       options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
     });
-    // }
 
   }
+
+  advancedQuery(...args: [any, ...any[]]): Observable<IRickAndMortyResponse> {
+    return this.query(args[0], args[1], args[2], args[3], true);
+  }
+
 
   queryById(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
     throw new Error('Method not implemented.');
   }
 
-  advancedQuery(...args: [any, ...any[]]): Observable<IRickAndMortyResponse> {
-    return this.query(args);
-  }
 
   insert(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
     throw new Error('Method not implemented.');
