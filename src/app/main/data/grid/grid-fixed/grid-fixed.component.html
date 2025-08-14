@@ -4,7 +4,7 @@
     <div menu layout-margin fxLayout="column">
       <mat-form-field>
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
-        <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Grid">
+        <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Characters">
       </mat-form-field>
       <o-column fxFlex layout-padding>
         <mat-slide-toggle (change)="updateCodeValue('fixedHeader', $event.checked)" #fixedHeaderToggle [checked]="true">
