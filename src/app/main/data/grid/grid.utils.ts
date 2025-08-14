@@ -742,7 +742,7 @@ export class GridUtils {
       let files = [];
       files.push({
         'label': 'app.module.ts',
-        'type': 'html',
+        'type': 'typescript',
         'data': APP_MODULE
       });
       files.push({
