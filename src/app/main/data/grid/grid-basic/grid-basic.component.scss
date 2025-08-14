@@ -8,21 +8,22 @@
     font-size: 0.9em;
   }
 
+  .image {
+    height: 160px;
+    width: 160px;
+  }
 
-  .detail {
-    font-size: 0.9em;
+  .email,
+  .domain,
+  .phone,
+  .body,
+  .website {
+    font-size: 0.7em;
     display: flex;
     align-items: center;
-    padding: 4px 0;
-    label{
-      font-weight: 600;
-      padding-right: 8px;
-    }
+
     mat-icon {
       padding-right: 8px;
-      font-size: 24px;
-      width: 24px;
-      height: 24px;
     }
 
     div {

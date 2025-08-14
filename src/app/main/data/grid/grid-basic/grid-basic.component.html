@@ -66,53 +66,31 @@
 
       </div>
     </div>
-    <o-grid content #grid attr="grid" [title]="gridTitle.value" service-type="starwars" entity="vehicles" columns="name;height;mass;hair_color;skin_color;fair;eye_color;birth_year;gender;homeworld;created;edited;url"
+    <o-grid content #grid attr="grid" [title]="gridTitle.value" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
       keys="id" [cols]="columns" [query-rows]="pagesize" [show-page-size]="showPageSizeToggle.checked" page-size-options="4;8;16"
-      [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name"
+      [orderable]="showSortToggle.checked" [quick-filter]="quickFilterToggle.checked" grid-item-height="1:2" sortable-columns="name;email"
       [sort-column]="sortColumn" [controls]="showControlsToggle.checked" [refresh-button]="refreshButtonToggle.checked"
       [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value" [show-footer]="showFooterToggle.checked"
-      [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'700px'}" grid-item-height="400px" fxFlex="calc(100% - 42px)" pageable="yes">
+      [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'700px'}" grid-item-height="400px" fxFlex="calc(100% - 42px)">
       <o-grid-item *ngFor="let list of grid.dataArray">
         <div layout-padding class="container-item">
+          <img class="image" alt="List thumbnail" [src]="list.thumbnailUrl" style="margin-top:8px">
           <h4>{{ list.name }}</h4>
-          <div class="detail">
-             <label>Model: </label><span> {{ list.model }} </span>
+          <div class="phone">
+            <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
           </div>
-          <mat-divider></mat-divider>
-          <div class="detail">
-            <label>Manufacturer: </label> <span> {{ list.manufacturer }} </span>
+          <div class="email">
+            <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
           </div>
-          <mat-divider></mat-divider>
-          <div class="detail">
-            <label>Cost in credits</label> <span>{{ list.cost_in_credits }} @</span>
+          <div class="domain">
+            <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
           </div>
-          <mat-divider></mat-divider>
-          <div class="detail">
-            <label>Length: </label> <span> {{ list.length }} </span>
-            <mat-divider></mat-divider>
+          <div class="website">
+            <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
           </div>
-          <div class="detail">
-            <label>Vehicle class: </label> <span> {{ list.vehicle_class }} </span>
-            <mat-divider></mat-divider>
+          <div class="body">
+            {{list.body}}
           </div>
-            <div class="detail">
-            <label>Max atmosphering speed: </label> <span> {{ list.max_atmosphering_speed }} </span>
-            <mat-divider></mat-divider>
-          </div>
-           <div class="detail">
-            <label>Crew: </label> <span> {{ list.crew }} </span>
-            <mat-divider></mat-divider>
-          </div>
-           <div class="detail">
-            <label>Passengers: </label> <span> {{ list.passengers }} </span>
-            <mat-divider></mat-divider>
-          </div>
-            <div class="detail">
-            <label>Cargo capacity: </label> <span> {{ list.cargo_capacity }} </span>
-            <mat-divider></mat-divider>
-          </div>
-
-
         </div>
       </o-grid-item>
     </o-grid>
