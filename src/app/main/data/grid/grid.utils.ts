@@ -224,57 +224,69 @@ const FAKE_DATAHYBRID = [
 ];
 
 const HTML_DATA_GRID = `
-  <o-grid #grid attr="grid" title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname;phone;website"
-    keys="id" cols="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}" page-size-options="4;8;16"
-    orderable="{orderable}" quick-filter="{quickfilter}" grid-item-height="1:3" sortable-columns="name;email"
-    sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}" insert-button="{insertButton}"
-    pagination-controls="{paginationControls}" gutter-size="{gutterSize}px" fixed-header="yes"  [ngStyle]="{'height':'600px'}" >
-    <o-grid-item *ngFor="let list of grid.dataArray">
-      <o-column layout-padding class="container-item">
-        <img [src]="list.thumbnailUrl" style="margin-top:8px">
-        <h4>{{ list.name }}</h4>
-        <div class="phone">
-          <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
+ <o-grid content #grid attr="grid" title="{title}" service-type="rickandmorty" service="episodes" entity="episode"
+      columns="id;name;movie;episode;air_date" keys="id" cols="{columns}" query-rows="{queryRows}" show-page-size="{showPageSize}"
+      page-size-options="4;8;16" orderable="{orderable}" quick-filter="{quickfilter}" sortable-columns="name;episode"
+      quick-filter-columns="name;episode" sort-column="{sortColumn}" controls="{controls}" refresh-button="{refreshButton}"
+      insert-button="{insertButton}" pagination-controls="{paginationControls}" gutter-size="{gutterSize}px"
+      show-footer="{showFooter}" fixed-header="yes" [ngStyle]="{'height':'600px'}">
+      <o-grid-item *ngFor="let ep of grid.dataArray">
+        <div class="card-inner">
+          <div class="card-inner">
+            <mat-card class="fill-minus-8" appearance="outlined">
+              <mat-card-header>
+                <div mat-card-avatar class="avatar-icon">
+                  <mat-icon color="accent">movie</mat-icon>
+                </div>
+                <mat-card-title class="ellipsis-title">{{ ep.name }}</mat-card-title>
+                <mat-card-subtitle>{{ ep.episode }}</mat-card-subtitle>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p><strong>Air date:</strong> {{ ep.air_date }}</p>
+              </mat-card-content>
+
+              <mat-card-actions fxFlexAlign="end">
+                <button mat-raised-button color="primary">View details</button>
+              </mat-card-actions>
+
+            </mat-card>
+          </div>
         </div>
-        <div class="email">
-          <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
-        </div>
-        <div class="domain">
-          <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
-        </div>
-        <div class="website">
-          <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
-        </div>
-        <div class="body">
-          {{list.body}}
-        </div>
-      </o-column>
-    </o-grid-item>
-  </o-grid>
+      </o-grid-item>
+    </o-grid>
 `;
 
 const HTML_DATA_GRID_FIXED = `
-<o-grid #grid attr="grid"  title="{title}" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
-keys="id" [fixed-header]="{fixedHeader}" style="height:'{height}px'" pagination-controls="yes" query-rows="8">
-  <o-grid-item *ngFor="let list of grid.dataArray">
-    <o-column layout-padding class="container-item">
-      <img [src]="list.thumbnailUrl" style="margin-top:8px">
-      <div class="name"><b>{{ list.name }}</b></div>
-      <div class="phone">
-        <mat-icon>phone</mat-icon> <span> {{ list.phone }} </span>
-      </div>
-      <div class="email">
-        <mat-icon>email</mat-icon> <span>{{ list.email }} </span>
-      </div>
-      <div class="domain">
-        <mat-icon>domain</mat-icon> <span> {{ list.companyname }} </span>
-      </div>
-      <div class="website">
-        <mat-icon>website</mat-icon> <span> {{ list.website }} </span>
-      </div>
-    </o-column>
-  </o-grid-item>
-</o-grid>
+    <o-grid content #grid attr="grid" title="{title}" service-type="rickandmorty" service="characters" entity="character"
+      columns="id;name;status;species;photo;location;origin" keys="id" fixed-header="{fixedHeader}" style="height:'{height}px'"
+      pagination-controls="yes" query-rows="20" grid-item-height="2:1" fxFlex pageable="yes"
+      cols="2" gutter-size="16px" quick-filter-columns="name">
+
+      <o-grid-item *ngFor="let list of grid.dataArray">
+        <mat-card  class="mat-elevation-z4 fill-minus-8">
+          <div fxlayout="row" fxFill>
+            <img mat-card-image src="{{list.image}}" fxFlex="35%" fxFill
+              style="transition: opacity 0.5s; object-position: center center; object-fit: cover" />
+            <div fxFlex="65%">
+              <mat-card-header>
+                <mat-card-title>{{list.name}}</mat-card-title>
+                <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
+                </p>
+                <p>
+                  <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
+                </p>
+              </mat-card-content>
+            </div>
+          </div>
+        </mat-card>
+
+      </o-grid-item>
+    </o-grid>
 `;
 
 const HTML_DATA_GRID_HYBRID = `
@@ -286,6 +298,59 @@ grid-item-height="100px" controls="no" gutter-size="0">
     </div>
   </o-grid-item>
 </o-grid>`;
+
+const CSS_GRID_BASIC = `
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  justify-content: center; // Centra verticalmente
+  align-items: center; // Centra horizontalmente
+
+  mat-card {
+    &.fill-minus-8 {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      mat-card-header {
+        .avatar-icon {
+          background-color: #e0e0e0;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .ellipsis-title {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-height: 3em;
+          line-height: 1.5em;
+        }
+      }
+
+      mat-card-content {
+        flex: 1;
+      }
+
+      mat-card-actions {
+        margin-top: auto;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}`;
 
 const CSS_DATA = `
 .container-item{
@@ -319,6 +384,293 @@ const CSS_DATA = `
   }
 }`;
 
+const APP_MODULE = `
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
+import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { OGalleryModule } from 'ontimize-web-ngx-gallery';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CONFIG } from './app.config';
+import { RickAndMortyService } from './shared/services/rickandmortyapi/rickandmorty.service';
+import { RickAndMortyResponseAdapter } from './shared/services/rickandmortyapi/rickandmorty-response.adapter';
+import { RickAndMortyRequestArgumentsAdapter } from './shared/services/rickandmortyapi/rickandmorty-request-adapter';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    OntimizeWebModule,
+    AppRoutingModule,
+    HighlightModule,
+    OGalleryModule
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: CONFIG },
+    { provide: 'rickandmorty', useValue: RickAndMortyService },
+    RickAndMortyResponseAdapter,
+    RickAndMortyRequestArgumentsAdapter,
+    },
+    ...ONTIMIZE_PROVIDERS
+  ],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+
+`;
+
+
+const RICKANDMORTY_SERVICE = `
+import { Injectable, Injector } from '@angular/core';
+import { BaseDataService, Observable, Util } from 'ontimize-web-ngx';
+import { IRickAndMortyResponse } from './rickandmorty-response.interface';
+import { RickAndMortyResponseAdapter } from './rickandmorty-response.adapter';
+import { RickAndMortyRequestArgumentsAdapter } from './rickandmorty-request-adapter';
+
+@Injectable()
+export class RickAndMortyService extends BaseDataService<IRickAndMortyResponse> {
+
+  constructor(injector: Injector) {
+    super(injector);
+    this.requestArgumentAdapter = this.injector.get(RickAndMortyRequestArgumentsAdapter);
+  }
+
+  public configureService(config: any): void {
+    super.configureService(config);
+    this.path = config.path;
+  }
+
+  public configureAdapter() {
+    this.adapter = this.injector.get(RickAndMortyResponseAdapter);
+  }
+
+  query(filter: any, columns: string[], entity: string, sqlTypes: any, pageable?: boolean): Observable<IRickAndMortyResponse> {
+
+    let page;
+    const queryParamsToString = this.toQueryParams(filter);
+
+    // pageable
+    if (pageable) {
+      const paginationContext = this.getPaginationContext();
+      page = paginationContext.pageNumber ?? 0;
+    }
+
+    const queryParamsString = ((Util.isDefined(filter) && !Util.isObjectEmpty(filter)) ? (queryParamsToString + '&') : '?') + (page ? 'page=' + page : '');
+
+    let url = \`\${this.urlBase}\${this.path}\${queryParamsString}\`;
+
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: {}
+    });
+  }
+
+  advancedQuery(...args: [any, ...any[]]): Observable<IRickAndMortyResponse> {
+    return this.query(args[0], args[1], args[2], args[3], true);
+  }
+
+  queryById(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
+    throw new Error('Method not implemented.');
+  }
+
+  insert(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
+    throw new Error('Method not implemented.');
+  }
+
+  update(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
+    throw new Error('Method not implemented.');
+  }
+
+  delete(args_0: any, ...args: any[]): Observable<IRickAndMortyResponse> {
+    throw new Error('Method not implemented.');
+  }
+
+  /**
+   * Converts a filter object into a query parameter string for a REST request,
+   * adapted to the Rick and Morty API.
+   *
+   * @param obj An object with key-value pairs representing the search filters
+   * @returns A query string formatted for use in a URL
+   */
+  public toQueryParams(obj: Record<string, any>): string {
+    const params = Object.entries(obj)
+      .filter(([_, value]) => !!value)
+      .map(([key, value]) => {
+        const cleanValue = value.replace(/%/g, '');
+        return \`\${encodeURIComponent(key)}=\${encodeURIComponent(cleanValue)}\`;
+      })
+      .join('&');
+    return \`?\${params}\`;
+  }
+
+}
+`;
+
+const RICKANDMORTY_SERVICE_RESPONSE = `
+import { HttpHeaders } from "@angular/common/http";
+import { ServiceResponse } from "ontimize-web-ngx";
+
+export class RickAndMortyServiceResponse implements ServiceResponse {
+  public code: number;
+  public message: string;
+  public sqlTypes: { [key: string]: number; };
+  public startRecordIndex: number;
+  public totalQueryRecordsNumber: number;
+  public data: any;
+
+  constructor(
+    public status: number,
+    public statusText: string,
+    public headers: HttpHeaders,
+    public ok: boolean,
+    public body: any
+  ) {
+    this.data = body.results;
+    if (body.info) {
+      this.totalQueryRecordsNumber = body.info.count;
+      this.startRecordIndex = 0;
+    }
+
+
+    if (this.status >= 200 || this.status < 300) {
+      this.code = 0;
+    } else if (this.status === 404) {
+      this.code = 3;
+    } else {
+      this.code = 1;
+    }
+    this.message = this.statusText;
+
+  }
+
+  isSuccessful(): boolean {
+    return this.status >= 200 || this.status < 300;
+  }
+
+  isFailed(): boolean {
+    return this.status > 300;
+  }
+
+  isUnauthorized(): boolean {
+    return this.status === 403;
+  }
+
+}
+
+`
+const RICKANDMORTY_RESPONSE_INTERFACE = `
+import { BaseResponse } from "ontimize-web-ngx";
+
+export interface IRickAndMortyResponse extends BaseResponse {
+
+  info?: PageInfo;
+  results?: any;
+}
+
+interface PageInfo {
+  count: number;
+  pages: number;
+  next: string | null;
+  prev: string | null;
+
+}
+
+`
+
+const RICKANDMORTY_RESPONSE_ADAPTER = `
+import { HttpErrorResponse, HttpResponse } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { IServiceResponseAdapter } from "ontimize-web-ngx";
+import { RickAndMortyServiceResponse } from "./rickandmorty-service.response";
+
+@Injectable()
+export class RickAndMortyResponseAdapter implements IServiceResponseAdapter<RickAndMortyServiceResponse> {
+  context: any;
+  adaptError(httpError: HttpErrorResponse) {
+    return httpError.error.error;
+  }
+
+  adapt(resp: HttpResponse<any>): RickAndMortyServiceResponse {
+    let code = 1;
+    let data = [];
+
+    // Adapt the data received from the service
+    if (resp.body) {
+      code = 0;
+      if (resp.body.results) {
+        data = resp.body.results;
+
+      } else {
+        data = [resp.body];
+      }
+    }
+
+    // // Create RickAndMorty service response with the data adapted
+    return new RickAndMortyServiceResponse(
+      resp.status,
+      resp.statusText,
+      resp.headers,
+      resp.ok,
+      resp.body
+    );
+  }
+}
+`;
+const RICKANDMORTY_REQUEST_ADAPTER = `
+
+import { Injectable } from '@angular/core';
+import { BaseRequestArgument, Expression, FilterExpressionUtils, IBaseRequestArgument, Util } from 'ontimize-web-ngx';
+
+
+@Injectable()
+export class RickAndMortyRequestArgumentsAdapter extends BaseRequestArgument implements IBaseRequestArgument {
+  parseQueryParameters(params: any) {
+    let queryargs = [params.filter, params.columns, params.entity, params.sqlTypes];
+
+    const { filter, columns } = params;
+    queryargs[0] = this.deCompose(filter, columns, {});
+    return queryargs;
+  }
+
+  deCompose(expresion, columns: Array<string>, kv: Object) {
+    const basicExpresion: Expression = expresion[FilterExpressionUtils.BASIC_EXPRESSION_KEY];
+    const filterExpresion: Expression = expresion[FilterExpressionUtils.FILTER_EXPRESSION_KEY];
+
+    let decomposedExpresion = kv;
+    if (Util.isDefined(basicExpresion)) {
+      decomposedExpresion = this.deComposeExpresion(basicExpresion, columns, kv);
+    }
+
+    /* Required for column filtering which is currently disabled */
+    if (Util.isDefined(filterExpresion)) {
+      decomposedExpresion = this.deComposeExpresion(filterExpresion, columns, decomposedExpresion);
+    }
+    return decomposedExpresion;
+  }
+
+  deComposeExpresion(expresion: any, columns: Array<string>, kv: Object) {
+    if (FilterExpressionUtils.instanceofExpression(expresion)) {
+      if (typeof expresion.lop !== 'string') {
+        kv = this.deComposeExpresion(expresion.lop, columns, kv);
+        return this.deComposeExpresion(expresion.rop, columns, kv);
+      } else {
+        return Object.assign(kv, { [expresion.lop]: expresion.rop });
+      }
+    }
+  }
+}
+
+`;
+
+
 const
   HTML_TS = `
 getStaticData() {
@@ -351,8 +703,11 @@ export class GridUtils {
 
   static getCSS(type: string): any {
     switch (type) {
+
       case 'o-grid-hybrid':
         return '';
+      case 'o-grid-basic':
+        return CSS_GRID_BASIC;
       default:
         return CSS_DATA;
 
@@ -381,11 +736,43 @@ export class GridUtils {
       'typescript': {
         'data': GridUtils.getTypescript(key)
       }
-      //,
-      // 'html': {
-      //   'data': GridUtils.getTypeHtml(key)
-      // },
     };
+
+    if (key === 'o-grid-basic' || key ==='o-grid-fixed' ) {
+      let files = [];
+      files.push({
+        'label': 'app.module.ts',
+        'type': 'typescript',
+        'data': APP_MODULE
+      });
+      files.push({
+        'label': 'rickandmorty.service.ts',
+        'type': 'typescript',
+        'data': RICKANDMORTY_SERVICE
+      });
+      files.push({
+        'label': 'rickandmorty-request-adapter.ts',
+        'type': 'typescript',
+        'data': RICKANDMORTY_REQUEST_ADAPTER
+      });
+      files.push({
+        'label': 'rickandmorty-response.adapter.ts',
+        'type': 'typescript',
+        'data': RICKANDMORTY_RESPONSE_ADAPTER
+      });
+      files.push({
+        'label': 'rickandmorty-response.interface.ts',
+        'type': 'typescript',
+        'data': RICKANDMORTY_RESPONSE_INTERFACE
+      });
+      files.push({
+        'label': 'rickandmorty-service.response.ts',
+        'type': 'typescript',
+        'data': RICKANDMORTY_SERVICE_RESPONSE
+      });
+      result['files'] = files;
+    }
+
     return result;
   }
 

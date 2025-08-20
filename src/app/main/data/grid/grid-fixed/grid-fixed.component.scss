@@ -1,49 +1,21 @@
-.width{
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
   width: 100%;
-}
+  justify-content: center; // Centra verticalmente
+  align-items: center; // Centra horizontalmente
 
-.mat-grid-tile {
-  width: 180px;
-  height: 405px;
-}
+  mat-card {
+    &.fill-minus-8 {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-in-out;
 
-.container-item {
-  width: 180px;
-  height: 405px;
-  overflow-y: hidden;
-
-  .name {
-    margin: 8px 0;
-    font-size: 0.9em;
-  }
-
-  .image {
-    height: 160px;
-    width: 160px;
-  }
-
-  .email,
-  .domain,
-  .phone,
-  .body,
-  .website {
-    font-size: 0.7em;
-    display: flex;
-    align-items: center;
-
-    mat-icon {
-      padding-right: 8px;
+      &:hover {
+        transform: scale(1.02);
+      }
     }
-
-    div {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-  }
-
-  .mat-icon {
-    font-size: 18px;
-    height: 18px;
   }
 }
