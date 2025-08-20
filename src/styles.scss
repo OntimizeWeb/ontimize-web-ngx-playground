@@ -94,3 +94,8 @@ table-horizontal-scroll,
 .card-link {
   cursor: pointer;
 }
+
+.fill-minus-8 {
+  height: calc(100% - 8px);
+  width: calc(100% - 8px);
+}

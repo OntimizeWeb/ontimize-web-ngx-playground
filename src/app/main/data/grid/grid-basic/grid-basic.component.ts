@@ -13,17 +13,13 @@ export class GridBasicComponent {
   public columns = 4;
   public pagesize = 8;
   public sortColumn;
-  public gutterSize = 1;
+  public gutterSize = 8;
   html: string;
 
   @ViewChild('grid')
   grid: any;
 
   constructor(){ }
-
-  getStaticData() {
-    return GridUtils.getData('o-grid-basic');
-  }
 
   getFiles(type) {
     return GridUtils.getFiles(type);
@@ -53,7 +49,8 @@ export class GridBasicComponent {
         .replace('{insertButton}', grid.insertButton)
         .replace('{paginationControls}', grid.paginationControls)
         .replace('{fixedHeader}', grid.fixedHeader)
-        .replace('{gutterSize}', grid.gutterSize);
+        .replace('{gutterSize}', grid.gutterSize)
+        .replace('{showFooter}', grid.showFooter)
     }
 
     return html;
