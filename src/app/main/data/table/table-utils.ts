@@ -390,10 +390,10 @@ const HTML_DATA_CONTEXT_MENU = `
 `;
 
 const HTML_DATA_TABLE_HORIZONTAL_SCROLL = `
-  <o-table #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES"
-    visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no" insert-button="no"
-    delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" layout-padding
-    edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
+    <o-table content #table attr="table" title="CUSTOMERS" horizontal-scroll="{horizontalScroll}" [static-data]="data" keys="CUSTOMERID"
+      columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no"
+      insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none"
+      detail-mode="none" show-charts-on-demand-option="no" virtual-scroll="no">
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
