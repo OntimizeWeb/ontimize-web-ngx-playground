@@ -7,18 +7,18 @@ const DATE_HTML_DATA = `
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
     <o-daterange-legacy-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
-      [data]="getValue()">
+      [data]="selected">
     </o-daterange-legacy-input>
   </div>
   <div fxLayout="column" layout-padding>
     <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
-      required="yes" [data]="getValue()" (change)="change($event)"  clear-button="yes"  format="LL" separator=" to " mode="{mode}">
+      required="yes" [data]="selected" (change)="change($event)"  clear-button="yes"  format="LL" separator=" to " mode="{mode}">
     </o-daterange-legacy-input>
   </div>
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
     <o-daterange-legacy-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no"
-      [data]="getValue()">
+      [data]="selected">
     </o-daterange-legacy-input>
   </div>
 </o-form>
@@ -29,7 +29,7 @@ const DATE_HTML_MINMAX = `
   <div fxLayout="column" layout-padding>
     <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
     <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
-      required="yes" [data]="getValue()" min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY"
+      required="yes" [data]="selected" min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY"
       show-week-numbers="true"  mode="{mode}">
     </o-daterange-legacy-input>
   </div>
@@ -41,7 +41,7 @@ const DATE_HTML_RANGES = `
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
-        required="yes" [data]="getValue()" show-ranges="true" format="DD/MM/YYYY"
+        required="yes" [data]="selected" show-ranges="true" format="DD/MM/YYYY"
         separator=" to " touch-ui="yes"  mode="{mode}">
       </o-daterange-legacy-input>
     </div>
@@ -52,28 +52,12 @@ const DATE_TS_DATA = `
 export class InputDateRangeComponent {
 
   public selected = {};
-  public files = {
-    html: {
-      data: DATE_HTML_DATA
-    },
-    scss: {
-      data: undefined
-    },
-    typescript: {
-      data: DATE_TS_DATA
-    }
-  };
 
   constructor() {
-
     this.selected = {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-  }
-
-  getValue() {
-    return this.selected;
   }
 }
 `;
@@ -127,6 +111,7 @@ export class InputDateRangeLegacyComponent {
     };
     exampleComp.html = this.getHtml(key, itemData);
   }
+
   public getHtml(key: string, data: any) {
     let tpl = '';
     switch (key) {
@@ -147,15 +132,10 @@ export class InputDateRangeLegacyComponent {
   }
 
   constructor() {
-
     this.selected = {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-  }
-
-  getValue() {
-    return this.selected;
   }
 
 }

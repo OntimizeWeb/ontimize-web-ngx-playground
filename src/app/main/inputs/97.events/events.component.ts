@@ -383,44 +383,26 @@ export class InputEventsComponent {
     }
   };
 
-  getValue(attr: string) {
-    let value;
-    switch (attr) {
-      case 'input':
-        value = 'John Doe';
-        break;
-      case 'checkbox':
-        value = true;
-        break;
-      case 'hour':
-        return '05:00 AM';
-      case 'listpicker':
-      case 'combo':
-        return 2;
-      case 'time':
-      case 'date':
-        return 1505358700000;
-      case 'radio':
-      case 'slider':
-        return 2;
-        break;
-      case 'daterange':
-        return { startDate: moment('2019-05-15T00:00Z'), endDate: moment('2019-05-20T00:00Z') }
-      case 'currency':
-      case 'real':
-        return 23.3;
-      case 'integer':
-        return 10000;
-      case 'percent':
-        return .76;
-    }
-    return value;
-  }
 
-
-  getDataArray() {
-    return this.array;
-  }
+  protected values = {
+    input: 'John Doe',
+    checkbox: true,
+    hour: '05:00 AM',
+    listpicker: 2,
+    combo: 2,
+    time: 1505358700000,
+    date: 1505358700000,
+    radio: 2,
+    slider: 2,
+    daterange: {
+      startDate: moment('2019-05-15T00:00Z'),
+      endDate: moment('2019-05-20T00:00Z')
+    },
+    currency: 23.3,
+    real: 23.3,
+    integer: 10000,
+    percent: 0.76
+  };
 
   setValue(input: any, value: any) {
     input.setValue(value);

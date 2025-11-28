@@ -1,36 +1,33 @@
 import { Component } from '@angular/core';
 
 const SLIDE_HTML_DATA = `
-<o-form editable-detail="false" show-header="no">
-    <div fxLayout="column" layout-padding>
+  <o-form editable-detail="false" show-header="no" layout-direction="row">
+    <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" [data]="getValue()"></o-slider>
+      <o-slider attr="slider" [data]="slider"></o-slider>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider #slider attr="slider-editable" [data]="getValue()"
-        read-only="no"></o-slider>
+      <o-slider #slider attr="slider-editable" [data]="slider" read-only="no" read-only="no"></o-slider>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-slider attr="slider-disabled" enabled="no" [data]="getValue()"></o-slider>
+      <o-slider attr="slider-disabled" enabled="no" [data]="slider"></o-slider>
     </div>
   </o-form>
   <o-form editable-detail="false" show-header="no" layout-direction="row">
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" [data]="getValue()" layout="column" color="warn"></o-slider>
+      <o-slider attr="slider" [data]="slider" layout="column" color="warn"></o-slider>
     </div>
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider attr="slider-editable" [data]="getValue()" read-only="no"
-         layout="column" color="warn" max="100" min="0" thumb-label="true"
+      <o-slider attr="slider-editable" [data]="slider" read-only="no" layout="column" color="warn" max="100" min="0" thumb-label="true"
         tick-interval="auto"></o-slider>
     </div>
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-slider attr="slider-disabled" enabled="no" layout="column" color="warn"
-        [data]="getValue()"></o-slider>
+      <o-slider attr="slider-disabled" enabled="no" layout="column" color="warn" [data]="slider"></o-slider>
     </div>
   </o-form>
 
@@ -46,17 +43,7 @@ import { Component } from '@angular/core';
 
 export class InputSliderComponent {
 
-  getValue() {
-    return 10;
-  }
-
-  formatLabel(value: number | null) {
-    if (!value) {
-      return 0;
-    }
-    return  value +'%';
-
-  }
+  protected slider = 10;
 
 }
 `;
@@ -79,15 +66,6 @@ export class InputSliderComponent {
     }
   };
 
-  getValue() {
-    return 10;
-  }
+  protected slider = 10;
 
-  formatLabel(value: number | null) {
-    if (!value) {
-      return 0;
-    }
-    return value + '%';
-
-  }
 }

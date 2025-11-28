@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 const TEXT_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input fxFlex attr="input" label="Text" [data]="getValue()"></o-text-input>
+    <o-text-input fxFlex attr="input" label="Text" [data]="name"></o-text-input>
 
-    <o-text-input attr="input2" label="Text" [data]="getValue()" read-only="no" required="yes" ></o-text-input>
+    <o-text-input attr="input2" label="Text" [data]="name" read-only="no" required="yes" ></o-text-input>
 
-    <o-text-input attr="input3" label="Text" enabled="no" [data]="getValue()"></o-text-input>
+    <o-text-input attr="input3" label="Text" enabled="no" [data]="name"></o-text-input>
 
   </o-form>
 `;
@@ -19,9 +19,7 @@ const TEXT_TS_DATA = `
   })
   export class InputTextComponent {
 
-    getValue() {
-      return 'John Doe';
-    }
+    protected name = 'John Doe';
 
   }
 `;
@@ -90,8 +88,7 @@ export class InputTextComponent {
     }
   };
 
-  getValue() {
-    return 'John Doe';
-  }
+
+  protected name = 'John Doe';
 
 }
