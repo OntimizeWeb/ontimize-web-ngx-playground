@@ -57,7 +57,7 @@
         </mat-radio-group>
       </div>
     </div>
-    <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="getStaticData()"
+    <o-list content #list fxFill attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="staticData"
       [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
       row-height="medium" detail-mode="none">
       <o-list-item *ngFor="let row of list.dataArray">

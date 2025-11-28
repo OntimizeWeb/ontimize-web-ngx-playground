@@ -290,7 +290,7 @@ const HTML_DATA_GRID_FIXED = `
 `;
 
 const HTML_DATA_GRID_HYBRID = `
- <o-grid #grid attr="grid" [static-data]="getStaticData())" columns="text;cols;rows;color" cols="4"
+<o-grid #grid attr="grid" [static-data]="data" keys="text" columns="text;cols;rows;color" cols="4"
 grid-item-height="100px" controls="no" gutter-size="0">
   <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
     <div [style.background]="list.color" fxFill>
@@ -672,17 +672,8 @@ export class RickAndMortyRequestArgumentsAdapter extends BaseRequestArgument imp
 
 
 const
-  HTML_TS = `
-getStaticData() {
-  return ${JSON.stringify(FAKE_USERS)};
-}
-`;
-
-const
   HTML_TS_HIBRID = `
-getStaticData() {
-  return ${JSON.stringify(FAKE_DATAHYBRID)};
-}
+  data =  ${JSON.stringify(FAKE_DATAHYBRID)};
 `;
 
 export class GridUtils {
@@ -738,7 +729,7 @@ export class GridUtils {
       }
     };
 
-    if (key === 'o-grid-basic' || key ==='o-grid-fixed' ) {
+    if (key === 'o-grid-basic' || key === 'o-grid-fixed') {
       let files = [];
       files.push({
         'label': 'app.module.ts',
@@ -781,7 +772,7 @@ export class GridUtils {
     switch (key) {
       case 'o-grid-basic':
       case 'o-grid-fixed':
-        code = HTML_TS;
+        code = '';
         break;
       case 'o-grid-hybrid':
         code = HTML_TS_HIBRID;

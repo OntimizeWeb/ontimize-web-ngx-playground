@@ -2,7 +2,7 @@
   (showSource)="onShowSource('o-table-column-calculated', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE"
-      visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY" layout-padding title="PRODUCTS" [static-data]="getTableData()"
+      visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY" keys="PRODUCTID" layout-padding title="PRODUCTS" [static-data]="data"
       query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none"
       detail-mode="none" show-charts-on-demand-option="no">
 

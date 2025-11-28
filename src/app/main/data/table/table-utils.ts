@@ -232,7 +232,7 @@ const HTML_DATA_RENDERER_CUSTOM = `
 
 const HTML_DATA_EDITORS = `
   <o-table #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-    visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC"
+    visible-columns="NAME;STARTDATE;BALANCE;NUMCARDS;CLOSED" title="ACCOUNTS" [static-data]="accounts" sort-columns="ACCOUNT:DESC"
     query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no" pagination-controls="no"
     detail-mode="none" edition-mode="click" export-button="no" show-charts-on-demand-option="no">
 
@@ -287,7 +287,7 @@ const HTML_DATA_EDITORS = `
 
 const HTML_DATA_AGGREGATE = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK" visible-columns="PRODUCTNAME;UNITPRICE;UNITSINORDER;UNITSINSTOCK"
-    title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
+    keys="PRODUCTID" title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
     pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
@@ -316,7 +316,7 @@ const HTML_DATA_AGGREGATE = `
 
 const HTML_DATA_CALCULATED_COLUMN = `
   <o-table #table attr="products" columns="PRODUCTID;PRODUCTNAME;UNITSINSTOCK;UNITPRICE" visible-columns="PRODUCTNAME;UNITSINSTOCK;UNITPRICE;TOTALSTOCK;PROFITABILITY"
-    title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
+    keys="PRODUCTID" title="PRODUCTS" [static-data]="data" query-on-init="false" quick-filter="yes" insert-button="no" refresh-button="no"
     pagination-controls="no" export-button="no" show-charts-on-demand-option="no">
 
     <!-- Filter columns -->
@@ -365,8 +365,8 @@ const HTML_DATA_PAGINATOR = `
 `;
 
 const HTML_DATA_CONTEXT_MENU = `
-  <o-table #table attr="customers" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
-    title="CUSTOMERS" [static-data]="data" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
+  <o-table #table attr="customers" columns="CUSTOMERID;PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
+    keys="CUSTOMERID" title="CUSTOMERS" [static-data]="data" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
     pagination-controls="no" export-button="no" show-charts-on-demand-option="no">
 
     <!-- Custom definition columns -->
@@ -385,7 +385,6 @@ const HTML_DATA_CONTEXT_MENU = `
   <o-context-menu #contextMenu>
     <o-context-menu-item icon="grade" label="Item 1" (execute)="onExecute('Item 1', $event)"></o-context-menu-item>
     <o-context-menu-item icon="grade" label="Item 2" enabled="no"></o-context-menu-item>
-    <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute('Item 3', $event)"></o-context-menu-item>
   </o-context-menu>
 `;
 
@@ -583,7 +582,7 @@ const HTML_DATA_ROW_EXPANDABLE_WITH_EXPANDABLE_FUNCTION_ASYNC = `
     </o-table>`;
 const HTML_DATA_BASIC_ROW_GROUPING = `
   <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
-  columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
+  keys="athlete" columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
   quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
   detail-mode="none" [ngStyle]="{'height':'600px'}" show-charts-on-demand-option="no">
     <o-table-columns-grouping columns="country;sport">
@@ -596,7 +595,7 @@ const HTML_DATA_BASIC_ROW_GROUPING = `
 
 
 const HTML_DATA_MULTIPLE_EXPANDED_ROWS = `
-<o-table fxFill #table [static-data]="tableData" keys="position" columns="Position;Name;Weight;Symbol;Description"
+<o-table fxFill #table [static-data]="tableData" keys="Position" columns="Position;Name;Weight;Symbol;Description"
   visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
   pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
   <o-table-row-expandable multiple="yes">
@@ -715,16 +714,16 @@ import { Component } from '@angular/core';
   selector: 'table-editor',
   templateUrl: 'table-editor.component.html'
 })
-export class TableEditorComponent {
+export class TableEditorComponent implements OnInit {
 
-   getTableData(): Array<any> {
-    let accounts =  ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
-    accounts.forEach(obj => {
+  protected accounts = TableUtils.getAccounts();
+
+  ngOnInit() {
+    this.accounts.forEach(obj => {
       if (obj['STARTDATE'] && typeof obj['STARTDATE'] === 'number') {
         obj['STARTDATE'] = new Date(obj['STARTDATE']).toISOString();
       }
     });
-    return accounts;
   }
 
   editionStarted(arg: any) {
@@ -796,18 +795,16 @@ import { Util } from 'ontimize-web-ngx';
   templateUrl: 'table-context-menu.component.html'
 })
 export class TableContextMenuComponent {
-  public data =  ${JSON.stringify(FAKE_ACCOUNTS_TABLE)};
 
   getVisible(data: any): boolean {
     return Util.parseBoolean(data.COMMISSION);
   }
 
   onExecute(text: string, event: any): void {
-    alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
+    alert('Clicked menu element: ' + text + '\\n\' + event.data.NAME);
   }
 
 }
-
 `;
 
 const TYPESCRIPT_DATA_MULTIPLE_SORT = `
