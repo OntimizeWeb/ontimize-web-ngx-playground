@@ -772,7 +772,6 @@ export class GridUtils {
     switch (key) {
       case 'o-grid-basic':
       case 'o-grid-fixed':
-        code = '';
         break;
       case 'o-grid-hybrid':
         code = HTML_TS_HIBRID;

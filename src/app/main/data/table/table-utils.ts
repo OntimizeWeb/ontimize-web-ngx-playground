@@ -801,7 +801,7 @@ export class TableContextMenuComponent {
   }
 
   onExecute(text: string, event: any): void {
-    alert('Clicked menu element: ' + text + '\\n\' + event.data.NAME);
+    alert('Clicked menu element: ' + text + '\\n' + event.data.NAME);
   }
 
 }
