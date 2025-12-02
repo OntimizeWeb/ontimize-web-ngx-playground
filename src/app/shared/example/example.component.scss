@@ -1,5 +1,9 @@
 .example-comp {
 
+  &>section {
+    height: 80%;
+  }
+
   .playground-toolbar {
     font-size: 18px;
     padding: 0;
@@ -18,7 +22,7 @@
     }
   }
 
-  .playground-tabs{
+  .playground-tabs {
     margin: 10px 25px 10px 25px;
   }
 
@@ -46,7 +50,7 @@
   .playground-examples {
     margin: 10px 25px 20px 25px;
 
-    .input-comp-title{
+    .input-comp-title {
       font-size: 17px;
       font-weight: 500;
     }
