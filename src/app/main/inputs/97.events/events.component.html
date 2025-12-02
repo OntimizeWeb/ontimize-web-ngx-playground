@@ -24,7 +24,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-currency-input #currency attr="currency" label="INPUT.BUTTON.CURRENCY" [data]="values.currency" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(currency)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(currency)"
-            (onBlur)="onBlur(currency)" (click)="onClick(currency)">
+            (onBlur)="onBlur(currency)">
           </o-currency-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(currency, 50)"><span class="ellipsis">setValue
               50</span></button>
@@ -33,7 +33,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-integer-input #integer attr="integer" label="INPUT.BUTTON.INTEGER" [data]="values.integer" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(integer)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(integer)"
-            (onBlur)="onBlur(integer)" (click)="onClick(integer)">
+            (onBlur)="onBlur(integer)">
           </o-integer-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(integer, 50)"><span class="ellipsis">setValue 50</span></button>
         </div>
@@ -41,7 +41,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-real-input #real attr="real" label="INPUT.BUTTON.REAL" [data]="values.real" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(real)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(real)"
-            (onBlur)="onBlur(real)" (click)="onClick(real)">
+            (onBlur)="onBlur(real)">
           </o-real-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(real, 50)"><span class="ellipsis">setValue 50</span></button>
         </div>
@@ -49,7 +49,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-percent-input #percent attr="percent" label="INPUT.BUTTON.PERCENT" [data]="values.percent" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(percent)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(percent)"
-            (onBlur)="onBlur(percent)" (click)="onClick(percent)">
+            (onBlur)="onBlur(percent)">
           </o-percent-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(percent, 0.66)"><span class="ellipsis">setValue
               0.66</span></button>
@@ -58,7 +58,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-date-input #date attr="date" label="INPUT.BUTTON.DATE" [data]="values.date" read-only="no" format="LL" required="yes" min="01/01/1980"
             max="01/01/2020" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="65" (onChange)="onChange(date)"
-            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)" (click)="onClick(date)">
+            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)">
           </o-date-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(date, 1538524800000)"><span class="ellipsis">setValue
               2018-10-03</span></button>
@@ -67,7 +67,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-hour-input #hour attr="hour" label="INPUT.BUTTON.HOUR" [data]="values.hour" value-type="string" read-only="no" required="yes"
             clear-button="yes" format="24" (onChange)="onChange(hour)" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="65"
-            (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)" (click)="onClick(hour)">
+            (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)">
           </o-hour-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(hour, '08:00 PM')"><span class="ellipsis">setValue 08:00
               PM</span></button>
@@ -86,7 +86,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-list-picker #listpicker attr="listpicker" label="INPUT.BUTTON.LISTPICKER" [static-data]="array" [data]="values.listpicker" filter="yes"
             value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false" (onValueChange)="onValueChange($event)"
-            fxFlex="65" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)" (onBlur)="onBlur(listpicker)" (click)="onClick(listpicker)">
+            fxFlex="65" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)" (onBlur)="onBlur(listpicker)">
           </o-list-picker>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(listpicker, '4')"><span class="ellipsis">setValue
               Germany</span></button>
@@ -104,7 +104,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-time-input #time width="400px" attr="time" label="INPUT.BUTTON.TIME" [data]="values.time" read-only="no" required="yes" clear-button="yes" format="24"
             (onValueChange)="onValueChange($event)" clear-button="yes"  (onChange)="onChange(time)" (onFocus)="onFocus(time)"
-            (onBlur)="onBlur(time)" (click)="onClick(time)"></o-time-input>
+            (onBlur)="onBlur(time)"></o-time-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(time,1535358788828)"><span class="ellipsis">setValue
               1535358788828</span></button>
         </div>
@@ -124,7 +124,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-daterange-input #daterange attr="daterange" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="values.daterange"
             clear-button="yes" format="LL" separator=" to " (onValueChange)="onValueChange($event)" (onChange)="onChange(daterange)"
-            (onFocus)="onFocus(daterange)" (onBlur)="onBlur(daterange)" fxFlex="65" (click)="onClick(daterange)">
+            (onFocus)="onFocus(daterange)" (onBlur)="onBlur(daterange)" fxFlex="65">
           </o-daterange-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(daterange, {
             startDate: moment('2019-05-15T00:00Z'),
