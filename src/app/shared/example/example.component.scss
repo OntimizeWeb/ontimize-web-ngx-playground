@@ -1,9 +1,5 @@
 .example-comp {
 
-  &>section {
-    height: 80%;
-  }
-
   .playground-toolbar {
     font-size: 18px;
     padding: 0;
@@ -56,4 +52,8 @@
     }
 
   }
+}
+
+.example-comp.image-demo>section {
+  height: 80%;
 }

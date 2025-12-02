@@ -7,8 +7,12 @@
     width: 100%;
     overflow: hidden;
 
-    >div {
+    :host-context(.example-comp.image-demo) >div{
       height: 100%;
+    }
+
+    >div {
+      height: fit-content;
 
       >.container {
         overflow: auto;
