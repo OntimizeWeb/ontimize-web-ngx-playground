@@ -55,7 +55,7 @@ export class InputPasswordComponent {
   };
 
 
-  protected password = 'top-secret';
+  protected topSecret = 'top-secret';
 
   getFiles(key?:string) {
 

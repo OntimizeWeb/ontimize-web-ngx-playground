@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
 import { TableUtils } from '../table-utils';
 

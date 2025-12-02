@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Util } from 'ontimize-web-ngx';
-
 import { TableUtils } from '../table-utils';
 
 @Component({

@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { GridUtils } from '../grid.utils';
-import { OGridComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'grid-hybrid',

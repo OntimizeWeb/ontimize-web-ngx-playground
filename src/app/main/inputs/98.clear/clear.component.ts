@@ -48,7 +48,7 @@ export class ClearComponent {
 
   protected textValue = 'John Doe';
 
-  protected dateValue = new Date().getTime();
+  protected dateValue = Date.now();
 
   protected currValue = 2574.99;
 
