@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 const CURRENCY_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-currency-input attr="currency" label="Currency" [data]="getValue()" 
+    <o-currency-input attr="currency" label="Currency" [data]="currency"
       min-decimal-digits="2" max-decimal-digits="2"></o-currency-input>
 
-    <o-currency-input attr="currency2" label="Currency" [data]="getValue()" read-only="no"  required="yes"
+    <o-currency-input attr="currency2" label="Currency" [data]="currency" read-only="no"  required="yes"
       min-decimal-digits="2" max-decimal-digits="2" ></o-currency-input>
 
-    <o-currency-input attr="currency3" label="Currency" enabled="no" [data]="getValue()" min-decimal-digits="2"
+    <o-currency-input attr="currency3" label="Currency" enabled="no" [data]="currency" min-decimal-digits="2"
       max-decimal-digits="2"></o-currency-input>
 
   </o-form>
@@ -22,9 +22,7 @@ const CURRENCY_TS_DATA = `
   })
   export class InputCurrencyComponent {
 
-    getValue() {
-      return 2574.99;
-    }
+    protected currency = 2574.99;
 
   }
 `;
@@ -47,8 +45,6 @@ export class InputCurrencyComponent {
     }
   };
 
-  getValue() {
-    return 2574.99;
-  }
+  protected currency = 2574.99;
 
 }

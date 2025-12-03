@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 const REAL_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-real-input attr="real" label="Real" [data]="getValue()" min-decimal-digits="2" max-decimal-digits="4"
+    <o-real-input attr="real" label="Real" [data]="float" min-decimal-digits="2" max-decimal-digits="4"
       min="30" max="40.0"></o-real-input>
 
-    <o-real-input attr="real2" label="Real" [data]="getValue()" read-only="no" required="yes" min-decimal-digits="2"
+    <o-real-input attr="real2" label="Real" [data]="float" read-only="no" required="yes" min-decimal-digits="2"
       max-decimal-digits="4" min="30" max="40.0" ></o-real-input>
 
-    <o-real-input attr="real3" label="Real" enabled="no" [data]="getValue()" min-decimal-digits="2" max-decimal-digits="4"
+    <o-real-input attr="real3" label="Real" enabled="no" [data]="float" min-decimal-digits="2" max-decimal-digits="4"
       min="30" max="40.0"></o-real-input>
 
   </o-form>
@@ -22,9 +22,7 @@ const REAL_TS_DATA = `
   })
   export class InputRealComponent {
 
-    getValue() {
-      return 33.45;;
-    }
+    protected float = 33.45;
 
   }
 `;
@@ -47,8 +45,7 @@ export class InputRealComponent {
     }
   };
 
-  getValue() {
-    return 33.45;;
-  }
+
+  protected float = 33.45;
 
 }

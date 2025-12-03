@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ListsUtils } from '../lists-utils';
 
 const LIST_ITEM_CUSTOM_HTML_DATA = `
-<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
+<o-list #list attr="list" keys="id" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="users">
 
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
@@ -36,8 +36,6 @@ export class ListItemCustomComponent {
     }
   };
 
-  getStaticData() {
-    return ListsUtils.getListData(5);
-  }
+  protected users = ListsUtils.getListData(5);
 
 }

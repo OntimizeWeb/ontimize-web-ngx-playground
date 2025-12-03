@@ -12,9 +12,7 @@ export class TableCalculatedColumnComponent {
     return TableUtils.getFiles(key);
   }
 
-  getTableData(): Array<any> {
-    return TableUtils.getProducts();
-  }
+  protected data = TableUtils.getProducts();
 
   onShowSource(key: string, table?: any, exampleComp?: any) {
     exampleComp.html = TableUtils.getHtml(key, table, {});

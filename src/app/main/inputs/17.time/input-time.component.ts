@@ -4,12 +4,12 @@ const HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
     <o-time-input attr="input" label="Time" date-placeholder="mm/dd/yyyy" hour-placeholder="hh:mm"
-      [data]="getValue()"></o-time-input>
+      [data]="time"></o-time-input>
 
-    <o-time-input attr="input2" [data]="getValue()" read-only="no" required="yes" clear-button="yes" label="Time"
+    <o-time-input attr="input2" [data]="time" read-only="no" required="yes" clear-button="yes" label="Time"
       date-placeholder="mm/dd/yyyy" hour-placeholder="hh:mm"></o-time-input>
 
-    <o-time-input attr="input3" label="Time" enabled="no" [data]="getValue()" date-placeholder="mm/dd/yyyy"
+    <o-time-input attr="input3" label="Time" enabled="no" [data]="time" date-placeholder="mm/dd/yyyy"
       hour-placeholder="hh:mm"></o-time-input>
 
   </o-form>
@@ -22,9 +22,7 @@ const TS_DATA = `
 })
 export class InputTimeComponent {
 
-  public getValue(): any {
-    return 1535353788828;
-  }
+  protected time = 1535353788828;
 
 }
 `;
@@ -47,8 +45,6 @@ export class InputTimeComponent {
     }
   };
 
-  public getValue(): any {
-    return 1535353788828;
-  }
+  protected time = 1535353788828;
 
 }

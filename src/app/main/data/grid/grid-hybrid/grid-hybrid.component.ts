@@ -9,8 +9,10 @@ import { GridUtils } from '../grid.utils';
 
 export class GridHybridComponent {
 
-  getStaticData(key) {
-    return GridUtils.getData(key);
+  data: any;
+
+  constructor() {
+    this.data = GridUtils.getData('o-grid-hybrid');
   }
 
   getFiles(type) {
@@ -23,12 +25,6 @@ export class GridHybridComponent {
 
   public replaceHtml(html: string, grid?: any) {
     return html;
-  }
-
-  reloadGridData(grid) {
-    setTimeout(() => {
-      grid.reloadData();
-    }, 0);
   }
 
 }

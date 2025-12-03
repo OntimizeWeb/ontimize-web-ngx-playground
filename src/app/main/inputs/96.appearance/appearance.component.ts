@@ -1,14 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
-import { ExampleComponent } from '../../../shared/example/example.component';
 
 const CUSTOM_INPUT_HTML_DATA = `
-<o-text-input attr="attr" [float-label]="{floatLabel}" [appearance]="{appearanceValue}" [label]="{labelValue}"
-  [placeholder]="{placeholderValue}" read-only="no" clear-button="yes"
-  [hide-required-marker]="{hideRequiredMarker}" required="yes">
+<o-text-input attr="attr" float-label="{floatLabel}" appearance="{appearanceValue}" label="{labelValue}"
+  placeholder="{placeholderValue}" read-only="no" clear-button="yes"
+  hide-required-marker="{hideRequiredMarker}" required="yes">
 </o-text-input>
 `;
-
 
 const FLOAT_LABEL_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -20,9 +18,6 @@ const FLOAT_LABEL_HTML_DATA = `
       clear-button="yes"></o-text-input>
 
   </o-form>
-`;
-
-const FLOAT_LABEL_TS_DATA = `
 `;
 
 const PLACEHOLDER_HTML_DATA = `
@@ -41,40 +36,67 @@ const PLACEHOLDER_HTML_DATA = `
 </o-form>
 `;
 
-const PLACEHOLDER_TS_DATA = `
-`;
-
 const APPEARANCE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
- <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}"
-      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
+
+    <o-text-input appearance="legacy" attr="text_" label="{{ 'INPUT.APPEARANCE.LEGACY' | oTranslate }}"
+      [data]="valueText" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
     <o-text-input appearance="fill" attr="text_2" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}"
-      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
+      [data]="valueText" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
     <o-text-input appearance="outline" attr="text_3" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
-      [data]="getValueText()" read-only="no" clear-button="yes" layout-padding></o-text-input>
+      [data]="valueText" read-only="no" clear-button="yes" layout-padding></o-text-input>
 
     <o-currency-input appearance="fill" attr="currency3" clear-button="yes"
-      label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+      label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" read-only="no" [data]="valueCurrency" required="yes" layout-padding>
     </o-currency-input>
 
     <o-currency-input appearance="outline" attr="currency4" clear-button="yes"
-      label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" read-only="no" [data]="getValueCurr()" required="yes" layout-padding>
+      label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}" read-only="no" [data]="valueCurrency" required="yes" layout-padding>
     </o-currency-input>
-</o-form>
+
+    <o-combo attr="combo-editable" appearance="fill" label="{{ 'INPUT.APPEARANCE.FILL' | oTranslate }}" [static-data]="array"
+      [data]="valueSimple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
+
+    <o-combo attr="combo-editable2" appearance="outline" label="{{ 'INPUT.APPEARANCE.OUTLINE' | oTranslate }}"
+      [static-data]="array" [data]="valueSimple" value-column="key" columns="key;value" visible-columns="value"
+      required="yes" read-only="false"></o-combo>
+
+  </o-form>
 `;
 
 const APPEARANCE_TS_DATA = `
-...
-getValueText() {
-  return 'John Doe';
-}
+@Component({
+  selector: 'appearance',
+  templateUrl: './appearance.component.html'
+})
+export class AppearanceComponent {
 
-getValueCurr() {
-  return 2574.99;
+  protected valueText = 'John Doe';
+
+  protected valueCurrency = 2574.99;
+
+  protected array: Array<Object> = [{
+    'key': 1,
+    'value': 'Spain'
+  },
+  {
+    'key': 2,
+    'value': 'United States'
+  },
+  {
+    'key': 3,
+    'value': 'United Kingdom'
+  },
+  {
+    'key': 4,
+    'value': 'Germany'
+  }];
+
+  protected valueSimple = 2;
+
 }
-...
 `;
 
 @Component({
@@ -105,10 +127,6 @@ export class AppearanceComponent {
     'scss': {
       'data': undefined
     }
-    // ,
-    // 'typescript': {
-    //   'data': PLACEHOLDER_TS_DATA
-    // }
   };
 
   appearanceFiles = {
@@ -132,38 +150,28 @@ export class AppearanceComponent {
   floatLabelValue = 'auto';
   appearanceValue = 'fill';
 
-  getValueText() {
-    return 'John Doe';
-  }
+  protected valueText = 'John Doe';
 
-  getValueCurr() {
-    return 2574.99;
-  }
+  protected valueCurrency = 2574.99;
 
-  getDataArray() {
-    const array: Array<Object> = [];
-    array.push({
-      'key': 1,
-      'value': 'Spain'
-    });
-    array.push({
-      'key': 2,
-      'value': 'United States'
-    });
-    array.push({
-      'key': 3,
-      'value': 'United Kingdom'
-    });
-    array.push({
-      'key': 4,
-      'value': 'Germany'
-    });
-    return array;
-  }
+  protected array: Array<Object> = [{
+    'key': 1,
+    'value': 'Spain'
+  },
+  {
+    'key': 2,
+    'value': 'United States'
+  },
+  {
+    'key': 3,
+    'value': 'United Kingdom'
+  },
+  {
+    'key': 4,
+    'value': 'Germany'
+  }];
 
-  getValueSimple() {
-    return 2;
-  }
+  protected valueSimple = 2;
 
   updateCodeValue(key: string, value: string) {
     const itemData: any = {

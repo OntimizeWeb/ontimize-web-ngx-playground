@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TableUtils } from '../table-utils';
 
 
@@ -6,20 +6,20 @@ import { TableUtils } from '../table-utils';
   selector: 'table-editor',
   templateUrl: 'table-editor.component.html'
 })
-export class TableEditorComponent {
+export class TableEditorComponent implements OnInit{
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
   }
 
-  getTableData(): Array<any> {
-    let accounts = TableUtils.getAccounts();
-    accounts.forEach(obj => {
+  protected accounts = TableUtils.getAccounts();
+
+  ngOnInit() {
+    this.accounts.forEach(obj => {
       if (obj['STARTDATE'] && typeof obj['STARTDATE'] === 'number') {
         obj['STARTDATE'] = new Date(obj['STARTDATE']).toISOString();
       }
     });
-    return accounts;
   }
 
   onShowSource(key: string, table?: any, exampleComp?: any) {

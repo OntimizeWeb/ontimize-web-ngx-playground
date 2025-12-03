@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
 import { TableUtils } from '../table-utils';
 
@@ -6,8 +6,9 @@ import { TableUtils } from '../table-utils';
   selector: 'table-horizontal-scroll',
   templateUrl: 'table-horizontal-scroll.component.html'
 })
-export class TableHorizontalScrollComponent implements AfterViewInit {
+export class TableHorizontalScrollComponent {
 
+  html: string;
 
   @ViewChild('horizontalScrollToggle')
   horizontalScrollToggle: any = true;
@@ -19,17 +20,14 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit(): void {
+  updateCodeValue() {
     if (this.table) {
+      this.table.horizontalScroll = this.horizontalScrollToggle.checked;
       this.table.updateScrolledState();
     }
-  }
+    const itemData: any = { horizontalScroll: this.horizontalScrollToggle.checked };
 
-  onToggleChange(val) {
-    if (this.table) {
-      this.table.horizontalScroll = val.checked;
-      this.table.updateScrolledState();
-    }
+    this.html = TableUtils.getHtml('o-table-horizontal-scroll', this.table, itemData);
   }
 
   getFiles(key: string) {
@@ -40,7 +38,7 @@ export class TableHorizontalScrollComponent implements AfterViewInit {
     const itemData: any = {
       horizontalScroll: this.horizontalScrollToggle.checked
     };
-    exampleComp.html = TableUtils.getHtml(key, table, itemData);
+    this.html = TableUtils.getHtml(key, table, itemData);
   }
 
 }

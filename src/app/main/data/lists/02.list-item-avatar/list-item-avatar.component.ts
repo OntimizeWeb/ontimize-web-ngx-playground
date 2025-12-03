@@ -3,7 +3,7 @@ import { ListsUtils } from '../lists-utils';
 import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_AVATAR_HTML_DATA = `
-<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="users"
   title="{title}" quick-filter="{quickFilter}" quick-filter-columns="name;username;email"
   refresh-button="{refreshButton}" insert-button="{insertButton}" delete-button="{deleteButton}"
   selectable="{selectable}" detail-button-in-row="{detailButtonInRow}"
