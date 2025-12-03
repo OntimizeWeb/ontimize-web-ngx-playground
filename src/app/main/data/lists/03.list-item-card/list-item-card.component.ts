@@ -4,7 +4,7 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_CARD_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
-  [static-data]="getStaticData()" refresh-button="{refreshButton}" quick-filter="{quickFilter}" insert-button="{insertButton}"
+  [static-data]="users" refresh-button="{refreshButton}" quick-filter="{quickFilter}" insert-button="{insertButton}"
   row-height="{rowHeight}" detail-mode="none">
 
   <o-list-item *ngFor="let row of list.dataArray">

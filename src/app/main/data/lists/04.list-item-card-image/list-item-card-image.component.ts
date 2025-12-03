@@ -4,7 +4,7 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 
 const LIST_ITEM_CARD_IMAGE_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
-  [static-data]="getStaticData()" refresh-button="{refreshButton}" insert-button="{insertButton}"
+  [static-data]="users" refresh-button="{refreshButton}" insert-button="{insertButton}"
   quick-filter="no" row-height="medium" detail-mode="none">
 
   <o-list-item *ngFor="let row of #list.dataArray">
@@ -24,10 +24,6 @@ const LIST_ITEM_CARD_IMAGE_TS_DATA = `
 
   onAction2() {
     alert('onAction2');
-  }
-
-  onIconAction() {
-    alert('onIconAction');
   }
 `;
 
@@ -98,9 +94,7 @@ export class ListItemCardImageComponent {
     alert('onIconAction');
   }
 
-  getStaticData() {
-    return ListsUtils.getListData(3);
-  }
+  protected users = ListsUtils.getListData(3);
 
   updateCodeValue(key: string, value) {
     let htmlData: string = LIST_ITEM_CARD_IMAGE_HTML_DATA;

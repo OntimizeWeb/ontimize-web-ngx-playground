@@ -47,12 +47,12 @@ const COMBO_HTML_DATA_MORE_INPUTS = `
 
     <o-combo attr="combo-null-selection" label="Select country" [static-data]="countriesArray"
       [data]="selectedCountryCode" value-column="countryCode" columns="countryCode;countryText"
-      visible-columns="countryText" [data]="19487" required="yes" null-selection="no">
+      visible-columns="countryText" required="yes" null-selection="no">
     </o-combo>
 
     <o-combo attr="combo-translate" label="Select value" [static-data]="translationsArray"
       [data]="selectedTranslationCode" value-column="itemCode" columns="itemCode;itemTranslationKey"
-      visible-columns="itemTranslationKey" [data]="19487" required="yes" translate="yes">
+      visible-columns="itemTranslationKey" required="yes" translate="yes">
     </o-combo>
 
   </o-form>
@@ -158,7 +158,7 @@ const COMBO_HTML_DATA_MULTIPLE_CUSTOM_RENDER = `
       visible-columns="integerValue" required="yes" multiple="yes" fxFlex>
       <combo-custom-render></combo-custom-render>
     </o-combo>
-  
+
   </o-form>
 `;
 
@@ -166,7 +166,7 @@ const COMBO_HTML_DATA_LOCKER = `
   <o-form service="customers" entity="customer" show-header="no"
     keys="CUSTOMERID" keys-sql-types="INTEGER">
 
-    <o-combo attr="combo-locker" oLocker label="Select customer" 
+    <o-combo attr="combo-locker" oLocker label="Select customer"
       service="customers" entity="customer" value-column="CUSTOMERID"
       columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " fxFlex>
     </o-combo>
@@ -177,7 +177,7 @@ const COMBO_HTML_DATA_LOCKER_DISABLED = `
   <o-form service="customers" entity="customer" show-header="no"
     keys="CUSTOMERID" keys-sql-types="INTEGER">
 
-    <o-combo attr="combo-locker" oLocker oLockerMode="disable" label="Select customer" 
+    <o-combo attr="combo-locker" oLocker oLockerMode="disable" label="Select customer"
       service="customers" entity="customer" value-column="CUSTOMERID"
       columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " fxFlex>
     </o-combo>
@@ -359,7 +359,7 @@ export class InputComboComponent {
 
   public selectedTranslationCode = 2;
 
-  // This entries are present in the en.json bundle file 
+  // This entries are present in the en.json bundle file
   // ...
   // "TRANSLATION_0": "First value",
   // "TRANSLATION_1": "Second value",

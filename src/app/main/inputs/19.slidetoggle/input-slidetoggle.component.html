@@ -2,11 +2,11 @@
   <o-form editable-detail="false" show-header="no">
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slide-toggle attr="slidetoggle" label="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" [data]="getValue()"></o-slide-toggle>
+      <o-slide-toggle attr="slidetoggle" label="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" [data]="slideToggle"></o-slide-toggle>
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slide-toggle attr="slidetoggle-editable" label="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" [data]="getValue()"
+      <o-slide-toggle attr="slidetoggle-editable" label="{{ 'INPUT.BUTTON.SLIDETOGGLE' | oTranslate }}" [data]="slideToggle"
         read-only="no" ></o-slide-toggle>
     </div>
     <div fxLayout="column" layout-padding>

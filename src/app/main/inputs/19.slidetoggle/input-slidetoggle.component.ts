@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 const SLIDETOGGLE_HTML_DATA = `
   <o-form editable-detail="false" show-header="no">
 
-    <o-slide-toggle attr="slidetoggle" label="Slide toggle" [data]="getValue()"></o-slide-toggle>
+    <o-slide-toggle attr="slidetoggle" label="Slide toggle" [data]="slideToggle"></o-slide-toggle>
 
-    <o-slide-toggle attr="slidetoggle-editable" label="Slide toggle" [data]="getValue()" read-only="no"
+    <o-slide-toggle attr="slidetoggle-editable" label="Slide toggle" [data]="slideToggle" read-only="no"
         ></o-slide-toggle>
 
     <o-slide-toggle attr="slidetoggle-disabled" label="Slide toggle" enabled="no"></o-slide-toggle>
@@ -22,9 +22,7 @@ import { Component } from '@angular/core';
 })
 export class InputSlidetoggleComponent {
 
-  getValue() {
-    return true;
-  }
+  protected slideToggle = true;
 
 }
 `;
@@ -47,8 +45,6 @@ export class InputSlidetoggleComponent {
     }
   };
 
-  getValue() {
-    return true;
-  }
+  protected slideToggle = true;
 
 }

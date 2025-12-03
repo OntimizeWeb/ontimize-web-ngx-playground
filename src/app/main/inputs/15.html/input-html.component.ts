@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 const HTML_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-html-input #input1 attr="html" [data]="getValue()"></o-html-input>
+    <o-html-input #input1 attr="html" [data]="html"></o-html-input>
 
-    <o-html-input attr="html2" [data]="getValue()" read-only="no" required="yes"></o-html-input>
+    <o-html-input attr="html2" [data]="html" read-only="no" required="yes"></o-html-input>
 
   </o-form>
 `;
@@ -17,8 +17,7 @@ const HTML_TS_DATA = `
   })
   export class HTMLInputComponent {
 
-    getValue() {
-      return \`
+    protected html = \`
         <!DOCTYPE html>
         <html>
           <body>
@@ -54,8 +53,7 @@ export class HTMLInputComponent {
     }
   };
 
-  getValue() {
-    return `
+  protected html = `
       <!DOCTYPE html>
       <html>
         <body>
@@ -68,6 +66,5 @@ export class HTMLInputComponent {
         </body>
       </html>
     `;
-  }
 
 }

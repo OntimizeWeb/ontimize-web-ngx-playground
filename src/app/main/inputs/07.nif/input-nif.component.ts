@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 const NIF_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-nif-input attr="nif" label="NIF" [data]="getValue()"></o-nif-input>
+    <o-nif-input attr="nif" label="NIF" [data]="nif"></o-nif-input>
 
-    <o-nif-input #nif attr="nif2" label="NIF" [data]="getValue()" read-only="no" required="yes"
+    <o-nif-input #nif attr="nif2" label="NIF" [data]="nif" read-only="no" required="yes"
       ></o-nif-input>
 
-    <o-nif-input attr="nif3" label="NIF" enabled="no" [data]="getValue()"></o-nif-input>
+    <o-nif-input attr="nif3" label="NIF" enabled="no" [data]="nif"></o-nif-input>
 
   </o-form>
 `;
@@ -20,9 +20,7 @@ const NIF_TS_DATA = `
   })
   export class InputNIFComponent {
 
-    getValue() {
-      return '53780330M';
-    }
+    protected nif = '53780330M';
 
   }
 `;
@@ -45,8 +43,6 @@ export class InputNIFComponent {
     }
   };
 
-  getValue() {
-    return '53780330M';
-  }
+  protected nif = '53780330M';
 
 }

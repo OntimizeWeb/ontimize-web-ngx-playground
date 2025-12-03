@@ -11,8 +11,6 @@ export class TableInsertableRowComponent {
     return TableUtils.getFiles(key);
   }
 
-  getTableData(): Array<any> {
-    return TableUtils.getAccountsInsertableRow();
-  }
+  protected tableData = TableUtils.getAccountsInsertableRow();
 
 }

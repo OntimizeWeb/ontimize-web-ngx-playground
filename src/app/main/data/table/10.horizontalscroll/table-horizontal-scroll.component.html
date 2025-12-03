@@ -1,16 +1,16 @@
-<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [files]="getFiles('o-table-horizontal-scroll')"
+<example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_TABLE_HORIZONTAL_SCROLL" [html]="html" [files]="getFiles('o-table-horizontal-scroll')"
   (showSource)="onShowSource('o-table-horizontal-scroll', table, ex)">
   <screen-configuration comp-name="TABLE" #sidenavComp>
 
     <div menu layout-margin>
-      <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="onToggleChange($event)">
+      <mat-slide-toggle #horizontalScrollToggle [checked]="true" (change)="updateCodeValue()">
         {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
       </mat-slide-toggle>
     </div>
-    <o-table content #table attr="table" title="CUSTOMERS" horizontal-scroll="yes" [static-data]="data"
+    <o-table content #table attr="table" title="CUSTOMERS" [horizontal-scroll]="horizontalScrollToggle.checked" [static-data]="data" keys="CUSTOMERID"
       columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;ADDRESS;NOTES" query-on-init="no"
       insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none"
-      detail-mode="none" show-charts-on-demand-option="no">
+      detail-mode="none" show-charts-on-demand-option="no" virtual-scroll="no">
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
         </o-table-cell-renderer-image>

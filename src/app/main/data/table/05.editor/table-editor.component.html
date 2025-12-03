@@ -2,7 +2,7 @@
   (showSource)="onShowSource('o-table-editors', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
     <o-table fxFill #table attr="table" keys="ACCOUNTID" columns="ACCOUNTID;NAME;BALANCE;STARTDATE;TIME;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-      visible-columns="NAME;STARTDATE;TIME;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="getTableData()"
+      visible-columns="NAME;STARTDATE;TIME;BALANCE;NUMCARDS;CLOSED" layout-padding title="ACCOUNTS" [static-data]="accounts"
       sort-columns="BALANCE:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="yes" refresh-button="no"
       pagination-controls="no" detail-mode="none" edition-mode="click" export-button="no" show-charts-on-demand-option="no">
 

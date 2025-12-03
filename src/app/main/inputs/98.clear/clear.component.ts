@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 const CLEAR_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
-    <o-text-input #input attr="text" label="Text" [data]="getValueText()" read-only="no" clear-button="yes"></o-text-input>
+    <o-text-input #input attr="text" label="Text" [data]="textValue" read-only="no" clear-button="yes"></o-text-input>
 
-    <o-date-input #date attr="date" label="Date" [data]="getValueDate()" read-only="no" format="LL" clear-button="yes"></o-date-input>
+    <o-date-input #date attr="date" label="Date" [data]="dateValue" read-only="no" format="LL" clear-button="yes"></o-date-input>
 
-    <o-currency-input #curr attr="currency" label="Currency" [data]="getValueCurr()" read-only="no" clear-button="yes" step="1"></o-currency-input>
+    <o-currency-input #curr attr="currency" label="Currency" [data]="currValue" read-only="no" clear-button="yes" step="1"></o-currency-input>
 
   </o-form>
 `;
@@ -19,19 +19,11 @@ const CLEAR_TS_DATA = `
   })
   export class ClearComponent {
 
-    getValueText() {
-      return 'John Doe';
-    }
+    protected textValue = 'John Doe';
 
-    protected dateValue: Date = new Date();
+    protected dateValue = new Date().getTime();
 
-    getValueDate() {
-      return this.dateValue;
-    }
-
-    getValueCurr() {
-      return 2574.99;
-    }
+    protected currValue = 2574.99;
 
   }
 `;
@@ -54,21 +46,10 @@ export class ClearComponent {
     }
   };
 
-  getValueText() {
-    return 'John Doe';
-  }
+  protected textValue = 'John Doe';
 
-  protected dateValue: Date = new Date();
+  protected dateValue = Date.now();
 
-  getValueDate() {
-    return this.dateValue.getTime();
-  }
-
-  getValueCurr() {
-    return 2574.99;
-  }
-
-
-
+  protected currValue = 2574.99;
 
 }
