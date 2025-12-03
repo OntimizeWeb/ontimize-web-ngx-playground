@@ -8,7 +8,7 @@
     </div>
 
     <div fxLayout="row wrap" class="examples" fxLayoutAlign="space-between start" fxLayoutGap="10px" fxLayoutGap.lg="0px">
-      <div fxLayout="column" fxFlex="45" fxFlex.lg="100" fxLayoutAlign="start stretch">
+      <div fxLayout="column" fxFlex="48" fxFlex.lg="100" fxLayoutAlign="start stretch">
 
         <!-- INPUT-->
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
@@ -80,7 +80,7 @@
               Germany</span></button>
         </div>
       </div>
-      <div fxLayout="column" fxFlex="45" fxFlex.lg="100" fxLayoutAlign="start stretch">
+      <div fxLayout="column" fxFlex="48" fxFlex.lg="100" fxLayoutAlign="start stretch">
         <!-- LISKPICKER-->
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-list-picker #listpicker attr="listpicker" label="INPUT.BUTTON.LISTPICKER" [static-data]="array" [data]="values.listpicker" filter="yes"
@@ -101,7 +101,7 @@
         </div>
         <!-- TIME-->
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
-          <o-time-input #time width="400px" attr="time" label="INPUT.BUTTON.TIME" [data]="values.time" read-only="no" required="yes" clear-button="yes" format="24"
+          <o-time-input #time fxFlex="65" attr="time" label="INPUT.BUTTON.TIME" [data]="values.time" read-only="no" required="yes" clear-button="yes" format="24"
             (onValueChange)="onValueChange($event)" clear-button="yes"  (onChange)="onChange(time)" (onFocus)="onFocus(time)"
             (onBlur)="onBlur(time)"></o-time-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(time,1535358788828)"><span class="ellipsis">setValue
