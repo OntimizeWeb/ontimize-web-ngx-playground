@@ -5,7 +5,6 @@
       <mat-checkbox #printOnValueChange [checked]="true">onValueChange</mat-checkbox>
       <mat-checkbox #printOnFocus [checked]="true">onFocus</mat-checkbox>
       <mat-checkbox #printOnBlur [checked]="true">onBlur</mat-checkbox>
-      <mat-checkbox #printClick [checked]="true">click</mat-checkbox>
     </div>
 
     <div fxLayout="row wrap" class="examples" fxLayoutAlign="space-between start" fxLayoutGap="10px" fxLayoutGap.lg="0px">
@@ -15,7 +14,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
           <o-text-input #input attr="input" label="INPUT.BUTTON.TEXT" [data]="values.input" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(input)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(input)"
-            (onBlur)="onBlur(input)" (click)="onClick(input)">
+            (onBlur)="onBlur(input)">
           </o-text-input>
           <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(input, 'James Alam')"><span class="ellipsis">setValue James
               Alam</span></button>

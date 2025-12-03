@@ -10,7 +10,6 @@ const HTML_DATA = `
       <mat-checkbox #printOnValueChange [checked]="true">onValueChange</mat-checkbox>
       <mat-checkbox #printOnFocus [checked]="true">onFocus</mat-checkbox>
       <mat-checkbox #printOnBlur [checked]="true">onBlur</mat-checkbox>
-      <mat-checkbox #printClick [checked]="true">click</mat-checkbox>
     </div>
 
     <div fxLayout="row" fxLayoutAlign="space-around start">
@@ -20,7 +19,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-text-input #input attr="input" label="INPUT.BUTTON.TEXT" [data]="getValue('input')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(input)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(input)"
-            (onBlur)="onBlur(input)" (click)="onClick(input)">
+            (onBlur)="onBlur(input)">
           </o-text-input>
           <button fxFlex mat-raised-button (click)="setValue(input, 'James Alam')">setValue James Alam</button>
         </div>
@@ -28,7 +27,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-currency-input #currency attr="currency" label="INPUT.BUTTON.CURRENCY" [data]="getValue('currency')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(currency)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(currency)"
-            (onBlur)="onBlur(currency)" (click)="onClick(currency)" (onChange)="onChange(currency)">
+            (onBlur)="onBlur(currency)" (onChange)="onChange(currency)">
           </o-currency-input>
           <button fxFlex mat-raised-button (click)="setValue(currency, 50)">setValue 50</button>
         </div>
@@ -36,7 +35,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-integer-input #integer attr="integer" label="INPUT.BUTTON.INTEGER" [data]="getValue('integer')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(integer)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(integer)"
-            (onBlur)="onBlur(integer)" (click)="onClick(integer)">
+            (onBlur)="onBlur(integer)">
           </o-integer-input>
           <button fxFlex mat-raised-button (click)="setValue(integer, 50)">setValue 50</button>
         </div>
@@ -44,7 +43,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-real-input #real attr="real" label="INPUT.BUTTON.REAL" [data]="getValue('real')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(real)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(real)"
-            (onBlur)="onBlur(real)" (click)="onClick(real)">
+            (onBlur)="onBlur(real)">
           </o-real-input>
           <button fxFlex mat-raised-button (click)="setValue(real, 50)">setValue 50</button>
         </div>
@@ -52,7 +51,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-percent-input #percent attr="percent" label="INPUT.BUTTON.PERCENT" [data]="getValue('percent')" read-only="no" required="yes"
             (onValueChange)="onValueChange($event)" (onChange)="onChange(percent)" clear-button="yes" fxFlex="70" (onFocus)="onFocus(percent)"
-            (onBlur)="onBlur(percent)" (click)="onClick(percent)">
+            (onBlur)="onBlur(percent)">
           </o-percent-input>
           <button fxFlex mat-raised-button (click)="setValue(percent, 0.66)">setValue 0.66</button>
         </div>
@@ -60,7 +59,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-date-input #date attr="date" label="INPUT.BUTTON.DATE" [data]="getValue('date')" read-only="no" format="LL" required="yes"
             min="01/01/1980" max="01/01/2020" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange(date)"
-            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)" (click)="onClick(date)">
+            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)">
           </o-date-input>
           <button fxFlex mat-raised-button (click)="setValue(date, 1538524800000)">setValue 2018-10-03</button>
         </div>
@@ -68,7 +67,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-hour-input #hour attr="hour" label="INPUT.BUTTON.HOUR" [data]="getValue('hour')" value-type="string" read-only="no" required="yes"
             clear-button="yes" format="24" (onChange)="onChange(hour)" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70"
-            (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)" (click)="onClick(hour)">
+            (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)">
           </o-hour-input>
           <button fxFlex mat-raised-button (click)="setValue(hour, '08:00 PM')">setValue 08:00 PM</button>
         </div>
@@ -87,7 +86,7 @@ const HTML_DATA = `
           <o-list-picker #listpicker attr="listpicker" label="INPUT.BUTTON.LISTPICKER" [static-data]="getDataArray()" [data]="getValue('listpicker')"
             filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false"
             (onValueChange)="onValueChange($event)" fxFlex="70" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)"
-            (onBlur)="onBlur(listpicker)" (click)="onClick(listpicker)">
+            (onBlur)="onBlur(listpicker)">
           </o-list-picker>
           <button fxFlex mat-raised-button (click)="setValue(listpicker, '4')">setValue Germany</button>
         </div>
@@ -103,7 +102,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-time-input #time attr="time" label="INPUT.BUTTON.TIME" [data]="getValue('time')" read-only="no" required="yes" clear-button="yes"
             format="24" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="70" (onChange)="onChange(time)" (onFocus)="onFocus(time)"
-            (onBlur)="onBlur(time)" (click)="onClick(time)"></o-time-input>
+            (onBlur)="onBlur(time)"></o-time-input>
           <button fxFlex mat-raised-button (click)="setValue(time,1535358788828)">setValue 1535358788828</button>
         </div>
         <!-- SLIDER-->
@@ -128,7 +127,7 @@ const HTML_DATA = `
         <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
           <o-daterange-input #daterange attr="daterange" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="getValue('range')"
             clear-button="yes" format="LL" separator=" to " (onValueChange)="onValueChange($event)" (onChange)="onChange(daterange)"
-            (onFocus)="onFocus(daterange)" (onBlur)="onBlur(daterange)" fxFlex="70" (click)="onClick(daterange)">
+            (onFocus)="onFocus(daterange)" (onBlur)="onBlur(daterange)" fxFlex="70">
           </o-daterange-input>
           <button fxFlex mat-raised-button (click)="setValue(daterange, {
             startDate: moment('2019-05-15T00:00Z'),
@@ -321,16 +320,6 @@ export class InputEventsComponent {
   print(e) {
     console.log(e);
   }
-
-  onClick(input: OFormDataComponent) {
-    if (this.printClick && !this.printClick.checked) {
-      return;
-    }
-    const eventChange = new ConsoleLogEvent();
-    eventChange.eventName = 'click';
-    eventChange.attr = input.getAttribute();
-    this.consoleLog.unshift(eventChange);
-  }
 }
 `;
 export class ConsoleLogEvent {
@@ -471,15 +460,5 @@ export class InputEventsComponent {
 
   print(e) {
     console.log(e);
-  }
-
-  onClick(input: OFormDataComponent) {
-    if (this.printClick && !this.printClick.checked) {
-      return;
-    }
-    const eventChange = new ConsoleLogEvent();
-    eventChange.eventName = 'click';
-    eventChange.attr = input.getAttribute();
-    this.consoleLog.unshift(eventChange);
   }
 }
