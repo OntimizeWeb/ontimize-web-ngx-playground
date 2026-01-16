@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
-import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { APP_CONFIG, O_TABLE_GLOBAL_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 import { OGalleryModule } from 'ontimize-web-ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +43,7 @@ export function getHighlightLanguages() {
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
     { provide: 'rickandmorty', useValue: RickAndMortyService },
+    {provide:O_TABLE_GLOBAL_CONFIG, useValue:{showChartsOnDemandOption:false, showReportOnDemandOption:false}},
     RickAndMortyResponseAdapter,
     RickAndMortyRequestArgumentsAdapter,
     { provide: HIGHLIGHT_OPTIONS,
