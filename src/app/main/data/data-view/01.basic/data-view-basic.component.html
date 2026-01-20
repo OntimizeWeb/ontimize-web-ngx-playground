@@ -1,0 +1,17 @@
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.COMPONENT">
+
+  <o-data-view #dv attr="dataView" [static-data]="staticData" keys="id" columns="id;name;sector;country;employees;annualRevenue;rating;foundedYear"
+    query-rows="8" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false">
+
+    <ng-template oDataViewTableColumns>
+      <o-table-column attr="annualRevenue" title="Annual Revenue" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+        currency-symbol-position="right"></o-table-column>
+    </ng-template>
+
+    <ng-template oDataViewGridItem let-item>
+      {{ item.name }}
+    </ng-template>
+
+  </o-data-view>
+
+</example-comp>
