@@ -163,7 +163,7 @@ const HTML_DATA = `
 
 const HTML_DATA_TABLE_FIXED = `
   <o-table #table attr="table" title="ACCOUNTS" fixed-header="{fixed-header}" [static-data]="data"
-    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    keys="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false"
     quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{ngStyle}"
     edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">

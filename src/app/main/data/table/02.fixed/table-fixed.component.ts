@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { TableUtils } from '../table-utils';
-import { ExampleComponent } from '../../../../shared/example/example.component';
 
 @Component({
   selector: 'table-fixed',
