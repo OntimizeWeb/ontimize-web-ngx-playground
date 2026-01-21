@@ -524,4 +524,12 @@
   "DATA-VIEW.COMPONENT": "Data View",
   "DATA-VIEW.COMPONENT.DESC": "A component for changing data display",
   "DATA-VIEW.BUTTON.BASIC": "Basic",
-  "DATA-VIEW.BUTTON.CUSTOM-BUTTON": "Custom button"}
+  "DATA-VIEW.BUTTON.TOGGLE-OPTIONS": "Toggle options",
+  "DATA-VIEW.BUTTON.CUSTOM-BUTTON": "Custom button",
+  "DATA-VIEW.TOGGLE-OPTIONS.COMPONENT": "Example of the different positions in which the toggle can be placed",
+  "DATA-VIEW.CUSTOM-BUTTON.COMPONENT": "",
+  "name": "Name",
+  "sector": "Sector",
+  "annualRevenue": "Annual revenue",
+  "employees": "Employees"
+}

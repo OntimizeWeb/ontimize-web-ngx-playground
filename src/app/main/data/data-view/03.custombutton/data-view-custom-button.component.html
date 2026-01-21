@@ -1,10 +1,10 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.COMPONENT">
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.CUSTOM-BUTTON.COMPONENT">
 
   <o-data-view #dv attr="dataView" [static-data]="staticData" keys="id" columns="id;name;sector;employees;annualRevenue;rating;foundedYear"
-    query-rows="5" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false">
+    query-rows="8" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false">
 
     <ng-template oDataViewTableColumns>
-      <o-table-column attr="annualRevenue" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+      <o-table-column attr="annualRevenue" title="Annual Revenue" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
         currency-symbol-position="right"></o-table-column>
     </ng-template>
 
@@ -15,3 +15,4 @@
   </o-data-view>
 
 </example-comp>
+

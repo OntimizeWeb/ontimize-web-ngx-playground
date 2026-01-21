@@ -1,15 +1,15 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'data-view-basic',
-  templateUrl: './data-view-basic.component.html',
-  styleUrls: ['./data-view-basic.component.scss'],
+  selector: 'data-view-toggle-options',
+  templateUrl: './data-view-toggle-options.component.html',
+  styleUrls: ['./data-view-toggle-options.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    '[class.data-view-basic]': 'true'
+    '[class.data-view-toggle-options]': 'true'
   }
 })
-export class DataViewBasicComponent {
+export class DataViewToggleOptionsComponent {
 
   staticData = [
     {
@@ -113,9 +113,9 @@ export class DataViewBasicComponent {
       foundedYear: 2016
     }]
 
-  tableCfg = {
-    visibleColumns: 'name;sector;annualRevenue', selectAllCheckboxVisible: "true", paginationControls:"no"
-  }
-  gridCfg = { cols: 3, gutterSize: '8px', gridItemHeight: '1:1', quickFilterColumns: 'name;rating' }
+  tableCfg: { visibleColumns: 'name;sector;country;annualRevenue' }
+  gridCfg: { cols: 3, gutterSize: '8px', gridItemHeight: '1:1', quickFilterColumns: 'name;rating' }
+
+
 
 }
