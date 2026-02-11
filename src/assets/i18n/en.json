@@ -531,5 +531,8 @@
   "name": "Name",
   "sector": "Sector",
   "annualRevenue": "Annual revenue",
-  "employees": "Employees"
+  "employees": "Employees",
+  "rating": "Rating",
+  "foundedYear": "Founded year",
+  "id": "ID"
 }
