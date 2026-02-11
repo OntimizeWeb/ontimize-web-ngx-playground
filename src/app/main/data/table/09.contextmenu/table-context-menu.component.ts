@@ -6,7 +6,7 @@ import { TableUtils } from '../table-utils';
   templateUrl: 'table-context-menu.component.html'
 })
 export class TableContextMenuComponent {
-  public data = TableUtils.getCustomers();
+  public data = TableUtils.getAccounts();
 
   getFiles(key: string) {
     return TableUtils.getFiles(key);
