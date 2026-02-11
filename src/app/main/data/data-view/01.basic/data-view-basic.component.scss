@@ -1,12 +1,5 @@
-.tree-basic {
-  .event-column {
-    .container-content {
-      overflow-y: auto;
-      max-height: 340px;
-    }
-  }
-
-  .mat-slide-toggle-ripple.mat-ripple {
-    display: none;
-  }
+.grid-card {
+  height: 150px;
+  width: 225px;
+  background-color: #b9d1e4;
 }

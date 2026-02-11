@@ -1,121 +1,20 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { DataViewUtils } from '../data-view.utils';
 
 @Component({
   selector: 'data-view-basic',
   templateUrl: './data-view-basic.component.html',
-  styleUrls: ['./data-view-basic.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  host: {
-    '[class.data-view-basic]': 'true'
-  }
+  styleUrls: ['./data-view-basic.component.scss']
 })
 export class DataViewBasicComponent {
 
-  staticData = [
-    {
-      id: 1,
-      name: 'TechNova Solutions',
-      sector: 'Tecnología',
-      country: 'España',
-      employees: 250,
-      annualRevenue: 32.5,
-      rating: 4.6,
-      foundedYear: 2012
-    },
-    {
-      id: 2,
-      name: 'GreenFields Agro',
-      sector: 'Agroalimentario',
-      country: 'Francia',
-      employees: 120,
-      annualRevenue: 18.2,
-      rating: 4.1,
-      foundedYear: 2005
-    },
-    {
-      id: 3,
-      name: 'BlueOcean Logistics',
-      sector: 'Logística',
-      country: 'Países Bajos',
-      employees: 430,
-      annualRevenue: 54.7,
-      rating: 4.3,
-      foundedYear: 1998
-    },
-    {
-      id: 4,
-      name: 'Horizon HealthCare',
-      sector: 'Sanidad',
-      country: 'Alemania',
-      employees: 980,
-      annualRevenue: 210.0,
-      rating: 4.8,
-      foundedYear: 1987
-    },
-    {
-      id: 5,
-      name: 'UrbanBuild Group',
-      sector: 'Construcción',
-      country: 'España',
-      employees: 350,
-      annualRevenue: 76.4,
-      rating: 4.0,
-      foundedYear: 2001
-    },
-    {
-      id: 6,
-      name: 'SkyLine Airlines',
-      sector: 'Transporte',
-      country: 'Estados Unidos',
-      employees: 2200,
-      annualRevenue: 520.3,
-      rating: 4.2,
-      foundedYear: 1993
-    },
-    {
-      id: 7,
-      name: 'BrightEdu Services',
-      sector: 'Educación',
-      country: 'Reino Unido',
-      employees: 190,
-      annualRevenue: 24.1,
-      rating: 4.5,
-      foundedYear: 2010
-    },
-    {
-      id: 8,
-      name: 'SolarEdge Energy',
-      sector: 'Energía',
-      country: 'Suecia',
-      employees: 410,
-      annualRevenue: 95.8,
-      rating: 4.7,
-      foundedYear: 2008
-    },
-    {
-      id: 9,
-      name: 'FinTrust Capital',
-      sector: 'Finanzas',
-      country: 'Suiza',
-      employees: 150,
-      annualRevenue: 68.9,
-      rating: 4.4,
-      foundedYear: 1999
-    },
-    {
-      id: 10,
-      name: 'MediArt Studios',
-      sector: 'Media',
-      country: 'Italia',
-      employees: 80,
-      annualRevenue: 9.6,
-      rating: 4.1,
-      foundedYear: 2016
-    }]
+  public staticData = DataViewUtils.getData();
 
-  tableCfg = {
-    visibleColumns: 'name;sector;annualRevenue', selectAllCheckboxVisible: "true", paginationControls:"no"
+  tableCfg = { visibleColumns: 'name;location;price;duration;score', editButtonInRow: 'yes', detailButtonInRow: 'yes', selectAllCheckbox: 'yes', showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', editionMode: 'click', detailMode: 'none', multipleSort: 'no' };
+  gridCfg = { cols: 4, gutterSize: '2px', gridItemHeight: '175px', quickFilterColumns: 'name;price', insertButtonFloatable: 'no' };
+
+  onExecute(text: string, event: any): void {
+    alert('Clicked menu element: ' + text + '\n' + event.data.NAME);
   }
-  gridCfg = { cols: 3, gutterSize: '8px', gridItemHeight: '1:1', quickFilterColumns: 'name;rating' }
 
 }
