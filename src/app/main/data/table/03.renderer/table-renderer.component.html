@@ -1,10 +1,11 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER" [files]="getFiles('o-table-renderer')"
   (showSource)="onShowSource('o-table', table, ex)">
   <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table attr="accounts" columns="ACCOUNTID;PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;ENDDATE;INTERESRATE;CLOSED;CARDS" keys="ACCOUNTID"
-      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS" layout-padding title="ACCOUNTS" [static-data]="data"
-      sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
+    <o-table fxFill #table attr="accounts" keys="ID"
+      columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION"
+      visible-columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;COMMISSION" layout-padding title="ACCOUNTS"
+      [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"
+      refresh-button="no" pagination-controls="no" export-button="no" edition-mode="none" detail-mode="none" horizontal-scroll="yes">
 
       <o-table-columns-filter columns="NAME;STARTDATE;ACCOUNT;BALANCE;INTERESRATE;COMMISSION;CARDS">
       </o-table-columns-filter>
@@ -25,8 +26,14 @@
         <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
         </o-table-cell-renderer-boolean>
       </o-table-column>
-      <o-table-column attr="CARDS">
+      <o-table-column attr="HAS_CARDS" title="CARDS">
         <o-table-cell-renderer-translate [translate-params]="translateArgsFn"></o-table-cell-renderer-translate>
+      </o-table-column>
+      <o-table-column attr="ACCOUNTTYP">
+        <o-table-cell-renderer-chip></o-table-cell-renderer-chip>
+      </o-table-column>
+      <o-table-column attr="CARDS"  tooltip="yes">
+        <o-table-cell-renderer-list></o-table-cell-renderer-list>
       </o-table-column>
     </o-table>
   </div>
