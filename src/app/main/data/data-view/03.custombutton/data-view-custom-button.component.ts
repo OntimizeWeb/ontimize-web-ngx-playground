@@ -1,4 +1,61 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { GridConfig, TableConfig } from 'ontimize-web-ngx-extra-components';
+
+const DATA_VIEW_HTML_DATA = `
+<div fxLayout="row" fxLayoutAlign="end">
+    <button mat-button (click)="dv.changeView('grid')">Show grid</button>
+    <button mat-button (click)="dv.changeView('table')">Show tabla</button>
+  </div>
+
+  <o-data-view #dv attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score" query-rows="8"
+    [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" toggle-button="no" toggle-on-toolbar="no" show-buttons-text="no"
+    title="Adventure Packs">
+
+    <ng-template oDataViewTableColumns>
+      <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
+      <o-table-column attr="name" title-align="start" editable="yes" width="400px"></o-table-column>
+      <o-table-column attr="location" title-align="start" editable="yes" width="500px"></o-table-column>
+      <o-table-column attr="price" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+        title-align="end"></o-table-column>
+      <o-table-column attr="score" title-align="end" filterable="yes" sortable="yes">
+        <o-table-cell-renderer-real></o-table-cell-renderer-real>
+      </o-table-column>
+      <o-table-column-aggregate attr="score" aggregate="avg" title="Avg Price"></o-table-column-aggregate>
+      <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
+    </ng-template>
+
+    <ng-template oDataViewGridItem let-item>
+      <mat-card class="grid-card">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center">Cost: {{item.price | currency}}</div>
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+
+  </o-data-view>
+`;
+
+const DATA_VIEW_TS_DATA = `
+@Component({
+  selector: 'data-view-custom-button',
+  templateUrl: './data-view-custom-button.component.html',
+  styleUrls: ['./data-view-custom-button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.data-view-custom-button]': 'true'
+  }
+})
+export class DataViewCustomButtonComponent {
+
+  tableCfg: TableConfig = { visibleColumns: 'name;location;price;duration;score', editButtonInRow: 'yes', detailButtonInRow: 'yes', selectAllCheckbox: 'yes', showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', editionMode: 'click', detailMode: 'none', multipleSort: 'no' };
+  gridCfg: GridConfig = { cols: 4, gutterSize: '2px', gridItemHeight: '175px', quickFilterColumns: 'name;price', insertButtonFloatable: 'no' };
+
+}
+`;
 
 @Component({
   selector: 'data-view-custom-button',
@@ -11,108 +68,16 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 })
 export class DataViewCustomButtonComponent {
 
-  staticData = [
-    {
-      id: 1,
-      name: 'TechNova Solutions',
-      sector: 'Tecnología',
-      country: 'España',
-      employees: 250,
-      annualRevenue: 32.5,
-      rating: 4.6,
-      foundedYear: 2012
+  files = {
+    html: {
+      data: DATA_VIEW_HTML_DATA
     },
-    {
-      id: 2,
-      name: 'GreenFields Agro',
-      sector: 'Agroalimentario',
-      country: 'Francia',
-      employees: 120,
-      annualRevenue: 18.2,
-      rating: 4.1,
-      foundedYear: 2005
-    },
-    {
-      id: 3,
-      name: 'BlueOcean Logistics',
-      sector: 'Logística',
-      country: 'Países Bajos',
-      employees: 430,
-      annualRevenue: 54.7,
-      rating: 4.3,
-      foundedYear: 1998
-    },
-    {
-      id: 4,
-      name: 'Horizon HealthCare',
-      sector: 'Sanidad',
-      country: 'Alemania',
-      employees: 980,
-      annualRevenue: 210.0,
-      rating: 4.8,
-      foundedYear: 1987
-    },
-    {
-      id: 5,
-      name: 'UrbanBuild Group',
-      sector: 'Construcción',
-      country: 'España',
-      employees: 350,
-      annualRevenue: 76.4,
-      rating: 4.0,
-      foundedYear: 2001
-    },
-    {
-      id: 6,
-      name: 'SkyLine Airlines',
-      sector: 'Transporte',
-      country: 'Estados Unidos',
-      employees: 2200,
-      annualRevenue: 520.3,
-      rating: 4.2,
-      foundedYear: 1993
-    },
-    {
-      id: 7,
-      name: 'BrightEdu Services',
-      sector: 'Educación',
-      country: 'Reino Unido',
-      employees: 190,
-      annualRevenue: 24.1,
-      rating: 4.5,
-      foundedYear: 2010
-    },
-    {
-      id: 8,
-      name: 'SolarEdge Energy',
-      sector: 'Energía',
-      country: 'Suecia',
-      employees: 410,
-      annualRevenue: 95.8,
-      rating: 4.7,
-      foundedYear: 2008
-    },
-    {
-      id: 9,
-      name: 'FinTrust Capital',
-      sector: 'Finanzas',
-      country: 'Suiza',
-      employees: 150,
-      annualRevenue: 68.9,
-      rating: 4.4,
-      foundedYear: 1999
-    },
-    {
-      id: 10,
-      name: 'MediArt Studios',
-      sector: 'Media',
-      country: 'Italia',
-      employees: 80,
-      annualRevenue: 9.6,
-      rating: 4.1,
-      foundedYear: 2016
-    }]
+    typescript: {
+      data: DATA_VIEW_TS_DATA
+    }
+  };
 
-  tableCfg: { visibleColumns: 'name;sector;country;annualRevenue' }
-  gridCfg: { cols: 3, gutterSize: '8px', gridItemHeight: '1:1', quickFilterColumns: 'name;rating' }
+  tableCfg: TableConfig = { visibleColumns: 'name;location;price;duration;score', editButtonInRow: 'yes', detailButtonInRow: 'yes', selectAllCheckbox: 'yes', showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', editionMode: 'click', detailMode: 'none', multipleSort: 'no' };
+  gridCfg: GridConfig = { cols: 4, gutterSize: '2px', gridItemHeight: '175px', quickFilterColumns: 'name;price', insertButtonFloatable: 'no' };
+
 }

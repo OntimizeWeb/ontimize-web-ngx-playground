@@ -1,17 +1,56 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.TOGGLE-OPTIONS.COMPONENT">
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.TOGGLE-OPTIONS.COMPONENT" [html]="html" [files]="files"
+  (showSource)="onShowSource()">
+  <div fxLayout="row" layout-padding>
 
-  <o-data-view #dv attr="dataView" [static-data]="staticData" keys="id" columns="id;name;sector;employees;annualRevenue;rating;foundedYear"
-    query-rows="8" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false">
+    <o-data-view fxFlex="75" #dv attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score"
+      [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" query-rows="8" show-buttons-text="no" title="Adventure packs"
+      [toggle-button]="toggleButtonOption.checked" [toggle-on-toolbar]="toggleOnToolbarOption.checked"
+      [toggle-floatable]="toggleFloatableOption.checked">
 
-    <ng-template oDataViewTableColumns>
-      <o-table-column attr="annualRevenue" title="Annual Revenue" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-        currency-symbol-position="right"></o-table-column>
-    </ng-template>
+      <ng-template oDataViewTableColumns>
+        <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
 
-    <ng-template oDataViewGridItem let-item>
-      {{ item.name }}
-    </ng-template>
+        <o-table-column attr="name" title-align="start" editable="yes" width="400px"></o-table-column>
+        <o-table-column attr="location" title-align="start" editable="yes" width="500px"></o-table-column>
+        <o-table-column attr="price" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+          title-align="end"></o-table-column>
+        <o-table-column attr="score" title-align="end" filterable="yes" sortable="yes">
+          <o-table-cell-renderer-real></o-table-cell-renderer-real>
+        </o-table-column>
 
-  </o-data-view>
+        <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
+      </ng-template>
 
+
+      <ng-template oDataViewGridItem let-item>
+        <mat-card fxLayout="column" class="grid-card">
+          <mat-card-header fxLayout="row">
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content fxLayout="row" fxLayoutAlign="end end" fxFlex="100">
+            Cost: {{item.price | currency}}
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </o-data-view>
+
+    <o-column attr="conf" title="{{ 'DATA_VIEW.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="20" layout-padding layout-align="start stretch">
+      <o-column title="{{ 'DATA_VIEW.INPUTS' | oTranslate }}" elevation="0" layout-align="center">
+        <div fxLayout="column">
+          <mat-slide-toggle #toggleButtonOption checked="true" (change)="updateCodeValue('toggleButton', $event.checked)">
+            {{ 'DATA_VIEW.TOGGLE_BUTTON' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #toggleOnToolbarOption checked="false" (change)="updateCodeValue('toggleOnToolbar', $event.checked)">
+            {{ 'DATA_VIEW.TOGGLE_ON_TOOLBAR' | oTranslate }}
+          </mat-slide-toggle>
+
+          <mat-slide-toggle #toggleFloatableOption checked="false" (change)="updateCodeValue('toggleFloatable', $event.checked)">
+            {{ 'DATA_VIEW.TOGGLE_FLOATABLE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+      </o-column>
+    </o-column>
+  </div>
 </example-comp>
