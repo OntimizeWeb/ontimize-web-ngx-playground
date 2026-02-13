@@ -4,7 +4,7 @@ import { OntimizeMatIconRegistry } from 'ontimize-web-ngx';
 
 const svgIcons = ['checkbox', 'combo', 'currency', 'date', 'daterange', 'email', 'file', 'hour', 'html', 'integer', 'listpicker', 'nif', 'overview', 'password',
   'percentage', 'phone', 'radio', 'real', 'slider', 'slidetoggle', 'text', 'textarea', 'time', 'table', 'list', 'grid', 'image', 'gallery', 'containers',
-  'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane'];
+  'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane', 'image-editor'];
 
 
 @Component({

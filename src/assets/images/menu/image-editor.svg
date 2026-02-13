@@ -1,0 +1,22 @@
+<svg width="141" height="96" viewBox="0 0 141 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M140.72 0H0V96H140.72V0Z" fill="white"/>
+<path d="M73 66L84 55L104 79" stroke="black"/>
+<path d="M35 78.5L66 54L80.1451 78.5" stroke="black"/>
+<circle cx="74.5" cy="45.5" r="5" stroke="black"/>
+<path d="M5 8.8528H37.251" stroke="black" stroke-opacity="0.6" stroke-width="1.2549"/>
+<path d="M5 14L136 14" stroke="black" stroke-opacity="0.12" stroke-width="1.2549"/>
+<path d="M135.547 7.0241L134.244 8.3176L135.547 9.611L135.219 9.9371L133.915 8.6437L132.611 9.9371L132.283 9.611L133.586 8.3176L132.283 7.0241L132.611 6.698L133.915 7.9915L135.219 6.698L135.547 7.0241Z" fill="black" fill-opacity="0.48"/>
+<path d="M135.307 6.6091L135.635 6.9353L135.725 7.0242L135.635 7.113L134.421 8.3171L135.635 9.5222L135.725 9.6111L135.635 9.7L135.307 10.0261L135.218 10.114L135.13 10.0261L133.915 8.8201L132.7 10.0261L132.612 10.114L132.523 10.0261L132.194 9.7L132.105 9.6111L132.194 9.5222L133.407 8.3171L132.194 7.113L132.105 7.0242L132.194 6.9353L132.523 6.6091L132.612 6.5212L132.7 6.6091L133.915 7.8142L135.13 6.6091L135.218 6.5212L135.307 6.6091Z" stroke="black" stroke-opacity="0.48" stroke-width="0.25098"/>
+<path d="M124.072 88.5469H132.35" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M136.176 85H120.248V91.3291H136.176V85Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M104.758 88.5469H113.035" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M116.861 85H100.933V91.3291H116.861V85Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M76.139 23.2417H84.417" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M88.2428 21H72.315V25H88.2428V21Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M56.825 23.2417H65.102" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M68.9278 21H53V25H68.9278V21Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M11.33 38H5V44.3291H11.33V38Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M11.33 47H5V53.3291H11.33V47Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M11.33 56H5V62.3291H11.33V56Z" stroke="black" stroke-opacity="0.6" stroke-width="0.62745"/>
+<path d="M104 28H35V79H104V28Z" stroke="#C2C2C2" stroke-width="0.62745"/>
+</svg>
