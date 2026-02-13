@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ImageEditorComponent } from './image-editor.component';
 import { ImageEditorMediaComponent } from './image-editor-media/image-editor-media.component';
+import { ImageEditorExamplesComponent } from './image-editor-examples/image-editor-examples.component';
 
 
 export const routes: Routes = [
@@ -10,7 +11,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'playground', pathMatch: 'prefix' },
       { path: 'playground', data: { oAppHeaderTitle: 'Image Editor' }, component: ImageEditorMediaComponent },
-      // { path: 'examples', data: { oAppHeaderTitle: 'Image' }, component: ImageExamplesComponent }
+      { path: 'examples', data: { oAppHeaderTitle: 'Image Editor' }, component: ImageEditorExamplesComponent }
     ]
   }
 ];

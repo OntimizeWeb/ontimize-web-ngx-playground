@@ -523,5 +523,6 @@
   "GALLERY.RATIO": "Aspect ratio",
   "personal_account": "Personal Account",
   "savings_account":"Savings Account",
-  "IMAGE_EDITOR.COMPONENT": "Image Editor"
+  "IMAGE_EDITOR.COMPONENT": "Image Editor",
+  "IMAGE_EDITOR.COMPONENT.DESC": "A component for editing images."
 }

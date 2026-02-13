@@ -1,4 +1,5 @@
 import { SharedModule } from './../../../shared/shared.module';
+import { ImageEditorExamplesComponent } from './image-editor-examples/image-editor-examples.component';
 import { ImageEditorMediaComponent } from './image-editor-media/image-editor-media.component';
 import { ImageEditorRoutingModule } from './image-editor-routing.module';
 import { ImageEditorComponent } from './image-editor.component';
@@ -13,7 +14,8 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
   ],
   declarations: [
     ImageEditorComponent,
-    ImageEditorMediaComponent
+    ImageEditorMediaComponent,
+    ImageEditorExamplesComponent
   ]
 })
 export class ImageEditorModule { }
