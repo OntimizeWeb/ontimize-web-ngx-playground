@@ -2,7 +2,7 @@
   (showSource)="onShowSource()">
   <div fxLayout="row" layout-padding>
 
-    <o-data-view fxFlex="75" #dv attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score"
+    <o-data-view class="data-view-example" fxFlex="75" #dv attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score"
       [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" query-rows="8" show-buttons-text="no" title="Adventure packs"
       [toggle-button]="toggleButtonOption.checked" [toggle-on-toolbar]="toggleOnToolbarOption.checked"
       [toggle-floatable]="toggleFloatableOption.checked">

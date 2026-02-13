@@ -4,7 +4,7 @@
     <button mat-button (click)="dv.changeView('table')">Show tabla</button>
   </div>
 
-  <o-data-view #dv attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score" query-rows="8"
+  <o-data-view #dv class="data-view-example" attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score" query-rows="8"
     [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" toggle-button="no" toggle-on-toolbar="no" show-buttons-text="no"
     title="Adventure Packs">
 
