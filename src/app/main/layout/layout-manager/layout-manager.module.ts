@@ -9,6 +9,7 @@ import { LayoutManagerSplitPaneComponent } from './03.splitpane/layout-manager-s
 import { CustomersDetailComponent } from './detail/customers-detail.component';
 import { LayoutManagerRoutingModule } from './layout-manager-routing.module';
 import { LayoutManagerComponent } from './layout-manager.component';
+import { LayoutManagerSidenavComponent } from './04.sidenav/layout-manager-sidenav.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { LayoutManagerComponent } from './layout-manager.component';
     LayoutManagerTabgroupComponent,
     LayoutManagerDialogComponent,
     LayoutManagerSplitPaneComponent,
+    LayoutManagerSidenavComponent,
     CustomersDetailComponent
   ]
 })
