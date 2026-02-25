@@ -1,10 +1,10 @@
 layout-manager-tabgroup,
 layout-manager-dialog,
 layout-manager-split-pane {
-  height: calc(100% - 84px);
+  height: calc(100vh - 84px)!important;
   width: 100%;
 }
 
-o-form-layout-sidenav {
-  height: calc(100% - 84px) !important;
+o-form-layout-sidenav{
+  height: calc(100vh - 244px) !important;
 }
