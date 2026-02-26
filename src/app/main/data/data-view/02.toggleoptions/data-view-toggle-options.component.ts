@@ -3,7 +3,7 @@ import { GridConfig, TableConfig } from 'ontimize-web-ngx-extra-components';
 
 const DATA_VIEW_HTML_DATA = `
   <o-data-view #dv attr="dataView" [static-data]="staticData" keys="id" columns="id;name;sector;employees;annualRevenue;rating;foundedYear"
-    query-rows="8" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false" toggle-button="{toggleButton}" toggle-on-toolbar="{toggleOnToolbar}" toggle-floatable="{toggleFloatable}">
+    query-rows="8" [table-config]="tableCfg" [grid-config]="gridCfg" query-on-init="false" toggle-button="true" toggle-on-toolbar="{toggleOnToolbar}" toggle-floatable="{toggleFloatable}">
      <ng-template oDataViewTableColumns>
         <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
 
@@ -51,6 +51,7 @@ export class DataViewToggleOptionsComponent {
 }
 `;
 
+type ToggleMode = 'toggleButton' | 'toggleOnToolbar' | 'toggleFloatable';
 
 @Component({
   selector: 'data-view-toggle-options',
@@ -61,6 +62,7 @@ export class DataViewToggleOptionsComponent {
     '[class.data-view-toggle-options]': 'true'
   }
 })
+
 export class DataViewToggleOptionsComponent {
 
   html: string;
@@ -71,46 +73,36 @@ export class DataViewToggleOptionsComponent {
     }
   }
 
-  @ViewChild('toggleButtonOption')
-  toggleButton: any;
-  @ViewChild('toggleOnToolbarOption')
-  toggleOnToolbar: any;
-  @ViewChild('toggleFloatableOption')
-  toggleFloatable: any;
+  toggleMode: ToggleMode = 'toggleButton';
 
   tableCfg: TableConfig = { visibleColumns: 'name;location;price;duration;score', editButtonInRow: 'yes', detailButtonInRow: 'yes', virtualScroll: 'false', selectAllCheckbox: 'yes', showPaginatorFirstLastButtons: "yes", filterColumnActiveByDefault: "yes", showReportOnDemandOption: 'no', showChartsOnDemandOption: 'no', exportButton: 'no', showFilterOption: 'no', showConfigurationOption: 'no', editionMode: 'click', detailMode: 'none', multipleSort: 'no' };
   gridCfg: GridConfig = { cols: 4, gutterSize: '2px', gridItemHeight: '175px', quickFilterColumns: 'name;price', insertButtonFloatable: 'no' };
 
-  onShowSource() {
-    const itemData: any = {
-      toggleButton: this.toggleButton.checked,
-      toggleOnToolbar: this.toggleOnToolbar.checked,
-      toggleFloatable: this.toggleFloatable.checked
-    }
-    this.html = this.getHtml(itemData);
+  onShowSource(): void {
+    this.refreshHtml();
   }
 
-  updateCodeValue(key: string, value: string) {
-    const itemData: any = {
-      toggleButton: this.toggleButton.checked,
-      toggleOnToolbar: this.toggleOnToolbar.checked,
-      toggleFloatable: this.toggleFloatable.checked
-    }
-
-    for (let item in itemData) {
-      if (item === key) {
-        item = value;
-      }
-    }
-
-    this.html = this.getHtml(itemData);
+  onToggleModeChange(mode: ToggleMode): void {
+    this.toggleMode = mode;
+    this.refreshHtml();
   }
 
-  getHtml(data: any) {
+  private refreshHtml(): void {
+    const data = this.getToggleData();
+    this.html = this.getHtml(data);
+  }
+
+  private getToggleData(): { toggleOnToolbar: boolean; toggleFloatable: boolean } {
+    return {
+      toggleOnToolbar: this.toggleMode === 'toggleOnToolbar',
+      toggleFloatable: this.toggleMode === 'toggleFloatable'
+    };
+  }
+
+  getHtml(data: { toggleOnToolbar: boolean; toggleFloatable: boolean }): string {
     return DATA_VIEW_HTML_DATA
-      .replace('{toggleButton}', data.toggleButton)
-      .replace('{toggleOnToolbar}', data.toggleOnToolbar)
-      .replace('{toggleFloatable}', data.toggleFloatable);
+      .replace('{toggleOnToolbar}', String(data.toggleOnToolbar))
+      .replace('{toggleFloatable}', String(data.toggleFloatable));
   }
 
 }
