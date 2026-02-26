@@ -7,24 +7,22 @@
         <span class="menu-title">{{ 'DATA_VIEW.CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
 
-        <div fxLayout="row">
-          <mat-radio-group layout-padding [value]="toggleMode" (change)="onToggleModeChange($event.value)" fxLayoutAlign="space-around center"
-            fxFlex="100">
+        <mat-radio-group layout-padding [value]="toggleMode" (change)="onToggleModeChange($event.value)" fxLayoutAlign="space-around start"
+          fxFlex="100" fxLayout="column" fxLayoutGap="6px">
 
-            <mat-radio-button value="toggleButton" class="padding-3">
-              {{ 'DATA_VIEW.TOGGLE_BUTTON' | oTranslate }}
-            </mat-radio-button>
+          <mat-radio-button value="toggleButton" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_BUTTON' | oTranslate }}
+          </mat-radio-button>
 
-            <mat-radio-button value="toggleOnToolbar" class="padding-3">
-              {{ 'DATA_VIEW.TOGGLE_ON_TOOLBAR' | oTranslate }}
-            </mat-radio-button>
+          <mat-radio-button value="toggleOnToolbar" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_ON_TOOLBAR' | oTranslate }}
+          </mat-radio-button>
 
-            <mat-radio-button value="toggleFloatable" class="padding-3">
-              {{ 'DATA_VIEW.TOGGLE_FLOATABLE' | oTranslate }}
-            </mat-radio-button>
+          <mat-radio-button value="toggleFloatable" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_FLOATABLE' | oTranslate }}
+          </mat-radio-button>
 
-          </mat-radio-group>
-        </div>
+        </mat-radio-group>
       </div>
     </div>
 
