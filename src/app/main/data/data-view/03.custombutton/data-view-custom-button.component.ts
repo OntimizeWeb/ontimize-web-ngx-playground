@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { GridConfig, TableConfig } from 'ontimize-web-ngx-extra-components';
 
 const DATA_VIEW_HTML_DATA = `

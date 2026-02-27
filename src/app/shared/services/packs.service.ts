@@ -5,7 +5,7 @@ import { of } from 'rxjs';
 
 @Injectable()
 export class PacksService extends OntimizeService {
-  private packsAventura = {
+  private readonly packsAventura = {
     code: 0,
     message: "",
     data: [
@@ -48,7 +48,7 @@ export class PacksService extends OntimizeService {
         location: "Queensland, Australia",
         price: 1200,
         duration: 8,
-        score: 5.0,
+        score: 5,
         people: 4,
         dateBegin: "2025-04-01",
         dateEnd: "2025-11-30"
@@ -504,20 +504,29 @@ export class PacksService extends OntimizeService {
 
     let rows = [...this.packsAventura.data];
 
-    const flat = this.convert(kv);
-    if (flat?.terms?.length) {
-      const pred = this.buildPredicate(flat);
-      rows = rows.filter(pred);
-    }
-
     if (orderby?.length) {
       const { column, asc } = orderby[0];
+      const dir = asc ? 1 : -1;
+
       rows.sort((a: any, b: any) => {
-        const va = a[column], vb = b[column];
+        const va = a[column];
+        const vb = b[column];
+
         if (va == null && vb == null) return 0;
-        if (va == null) return asc ? -1 : 1;
-        if (vb == null) return asc ? 1 : -1;
-        return (va < vb ? -1 : va > vb ? 1 : 0) * (asc ? 1 : -1);
+        if (va == null) return -1 * dir;
+        if (vb == null) return 1 * dir;
+
+        let cmp = 0;
+
+        if (typeof va === 'string' && typeof vb === 'string') {
+          cmp = va.localeCompare(vb);
+        } else if (va < vb) {
+          cmp = -1;
+        } else if (va > vb) {
+          cmp = 1;
+        }
+
+        return cmp * dir;
       });
     }
 
@@ -536,118 +545,6 @@ export class PacksService extends OntimizeService {
       start,
       total
     ));
-  }
-
-  deCompose(expresion, columns: Array<string>, kv: Object) {
-    const basicExpresion: Expression = expresion[FilterExpressionUtils.BASIC_EXPRESSION_KEY];
-    const filterExpresion: Expression = expresion[FilterExpressionUtils.FILTER_EXPRESSION_KEY];
-
-    let decomposedExpresion = kv;
-    if (Util.isDefined(basicExpresion)) {
-      decomposedExpresion = this.deComposeExpresion(basicExpresion, columns, kv);
-    }
-
-    /* Required for column filtering which is currently disabled */
-    if (Util.isDefined(filterExpresion)) {
-      decomposedExpresion = this.deComposeExpresion(filterExpresion, columns, decomposedExpresion);
-    }
-    return decomposedExpresion;
-  }
-
-  deComposeExpresion(expresion: any, columns: Array<string>, kv: Object) {
-    if (FilterExpressionUtils.instanceofExpression(expresion)) {
-      if (typeof expresion.lop !== 'string') {
-        kv = this.deComposeExpresion(expresion.lop, columns, kv);
-        return this.deComposeExpresion(expresion.rop, columns, kv);
-      } else {
-        return kv;
-      }
-    }
-  }
-
-  convert(input: any): any {
-    const result: any = { logic: 'AND', terms: [] };
-    if (input && input['@basic_expression']) {
-      this.parseExpression(input['@basic_expression'], result);
-    }
-    if (input && input['@filter_expression']) {
-      this.parseExpression(input['@filter_expression'], result);
-    }
-    return result;
-  }
-
-  private parseExpression(expr: any, out: any, parentLogic: any = 'AND'): void {
-    if (!out.terms) out.terms = [];
-    if (!out.logic) out.logic = 'AND';
-
-    const op = String((expr.operator ?? expr.op) ?? '').toUpperCase();
-
-    if (op === 'AND' || op === 'OR') {
-      const logic = op;
-      const left = expr.expr1 ?? expr.left ?? expr.lhs;
-      const right = expr.expr2 ?? expr.right ?? expr.rhs;
-      if (left) this.parseExpression(left, out, logic);
-      if (right) this.parseExpression(right, out, logic);
-      if (logic === 'OR') out.logic = 'OR';
-      return;
-    }
-
-    const col =
-      expr.left?.columnName ?? expr.left ?? expr.columnName ?? expr.attr ?? expr.field ?? expr.lop;
-    const value = expr.right?.value ?? expr.value ?? expr.rop ?? null;
-    if (!col) return;
-
-    out.terms.push({ column: col, op: op, value: value });
-  }
-
-  private buildPredicate(flat: any): (row: any) => boolean {
-    const norm = (v: any) => (v == null ? '' : String(v)).toLowerCase();
-    const toNum = (v: any) => (v == null || v === '' ? NaN : Number(v));
-    const toDate = (v: any) => (v ? Date.parse(v) : NaN);
-
-    const test = (row: any, t: any): boolean => {
-      const cell = row[t.column];
-
-      switch (t.op) {
-        case 'LIKE': {
-          const needle = String(t.value).replace(/%/g, '').toLowerCase();
-          return norm(cell).includes(needle);
-        }
-        case 'EQUALS':
-        case '=': return String(cell) == String(t.value);
-
-        case 'MORE':
-        case '>': return toNum(cell) > toNum(t.value);
-        case 'MORE_EQUAL':
-        case '>=': return toNum(cell) >= toNum(t.value);
-        case 'LESS':
-        case '<': return toNum(cell) < toNum(t.value);
-        case 'LESS_EQUAL':
-        case '<=': return toNum(cell) <= toNum(t.value);
-
-        case 'IN': {
-          const arr = Array.isArray(t.value) ? t.value : [t.value];
-          return arr.map(String).includes(String(cell));
-        }
-
-        case 'ISNULL': return cell == null || cell === '';
-        case 'ISNOTNULL': return !(cell == null || cell === '');
-
-        // Por si te llega operador de fecha “verbal”
-        case 'DATE_MORE_EQUAL': return toDate(cell) >= toDate(t.value);
-        case 'DATE_LESS_EQUAL': return toDate(cell) <= toDate(t.value);
-
-        default: return true;
-      }
-    };
-
-    return (row: any) => {
-      const terms = flat?.terms || [];
-      if (!terms.length) return true;
-      return (flat.logic === 'OR')
-        ? terms.some(term => test(row, term))
-        : terms.every(term => test(row, term));
-    };
   }
 
 }
