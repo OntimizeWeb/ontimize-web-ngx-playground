@@ -11,7 +11,7 @@
       </mat-slide-toggle>
     </div>
     <o-table content #table attr="tableFixed" title="ACCOUNTS" [fixed-header]="fixedHeaderToggle.checked" [static-data]="data"
-      columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+      keys="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
       visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" sort-columns="ANID" query-on-init="false" quick-filter="yes" insert-button="no"
       delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" [ngStyle]="{'height.px':height.value}" edition-mode="none"
       detail-mode="none" fxFlex="100" show-charts-on-demand-option="no">
