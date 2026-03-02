@@ -14,6 +14,7 @@ import { DummyService } from './shared/services/dummy.service';
 import { RickAndMortyService } from './shared/services/rickandmortyapi/rickandmorty.service';
 import { RickAndMortyResponseAdapter } from './shared/services/rickandmortyapi/rickandmorty-response.adapter';
 import { RickAndMortyRequestArgumentsAdapter } from './shared/services/rickandmortyapi/rickandmorty-request-adapter';
+import { PacksService } from './shared/services/packs.service';
 
 /**
  * Import specific languages to avoid importing everything
@@ -42,6 +43,7 @@ export function getHighlightLanguages() {
     { provide: ConfigCollapsibleStateService, useValue: undefined },
     { provide: APP_CONFIG, useValue: CONFIG },
     { provide: 'DummyService', useValue: DummyService },
+    { provide: 'packs', useValue: PacksService },
     { provide: 'rickandmorty', useValue: RickAndMortyService },
     {provide:O_TABLE_GLOBAL_CONFIG, useValue:{showChartsOnDemandOption:false, showReportOnDemandOption:false}},
     RickAndMortyResponseAdapter,

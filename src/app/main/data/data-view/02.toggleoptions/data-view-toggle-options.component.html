@@ -1,0 +1,63 @@
+<example-comp #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.TOGGLE-OPTIONS.COMPONENT" [html]="html" [files]="files"
+  (showSource)="onShowSource()" fxFill>
+
+  <screen-configuration comp-name="DATA-VIEW" #sidenavComp>
+    <div menu>
+      <div fxLayout="column">
+        <span class="menu-title">{{ 'DATA_VIEW.CONFIGURATION' | oTranslate }}</span>
+        <mat-divider></mat-divider>
+
+        <mat-radio-group layout-padding [value]="toggleMode" (change)="onToggleModeChange($event.value)" fxLayoutAlign="space-around start"
+          fxFlex="100" fxLayout="column" fxLayoutGap="6px">
+
+          <mat-radio-button value="toggleButton" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_BUTTON' | oTranslate }}
+          </mat-radio-button>
+
+          <mat-radio-button value="toggleOnToolbar" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_ON_TOOLBAR' | oTranslate }}
+          </mat-radio-button>
+
+          <mat-radio-button value="toggleFloatable" class="padding-3">
+            {{ 'DATA_VIEW.TOGGLE_FLOATABLE' | oTranslate }}
+          </mat-radio-button>
+
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <o-data-view content class="data-view-example" #dv attr="dataView" service-type="packs" entity="packs" keys="id"
+      columns="id;name;location;price;duration;score" [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" query-rows="8"
+      show-buttons-text="no" title="Adventure packs" toggle-button="yes" [toggle-on-toolbar]="toggleMode === 'toggleOnToolbar'"
+      [toggle-floatable]="toggleMode === 'toggleFloatable'">
+
+      <ng-template oDataViewTableColumns>
+        <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
+
+        <o-table-column attr="name" title-align="start" editable="yes" width="400px"></o-table-column>
+        <o-table-column attr="location" title-align="start" editable="yes" width="500px"></o-table-column>
+        <o-table-column attr="price" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+          title-align="end"></o-table-column>
+        <o-table-column attr="score" title-align="end" filterable="yes" sortable="yes">
+          <o-table-cell-renderer-real></o-table-cell-renderer-real>
+        </o-table-column>
+
+        <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
+      </ng-template>
+
+
+      <ng-template oDataViewGridItem let-item>
+        <mat-card fxLayout="column" class="grid-card">
+          <mat-card-header fxLayout="row">
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content fxLayout="row" fxLayoutAlign="end end" fxFlex="100">
+            Cost: {{item.price | currency}}
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </o-data-view>
+
+  </screen-configuration>
+</example-comp>

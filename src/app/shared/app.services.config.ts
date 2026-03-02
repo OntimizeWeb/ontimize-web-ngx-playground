@@ -21,5 +21,8 @@ export const SERVICE_CONFIG = {
   "episodes": {
     'urlBase': "https://rickandmortyapi.com/api",
     'path': '/episode'
+  },
+  'packs': {
+    'path': '/packs'
   }
 };
