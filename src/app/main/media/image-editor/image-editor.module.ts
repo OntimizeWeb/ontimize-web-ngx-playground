@@ -1,3 +1,4 @@
+import { OImageEditorModule } from 'ontimize-web-ngx-extra-components';
 import { SharedModule } from './../../../shared/shared.module';
 import { ImageEditorExamplesComponent } from './image-editor-examples/image-editor-examples.component';
 import { ImageEditorMediaComponent } from './image-editor-media/image-editor-media.component';
@@ -10,7 +11,8 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    ImageEditorRoutingModule
+    ImageEditorRoutingModule,
+    OImageEditorModule
   ],
   declarations: [
     ImageEditorComponent,

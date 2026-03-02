@@ -524,7 +524,7 @@
   "personal_account": "Personal Account",
   "savings_account":"Savings Account",
   "IMAGE_EDITOR.COMPONENT": "Image Editor",
-  "IMAGE_EDITOR.COMPONENT.DESC": "A component for editing images."
+  "IMAGE_EDITOR.COMPONENT.DESC": "A component for editing images.",
   "DATA-VIEW.COMPONENT": "Data View",
   "DATA-VIEW.COMPONENT.DESC": "A component for changing data display",
   "DATA-VIEW.BUTTON.BASIC": "Basic",
@@ -541,5 +541,6 @@
   "location": "Location",
   "price": "Price",
   "duration": "Duration",
-  "score": "Score"
+  "score": "Score",
+  "IMAGE_EDITOR.O_IMAGE": "Image editor with o-image component"
 }
