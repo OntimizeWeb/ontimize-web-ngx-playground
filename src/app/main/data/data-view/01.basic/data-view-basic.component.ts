@@ -60,7 +60,7 @@ const DATA_VIEW_TS_DATA = `
     gridCfg: GridConfig = { cols: 4, gutterSize: '2px', gridItemHeight: '175px', quickFilterColumns: 'name;price', insertButtonFloatable: 'no' };
 
     onExecute(text: string, event: any): void {
-      alert('Clicked menu element: ' + text + '\\n' + event.data.NAME);
+      alert('Clicked menu element: ' + text + event.data.NAME);
     }
 
   }
