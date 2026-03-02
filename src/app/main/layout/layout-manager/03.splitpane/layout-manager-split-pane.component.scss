@@ -1,0 +1,14 @@
+.layout-manager-split-pane {
+  display: flex;
+  height: 600px;
+  width: 100%;
+
+  o-form-layout-split-pane {
+    display: flex;
+    width: 100%;
+
+    .o-split-pane-row-wrapper {
+      width: 100%;
+    }
+  }
+}
