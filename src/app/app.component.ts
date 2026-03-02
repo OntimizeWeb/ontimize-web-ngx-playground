@@ -3,9 +3,14 @@ import { OntimizeMatIconRegistry } from 'ontimize-web-ngx';
 
 
 const svgIcons = ['checkbox', 'combo', 'currency', 'date', 'daterange', 'email', 'file', 'hour', 'html', 'integer', 'listpicker', 'nif', 'overview', 'password',
+<<<<<<< feature/15.x.x-issue-2025
   'percentage', 'phone', 'radio', 'real', 'slider', 'slidetoggle', 'text', 'textarea', 'time', 'table', 'list', 'grid', 'tree','data-view', 'image', 'gallery', 'containers',
   'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane', 'flm-sidenav'];
 
+=======
+  'percentage', 'phone', 'radio', 'real', 'slider', 'slidetoggle', 'text', 'textarea', 'time', 'table', 'list', 'grid', 'tree', 'data-view', 'image', 'gallery', 'containers',
+  'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane', 'image-editor'];
+>>>>>>> 15.x.x
 
 @Component({
   selector: 'o-app',
