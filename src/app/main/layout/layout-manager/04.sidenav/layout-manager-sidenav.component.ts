@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { LayoutCodeExamples } from '../code-examples';
 @Component({
-  selector: 'layout-manager-split-pane',
-  templateUrl: './layout-manager-split-pane.component.html',
-  styleUrls: ['layout-manager-split-pane.component.scss'],
+  selector: 'layout-manager-sidenav',
+  templateUrl: './layout-manager-sidenav.component.html',
+  styleUrls: ['./layout-manager-sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class LayoutManagerSplitPaneComponent {
+export class LayoutManagerSidenavComponent {
   LayoutCodeExamples = LayoutCodeExamples;
 }

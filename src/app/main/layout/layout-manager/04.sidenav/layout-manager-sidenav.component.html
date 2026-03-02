@@ -1,11 +1,11 @@
-<example-comp fxFlexFill comp-name="{{ 'LAYOUT_MANAGER_TABGROUP' | oTranslate }}" [files]="LayoutCodeExamples.files_tabgroup">
-  <o-form-layout-manager class="tab-group" attr="o-form-layout-manager-tab" mode="tab" title="CUSTOMERS" label-columns="SURNAME;NAME" separator=","
-    title-data-origin="customers_form_edit" fxFlex>
+<example-comp comp-name="{{ 'LAYOUT_MANAGER_SIDENAV' | oTranslate }}" [files]="LayoutCodeExamples.files_sidenav">
+  <o-form-layout-manager class="layout-manager-sidenav" attr="o-form-layout-manager-sidenav" mode="sidenav" title="CUSTOMERS"
+    label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit" sidenav-width="80%">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
       select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
-      service-type="DummyService" service="customers" entity="customer" query-rows="10" virtual-scroll="false">
+      service-type="DummyService" service="customers" entity="customer" query-rows="50" virtual-scroll="false">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">

@@ -19,15 +19,8 @@
     font-size: mat.font-size($typography, body-2);
   }
 
-  layout-manager {
-    .left-border {
-      background-color: mat.get-color-from-palette($background, level-0);
-    }
-  }
-
   o-column-collapsible.o-column-collapsible>.o-container.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
     border-bottom-color: mat.get-color-from-palette($foreground, divider);
   }
-
 
 }
