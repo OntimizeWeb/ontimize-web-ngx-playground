@@ -14,7 +14,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
       { id: 'grid', name: 'GRID.COMPONENT', route: '/main/data/grid', icon: 'view_module' },
       { id: 'list', name: 'LIST.COMPONENT', route: '/main/data/lists', icon: 'list' },
       { id: 'table', name: 'TABLE.COMPONENT', route: '/main/data/table', icon: 'storage' },
-      { id: 'tree', name: 'TREE.COMPONENT', route: '/main/data/tree', icon: 'account_tree' }
+      { id: 'tree', name: 'TREE.COMPONENT', route: '/main/data/tree', icon: 'account_tree' },
+      { id: 'data-view', name: 'DATA-VIEW.COMPONENT', route: '/main/data/data-view', icon: 'view_quilt'}
     ]
   },
   {

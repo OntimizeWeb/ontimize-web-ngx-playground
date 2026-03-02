@@ -1,0 +1,38 @@
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.CUSTOM-BUTTON.COMPONENT" [files]="files">
+  <div fxLayout="row" fxLayoutAlign="end">
+    <button mat-button (click)="dv.changeView('grid')">Show grid</button>
+    <button mat-button (click)="dv.changeView('table')">Show tabla</button>
+  </div>
+
+  <o-data-view #dv class="data-view-example" attr="dataView" service-type="packs" entity="packs" keys="id" columns="id;name;location;price;duration;score" query-rows="8"
+    [table-config]="tableCfg" [grid-config]="gridCfg" refresh-button="no" toggle-button="no" toggle-on-toolbar="no" show-buttons-text="no"
+    title="Adventure Packs">
+
+    <ng-template oDataViewTableColumns>
+      <o-table-columns-filter columns="name;location;price;duration;score"></o-table-columns-filter>
+      <o-table-column attr="name" title-align="start" editable="yes" width="400px"></o-table-column>
+      <o-table-column attr="location" title-align="start" editable="yes" width="500px"></o-table-column>
+      <o-table-column attr="price" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"
+        title-align="end"></o-table-column>
+      <o-table-column attr="score" title-align="end" filterable="yes" sortable="yes">
+        <o-table-cell-renderer-real></o-table-cell-renderer-real>
+      </o-table-column>
+      <o-table-column-aggregate attr="score" aggregate="avg" title="Avg Price"></o-table-column-aggregate>
+      <o-table-paginator page-size-options="5;10;15"></o-table-paginator>
+    </ng-template>
+
+    <ng-template oDataViewGridItem let-item>
+      <mat-card class="grid-card">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center">Cost: {{item.price | currency}}</div>
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+
+  </o-data-view>
+
+</example-comp>
