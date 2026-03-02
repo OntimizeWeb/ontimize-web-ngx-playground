@@ -73,22 +73,22 @@ const SPLIT_PANE_HTML_DATA = `
 
 
 export class LayoutCodeExamples {
-  public static files_sidenav = {
+  public static readonly files_sidenav = {
     html: {
       data: SIDENAV_HTML_DATA
     },
   };
-  public static files_tabgroup = {
+  public static readonly files_tabgroup = {
     html: {
       data: TABGROUP_HTML_DATA
     },
   };
-  public static files_dialog = {
+  public static readonly files_dialog = {
     html: {
       data: DIALOG_HTML_DATA
     },
   };
-  public static files_split_pane = {
+  public static readonly files_split_pane = {
     html: {
       data: SPLIT_PANE_HTML_DATA
     },
