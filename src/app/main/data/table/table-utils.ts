@@ -144,7 +144,8 @@ const HTML_DATA = `
     filter-case-sensitive="{filterCaseSensitive}" [static-data]="data" insert-button="{buttonAddToggle}" export-button="{exportButtonToggle}"
     columns-visibility-button="{columnsVisibilityToggle}" delete-button="{buttonRemoveToggle}" refresh-button="{buttonRefreshToggle}"
     select-all-checkbox="{selectMultipleToggle}" show-buttons-text="{showTextToggle}" controls="{controlsToggle}" show-title="{titleToggle}"
-    pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}" virtual-scroll="no" show-charts-on-demand-option="no">
+    pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="{horizontalScroll}" auto-adjust="{autoAdjust}"
+     virtual-scroll="no" show-charts-on-demand-option="no" show-header-tooltip="{showHeaderTooltipToggle}" >
 
     <!-- Filter columns -->
     <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
@@ -154,7 +155,8 @@ const HTML_DATA = `
     <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes" header-tooltip="TABLE.HEADER_CONTEXT_TOOLTIP"
+        header-tooltip-icon="info_outline"></o-table-column>
     <o-table-column attr="action" width="64px">
       <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
     </o-table-column>
@@ -1064,6 +1066,7 @@ export class TableUtils {
         .replace('{fixed-header}', data.fixedHeader)
         .replace('{horizontalScroll}', data.horizontalScroll)
         .replace('{autoAdjust}', data.autoAdjust)
+        .replace('{showHeaderTooltipToggle}', data.showHeaderTooltipToggle)
         .replace('{ngStyle}', '{\'height\':' + data.height + 'px}');
     }
     return tpl;
