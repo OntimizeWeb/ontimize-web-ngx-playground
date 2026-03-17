@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TableUtils } from '../table-utils';
 
 @Component({
   selector: 'table-renderer',
-  templateUrl: 'table-renderer.component.html'
+  styleUrls: ['./table-renderer.component.scss'],
+  templateUrl: 'table-renderer.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class TableRendererComponent {
 

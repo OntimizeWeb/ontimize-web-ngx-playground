@@ -14,7 +14,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
       { id: 'grid', name: 'GRID.COMPONENT', route: '/main/data/grid', icon: 'view_module' },
       { id: 'list', name: 'LIST.COMPONENT', route: '/main/data/lists', icon: 'list' },
       { id: 'table', name: 'TABLE.COMPONENT', route: '/main/data/table', icon: 'storage' },
-      { id: 'tree', name: 'TREE.COMPONENT', route: '/main/data/tree', icon: 'account_tree' }
+      { id: 'tree', name: 'TREE.COMPONENT', route: '/main/data/tree', icon: 'account_tree' },
+      { id: 'data-view', name: 'DATA-VIEW.COMPONENT', route: '/main/data/data-view', icon: 'view_quilt'}
     ]
   },
   {
@@ -25,7 +26,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
     route: 'main/media/home',
     items: [
       { id: 'image', name: 'IMAGE.COMPONENT', route: '/main/media/image', icon: 'image' },
-      { id: 'gallery', name: 'GALLERY.COMPONENT', route: '/main/media/gallery', icon: 'perm_media' }
+      { id: 'gallery', name: 'GALLERY.COMPONENT', route: '/main/media/gallery', icon: 'perm_media' },
+      { id: 'editor-image', name: 'IMAGE_EDITOR.COMPONENT', route: '/main/media/editor-image', icon: 'photo_size_select_large' }
     ]
   },
   {

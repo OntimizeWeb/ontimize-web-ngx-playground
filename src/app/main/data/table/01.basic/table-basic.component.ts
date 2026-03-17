@@ -55,10 +55,15 @@ export class TableBasicComponent {
   @ViewChild('horizontalScrollToggle')
   horizontalScrollToggle: any;
 
+  @ViewChild('showHeaderTooltipToggle')
+  showHeaderTooltipToggle: any;
+
+
   @ViewChild('table')
   table: any;
 
   public data = TableUtils.getCustomers();
+
 
   constructor() { }
 
@@ -67,6 +72,7 @@ export class TableBasicComponent {
   }
 
   updateCodeValue(key: string, value: string) {
+
     const itemData: any = {
       titleInput: this.titleInput.nativeElement.value,
       controlsToggle: this.controlsToggle.checked,
@@ -106,7 +112,8 @@ export class TableBasicComponent {
       buttonRefreshToggle: this.buttonRefreshToggle.checked,
       showTextToggle: this.showTextToggle.checked,
       autoAdjust: this.autoAdjustToggle.checked,
-      horizontalScroll: this.horizontalScrollToggle.checked
+      horizontalScroll: this.horizontalScrollToggle.checked,
+      showHeaderTooltipToggle: this.showHeaderTooltipToggle.checked
     };
     this.html = TableUtils.getHtml(key, table, itemData);
   }

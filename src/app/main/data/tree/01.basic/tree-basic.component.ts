@@ -3,12 +3,9 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 const TREE_HTML_DATA = `
   <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID"
       columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no"
-       select-all-checkbox="yes" root-title="CUSTOMERS"
-      [title]="{title}" [controls]="{controls}" [quick-filter]="{quickFilter}" [refresh-button]="{refreshButton}"(onNodeSelected)="nodeSelected($event)"
-      (onNodeExpanded)="nodeExpanded($event)"
-      (onNodeCollapsed)="nodeCollapsed($event)"
-      (onLoadNextLevel)="nextLevelLoaded($event)"
-      (onDataLoaded)="onDataLoaded($event)">
+      select-all-checkbox="yes" root-title="CUSTOMERS" title="{title}" controls="{controls}" quick-filter="{quickFilter}" refresh-button="{refreshButton}"
+      (onNodeSelected)="nodeSelected($event)" (onNodeExpanded)="nodeExpanded($event)" (onNodeCollapsed)="nodeCollapsed($event)"
+      (onLoadNextLevel)="nextLevelLoaded($event)" (onDataLoaded)="onDataLoaded($event)">
   </o-tree>
 `;
 

@@ -7,6 +7,7 @@ import { LayoutManagerDialogComponent } from './02.dialog/layout-manager-dialog.
 import { LayoutManagerSplitPaneComponent } from './03.splitpane/layout-manager-split-pane.component';
 import { CustomersDetailComponent } from './detail/customers-detail.component';
 import { LayoutManagerComponent } from './layout-manager.component';
+import { LayoutManagerSidenavComponent } from './04.sidenav/layout-manager-sidenav.component';
 
 export const routes: Routes = [
   {
@@ -14,7 +15,8 @@ export const routes: Routes = [
       { path: '', redirectTo: 'tab', pathMatch: 'full' },
       { path: 'tab', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerTabgroupComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
       { path: 'dialog', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerDialogComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
-      { path: 'split-pane', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }
+      { path: 'split-pane', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerSplitPaneComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] },
+      { path: 'sidenav', data: { oAppHeaderTitle: 'Layouts' }, component: LayoutManagerSidenavComponent, children: [{ path: ':CUSTOMERID', component: CustomersDetailComponent }] }
     ]
   }
 ];

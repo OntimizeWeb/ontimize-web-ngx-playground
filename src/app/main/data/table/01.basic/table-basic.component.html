@@ -23,6 +23,11 @@
           {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
         </mat-slide-toggle>
       </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-slide-toggle #showHeaderTooltipToggle [checked]="false" fxFlex>
+          {{ 'TABLE.BUTTON.HEADER_TOOLTIP' | oTranslate }}
+        </mat-slide-toggle>
+        </div>
       <div fxLayout="column">
         <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
         <mat-divider></mat-divider>
@@ -79,7 +84,8 @@
             </mat-slide-toggle>
           </div>
           <div fxLayout="column" fxLayoutAlign="start start">
-            <mat-slide-toggle (change)="updateCodeValue('buttonRemoveToggle', $event.checked)" #buttonRemoveToggle [checked]="false" matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" fxFlex>
+            <mat-slide-toggle (change)="updateCodeValue('buttonRemoveToggle', $event.checked)" #buttonRemoveToggle [checked]="false"
+              matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" fxFlex>
               {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
             </mat-slide-toggle>
             <mat-slide-toggle (change)="updateCodeValue('showTextToggle', $event.checked)" #showTextToggle checked="true" fxFlex>
@@ -106,7 +112,7 @@
       [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
       [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" row-height="medium"
       pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
-      edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">
+      edition-mode="none" detail-mode="none" show-charts-on-demand-option="no" [show-header-tooltip]="showHeaderTooltipToggle.checked">
 
       <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>
       <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm" tooltip="yes"></o-table-button>
@@ -114,7 +120,8 @@
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
         </o-table-cell-renderer-image>
       </o-table-column>
-      <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+      <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes" header-tooltip="TABLE.HEADER_CONTEXT_TOOLTIP"
+        header-tooltip-icon="info_outline"></o-table-column>
       <o-table-column attr="action" width="64px">
         <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
       </o-table-column>

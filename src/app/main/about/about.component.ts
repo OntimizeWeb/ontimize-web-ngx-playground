@@ -11,4 +11,5 @@ export class AboutComponent {
 
   public vCore: string = environment.versions.core;
   public vGallery: string = environment.versions.gallery;
+  public vExtraComponentes:string = environment.versions.extraComponentes
 }

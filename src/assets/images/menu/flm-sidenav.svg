@@ -1,0 +1,46 @@
+<svg width="141" height="96" viewBox="0 0 141 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="140.72" height="96" fill="black" fill-opacity="0.12" />
+  <path d="M46.9072 0H140.72V96H46.9072V0Z" fill="white" />
+  <line x1="50.9536" y1="8.85278" x2="83.2048" y2="8.85278" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="50.9536" y1="14.4182" x2="136.489" y2="14.4182" stroke="black" stroke-opacity="0.12"
+    stroke-width="1.2549" />
+  <path
+    d="M135.547 7.02409L134.244 8.31756L135.547 9.61104L135.219 9.93713L133.915 8.64365L132.611 9.93713L132.283 9.61104L133.586 8.31756L132.283 7.02409L132.611 6.698L133.915 7.99148L135.219 6.698L135.547 7.02409Z"
+    fill="black" fill-opacity="0.48" />
+  <path
+    d="M135.307 6.60913L135.635 6.9353L135.725 7.02417L135.635 7.11304L134.421 8.31714L135.635 9.52222L135.725 9.61108L135.635 9.69995L135.307 10.0261L135.218 10.114L135.13 10.0261L133.915 8.82007L132.7 10.0261L132.612 10.114L132.523 10.0261L132.194 9.69995L132.105 9.61108L132.194 9.52222L133.407 8.31714L132.194 7.11304L132.105 7.02417L132.194 6.9353L132.523 6.60913L132.612 6.52124L132.7 6.60913L133.915 7.81421L135.13 6.60913L135.218 6.52124L135.307 6.60913Z"
+    stroke="black" stroke-opacity="0.48" stroke-width="0.25098" />
+  <line x1="124.072" y1="23.0801" x2="132.35" y2="23.0801" stroke="black" stroke-opacity="0.6"
+    stroke-width="0.62745" />
+  <rect x="120.248" y="19.5332" width="15.9278" height="6.32907" stroke="black" stroke-opacity="0.6"
+    stroke-width="0.62745" />
+  <line x1="104.758" y1="23.0801" x2="113.035" y2="23.0801" stroke="black" stroke-opacity="0.6"
+    stroke-width="0.62745" />
+  <rect x="100.933" y="19.5332" width="15.9278" height="6.32907" stroke="black" stroke-opacity="0.6"
+    stroke-width="0.62745" />
+  <line x1="53.7129" y1="47.8096" x2="85.964" y2="47.8096" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="53.7129" y1="43.6357" x2="68.8886" y2="43.6357" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="47.8096" x2="132.871" y2="47.8096" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="43.6357" x2="115.795" y2="43.6357" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+  <line x1="53.7129" y1="60.3313" x2="85.964" y2="60.3313" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="53.7129" y1="56.1575" x2="68.8886" y2="56.1575" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="60.3313" x2="132.871" y2="60.3313" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="56.1575" x2="115.795" y2="56.1575" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+  <line x1="53.7129" y1="72.8528" x2="85.964" y2="72.8528" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="53.7129" y1="68.6789" x2="68.8886" y2="68.6789" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="72.8528" x2="132.871" y2="72.8528" stroke="black" stroke-opacity="0.6"
+    stroke-width="1.2549" />
+  <line x1="100.62" y1="68.6789" x2="115.795" y2="68.6789" stroke="black" stroke-opacity="0.32"
+    stroke-width="1.2549" />
+</svg>

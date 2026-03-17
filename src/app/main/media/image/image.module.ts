@@ -5,13 +5,13 @@ import { OImageModule, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { ImageExamplesComponent } from './image-examples/image-examples.component';
 import { ImageMediaComponent } from './image-media/image-media.component';
-import { MediaRoutingModule } from './image-routing.module';
+import { ImageRoutingModule } from './image-routing.module';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    MediaRoutingModule,
+    ImageRoutingModule,
     OImageModule
   ],
   declarations: [
