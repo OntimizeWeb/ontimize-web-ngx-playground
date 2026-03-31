@@ -5,13 +5,13 @@
   $foreground: map-get($theme, color, foreground);
 
   .new {
-    border-color: mat.get-color-from-palette($foreground);
-    background-color: mat.get-color-from-palette($background);
-    color: mat.get-color-from-palette($foreground, text);
+    border-color: mat.m2-get-color-from-palette($foreground);
+    background-color: mat.m2-get-color-from-palette($background);
+    color: mat.m2-get-color-from-palette($foreground, text);
   }
 
   .img-container {
-    background-color: mat.get-color-from-palette($background, selected-button);
+    background-color: mat.m2-get-color-from-palette($background, selected-button);
   }
 
 }

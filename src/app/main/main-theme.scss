@@ -11,16 +11,16 @@
 
   .active,
   .active.mdc-button {
-    border-color: mat.get-color-from-palette($primary, 500);
-    background-color: mat.get-color-from-palette($primary, 100);
+    border-color: mat.m2-get-color-from-palette($primary, 500);
+    background-color: mat.m2-get-color-from-palette($primary, 100);
   }
 
   .mat-mdc-card-content {
-    font-size: mat.font-size($typography, body-2);
+    font-size: mat.m2-font-size($typography, body-2);
   }
 
   o-column-collapsible.o-column-collapsible>.o-container.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
-    border-bottom-color: mat.get-color-from-palette($foreground, divider);
+    border-bottom-color: mat.m2-get-color-from-palette($foreground, divider);
   }
 
 }
