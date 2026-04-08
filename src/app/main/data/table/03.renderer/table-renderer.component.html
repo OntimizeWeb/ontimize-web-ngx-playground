@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER" [files]="getFiles('o-table-renderer')"
   (showSource)="onShowSource('o-table', table, ex)">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table attr="accounts" keys="ID"
+  <div class="o-flex-row o-layout-align-center-start" layout-padding>
+    <o-table class="o-flex-fill" #table attr="accounts" keys="ID"
       columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION"
       visible-columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;COMMISSION" layout-padding title="ACCOUNTS"
       [static-data]="data" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no"

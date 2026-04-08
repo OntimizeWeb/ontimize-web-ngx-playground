@@ -1,7 +1,7 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="TREE.NODES.COMPONENT" comp-desc="TREE.NODES.COMPONENT.DESC" [files]="files"
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="TREE.NODES.COMPONENT" comp-desc="TREE.NODES.COMPONENT.DESC" [files]="files"
   (showSource)="onShowSource(treeview, ex)" style.height="65%">
 
-  <o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customer" entity="customerTree" keys="CUSTOMERID"
+  <o-tree #treeview class="o-flex" root-title="CUSTOMERS" service-type="DummyService" service="customer" entity="customerTree" keys="CUSTOMERID"
     columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" quick-filter="true"
     quick-filter-columns="SURNAME;NAME" select-all-checkbox="yes">
 

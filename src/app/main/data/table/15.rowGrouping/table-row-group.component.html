@@ -1,10 +1,10 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_DEFAULT_GROUP_ORDER" [files]="getFiles('o-table-basic-row-grouping')"
   (showSource)="onShowSource('o-table-basic-row-grouping', table, ex)">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners" keys="athlete"
+  <div class="o-flex-row o-layout-align-c-start" layout-padding>
+    <o-table class="o-flex-fill" #table service-type="DummyService" service="olympicWinners" entity="olympicWinners" keys="athlete"
       columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="OLYMPICS WINNERS"
       quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
-      detail-mode="none" [ngStyle]="{'height':'600px'}" show-charts-on-demand-option="no">
+      detail-mode="none" style="height:600px" show-charts-on-demand-option="no">
       <o-table-columns-grouping columns="country;sport">
         <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
         <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>

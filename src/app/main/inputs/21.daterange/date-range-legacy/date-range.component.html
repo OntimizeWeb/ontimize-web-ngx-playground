@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
+<div class="o-flex-row o-layout-align-end-center selector-mode">
   <mat-icon>desktop_mac</mat-icon>{{'MODE.DESKTOP' | oTranslate}}
   <mat-slide-toggle #mode>
     <mat-icon>smartphone</mat-icon> {{'MODE.MOBILE'| oTranslate}}
@@ -7,18 +7,18 @@
 
 <example-comp #ex1 comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files" (showSource)="onShowSource('o-daterange', ex1)">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange1" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes" [data]="selected">
       </o-daterange-legacy-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
        <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange2" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="selected"
         clear-button="yes" format="LL" separator=" to " [mode]="mode.checked?'mobile':'desktop'">
       </o-daterange-legacy-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange3" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" enabled="no" [data]="selected">
       </o-daterange-legacy-input>
@@ -30,7 +30,7 @@
   (showSource)="onShowSource('o-daterange-minmax', ex2)">
 
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange4" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="selected"
         min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY" show-week-numbers="true" [mode]="mode.checked?'mobile':'desktop'">
@@ -44,7 +44,7 @@
   (showSource)="onShowSource('o-daterange-ranges', ex3)">
 
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-legacy-input attr="daterange5" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no" required="yes" [data]="selected"
         show-ranges="true" format="DD/MM/YYYY" separator=" to " touch-ui="yes" [mode]="mode.checked?'mobile':'desktop'">

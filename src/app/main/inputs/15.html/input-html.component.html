@@ -1,10 +1,10 @@
 <example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-html-input #input1 attr="html" [data]="html"></o-html-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-html-input attr="html2" [data]="html" read-only="no" required="yes"></o-html-input>
     </div>

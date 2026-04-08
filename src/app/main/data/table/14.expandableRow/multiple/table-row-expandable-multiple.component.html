@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS"
   comp-desc="TABLE.EXAMPLE_MULTIPLE_EXPANDED_ROWS_DESC" [files]="getFiles('o-table-multiple-expanded-rows')">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table [static-data]="tableData" keys="Position" columns="Position;Name;Weight;Symbol;Description"
+  <div class="o-flex-row o-layout-align-c-start" layout-padding>
+    <o-table class="o-flex-fill" #table [static-data]="tableData" keys="Position" columns="Position;Name;Weight;Symbol;Description"
       visible-columns="Name;Weight;Symbol;Description" title="PERIODIC_ELEMENTS" insert-button="no" delete-button="no" refresh-button="no"
       pagination-controls="yes" detail-mode="none" export-button="no" query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable multiple="yes">
@@ -13,7 +13,7 @@
               <div class="example-element-name"> {{row.Name}} </div>
               <div class="example-element-weight"> {{row.Weight}} </div>
             </div>
-            <div class="example-element-description" fxFlex>
+            <div class="example-element-description o-flex">
               {{row.Description}}
             </div>
           </div>

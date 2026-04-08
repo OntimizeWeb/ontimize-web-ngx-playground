@@ -1,11 +1,11 @@
-<div fxLayout="row" class="main-container bg-level-1">
-  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
+<div class="o-flex-row main-container bg-level-1">
+  <div class="o-flex-column o-layout-align-center-start o-flex">
 
-    <example-comp #ex comp-name="TOOLTIP" fxFill [html]="html"
+    <example-comp #ex comp-name="TOOLTIP" class="o-flex-fill" [html]="html"
       (showSource)="onShowSource(tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
 
       <screen-configuration>
-        <div fxLayout="column" menu>
+        <div class="o-flex-column" menu>
           <span class="menu-title">{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}</span>
           <mat-divider></mat-divider>
           <mat-form-field layout-padding>
@@ -29,7 +29,7 @@
           </mat-form-field>
         </div>
         <o-form content editable-detail="no" show-header="no" layout-direction="row">
-          <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+          <div class="o-flex-column o-layout-align-center-center o-flex">
             <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
               [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value"
               [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>

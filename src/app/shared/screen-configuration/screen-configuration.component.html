@@ -1,13 +1,13 @@
-<div fxLayout="row" fxLayoutAlign="space-between start">
-  <mat-sidenav-container fxFLex layout-align="start" class="sidenav-container">
+<div class="o-flex-row o-layout-align-sb-start">
+  <mat-sidenav-container class="sidenav-container o-flex" layout-align="start">
     <mat-sidenav #sidenav position="end" class="sidenav">
-      <div fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="start center" layout-margin>
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+      <div class="o-flex-column">
+        <div class="o-flex-row o-layout-align-start-center" layout-margin>
+          <div class="o-flex o-flex-row o-layout-align-start-center">
             <mat-icon layout-margin>tune</mat-icon>
             <span>Configuration</span>
           </div>
-          <div fxLayoutAlign="end center" fxFlex>
+          <div class="o-layout-align-end-center o-flex">
             <button mat-icon-button (click)="toggle()">
               <mat-icon>close</mat-icon>
             </button>
@@ -18,13 +18,13 @@
       </div>
     </mat-sidenav>
 
-    <mat-sidenav-content fxFlex>
-      <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div fxFlex="1 1 calc(100% - 42px)">
+    <mat-sidenav-content class="o-flex">
+      <div class="o-flex-row o-layout-align-sb o-gap-10">
+        <div style="flex: 1 1 calc(100% - 42px); max-width: calc(100% - 42px)">
           <ng-content select="[content]"></ng-content>
         </div>
         <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="!sidenav.opened" (click)="toggle()"
-          class="conf-btn" id="conf-btn-id" fxLayoutAlign="flex-end start"></o-button>
+          class="conf-btn o-layout-align-end-start" id="conf-btn-id"></o-button>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

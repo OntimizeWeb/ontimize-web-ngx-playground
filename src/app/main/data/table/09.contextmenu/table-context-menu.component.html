@@ -1,9 +1,9 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_CONTEXT_MENU" [files]="getFiles('o-table-context-menu')"
   (showSource)="onShowSource('o-table-context-menu', table, ex)">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+  <div class="o-flex-row o-layout-align-center-start" layout-padding>
     <o-table #table attr="customers" columns="CUSTOMERID;PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE"
       title="CUSTOMERS" [static-data]="data" keys="ID" query-on-init="false" insert-button="no" delete-button="no" refresh-button="no"
-      pagination-controls="no" export-button="no" layout-padding fxFill detail-mode="none" show-charts-on-demand-option="no">
+      pagination-controls="no" export-button="no" layout-padding class="o-flex-fill" detail-mode="none" show-charts-on-demand-option="no">
       <o-table-column attr="PHOTO" orderable="no" searchable="no">
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
       </o-table-column>

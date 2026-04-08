@@ -3,21 +3,21 @@
     <example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC"
       [files]="ListPickerCodeExamples.files">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
           <o-list-picker attr="listpicker-readOnly" read-only="yes" label="Select country"
             [static-data]="MockData.countriesArray" [data]="MockData.selectedCountryCode" value-column="countryCode"
             columns="countryCode;countryText" visible-columns="countryText">
           </o-list-picker>
         </div>
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select country"
             [static-data]="MockData.countriesArray" [data]="MockData.selectedCountryCode" value-column="countryCode"
             columns="countryCode;countryText" visible-columns="countryText" required="true">
           </o-list-picker>
         </div>
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
           <o-list-picker attr="listpicker-disabled" label="Select country" [static-data]="MockData.countriesArray"
             [data]="MockData.selectedCountryCode" enabled="no" value-column="countryCode"
@@ -32,7 +32,7 @@
     <example-comp comp-name="INPUTS.LISTPICKER_CURRENCY_RENDERER"
       [files]="ListPickerCodeExamples.files_currency_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.CURRENCY' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select value" [static-data]="MockData.integersArray"
             [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
@@ -45,7 +45,7 @@
 
     <example-comp comp-name="INPUTS.LISTPICKER_REAL_RENDERER" [files]="ListPickerCodeExamples.files_real_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.REAL' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select value" [static-data]="MockData.integersArray"
             [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
@@ -58,7 +58,7 @@
 
     <example-comp comp-name="INPUTS.LISTPICKER_INTEGER_RENDERER" [files]="ListPickerCodeExamples.files_integer_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select value" [static-data]="MockData.integersArray"
             [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
@@ -72,7 +72,7 @@
     <example-comp comp-name="INPUTS.LISTPICKER_PERCENTAGE_RENDERER"
       [files]="ListPickerCodeExamples.files_percentage_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.PERCENT' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select value" [static-data]="MockData.percentagesArray"
             [data]="MockData.selectedPercentageCode" value-column="percentageCode"
@@ -85,7 +85,7 @@
 
     <example-comp comp-name="INPUTS.LISTPICKER_DATE_RENDERER" [files]="ListPickerCodeExamples.files_date_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.DATE' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select date" [static-data]="MockData.datesArray"
             [data]="MockData.selectedDateCode" value-column="dateCode" columns="dateCode;dateValue"
@@ -102,7 +102,7 @@
     <example-comp comp-name="INPUTS.LISTPICKER_CUSTOM_RENDERER" comp-desc="INPUTS.LISTPICKER_CUSTOM_RENDERER.DESC"
       [files]="ListPickerCodeExamples.files_custom_render">
       <o-form show-header="no">
-        <div fxLayout="column" layout-padding>
+        <div class="o-flex-column" layout-padding>
           <label class="input-comp-title">{{ 'INPUT.BUTTON.LISTPICKER' | oTranslate }}</label>
           <o-list-picker attr="listpicker" label="Select value" [static-data]="MockData.integersArray"
             [data]="MockData.selectedIntegerCode" value-column="integerCode" columns="integerCode;integerValue"
@@ -121,7 +121,7 @@
         <o-form show-header="no" layout-padding>
           <o-list-picker attr="combo-locker" oLocker label="Select customer" service-type="DummyService"
             query-method="queryWithDelay" service="customers" entity="customer" value-column="CUSTOMERID" data="19487"
-            columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " fxFlex>
+            columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME" separator=", " class="o-flex">
           </o-list-picker>
         </o-form>
       </example-comp>
@@ -132,7 +132,7 @@
           <o-list-picker attr="combo-locker" oLocker oLockerMode="disable" label="Select customer"
             service-type="DummyService" query-method="queryWithDelay" service="customers" entity="customer"
             value-column="CUSTOMERID" data="19487" columns="CUSTOMERID;NAME;SURNAME" visible-columns="SURNAME;NAME"
-            separator=", " fxFlex>
+            separator=", " class="o-flex">
           </o-list-picker>
         </o-form>
       </example-comp>

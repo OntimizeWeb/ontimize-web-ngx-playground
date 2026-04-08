@@ -1,8 +1,8 @@
 <o-form service="branches" entity="customerAccount" keys="ACCOUNTID" keys-sql-types="INTEGER"
-  columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP" fxLayout="column" show-header="yes" header-actions="R;U;D" #oForm
+  columns="ACCOUNTID;BALANCE;ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP" show-header="yes" header-actions="R;U;D" #oForm
   label-header="ACCOUNT" service-type="DummyService">
 
-  <div fxLayout="column" fxLayoutGap="24px" layout-padding>
+  <div class="o-flex-column" style="gap:24px" layout-padding>
 
     <o-row attr="row1" title="CUSTOMER_DATA" layout-padding layout-align="start center" class="rounded-panel">
       <o-currency-input attr="BALANCE" class="margin-right-24"></o-currency-input>
@@ -12,7 +12,7 @@
 
     <o-column attr="other_data" title="TRANSACTIONS" layout-padding layout-align="start stretch" class="rounded-panel">
 
-      <o-table fxFlex service-type="DummyService" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
+      <o-table class="o-flex" service-type="DummyService" service="movements" entity="movement" keys="MOVEMENTID" parent-keys="ACCOUNTID"
         detail-form-route="transactions" insert-form-route="transactions/new" edit-form-route="transactions"
         columns="ACCOUNTID;MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES" title="MOVEMENTS"
         sort-columns="DATE_" query-on-init="false" query-rows="5" quick-filter="yes" pageable="no">

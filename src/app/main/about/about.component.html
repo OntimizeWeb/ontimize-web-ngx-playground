@@ -1,15 +1,15 @@
-<div fxLayout="column" fxLayoutAlign="end center" fxFill>
+<div class="o-flex-column o-layout-align-end-center o-flex-fill">
   <img src="assets/images/ontimize_web_log.png">
   <span class="info">Web application framework based on Angular for building business software.</span>
   <mat-divider></mat-divider>
   <span class="info">ontimize-web&#64;imatia.com</span>
 
-  <div fxLayout="row" fxLayoutAlign="space-evenly stretch" class="info-container">
+  <div class="o-flex-row info-container" style="justify-content: space-evenly; align-items: stretch">
 
-    <div fxLayout="row" fxLayoutAlign="end stretch" fxFlex>
-      <div fxLayout="column" fxLayoutAlign="start center">
+    <div class="o-flex-row" style="justify-content: flex-end; align-items: stretch">
+      <div class="o-flex-column o-layout-align-start-center">
         <span class="info-title">Links:</span>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px" class="links" fxFlex>
+        <div class="o-flex-row o-layout-align-center-center o-gap-16 links o-flex">
           <a href="https://github.com/OntimizeWeb" aria-label="GitHub Repository" target="_blank">
             <img src="./assets/images/github.png" class="mat-icon">
           </a>
@@ -20,8 +20,8 @@
       </div>
     </div>
 
-    <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
-      <div fxLayout="column" fxLayoutAlign="center start" class="dependencies" fxFlex>
+    <div class="o-flex-row o-layout-align-start-center o-flex">
+      <div class="o-flex-column o-layout-align-center-start dependencies o-flex">
         <span class="info-title">OntimizeWeb modules:</span>
         <span>ontimize-web-ngx&#64;{{ vCore }}</span>
         <span>ontimize-web-ngx-gallery&#64;{{ vGallery }}</span>
