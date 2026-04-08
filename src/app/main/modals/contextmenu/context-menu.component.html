@@ -1,10 +1,10 @@
-<div fxLayout="row" class="main-container bg-level-1">
-  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
+<div class="o-flex-row main-container bg-level-1">
+  <div class="o-flex-column o-layout-align-center-start o-flex">
 
-    <example-comp comp-name="CONTEXTMENU" [files]="getFiles()" fxFill>
+    <example-comp comp-name="CONTEXTMENU" [files]="getFiles()" class="o-flex-fill">
 
-      <div fxLayout="row" layout-padding fxFill>
-        <div [oContextMenu]="myOContextMenu" class="clickable" fxLayoutAlign="center center" layout-padding>
+      <div class="o-flex-row o-fill" layout-padding>
+        <div [oContextMenu]="myOContextMenu" class="clickable o-layout-align-center-center" layout-padding>
           <span>{{ 'CONTEXT_MENU_CLICKABLE_AREA' | oTranslate }}</span>
         </div>
         <o-context-menu #myOContextMenu>

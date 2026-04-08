@@ -1,6 +1,6 @@
 <example-comp #ex1 class="image-demo" collapsible="no" collapsed="no" comp-name="IMAGE.COMPONENT" [html]="html" [files]="files" (showSource)="onShowSource('image1',ex1)">
   <screen-configuration class="image-demo">
-    <div fxLayout="column" menu>
+    <div class="o-flex-column" menu>
       <span class="menu-title">{{ 'IMAGE.CONFIGURATION' | oTranslate }}</span>
       <mat-divider></mat-divider>
       <mat-slide-toggle (change)="updateCodeValue('showControl', $event.checked)" #showControlToggle checked="true">
@@ -27,7 +27,7 @@
     </div>
 
 
-    <div content fxFlex>
+    <div content class="o-flex">
       <div style="overflow:auto;">
         <o-image data="http://placekitten.com/1920/1080" [height]="height" [width]="width" [auto-fit]="autoFitToggle.checked"
           [enabled]="enabledToggle.checked" [read-only]="readOnlyToggle.checked" [show-controls]="showControlToggle.checked"

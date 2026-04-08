@@ -1,5 +1,5 @@
 import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MediaChange, MediaObserver } from '@ngbracket/ngx-layout';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs';
 
@@ -15,34 +15,30 @@ export class ScreenConfigurationComponent {
   @ViewChild('sidenav')
   public sidenav: MatSidenav;
   protected subscription: Subscription = new Subscription();
-  protected media: MediaObserver;
+  protected media: BreakpointObserver;
 
   constructor(injector: Injector) {
-    this.media = injector.get(MediaObserver);
+    this.media = injector.get(BreakpointObserver);
   }
 
   ngAfterViewInit(): void {
     this.subscribeToMediaChanges();
-    if (this.media.isActive("xl")) {
+    if (this.media.isMatched(Breakpoints.XLarge)) {
       this.sidenav.opened = true;
     }
   }
 
   public subscribeToMediaChanges(): void {
-    this.subscription.add(this.media.asObservable().subscribe((change: MediaChange[]) => {
-      if (change && change[0]) {
-        switch (change[0].mqAlias) {
-          case 'xs':
-          case 'sm':
-          case 'md':
-          case 'lg':
-            this.sidenav.mode = "over";
-            break;
-          case 'xl':
+    this.subscription.add(
+      this.media.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+        .subscribe(result => {
+          if (result.breakpoints[Breakpoints.XLarge]) {
             this.sidenav.mode = "side";
-        }
-      }
-    }));
+          } else {
+            this.sidenav.mode = "over";
+          }
+        })
+    );
   }
 
   ngOnDestroy(): void {

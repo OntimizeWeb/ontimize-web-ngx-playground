@@ -1,5 +1,5 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.CUSTOM-BUTTON.COMPONENT" [files]="files">
-  <div fxLayout="row" fxLayoutAlign="end">
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.CUSTOM-BUTTON.COMPONENT" [files]="files">
+  <div class="o-flex-row o-layout-align-end-center">
     <button mat-button (click)="dv.changeView('grid')">Show grid</button>
     <button mat-button (click)="dv.changeView('table')">Show tabla</button>
   </div>
@@ -28,7 +28,7 @@
           <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <div fxLayout="column" fxLayoutAlign="center">Cost: {{item.price | currency}}</div>
+          <div class="o-flex-column o-layout-align-center">Cost: {{item.price | currency}}</div>
         </mat-card-content>
       </mat-card>
     </ng-template>

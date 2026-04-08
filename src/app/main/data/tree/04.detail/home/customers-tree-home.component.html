@@ -1,8 +1,8 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="TREE.DETAIL.COMPONENT" comp-desc="TREE.DETAIL.COMPONENT.DESC" [files]="files">
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="TREE.DETAIL.COMPONENT" comp-desc="TREE.DETAIL.COMPONENT.DESC" [files]="files">
 
-  <div fxLayout="row" fxLayoutAlign="center stretch" fxFlexFill>
+  <div class="o-flex-row o-layout-align-c-stretch o-flex-fill">
 
-    <o-tree controls="no" #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService" service="customers" entity="customerTree"
+    <o-tree controls="no" #treeview class="o-flex" root-title="CUSTOMERS" service-type="DummyService" service="customers" entity="customerTree"
       keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " query-on-init="true" route=":CUSTOMERID"
       select-all-checkbox="yes">
 
@@ -12,7 +12,7 @@
 
     </o-tree>
 
-    <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="75">
+    <div class="o-flex-column o-layout-align-c-stretch" style="flex:0 0 75%">
       <router-outlet></router-outlet>
     </div>
   </div>

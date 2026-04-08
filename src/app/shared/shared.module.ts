@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 
@@ -14,9 +15,9 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { MatButtonModule } from '@angular/material/button';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 @NgModule({
-  imports: [OntimizeWebModule, HighlightModule, MatButtonModule, ClipboardModule],
+  imports: [CommonModule, OntimizeWebModule, HighlightModule, MatButtonModule, ClipboardModule],
   declarations: [ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent],
   providers: [NavigationBarService, CollapsibleStateService, ConfigCollapsibleStateService],
-  exports: [OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent]
+  exports: [CommonModule, OntimizeWebModule, ExampleComponent, HighlightComponent, HeaderButtonMenuComponent, CollapsibleMenuComponent, ScreenConfigurationComponent, InputsCardComponent]
 })
 export class SharedModule { }

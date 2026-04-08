@@ -1,4 +1,4 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFlexFill comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-basic')"
+<example-comp #ex collapsible="no" collapsed="no" class="o-flex-fill" comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-basic')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
 
   <screen-configuration comp-name="GRID" #sidenavComp>
@@ -7,7 +7,7 @@
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
         <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Episodes">
       </mat-form-field>
-      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+      <div class="o-flex-row o-layout-align-start-center o-gap-8">
         <mat-form-field layout-padding>
           <mat-label>{{ 'GRID.NUM_COLUMNS' | oTranslate }}</mat-label>
           <input (change)="updateCodeValue('columns', $event.target.value)" matInput #colsInput type="number" [(ngModel)]="columns" min="1">
@@ -18,37 +18,37 @@
             min="1">
         </mat-form-field>
       </div>
-      <div fxLayout="column">
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="updateCodeValue('controls', $event.checked)" #showControlsToggle [checked]="true" fxFlex>
+      <div class="o-flex-column">
+        <div class="o-flex-row o-layout-align-center-center o-gap-8" layout-padding>
+          <mat-slide-toggle (change)="updateCodeValue('controls', $event.checked)" #showControlsToggle [checked]="true" class="o-flex">
             {{ 'GRID.SHOW_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="updateCodeValue('footer', $event.checked)" #showFooterToggle [checked]="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('footer', $event.checked)" #showFooterToggle [checked]="true" class="o-flex">
             {{ 'GRID.SHOW_FOOTER' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="updateCodeValue('refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" fxFlex>
+        <div class="o-flex-row o-layout-align-center-center o-gap-8" layout-padding>
+          <mat-slide-toggle (change)="updateCodeValue('refreshButton', $event.checked)" #refreshButtonToggle [checked]="true" class="o-flex">
             {{ 'REFRESH_BUTTON' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle [checked]="false" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle [checked]="false" class="o-flex">
             {{ 'INSERT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="updateCodeValue('showPageSize', $event.checked)" #showPageSizeToggle [checked]="true" fxFlex>
+        <div class="o-flex-row o-layout-align-center-center o-gap-8" layout-padding>
+          <mat-slide-toggle (change)="updateCodeValue('showPageSize', $event.checked)" #showPageSizeToggle [checked]="true" class="o-flex">
             {{ 'GRID.SHOW_PAGINATION' | oTranslate }}
           </mat-slide-toggle>
-          <mat-form-field fxFlex>
+          <mat-form-field class="o-flex">
             <mat-label>{{ 'GRID.PAGE_SIZE' | oTranslate }}</mat-label>
             <input (change)="updateCodeValue('queryRows', $event.target.value)" matInput #pageSizeInput type="number" [(ngModel)]="pagesize" min="1">
           </mat-form-field>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="updateCodeValue('orderable', $event.checked)" #showSortToggle [checked]="true" fxFlex>
+        <div class="o-flex-row o-layout-align-center-center o-gap-8" layout-padding>
+          <mat-slide-toggle (change)="updateCodeValue('orderable', $event.checked)" #showSortToggle [checked]="true" class="o-flex">
             {{ 'GRID.SHOW_SORT' | oTranslate }}
           </mat-slide-toggle>
-          <mat-form-field fxFlex>
+          <mat-form-field class="o-flex">
             <mat-select (selectionChange)="updateCodeValue('sortColumn', $event.value)" placeholder="Sort column" [(ngModel)]="sortColumn"
               (change)="reloadGridData(grid)">
               <mat-option *ngFor="let column of ['name','email']" [value]="column">
@@ -57,11 +57,11 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px" layout-padding>
-          <mat-slide-toggle (change)="updateCodeValue('quickfilter', $event.checked)" #quickFilterToggle [checked]="true" fxFlex>
+        <div class="o-flex-row o-layout-align-center-center o-gap-8" layout-padding>
+          <mat-slide-toggle (change)="updateCodeValue('quickfilter', $event.checked)" #quickFilterToggle [checked]="true" class="o-flex">
             {{ 'QUICK_FILTER' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="updateCodeValue('paginationControls', $event.checked)" #paginationControlsToggle [checked]="false" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('paginationControls', $event.checked)" #paginationControlsToggle [checked]="false" class="o-flex">
             {{ 'GRID.PAGINATION_CONTROLS' | oTranslate }}
           </mat-slide-toggle>
         </div>
@@ -74,7 +74,7 @@
       quick-filter-columns="name;episode" [sort-column]="sortColumn" [controls]="showControlsToggle.checked"
       [refresh-button]="refreshButtonToggle.checked" [pagination-controls]="paginationControlsToggle.checked" [gutter-size]="gutterSizeInput.value"
       [show-footer]="showFooterToggle.checked" [insert-button]="insertButtonToggle.checked" fixed-header="yes" [ngStyle]="{'height':'600px'}"
-      fxFlex="calc(100% - 42px)">
+      style="flex: 1 1 calc(100% - 42px); max-width: calc(100% - 42px)">
       <o-grid-item *ngFor="let ep of grid.dataArray">
         <div class="card-inner">
             <mat-card class="fill-minus-8" appearance="outlined">
@@ -91,7 +91,7 @@
                 <p><strong>Air date:</strong> {{ ep.air_date }}</p>
               </mat-card-content>
 
-              <mat-card-actions fxFlexAlign="end">
+              <mat-card-actions style="align-self: flex-end">
                 <button mat-raised-button color="primary">View details</button>
               </mat-card-actions>
 

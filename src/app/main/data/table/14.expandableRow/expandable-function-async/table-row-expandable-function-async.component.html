@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLEEXPANDABLE.BUTTON.EXPANDABLEFUNCTIONASYNC_TITLE"
   comp-desc="TABLEEXPANDABLE.BUTTON.EXPANDABLEFUNCTIONASYNC_DESC" [files]="getFiles('o-table-row-expandable-function-async')">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding style="height:500px">
-    <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+  <div class="o-flex-row o-layout-align-c-start" layout-padding style="height:500px">
+    <o-table class="o-flex-fill" #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
       store-state="false" query-rows="10" fixed-header="yes" [show-expandable-icon-function]="context" show-charts-on-demand-option="no">
       <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">

@@ -1,43 +1,43 @@
-<div fxLayout="row" class="main-container bg-level-1">
+<div class="o-flex-row main-container bg-level-1">
   <collapsible-menu>
-    <a mat-button class="menu-item" routerLink="/main/data/table/basic" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/fixed" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/renderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.RENDERERS' | oTranslate
+    <a mat-button class="menu-item" routerLink="/main/data/table/basic" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.BASIC' | oTranslate }}</a>
+    <a mat-button class="menu-item" routerLink="/main/data/table/fixed" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.FIXED' | oTranslate }}</a>
+    <a mat-button class="menu-item" routerLink="/main/data/table/renderer" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.RENDERERS' | oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/custrenderer" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/custrenderer" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.CUSTOM_RENDERERS' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/editor" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.EDITORS' | oTranslate
+    <a mat-button class="menu-item" routerLink="/main/data/table/editor" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.EDITORS' | oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/total" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/calculatedcolumn" routerLinkActive="active" fxFlex>{{
+    <a mat-button class="menu-item" routerLink="/main/data/table/total" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.TOTALS' | oTranslate }}</a>
+    <a mat-button class="menu-item" routerLink="/main/data/table/calculatedcolumn" routerLinkActive="active" class="o-flex">{{
       'TABLE.BUTTON.CALCULATED_COLUMN' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/pagination" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.PAGINATION' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/pagination" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.PAGINATION' |
       oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/contextmenu" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.CONTEXT_MENU' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/contextmenu" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.CONTEXT_MENU' |
       oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/horizontalscroll" routerLinkActive="active" fxFlex>{{
+    <a mat-button class="menu-item" routerLink="/main/data/table/horizontalscroll" routerLinkActive="active" class="o-flex">{{
       'TABLE.BUTTON.HORIZONTAL_SCROLL' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/insertablerow" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.INSERTABLE_ROW' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/insertablerow" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.INSERTABLE_ROW' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/align" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ALIGN' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/multipleSort" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.MULTIPLE_SORT' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/align" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.ALIGN' | oTranslate }}</a>
+    <a mat-button class="menu-item" routerLink="/main/data/table/multipleSort" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.MULTIPLE_SORT' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/rowexpandable" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_EXPANDABLE' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/rowexpandable" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.ROW_EXPANDABLE' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/table/rowgroup" routerLinkActive="active" fxFlex>{{ 'TABLE.BUTTON.ROW_GROUPING' |
+    <a mat-button class="menu-item" routerLink="/main/data/table/rowgroup" routerLinkActive="active" class="o-flex">{{ 'TABLE.BUTTON.ROW_GROUPING' |
       oTranslate
       }}</a>
   </collapsible-menu>
 
-  <div fxFlex="calc(100% - 300px)" class="left-border" fxLayout="column">
+  <div style="flex:0 0 calc(100% - 300px)" class="left-border o-flex-column">
     <header-button-menu comp-name="{{ 'TABLE.COMPONENT' | oTranslate }}" comp-desc="{{ 'TABLE.COMPONENT.DESC' | oTranslate }}">
     </header-button-menu>
     <router-outlet></router-outlet>

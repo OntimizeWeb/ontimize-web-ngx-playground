@@ -1,13 +1,13 @@
 <example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
   <o-form editable-detail="false" show-header="no">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-radio attr="radio" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="array" [data]="value"
         value-column="key" columns="key;value" visible-columns="value"></o-radio>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <div fxLayout="row">
+      <div class="o-flex-row">
         <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="array"
           [data]="value" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"></o-radio>
         <o-radio attr="radio-editable2" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="array"
@@ -15,7 +15,7 @@
           layout="row"></o-radio>
       </div>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-radio attr="radio-disabled" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="array"
         [data]="value" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>

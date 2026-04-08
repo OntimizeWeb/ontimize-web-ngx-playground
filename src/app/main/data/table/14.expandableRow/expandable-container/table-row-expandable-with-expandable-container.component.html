@@ -1,7 +1,7 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER"
   comp-desc="TABLE.EXAMPLE_ROW_EXPANDABLE_WITH_EXPANDABLE_CONTAINER_DESC" [files]="getFiles('o-table-row-expandable-with-expandable-container')">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding style="height:500px">
-    <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+  <div class="o-flex-row o-layout-align-center-start" layout-padding style="height:500px">
+    <o-table class="o-flex-fill" #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
       title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
       store-state="false" query-rows="10" fixed-header="yes" show-charts-on-demand-option="no">
       <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">

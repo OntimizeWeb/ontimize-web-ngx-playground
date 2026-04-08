@@ -1,6 +1,6 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.EXAMPLE_RENDERER_ADVANCE" [files]="getFiles('o-table-renderer-advance')">
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
-    <o-table fxFill #table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" keys="CARDID"
+  <div class="o-flex-row o-layout-align-center-start" layout-padding>
+    <o-table class="o-flex-fill" #table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" keys="CARDID"
       visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" layout-padding title="ACCOUNTS" [static-data]="data" sort-columns="ACCOUNT:DESC"
       query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
       edition-mode="none" detail-mode="none" show-charts-on-demand-option="no">

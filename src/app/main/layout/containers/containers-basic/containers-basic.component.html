@@ -1,4 +1,4 @@
-<div fxLayout="column" layout-padding fxFlex>
+<div class="o-flex-column o-flex" layout-padding>
   <div layout-padding>
     <h3>Overview</h3>
     <p>According to layout of the container (row or column) the children can be distributed using the <code>layout-align</code>
@@ -7,7 +7,7 @@
       will be aligned according the layout's direction, and the second defines how the children will be aligned
       perpendicular to the layout's direction.</p>
   </div>
-  <div fxLayout="row" fxLayoutAlign="start center" layout-padding>
+  <div class="o-flex-row o-layout-align-start-center" layout-padding>
     <span>Select container layout direction: </span>
     <mat-radio-group [(ngModel)]="layout" class="radio-group-horizontal" layout-padding>
       <mat-radio-button value="column"> {{ 'COLUMN' | oTranslate }}</mat-radio-button>
@@ -17,7 +17,7 @@
 
   <example-comp #ex comp-name="CONTAINERS" [html]="html" [files]="getFiles()" (showSource)="onShowSource(ex)" >
     <screen-configuration>
-      <div fxLayout="column" menu>
+      <div class="o-flex-column" menu>
         <span class="menu-title">Configuration</span>
         <mat-divider></mat-divider>
         <mat-form-field>
@@ -33,14 +33,14 @@
 
         <span class="alignment" layout-padding>Layout align (<code>layout-align</code>): {{ getLayoutAlign() }}</span>
         <mat-divider></mat-divider>
-        <div fxLayout="row" fxLayoutAlign="space-around stretch">
-          <div fxLayout="column" fxFlex layout-padding>
+        <div class="o-flex-row o-layout-align-sa-center">
+          <div class="o-flex-column o-flex" layout-padding>
             <span class="alignment-label">Alignment in Layout Direction ({{getMainDirection()}})</span>
             <mat-radio-group class="radio-group-vertical" #layHor (change)="onLayoutHorizontalChange($event)">
               <mat-radio-button *ngFor="let d of dataHorizontal" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
             </mat-radio-group>
           </div>
-          <div fxLayout="column" fxFlex layout-padding>
+          <div class="o-flex-column o-flex" layout-padding>
             <span class="alignment-label">Alignment in Perpendicular Direction ({{getSecondaryDirection()}})</span>
             <mat-radio-group class="radio-group-vertical" #layVer (change)="onLayoutVerticalChange($event)">
               <mat-radio-button *ngFor="let d of dataVertical" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
@@ -50,13 +50,13 @@
       </div>
       <div content>
         <o-row *ngIf="layout === 'row'" attr="row1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
-          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
+          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
           <div layout-padding style="background-color:#3498db;">One</div>
           <div layout-padding style="background-color:#e74c3c;">Two</div>
           <div layout-padding style="background-color:#f9c922;">Three</div>
         </o-row>
         <o-column *ngIf="layout === 'column'" attr="col1" [title]="title.value" [icon]="icon.value" [layout-align]="getLayoutAlign()"
-          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" fxFlex="55">
+          [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
           <div layout-padding style="background-color:#3498db;">One</div>
           <div layout-padding style="background-color:#e74c3c;">Two</div>
           <div layout-padding style="background-color:#f9c922;">Three</div>
