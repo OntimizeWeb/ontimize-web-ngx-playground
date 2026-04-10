@@ -138,7 +138,11 @@ npx ng generate @angular/core:control-flow
 - Volumen bajo — la mayoría de templates son declarativos con componentes Ontimize
 - Revisar diff después del schematic
 
-### 3.2 Verificación
+### 3.2 No aplica en la playground
+- **Migración `inject()`**: la app no tiene servicios/componentes con `Injector.get()` propios — todo el DI va a través del framework
+- **Guards funcionales**: sin guards propios en la app demo
+
+### 3.3 Verificación
 - Build sin errores
 - Revisión visual de las páginas con `*ngIf`/`*ngFor`
 
@@ -192,11 +196,12 @@ npx ng generate @angular/core:control-flow
 - Los archivos que ya usan `@use '@angular/material' as mat` están OK
 - Los archivos que usan `ontimize-style.scss` dependen del framework — cuando el framework migre M3, estos se actualizan
 
-### 5.3 Nota sobre M3
+### 5.3 Nota sobre M3 ⏳ PENDIENTE (bloqueado por framework)
 - Angular Material 18 soporta M3 pero **no es obligatorio**
 - Los temas siguen funcionando con M2 en Angular 18
 - La migración a M3 se hará cuando el framework `ontimize-web-ngx` migre su theming (subtarea 3.2 del plan del framework)
 - **En las apps demo**: Actualizar cuando el framework publique su nuevo theming API
+- **Alcance**: `src/styles.scss`, `src/app/main/about/about.theme.scss`, `src/app/main/main-theme.scss`, `src/assets/css/app.scss`
 
 ---
 
@@ -251,6 +256,59 @@ Esta app es el **banco de pruebas principal** del framework. Verificar CADA secc
 - [ ] Layout responsive (fxLayout responsive → CSS media queries)
 - [ ] Gallery component (si ontimize-web-ngx-gallery@18 disponible)
 - [ ] Code highlighting funciona (ngx-highlightjs)
+
+---
+
+## PASO 8: Typed Forms ⏳ PENDIENTE (bajo prioridad)
+
+### 8.1 Alcance
+- La app tiene usos puntuales de `UntypedFormControl` (ej. `validators.component.ts`)
+- Migrando `UntypedFormControl` → `AbstractControl` o tipado específico según contexto
+
+### 8.2 No aplica masivamente
+- La mayoría del manejo de formularios está en los componentes de `ontimize-web-ngx`
+- Esta app no tiene formularios custom con `UntypedFormGroup` complejos
+
+### 8.3 Acciones
+- Revisar y migrar los usages de `UntypedFormControl` en código propio de la app
+- **Nota**: `validators.component.ts` ya migrado a `AbstractControl` en la migración 15→18
+
+---
+
+## FASE TRANSVERSAL: Dependencia del framework
+
+### Orden de pasos bloqueados por el framework
+
+La playground es una **app consumidora** del framework — varios pasos están bloqueados hasta que `ontimize-web-ngx@18` implemente las correspondientes APIs:
+
+| Paso playground | Bloqueado por framework | Tarea framework |
+|---|---|---|
+| PASO 5.3 (M3 theming) | `ontimize-web-ngx` migre theming a M3 | Subtarea 3.2 del plan del framework |
+| PASO 6 (Standalone) | `ontimize-web-ngx` exporte `provideOntimizeWeb()` | Subtarea 3.3 del plan del framework |
+
+### Workflow de actualización tgz
+
+Cuando el framework o addons publiquen nuevas versiones locales:
+
+```bash
+export PATH="$HOME/AppData/Local/nvs/node/20.18.3/x64:$PATH"
+
+# 1. Rebuild framework
+cd C:/work/ontimize-web-ngx/18.x.x/ontimize-web-ngx
+npm run build && cd dist && npm pack
+
+# 2. Rebuild extra-components (si hay cambios)
+cd C:/work/ontimize-web-ngx/18.x.x/ontimize-web-ngx-extra-components
+npm run build && npm pack dist/ && mv *.tgz dist/
+
+# 3. Rebuild gallery (si hay cambios)
+cd C:/work/ontimize-web-ngx/18.x.x/ontimize-web-ngx-gallery
+npm run build && npm pack dist/ && mv *.tgz dist/
+
+# 4. Reinstalar en playground
+cd C:/work/ontimize-web-ngx/18.x.x/ontimize-web-ngx-playground
+npm install --legacy-peer-deps
+```
 
 ---
 
