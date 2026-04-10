@@ -215,8 +215,8 @@ npx ng generate @angular/core:control-flow
 
 ### 6.2 Dependencia del framework
 - Cuando `ontimize-web-ngx@18` exporte `provideOntimizeWeb()` como alternativa standalone al `OntimizeWebModule.forRoot()`, las apps podrán migrar
-- Los addons (`extra-components`, `gallery`) también deben migrar sus componentes a standalone antes de este paso
-- **Esta migración no se puede hacer hasta que el framework publique la API standalone**
+- Los addons (`extra-components`, `gallery`) pueden migrar sus componentes a standalone independientemente — no hay bloqueo técnico para ellos
+- **Esta migración de la app no se puede hacer hasta que el framework publique `provideOntimizeWeb()`** — sin esa API no hay forma de hacer `bootstrapApplication()` con la configuración de Ontimize
 
 ### 6.3 Pasos cuando esté disponible
 1. Migrar `main.ts` a `bootstrapApplication()` con `provideOntimizeWeb(CONFIG)`
@@ -286,7 +286,7 @@ La playground es una **app consumidora** del framework — varios pasos están b
 | Paso playground | Bloqueado por framework | Tarea framework |
 |---|---|---|
 | PASO 5.3 (M3 theming) | `ontimize-web-ngx` migre theming a M3 | Subtarea 3.2 del plan del framework |
-| PASO 6 (Standalone) | `ontimize-web-ngx` exporte `provideOntimizeWeb()` | Subtarea 3.3 del plan del framework |
+| PASO 6 (Standalone bootstrap) | `ontimize-web-ngx` exporte `provideOntimizeWeb()` | Subtarea 3.3 del plan del framework |
 
 ### Workflow de actualización tgz
 
