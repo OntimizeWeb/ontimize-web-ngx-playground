@@ -19,6 +19,7 @@
 | SCSS M2 theming (prefijos `m2-`) | ✅ Completado |
 | Instalar addons Angular 18 (extra-components + gallery) | ✅ Completado |
 | Build playground: 0 errores | ✅ Completado |
+| Control flow migration (`*ngIf`→`@if`, `*ngFor`→`@for`) | ✅ Completado |
 
 ---
 
@@ -67,6 +68,11 @@ npm install --legacy-peer-deps
 - `UntypedFormControl` → `AbstractControl` en `validators.component.ts`
 - `CommonModule` añadido a `SharedModule`
 - `@` escapados con `&#64;` en templates (control flow Angular 17+)
+
+### Control flow migration (10 abril 2026)
+
+- **21 templates HTML** migrados: `*ngIf` → `@if`, `*ngFor` → `@for` via `ng generate @angular/core:control-flow`
+- Afectados: home, main, shared, data (grid, lists, table, tree), layout containers, modals, inputs events
 
 ### Addons instalados (10 abril 2026)
 

@@ -128,7 +128,7 @@ En Angular 18 con builder `application`, los polyfills se configuran en `angular
 
 ---
 
-## PASO 3: Control flow migration (`*ngIf` → `@if`, `*ngFor` → `@for`) ⏳ PENDIENTE
+## PASO 3: Control flow migration (`*ngIf` → `@if`, `*ngFor` → `@for`) ✅ COMPLETADO
 
 ### 3.1 Migración automática
 ```bash
