@@ -23,8 +23,10 @@
         <div style="flex: 1 1 calc(100% - 42px); max-width: calc(100% - 42px)">
           <ng-content select="[content]"></ng-content>
         </div>
-        <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" *ngIf="!sidenav.opened" (click)="toggle()"
+        @if (!sidenav.opened) {
+          <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" (click)="toggle()"
           class="conf-btn o-layout-align-end-start" id="conf-btn-id"></o-button>
+        }
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -1,13 +1,19 @@
 <div class="o-flex-row o-layout-align-start-center header-container">
   <div class="o-flex-column o-layout-align-start-start">
     <div class="o-flex-row o-layout-align-start-center">
-      <button mat-icon-button *ngIf="!expanded" (click)="expand()" class="col-button">
-        <mat-icon svgIcon="ontimize:menu"></mat-icon>
-      </button>
+      @if (!expanded) {
+        <button mat-icon-button (click)="expand()" class="col-button">
+          <mat-icon svgIcon="ontimize:menu"></mat-icon>
+        </button>
+      }
 
       <h3>{{compName}}</h3>
     </div>
-    <p *ngIf="expanded">{{compDesc}}</p>
-    <p *ngIf="!expanded" class="description">{{compDesc}}</p>
+    @if (expanded) {
+      <p>{{compDesc}}</p>
+    }
+    @if (!expanded) {
+      <p class="description">{{compDesc}}</p>
+    }
   </div>
 </div>

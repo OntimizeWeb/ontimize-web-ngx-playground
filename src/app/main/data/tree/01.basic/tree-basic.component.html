@@ -32,9 +32,11 @@
         </div>
       </o-column>
       <o-column class="event-column" title="{{ 'TREE.OUTPUTS' | oTranslate }}" elevation="0" layout-padding layout-align="center">
-        <div *ngFor="let ev of treeEvents">
-          {{ ev.event }}
-        </div>
+        @for (ev of treeEvents; track ev) {
+          <div>
+            {{ ev.event }}
+          </div>
+        }
       </o-column>
     </o-column>
   </div>

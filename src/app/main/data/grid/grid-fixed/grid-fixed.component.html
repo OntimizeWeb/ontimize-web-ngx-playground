@@ -21,30 +21,31 @@
       [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="20" grid-item-height="2:1" quick-filter="yes" class="o-flex" pageable="yes"
       cols="2" gutter-size="16px" quick-filter-columns="name">
 
-      <o-grid-item *ngFor="let list of grid.dataArray">
-        <div class="card-inner">
-          <mat-card class="fill-minus-8" appearance="outlined">
-            <div class="o-flex-fill" fxlayout="row">
-              <img mat-card-image src="{{list.image}}" class="o-flex-fill" style="flex: 1 1 35%; max-width: 35%; transition: opacity 0.5s; object-position: center center; object-fit: cover" />
-              <div style="flex: 1 1 65%; max-width: 65%">
-                <mat-card-header>
-                  <mat-card-title>{{list.name}}</mat-card-title>
-                  <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                  <p>
-                    <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
-                  </p>
-                  <p>
-                    <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
-                  </p>
-                </mat-card-content>
+      @for (list of grid.dataArray; track list) {
+        <o-grid-item>
+          <div class="card-inner">
+            <mat-card class="fill-minus-8" appearance="outlined">
+              <div class="o-flex-fill" fxlayout="row">
+                <img mat-card-image src="{{list.image}}" class="o-flex-fill" style="flex: 1 1 35%; max-width: 35%; transition: opacity 0.5s; object-position: center center; object-fit: cover" />
+                <div style="flex: 1 1 65%; max-width: 65%">
+                  <mat-card-header>
+                    <mat-card-title>{{list.name}}</mat-card-title>
+                    <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p>
+                      <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
+                    </p>
+                    <p>
+                      <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
+                    </p>
+                  </mat-card-content>
+                </div>
               </div>
-            </div>
-          </mat-card>
+            </mat-card>
           </div>
-
-      </o-grid-item>
+        </o-grid-item>
+      }
     </o-grid>
 
   </screen-configuration>

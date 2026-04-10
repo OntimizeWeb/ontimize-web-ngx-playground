@@ -2,12 +2,16 @@
   show-language-selector="no" show-title="yes" class="bg-level-0">
   <o-app-layout-header position="end">
 
-    <button *ngIf="light" mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>light_mode</mat-icon>
-    </button>
-    <button *ngIf="!light" mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>dark_mode</mat-icon>
-    </button>
+    @if (light) {
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>light_mode</mat-icon>
+      </button>
+    }
+    @if (!light) {
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>dark_mode</mat-icon>
+      </button>
+    }
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setDarkMode(false)">
         <mat-icon>light_mode</mat-icon>

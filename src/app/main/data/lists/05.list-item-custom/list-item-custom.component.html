@@ -6,15 +6,17 @@
 
       <o-list class="o-flex" #list attr="list" keys="id" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="users">
 
-        <mat-card appearance="outlined" *ngFor="let row of list.dataArray" [o-list-item]="row">
-          <mat-card-header>
-            <div mat-card-avatar>
-              <img alt="Row image" src="{{ row.image }}" class="o-flex-fill" />
-            </div>
-            <mat-card-title>{{ row.name }}</mat-card-title>
-            <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
+        @for (row of list.dataArray; track row) {
+          <mat-card appearance="outlined" [o-list-item]="row">
+            <mat-card-header>
+              <div mat-card-avatar>
+                <img alt="Row image" src="{{ row.image }}" class="o-flex-fill" />
+              </div>
+              <mat-card-title>{{ row.name }}</mat-card-title>
+              <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        }
 
       </o-list>
 

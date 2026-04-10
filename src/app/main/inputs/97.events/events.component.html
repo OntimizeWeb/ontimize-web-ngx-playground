@@ -17,7 +17,7 @@
             (onBlur)="onBlur(input)">
           </o-text-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(input, 'James Alam')"><span class="ellipsis">setValue James
-              Alam</span></button>
+          Alam</span></button>
         </div>
         <!-- CURRENCY-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -26,7 +26,7 @@
             (onBlur)="onBlur(currency)">
           </o-currency-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(currency, 50)"><span class="ellipsis">setValue
-              50</span></button>
+          50</span></button>
         </div>
         <!-- INTEGER-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -51,7 +51,7 @@
             (onBlur)="onBlur(percent)">
           </o-percent-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(percent, 0.66)"><span class="ellipsis">setValue
-              0.66</span></button>
+          0.66</span></button>
         </div>
         <!-- DATE-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -60,7 +60,7 @@
             (onFocus)="onFocus(date)" (onBlur)="onBlur(date)">
           </o-date-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(date, 1538524800000)"><span class="ellipsis">setValue
-              2018-10-03</span></button>
+          2018-10-03</span></button>
         </div>
         <!-- HOUR-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -69,7 +69,7 @@
             (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)">
           </o-hour-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(hour, '08:00 PM')"><span class="ellipsis">setValue 08:00
-              PM</span></button>
+          PM</span></button>
         </div>
         <!-- COMBO-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -77,7 +77,7 @@
             visible-columns="value" required="yes" read-only="false" (onValueChange)="onValueChange($event)" style="flex: 1 1 65%; max-width: 65%" (onChange)="onChange(combo)">
           </o-combo>
           <button class="eventButton" class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(combo,4)"><span class="ellipsis">setValue
-              Germany</span></button>
+          Germany</span></button>
         </div>
       </div>
       <div class="o-flex-column o-layout-align-start-stretch" style="flex: 1 1 48%; max-width: 48%">
@@ -88,7 +88,7 @@
             style="flex: 1 1 65%; max-width: 65%" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)" (onBlur)="onBlur(listpicker)">
           </o-list-picker>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(listpicker, '4')"><span class="ellipsis">setValue
-              Germany</span></button>
+          Germany</span></button>
         </div>
 
         <!-- RADIO-->
@@ -97,27 +97,27 @@
             visible-columns="value" style="flex: 1 1 65%; max-width: 65%" (onChange)="onChange(radio)" (onValueChange)="onValueChange($event)" read-only="no" layout="row">
           </o-radio>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(radio, '4')"><span class="ellipsis">setValue
-              Germany</span></button>
+          Germany</span></button>
         </div>
         <!-- TIME-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
           <o-time-input #time style="flex: 1 1 65%; max-width: 65%" attr="time" label="INPUT.BUTTON.TIME" [data]="values.time" read-only="no" required="yes" clear-button="yes" format="24"
             (onValueChange)="onValueChange($event)" clear-button="yes"  (onChange)="onChange(time)" (onFocus)="onFocus(time)"
-            (onBlur)="onBlur(time)"></o-time-input>
+          (onBlur)="onBlur(time)"></o-time-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(time,1535358788828)"><span class="ellipsis">setValue
-              1535358788828</span></button>
+          1535358788828</span></button>
         </div>
         <!-- SLIDER-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
           <o-slider #slider attr="slider" label="INPUT.SLIDER" [data]="values.slider" read-only="no" read-only="no"
-            (onValueChange)="onValueChange($event)" (onChange)="onChange(slider)" style="flex: 1 1 65%; max-width: 65%"></o-slider>
+          (onValueChange)="onValueChange($event)" (onChange)="onChange(slider)" style="flex: 1 1 65%; max-width: 65%"></o-slider>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(slider,85)"><span class="ellipsis">setValue 85</span></button>
         </div>
         <!-- FILE-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
           <o-file-input style="flex: 1 1 65%; max-width: 65%" #file attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)" read-only="no" required="yes"
             accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes" layout-padding (onValueChange)="onValueChange($event)"
-            (onChange)="onChange(file)" clear-button="yes"></o-file-input>
+          (onChange)="onChange(file)" clear-button="yes"></o-file-input>
         </div>
         <!-- DATERAGE-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
@@ -133,9 +133,9 @@
         <!-- CHECKBOX-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
           <o-checkbox #check attr="checkbox" label="INPUT.BUTTON.CHECKBOX" [data]="values.checkbox" read-only="no"
-            (onValueChange)="onValueChange($event)" (onChange)="onChange(check)" style="flex: 1 1 65%; max-width: 65%"></o-checkbox>
+          (onValueChange)="onValueChange($event)" (onChange)="onChange(check)" style="flex: 1 1 65%; max-width: 65%"></o-checkbox>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(check,false)"><span class="ellipsis">setValue
-              false</span></button>
+          false</span></button>
         </div>
       </div>
     </div>
@@ -150,16 +150,22 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-list dense class="console" style="min-height:200px">
-      <mat-list-item *ngFor="let log of consoleLog">
-        Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
-        <ng-container *ngIf="showNewAndOldValue(log)">:: change old value: <b> {{ log.oldValue }}</b>&nbsp; by new
-          value: <b>{{ log.newValue === undefined ? 'undefined' : log.newValue }}</b>,
-        </ng-container>
-        <ng-container *ngIf="showValue(log)">:: value: <b> {{ log.value === undefined ? 'undefined' : log.value }}</b>
-        </ng-container>
-        <ng-container *ngIf="showTypeEvent(log)"> this change is of type &nbsp;<b>{{ log.type }}</b></ng-container>
-        <mat-divider></mat-divider>
-      </mat-list-item>
+      @for (log of consoleLog; track log) {
+        <mat-list-item>
+          Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
+          @if (showNewAndOldValue(log)) {
+            :: change old value: <b> {{ log.oldValue }}</b>&nbsp; by new
+            value: <b>{{ log.newValue === undefined ? 'undefined' : log.newValue }}</b>,
+          }
+          @if (showValue(log)) {
+            :: value: <b> {{ log.value === undefined ? 'undefined' : log.value }}</b>
+          }
+          @if (showTypeEvent(log)) {
+            this change is of type &nbsp;<b>{{ log.type }}</b>
+          }
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      }
     </mat-list>
   </o-form>
 </example-comp>

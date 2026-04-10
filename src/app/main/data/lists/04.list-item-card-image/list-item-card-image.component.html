@@ -73,10 +73,11 @@
         </mat-radio-group>
       </div>
     </div>
-      <o-list content #list class="o-flex-fill" attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
-        [static-data]="users" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"
-        row-height="medium" detail-mode="none">
-        <o-list-item *ngFor="let row of list.dataArray">
+    <o-list content #list class="o-flex-fill" attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
+      [static-data]="users" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"
+      row-height="medium" detail-mode="none">
+      @for (row of list.dataArray; track row) {
+        <o-list-item>
           <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}"
             [avatar]="avatarToggle.checked ? row.thumbnailUrl : undefined" [image]="imageToggle.checked ? row.image : undefined"
             [action-1-text]="action1Toggle.checked ? action1Text.value : undefined"
@@ -85,6 +86,7 @@
             [collapsed]="collapsedToggle.checked">
           </o-list-item-card-image>
         </o-list-item>
-      </o-list>
+      }
+    </o-list>
   </screen-configuration>
 </example-comp>

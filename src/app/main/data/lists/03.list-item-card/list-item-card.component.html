@@ -60,12 +60,14 @@
     <o-list content #list class="o-flex-fill" attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id" [static-data]="staticData"
       [refresh-button]="refreshButtonToggle.checked" [quick-filter]="quickFilterToggle.checked" [insert-button]="insertButtonToggle.checked"
       row-height="medium" detail-mode="none">
-      <o-list-item *ngFor="let row of list.dataArray">
-        <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
-          image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
-          [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
-        </o-list-item-card>
-      </o-list-item>
+      @for (row of list.dataArray; track row) {
+        <o-list-item>
+          <o-list-item-card #itemCard title="{{ row.username }}" subtitle="{{ row.name }}" [show-image]="showImageToggle.checked"
+            image="{{ row.image }}" [action-1-text]="action1Toggle.checked ? actionText1.value : undefined"
+            [action-2-text]="action2Toggle.checked ? actionText2.value : undefined" (action-1)="onAction1()" (action-2)="onAction2()">
+          </o-list-item-card>
+        </o-list-item>
+      }
     </o-list>
   </screen-configuration>
 </example-comp>
