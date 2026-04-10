@@ -14,9 +14,11 @@
 
           <mat-form-field layout-padding>
             <mat-select (selectionChange)="updateCodeValue('tooltipPosition', $event.value)" #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
-              <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
-                {{positionOption}}
-              </mat-option>
+              @for (positionOption of positionOptions; track positionOption) {
+                <mat-option [value]="positionOption">
+                  {{positionOption}}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
 
@@ -32,7 +34,7 @@
           <div class="o-flex-column o-layout-align-center-center o-flex">
             <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
               [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value"
-              [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
+            [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
           </div>
         </o-form>
       </screen-configuration>

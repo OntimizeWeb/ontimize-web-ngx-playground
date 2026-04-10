@@ -25,13 +25,15 @@
         <mat-slide-toggle (change)="updateCodeValue('insertButton', $event.checked)" #insertButtonToggle class="o-flex">
           {{ 'INSERT_BUTTON' | oTranslate }}
         </mat-slide-toggle>
-        <mat-form-field *ngIf="insertButtonToggle.checked" class="o-flex">
-          <mat-label>{{'LIST.INSERT_BUTTON_POSITION' | oTranslate}}</mat-label>
-          <mat-select (selectionChange)="updateCodeValue('insertButtonPosition', $event.value)" [(value)]="insertButtonPosition">
-            <mat-option value="top">Top</mat-option>
-            <mat-option value="bottom">Bottom</mat-option>
-          </mat-select>
-        </mat-form-field>
+        @if (insertButtonToggle.checked) {
+          <mat-form-field class="o-flex">
+            <mat-label>{{'LIST.INSERT_BUTTON_POSITION' | oTranslate}}</mat-label>
+            <mat-select (selectionChange)="updateCodeValue('insertButtonPosition', $event.value)" [(value)]="insertButtonPosition">
+              <mat-option value="top">Top</mat-option>
+              <mat-option value="bottom">Bottom</mat-option>
+            </mat-select>
+          </mat-form-field>
+        }
       </div>
       <div class="o-flex-row o-layout-align-center-center" layout-padding>
         <mat-slide-toggle (change)="updateCodeValue('deleteButton', $event.checked)" #deleteButtonToggle class="o-flex">
@@ -73,15 +75,17 @@
             <mat-slide-toggle (change)="updateCodeValue('showIcon', $event.checked)" #iconToggle>
               {{ 'SHOW_ICON' | oTranslate }}
             </mat-slide-toggle>
-            <mat-radio-group (change)="iconPosition = $event.value; updateCodeValue('iconPosition', $event.value);" *ngIf="iconToggle.checked"
-              layout-padding [value]="iconPosition" class="o-flex">
-              <mat-radio-button value="left" class="padding-3">
-                {{ 'LEFT' | oTranslate }}
-              </mat-radio-button>
-              <mat-radio-button value="right" class="padding-3">
-                {{ 'RIGHT' | oTranslate }}
-              </mat-radio-button>
-            </mat-radio-group>
+            @if (iconToggle.checked) {
+              <mat-radio-group (change)="iconPosition = $event.value; updateCodeValue('iconPosition', $event.value);"
+                layout-padding [value]="iconPosition" class="o-flex">
+                <mat-radio-button value="left" class="padding-3">
+                  {{ 'LEFT' | oTranslate }}
+                </mat-radio-button>
+                <mat-radio-button value="right" class="padding-3">
+                  {{ 'RIGHT' | oTranslate }}
+                </mat-radio-button>
+              </mat-radio-group>
+            }
           </div>
           <mat-form-field [hidden]="!iconToggle.checked" class="o-flex">
             <input (change)="updateCodeValue('icon', $event.target.value)" matInput #itemIcon placeholder="{{ 'ICON' | oTranslate }}" value="mood">
@@ -97,11 +101,13 @@
       [detail-button-in-row-icon]="detailButtonInRowIconInput.value" [edit-button-in-row]="editButtonInRowToggle.checked"
       [edit-button-in-row-icon]="editButtonInRowIconInput.value" detail-mode="none" [pagination-controls]="paginationButtonToggle.checked"
       page-size-options="5;10" [insert-button-position]="insertButtonPosition" [show-buttons-text]="showTextToggle.checked">
-      <o-list-item *ngFor="let row of list.dataArray">
-        <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="iconPosition"
-          (icon-action)="addToFavorites(row, item)" title="{{row.username}}" primary-text="{{ row.name }}" secondary-text="{{ row.email }}">
-        </o-list-item-text>
-      </o-list-item>
+      @for (row of list.dataArray; track row) {
+        <o-list-item>
+          <o-list-item-text #item [icon]="iconToggle.checked ? itemIcon.value : undefined" [icon-position]="iconPosition"
+            (icon-action)="addToFavorites(row, item)" title="{{row.username}}" primary-text="{{ row.name }}" secondary-text="{{ row.email }}">
+          </o-list-item-text>
+        </o-list-item>
+      }
     </o-list>
   </screen-configuration>
 

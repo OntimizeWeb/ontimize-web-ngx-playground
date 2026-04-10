@@ -32,30 +32,38 @@
           <div class="o-flex-column o-flex" layout-padding>
             <span class="alignment-label">Alignment in Layout Direction ({{getMainDirection()}})</span>
             <mat-radio-group class="radio-group-vertical" #layHor (change)="onLayoutHorizontalChange($event)">
-              <mat-radio-button *ngFor="let d of dataHorizontal" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
+              @for (d of dataHorizontal; track d) {
+                <mat-radio-button [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
+              }
             </mat-radio-group>
           </div>
           <div class="o-flex-column o-flex" layout-padding>
             <span class="alignment-label">Alignment in Perpendicular Direction ({{getSecondaryDirection()}})</span>
             <mat-radio-group class="radio-group-vertical" #layVer (change)="onLayoutVerticalChange($event)">
-              <mat-radio-button *ngFor="let d of dataVertical" [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
+              @for (d of dataVertical; track d) {
+                <mat-radio-button [value]="d.value" [checked]="d.checked">{{ d.label }}</mat-radio-button>
+              }
             </mat-radio-group>
           </div>
         </div>
       </div>
       <div content>
-        <o-row-collapsible *ngIf="layout === 'row'" attr="row1" [title]="title.value" [description]="description.value" [icon]="icon.value"
-          [layout-align]="getLayoutAlign()" [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
-          <div layout-padding style="background-color:#3498db;">One</div>
-          <div layout-padding style="background-color:#e74c3c;">Two</div>
-          <div layout-padding style="background-color:#f9c922;">Three</div>
-        </o-row-collapsible>
-        <o-column-collapsible *ngIf="layout === 'column'" attr="col1" [title]="title.value" [description]="description.value" [icon]="icon.value"
-          [layout-align]="getLayoutAlign()" [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
-          <div layout-padding style="background-color:#3498db;">One</div>
-          <div layout-padding style="background-color:#e74c3c;">Two</div>
-          <div layout-padding style="background-color:#f9c922;">Three</div>
-        </o-column-collapsible>
+        @if (layout === 'row') {
+          <o-row-collapsible attr="row1" [title]="title.value" [description]="description.value" [icon]="icon.value"
+            [layout-align]="getLayoutAlign()" [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
+            <div layout-padding style="background-color:#3498db;">One</div>
+            <div layout-padding style="background-color:#e74c3c;">Two</div>
+            <div layout-padding style="background-color:#f9c922;">Three</div>
+          </o-row-collapsible>
+        }
+        @if (layout === 'column') {
+          <o-column-collapsible attr="col1" [title]="title.value" [description]="description.value" [icon]="icon.value"
+            [layout-align]="getLayoutAlign()" [elevation]="elevation.value" [appearance]="appearance.checked?'outline':'none'" style="flex: 1 1 55%; max-width: 55%">
+            <div layout-padding style="background-color:#3498db;">One</div>
+            <div layout-padding style="background-color:#e74c3c;">Two</div>
+            <div layout-padding style="background-color:#f9c922;">Three</div>
+          </o-column-collapsible>
+        }
       </div>
 
     </screen-configuration>
