@@ -211,9 +211,11 @@ npx ng generate @angular/core:control-flow
 - 51 NgModules en la app
 - `OntimizeWebModule.forRoot(CONFIG)` es el punto central de configuración
 - Todos los feature modules importan `OntimizeWebModule` y `SharedModule`
+- El framework `ontimize-web-ngx@18` ya tiene **201 componentes con `standalone: true`** pero aún exporta `OntimizeWebModule` como API pública principal
 
 ### 6.2 Dependencia del framework
 - Cuando `ontimize-web-ngx@18` exporte `provideOntimizeWeb()` como alternativa standalone al `OntimizeWebModule.forRoot()`, las apps podrán migrar
+- Los addons (`extra-components`, `gallery`) también deben migrar sus componentes a standalone antes de este paso
 - **Esta migración no se puede hacer hasta que el framework publique la API standalone**
 
 ### 6.3 Pasos cuando esté disponible
