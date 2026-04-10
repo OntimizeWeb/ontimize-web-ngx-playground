@@ -30,7 +30,7 @@ Migración de la aplicación demo playground de Angular 15.2.10 a Angular 18. Es
 
 ---
 
-## PASO 1: Actualizar dependencias core a Angular 18
+## PASO 1: Actualizar dependencias core a Angular 18 ✅ COMPLETADO
 
 ### 1.1 Dependencias Angular
 ```
@@ -52,14 +52,14 @@ zone.js: ~0.12.0 → ~0.14.10
 - **No hay imports de FlexLayoutModule en app code** — el framework re-exporta vía OntimizeWebModule
 - El framework `ontimize-web-ngx@18` ya tiene el peer dependency de `@ngbracket/ngx-layout ^18.0.0`
 
-### 1.4 Actualizar ontimize-web-ngx
+### 1.4 Actualizar ontimize-web-ngx ✅
 ```
-ontimize-web-ngx: ^15.9.0 → ^18.0.0 (cuando se publique)
-ontimize-web-ngx-extra-components: ^15.0.0 → ^18.0.0 (PENDIENTE migración del paquete)
-ontimize-web-ngx-gallery: 15.1.2 → 18.x.x (PENDIENTE migración del paquete)
+ontimize-web-ngx: file:../ontimize-web-ngx/dist/ontimize-web-ngx-18.0.0-SNAPSHOT-0.tgz
+ontimize-web-ngx-extra-components: file:../ontimize-web-ngx-extra-components/dist/ontimize-web-ngx-extra-components-18.0.0-SNAPSHOT-0.tgz ✅
+ontimize-web-ngx-gallery: file:../ontimize-web-ngx-gallery/dist/ontimize-web-ngx-gallery-18.0.0-SNAPSHOT-0.tgz ✅
 ```
 
-> **BLOQUEANTE**: Los paquetes `ontimize-web-ngx-extra-components` y `ontimize-web-ngx-gallery` necesitan ser migrados a Angular 18 también. Si no están disponibles, se pueden comentar temporalmente y sus demos se desactivan.
+Los tres paquetes se instalan desde tgz locales. Ambos addons han sido migrados a Angular 18 (10 abril 2026).
 
 ### 1.5 Actualizar third-party
 ```
@@ -94,7 +94,7 @@ ts-node → ~10.9.0
 
 ---
 
-## PASO 2: Actualizar configuración del proyecto
+## PASO 2: Actualizar configuración del proyecto ✅ COMPLETADO
 
 ### 2.1 tsconfig.json
 ```diff
@@ -128,7 +128,7 @@ En Angular 18 con builder `application`, los polyfills se configuran en `angular
 
 ---
 
-## PASO 3: Control flow migration (`*ngIf` → `@if`, `*ngFor` → `@for`)
+## PASO 3: Control flow migration (`*ngIf` → `@if`, `*ngFor` → `@for`) ⏳ PENDIENTE
 
 ### 3.1 Migración automática
 ```bash
@@ -144,7 +144,7 @@ npx ng generate @angular/core:control-flow
 
 ---
 
-## PASO 4: Migración flex-layout → CSS nativo
+## PASO 4: Migración flex-layout → CSS nativo ✅ COMPLETADO
 
 ### 4.1 Alcance
 - **635 líneas** con directivas `fxLayout`, `fxFlex`, `fxLayoutAlign`, `fxLayoutGap`
@@ -176,7 +176,7 @@ npx ng generate @angular/core:control-flow
 
 ---
 
-## PASO 5: Actualizar SCSS theming (M2 legacy → M2 modern syntax)
+## PASO 5: Actualizar SCSS theming (M2 legacy → M2 modern syntax) ✅ COMPLETADO
 
 ### 5.1 Archivos afectados
 | Archivo | Problema |
@@ -200,7 +200,7 @@ npx ng generate @angular/core:control-flow
 
 ---
 
-## PASO 6: Standalone migration (cuando el framework lo soporte)
+## PASO 6: Standalone migration (cuando el framework lo soporte) ⏳ PENDIENTE
 
 ### 6.1 Estado actual
 - 51 NgModules en la app
@@ -219,7 +219,7 @@ npx ng generate @angular/core:control-flow
 
 ---
 
-## PASO 7: Verificación final como proyecto de validación del framework
+## PASO 7: Verificación final como proyecto de validación del framework ⏳ PENDIENTE
 
 ### 7.1 Componentes a verificar visualmente
 Esta app es el **banco de pruebas principal** del framework. Verificar CADA sección:
