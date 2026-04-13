@@ -205,20 +205,16 @@ npx ng generate @angular/core:control-flow
 
 ---
 
-## PASO 6: Standalone migration (cuando el framework lo soporte) ⏳ PENDIENTE
+## PASO 6: Standalone migration ⏳ PENDIENTE
 
 ### 6.1 Estado actual
 - 51 NgModules en la app
 - `OntimizeWebModule.forRoot(CONFIG)` es el punto central de configuración
 - Todos los feature modules importan `OntimizeWebModule` y `SharedModule`
-- El framework `ontimize-web-ngx@18` ya tiene **201 componentes con `standalone: true`** pero aún exporta `OntimizeWebModule` como API pública principal
+- El framework `ontimize-web-ngx@18` ya tiene **201 componentes con `standalone: true`**
+- ✅ **`provideOntimizeWeb()` disponible** en `ontimize-web-ngx@18` (commit `754ef7d9`) — el bloqueo se ha levantado
 
-### 6.2 Dependencia del framework
-- Cuando `ontimize-web-ngx@18` exporte `provideOntimizeWeb()` como alternativa standalone al `OntimizeWebModule.forRoot()`, las apps podrán migrar
-- Los addons (`extra-components`, `gallery`) pueden migrar sus componentes a standalone independientemente — no hay bloqueo técnico para ellos
-- **Esta migración de la app no se puede hacer hasta que el framework publique `provideOntimizeWeb()`** — sin esa API no hay forma de hacer `bootstrapApplication()` con la configuración de Ontimize
-
-### 6.3 Pasos cuando esté disponible
+### 6.2 Pasos a realizar
 1. Migrar `main.ts` a `bootstrapApplication()` con `provideOntimizeWeb(CONFIG)`
 2. Convertir feature modules a standalone components con lazy loading vía `loadComponent`
 3. Eliminar `AppModule` y feature modules
@@ -283,10 +279,10 @@ Esta app es el **banco de pruebas principal** del framework. Verificar CADA secc
 
 La playground es una **app consumidora** del framework — varios pasos están bloqueados hasta que `ontimize-web-ngx@18` implemente las correspondientes APIs:
 
-| Paso playground | Bloqueado por framework | Tarea framework |
+| Paso playground | Estado | Tarea framework |
 |---|---|---|
-| PASO 5.3 (M3 theming) | `ontimize-web-ngx` migre theming a M3 | Subtarea 3.2 del plan del framework |
-| PASO 6 (Standalone bootstrap) | `ontimize-web-ngx` exporte `provideOntimizeWeb()` | Subtarea 3.3 del plan del framework |
+| PASO 5.3 (M3 theming) | ⏳ Bloqueado — `ontimize-web-ngx` pendiente de migrar theming a M3 | Subtarea 3.2 del plan del framework |
+| PASO 6 (Standalone bootstrap) | ✅ Desbloqueado — `provideOntimizeWeb()` disponible (commit `754ef7d9`) | Subtarea 3.3 del plan del framework |
 
 ### Workflow de actualización tgz
 
