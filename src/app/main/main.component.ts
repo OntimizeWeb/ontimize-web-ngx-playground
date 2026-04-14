@@ -1,9 +1,15 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AppearanceService } from 'ontimize-web-ngx';
+import { RouterOutlet } from '@angular/router';
+import { AppearanceService, OAppLayoutComponent, OAppLayoutHeaderComponent } from 'ontimize-web-ngx';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 import { NavigationBarService } from '../shared/navigation-bar.service';
 
 @Component({
+  standalone: true,
+  imports: [RouterOutlet, OAppLayoutComponent, OAppLayoutHeaderComponent, MatButtonModule, MatMenuModule, MatIconModule],
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

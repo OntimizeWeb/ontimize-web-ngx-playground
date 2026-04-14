@@ -9,9 +9,7 @@ import { MainComponent } from './main.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    MainRoutingModule
-  ],
-  declarations: [
+    MainRoutingModule,
     MainComponent
   ]
 })

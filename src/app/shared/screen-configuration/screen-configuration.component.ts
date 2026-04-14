@@ -1,9 +1,16 @@
-import { Component, Injector, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { OButtonComponent, OTranslatePipe } from 'ontimize-web-ngx';
 import { Subscription } from 'rxjs';
 
 @Component({
+  standalone: true,
+  imports: [MatSidenavModule, MatIconModule, MatButtonModule, MatDividerModule, OButtonComponent, OTranslatePipe],
   selector: 'screen-configuration',
   templateUrl: './screen-configuration.component.html',
   styleUrls: ['./screen-configuration.component.scss'],
@@ -15,11 +22,7 @@ export class ScreenConfigurationComponent {
   @ViewChild('sidenav')
   public sidenav: MatSidenav;
   protected subscription: Subscription = new Subscription();
-  protected media: BreakpointObserver;
-
-  constructor(injector: Injector) {
-    this.media = injector.get(BreakpointObserver);
-  }
+  protected media = inject(BreakpointObserver);
 
   ngAfterViewInit(): void {
     this.subscribeToMediaChanges();

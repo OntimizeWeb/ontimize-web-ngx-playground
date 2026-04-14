@@ -14,10 +14,10 @@ import { ListsComponent } from './lists.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    ListsRoutingModule
+    ListsRoutingModule,
+    ListsComponent
   ],
   declarations: [
-    ListsComponent,
     ListItemTextComponent,
     ListItemAvatarComponent,
     ListItemCardComponent,

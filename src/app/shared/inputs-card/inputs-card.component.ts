@@ -1,8 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AppearanceService } from 'ontimize-web-ngx';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 import { Subscription } from 'rxjs';
 
 @Component({
+  standalone: true,
+  imports: [MatCardModule, MatIconModule, MatDividerModule],
   selector: 'inputs-card',
   templateUrl: './inputs-card.component.html',
   styleUrls: ['./inputs-card.component.scss'],
