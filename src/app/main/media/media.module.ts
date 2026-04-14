@@ -13,9 +13,7 @@ import { MediaRoutingModule } from './media-routing.module';
     OntimizeWebModule,
     MediaRoutingModule,
     ImageModule,
-    GalleryModule
-  ],
-  declarations: [
+    GalleryModule,
     MediaHomeComponent
   ]
 })

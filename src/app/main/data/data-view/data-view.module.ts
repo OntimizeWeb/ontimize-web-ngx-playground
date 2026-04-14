@@ -15,10 +15,10 @@ import { PacksService } from '../../../shared/services/packs.service';
     SharedModule,
     OntimizeWebModule,
     DataViewRoutingModule,
-    ODataViewModule
+    ODataViewModule,
+    DataViewComponent
   ],
   declarations: [
-    DataViewComponent,
     DataViewBasicComponent,
     DataViewToggleOptionsComponent,
     DataViewCustomButtonComponent

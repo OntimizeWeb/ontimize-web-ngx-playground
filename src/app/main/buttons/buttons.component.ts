@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
-import { NavigationBarService } from '../../shared/navigation-bar.service';;
+import { OButtonComponent, OButtonToggleComponent, OButtonToggleGroupComponent, OTranslateService } from 'ontimize-web-ngx';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { ExampleComponent } from '../../shared/example/example.component';
 
 const HTML_DATA = `
 <div fxLayout="column" layout-padding>
@@ -92,6 +93,8 @@ const HTML_DATA_ICON_IMAGE = `
 const TYPESCRIPT_DATA = ``;
 
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, OButtonComponent, OButtonToggleComponent, OButtonToggleGroupComponent],
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss']

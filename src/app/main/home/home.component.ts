@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AppearanceService, OTranslateService } from 'ontimize-web-ngx';
+import { AppearanceService, OButtonComponent, OColumnComponent, OTranslateService } from 'ontimize-web-ngx';
+import { MatCardModule } from '@angular/material/card';
 import { Subscription } from 'rxjs';
 import { NavigationBarService } from '../../shared/navigation-bar.service';
 
 @Component({
+  standalone: true,
+  imports: [OColumnComponent, OButtonComponent, MatCardModule],
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

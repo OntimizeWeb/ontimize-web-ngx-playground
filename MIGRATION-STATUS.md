@@ -1,6 +1,6 @@
 # Migración Angular 15 → 18 — Estado actual — ontimize-web-ngx-playground
 
-> Última actualización: 10 abril 2026
+> Última actualización: 13 abril 2026
 
 ## Repositorio y rama
 
@@ -20,6 +20,8 @@
 | Instalar addons Angular 18 (extra-components + gallery) | ✅ Completado |
 | Build playground: 0 errores | ✅ Completado |
 | Control flow migration (`*ngIf`→`@if`, `*ngFor`→`@for`) | ✅ Completado |
+| Corregir componentes standalone en NgModules | ✅ Completado |
+| Verificable build con dependencies resueltas | ✅ Completado |
 
 ---
 
@@ -79,3 +81,18 @@ npm install --legacy-peer-deps
 - `ontimize-web-ngx-extra-components@18.0.0-SNAPSHOT-0` — tgz local
 - `ontimize-web-ngx-gallery@18.0.0-SNAPSHOT-0` — tgz local
 - Eliminado `@ngbracket/ngx-layout` y `overrides` (ya no necesarios con addons v18)
+
+### Build y correcciones finales (13 abril 2026)
+
+- ✅ Build completo de `ontimize-web-ngx` (ng-packagr 18.2.1)
+  - Generado: `ontimize-web-ngx-18.0.0-SNAPSHOT-0.tgz` (3.7 MB)
+- ✅ Build de `ontimize-web-ngx-extra-components`
+  - Generado: `ontimize-web-ngx-extra-components-18.0.0-SNAPSHOT-0.tgz` (145.8 kB)
+- ✅ Build de `ontimize-web-ngx-gallery`
+  - Generado: `ontimize-web-ngx-gallery-18.0.0-SNAPSHOT-0.tgz`
+- ✅ Corregidos errores de compilación playground:
+  - HomeComponent, ContextMenuComponent, ModalsHomeComponent: `declarations` → `imports` (componentes standalone en NgModules)
+  - ExampleComponent: agregado `CommonModule` para pipe `uppercase`
+  - HighlightComponent: agregado `MatIconModule` para elemento `mat-icon`
+  - ContextMenuComponent: agregado `OTranslatePipe` para pipe `oTranslate`
+- ✅ Build exitoso playground: **0 errores, 14.30 MB initial chunks**

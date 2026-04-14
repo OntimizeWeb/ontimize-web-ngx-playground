@@ -48,10 +48,11 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
   imports: [
     SharedModule,
     OntimizeWebModule,
-    InputsRoutingModule
+    InputsRoutingModule,
+    InputsComponent,
+    InputsHomeComponent
   ],
   declarations: [
-    InputsComponent,
     InputOverviewComponent,
     InputTextComponent,
     InputDateComponent,
@@ -82,8 +83,7 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,
-    InputPhoneComponent,
-    InputsHomeComponent
+    InputPhoneComponent
   ]
 })
 export class InputsModule { }

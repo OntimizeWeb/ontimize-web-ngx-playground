@@ -1,5 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { BooleanInputConverter } from 'ontimize-web-ngx';
+import { CommonModule } from '@angular/common';
+import { BooleanInputConverter, OTranslatePipe } from 'ontimize-web-ngx';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { HighlightComponent } from '../highlight/highlight.component';
 
 export interface IFiles {
   html?: any;
@@ -9,6 +15,8 @@ export interface IFiles {
 }
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatTabsModule, MatButtonModule, HighlightComponent, OTranslatePipe],
   selector: 'example-comp',
   styleUrls: ['example.component.scss'],
   templateUrl: 'example.component.html',

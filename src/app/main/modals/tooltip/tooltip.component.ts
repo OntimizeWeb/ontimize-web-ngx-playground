@@ -1,8 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
+import { OFormComponent, OTextInputComponent, OTranslatePipe, OTranslateService } from 'ontimize-web-ngx';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { NavigationBarService } from '../../../shared/navigation-bar.service';
 import { ExampleComponent } from '../../../shared/example/example.component';
+import { ScreenConfigurationComponent } from '../../../shared/screen-configuration/screen-configuration.component';
 
 const HTML_DATA = `
 <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" tooltip="{tooltip}"
@@ -10,6 +15,8 @@ tooltip-position="{tooltipPosition}" tooltip-show-delay="{tooltipShowDelay}" too
 `;
 
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, ScreenConfigurationComponent, OTranslatePipe, MatDividerModule, MatFormFieldModule, MatInputModule, MatSelectModule, OFormComponent, OTextInputComponent],
   selector: 'app-tooltip',
   templateUrl: 'tooltip.component.html',
   styleUrls: ['tooltip.component.scss']

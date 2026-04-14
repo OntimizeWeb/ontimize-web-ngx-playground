@@ -9,9 +9,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    LayoutRoutingModule
-  ],
-  declarations: [
+    LayoutRoutingModule,
     LayoutHomeComponent
   ]
 })
