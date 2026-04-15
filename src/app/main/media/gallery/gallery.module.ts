@@ -12,10 +12,10 @@ import { OGalleryModule } from 'ontimize-web-ngx-gallery';
     SharedModule,
     OntimizeWebModule,
     GalleryRoutingModule,
-    OGalleryModule
+    OGalleryModule,
+    GalleryComponent
   ],
   declarations: [
-    GalleryComponent,
     GalleryMediaComponent,
     GalleryExampleComponent
   ]

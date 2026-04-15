@@ -1,7 +1,9 @@
-import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
+// Sub-components are non-standalone — loaded via InputsModule declarations.
+// This file exposes the same routes as inputs-routing.module.ts for use
+// with loadChildren(() => import('./inputs.routes').then(m => m.INPUTS_ROUTES)).
+import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
 import { InputDateComponent } from './02.date/input-date.component';
@@ -25,11 +27,15 @@ import { InputSlidetoggleComponent } from './19.slidetoggle/input-slidetoggle.co
 import { InputSliderComponent } from './20.slider/input-slider.component';
 import { InputDateRangeComponent } from './21.daterange/date-range/date-range.component';
 import { InputPhoneComponent } from './22.phone/input-phone.component';
+import { AppearanceComponent } from './96.appearance/appearance.component';
+import { InputEventsComponent } from './97.events/events.component';
+import { ClearComponent } from './98.clear/clear.component';
+import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsComponent } from './inputs.component';
 
-export const routes: Routes = [
-  { path: 'home', data: { oAppHeaderTitle: 'Input fields' }, component: InputsHomeComponent},
+export const INPUTS_ROUTES: Routes = [
+  { path: 'home', data: { oAppHeaderTitle: 'Input fields' }, component: InputsHomeComponent },
   {
     path: '', component: InputsComponent, children: [
       { path: 'overview', data: { oAppHeaderTitle: 'Input fields' }, component: InputOverviewComponent },
@@ -55,13 +61,11 @@ export const routes: Routes = [
       { path: 'radio', data: { oAppHeaderTitle: 'Input fields' }, component: InputRadioComponent },
       { path: 'slidetoggle', data: { oAppHeaderTitle: 'Input fields' }, component: InputSlidetoggleComponent },
       { path: 'slider', data: { oAppHeaderTitle: 'Input fields' }, component: InputSliderComponent },
-      { path: 'phone', data: { oAppHeaderTitle: 'Input fields' }, component: InputPhoneComponent }
+      { path: 'phone', data: { oAppHeaderTitle: 'Input fields' }, component: InputPhoneComponent },
+      { path: 'appearance', data: { oAppHeaderTitle: 'Input fields' }, component: AppearanceComponent },
+      { path: 'events', data: { oAppHeaderTitle: 'Input fields' }, component: InputEventsComponent },
+      { path: 'clear', data: { oAppHeaderTitle: 'Input fields' }, component: ClearComponent },
+      { path: 'validators', data: { oAppHeaderTitle: 'Input fields' }, component: ValidatorsComponent }
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class InputsRoutingModule { }

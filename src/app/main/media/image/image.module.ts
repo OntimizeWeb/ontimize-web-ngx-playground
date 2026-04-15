@@ -12,10 +12,10 @@ import { ImageRoutingModule } from './image-routing.module';
     SharedModule,
     OntimizeWebModule,
     ImageRoutingModule,
-    OImageModule
+    OImageModule,
+    ImageComponent
   ],
   declarations: [
-    ImageComponent,
     ImageMediaComponent,
     ImageExamplesComponent
   ]
