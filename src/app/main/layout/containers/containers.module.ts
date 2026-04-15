@@ -8,7 +8,7 @@ import { ContainersRoutingModule } from './containers-routing.module';
 import { ContainersComponent } from './containers.component';
 
 @NgModule({
-  imports: [ContainersRoutingModule, OntimizeWebModule, SharedModule],
-  declarations: [ContainersBasicComponent, ContainersCollapsibleComponent, ContainersComponent]
+  imports: [ContainersRoutingModule, OntimizeWebModule, SharedModule, ContainersComponent],
+  declarations: [ContainersBasicComponent, ContainersCollapsibleComponent]
 })
 export class ContainersModule { }

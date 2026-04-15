@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 
-export const routes: Routes = [
+export const MAIN_ROUTES: Routes = [
   {
     path: '', component: MainComponent,
     children: [
@@ -11,16 +10,10 @@ export const routes: Routes = [
       { path: 'data', loadChildren: () => import('./data/data.routes').then(m => m.DATA_ROUTES) },
       { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.HOME_ROUTES) },
       { path: 'inputs', loadChildren: () => import('./inputs/inputs.module').then(m => m.InputsModule) },
-      { path: 'media', loadChildren: () => import('./media/media.module').then(m => m.MediaModule) },
+      { path: 'media', loadChildren: () => import('./media/media.routes').then(m => m.MEDIA_ROUTES) },
       { path: 'modals', loadChildren: () => import('./modals/modals.routes').then(m => m.MODALS_ROUTES) },
-      { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
+      { path: 'layout', loadChildren: () => import('./layout/layout.routes').then(m => m.LAYOUT_ROUTES) },
       { path: 'about', loadChildren: () => import('./about/about.routes').then(m => m.ABOUT_ROUTES) }
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }

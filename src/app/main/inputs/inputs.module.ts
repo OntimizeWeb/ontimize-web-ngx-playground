@@ -35,7 +35,8 @@ import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
-import { InputsRoutingModule } from './inputs-routing.module';
+import { RouterModule } from '@angular/router';
+import { INPUTS_ROUTES } from './inputs.routes';
 import { InputsComponent } from './inputs.component';
 import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 
@@ -48,7 +49,7 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
   imports: [
     SharedModule,
     OntimizeWebModule,
-    InputsRoutingModule,
+    RouterModule.forChild(INPUTS_ROUTES),
     InputsComponent,
     InputsHomeComponent
   ],
