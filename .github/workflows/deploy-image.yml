@@ -3,14 +3,14 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['15.x.x']
+    branches: ['18.x.x', 'migration/18.x.x']
     tags:
-      - 15.*
+      - 18.*
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  MAIN_BRANCH: main.15.x
+  MAIN_BRANCH: main.18.x
 
 jobs:
   build-and-push-image:
