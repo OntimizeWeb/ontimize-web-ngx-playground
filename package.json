@@ -32,9 +32,9 @@
     "luxon": "^3.7.2",
     "moment": "^2.18.1",
     "ngx-highlightjs": "^10.0.0",
-    "ontimize-web-ngx": "file:../ontimize-web-ngx/dist/ontimize-web-ngx-18.0.0-SNAPSHOT-0.tgz",
-    "ontimize-web-ngx-extra-components": "file:../ontimize-web-ngx-extra-components/dist/ontimize-web-ngx-extra-components-18.0.0-SNAPSHOT-0.tgz",
-    "ontimize-web-ngx-gallery": "file:../ontimize-web-ngx-gallery/dist/ontimize-web-ngx-gallery-18.0.0-SNAPSHOT-0.tgz",
+    "ontimize-web-ngx": "file:ontimize-web-ngx-18.0.0-SNAPSHOT-0.tgz",
+    "ontimize-web-ngx-extra-components": "file:ontimize-web-ngx-extra-components-18.0.0-SNAPSHOT-0.tgz",
+    "ontimize-web-ngx-gallery": "file:ontimize-web-ngx-gallery-18.0.0-SNAPSHOT-0.tgz",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
