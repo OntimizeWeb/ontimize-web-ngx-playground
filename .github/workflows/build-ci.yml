@@ -31,20 +31,20 @@ jobs:
 
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Cache node modules"
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Node 20.x
-        uses: actions/setup-node@v4
+      - name: Configure Node
+        uses: actions/setup-node@v6
         with:
-          node-version: 20.18.3
+          node-version: ${{ vars.V18_NODE_VERSION }}
 
       - name: Setup Node registry
         if:
