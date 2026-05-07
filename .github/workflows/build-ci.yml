@@ -41,10 +41,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Node 20.x
+      - name: Configure Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.18.3
+          node-version: ${{ vars.V18_NODE_VERSION }}
 
       - name: Setup Node registry
         if:
