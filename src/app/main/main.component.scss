@@ -1,3 +1,15 @@
+.density-selector {
+  width: 138px;
+  .mat-mdc-form-field-infix {
+    min-height: 32px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .mat-mdc-text-field-wrapper {
+    padding: 0 8px;
+  }
+}
+
 .mat-mdc-slide-toggle {
   margin: 8px 0;
 }
