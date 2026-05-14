@@ -2,39 +2,44 @@
   <div class="o-flex-column o-layout-align-center-start o-flex">
 
     <example-comp #ex comp-name="TOOLTIP" class="o-flex-fill" [html]="html"
-      (showSource)="onShowSource(tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
+                  (showSource)="onShowSource(tooltipInput.value, matSelect.value, showDelayInput.value, hideDelayInput.value)">
 
       <screen-configuration>
         <div class="o-flex-column" menu>
           <span class="menu-title">{{ 'TOOLTIP.CONFIGURATION' | oTranslate }}</span>
           <mat-divider></mat-divider>
           <mat-form-field layout-padding>
-            <input (change)="updateCodeValue('tooltip', $event.target.value)" #tooltipInput matInput value="tooltip" placeholder="tooltip">
+            <input (change)="updateCodeValue('tooltip', $event.target.value)" #tooltipInput matInput value="tooltip"
+                   placeholder="tooltip">
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <mat-select (selectionChange)="updateCodeValue('tooltipPosition', $event.value)" #matSelect placeholder="tooltip-position" [(value)]="positionOptions[0]">
+            <mat-select (selectionChange)="updateCodeValue('tooltipPosition', $event.value)" #matSelect
+                        placeholder="tooltip-position" [(value)]="positionOptions[0]">
               @for (positionOption of positionOptions; track positionOption) {
-                <mat-option [value]="positionOption">
-                  {{positionOption}}
-                </mat-option>
+              <mat-option [value]="positionOption">
+                {{positionOption}}
+              </mat-option>
               }
             </mat-select>
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <input (change)="updateCodeValue('tooltipShowDelay', $event.target.value)" #showDelayInput matInput type="number" value="500" placeholder="tooltip-show-delay">
+            <input (change)="updateCodeValue('tooltipShowDelay', $event.target.value)" #showDelayInput matInput
+                   type="number" value="500" placeholder="tooltip-show-delay">
           </mat-form-field>
 
           <mat-form-field layout-padding>
-            <input (change)="updateCodeValue('tooltipHideDelay', $event.target.value)" #hideDelayInput matInput type="number" value="0" placeholder="tooltip-hide-delay">
+            <input (change)="updateCodeValue('tooltipHideDelay', $event.target.value)" #hideDelayInput matInput
+                   type="number" value="0" placeholder="tooltip-hide-delay">
           </mat-form-field>
         </div>
-        <o-form content editable-detail="no" show-header="no" layout-direction="row">
+        <o-form attr="formTooltip" editable-detail="no" show-header="no" layout-direction="row">
           <div class="o-flex-column o-layout-align-center-center o-flex">
-            <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no" [tooltip]="tooltipInput.value"
-              [tooltip-position]="matSelect.value" [tooltip-show-delay]="showDelayInput.value"
-            [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
+            <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no"
+                          [tooltip]="tooltipInput.value" [tooltip-position]="matSelect.value"
+                          [tooltip-show-delay]="showDelayInput.value"
+                          [tooltip-hide-delay]="hideDelayInput.value"></o-text-input>
           </div>
         </o-form>
       </screen-configuration>
