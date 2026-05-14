@@ -58,5 +58,5 @@ jobs:
 
       - name: npm install and npm run build
         run: |
-          npm i --legacy-peer-deps
+          npm install --legacy-peer-deps --os linux --cpu x64 @rollup/rollup-linux-x64-gnu
           npm run production
