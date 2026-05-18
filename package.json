@@ -32,7 +32,7 @@
     "luxon": "^3.7.2",
     "moment": "^2.18.1",
     "ngx-highlightjs": "^10.0.0",
-    "ontimize-web-ngx": "18.0.0-next.2",
+    "ontimize-web-ngx": "18.0.0-next.3",
     "ontimize-web-ngx-extra-components": "18.0.0-next.1",
     "ontimize-web-ngx-gallery": "18.0.0-next.0",
     "rxjs": "~7.8.0",

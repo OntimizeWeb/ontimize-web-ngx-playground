@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
   versions: {
-    core: '15.9.0',
-    extraComponentes: '15.0.0',
-    gallery: '15.1.2'
+    core: '18.0.0-next.3',
+    extraComponentes: '18.0.0-next.1',
+    gallery: '18.0.0-next.0'
   }
 };
