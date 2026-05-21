@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -34,6 +37,7 @@ import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { StandaloneFormComponent } from './standalone-form/standalone-form.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { RouterModule } from '@angular/router';
 import { INPUTS_ROUTES } from './inputs.routes';
@@ -49,6 +53,9 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
   imports: [
     SharedModule,
     OntimizeWebModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forChild(INPUTS_ROUTES),
     InputsComponent,
     InputsHomeComponent
@@ -84,7 +91,8 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,
-    InputPhoneComponent
+    InputPhoneComponent,
+    StandaloneFormComponent
   ]
 })
 export class InputsModule { }

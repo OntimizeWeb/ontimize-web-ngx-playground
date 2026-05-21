@@ -1,0 +1,167 @@
+<example-comp comp-name="STANDALONE_FORM" comp-desc="STANDALONE_FORM.DESC" [files]="files">
+
+  <form (ngSubmit)="onSubmit()" class="standalone-form">
+
+    <h3 class="section-title">Texto</h3>
+
+    <div class="form-row">
+      <o-text-input attr="name" label="Nombre" placeholder="Gonzalo" read-only="no" float-label="always"
+       [formControl]="form.controls.name">
+      </o-text-input>
+
+       <o-text-input attr="surname" label="Apellidos" placeholder="Pérez Trueno" read-only="no" float-label="always"
+        [formControl]="form.controls.surname">
+      </o-text-input>
+    </div>
+
+    <div class="form-row">
+      <o-email-input attr="email" label="Email" placeholder="usuario@ejemplo.com" read-only="no" float-label="always"
+        [formControl]="form.controls.email">
+      </o-email-input>
+
+      <o-password-input attr="password" label="Contraseña" read-only="no" float-label="always"
+        [formControl]="form.controls.password">
+      </o-password-input>
+    </div>
+
+    <div class="form-row">
+      <o-nif-input attr="nif" label="NIF" placeholder="12345678A" read-only="no" float-label="always"
+        [formControl]="form.controls.nif">
+      </o-nif-input>
+
+      <o-phone-input attr="phone" label="Teléfono" placeholder="+34 600 000 000" read-only="no" float-label="always"
+        [formControl]="form.controls.phone">
+      </o-phone-input>
+    </div>
+
+    <div class="form-row">
+      <o-textarea-input attr="notes" label="Notas" read-only="no" rows="3" float-label="always"
+        [formControl]="form.controls.notes">
+      </o-textarea-input>
+
+      <o-html-input attr="html" label="HTML" read-only="no" float-label="always"
+        [formControl]="form.controls.html">
+      </o-html-input>
+    </div>
+
+    <h3 class="section-title">Numéricos</h3>
+
+    <div class="form-row">
+      <o-integer-input attr="age" label="Edad" read-only="no" min="0" max="120" float-label="always" placeholder="33"
+        [formControl]="form.controls.age">
+      </o-integer-input>
+
+      <o-real-input attr="weight" label="Peso (kg)" read-only="no" min-decimal-digits="1" max-decimal-digits="2"
+        float-label="always" placeholder="70.5" [formControl]="form.controls.weight">
+      </o-real-input>
+    </div>
+
+    <div class="form-row">
+      <o-currency-input attr="salary" label="Salario" placeholder="1.000" read-only="no" currency-symbol="EUR"
+        min-decimal-digits="2" max-decimal-digits="2" float-label="always" [formControl]="form.controls.salary">
+      </o-currency-input>
+
+      <o-percent-input attr="discount" label="Descuento (%)" read-only="no" min-decimal-digits="0"
+        max-decimal-digits="2" float-label="always" placeholder="10" [formControl]="form.controls.discount">
+      </o-percent-input>
+    </div>
+
+    <div class="form-row">
+      <o-slider attr="rating" label="Valoración (0-10)" min="0" max="10" step="1" thumb-label="yes"
+        [formControl]="form.controls.rating">
+      </o-slider>
+    </div>
+
+    <h3 class="section-title">Fechas y horas</h3>
+
+    <div class="form-row">
+      <o-date-input attr="birthdate" label="Fecha de nacimiento" read-only="no" format="DD/MM/YYYY"
+        value-type="string" float-label="always" placeholder="DD/MM/YYYY" [formControl]="form.controls.birthdate">
+      </o-date-input>
+
+      <o-daterange-input attr="period" label="Período" read-only="no" format="DD/MM/YYYY" float-label="always"
+        [formControl]="form.controls.period">
+      </o-daterange-input>
+    </div>
+
+    <div class="form-row">
+      <o-hour-input attr="checkin" label="Hora entrada" read-only="no" format="HH:mm" float-label="always"
+        [formControl]="form.controls.checkin">
+      </o-hour-input>
+
+      <o-time-input attr="meeting" label="Reunión" read-only="no" float-label="always"
+        [formControl]="form.controls.meeting">
+      </o-time-input>
+    </div>
+
+    <h3 class="section-title">Selección</h3>
+
+    <div class="form-row">
+      <o-combo attr="country" label="País (string id)" read-only="no" value-column-type="STRING"
+        [static-data]="countries" value-column="id" columns="id;name" visible-columns="name"
+        float-label="always" [formControl]="form.controls.country">
+      </o-combo>
+
+      <o-combo attr="category" label="Categoría (integer id)" read-only="no" value-column-type="INTEGER"
+        [static-data]="categories" value-column="id" columns="id;name" visible-columns="name"
+        float-label="always" [formControl]="form.controls.category">
+      </o-combo>
+    </div>
+
+    <div class="form-row">
+      <o-list-picker attr="language" label="Lenguaje" read-only="no" [static-data]="languages"
+        value-column="id" columns="id;name" visible-columns="name" float-label="always"
+        [formControl]="form.controls.language">
+      </o-list-picker>
+
+      <o-radio attr="gender" label="Género" read-only="no" [static-data]="genders"
+        value-column="id" columns="id;name" visible-columns="name"
+        [formControl]="form.controls.gender">
+      </o-radio>
+    </div>
+
+    <h3 class="section-title">Booleanos</h3>
+
+    <div class="form-row">
+      <o-checkbox attr="active" label="Activo" [formControl]="form.controls.active">
+      </o-checkbox>
+
+      <o-slide-toggle attr="notifications" label="Notificaciones" [formControl]="form.controls.notifications">
+      </o-slide-toggle>
+    </div>
+
+    <h3 class="section-title">Archivos</h3>
+
+    <div class="form-row">
+       <o-file-input attr="avatar" label="Avatar" read-only="no" accept="image/*" float-label="always"
+        [formControl]="form.controls.avatar">
+      </o-file-input>
+    </div>
+
+    <div class="form-status">
+      <span class="form-status__badge" [class.form-status__badge--valid]="form.valid"
+        [class.form-status__badge--invalid]="form.invalid">
+        form.status: {{ form.status }}
+      </span>
+      @if(form.invalid) {
+        <span class="form-status__label">Controles inválidos:</span>
+        @for(ctrl of invalidControls;track ctrl) {
+        <span class="form-status__chip">{{ ctrl }}</span>
+        }
+       }
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Guardar
+      </button>
+      <button mat-button type="button" (click)="onReset()">
+        Limpiar
+      </button>
+    </div>
+
+    <pre *ngIf="result" class="form-result">{{ result | json }}</pre>
+
+  </form>
+
+</example-comp>
