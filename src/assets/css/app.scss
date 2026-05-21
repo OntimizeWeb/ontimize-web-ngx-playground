@@ -4,6 +4,8 @@
 // Include ontimize styles
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
 
+@include ontimize-style.ontimize-neutral-surfaces(theme.$theme);
+
 @import "./o-gallery-theme-compat.scss";
 @include o-gallery-theme(theme.$theme);
 
@@ -22,6 +24,7 @@
 /*Define dark styles*/
 .o-dark {
   @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+  @include ontimize-style.ontimize-neutral-surfaces(theme.$dark-theme);
   @include o-gallery-theme(theme.$dark-theme);
   @include inputs-card-theme(theme.$dark-theme);
   @include example-component-theme(theme.$dark-theme);
