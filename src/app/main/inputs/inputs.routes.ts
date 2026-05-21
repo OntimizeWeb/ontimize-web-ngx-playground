@@ -31,6 +31,7 @@ import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { StandaloneFormComponent } from './standalone-form/standalone-form.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { InputsComponent } from './inputs.component';
 
@@ -65,7 +66,8 @@ export const INPUTS_ROUTES: Routes = [
       { path: 'appearance', data: { oAppHeaderTitle: 'Input fields' }, component: AppearanceComponent },
       { path: 'events', data: { oAppHeaderTitle: 'Input fields' }, component: InputEventsComponent },
       { path: 'clear', data: { oAppHeaderTitle: 'Input fields' }, component: ClearComponent },
-      { path: 'validators', data: { oAppHeaderTitle: 'Input fields' }, component: ValidatorsComponent }
+      { path: 'validators', data: { oAppHeaderTitle: 'Input fields' }, component: ValidatorsComponent },
+      { path: 'standalone-form', data: { oAppHeaderTitle: 'Input fields' }, component: StandaloneFormComponent }
     ]
   }
 ];
