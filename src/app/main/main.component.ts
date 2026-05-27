@@ -80,9 +80,9 @@ export class MainComponent implements OnInit {
   }
 
   private applyDensityClass(scale: number) {
-    const body = document.body;
-    DENSITY_CLASSES.forEach((cls) => body.classList.remove(cls));
+    const root = document.documentElement;
+    DENSITY_CLASSES.forEach((cls) => root.classList.remove(cls));
     const cls = DENSITY_CLASSES.get(scale);
-    if (cls) body.classList.add(cls);
+    if (cls) root.classList.add(cls);
   }
 }

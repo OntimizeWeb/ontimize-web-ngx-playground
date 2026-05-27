@@ -32,9 +32,10 @@
 }
 
 /*
-* Density override classes — applied to <body> at runtime by DensityService.
-* Each class emits Material + Ontimize density tokens for its scale so the
-* selector wins over the :root tokens set by the base oxygen theme (density -4).
+* Density override classes — applied to <html> at runtime by applyDensityClass.
+* The class must be on the root element so that rem units (which reference html)
+* follow the density font-size. Specificity 0,1,0 (.density-X) beats the base
+* theme's html { font-size: 14px } (0,0,1).
 */
 .density-0  { @include ontimize-style.ontimize-theme-density-extended(0);  }
 .density-m1 { @include ontimize-style.ontimize-theme-density-extended(-1); }
