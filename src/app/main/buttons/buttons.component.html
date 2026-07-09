@@ -1,7 +1,7 @@
 <div class="o-flex-column main-container bg-level-1">
-  <div class="o-flex-column o-flex" style="justify-content: center; align-items: top">
+  <div class="o-flex-column o-flex" >
 
-    <example-comp comp-name="BUTTON" [files]="getFiles('buttons')">
+    <example-comp comp-name="BUTTON_LEGACY" comp-desc="BUTTON_LEGACY.DESC" [files]="getFiles('buttons')">
 
       <div class="o-flex-column" layout-padding>
         <div class="o-flex-row">
@@ -61,6 +61,85 @@
       </div>
 
     </example-comp>
+
+    <example-comp comp-name="VARIANT_IMPORTANCE" comp-desc="VARIANT_IMPORTANCE.DESC" [files]="getFiles('button-variant-importance')">
+      <div class="o-flex-column variant-importance-example" layout-padding>
+
+        <!-- the example reads as a grid: rows = variant input, columns = importance input -->
+        <div class="o-flex-row vi-axis-caption">
+          <span class="vi-importance-axis">importance &rarr;</span>
+        </div>
+
+        <!-- column legend: each row repeats the same importance values -->
+        <div class="o-flex-row vi-variant-row vi-header-row">
+          <span class="vi-variant-label vi-row-axis">variant &darr;</span>
+          <span class="vi-col-header">Default</span>
+          <span class="vi-col-header">Primary</span>
+          <span class="vi-col-header">Warn</span>
+          <span class="vi-col-header">Disabled</span>
+        </div>
+
+        <!-- one row per variant (same order as the legacy type example), columns are the importance values + disabled -->
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">basic</span>
+          <o-button attr="basic-def" variant="basic" importance="default" label="Default" layout-padding></o-button>
+          <o-button attr="basic-pri" variant="basic" importance="primary" label="Primary" layout-padding></o-button>
+          <o-button attr="basic-warn" variant="basic" importance="warn" label="Warn" layout-padding></o-button>
+          <o-button attr="basic-dis" variant="basic" label="Disabled" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">raised</span>
+          <o-button attr="raised-def" variant="raised" importance="default" label="Default" layout-padding></o-button>
+          <o-button attr="raised-pri" variant="raised" importance="primary" label="Primary" layout-padding></o-button>
+          <o-button attr="raised-warn" variant="raised" importance="warn" label="Warn" layout-padding></o-button>
+          <o-button attr="raised-dis" variant="raised" label="Disabled" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">outline</span>
+          <o-button attr="outline-def" variant="outline" importance="default" label="Default" layout-padding></o-button>
+          <o-button attr="outline-pri" variant="outline" importance="primary" label="Primary" layout-padding></o-button>
+          <o-button attr="outline-warn" variant="outline" importance="warn" label="Warn" layout-padding></o-button>
+          <o-button attr="outline-dis" variant="outline" label="Disabled" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">flat</span>
+          <o-button attr="flat-def" variant="flat" importance="default" label="Default" layout-padding></o-button>
+          <o-button attr="flat-pri" variant="flat" importance="primary" label="Primary" layout-padding></o-button>
+          <o-button attr="flat-warn" variant="flat" importance="warn" label="Warn" layout-padding></o-button>
+          <o-button attr="flat-dis" variant="flat" label="Disabled" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <!-- icon-only shapes: only 'icon' tints with importance; fab / mini-fab keep Material's color -->
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">icon</span>
+          <o-button attr="icon-def" variant="icon" icon="favorite" layout-padding></o-button>
+          <o-button attr="icon-pri" variant="icon" importance="primary" icon="favorite" layout-padding></o-button>
+          <o-button attr="icon-warn" variant="icon" importance="warn" icon="favorite" layout-padding></o-button>
+          <o-button attr="icon-dis" variant="icon" icon="favorite" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">fab</span>
+          <o-button attr="fab-def" variant="fab" icon="add" layout-padding></o-button>
+          <o-button attr="fab-pri" variant="fab" importance="primary" icon="add" layout-padding></o-button>
+          <o-button attr="fab-warn" variant="fab" importance="warn" icon="add" layout-padding></o-button>
+          <o-button attr="fab-dis" variant="fab" icon="add" [enabled]="false" layout-padding></o-button>
+        </div>
+
+        <div class="o-flex-row vi-variant-row">
+          <span class="vi-variant-label">mini-fab</span>
+          <o-button attr="minifab-def" variant="mini-fab" icon="edit" layout-padding></o-button>
+          <o-button attr="minifab-pri" variant="mini-fab" importance="primary" icon="edit" layout-padding></o-button>
+          <o-button attr="minifab-warn" variant="mini-fab" importance="warn" icon="edit" layout-padding></o-button>
+          <o-button attr="minifab-dis" variant="mini-fab" icon="edit" [enabled]="false" layout-padding></o-button>
+        </div>
+
+      </div>
+    </example-comp>
+
     <example-comp comp-name="ICON_POSITION" [files]="getFiles('button-icon-position')">
       <div class="o-flex-row-wrap">
         <o-button attr="iconposition1" type="BASIC" color="primary" label="icon-position='left'" layout-padding icon="arrow_forward_ios">
