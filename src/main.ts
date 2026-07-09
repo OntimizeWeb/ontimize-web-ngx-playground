@@ -46,7 +46,7 @@ bootstrapApplication(AppComponent, {
       useValue: <HighlightOptions>{
         lineNumbers: true,
         coreLibraryLoader: () => import('highlight.js/lib/core'),
-        lineNumbersLoader: () => import('highlightjs-line-numbers.js'),
+        lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
         languages: {
           typescript: () => import('highlight.js/lib/languages/typescript'),
           css: () => import('highlight.js/lib/languages/css'),

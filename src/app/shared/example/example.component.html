@@ -22,11 +22,11 @@
   </mat-toolbar>
 
   @if (showSource) {
-    <div class="o-flex" [style.height]="tabHeight">
+    <div class="o-flex-row" [style.height]="tabHeight">
       <mat-tab-group class="playground-tabs o-flex-fill" style="flex: 1 1 100%">
         @if (html) {
           <mat-tab label="{{ 'html' | uppercase }}">
-            <highlight-comp [template-content]="html" template-type="html"></highlight-comp>
+            <highlight-comp [template-content]="files.html.data" template-type="html"></highlight-comp>
           </mat-tab>
         }
         @if (files.scss && files.scss.data) {
