@@ -1,0 +1,98 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="CALENDAR.DYNAMIC.COMPONENT" [html]="html" [files]="files">
+
+  <screen-configuration comp-name="CALENDAR" #sidenavComp>
+    <div menu>
+      <div class="o-flex-column">
+        <!--TITLE -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.TITLE' | oTranslate }}</span>
+        <mat-form-field layout-padding class="o-flex-100 config-group">
+          <input matInput [value]="title" (input)="onTitleChange($any($event.target).value)"
+            placeholder="{{ 'CALENDAR.CONFIG.TITLE-PLACEHOLDER' | oTranslate }}">
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <!--VIEW -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.VIEW' | oTranslate }}</span>
+        <mat-radio-group layout-padding [value]="view" (change)="onViewChange($event.value)"
+          class="o-layout-align-sa-center o-flex-100 o-flex-row config-group">
+          @for (v of viewOptions; track v) {
+          <mat-radio-button [value]="v" class="padding-3">{{ ('CALENDAR.CONFIG.' + v.toUpperCase()) | oTranslate }}</mat-radio-button>
+          }
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <!--AVAILABLE VIEWS -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.AVAILABLE-VIEWS' | oTranslate }}</span>
+        <div layout-padding class="o-flex-row config-group">
+          @for (v of viewOptions; track v) {
+          <mat-checkbox [checked]="views.indexOf(v) !== -1" [disabled]="views.length === 1 && views[0] === v"
+            (change)="onToggleView(v, $event.checked)" class="padding-3">
+            {{ ('CALENDAR.CONFIG.' + v.toUpperCase()) | oTranslate }}
+          </mat-checkbox>
+          }
+        </div>
+        <mat-divider></mat-divider>
+        <!--WEEK STARTS ON -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.WEEK-STARTS-ON' | oTranslate }}</span>
+        <mat-radio-group layout-padding [value]="weekStartsOn" (change)="onWeekStartsOnChange($event.value)"
+          class="o-layout-align-sa-center o-flex-100 o-flex-row config-group">
+          <mat-radio-button [value]="1" class="padding-3">{{ 'CALENDAR.CONFIG.MONDAY' | oTranslate }}</mat-radio-button>
+          <mat-radio-button [value]="0" class="padding-3">{{ 'CALENDAR.CONFIG.SUNDAY' | oTranslate }}</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <!--WEEK HEADER FORMAT -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.WEEK-HEADER-FORMAT' | oTranslate }}</span>
+        <mat-radio-group layout-padding [value]="weekHeaderDayFormat" (change)="onWeekHeaderFormatChange($event.value)"
+          class="o-layout-align-sa-center o-flex-100 o-flex-row config-group">
+          <mat-radio-button value="D" class="padding-3">{{ 'CALENDAR.CONFIG.DAY-ONLY' | oTranslate }}</mat-radio-button>
+          <mat-radio-button value="MMM D" class="padding-3">{{ 'CALENDAR.CONFIG.MONTH-DAY' | oTranslate }}</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.LOCALE' | oTranslate }}</span>
+        <mat-form-field layout-padding class="o-flex-100 config-group">
+          <mat-select [value]="locale" (selectionChange)="onLocaleChange($event.value)">
+            @for (l of localeOptions; track l) {
+            <mat-option [value]="l">{{ l }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+
+
+        <div layout-padding class="o-flex-row config-group">
+          <mat-slide-toggle  class ="o-flex-50 padding-3" [checked]="showToolbar" (change)="onShowToolbarChange($event.checked)">
+            {{ 'CALENDAR.CONFIG.SHOW-TOOLBAR' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle class ="o-flex-50 padding-3" [checked]="showTooltip" (change)="onShowTooltipChange($event.checked)">
+            {{ 'CALENDAR.CONFIG.SHOW-TOOLTIP' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <div layout-padding class="o-flex-row config-group">
+          <mat-slide-toggle class="o-flex-50 padding-3" [checked]="showHours" (change)="onShowHoursChange($event.checked)">
+            {{ 'CALENDAR.CONFIG.SHOW-HOURS' | oTranslate }}
+          </mat-slide-toggle>
+          <mat-slide-toggle class="o-flex-50 padding-3" [checked]="showWeekends" (change)="onShowWeekendsChange($event.checked)" >
+            {{ 'CALENDAR.CONFIG.SHOW-WEEKENDS' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <mat-divider></mat-divider>
+
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.MAX-EVENTS' | oTranslate }}</span>
+        <div layout-padding class="o-flex-row config-group">
+          <mat-slider min="1" max="5" step="1" discrete showTickMarks class="o-flex">
+            <input matSliderThumb [value]="maxEventsPerCell" (valueChange)="onMaxEventsChange($event)">
+          </mat-slider>
+        </div>
+      </div>
+    </div>
+
+    <o-calendar content class="calendar-example" attr="calendarDynamic" [static-data]="staticData" columns="id;title;code;start;end;allDay" keys="id"
+      start-column="start" end-column="end" title-column="title" description-column="code" all-day-column="allDay" [title]="title || $any(undefined)"
+      [view]="view" [views]="views" [week-starts-on]="weekStartsOn" [week-header-day-format]="weekHeaderDayFormat" [show-toolbar]="showToolbar"
+      [show-tooltip]="showTooltip" [show-hours]="showHours" [show-weekends]="showWeekends" [max-events-per-cell]="maxEventsPerCell" [locale]="locale"
+      (onViewChange)="onViewChange($event)">
+    </o-calendar>
+
+  </screen-configuration>
+
+</example-comp>

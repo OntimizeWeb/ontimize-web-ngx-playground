@@ -1,0 +1,18 @@
+.calendar-events-container {
+  height: 100%;
+}
+
+o-calendar.calendar-example {
+  height: 450px;
+}
+
+.console {
+  font: 11px Consolas, Monaco, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--mat-sys-outline-variant, #ccc);
+}
+
+.mat-toolbar-space {
+  flex: 1 1 auto;
+}

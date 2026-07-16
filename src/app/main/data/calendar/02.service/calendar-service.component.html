@@ -1,0 +1,9 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="CALENDAR.COMPONENT" [files]="files">
+
+  <o-calendar class="calendar-example" attr="calendarService" service-type="events" entity="events"
+    columns="id;title;code;start;end;allDay;color" keys="id" start-column="start" end-column="end" title-column="title"
+    description-column="code" all-day-column="allDay" color-column="color" view="month" views="month;week;day"
+    week-starts-on="1" [tooltip-function]="getEventTooltip" (onEventClick)="onEventClick($event)">
+  </o-calendar>
+
+</example-comp>

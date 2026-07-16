@@ -1,0 +1,31 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="CALENDAR.TEMPLATES.COMPONENT" [files]="files">
+
+  <o-calendar class="calendar-example" attr="calendarTemplates" [static-data]="staticData"
+    columns="id;title;code;start;end;allDay;icon" keys="id" start-column="start" end-column="end" title-column="title"
+    description-column="code" all-day-column="allDay" view="month">
+
+    <ng-template oCalendarEvent let-event let-row="row">
+      <div class="demo-event-chip">
+        <mat-icon>{{ row.icon || 'event' }}</mat-icon>
+        <span class="demo-event-chip-title">{{ event.title }}</span>
+      </div>
+    </ng-template>
+
+    <ng-template oCalendarTooltip let-event let-row="row">
+      <div class="demo-event-tooltip">
+        <span class="demo-event-tooltip-title">{{ event.title }}</span>
+        <span class="demo-event-tooltip-line">{{ row.code }}</span>
+        @if (!event.allDay) {
+          <span class="demo-event-tooltip-line">
+            {{ event.start | date:'HH:mm' }}
+            @if (event.end) {
+              - {{ event.end | date:'HH:mm' }}
+            }
+          </span>
+        }
+      </div>
+    </ng-template>
+
+  </o-calendar>
+
+</example-comp>
