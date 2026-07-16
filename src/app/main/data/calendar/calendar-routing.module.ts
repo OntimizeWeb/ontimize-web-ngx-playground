@@ -12,7 +12,7 @@ export const routes: Routes = [
   {
     path: '', component: CalendarComponent,
     children: [
-      { path: '', redirectTo: 'static-data', pathMatch: 'prefix' },
+      { path: '', redirectTo: 'dynamic', pathMatch: 'prefix' },
       { path: 'static-data', component: CalendarStaticDataComponent },
       { path: 'service', component: CalendarServiceComponent },
       { path: 'dynamic', component: CalendarDynamicComponent },

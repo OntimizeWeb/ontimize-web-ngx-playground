@@ -15,7 +15,8 @@ export const MENU_CONFIG: MenuRootItem[] = [
       { id: 'list', name: 'LIST.COMPONENT', route: '/main/data/lists', icon: 'list' },
       { id: 'table', name: 'TABLE.COMPONENT', route: '/main/data/table', icon: 'storage' },
       { id: 'tree', name: 'TREE.COMPONENT', route: '/main/data/tree', icon: 'account_tree' },
-      { id: 'data-view', name: 'DATA-VIEW.COMPONENT', route: '/main/data/data-view', icon: 'view_quilt'}
+      { id: 'data-view', name: 'DATA-VIEW.COMPONENT', route: '/main/data/data-view', icon: 'view_quilt'},
+      { id: 'calendar', name: 'CALENDAR.COMPONENT', route: '/main/data/calendar', icon: 'calendar_month' }
     ]
   },
   {
