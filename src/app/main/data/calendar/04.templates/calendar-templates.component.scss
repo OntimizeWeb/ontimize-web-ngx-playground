@@ -1,0 +1,46 @@
+o-calendar.calendar-example {
+  height: 600px;
+}
+
+.calendar-templates {
+  .demo-event-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--mat-sys-secondary-container);
+    color: var(--mat-sys-on-secondary-container);
+    font-size: 0.75rem;
+
+    mat-icon {
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+    }
+
+    .demo-event-chip-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+/* The tooltip can be appended to the body (week/day views), outside this
+ * component, so its styles are not nested under the host class. */
+.demo-event-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  .demo-event-tooltip-title {
+    font-weight: 600;
+  }
+
+  .demo-event-tooltip-line {
+    opacity: 0.8;
+  }
+}
