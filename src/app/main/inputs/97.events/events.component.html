@@ -149,7 +149,7 @@
         </button>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-list dense class="console" style="min-height:200px">
+    <mat-list class="console" style="min-height:200px">
       @for (log of consoleLog; track log) {
         <mat-list-item>
           Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
