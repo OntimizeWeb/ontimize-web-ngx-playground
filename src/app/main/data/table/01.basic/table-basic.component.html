@@ -29,24 +29,6 @@
         </mat-slide-toggle>
         </div>
       <div class="o-flex-column">
-        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
-        <mat-divider></mat-divider>
-        <div class="o-flex-row">
-          <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
-            matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" class="o-layout-align-sa-center o-flex-100">
-            <mat-radio-button value="large" class="padding-3">
-              {{ 'LARGE' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="medium" class="padding-3">
-              {{ 'MEDIUM' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="small" class="padding-3">
-              {{ 'SMALL' | oTranslate }}
-            </mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-      <div class="o-flex-column">
         <span class="menu-title">{{ 'TABLE.FILTER' | oTranslate }}</span>
         <mat-divider></mat-divider>
         <div class="o-flex-row">
@@ -110,8 +92,7 @@
       [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
       [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
       [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-      [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" row-height="medium"
-      pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
+      [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked"      pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
       edition-mode="none" detail-mode="none" show-charts-on-demand-option="no" [show-header-tooltip]="showHeaderTooltipToggle.checked">
 
       <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>

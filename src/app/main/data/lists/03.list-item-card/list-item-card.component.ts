@@ -5,7 +5,7 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 const LIST_ITEM_CARD_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
   [static-data]="users" refresh-button="{refreshButton}" quick-filter="{quickFilter}" insert-button="{insertButton}"
-  row-height="{rowHeight}" detail-mode="none">
+  detail-mode="none">
 
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-card #item title="{{ row.username }}" subtitle="{{ row.name }}" show-image="{showImage}" image="{{ row.image }}"
@@ -56,8 +56,6 @@ export class ListItemCardComponent {
   action1Toggle: any;
   @ViewChild('action2Toggle')
   action2Toggle: any;
-  @ViewChild('rowHeight')
-  rowHeight: any;
   @ViewChild('actionText1')
   actionText1: any;
   @ViewChild('actionText2')

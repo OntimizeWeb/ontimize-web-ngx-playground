@@ -58,24 +58,11 @@
             <input (change)="updateCodeValue('icon', $event.target.value)" matInput #icon placeholder="icon" value="share">
           </mat-form-field>
         </div>
-        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
-        <mat-divider></mat-divider>
-        <mat-radio-group #rowHeight class="o-flex-column" layout-padding [value]="list.rowHeight" (change)="list.rowHeight = $event.value">
-          <mat-radio-button value="large" class="padding-3">
-            {{ 'LARGE' | oTranslate }}
-          </mat-radio-button>
-          <mat-radio-button value="medium" class="padding-3">
-            {{ 'MEDIUM' | oTranslate }}
-          </mat-radio-button>
-          <mat-radio-button value="small" class="padding-3">
-            {{ 'SMALL' | oTranslate }}
-          </mat-radio-button>
-        </mat-radio-group>
       </div>
     </div>
     <o-list content #list class="o-flex-fill" attr="list" [title]="listTitle.value" columns="id;name;username;image" keys="id"
       [static-data]="users" [refresh-button]="refreshButtonToggle.checked" [insert-button]="insertButtonToggle.checked" quick-filter="no"
-      row-height="medium" detail-mode="none">
+      detail-mode="none">
       @for (row of list.dataArray; track row) {
         <o-list-item>
           <o-list-item-card-image #itemCardImg title="{{row.username}}" subtitle="{{row.name}}" content="{{ row.body }}"
