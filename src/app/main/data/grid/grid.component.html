@@ -1,10 +1,10 @@
-<div fxLayout="row" class="main-container bg-level-1">
+<div class="o-flex-row main-container bg-level-1">
   <collapsible-menu>
-    <a mat-button class="menu-item" routerLink="/main/data/grid/basic" routerLinkActive="active" fxFlex>{{ 'GRID.BUTTON.BASIC' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/grid/fixed" routerLinkActive="active" fxFlex>{{ 'GRID.BUTTON.FIXED' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/grid/hybrid" routerLinkActive="active" fxFlex>{{ 'GRID.BUTTON.HYBRID' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/grid/basic" routerLinkActive="active">{{ 'GRID.BUTTON.BASIC' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/grid/fixed" routerLinkActive="active">{{ 'GRID.BUTTON.FIXED' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/grid/hybrid" routerLinkActive="active">{{ 'GRID.BUTTON.HYBRID' | oTranslate }}</a>
   </collapsible-menu>
-  <div fxFlex="calc(100% - 300px)" class="left-border">
+  <div class="left-border o-flex">
     <header-button-menu comp-name="{{ 'GRID.COMPONENT' | oTranslate }}" comp-desc="{{ 'GRID.COMPONENT.DESC' | oTranslate }}">
     </header-button-menu>
     <router-outlet></router-outlet>

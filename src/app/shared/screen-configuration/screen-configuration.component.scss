@@ -25,10 +25,25 @@
     padding: 10px;
     height: 100%;
     width: 450px;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0;
+    overflow-x: hidden;
 
     >.mat-drawer-inner-container {
       height: 100%;
+      border-radius: 0;
+      overflow-x: hidden;
+      min-width: 0;
     }
+  }
+
+  .mat-sidenav-content,
+  .mat-sidenav-content > div,
+  .mat-sidenav-content .container,
+  .mat-drawer-inner-container,
+  .sidenav {
+    min-width: 0;
+    box-sizing: border-box;
   }
 }
 
@@ -53,6 +68,8 @@
 
 .conf-btn {
 
+  flex: 0 0 auto;
+  margin-left: auto;
   transform: rotate(-90deg) translate(-67px, -59px);
   height: fit-content;
 

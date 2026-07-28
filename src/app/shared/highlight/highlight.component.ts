@@ -1,9 +1,14 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
-import { HighlightAutoResult, HighlightLoader } from 'ngx-highlightjs';
+import { HighlightAutoResult, HighlightLoader, HighlightModule } from 'ngx-highlightjs';
 import { AppearanceService } from 'ontimize-web-ngx';
 import { Subscription } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @Component({
+  standalone: true,
+  imports: [HighlightModule, MatButtonModule, ClipboardModule, MatIconModule],
   selector: 'highlight-comp',
   styleUrls: ['./highlight.component.scss'],
   templateUrl: './highlight.component.html',

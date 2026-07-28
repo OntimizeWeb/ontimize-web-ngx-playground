@@ -45,10 +45,10 @@ import { TableComponent } from './table.component';
     SharedModule,
     OntimizeWebModule,
     TableRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    TableComponent
   ],
   declarations: [
-    TableComponent,
     TableBasicComponent,
     TableFixedComponent,
     TableRendererComponent,

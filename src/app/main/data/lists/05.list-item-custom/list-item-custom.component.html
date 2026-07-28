@@ -1,20 +1,22 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="LIST.LIST_ITEM_CUSTOM" [files]="files" class="list-examples">
+<example-comp #ex collapsible="no" collapsed="no" class="o-flex-fill" comp-name="LIST.LIST_ITEM_CUSTOM" [files]="files" class="list-examples">
 
-  <div fxLayout="row" fxLayoutAlign="center start" layout-padding>
+  <div class="o-flex-row o-layout-align-center-start" layout-padding>
 
-    <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
+    <div class="o-flex-column o-flex-0-1-auto" layout-align="center">
 
-      <o-list fxFlex #list attr="list" keys="id" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="users">
+      <o-list class="o-flex" #list attr="list" keys="id" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="users">
 
-        <mat-card appearance="outlined" *ngFor="let row of list.dataArray" [o-list-item]="row">
-          <mat-card-header>
-            <div mat-card-avatar>
-              <img alt="Row image" src="{{ row.image }}" fxFill />
-            </div>
-            <mat-card-title>{{ row.name }}</mat-card-title>
-            <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
-          </mat-card-header>
-        </mat-card>
+        @for (row of list.dataArray; track row) {
+          <mat-card appearance="outlined" [o-list-item]="row">
+            <mat-card-header>
+              <div mat-card-avatar>
+                <img alt="Row image" src="{{ row.image }}" class="o-flex-fill" />
+              </div>
+              <mat-card-title>{{ row.name }}</mat-card-title>
+              <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        }
 
       </o-list>
 

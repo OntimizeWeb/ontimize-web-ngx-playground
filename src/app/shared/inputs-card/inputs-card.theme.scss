@@ -1,17 +1,11 @@
-@use '@angular/material'as mat;
-
 @mixin inputs-card-theme($theme) {
-  $background: map-get($theme, color, background);
-  $foreground: map-get($theme, color, foreground);
-
   .new {
-    border-color: mat.get-color-from-palette($foreground);
-    background-color: mat.get-color-from-palette($background);
-    color: mat.get-color-from-palette($foreground, text);
+    border-color: var(--o-fg-base);
+    background-color: var(--o-bg-background);
+    color: var(--o-fg-text);
   }
 
   .img-container {
-    background-color: mat.get-color-from-palette($background, selected-button);
+    background-color: var(--o-bg-level-08);
   }
-
 }

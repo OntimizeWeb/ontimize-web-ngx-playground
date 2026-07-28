@@ -1,5 +1,5 @@
-<div fxLayout="row" class="main-container bg-level-1">
-  <div fxLayout="row" fxLayoutAlign="center start" class="card-container">
+<div class="o-flex-row main-container bg-level-1">
+  <div class="o-flex-row o-layout-align-center-start card-container">
     <div class="card-link" [routerLink]="['/main/inputs/overview']">
       <inputs-card comp-name="overview" header="{{ 'INPUTS.OVERVIEW' | oTranslate }}" content="{{ 'INPUTS.OVERVIEW.DESC' | oTranslate }}">
       </inputs-card>
@@ -22,10 +22,6 @@
     </div>
     <div class="card-link" routerLink="/main/inputs/daterange">
       <inputs-card comp-name="daterange" header="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" content="{{ 'INPUTS.DATERANGE.DESC' | oTranslate }}">
-      </inputs-card>
-    </div>
-     <div class="card-link" routerLink="/main/inputs/daterangelegacy">
-      <inputs-card comp-name="daterange" header="{{ 'INPUT.BUTTON.DATERANGELEGACY' | oTranslate }}" content="{{ 'INPUTS.DATERANGELEGACY.DESC' | oTranslate }}">
       </inputs-card>
     </div>
     <div class="card-link" routerLink="/main/inputs/email">

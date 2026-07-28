@@ -15,10 +15,10 @@ import { LayoutManagerSidenavComponent } from './04.sidenav/layout-manager-siden
   imports: [
     SharedModule,
     OntimizeWebModule,
-    LayoutManagerRoutingModule
+    LayoutManagerRoutingModule,
+    LayoutManagerComponent
   ],
   declarations: [
-    LayoutManagerComponent,
     LayoutManagerOverviewComponent,
     LayoutManagerTabgroupComponent,
     LayoutManagerDialogComponent,

@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { ObservableWrapper } from 'ontimize-web-ngx';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CollapsibleStateService {
   public expanded = true;
 

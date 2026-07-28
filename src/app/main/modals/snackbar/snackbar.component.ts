@@ -19,7 +19,12 @@ const TYPESCRIPT_DATA = `
   }
 `;
 
+import { OButtonComponent } from 'ontimize-web-ngx';
+import { ExampleComponent } from '../../../shared/example/example.component';
+
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, OButtonComponent],
   selector: 'app-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss']

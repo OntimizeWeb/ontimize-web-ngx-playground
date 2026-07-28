@@ -1,7 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CollapsibleStateService } from '../services/collapsible-state.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
+  standalone: true,
+  imports: [MatButtonModule, MatIconModule],
   selector: 'header-button-menu',
   templateUrl: './header-button-menu.component.html',
   styleUrls: ['./header-button-menu.component.scss'],

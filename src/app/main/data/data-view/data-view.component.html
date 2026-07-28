@@ -1,18 +1,18 @@
-<div fxLayout="row" class="main-container bg-level-1">
+<div class="o-flex-row main-container bg-level-1">
   <collapsible-menu>
-    <a mat-button class="menu-item" routerLink="/main/data/data-view/basic" routerLinkActive="active" fxFlex>{{ 'DATA-VIEW.BUTTON.BASIC' | oTranslate
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/data-view/basic" routerLinkActive="active">{{ 'DATA-VIEW.BUTTON.BASIC' | oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/data-view/toggle-options" routerLinkActive="active" fxFlex>{{
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/data-view/toggle-options" routerLinkActive="active">{{
       'DATA-VIEW.BUTTON.TOGGLE-OPTIONS' |
       oTranslate
       }}</a>
-    <a mat-button class="menu-item" routerLink="/main/data/data-view/custom-button" routerLinkActive="active" fxFlex>{{
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/data-view/custom-button" routerLinkActive="active">{{
       'DATA-VIEW.BUTTON.CUSTOM-BUTTON' | oTranslate
       }}</a>
 
   </collapsible-menu>
 
-  <div fxFlex="calc(100% - 300px)" class="left-border" fxLayout="column">
+  <div class="left-border o-flex o-flex-column">
     <header-button-menu comp-name="{{ 'DATA-VIEW.COMPONENT' | oTranslate }}" comp-desc="{{ 'DATA-VIEW.COMPONENT.DESC' | oTranslate }}">
     </header-button-menu>
     <router-outlet></router-outlet>

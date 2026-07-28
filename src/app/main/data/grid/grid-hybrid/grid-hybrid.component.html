@@ -1,13 +1,15 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-hybrid')"
+<example-comp #ex collapsible="no" collapsed="no" class="o-flex-fill" comp-name="GRID.EXAMPLE" [files]="getFiles('o-grid-hybrid')"
   (showSource)="onShowSource(grid, ex)" class="list-examples">
-  <div fxLayout="column" fxFlex="1 1 auto" layout-align="center">
+  <div class="o-flex-column o-flex-0-1-auto" layout-align="center">
     <o-grid #grid attr="grid" [static-data]="data" keys="text" columns="text;cols;rows;color" cols="4"
       grid-item-height="100px" controls="no" gutter-size="0">
-      <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
-        <div [style.background]="list.color" fxFill>
-          {{list.text}}
-        </div>
-      </o-grid-item>
+      @for (list of grid.dataArray; track list) {
+        <o-grid-item [colspan]="list.cols" [rowspan]="list.rows">
+          <div [style.background]="list.color" class="o-flex-fill">
+            {{list.text}}
+          </div>
+        </o-grid-item>
+      }
     </o-grid>
   </div>
 </example-comp>

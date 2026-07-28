@@ -12,10 +12,10 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
     SharedModule,
     OntimizeWebModule,
     ImageEditorRoutingModule,
-    OImageEditorModule
+    OImageEditorModule,
+    ImageEditorComponent
   ],
   declarations: [
-    ImageEditorComponent,
     ImageEditorMediaComponent,
     ImageEditorExamplesComponent
   ]

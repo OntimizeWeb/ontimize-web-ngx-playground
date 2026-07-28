@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { AsyncValidatorFn, UntypedFormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { ErrorData } from 'ontimize-web-ngx';
 import { AsyncValidatorsHelper, CharValidatorService } from './validators.utils';
 
 const VALIDATORS_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.INPUT' | oTranslate }}: must contain 'a', 'A' and 'b'</label>
-      <o-text-input fxFlex
+      <o-text-input class="o-flex"
         attr="input"
         label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"
         read-only="no"
@@ -16,16 +16,16 @@ const VALIDATORS_HTML_DATA = `
       </o-text-input>
     </div>
 
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-VALIDATOR' | oTranslate }}: {{ required ? 'required and' : ''}} must contain 'b' and minLength {{ minLength }}</label>
-      <o-text-input fxFlex attr="input2" [min-length]="minLength" [required]="required" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
+      <o-text-input class="o-flex" attr="input2" [min-length]="minLength" [required]="required" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
         <o-validator error-name="requiredB" error-text="Must contain a 'b'" [validator-function]="bValidator"></o-validator>
       </o-text-input>
     </div>
 
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-ERROR' | oTranslate }}: must contain 'a' and 'A' </label>
-      <o-text-input fxFlex attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
+      <o-text-input class="o-flex" attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
         <o-validator [validator-function]="aValidator">
           <o-error name="requiredLowercaseA" text="Must contain a lowercase 'a'"></o-error>
           <o-error name="requiredUppercaseA" text="Must contain a uppercase 'A'"></o-error>
@@ -88,10 +88,10 @@ const VALIDATORS_TS_DATA = `
 
 const ASYNC_VALIDATORS_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.INPUT' | oTranslate }}: must contain 'a', 'A' and 'b'</label>
       <o-text-input
-        fxFlex
+        class="o-flex"
         attr="asyncInput"
         label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"
         [async-validators]="asyncValidatorsArray"
@@ -100,16 +100,16 @@ const ASYNC_VALIDATORS_HTML_DATA = `
       </o-text-input>
     </div>
 
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-VALIDATOR' | oTranslate }}: {{ required ? 'required and' : ''}} must contain 'b' and minLength {{ minLength }}</label>
-      <o-text-input fxFlex attr="asyncInput2" [min-length]="minLength" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
+      <o-text-input class="o-flex" attr="asyncInput2" [min-length]="minLength" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
         <o-validator error-name="requiredB" error-text="Must contain a 'b'" [async-validator-function]="asyncBValidator"></o-validator>
       </o-text-input>
     </div>
 
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.VALIDATOR.O-ERROR' | oTranslate }}: must contain 'a' and 'A'</label>
-      <o-text-input fxFlex attr="asyncInput3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
+      <o-text-input class="o-flex" attr="asyncInput3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" read-only="no">
         <o-validator [async-validator-function]="asyncLowercaseAValidator">
           <o-error name="requiredLowercaseA" text="Must contain a lowercase 'a'"></o-error>
         </o-validator>
@@ -292,7 +292,7 @@ export class ValidatorsComponent {
     this.asyncBValidator = AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())
   }
 
-  aValidator(control: UntypedFormControl): ValidationErrors {
+  aValidator(control: AbstractControl): ValidationErrors {
     let result = {};
     if (control.value && control.value.toString().indexOf('a') === -1) {
       result['requiredLowercaseA'] = true;
@@ -303,7 +303,7 @@ export class ValidatorsComponent {
     return result;
   }
 
-  bValidator(control: UntypedFormControl): ValidationErrors {
+  bValidator(control: AbstractControl): ValidationErrors {
     if (control.value && control.value.toString().indexOf('b') === -1) {
       return {
         'requiredB': true

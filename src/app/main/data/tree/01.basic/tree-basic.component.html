@@ -1,8 +1,8 @@
-<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="TREE.BASIC.COMPONENT" comp-desc="TREE.BASIC.COMPONENT.DESC" [files]="files"
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="TREE.BASIC.COMPONENT" comp-desc="TREE.BASIC.COMPONENT.DESC" [files]="files"
   (showSource)="onShowSource(ex)">
-  <div fxLayout="row" fxLayoutAlign="center stretch" layout-padding>
+  <div class="o-flex-row o-layout-align-c-stretch" layout-padding>
 
-    <o-tree #treeview fxFlex service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" select-all-checkbox="yes"
+    <o-tree #treeview class="o-flex" service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" select-all-checkbox="yes"
       select-all-checkbox-visible="yes" columns="CUSTOMERID;SURNAME;NAME" visible-columns="SURNAME;NAME" separator=", " recursive="no"
       query-on-init="true" root-title="CUSTOMERS" [title]="treeTitle.value" [controls]="controlsToggle.checked"
       [quick-filter]="quickFilterToggle.checked" [refresh-button]="refreshButtonToggle.checked" (onNodeSelected)="nodeSelected($event)"
@@ -11,13 +11,13 @@
     </o-tree>
 
 
-    <o-column attr="conf" title="{{ 'TREE.CONFIGURATION' | oTranslate }}" elevation="0" fxFlex="45" layout-padding layout-align="start stretch">
+    <o-column attr="conf" title="{{ 'TREE.CONFIGURATION' | oTranslate }}" elevation="0" style="flex:0 0 45%" layout-padding layout-align="start stretch">
 
       <o-column title="{{ 'TREE.INPUTS' | oTranslate }}" elevation="0" layout-align="center">
-        <mat-form-field fxFlex="50">
+        <mat-form-field style="flex:0 0 50%">
           <input matInput #treeTitle placeholder="{{ 'TITLE' | oTranslate }}" value="Tree">
         </mat-form-field>
-        <div fxLayout="column">
+        <div class="o-flex-column">
           <mat-slide-toggle #controlsToggle checked="true">
             {{ 'TREE.CONTROLS' | oTranslate }}
           </mat-slide-toggle>
@@ -32,9 +32,11 @@
         </div>
       </o-column>
       <o-column class="event-column" title="{{ 'TREE.OUTPUTS' | oTranslate }}" elevation="0" layout-padding layout-align="center">
-        <div *ngFor="let ev of treeEvents">
-          {{ ev.event }}
-        </div>
+        @for (ev of treeEvents; track ev) {
+          <div>
+            {{ ev.event }}
+          </div>
+        }
       </o-column>
     </o-column>
   </div>

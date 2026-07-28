@@ -1,5 +1,5 @@
-<div fxLayout="row" class="main-container bg-level-1">
-  <div fxLayout="row" fxLayoutAlign="center start" class="card-container">
+<div class="o-flex-row main-container bg-level-1">
+  <div class="o-flex-row o-layout-align-center-start card-container">
     <div class="card-link " routerLink="/main/data/grid">
       <inputs-card comp-name="grid" header="{{ 'GRID.COMPONENT' | oTranslate }}" content="{{ 'GRID.COMPONENT.DESC' | oTranslate }}">
       </inputs-card>
@@ -18,6 +18,10 @@
     </div>
     <div class="card-link" routerLink="/main/data/data-view">
       <inputs-card comp-name="data-view" header="{{ 'DATA-VIEW.COMPONENT' | oTranslate }}" content="{{ 'DATA-VIEW.COMPONENT.DESC' | oTranslate }}">
+      </inputs-card>
+    </div>
+    <div class="card-link" routerLink="/main/data/calendar">
+      <inputs-card comp-name="calendar" header="{{ 'CALENDAR.COMPONENT' | oTranslate }}" content="{{ 'CALENDAR.COMPONENT.DESC' | oTranslate }}">
       </inputs-card>
     </div>
   </div>

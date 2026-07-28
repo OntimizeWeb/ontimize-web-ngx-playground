@@ -1,0 +1,17 @@
+// Local M2-compatible copy of ontimize-web-ngx-gallery theme.
+// Updated to Material 3 native tokens (no longer reads M2 palettes).
+
+@mixin o-gallery-theme($theme-or-color-config) {
+  .o-gallery-arrows {
+    .o-gallery-icon-content {
+      background-color: var(--o-bg-background);
+    }
+  }
+
+  o-gallery-preview .o-gallery-arrows {
+    .o-gallery-icon-content {
+      background-color: rgba(#ffffff, 0.87);
+      color: rgba(black, 0.87);
+    }
+  }
+}

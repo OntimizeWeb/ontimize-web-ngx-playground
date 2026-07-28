@@ -1,0 +1,18 @@
+o-calendar.calendar-example {
+  height: 600px;
+}
+
+.calendar-dynamic {
+  .padding-3 {
+    padding: 3px;
+  }
+
+  .config-group {
+    gap: 6px;
+
+    .mat-slider {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+}

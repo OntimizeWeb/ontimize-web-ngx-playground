@@ -14,14 +14,13 @@ import { DetailModule } from './04.detail/detail.module';
     OntimizeWebModule,
     OTreeModule,
     TreeRoutingModule,
-    DetailModule
+    DetailModule,
+    TreeComponent
   ],
   declarations: [
-    TreeComponent,
     TreeBasicComponent,
     TreeNodesComponent,
-    TreeRecursiveComponent,
-
+    TreeRecursiveComponent
   ]
 })
 export class TreeModule { }

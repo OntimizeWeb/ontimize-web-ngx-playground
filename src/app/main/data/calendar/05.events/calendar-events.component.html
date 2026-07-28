@@ -1,0 +1,30 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="CALENDAR.EVENTS.COMPONENT" [files]="files">
+
+  <div class="o-flex-column calendar-events-container">
+    <o-calendar class="calendar-example" attr="calendarEvents" [static-data]="staticData"
+      columns="id;title;code;start;end;allDay" keys="id" start-column="start" end-column="end" title-column="title"
+      description-column="code" all-day-column="allDay" view="month" (onEventClick)="onEventClick($event)"
+      (onDayClick)="onDayClick($event)" (onViewChange)="onViewChange($event)" (onViewDateChange)="onViewDateChange($event)"
+      max-events-per-month-cell="2">
+    </o-calendar>
+
+    <mat-toolbar class="playground-toolbar">
+      <mat-toolbar-row>
+        <span>{{ 'CONSOLE.LOG' | oTranslate }}</span>
+        <span class="mat-toolbar-space"></span>
+        <button mat-icon-button (click)="clearConsole()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-list dense class="console">
+      @for (log of consoleLog; track log) {
+        <mat-list-item>
+          Event&nbsp;<b>{{ log.eventName }}</b> :: {{ log.detail }}
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      }
+    </mat-list>
+  </div>
+
+</example-comp>

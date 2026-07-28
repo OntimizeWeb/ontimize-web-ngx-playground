@@ -1,12 +1,12 @@
-<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-fixed')"
+<example-comp #ex collapsible="no" collapsed="no" class="o-flex-fill" comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-fixed')"
   (showSource)="onShowSource(grid)" class="list-examples">
   <screen-configuration comp-name="GRID" #sidenavComp>
-    <div menu layout-margin fxLayout="column">
+    <div menu layout-margin class="o-flex-column">
       <mat-form-field>
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
         <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Characters">
       </mat-form-field>
-      <o-column fxFlex layout-padding>
+      <o-column class="o-flex" layout-padding>
         <mat-slide-toggle (change)="updateCodeValue('fixedHeader', $event.checked)" #fixedHeaderToggle [checked]="true">
           {{ 'GRID.BUTTON.FIXED' | oTranslate }}
         </mat-slide-toggle>
@@ -18,34 +18,34 @@
     </div>
     <o-grid content #grid attr="grid" [title]="gridTitle.value" service-type="rickandmorty" service="characters" entity="character"
       columns="id;name;status;species;photo;location;origin" keys="id" [fixed-header]="fixedHeaderToggle.checked"
-      [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="20" grid-item-height="2:1" quick-filter="yes" fxFlex pageable="yes"
+      [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="20" grid-item-height="2:1" quick-filter="yes" class="o-flex" pageable="yes"
       cols="2" gutter-size="16px" quick-filter-columns="name">
 
-      <o-grid-item *ngFor="let list of grid.dataArray">
-        <div class="card-inner">
-          <mat-card class="fill-minus-8" appearance="outlined">
-            <div fxlayout="row" fxFill>
-              <img mat-card-image src="{{list.image}}" fxFlex="35%" fxFill
-                style="transition: opacity 0.5s; object-position: center center; object-fit: cover" />
-              <div fxFlex="65%">
-                <mat-card-header>
-                  <mat-card-title>{{list.name}}</mat-card-title>
-                  <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                  <p>
-                    <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
-                  </p>
-                  <p>
-                    <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
-                  </p>
-                </mat-card-content>
+      @for (list of grid.dataArray; track list) {
+        <o-grid-item>
+          <div class="card-inner">
+            <mat-card class="fill-minus-8" appearance="outlined">
+              <div class="o-flex-fill" fxlayout="row">
+                <img mat-card-image src="{{list.image}}" class="o-flex-fill" style="flex: 1 1 35%; max-width: 35%; transition: opacity 0.5s; object-position: center center; object-fit: cover" />
+                <div style="flex: 1 1 65%; max-width: 65%">
+                  <mat-card-header>
+                    <mat-card-title>{{list.name}}</mat-card-title>
+                    <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p>
+                      <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
+                    </p>
+                    <p>
+                      <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
+                    </p>
+                  </mat-card-content>
+                </div>
               </div>
-            </div>
-          </mat-card>
+            </mat-card>
           </div>
-
-      </o-grid-item>
+        </o-grid-item>
+      }
     </o-grid>
 
   </screen-configuration>

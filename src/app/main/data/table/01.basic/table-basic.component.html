@@ -1,5 +1,5 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="TABLE.COMPONENT" [html]="html" [files]="getFiles('o-table')"
-  (showSource)="onShowSource('o-table', table, ex)" fxFill>
+  (showSource)="onShowSource('o-table', table, ex)" class="o-flex-fill">
 
   <screen-configuration comp-name="TABLE" #sidenavComp>
     <div menu>
@@ -7,98 +7,80 @@
         <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
         <input (change)="updateCodeValue('titleInput', $event.target.value)" matInput #titleInput value="Table">
       </mat-form-field>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-slide-toggle (change)="updateCodeValue('titleToggle', $event.checked)" #titleToggle checked="true" fxFlex>
+      <div class="o-flex-row o-layout-align-sb-center">
+        <mat-slide-toggle (change)="updateCodeValue('titleToggle', $event.checked)" #titleToggle checked="true" class="o-flex">
           {{ 'TABLE.SHOW_TITLE' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle (change)="updateCodeValue('controlsToggle', $event.checked)" #controlsToggle checked="true" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue('controlsToggle', $event.checked)" #controlsToggle checked="true" class="o-flex">
           {{ 'TABLE.CONTROLS' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-slide-toggle (change)="updateCodeValue('autoAdjustToggle', $event.checked)" #autoAdjustToggle checked="false" fxFlex>
+      <div class="o-flex-row o-layout-align-sb-center">
+        <mat-slide-toggle (change)="updateCodeValue('autoAdjustToggle', $event.checked)" #autoAdjustToggle checked="false" class="o-flex">
           {{ 'TABLE.AUTOADJUST' | oTranslate }}
         </mat-slide-toggle>
-        <mat-slide-toggle (change)="updateCodeValue('horizontalScrollToggle', $event.checked)" #horizontalScrollToggle checked="false" fxFlex>
+        <mat-slide-toggle (change)="updateCodeValue('horizontalScrollToggle', $event.checked)" #horizontalScrollToggle checked="false" class="o-flex">
           {{ 'TABLE.BUTTON.HORIZONTAL_SCROLL' | oTranslate }}
         </mat-slide-toggle>
       </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <mat-slide-toggle #showHeaderTooltipToggle [checked]="false" fxFlex>
+      <div class="o-flex-row o-layout-align-sb-center">
+        <mat-slide-toggle #showHeaderTooltipToggle [checked]="false" class="o-flex">
           {{ 'TABLE.BUTTON.HEADER_TOOLTIP' | oTranslate }}
         </mat-slide-toggle>
         </div>
-      <div fxLayout="column">
-        <span class="menu-title">{{ 'ROW_HEIGHT' | oTranslate }}</span>
-        <mat-divider></mat-divider>
-        <div fxLayout="row">
-          <mat-radio-group #rowHeight layout-padding [value]="table.rowHeight" (change)="table.rowHeight = $event.value"
-            matTooltip="{{ 'TABLE.ROW_HEIGHT.INFO' | oTranslate }}" fxLayoutAlign="space-around center" fxFlex="100">
-            <mat-radio-button value="large" class="padding-3">
-              {{ 'LARGE' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="medium" class="padding-3">
-              {{ 'MEDIUM' | oTranslate }}
-            </mat-radio-button>
-            <mat-radio-button value="small" class="padding-3">
-              {{ 'SMALL' | oTranslate }}
-            </mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-      <div fxLayout="column">
+      <div class="o-flex-column">
         <span class="menu-title">{{ 'TABLE.FILTER' | oTranslate }}</span>
         <mat-divider></mat-divider>
-        <div fxLayout="row">
-          <mat-slide-toggle (change)="updateCodeValue('quickFilterToggle', $event.checked)" #quickFilterToggle checked="true" fxFlex>
+        <div class="o-flex-row">
+          <mat-slide-toggle (change)="updateCodeValue('quickFilterToggle', $event.checked)" #quickFilterToggle checked="true" class="o-flex">
             {{ 'TABLE.FILTER' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="updateCodeValue('filterCaseSensitiveToggle', $event.checked)" #filterCaseSensitiveToggle checked="false" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('filterCaseSensitiveToggle', $event.checked)" #filterCaseSensitiveToggle checked="false" class="o-flex">
             {{ 'TABLE.FILTER_CASE_SENSITIVE' | oTranslate }}
           </mat-slide-toggle>
         </div>
       </div>
       <o-column-collapsible title="{{ 'TABLE.MENU' | oTranslate }}" expanded="no" class="menu-title-collapsible">
-        <div fxLayout="column" fxLayoutAlign="start start">
-          <mat-slide-toggle (change)="updateCodeValue('selectMultipleToggle', $event.checked)" #selectMultipleToggle checked="false" fxFlex>
+        <div class="o-flex-column o-layout-align-start-start">
+          <mat-slide-toggle (change)="updateCodeValue('selectMultipleToggle', $event.checked)" #selectMultipleToggle checked="false" class="o-flex">
             {{ 'TABLE.SELECT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
-          <mat-slide-toggle (change)="updateCodeValue('exportButtonToggle', $event.checked)" #exportButtonToggle checked="true" fxFlex>
+          <mat-slide-toggle (change)="updateCodeValue('exportButtonToggle', $event.checked)" #exportButtonToggle checked="true" class="o-flex">
             {{ 'TABLE.EXPORT_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-          <mat-slide-toggle (change)="updateCodeValue('columnsVisibilityToggle', $event.checked)" #columnsVisibilityToggle checked="true" fxFlex>
+        <div class="o-flex-row o-layout-align-sb-center">
+          <mat-slide-toggle (change)="updateCodeValue('columnsVisibilityToggle', $event.checked)" #columnsVisibilityToggle checked="true" class="o-flex">
             {{ 'TABLE.COLUMNS_VISIBILITY_BUTTON' | oTranslate }}
           </mat-slide-toggle>
         </div>
       </o-column-collapsible>
       <o-column-collapsible title="{{ 'BUTTONS' | oTranslate }}" expanded="no">
-        <div fxLayout="row">
-          <div fxLayout="column" fxLayoutAlign="start start">
-            <mat-slide-toggle (change)="updateCodeValue('buttonAddToggle', $event.checked)" #buttonAddToggle [checked]="false" fxFlex>
+        <div class="o-flex-row">
+          <div class="o-flex-column o-layout-align-start-start">
+            <mat-slide-toggle (change)="updateCodeValue('buttonAddToggle', $event.checked)" #buttonAddToggle [checked]="false" class="o-flex">
               {{ 'TABLE.BUTTON.ADD' | oTranslate }}
             </mat-slide-toggle>
-            <mat-slide-toggle (change)="updateCodeValue('buttonRefreshToggle', $event.checked)" #buttonRefreshToggle [checked]="false" fxFlex>
+            <mat-slide-toggle (change)="updateCodeValue('buttonRefreshToggle', $event.checked)" #buttonRefreshToggle [checked]="false" class="o-flex">
               {{ 'TABLE.BUTTON.REFRESH' | oTranslate }}
             </mat-slide-toggle>
           </div>
-          <div fxLayout="column" fxLayoutAlign="start start">
+          <div class="o-flex-column o-layout-align-start-start">
             <mat-slide-toggle (change)="updateCodeValue('buttonRemoveToggle', $event.checked)" #buttonRemoveToggle [checked]="false"
-              matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" fxFlex>
+              matTooltip="{{ 'TABLE.BUTTON.REMOVE.INFO' | oTranslate }}" class="o-flex">
               {{ 'TABLE.BUTTON.REMOVE' | oTranslate }}
             </mat-slide-toggle>
-            <mat-slide-toggle (change)="updateCodeValue('showTextToggle', $event.checked)" #showTextToggle checked="true" fxFlex>
+            <mat-slide-toggle (change)="updateCodeValue('showTextToggle', $event.checked)" #showTextToggle checked="true" class="o-flex">
               {{ 'TABLE.BUTTON.SHOW_TEXT' | oTranslate }}
             </mat-slide-toggle>
           </div>
         </div>
       </o-column-collapsible>
-      <div fxLayout="column">
+      <div class="o-flex-column">
         <span class="menu-title">{{ 'ITEM_CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
-        <div fxLayout="row">
-          <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" fxFlex>
+        <div class="o-flex-row">
+          <mat-slide-toggle #multilineToggle [checked]="false" (change)="table.getOColumn('NOTES').multiline=multilineToggle.checked" class="o-flex">
             {{ 'TABLE.ITEM.MULTILINE' | oTranslate }}
           </mat-slide-toggle>
         </div>
@@ -110,8 +92,7 @@
       [filter-case-sensitive]="filterCaseSensitiveToggle.checked" [static-data]="data" [insert-button]="buttonAddToggle.checked"
       [export-button]="exportButtonToggle.checked" [columns-visibility-button]="columnsVisibilityToggle.checked"
       [delete-button]="buttonRemoveToggle.checked" [refresh-button]="buttonRefreshToggle.checked" [select-all-checkbox]="selectMultipleToggle.checked"
-      [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked" row-height="medium"
-      pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
+      [show-buttons-text]="showTextToggle.checked" [controls]="controlsToggle.checked" [show-title]="titleToggle.checked"      pagination-controls="no" [auto-adjust]="autoAdjustToggle.checked" [horizontal-scroll]="horizontalScrollToggle.checked" virtual-scroll="no"
       edition-mode="none" detail-mode="none" show-charts-on-demand-option="no" [show-header-tooltip]="showHeaderTooltipToggle.checked">
 
       <o-table-columns-filter columns="NAME;SURNAME"></o-table-columns-filter>

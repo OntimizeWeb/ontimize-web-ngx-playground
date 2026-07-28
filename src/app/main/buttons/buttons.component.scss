@@ -1,0 +1,78 @@
+.variant-importance-example {
+
+  // caption naming the column axis (importance) over the value columns
+  .vi-axis-caption {
+    align-items: stretch;
+
+    .vi-importance-axis {
+      flex: 1 1 auto;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      opacity: 0.6;
+      padding-bottom: 4px;
+    }
+  }
+
+  .vi-variant-row {
+    align-items: center;
+
+    // row header: the variant name (row axis), fixed width so every column lines up
+    .vi-variant-label {
+      flex: 0 0 90px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    // column legend / value cells
+    .vi-col-header {
+      flex: 0 0 128px;
+      text-align: center;
+    }
+
+    // keep every button the same column width as its header; center the
+    // icon-only shapes (icon / fab / mini-fab) that don't stretch to fill it
+    o-button {
+      flex: 0 0 120px;
+      text-align: center;
+    }
+
+    // separate the first cell after the row-label divider from the line
+    .vi-variant-label + .vi-col-header,
+    .vi-variant-label + o-button {
+      margin-left: 12px;
+    }
+  }
+
+  // header row: the importance value legend, set apart as table headers
+  .vi-header-row {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+    .vi-row-axis {
+      opacity: 0.6;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .vi-col-header {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      opacity: 0.6;
+      padding-bottom: 8px;
+    }
+  }
+
+  // vertical divider after the variant (row-axis) column → spreadsheet-like grid
+  .vi-axis-caption .vi-corner,
+  .vi-variant-row .vi-variant-label {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    border-right: 1px solid rgba(128, 128, 128, 0.3);
+  }
+}

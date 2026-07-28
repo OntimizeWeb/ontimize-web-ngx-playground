@@ -3,8 +3,7 @@ const SIDENAV_HTML_DATA = `
     label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit" sidenav-width="80%">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
-      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no"      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
       service-type="DummyService" service="customers" entity="customer" query-rows="50"  virtual-scroll="false">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">
@@ -21,8 +20,7 @@ const TABGROUP_HTML_DATA = `
     label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
-      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no"      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
       service-type="DummyService" service="customers" entity="customer" query-rows="50"  virtual-scroll="false">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">
@@ -39,8 +37,7 @@ const DIALOG_HTML_DATA = `
     label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
-      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no"      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
       service-type="DummyService" service="customers" entity="customer" query-rows="50"  virtual-scroll="false">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">
@@ -57,8 +54,7 @@ const SPLIT_PANE_HTML_DATA = `
     label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
-      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no"      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
       service-type="DummyService" service="customers" entity="customer" query-rows="50"  virtual-scroll="false">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">

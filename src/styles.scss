@@ -1,17 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "node_modules/@angular/material/theming";
-
-body {
-  font-size: 14px;
-}
 
 .left-border {
   border-style: solid;
   border-width: 0 0 0 1px;
-  border-color: #0000001E;
+  border-color: #0000001e;
   padding-left: 16px;
   overflow: auto;
   height: 100%;
+  min-width: 0;
 }
 
 .main-container {
@@ -19,11 +15,10 @@ body {
   height: 100%;
   overflow: auto;
 
-  >div {
+  > div {
     padding-left: 16px;
   }
 }
-
 
 .menu-title {
   font-weight: 600;
@@ -32,7 +27,7 @@ body {
 
 .menu-title-collapsible {
   .o-container-title {
-    >span {
+    > span {
       font-weight: 600;
       margin-top: 10px;
     }
@@ -40,10 +35,8 @@ body {
 }
 
 .o-column-collapsible {
-
-  >.o-container.mat-expansion-panel,
-  >.o-container.mat-expansion-panel:not(.mat-expanded) {
-
+  > .o-container.mat-expansion-panel,
+  > .o-container.mat-expansion-panel:not(.mat-expanded) {
     .mat-expansion-panel-header {
       padding-left: 0;
       margin-left: 0;
@@ -52,7 +45,7 @@ body {
       border-radius: 0;
 
       .o-container-title {
-        >span {
+        > span {
           padding-left: 0;
           font-weight: 600;
         }
@@ -61,19 +54,18 @@ body {
   }
 }
 
-
 app-tooltip,
 table-basic,
 table-fixed,
 table-pagination,
 table-horizontal-scroll,
+calendar-dynamic,
 .containers-collapsible,
 .containers-basic {
-
   .example-comp {
     height: 100%;
 
-    &>section {
+    & > section {
       height: 100%;
 
       .playground-examples {
@@ -81,14 +73,13 @@ table-horizontal-scroll,
           display: block;
           height: 100%;
 
-          >div {
+          > div {
             height: 100%;
           }
         }
       }
     }
   }
-
 }
 
 .card-link {

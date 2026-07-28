@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { OntimizeMatIconRegistry } from 'ontimize-web-ngx';
 
 
 const svgIcons = ['checkbox', 'combo', 'currency', 'date', 'daterange', 'email', 'file', 'hour', 'html', 'integer', 'listpicker', 'nif', 'overview', 'password',
   'percentage', 'phone', 'radio', 'real', 'slider', 'slidetoggle', 'text', 'textarea', 'time', 'table', 'list', 'grid', 'tree','data-view', 'image', 'gallery', 'containers',
-  'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane', 'flm-sidenav', 'image-editor'];
+  'dialog', 'snackbar', 'contextmenu', 'tooltip', 'flm-dialog', 'flm-tab', 'flm-split-pane', 'flm-sidenav', 'image-editor', 'calendar'];
 
 @Component({
+  standalone: true,
+  imports: [RouterOutlet],
   selector: 'o-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

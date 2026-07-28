@@ -1,10 +1,9 @@
-<example-comp fxFlexFill comp-name="{{ 'LAYOUT_MANAGER_SPLIT_PANE' | oTranslate }}" [files]="LayoutCodeExamples.files_split_pane">
+<example-comp class="o-flex-fill" comp-name="{{ 'LAYOUT_MANAGER_SPLIT_PANE' | oTranslate }}" [files]="LayoutCodeExamples.files_split_pane">
   <o-form-layout-manager class="layout-manager-split-pane" attr="o-form-layout-manager-split-pane" mode="split-pane" title="CUSTOMERS"
     label-columns="SURNAME;NAME" separator="," title-data-origin="customers_form_edit" main-min-width="45%">
 
     <o-table #table attr="table" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS"
-      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no" row-height="medium"
-      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" quick-filter="no"      select-all-checkbox="no" export-button="no" show-configuration-option="no" columns-visibility-button="no" delete-button="no"
       service-type="DummyService" service="customers" entity="customer" query-rows="50">
 
       <o-table-column attr="PHOTO" orderable="no" searchable="no" width="64px" tooltip="no">

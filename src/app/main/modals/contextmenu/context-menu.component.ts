@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
-
+import { OContextMenuComponent, OContextMenuGroupComponent, OContextMenuItemComponent, OContextMenuSeparatorComponent, OContextMenuDirective, OTranslatePipe, OTranslateService } from 'ontimize-web-ngx';
+import { ExampleComponent } from '../../../shared/example/example.component';
 import { NavigationBarService } from '../../../shared/navigation-bar.service';
 
 const HTML_DATA = `
@@ -26,6 +26,8 @@ const TYPESCRIPT_DATA = `
 `;
 
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, OContextMenuDirective, OContextMenuComponent, OContextMenuItemComponent, OContextMenuGroupComponent, OContextMenuSeparatorComponent, OTranslatePipe],
   selector: 'app-context-menu',
   templateUrl: 'context-menu.component.html',
   styleUrls: ['context-menu.component.scss']

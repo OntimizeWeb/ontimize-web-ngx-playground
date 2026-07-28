@@ -12,10 +12,10 @@ import { GridComponent } from './grid.component';
   imports: [
     SharedModule,
     OntimizeWebModule,
-    GridRoutingModule
+    GridRoutingModule,
+    GridComponent
   ],
   declarations: [
-    GridComponent,
     GridBasicComponent,
     GridFixedComponent,
     GridHybridComponent

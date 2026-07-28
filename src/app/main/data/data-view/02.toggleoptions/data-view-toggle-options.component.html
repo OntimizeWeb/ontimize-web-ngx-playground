@@ -1,14 +1,13 @@
 <example-comp #ex collapsible="no" collapsed="no" comp-name="DATA-VIEW.TOGGLE-OPTIONS.COMPONENT" [html]="html" [files]="files"
-  (showSource)="onShowSource()" fxFill>
+  (showSource)="onShowSource()" class="o-flex-fill">
 
   <screen-configuration comp-name="DATA-VIEW" #sidenavComp>
     <div menu>
-      <div fxLayout="column">
+      <div class="o-flex-column">
         <span class="menu-title">{{ 'DATA_VIEW.CONFIGURATION' | oTranslate }}</span>
         <mat-divider></mat-divider>
 
-        <mat-radio-group layout-padding [value]="toggleMode" (change)="onToggleModeChange($event.value)" fxLayoutAlign="space-around start"
-          fxFlex="100" fxLayout="column" fxLayoutGap="6px">
+        <mat-radio-group layout-padding [value]="toggleMode" (change)="onToggleModeChange($event.value)" class="o-layout-align-sa-center o-flex-100 o-flex-column" style="gap: 6px">
 
           <mat-radio-button value="toggleButton" class="padding-3">
             {{ 'DATA_VIEW.TOGGLE_BUTTON' | oTranslate }}
@@ -47,12 +46,12 @@
 
 
       <ng-template oDataViewGridItem let-item>
-        <mat-card fxLayout="column" class="grid-card">
-          <mat-card-header fxLayout="row">
+        <mat-card class="o-flex-column grid-card">
+          <mat-card-header class="o-flex-row">
             <mat-card-title>{{ item.name }}</mat-card-title>
             <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content fxLayout="row" fxLayoutAlign="end end" fxFlex="100">
+          <mat-card-content class="o-flex-row o-layout-align-end-center o-flex-100">
             Cost: {{item.price | currency}}
           </mat-card-content>
         </mat-card>

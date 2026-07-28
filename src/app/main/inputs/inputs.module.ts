@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { SharedModule } from '../../shared/shared.module';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
 import { InputDateComponent } from './02.date/input-date.component';
+import { MomentAdapterDateInputExampleComponent } from './02.date/moment-adapter-date-input-example.component';
 import { InputIntegerComponent } from './03.integer/input-integer.component';
 import { InputRealComponent } from './04.real/input-real.component';
 import { InputPercentComponent } from './05.percent/input-percent.component';
@@ -34,10 +38,11 @@ import { AppearanceComponent } from './96.appearance/appearance.component';
 import { InputEventsComponent } from './97.events/events.component';
 import { ClearComponent } from './98.clear/clear.component';
 import { ValidatorsComponent } from './99.validators/validators.component';
+import { StandaloneFormComponent } from './standalone-form/standalone-form.component';
 import { InputsHomeComponent } from './inputs-home/inputs-home.component';
-import { InputsRoutingModule } from './inputs-routing.module';
+import { RouterModule } from '@angular/router';
+import { INPUTS_ROUTES } from './inputs.routes';
 import { InputsComponent } from './inputs.component';
-import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 
 @NgModule({
   // providers: [
@@ -48,10 +53,15 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
   imports: [
     SharedModule,
     OntimizeWebModule,
-    InputsRoutingModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    RouterModule.forChild(INPUTS_ROUTES),
+    InputsComponent,
+    InputsHomeComponent,
+    MomentAdapterDateInputExampleComponent
   ],
   declarations: [
-    InputsComponent,
     InputOverviewComponent,
     InputTextComponent,
     InputDateComponent,
@@ -78,12 +88,11 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
     InputSlidetoggleComponent,
     InputSliderComponent,
     InputDateRangeComponent,
-    InputDateRangeLegacyComponent,
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,
     InputPhoneComponent,
-    InputsHomeComponent
+    StandaloneFormComponent
   ]
 })
 export class InputsModule { }

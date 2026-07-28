@@ -84,7 +84,12 @@ export class DialogsComponent implements OnInit {
   }
 `;
 
+import { OButtonComponent } from 'ontimize-web-ngx';
+import { ExampleComponent } from '../../../shared/example/example.component';
+
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, OButtonComponent],
   selector: 'app-dialogs',
   templateUrl: './dialogs.component.html',
   styleUrls: ['./dialogs.component.scss']

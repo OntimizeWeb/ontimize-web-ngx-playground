@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OColumnCollapsibleComponent } from 'ontimize-web-ngx';
+import { OColumnCollapsibleComponent, OTranslatePipe } from 'ontimize-web-ngx';
 import { CollapsibleStateService } from '../services/collapsible-state.service';
 
 @Component({
+  standalone: true,
+  imports: [OColumnCollapsibleComponent, OTranslatePipe],
   selector: 'collapsible-menu',
   templateUrl: './collapsible-menu.component.html',
   styleUrls: ['./collapsible-menu.component.scss'],

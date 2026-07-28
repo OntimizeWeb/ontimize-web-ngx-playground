@@ -15,7 +15,12 @@
           "options": {
             "allowedCommonJsDependencies": [
               "moment",
-              "google-libphonenumber"
+              "google-libphonenumber",
+              "angular-calendar",
+              "calendar-utils",
+              "angular-draggable-droppable",
+              "angular-resizable-element",
+              "positioning"
             ],
             "outputPath": "dist",
             "index": "src/index.html",
@@ -145,6 +150,7 @@
   "cli": {
     "cache": {
       "enabled": false
-    }
+    },
+    "analytics": false
   }
 }

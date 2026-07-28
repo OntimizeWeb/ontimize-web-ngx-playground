@@ -146,7 +146,7 @@ const HTML_DATA = `
         </button>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-list dense class="console" style="min-height:200px">
+    <mat-list class="console" style="min-height:200px">
       <mat-list-item *ngFor="let log of consoleLog">
         Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
         <ng-container *ngIf="showNewAndOldValue(log)">:: change old value: <b> {{ log.oldValue }}</b>&nbsp; by new

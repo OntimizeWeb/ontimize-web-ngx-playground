@@ -1,15 +1,15 @@
-<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files" fxFill>
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files" class="o-flex-fill">
   <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
       <o-integer-input attr="integer" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}" [data]="number" min="0" max="10"></o-integer-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-integer-input attr="integer2" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}" read-only="false" [data]="number"
         grouping="yes" min="0" max="100000" required="true" ></o-integer-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
       <o-integer-input attr="integer3" label="{{ 'INPUT.BUTTON.INTEGER' | oTranslate }}" enabled="no" [data]="number" min="0"
         max="10"></o-integer-input>

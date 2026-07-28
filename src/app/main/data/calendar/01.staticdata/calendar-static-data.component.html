@@ -1,0 +1,9 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="CALENDAR.COMPONENT" [files]="files">
+
+  <o-calendar class="calendar-example" attr="calendarStaticData" [static-data]="staticData" columns="id;title;code;start;end;allDay"
+    keys="id" start-column="start" end-column="end" title-column="title" description-column="code" all-day-column="allDay"
+    view="month"  (onEventClick)="onEventClick($event)"
+    (onDayClick)="onDayClick($event)">
+  </o-calendar>
+
+</example-comp>

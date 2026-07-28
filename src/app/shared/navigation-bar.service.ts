@@ -3,7 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { ObservableWrapper } from 'ontimize-web-ngx';
 
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NavigationBarService {
   public currentTitle: string = null;
   public visible = true;

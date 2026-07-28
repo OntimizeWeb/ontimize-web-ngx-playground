@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OTranslateService } from 'ontimize-web-ngx';
-import { NavigationBarService } from '../../shared/navigation-bar.service';;
+import { OButtonComponent, OButtonToggleComponent, OButtonToggleGroupComponent, OTranslateService } from 'ontimize-web-ngx';
+import { NavigationBarService } from '../../shared/navigation-bar.service';
+import { ExampleComponent } from '../../shared/example/example.component';
 
 const HTML_DATA = `
 <div fxLayout="column" layout-padding>
@@ -73,6 +74,61 @@ const HTML_DATA_TOGGLE = `
 </o-button-toggle-group>
 `;
 
+const HTML_DATA_VARIANT_IMPORTANCE = `
+<div class="o-flex-column" layout-padding>
+  <!-- one row per variant (same order as the legacy type example); columns are the importance values + disabled -->
+  <div class="o-flex-row">
+    <o-button attr="basic-def" variant="basic" label="Default" layout-padding></o-button>
+    <o-button attr="basic-pri" variant="basic" importance="primary" label="Primary" layout-padding></o-button>
+    <o-button attr="basic-warn" variant="basic" importance="warn" label="Warn" layout-padding></o-button>
+    <o-button attr="basic-dis" variant="basic" label="Disabled" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <div class="o-flex-row">
+    <o-button attr="raised-def" variant="raised" label="Default" layout-padding></o-button>
+    <o-button attr="raised-pri" variant="raised" importance="primary" label="Primary" layout-padding></o-button>
+    <o-button attr="raised-warn" variant="raised" importance="warn" label="Warn" layout-padding></o-button>
+    <o-button attr="raised-dis" variant="raised" label="Disabled" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <div class="o-flex-row">
+    <o-button attr="outline-def" variant="outline" label="Default" layout-padding></o-button>
+    <o-button attr="outline-pri" variant="outline" importance="primary" label="Primary" layout-padding></o-button>
+    <o-button attr="outline-warn" variant="outline" importance="warn" label="Warn" layout-padding></o-button>
+    <o-button attr="outline-dis" variant="outline" label="Disabled" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <div class="o-flex-row">
+    <o-button attr="flat-def" variant="flat" label="Default" layout-padding></o-button>
+    <o-button attr="flat-pri" variant="flat" importance="primary" label="Primary" layout-padding></o-button>
+    <o-button attr="flat-warn" variant="flat" importance="warn" label="Warn" layout-padding></o-button>
+    <o-button attr="flat-dis" variant="flat" label="Disabled" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <!-- icon-only shapes: only 'icon' tints with importance; fab / mini-fab keep Material's color -->
+  <div class="o-flex-row">
+    <o-button attr="icon-def" variant="icon" icon="favorite" layout-padding></o-button>
+    <o-button attr="icon-pri" variant="icon" importance="primary" icon="favorite" layout-padding></o-button>
+    <o-button attr="icon-warn" variant="icon" importance="warn" icon="favorite" layout-padding></o-button>
+    <o-button attr="icon-dis" variant="icon" icon="favorite" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <div class="o-flex-row">
+    <o-button attr="fab-def" variant="fab" icon="add" layout-padding></o-button>
+    <o-button attr="fab-pri" variant="fab" importance="primary" icon="add" layout-padding></o-button>
+    <o-button attr="fab-warn" variant="fab" importance="warn" icon="add" layout-padding></o-button>
+    <o-button attr="fab-dis" variant="fab" icon="add" [enabled]="false" layout-padding></o-button>
+  </div>
+
+  <div class="o-flex-row">
+    <o-button attr="minifab-def" variant="mini-fab" icon="edit" layout-padding></o-button>
+    <o-button attr="minifab-pri" variant="mini-fab" importance="primary" icon="edit" layout-padding></o-button>
+    <o-button attr="minifab-warn" variant="mini-fab" importance="warn" icon="edit" layout-padding></o-button>
+    <o-button attr="minifab-dis" variant="mini-fab" icon="edit" [enabled]="false" layout-padding></o-button>
+  </div>
+</div>
+`;
+
 const HTML_DATA_ICON_POSITION = `
   <div fxLayout="row wrap">
     <o-button attr="iconposition1" type="BASIC" color="primary" label="icon-position='left'" layout-padding icon="arrow_forward_ios">
@@ -92,6 +148,8 @@ const HTML_DATA_ICON_IMAGE = `
 const TYPESCRIPT_DATA = ``;
 
 @Component({
+  standalone: true,
+  imports: [ExampleComponent, OButtonComponent, OButtonToggleComponent, OButtonToggleGroupComponent],
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss']
@@ -130,6 +188,9 @@ export class ButtonsComponent implements OnInit {
         break;
       case 'button-toggle':
         code = HTML_DATA_TOGGLE;
+        break;
+      case 'button-variant-importance':
+        code = HTML_DATA_VARIANT_IMPORTANCE;
         break;
       case 'button-icon-position':
         code = HTML_DATA_ICON_POSITION;

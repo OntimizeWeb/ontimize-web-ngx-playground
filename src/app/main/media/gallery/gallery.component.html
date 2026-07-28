@@ -1,10 +1,10 @@
-<div fxLayout="row" class="main-container bg-level-1">
+<div class="o-flex-row main-container bg-level-1">
   <collapsible-menu>
-    <a mat-button class="menu-item" routerLink="/main/media/gallery/playground" routerLinkActive="active" fxFlex>{{ 'Playground' | oTranslate }}</a>
-    <a mat-button class="menu-item" routerLink="/main/media/gallery/examples" routerLinkActive="active" fxFlex>{{ 'Examples' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/media/gallery/playground" routerLinkActive="active">{{ 'Playground' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/media/gallery/examples" routerLinkActive="active">{{ 'Examples' | oTranslate }}</a>
   </collapsible-menu>
 
-  <div fxFlex="calc(100% - 300px)" class="left-border">
+  <div class="left-border o-flex">
     <header-button-menu comp-name="{{ 'GALLERY.COMPONENT' | oTranslate }}" comp-desc="{{ 'GALLERY.COMPONENT.DESC' | oTranslate }}">
     </header-button-menu>
     <router-outlet></router-outlet>

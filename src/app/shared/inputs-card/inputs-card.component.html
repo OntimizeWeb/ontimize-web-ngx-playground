@@ -1,7 +1,11 @@
 <mat-card class="inputs-mat-card">
-  <div fxLayoutAlign="center center" layout-margin class="img-container">
-    <mat-icon *ngIf="!dark" svgIcon="ontimize:{{compName}}"></mat-icon>
-    <mat-icon *ngIf="dark" svgIcon="ontimize:{{compName}}_dark"></mat-icon>
+  <div class="o-layout-align-center-center img-container" layout-margin>
+    @if (!dark) {
+      <mat-icon svgIcon="ontimize:{{compName}}"></mat-icon>
+    }
+    @if (dark) {
+      <mat-icon svgIcon="ontimize:{{compName}}_dark"></mat-icon>
+    }
   </div>
   <mat-divider></mat-divider>
   <mat-card-header>

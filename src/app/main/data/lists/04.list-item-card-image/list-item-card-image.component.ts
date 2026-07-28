@@ -5,7 +5,7 @@ import { ExampleComponent } from '../../../../shared/example/example.component';
 const LIST_ITEM_CARD_IMAGE_HTML_DATA = `
 <o-list #list attr="list" title="{title}" columns="id;name;username;email;street;phone" keys="id"
   [static-data]="users" refresh-button="{refreshButton}" insert-button="{insertButton}"
-  quick-filter="no" row-height="medium" detail-mode="none">
+  quick-filter="no" detail-mode="none">
 
   <o-list-item *ngFor="let row of #list.dataArray">
     <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}" avatar="{avatar}"
@@ -63,8 +63,6 @@ export class ListItemCardImageComponent {
   iconToggle: any;
   @ViewChild('icon')
   icon: any;
-  @ViewChild('rowHeight')
-  rowHeight: any;
   @ViewChild('list')
   list: any;
 
