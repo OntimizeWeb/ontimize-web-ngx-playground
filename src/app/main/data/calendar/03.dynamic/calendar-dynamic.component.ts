@@ -6,7 +6,7 @@ const CALENDAR_HTML_DATA = `
     start-column="start" end-column="end" title-column="title" description-column="code" all-day-column="allDay"{title}
     view="{view}" views="{views}" week-starts-on="{weekStartsOn}" week-header-day-format="{weekHeaderDayFormat}"
     show-toolbar="{showToolbar}" show-tooltip="{showTooltip}" show-hours="{showHours}" show-weekends="{showWeekends}"
-    max-events-per-cell="{maxEventsPerCell}" locale="{locale}">
+    more-clickable="{moreClickable}" max-events-per-month-cell="{maxEventsPerMonthCell}"{emptyCellText} locale="{locale}">
   </o-calendar>
 `;
 
@@ -76,7 +76,9 @@ export class CalendarDynamicComponent implements OnInit {
   showTooltip: boolean = true;
   showHours: boolean = true;
   showWeekends: boolean = true;
-  maxEventsPerCell: number = 3;
+  moreClickable: boolean = true;
+  maxEventsPerMonthCell: number = 3;
+  emptyCellText: string = '';
   locale: string = 'en';
 
   ngOnInit(): void {
@@ -157,8 +159,18 @@ export class CalendarDynamicComponent implements OnInit {
     this.refreshHtml();
   }
 
+  onMoreClickableChange(checked: boolean): void {
+    this.moreClickable = checked;
+    this.refreshHtml();
+  }
+
   onMaxEventsChange(value: number): void {
-    this.maxEventsPerCell = value;
+    this.maxEventsPerMonthCell = value;
+    this.refreshHtml();
+  }
+
+  onEmptyCellTextChange(value: string): void {
+    this.emptyCellText = value;
     this.refreshHtml();
   }
 
@@ -178,7 +190,9 @@ export class CalendarDynamicComponent implements OnInit {
       .replace('{showTooltip}', this.showTooltip ? 'yes' : 'no')
       .replace('{showHours}', this.showHours ? 'yes' : 'no')
       .replace('{showWeekends}', this.showWeekends ? 'yes' : 'no')
-      .replace('{maxEventsPerCell}', String(this.maxEventsPerCell))
+      .replace('{moreClickable}', this.moreClickable ? 'yes' : 'no')
+      .replace('{maxEventsPerMonthCell}', String(this.maxEventsPerMonthCell))
+      .replace('{emptyCellText}', this.emptyCellText ? ' empty-cell-text="' + this.emptyCellText + '"' : '')
       .replace('{locale}', this.locale);
   }
 
