@@ -43,7 +43,6 @@
             ],
             "styles": [
               "node_modules/ontimize-web-ngx/ontimize.scss",
-              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/assets/css/app.scss",
               "src/styles.scss"
             ],

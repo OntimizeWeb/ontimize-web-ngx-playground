@@ -75,21 +75,35 @@
             {{ 'CALENDAR.CONFIG.SHOW-WEEKENDS' | oTranslate }}
           </mat-slide-toggle>
         </div>
+        <div layout-padding class="o-flex-row config-group">
+          <mat-slide-toggle class="o-flex-50 padding-3" [checked]="moreClickable" (change)="onMoreClickableChange($event.checked)">
+            {{ 'CALENDAR.CONFIG.MORE-CLICKABLE' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
         <mat-divider></mat-divider>
 
         <span class="menu-title">{{ 'CALENDAR.CONFIG.MAX-EVENTS' | oTranslate }}</span>
         <div layout-padding class="o-flex-row config-group">
           <mat-slider min="1" max="5" step="1" discrete showTickMarks class="o-flex">
-            <input matSliderThumb [value]="maxEventsPerCell" (valueChange)="onMaxEventsChange($event)">
+            <input matSliderThumb [value]="maxEventsPerMonthCell" (valueChange)="onMaxEventsChange($event)">
           </mat-slider>
         </div>
+        <mat-divider></mat-divider>
+
+        <!--EMPTY CELL TEXT (agenda mode) -->
+        <span class="menu-title">{{ 'CALENDAR.CONFIG.EMPTY-CELL-TEXT' | oTranslate }}</span>
+        <mat-form-field layout-padding class="o-flex-100 config-group">
+          <input matInput [value]="emptyCellText" (input)="onEmptyCellTextChange($any($event.target).value)"
+            placeholder="{{ 'CALENDAR.CONFIG.EMPTY-CELL-TEXT-PLACEHOLDER' | oTranslate }}">
+        </mat-form-field>
       </div>
     </div>
 
     <o-calendar content class="calendar-example" attr="calendarDynamic" [static-data]="staticData" columns="id;title;code;start;end;allDay" keys="id"
       start-column="start" end-column="end" title-column="title" description-column="code" all-day-column="allDay" [title]="title || $any(undefined)"
       [view]="view" [views]="views" [week-starts-on]="weekStartsOn" [week-header-day-format]="weekHeaderDayFormat" [show-toolbar]="showToolbar"
-      [show-tooltip]="showTooltip" [show-hours]="showHours" [show-weekends]="showWeekends" [max-events-per-cell]="maxEventsPerCell" [locale]="locale"
+      [show-tooltip]="showTooltip" [show-hours]="showHours" [show-weekends]="showWeekends" [more-clickable]="moreClickable"
+      [max-events-per-month-cell]="maxEventsPerMonthCell" [empty-cell-text]="emptyCellText" [locale]="locale"
       (onViewChange)="onViewChange($event)">
     </o-calendar>
 
