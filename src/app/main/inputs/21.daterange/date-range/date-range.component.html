@@ -15,7 +15,7 @@
     <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-input attr="daterange2" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="valueTimestamp"
-        format="LL" separator=" to " [touch-ui]="mode.checked">
+        format="DD" separator=" to " [touch-ui]="mode.checked">
       </o-daterange-input>
     </div>
     <div class="o-flex-column" layout-padding>
@@ -33,7 +33,7 @@
     <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-input attr="daterange4" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes"
-       format="YYYY/MM/DD" value-type="string" min="2019/05/05" max="2019/05/25"   [touch-ui]="mode.checked" [data]="valueString">
+       format="yyyy/MM/dd" value-type="string" min="2019/05/05" max="2019/05/25"   [touch-ui]="mode.checked" [data]="valueString">
       </o-daterange-input>
     </div>
 
@@ -61,7 +61,7 @@
     </div>
     <div class="o-flex-column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
-      <o-daterange-input value-type="string" format="DD/MM/YYYY" attr="valueTypeInput2" label="INPUT.BUTTON.DATERANGE"
+      <o-daterange-input value-type="string" format="yyyy/MM/dd" attr="valueTypeInput2" label="INPUT.BUTTON.DATERANGE"
         [data]="valueString" read-only="no" required="yes" clear-button="yes" [touch-ui]="mode.checked"></o-daterange-input>
     </div>
     <div class="o-flex-column" layout-padding>

@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import * as moment from 'moment';
+import { DateTime } from 'luxon';
 
 const DATE_HTML_DATA = `
 <o-form editable-detail="no" show-header="no" layout-direction="column">
@@ -11,7 +12,7 @@ const DATE_HTML_DATA = `
     </div>
     <div fxLayout="column" layout-padding>
       <o-daterange-input attr="daterange2" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="valueTimestamp"
-        format="LL" separator=" to " touch-ui="{mode}">
+        format="DD" separator=" to " touch-ui="{mode}">
       </o-daterange-input>
     </div>
     <div fxLayout="column" layout-padding>
@@ -27,7 +28,7 @@ const DATE_HTML_MINMAX = `
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-daterange-input attr="daterange4" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="valueString"
-        min="15/05/2019" max="20/06/2019" format="DD/MM/YYYY" value-type="string" touch-ui="{mode}">
+        min="15/05/2019" max="20/06/2019" format="dd/MM/yyyy" value-type="string" touch-ui="{mode}">
       </o-daterange-input>
     </div>
 
@@ -74,10 +75,9 @@ export class InputDateRangeComponent {
 
   }
 
-  customDateClass = (m: Moment) => {
-      const date = m.date();
+  customDateClass = (dt: DateTime) => {
       // Highlight the 1st of each month.
-      return (date === 1) ? 'example-custom-date-class' : undefined;
+      return (dt.day === 1) ? 'example-custom-date-class' : '';
     }
 }
 `;
@@ -91,7 +91,7 @@ const DATERANGE_HTML_DATA_TYPES = ` <o-form editable-detail="no" show-header="no
     </div>
     <div fxLayout="column" layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.DATE.VALUE_TYPE.STRING' | oTranslate }}</label>
-      <o-daterange-input value-type="string" format="DD/MM/YYYY" attr="valueTypeInput2" label="INPUT.BUTTON.DATERANGE"
+      <o-daterange-input value-type="string" format="yyyy/MM/dd" attr="valueTypeInput2" label="INPUT.BUTTON.DATERANGE"
         [data]="valueString" read-only="no" required="yes" clear-button="yes" touch-ui="{mode}"></o-daterange-input>
     </div>
     <div fxLayout="column" layout-padding>
@@ -249,10 +249,11 @@ export class InputDateRangeComponent {
   }
 
 
-  customDateClass = (m: moment.Moment) => {
-    const date = m.date();
+  // date-class receives a Luxon DateTime (the active OntimizeLuxonDateAdapter is the default);
+  // annotate as Moment instead if the moment adapter is active via provideODateAdapter('moment').
+  customDateClass = (dt: DateTime) => {
     // Highlight the 1st of each month.
-    return (date === 1) ? 'example-custom-date-class' : undefined;
+    return (dt.day === 1) ? 'example-custom-date-class' : '';
   }
 
 }

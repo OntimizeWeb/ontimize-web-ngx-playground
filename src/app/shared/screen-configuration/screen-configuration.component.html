@@ -19,13 +19,13 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="o-flex">
-      <div class="o-flex-row o-layout-align-sb o-gap-10">
-        <div style="flex: 1 1 calc(100% - 42px); max-width: calc(100% - 42px)">
+      <div class="o-flex-row o-gap-10">
+        <div class="o-flex">
           <ng-content select="[content]"></ng-content>
         </div>
         @if (!sidenav.opened) {
           <o-button type="FLAT" label="{{ 'BUTTON.CONFIGURATION' | oTranslate }}" color="primary" icon="tune" (click)="toggle()"
-          class="conf-btn o-layout-align-end-start" id="conf-btn-id"></o-button>
+          class="conf-btn" id="conf-btn-id"></o-button>
         }
       </div>
     </mat-sidenav-content>

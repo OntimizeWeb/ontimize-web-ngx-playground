@@ -206,6 +206,10 @@ export class StandaloneFormComponent {
     { id: 'O', name: 'Otro' }
   ];
 
+  form2 = new FormGroup({
+    accepted: new FormControl(false)
+  });
+
   form = new FormGroup({
     name:          new FormControl(''),
     surname:       new FormControl(''),
@@ -234,6 +238,7 @@ export class StandaloneFormComponent {
   });
 
   result: any = null;
+  result2: Partial<{ accepted: boolean | null; }>;
 
   get invalidControls(): string[] {
     return Object.entries(this.form.controls)
@@ -249,6 +254,11 @@ export class StandaloneFormComponent {
   onSubmit() {
     if (this.form.valid) {
       this.result = this.form.value;
+    }
+  }
+  onSubmit2() {
+    if (this.form2.valid) {
+      this.result2 = this.form2.value;
     }
   }
 
