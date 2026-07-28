@@ -204,7 +204,7 @@ const COMBO_HTML_DATA_QUERY_ON_EVENT = `
   </o-combo>
   <o-combo #comboState attr="comboState" label="Select State" service-type="DummyService"
   query-method="query" service="comboState" entity="comboState" value-column="StateId"
-  columns="StateID,StateName,CountryId" visible-columns="StateName" keys="StateId" [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+  columns="StateId,StateName,CountryId" visible-columns="StateName" keys="StateId" [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
   </o-combo>
 </o-form>
 `;

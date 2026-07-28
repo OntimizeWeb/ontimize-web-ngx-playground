@@ -1,12 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import moment, { Moment } from 'moment';
+import { DateTime } from 'luxon';
 
 const DATE_HTML_DATA = `
   <o-form editable-detail="no" show-header="no" layout-direction="column">
 
     <o-date-input attr="date" label="Date" [data]="getValue()"></o-date-input>
 
-    <o-date-input attr="date2" label="Date" [data]="getValue()" read-only="no" format="LL" required="yes"
+    <o-date-input attr="date2" label="Date" [data]="getValue()" read-only="no" format="DD" required="yes"
       min="01/01/1980" max="01/01/2020" text-input-enabled="no"></o-date-input>
 
     <o-date-input attr="date3" label="Date" enabled="no" [data]="getValue()"></o-date-input>
@@ -183,9 +184,32 @@ const DATE_HTML_CUSTOM_CLASS = `
   </o-form>
 `;
 
+const DATE_TS_MOMENT_OPTIN = `
+import { Component } from '@angular/core';
+import { ODateInputComponent, provideODateAdapter } from 'ontimize-web-ngx';
+
+// provideODateAdapter('moment') switches the Ontimize date components below this
+// injector to the deprecated moment.js adapter ('L'/'LL' formats, oMoment pipe).
+// It can also go in the bootstrapApplication/AppModule providers (whole app) or
+// in a route's providers. Note format="LL" is a moment token here, not Luxon.
+@Component({
+  standalone: true,
+  selector: 'moment-adapter-date-input-example',
+  imports: [ODateInputComponent],
+  providers: [provideODateAdapter('moment')],
+  template: \`
+    <o-date-input attr="momentAdapterDate" label="Date (moment adapter, opt-in)" format="LL" [data]="value"
+      read-only="no"></o-date-input>
+  \`
+})
+export class MomentAdapterDateInputExampleComponent {
+  value = Date.now();
+}
+`;
+
 const DATE_TS_CUSTOM_CLASS = `
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Moment } from 'moment';
+import { DateTime } from 'luxon';
 
  @Component({
     selector: 'input-date',
@@ -193,10 +217,9 @@ import { Moment } from 'moment';
   })
   export class InputDateComponent {
 
-    customDateClass = (m: Moment) => {
-      const date = m.date();
+    customDateClass = (dt: DateTime) => {
       // Highlight the 1st of each month.
-      return (date === 1) ? 'example-custom-date-class' : undefined;
+      return (dt.day === 1) ? 'example-custom-date-class' : '';
     }
 
   }
@@ -249,6 +272,18 @@ export class InputDateComponent {
     },
     typescript: {
       data: DATE_TS_DATA_MIN_MAX
+    }
+  };
+
+  public momentOptInFiles = {
+    html: {
+      data: undefined
+    },
+    scss: {
+      data: undefined
+    },
+    typescript: {
+      data: DATE_TS_MOMENT_OPTIN
     }
   };
 
@@ -341,9 +376,10 @@ export class InputDateComponent {
     return result;
   }
 
-  customDateClass = (m: Moment) => {
-    const date = m.date();
+  // date-class receives a Luxon DateTime (the default adapter); annotate as Moment
+  // instead if the moment adapter is active via provideODateAdapter('moment').
+  customDateClass = (dt: DateTime) => {
     // Highlight the 1st of each month.
-    return (date === 1) ? 'example-custom-date-class' : undefined;
+    return (dt.day === 1) ? 'example-custom-date-class' : '';
   }
 }

@@ -163,5 +163,18 @@
     <pre *ngIf="result" class="form-result">{{ result | json }}</pre>
 
   </form>
+    <form [formGroup]="form2" (ngSubmit)="onSubmit2()">
+      <o-checkbox formControlName="accepted" label="Accept terms"></o-checkbox>
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          Guardar
+        </button>
+        <button mat-button type="button" (click)="onReset()">
+          Limpiar
+        </button>
+      </div>
+
+      <pre *ngIf="result2" class="form-result">{{ result2 | json }}</pre>
+    </form>
 
 </example-comp>

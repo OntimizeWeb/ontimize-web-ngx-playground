@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 // Sub-components are non-standalone — loaded via InputsModule declarations.
 // This file exposes the same routes as inputs-routing.module.ts for use
 // with loadChildren(() => import('./inputs.routes').then(m => m.INPUTS_ROUTES)).
-import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
 import { InputDateComponent } from './02.date/input-date.component';
@@ -42,7 +41,6 @@ export const INPUTS_ROUTES: Routes = [
       { path: 'overview', data: { oAppHeaderTitle: 'Input fields' }, component: InputOverviewComponent },
       { path: 'text', data: { oAppHeaderTitle: 'Input fields' }, component: InputTextComponent },
       { path: 'date', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateComponent },
-      { path: 'daterangelegacy', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateRangeLegacyComponent },
       { path: 'daterange', data: { oAppHeaderTitle: 'Input fields' }, component: InputDateRangeComponent },
       { path: 'integer', data: { oAppHeaderTitle: 'Input fields' }, component: InputIntegerComponent },
       { path: 'real', data: { oAppHeaderTitle: 'Input fields' }, component: InputRealComponent },

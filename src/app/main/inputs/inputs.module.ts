@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { InputOverviewComponent } from './00.overview/input-overview.component';
 import { InputTextComponent } from './01.text/input-text.component';
 import { InputDateComponent } from './02.date/input-date.component';
+import { MomentAdapterDateInputExampleComponent } from './02.date/moment-adapter-date-input-example.component';
 import { InputIntegerComponent } from './03.integer/input-integer.component';
 import { InputRealComponent } from './04.real/input-real.component';
 import { InputPercentComponent } from './05.percent/input-percent.component';
@@ -42,7 +43,6 @@ import { InputsHomeComponent } from './inputs-home/inputs-home.component';
 import { RouterModule } from '@angular/router';
 import { INPUTS_ROUTES } from './inputs.routes';
 import { InputsComponent } from './inputs.component';
-import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/date-range.component';
 
 @NgModule({
   // providers: [
@@ -58,7 +58,8 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
     MatInputModule,
     RouterModule.forChild(INPUTS_ROUTES),
     InputsComponent,
-    InputsHomeComponent
+    InputsHomeComponent,
+    MomentAdapterDateInputExampleComponent
   ],
   declarations: [
     InputOverviewComponent,
@@ -87,7 +88,6 @@ import { InputDateRangeLegacyComponent } from './21.daterange/date-range-legacy/
     InputSlidetoggleComponent,
     InputSliderComponent,
     InputDateRangeComponent,
-    InputDateRangeLegacyComponent,
     OComboRendererComponent,
     OComboCountryFlagRendererComponent,
     OListPickerRendererComponent,
