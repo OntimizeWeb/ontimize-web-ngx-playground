@@ -1,0 +1,18 @@
+{
+  "code": 0,
+  "message": "",
+  "data": [
+    { 
+      "CountryName": "Australia",
+      "CountryId": "2" 
+    },
+		{ 
+      "CountryName": "United States",
+      "CountryId": "1" 
+    }
+  ],
+  "sqlTypes": {
+    "CONCEPT": 12,
+    "ACCOUNTID": 4
+  }
+}

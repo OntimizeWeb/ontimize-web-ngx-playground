@@ -1,0 +1,19 @@
+.containers-basic,
+.containers-collapsible {
+
+  .radio-group-horizontal .mat-mdc-radio-button {
+    padding-right: 8px;
+  }
+
+  .radio-group-vertical .mat-mdc-radio-button {
+    display: block;
+    padding: 2px 0;
+  }
+
+  .alignment-label {
+    font-size: .75em;
+    color: #aaa;
+  }
+
+}
+

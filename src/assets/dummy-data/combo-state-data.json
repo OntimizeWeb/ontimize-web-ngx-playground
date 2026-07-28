@@ -1,0 +1,9 @@
+{
+  "code": 0,
+  "message": "",
+  "data": [
+    { "StateName": "New York", "CountryId": "1", "StateId": "101" },
+		{ "StateName": "Virginia", "CountryId": "1", "StateId": "102" },
+		{ "StateName": "Tasmania", "CountryId": "2", "StateId": "105" }
+  ]
+}

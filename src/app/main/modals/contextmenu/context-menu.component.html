@@ -1,0 +1,23 @@
+<div fxLayout="row" class="main-container bg-level-1">
+  <div fxLayout="column" fxLayoutAlign="center top" fxFlex>
+
+    <example-comp comp-name="CONTEXTMENU" [files]="getFiles()" fxFill>
+
+      <div fxLayout="row" layout-padding fxFill>
+        <div [oContextMenu]="myOContextMenu" class="clickable" fxLayoutAlign="center center" layout-padding>
+          <span>{{ 'CONTEXT_MENU_CLICKABLE_AREA' | oTranslate }}</span>
+        </div>
+        <o-context-menu #myOContextMenu>
+          <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute('Item 1')" enabled="no"></o-context-menu-item>
+          <o-context-menu-group label="Group" icon="priority_high">
+            <o-context-menu-item icon="star_rate" label="Item 2" (execute)="onExecute('Item 2')" enabled="no"></o-context-menu-item>
+            <o-context-menu-separator></o-context-menu-separator>
+            <o-context-menu-item label="Item 3" (execute)="onExecute('Item 3')"></o-context-menu-item>
+          </o-context-menu-group>
+        </o-context-menu>
+      </div>
+
+    </example-comp>
+
+  </div>
+</div>

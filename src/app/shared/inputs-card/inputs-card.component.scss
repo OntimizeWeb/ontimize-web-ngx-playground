@@ -1,0 +1,39 @@
+.inputs-mat-card {
+  width: 272px;
+  height: 272px;
+  margin: 15px;
+
+  .img-container {
+    height: 120px;
+    margin: 0;
+
+    .mat-icon {
+      height: 80%;
+      width: 75%;
+    }
+  }
+
+  .mat-mdc-card-header {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .mat-mdc-card-header-text {
+      margin: 0;
+    }
+  }
+
+  .mat-mdc-card-content {
+    font-size: 13px;
+    margin: 10px 20px;
+    line-height: 18px;
+    overflow: hidden;
+    word-wrap: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .mat-mdc-card-content:last-child {
+    padding-bottom: 0;
+  }
+}

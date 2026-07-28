@@ -1,0 +1,79 @@
+.mat-drawer-container.sidenav-container {
+  background-color: transparent;
+  width: 100%;
+  height: fit-content;
+
+  .mat-sidenav-content {
+    width: 100%;
+    overflow: hidden;
+
+    :host-context(.example-comp.image-demo) >div{
+      height: 100%;
+    }
+
+    >div {
+      height: fit-content;
+
+      >.container {
+        overflow: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .sidenav {
+    padding: 10px;
+    height: 100%;
+    width: 450px;
+
+    >.mat-drawer-inner-container {
+      height: 100%;
+    }
+  }
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.example-comp {
+
+  .playground-examples {
+    >screen-configuration {
+      >div {
+        height: 100%;
+
+        >.sidenav-container {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.conf-btn {
+
+  transform: rotate(-90deg) translate(-67px, -59px);
+  height: fit-content;
+
+  .mdc-button__label {
+    display: flex;
+  }
+}
+
+list-item-text,
+list-item-avatar,
+list-item-card,
+list-item-card-image {
+  .conf-btn {
+    transform: rotate(-90deg) translate(-74px, -59px);
+    height: fit-content;
+  }
+}
+
+grid {
+  .conf-btn {
+    transform: rotate(-90deg) translate(-59px, -59px);
+    height: fit-content;
+  }
+}

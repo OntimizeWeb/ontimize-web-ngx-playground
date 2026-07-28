@@ -1,0 +1,48 @@
+import { Component } from '@angular/core';
+
+const NIF_HTML_DATA = `
+  <o-form editable-detail="no" show-header="no" layout-direction="column">
+
+    <o-nif-input attr="nif" label="NIF" [data]="nif"></o-nif-input>
+
+    <o-nif-input #nif attr="nif2" label="NIF" [data]="nif" read-only="no" required="yes"
+      ></o-nif-input>
+
+    <o-nif-input attr="nif3" label="NIF" enabled="no" [data]="nif"></o-nif-input>
+
+  </o-form>
+`;
+
+const NIF_TS_DATA = `
+  @Component({
+    selector: 'input-nif',
+    templateUrl: 'input-nif.component.html'
+  })
+  export class InputNIFComponent {
+
+    protected nif = '53780330M';
+
+  }
+`;
+
+@Component({
+  selector: 'input-nif',
+  templateUrl: 'input-nif.component.html'
+})
+export class InputNIFComponent {
+
+  files = {
+    'html': {
+      'data': NIF_HTML_DATA
+    },
+    'scss': {
+      'data': undefined
+    },
+    'typescript': {
+      'data': NIF_TS_DATA
+    }
+  };
+
+  protected nif = '53780330M';
+
+}

@@ -1,0 +1,38 @@
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
+
+// Include ontimize styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
+
+@import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss';
+@include o-gallery-theme(theme.$theme);
+
+/*
+* Import application themes.
+*/
+
+@import '../../app/shared/inputs-card/inputs-card.theme.scss';
+@include inputs-card-theme(theme.$theme);
+@import '../../app/shared/example/example.theme.scss';
+@include example-component-theme(theme.$theme);
+
+@import '../../app/main/main-theme.scss';
+@include main-theme(theme.$theme);
+
+/*Define dark styles*/
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+  @include o-gallery-theme(theme.$dark-theme);
+  @include inputs-card-theme(theme.$dark-theme);
+  @include example-component-theme(theme.$dark-theme);
+  @include main-theme(theme.$dark-theme);
+}
+
+
+
+
+
+
+/*
+* Other app styles
+*/

@@ -1,0 +1,52 @@
+<example-comp #ex collapsible="no" collapsed="no" fxFill comp-name="GRID.EXAMPLE" [html]="html" [files]="getFiles('o-grid-fixed')"
+  (showSource)="onShowSource(grid)" class="list-examples">
+  <screen-configuration comp-name="GRID" #sidenavComp>
+    <div menu layout-margin fxLayout="column">
+      <mat-form-field>
+        <mat-label>{{ 'TITLE' | oTranslate }}</mat-label>
+        <input (change)="updateCodeValue('title', $event.target.value)" matInput #gridTitle value="Characters">
+      </mat-form-field>
+      <o-column fxFlex layout-padding>
+        <mat-slide-toggle (change)="updateCodeValue('fixedHeader', $event.checked)" #fixedHeaderToggle [checked]="true">
+          {{ 'GRID.BUTTON.FIXED' | oTranslate }}
+        </mat-slide-toggle>
+        <mat-form-field>
+          <mat-label>{{ 'HEIGHT' | oTranslate }}</mat-label>
+          <input (change)="updateCodeValue('height', $event.target.value)" matInput #height value="600" type="number">
+        </mat-form-field>
+      </o-column>
+    </div>
+    <o-grid content #grid attr="grid" [title]="gridTitle.value" service-type="rickandmorty" service="characters" entity="character"
+      columns="id;name;status;species;photo;location;origin" keys="id" [fixed-header]="fixedHeaderToggle.checked"
+      [ngStyle]="{height:height.value+'px'}" pagination-controls="yes" query-rows="20" grid-item-height="2:1" quick-filter="yes" fxFlex pageable="yes"
+      cols="2" gutter-size="16px" quick-filter-columns="name">
+
+      <o-grid-item *ngFor="let list of grid.dataArray">
+        <div class="card-inner">
+          <mat-card class="fill-minus-8" appearance="outlined">
+            <div fxlayout="row" fxFill>
+              <img mat-card-image src="{{list.image}}" fxFlex="35%" fxFill
+                style="transition: opacity 0.5s; object-position: center center; object-fit: cover" />
+              <div fxFlex="65%">
+                <mat-card-header>
+                  <mat-card-title>{{list.name}}</mat-card-title>
+                  <mat-card-subtitle>{{list.status}} {{list.species}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                    <label><strong> Last known location:</strong></label> &nbsp;<span>{{list.location.name}}</span>
+                  </p>
+                  <p>
+                    <label><strong> First seen in:</strong></label> &nbsp;<span>{{list.origin.name}}</span>
+                  </p>
+                </mat-card-content>
+              </div>
+            </div>
+          </mat-card>
+          </div>
+
+      </o-grid-item>
+    </o-grid>
+
+  </screen-configuration>
+</example-comp>

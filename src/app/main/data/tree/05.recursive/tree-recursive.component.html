@@ -1,0 +1,10 @@
+<example-comp fxFlexFill #ex collapsible="no" collapsed="no" comp-name="TREE.RECURSIVE.COMPONENT"
+  comp-desc="TREE.RECURSIVE.COMPONENT.DESC" [files]="files">
+  <div fxLayout="row" fxLayoutAlign="start stretch" layout-padding>
+    <o-tree #treeview fxFlex service="customers" entity="customerRecursive" keys="CUSTOMERID"
+      columns="CUSTOMERID;SURNAME;NAME;PARENT" visible-columns="SURNAME;NAME" separator=", " recursive="yes"
+      parent-column="PARENT"  query-on-init="true" service-type="DummyService"
+      quick-filter="true" select-all-checkbox-visible="no"  select-all-checkbox="yes">
+    </o-tree>
+  </div>
+</example-comp>

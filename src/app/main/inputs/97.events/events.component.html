@@ -1,0 +1,165 @@
+<example-comp comp-name="STATE_INPUTS" comp-desc="STATE_IMPUTS.DESC" [files]="files">
+  <o-form editable-detail="no" show-header="no" layout-direction="column" class="form-events">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-around center" style="padding:24px">
+      <mat-checkbox #printOnChange [checked]="true">onChange</mat-checkbox>
+      <mat-checkbox #printOnValueChange [checked]="true">onValueChange</mat-checkbox>
+      <mat-checkbox #printOnFocus [checked]="true">onFocus</mat-checkbox>
+      <mat-checkbox #printOnBlur [checked]="true">onBlur</mat-checkbox>
+    </div>
+
+    <div fxLayout="row wrap" class="examples" fxLayoutAlign="space-between start" fxLayoutGap="10px" fxLayoutGap.lg="0px">
+      <div fxLayout="column" fxFlex="48" fxFlex.lg="100" fxLayoutAlign="start stretch">
+
+        <!-- INPUT-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-text-input #input attr="input" label="INPUT.BUTTON.TEXT" [data]="values.input" read-only="no" required="yes"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(input)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(input)"
+            (onBlur)="onBlur(input)">
+          </o-text-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(input, 'James Alam')"><span class="ellipsis">setValue James
+              Alam</span></button>
+        </div>
+        <!-- CURRENCY-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-currency-input #currency attr="currency" label="INPUT.BUTTON.CURRENCY" [data]="values.currency" read-only="no" required="yes"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(currency)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(currency)"
+            (onBlur)="onBlur(currency)">
+          </o-currency-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(currency, 50)"><span class="ellipsis">setValue
+              50</span></button>
+        </div>
+        <!-- INTEGER-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-integer-input #integer attr="integer" label="INPUT.BUTTON.INTEGER" [data]="values.integer" read-only="no" required="yes"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(integer)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(integer)"
+            (onBlur)="onBlur(integer)">
+          </o-integer-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(integer, 50)"><span class="ellipsis">setValue 50</span></button>
+        </div>
+        <!-- REAL-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-real-input #real attr="real" label="INPUT.BUTTON.REAL" [data]="values.real" read-only="no" required="yes"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(real)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(real)"
+            (onBlur)="onBlur(real)">
+          </o-real-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(real, 50)"><span class="ellipsis">setValue 50</span></button>
+        </div>
+        <!-- PERCENT-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-percent-input #percent attr="percent" label="INPUT.BUTTON.PERCENT" [data]="values.percent" read-only="no" required="yes"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(percent)" clear-button="yes" fxFlex="65" (onFocus)="onFocus(percent)"
+            (onBlur)="onBlur(percent)">
+          </o-percent-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(percent, 0.66)"><span class="ellipsis">setValue
+              0.66</span></button>
+        </div>
+        <!-- DATE-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-date-input #date attr="date" label="INPUT.BUTTON.DATE" [data]="values.date" read-only="no" format="LL" required="yes" min="01/01/1980"
+            max="01/01/2020" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="65" (onChange)="onChange(date)"
+            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)">
+          </o-date-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(date, 1538524800000)"><span class="ellipsis">setValue
+              2018-10-03</span></button>
+        </div>
+        <!-- HOUR-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-hour-input #hour attr="hour" label="INPUT.BUTTON.HOUR" [data]="values.hour" value-type="string" read-only="no" required="yes"
+            clear-button="yes" format="24" (onChange)="onChange(hour)" (onValueChange)="onValueChange($event)" clear-button="yes" fxFlex="65"
+            (onFocus)="onFocus(hour)" (onBlur)="onBlur(hour)">
+          </o-hour-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(hour, '08:00 PM')"><span class="ellipsis">setValue 08:00
+              PM</span></button>
+        </div>
+        <!-- COMBO-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-combo #combo attr="combo" label="INPUT.COMBO" [static-data]="array" [data]="values.combo" value-column="key" columns="key;value"
+            visible-columns="value" required="yes" read-only="false" (onValueChange)="onValueChange($event)" fxFlex="65" (onChange)="onChange(combo)">
+          </o-combo>
+          <button class="eventButton" class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(combo,4)"><span class="ellipsis">setValue
+              Germany</span></button>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="48" fxFlex.lg="100" fxLayoutAlign="start stretch">
+        <!-- LISKPICKER-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-list-picker #listpicker attr="listpicker" label="INPUT.BUTTON.LISTPICKER" [static-data]="array" [data]="values.listpicker" filter="yes"
+            value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false" (onValueChange)="onValueChange($event)"
+            fxFlex="65" (onChange)="onChange(listpicker)" (onFocus)="onFocus(listpicker)" (onBlur)="onBlur(listpicker)">
+          </o-list-picker>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(listpicker, '4')"><span class="ellipsis">setValue
+              Germany</span></button>
+        </div>
+
+        <!-- RADIO-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-radio #radio attr="radio" label="Radio" [static-data]="array" [data]="values.radio" value-column="key" columns="key;value"
+            visible-columns="value" fxFlex="65" (onChange)="onChange(radio)" (onValueChange)="onValueChange($event)" read-only="no" layout="row">
+          </o-radio>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(radio, '4')"><span class="ellipsis">setValue
+              Germany</span></button>
+        </div>
+        <!-- TIME-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-time-input #time fxFlex="65" attr="time" label="INPUT.BUTTON.TIME" [data]="values.time" read-only="no" required="yes" clear-button="yes" format="24"
+            (onValueChange)="onValueChange($event)" clear-button="yes"  (onChange)="onChange(time)" (onFocus)="onFocus(time)"
+            (onBlur)="onBlur(time)"></o-time-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(time,1535358788828)"><span class="ellipsis">setValue
+              1535358788828</span></button>
+        </div>
+        <!-- SLIDER-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-slider #slider attr="slider" label="INPUT.SLIDER" [data]="values.slider" read-only="no" read-only="no"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(slider)" fxFlex="65"></o-slider>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(slider,85)"><span class="ellipsis">setValue 85</span></button>
+        </div>
+        <!-- FILE-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-file-input fxFlex="65" #file attr="file" label="{{ 'INPUT.BUTTON.FILE' | oTranslate }} (edit mode)" read-only="no" required="yes"
+            accept-file-type=".png;.jpg" max-file-size="10000" multiple="yes" layout-padding (onValueChange)="onValueChange($event)"
+            (onChange)="onChange(file)" clear-button="yes"></o-file-input>
+        </div>
+        <!-- DATERAGE-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-daterange-input #daterange attr="daterange" label="INPUT.BUTTON.DATERANGE" read-only="no" required="yes" [data]="values.daterange"
+            clear-button="yes" format="LL" separator=" to " (onValueChange)="onValueChange($event)" (onChange)="onChange(daterange)"
+            (onFocus)="onFocus(daterange)" (onBlur)="onBlur(daterange)" fxFlex="65">
+          </o-daterange-input>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(daterange, {
+            startDate: moment('2019-05-15T00:00Z'),
+            endDate: moment('2019-05-20T00:00Z')
+          })">setValue </button>
+        </div>
+        <!-- CHECKBOX-->
+        <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+          <o-checkbox #check attr="checkbox" label="INPUT.BUTTON.CHECKBOX" [data]="values.checkbox" read-only="no"
+            (onValueChange)="onValueChange($event)" (onChange)="onChange(check)" fxFlex="65"></o-checkbox>
+          <button class="eventButton" fxFlex="30" mat-raised-button (click)="setValue(check,false)"><span class="ellipsis">setValue
+              false</span></button>
+        </div>
+      </div>
+    </div>
+
+    <mat-toolbar class="playground-toolbar">
+      <mat-toolbar-row>
+        <span>{{ 'CONSOLE.LOG' | oTranslate }}</span>
+        <span class="mat-toolbar-space"></span>
+        <button mat-icon-button (click)="clearConsole()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-list dense class="console" style="min-height:200px">
+      <mat-list-item *ngFor="let log of consoleLog">
+        Event&nbsp;<b>{{log.eventName}}</b>&nbsp; in &nbsp;{{log.attr }}
+        <ng-container *ngIf="showNewAndOldValue(log)">:: change old value: <b> {{ log.oldValue }}</b>&nbsp; by new
+          value: <b>{{ log.newValue === undefined ? 'undefined' : log.newValue }}</b>,
+        </ng-container>
+        <ng-container *ngIf="showValue(log)">:: value: <b> {{ log.value === undefined ? 'undefined' : log.value }}</b>
+        </ng-container>
+        <ng-container *ngIf="showTypeEvent(log)"> this change is of type &nbsp;<b>{{ log.type }}</b></ng-container>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </o-form>
+</example-comp>

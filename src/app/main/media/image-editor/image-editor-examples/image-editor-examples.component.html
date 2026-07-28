@@ -1,0 +1,8 @@
+<example-comp comp-name="EXAMPLES" [files]="files">
+  <div fxLayout="row wrap" fxFlexFill fxLayoutAlign="space-between">
+    <o-column fxFlexFill title="IMAGE_EDITOR.O_IMAGE">
+      <o-image [data]="img"></o-image>
+      <o-image-editor [image]="imageBase64" save-target="base64" (oSaveBase64)="saveBase64($event)" actions-position="bottom"></o-image-editor>
+    </o-column>
+  </div>
+</example-comp>
