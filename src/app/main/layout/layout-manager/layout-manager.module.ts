@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
+import { OntimizeWebModule, provideODateAdapter } from 'ontimize-web-ngx';
 
 import { SharedModule } from '../../../shared/shared.module';
 import { LayoutManagerOverviewComponent } from './00.overview/layout-manager-overview.component';
@@ -25,6 +25,9 @@ import { LayoutManagerSidenavComponent } from './04.sidenav/layout-manager-siden
     LayoutManagerSplitPaneComponent,
     LayoutManagerSidenavComponent,
     CustomersDetailComponent
-  ]
+  ],
+    providers: [
+      provideODateAdapter('moment'),
+    ]
 })
 export class LayoutManagerModule { }

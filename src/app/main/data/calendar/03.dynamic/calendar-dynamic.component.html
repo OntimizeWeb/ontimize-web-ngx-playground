@@ -30,6 +30,13 @@
           }
         </div>
         <mat-divider></mat-divider>
+        <!--YEAR VIEW (opt-in only) -->
+        <div layout-padding class="o-flex-row config-group">
+          <mat-slide-toggle class="o-flex-100 padding-3" [checked]="enableYearView" (change)="onEnableYearViewChange($event.checked)">
+            {{ 'CALENDAR.CONFIG.ENABLE-YEAR-VIEW' | oTranslate }}
+          </mat-slide-toggle>
+        </div>
+        <mat-divider></mat-divider>
         <!--WEEK STARTS ON -->
         <span class="menu-title">{{ 'CALENDAR.CONFIG.WEEK-STARTS-ON' | oTranslate }}</span>
         <mat-radio-group layout-padding [value]="weekStartsOn" (change)="onWeekStartsOnChange($event.value)"

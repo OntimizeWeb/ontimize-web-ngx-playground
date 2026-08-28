@@ -55,9 +55,9 @@
         </div>
         <!-- DATE-->
         <div class="o-flex-row o-layout-align-sb-start o-gap-16">
-          <o-date-input #date attr="date" label="INPUT.BUTTON.DATE" [data]="values.date" read-only="no" format="LL" required="yes" min="01/01/1980"
+          <o-date-input #date attr="date" label="INPUT.BUTTON.DATE" [data]="values.date" read-only="no" format="D" required="yes" min="01/01/1980"
             max="01/01/2020" (onValueChange)="onValueChange($event)" clear-button="yes" style="flex: 1 1 65%; max-width: 65%" (onChange)="onChange(date)"
-            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)">
+            (onFocus)="onFocus(date)" (onBlur)="onBlur(date)" locale="es">
           </o-date-input>
           <button class="eventButton" style="flex: 1 1 30%; max-width: 30%" mat-raised-button (click)="setValue(date, 1538524800000)"><span class="ellipsis">setValue
           2018-10-03</span></button>

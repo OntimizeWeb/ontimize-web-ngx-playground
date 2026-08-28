@@ -63,7 +63,7 @@ export class CalendarDynamicComponent implements OnInit {
 
   staticData: any[] = [];
 
-  readonly viewOptions: OCalendarView[] = ['month', 'week', 'day'];
+  readonly baseViewOptions: OCalendarView[] = ['month', 'week', 'day'];
   readonly localeOptions: string[] = ['en', 'es', 'fr', 'de'];
   readonly weekHeaderFormatOptions: string[] = ['D', 'MMM D'];
 
@@ -80,6 +80,12 @@ export class CalendarDynamicComponent implements OnInit {
   maxEventsPerMonthCell: number = 3;
   emptyCellText: string = '';
   locale: string = 'en';
+  /** `year` is opt-in only (see O_CALENDAR_VIEWS) — kept out of viewOptions/views until explicitly enabled here. */
+  enableYearView: boolean = false;
+
+  get viewOptions(): OCalendarView[] {
+    return this.enableYearView ? [...this.baseViewOptions, 'year'] : this.baseViewOptions;
+  }
 
   ngOnInit(): void {
     const now = new Date();
@@ -176,6 +182,19 @@ export class CalendarDynamicComponent implements OnInit {
 
   onLocaleChange(value: string): void {
     this.locale = value;
+    this.refreshHtml();
+  }
+
+  onEnableYearViewChange(checked: boolean): void {
+    this.enableYearView = checked;
+    if (checked) {
+      this.views = [...this.views, 'year'];
+    } else {
+      this.views = this.views.filter(v => v !== 'year');
+      if (this.view === 'year') {
+        this.view = this.views[0] ?? 'month';
+      }
+    }
     this.refreshHtml();
   }
 
