@@ -1,0 +1,69 @@
+.collection-editor-ngmodel {
+
+  .collection-editor-ngmodel-container {
+    gap: 12px;
+    padding: 16px;
+    overflow: auto;
+  }
+
+  .demo-toolbar {
+    align-items: center;
+    gap: 16px;
+
+    .demo-toolbar-spacer {
+      flex: 1 1 auto;
+    }
+  }
+
+  .demo-note {
+    margin: 0;
+    max-width: 90ch;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    opacity: 0.8;
+
+    code {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 0.75rem;
+    }
+  }
+
+  .demo-log {
+    margin: 0;
+    min-height: 1.25rem;
+    font: 12px Consolas, Monaco, "Courier New", monospace;
+    color: var(--mat-sys-primary);
+  }
+
+  o-collection-editor.collection-editor-example {
+    /* The projected inputs are narrower than the row, so the header texts and the
+     * row buttons stay on one line. */
+    .demo-field {
+      max-width: 360px;
+    }
+  }
+
+  .demo-value {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .demo-value-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      opacity: 0.7;
+    }
+
+    .demo-value-json {
+      margin: 0;
+      max-height: 260px;
+      overflow: auto;
+      padding: 8px;
+      font: 11px Consolas, Monaco, "Courier New", monospace;
+      border: 1px solid var(--mat-sys-outline-variant, #ccc);
+      border-radius: 4px;
+    }
+  }
+
+}

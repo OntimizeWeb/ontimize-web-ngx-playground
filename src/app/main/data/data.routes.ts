@@ -7,5 +7,6 @@ export const DATA_ROUTES: Routes = [
   { path: 'grid', loadChildren: () => import('./grid/grid.module').then(m => m.GridModule) },
   { path: 'tree', loadChildren: () => import('./tree/tree.module').then(m => m.TreeModule) },
   { path: 'data-view', loadChildren: () => import('./data-view/data-view.module').then(m => m.DataViewModule) },
-  { path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule) }
+  { path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule) },
+  { path: 'collection-editor', loadChildren: () => import('./collection-editor/collection-editor.module').then(m => m.CollectionEditorModule) }
 ];

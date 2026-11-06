@@ -1,0 +1,44 @@
+.collection-editor-oform {
+
+  .collection-editor-oform__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0 0;
+  }
+
+  .collection-editor-oform__result {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 8px;
+    font-size: 13px;
+  }
+
+  .collection-editor-oform__valid {
+    color: #2e7d32;
+  }
+
+  .collection-editor-oform__invalid {
+    display: flex;
+    flex-direction: column;
+    color: #c62828;
+  }
+
+  .collection-editor-oform__message {
+    padding-left: 12px;
+  }
+
+  .collection-editor-oform__payload-label {
+    padding-top: 8px;
+    font-family: monospace;
+    opacity: .7;
+  }
+
+  .collection-editor-oform__payload {
+    margin: 0;
+    max-height: 220px;
+    overflow: auto;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="o-flex-row main-container bg-level-1">
+  <collapsible-menu>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/collection-editor/oform" routerLinkActive="active">{{
+      'COLLECTION-EDITOR.BUTTON.OFORM' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/collection-editor/reactive" routerLinkActive="active">{{
+      'COLLECTION-EDITOR.BUTTON.REACTIVE' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/collection-editor/ngmodel" routerLinkActive="active">{{
+      'COLLECTION-EDITOR.BUTTON.NGMODEL' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/collection-editor/test" routerLinkActive="active">{{
+      'COLLECTION-EDITOR.BUTTON.TEST' | oTranslate }}</a>
+    <a mat-button class="menu-item o-flex" routerLink="/main/data/collection-editor/native-controls" routerLinkActive="active">{{
+      'COLLECTION-EDITOR.BUTTON.NATIVE-CONTROLS' | oTranslate }}</a>
+  </collapsible-menu>
+
+  <div class="left-border o-flex o-flex-column">
+    <header-button-menu comp-name="{{ 'COLLECTION-EDITOR.COMPONENT' | oTranslate }}"
+      comp-desc="{{ 'COLLECTION-EDITOR.COMPONENT.DESC' | oTranslate }}">
+    </header-button-menu>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

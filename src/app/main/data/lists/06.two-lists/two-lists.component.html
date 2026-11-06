@@ -1,0 +1,27 @@
+<example-comp #ex collapsible="no" collapsed="no" class="o-flex-fill list-examples" comp-name="LIST.TWO_LISTS" [files]="files">
+
+  <div class="o-flex-row o-gap-10 o-flex-fill" layout-padding style="height:600px">
+
+    <o-list class="o-flex-50" #left attr="left" keys="id" columns="id;name;email" quick-filter-columns="name;email"
+      [static-data]="leftUsers" title="LIST.TWO_LISTS.LEFT" detail-mode="none" insert-button="yes"
+      insert-button-floatable="yes" scroll-to-top-button="yes">
+      @for (row of left.dataArray; track row) {
+        <o-list-item>
+          <o-list-item-text primary-text="{{ row.name }}" secondary-text="{{ row.email }}"></o-list-item-text>
+        </o-list-item>
+      }
+    </o-list>
+
+    <o-list class="o-flex-50" #right attr="right" keys="id" columns="id;name;email" quick-filter-columns="name;email"
+      [static-data]="rightUsers" title="LIST.TWO_LISTS.RIGHT" detail-mode="none" insert-button="yes"
+      insert-button-floatable="yes" scroll-to-top-button="yes">
+      @for (row of right.dataArray; track row) {
+        <o-list-item>
+          <o-list-item-text primary-text="{{ row.name }}" secondary-text="{{ row.email }}"></o-list-item-text>
+        </o-list-item>
+      }
+    </o-list>
+
+  </div>
+
+</example-comp>

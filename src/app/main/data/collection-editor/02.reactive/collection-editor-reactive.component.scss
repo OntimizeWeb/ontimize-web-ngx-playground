@@ -1,0 +1,117 @@
+.collection-editor-reactive {
+
+  .collection-editor-reactive-example {
+    height: 100%;
+    padding: 8px 0;
+  }
+
+  .reactive-body {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  o-collection-editor.reactive-editor {
+    flex: 1 1 55%;
+    min-width: 320px;
+  }
+
+  .reactive-field {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .reactive-hint {
+    display: block;
+    font-size: 11px;
+    color: var(--mat-sys-error, #b00020);
+  }
+
+  .reactive-status {
+    flex: 1 1 30%;
+    min-width: 280px;
+    padding: 12px;
+    border: 1px solid var(--mat-sys-outline-variant, #ccc);
+    border-radius: 4px;
+  }
+
+  .status-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+  }
+
+  .status-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .status-label {
+    font: 12px Consolas, Monaco, "Courier New", Courier, monospace;
+    flex: 1 1 auto;
+  }
+
+  .status-flag {
+    font: 12px Consolas, Monaco, "Courier New", Courier, monospace;
+    padding: 1px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--mat-sys-outline-variant, #ccc);
+  }
+
+  .status-flag--valid {
+    color: #1b5e20;
+    border-color: #1b5e20;
+  }
+
+  .status-flag--invalid {
+    color: #b00020;
+    border-color: #b00020;
+  }
+
+  .status-json {
+    margin: 0;
+    max-height: 180px;
+    overflow: auto;
+    padding: 8px;
+    font: 11px Consolas, Monaco, "Courier New", Courier, monospace;
+    border: 1px solid var(--mat-sys-outline-variant, #ccc);
+    border-radius: 4px;
+  }
+
+  .reactive-log {
+    border: 1px solid var(--mat-sys-outline-variant, #ccc);
+    border-radius: 4px;
+  }
+
+  .log-header {
+    align-items: center;
+    gap: 8px;
+    padding: 4px 4px 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--mat-sys-outline-variant, #ccc);
+  }
+
+  .log-spacer {
+    flex: 1 1 auto;
+  }
+
+  .log-list {
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .log-item,
+  .log-empty {
+    font: 11px Consolas, Monaco, "Courier New", Courier, monospace;
+  }
+
+  .log-empty {
+    padding: 8px 12px;
+    opacity: 0.7;
+  }
+
+}

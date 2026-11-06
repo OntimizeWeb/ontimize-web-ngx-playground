@@ -1,0 +1,57 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="COLLECTION-EDITOR.COMPONENT" [files]="files">
+
+  <div class="collection-editor-native-controls-container o-flex-column">
+
+    <p class="demo-note">
+      Every projected field on this page is a plain Angular/Material control — a native
+      <code>&lt;input&gt;</code>, a native <code>&lt;textarea&gt;</code>, <code>mat-select</code> and
+      <code>mat-checkbox</code> — with no <code>o-text-input</code>/<code>o-combo</code>/<code>o-checkbox</code>
+      anywhere. <code>o-collection-editor</code> only owns the structural chrome (numbering, add/remove, drag,
+      empty state) and projects whatever you put in <code>oCollectionGroupFields</code> / <code>oCollectionItem</code>
+      — it has no dependency on Ontimize's own form inputs.
+    </p>
+
+    <o-collection-editor class="collection-editor-example" attr="phases" [(ngModel)]="phases"
+      [create-group]="createPhase" [create-item]="createTask"
+      group-items-column="tasks" group-title-column="name"
+      group-label="Phase" items-label="Tasks" item-title-column="text"
+      add-group-text="Add a phase" add-item-text="Add a task"
+      empty-groups-text="No phases yet." empty-items-text="This phase has no tasks yet.">
+
+      <ng-template oCollectionGroupFields let-group let-key="key" let-notifyChange="notifyChange">
+        <!-- Plain native <input>, no o-text-input. Standalone because there is no
+             surrounding <form>/ngForm for NgModel to register into. -->
+        <input class="native-field" [name]="'phaseName_' + key" placeholder="Phase name"
+          [(ngModel)]="group.name" [ngModelOptions]="{ standalone: true }" (ngModelChange)="notifyChange()" />
+      </ng-template>
+
+      <ng-template oCollectionItem let-item let-key="key" let-notifyChange="notifyChange">
+        <div class="native-task-row">
+          <textarea class="native-field" rows="1" [name]="'taskText_' + key" placeholder="Task"
+            [(ngModel)]="item.text" [ngModelOptions]="{ standalone: true }" (ngModelChange)="notifyChange()"></textarea>
+
+          <mat-form-field appearance="outline" class="native-priority">
+            <mat-label>Priority</mat-label>
+            <mat-select [(ngModel)]="item.priority" [ngModelOptions]="{ standalone: true }" (selectionChange)="notifyChange()">
+              <mat-option value="low">Low</mat-option>
+              <mat-option value="medium">Medium</mat-option>
+              <mat-option value="high">High</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-checkbox [(ngModel)]="item.done" [ngModelOptions]="{ standalone: true }" (change)="notifyChange()">
+            Done
+          </mat-checkbox>
+        </div>
+      </ng-template>
+
+    </o-collection-editor>
+
+    <div class="demo-value">
+      <span class="demo-value-label">phases (the ngModel value)</span>
+      <pre class="demo-value-json">{{ phases | json }}</pre>
+    </div>
+
+  </div>
+
+</example-comp>

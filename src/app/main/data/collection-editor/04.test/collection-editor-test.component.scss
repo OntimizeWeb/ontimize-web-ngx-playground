@@ -1,0 +1,95 @@
+.collection-editor-test {
+  &__layout {
+    display: grid;
+    grid-template-columns: 260px 1fr 320px;
+    gap: 24px;
+    align-items: start;
+    padding: 16px;
+  }
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__group-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--o-fg-secondary-text, rgba(0, 0, 0, 0.6));
+    margin-top: 8px;
+  }
+
+  &__editor {
+    min-width: 0;
+  }
+
+  &__result {
+    font-size: 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  &__log {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 640px;
+    overflow-y: auto;
+
+    // mat-list-item is built for a single line of text; without this the time/name/payload
+    // get squeezed into that fixed-height row and the multi-line JSON payload is clipped.
+    .mat-mdc-list-item {
+      height: auto;
+      align-items: flex-start;
+      padding: 8px 16px;
+
+      .mat-mdc-list-item-unscoped-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        white-space: normal;
+      }
+    }
+  }
+
+  &__log-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__log-time {
+    font-size: 0.7rem;
+    color: var(--o-fg-secondary-text, rgba(0, 0, 0, 0.6));
+    margin-right: 8px;
+  }
+
+  &__log-name {
+    font-weight: 600;
+  }
+
+  &__log-payload {
+    font-size: 0.7rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 4px 0 0;
+  }
+
+  &__empty-log {
+    font-size: 0.85rem;
+    color: var(--o-fg-secondary-text, rgba(0, 0, 0, 0.6));
+    font-style: italic;
+  }
+
+  &__invalid-hint {
+    font-size: 0.7rem;
+    color: var(--mat-sys-error, #b3261e);
+  }
+}
+
+.test-field {
+  display: block;
+  margin-bottom: 4px;
+}

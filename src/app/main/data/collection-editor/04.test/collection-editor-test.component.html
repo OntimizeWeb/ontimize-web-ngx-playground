@@ -1,0 +1,143 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="COLLECTION-EDITOR.COMPONENT" [files]="files">
+
+  <div class="collection-editor-test__layout">
+
+    <!-- Every input, live. -->
+    <div class="collection-editor-test__panel">
+      <h3>Inputs</h3>
+
+      <mat-slide-toggle [(ngModel)]="enabled">enabled</mat-slide-toggle>
+
+      <mat-divider></mat-divider>
+      <span class="collection-editor-test__group-title">Capability toggles</span>
+      <mat-slide-toggle [(ngModel)]="groupsDraggable">groups-draggable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="itemsDraggable">items-draggable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="groupsSortable">groups-sortable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="itemsSortable">items-sortable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="groupsAddable">groups-addable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="itemsAddable">items-addable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="groupsRemovable">groups-removable</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="itemsRemovable">items-removable</mat-slide-toggle>
+
+      <mat-divider></mat-divider>
+      <span class="collection-editor-test__group-title">Validation</span>
+      <mat-form-field appearance="outline">
+        <mat-label>min-groups</mat-label>
+        <input matInput type="number" [(ngModel)]="minGroups">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>min-items-per-group</mat-label>
+        <input matInput type="number" [(ngModel)]="minItemsPerGroup">
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+      <span class="collection-editor-test__group-title">Texts</span>
+      <mat-form-field appearance="outline">
+        <mat-label>title</mat-label>
+        <input matInput [(ngModel)]="title">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>description</mat-label>
+        <input matInput [(ngModel)]="description">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>group-label</mat-label>
+        <input matInput [(ngModel)]="groupLabel">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>item-label</mat-label>
+        <input matInput [(ngModel)]="itemLabel">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>items-label</mat-label>
+        <input matInput [(ngModel)]="itemsLabel">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>add-group-text</mat-label>
+        <input matInput [(ngModel)]="addGroupText">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>add-item-text</mat-label>
+        <input matInput [(ngModel)]="addItemText">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>empty-groups-text</mat-label>
+        <input matInput [(ngModel)]="emptyGroupsText">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>empty-items-text</mat-label>
+        <input matInput [(ngModel)]="emptyItemsText">
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+      <span class="collection-editor-test__group-title">Imperative API</span>
+      <button mat-stroked-button type="button" (click)="toggleFirstGroupBusy()">Toggle first group busy</button>
+      <button mat-stroked-button type="button" (click)="toggleFirstItemBusy()">Toggle first item busy</button>
+      <button mat-stroked-button type="button" (click)="runValidateStructure()">validateStructure()</button>
+      @if (validationResult) {
+        <pre class="collection-editor-test__result">{{ validationResult | json }}</pre>
+      }
+    </div>
+
+    <!-- The component under test. -->
+    <div class="collection-editor-test__editor">
+      <o-collection-editor #editor class="collection-editor-example" [static-data]="staticData"
+        group-keys="id" item-keys="id"
+        [create-group]="createGroup" [create-item]="createItem"
+
+        [enabled]="enabled" [min-groups]="minGroups" [min-items-per-group]="minItemsPerGroup"
+        [groups-draggable]="groupsDraggable" [items-draggable]="itemsDraggable"
+        [groups-sortable]="groupsSortable" [items-sortable]="itemsSortable"
+        [groups-addable]="groupsAddable" [items-addable]="itemsAddable"
+        [groups-removable]="groupsRemovable" [items-removable]="itemsRemovable"
+
+        [title]="title" [description]="description"
+        [group-label]="groupLabel" [item-label]="itemLabel" [items-label]="itemsLabel"
+        [add-group-text]="addGroupText" [add-item-text]="addItemText"
+        [empty-groups-text]="emptyGroupsText" [empty-items-text]="emptyItemsText"
+
+        (onGroupAdded)="log('onGroupAdded', $event)"
+        (onGroupRemoved)="log('onGroupRemoved', $event)"
+        (onItemAdded)="log('onItemAdded', $event)"
+        (onItemRemoved)="log('onItemRemoved', $event)"
+        (onGroupMoved)="log('onGroupMoved', $event)"
+        (onItemMoved)="log('onItemMoved', $event)">
+
+        <ng-template oCollectionGroupFields let-group let-key="key" let-invalid="invalid" let-notifyChange="notifyChange">
+          <o-text-input class="test-field" [attr]="'groupName_' + key" label="Group name"
+            [(ngModel)]="group.name" (onChange)="notifyChange()"></o-text-input>
+          @if (invalid) {
+            <span class="collection-editor-test__invalid-hint">invalid</span>
+          }
+        </ng-template>
+
+        <ng-template oCollectionItem let-item let-key="key" let-groupKey="groupKey" let-notifyChange="notifyChange">
+          <o-text-input class="test-field" [attr]="'itemText_' + groupKey + '_' + key" label="Item text"
+            [(ngModel)]="item.text" (onChange)="notifyChange()"></o-text-input>
+        </ng-template>
+      </o-collection-editor>
+    </div>
+
+    <!-- Every output, logged. -->
+    <div class="collection-editor-test__log">
+      <div class="collection-editor-test__log-header">
+        <h3>Outputs</h3>
+        <button mat-button type="button" (click)="clearLog()">Clear</button>
+      </div>
+      @if (!events.length) {
+        <p class="collection-editor-test__empty-log">Interact with the editor to see outputs fire here.</p>
+      }
+      <mat-list dense>
+        @for (event of events; track $index) {
+          <mat-list-item>
+            <span class="collection-editor-test__log-time">{{ event.time }}</span>
+            <span class="collection-editor-test__log-name">{{ event.name }}</span>
+            <pre class="collection-editor-test__log-payload">{{ event.payload | json }}</pre>
+          </mat-list-item>
+        }
+      </mat-list>
+    </div>
+
+  </div>
+
+</example-comp>

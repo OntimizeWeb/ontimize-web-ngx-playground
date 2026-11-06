@@ -1,0 +1,97 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="COLLECTION-EDITOR.COMPONENT" [files]="files">
+
+  <!--
+    The o-form has no `service`: exactly like the rest of the playground form
+    examples (see src/app/main/inputs/99.validators) it only provides the form
+    context, so the page renders without a backend. `editable-detail="yes"` plus
+    `read-only="no"` on the inputs is what keeps everything editable.
+  -->
+  <o-form attr="templateForm" show-header="no" query-on-init="no" editable-detail="yes"
+    layout-direction="column" [form-data-validation-function]="validationFunction">
+
+    <!--
+      1) Inside an <o-form> the editor binds through `attr`, NEVER through
+         formControlName: o-collection-editor is an Ontimize input, so it
+         self-registers in the form under `sections` and its value is read back
+         with `form.getFieldValue('sections')`.
+
+      3) `[form-data-validation-function]` on the <o-form> above points at
+         `validationFunction`, which delegates to `editor.validateStructure()`.
+         It only checks the SHAPE of the collection (at least one section, at
+         least one question per section) — a blank section name or question
+         text is validated by the projected `o-text-input`'s own `required`,
+         which registers with this same <o-form> on its own (see below): the
+         collection editor never re-implements field-level validation.
+    -->
+    <o-collection-editor class="o-flex" attr="sections" [static-data]="sections"
+      group-keys="id" item-keys="id"
+      [create-group]="createGroup" [create-item]="createItem"
+      [min-groups]="1" [min-items-per-group]="1"
+      title="Form sections"
+      description="Each section holds the questions shown on one step of the wizard."
+      group-label="Section" items-label="Questions"
+      add-group-text="Add section" add-item-text="Add question"
+      group-title-column="name"
+      empty-groups-text="No sections yet" empty-items-text="No questions in this section"
+      confirm-remove-group-message="Remove this section and all of its questions?"
+      confirm-remove-item-message="Remove this question?"
+      (onGroupAdded)="log('onGroupAdded', $event)" (onGroupRemoved)="log('onGroupRemoved', $event)"
+      (onItemAdded)="log('onItemAdded', $event)" (onItemRemoved)="log('onItemRemoved', $event)">
+
+      <ng-template oCollectionGroupFields let-group let-key="key" let-invalid="invalid" let-notifyChange="notifyChange">
+        <!--
+          2) MANDATORY: a UNIQUE `attr` per projected input. Every input rendered
+             by this template registers itself in the SAME o-form, so a fixed
+             attr would let only the first section register and o-form would log
+             a console.error for every other one. `key` (the identity handed over
+             by the template context) is the natural discriminator.
+        -->
+        <o-text-input class="o-flex" [attr]="'groupName_' + key" label="Section name" read-only="no"
+          required="yes" [(ngModel)]="group.name" [ngModelOptions]="{ standalone: true }" (onChange)="notifyChange()">
+        </o-text-input>
+        @if (invalid) {
+          <span class="collection-editor-oform__invalid-hint">This section needs at least one question</span>
+        }
+      </ng-template>
+
+      <ng-template oCollectionItem let-item let-key="key" let-groupKey="groupKey" let-notifyChange="notifyChange">
+        <!-- Same rule for the items, mixing both keys so the attr stays unique
+             across every section. -->
+        <o-text-input class="o-flex" [attr]="'itemText_' + groupKey + '_' + key" label="Question" read-only="no"
+          required="yes" [(ngModel)]="item.text" [ngModelOptions]="{ standalone: true }" (onChange)="notifyChange()">
+        </o-text-input>
+      </ng-template>
+
+    </o-collection-editor>
+
+    <!-- Stands in for the toolbar's save action, which needs a real service. It
+         runs the very same validation function o-form would run. -->
+    <div class="collection-editor-oform__actions">
+      <button mat-raised-button color="primary" type="button" (click)="save()">Validate and save</button>
+      <button mat-button type="button" (click)="clear()">Clear result</button>
+    </div>
+
+    @if (validation) {
+      <div class="collection-editor-oform__result">
+        @if (validation.valid) {
+          <div class="collection-editor-oform__valid">validateStructure(): valid</div>
+        } @else {
+          <div class="collection-editor-oform__invalid">
+            <span>validateStructure(): invalid</span>
+            @for (message of validation.messages; track $index) {
+              <span class="collection-editor-oform__message">{{ message }}</span>
+            }
+          </div>
+        }
+
+        @if (payload) {
+          <!-- The value comes from the form by `attr`, not from a local field. -->
+          <span class="collection-editor-oform__payload-label">form.getFieldValue('sections')</span>
+          <pre class="collection-editor-oform__payload">{{ payload | json }}</pre>
+        }
+      </div>
+    }
+
+  </o-form>
+
+</example-comp>

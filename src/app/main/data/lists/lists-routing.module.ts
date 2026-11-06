@@ -6,6 +6,7 @@ import { ListItemAvatarComponent } from './02.list-item-avatar/list-item-avatar.
 import { ListItemCardComponent } from './03.list-item-card/list-item-card.component';
 import { ListItemCardImageComponent } from './04.list-item-card-image/list-item-card-image.component';
 import { ListItemCustomComponent } from './05.list-item-custom/list-item-custom.component';
+import { TwoListsComponent } from './06.two-lists/two-lists.component';
 import { ListsComponent } from './lists.component';
 
 export const routes: Routes = [
@@ -16,7 +17,8 @@ export const routes: Routes = [
       { path: 'list-item-avatar', data: { oAppHeaderTitle: 'List' }, component: ListItemAvatarComponent },
       { path: 'list-item-card', data: { oAppHeaderTitle: 'List' }, component: ListItemCardComponent },
       { path: 'list-item-card-image', data: { oAppHeaderTitle: 'List' }, component: ListItemCardImageComponent },
-      { path: 'list-item-custom', data: { oAppHeaderTitle: 'List' }, component: ListItemCustomComponent }
+      { path: 'list-item-custom', data: { oAppHeaderTitle: 'List' }, component: ListItemCustomComponent },
+      { path: 'two-lists', data: { oAppHeaderTitle: 'List' }, component: TwoListsComponent }
     ]
   }
 ];

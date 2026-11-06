@@ -7,6 +7,7 @@ import { ListItemAvatarComponent } from './02.list-item-avatar/list-item-avatar.
 import { ListItemCardComponent } from './03.list-item-card/list-item-card.component';
 import { ListItemCardImageComponent } from './04.list-item-card-image/list-item-card-image.component';
 import { ListItemCustomComponent } from './05.list-item-custom/list-item-custom.component';
+import { TwoListsComponent } from './06.two-lists/two-lists.component';
 import { ListsRoutingModule } from './lists-routing.module';
 import { ListsComponent } from './lists.component';
 
@@ -22,7 +23,8 @@ import { ListsComponent } from './lists.component';
     ListItemAvatarComponent,
     ListItemCardComponent,
     ListItemCardImageComponent,
-    ListItemCustomComponent
+    ListItemCustomComponent,
+    TwoListsComponent
   ]
 })
 export class ListsModule { }

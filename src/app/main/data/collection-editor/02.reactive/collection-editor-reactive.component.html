@@ -1,0 +1,107 @@
+<example-comp class="o-flex-fill" #ex collapsible="no" collapsed="no" comp-name="COLLECTION-EDITOR.COMPONENT" [files]="files">
+
+  <div class="collection-editor-reactive-example o-flex-column o-gap-16">
+
+    <form [formGroup]="form" class="o-flex-column o-gap-16">
+
+      <div class="reactive-actions o-flex-row o-gap-8">
+        <button type="button" mat-stroked-button (click)="patchSample()">
+          <mat-icon>publish</mat-icon>&nbsp;form.patchValue(...)
+        </button>
+        <button type="button" mat-stroked-button (click)="resetValue()">
+          <mat-icon>restart_alt</mat-icon>&nbsp;form.reset(...)
+        </button>
+      </div>
+
+      <div class="reactive-body o-flex-row o-gap-16">
+
+        <o-collection-editor class="reactive-editor" attr="sections" formControlName="sections" group-keys="id"
+          item-keys="id" [create-group]="createGroup" [create-item]="createItem"
+          [min-groups]="2" title="Questionnaire sections"
+          description="The bound control stays invalid until there are at least 2 sections and every section has at least 1 question."
+          group-label="Section" items-label="Questions" add-group-text="Add section" add-item-text="Add question"
+          group-title-column="name" empty-groups-text="No sections yet, so the control reports a minGroups error."
+          empty-items-text="No questions in this section." confirm-remove-group-message="Remove this section and all its questions?"
+          confirm-remove-item-message="" (onGroupAdded)="onGroupAdded($event)" (onGroupRemoved)="onGroupRemoved($event)"
+          (onGroupMoved)="onGroupMoved($event)">
+
+          <!-- The projected controls are NOT part of the reactive form: they edit the
+               group / item object in place and tell the editor with notifyChange(), which
+               is what pushes a new value onto the `sections` control. Hence
+               ngModelOptions="{ standalone: true }": without it Angular would try to
+               register these ngModel controls in the parent formGroup and throw. -->
+          <ng-template oCollectionGroupFields let-group let-index="index" let-invalid="invalid"
+            let-notifyChange="notifyChange">
+          <!-- The `attr` here is fixed, which is safe because there is no <o-form> on this
+               page. Inside an <o-form> it MUST be unique per row (e.g. [attr]="'sectionName_' + key",
+               taking `key` from the template context) or o-form registers only the first row and
+               logs a console.error for every other one. -->
+            <o-text-input class="reactive-field" attr="sectionName" label="Section name" placeholder="e.g. Onboarding"
+              float-label="always" required="yes" [ngModel]="group.name" [ngModelOptions]="{ standalone: true }"
+              (ngModelChange)="group.name = $event; notifyChange()">
+            </o-text-input>
+            @if (invalid) {
+              <span class="reactive-hint">Section {{ index + 1 }} has fewer than minItemsPerGroup questions, so the whole control is invalid.</span>
+            }
+          </ng-template>
+
+          <ng-template oCollectionItem let-item let-notifyChange="notifyChange">
+            <o-text-input class="reactive-field" attr="questionText" label="Question"
+              placeholder="e.g. What is your role?" float-label="always" required="yes" [ngModel]="item.text"
+              [ngModelOptions]="{ standalone: true }" (ngModelChange)="item.text = $event; notifyChange()">
+            </o-text-input>
+          </ng-template>
+
+        </o-collection-editor>
+
+        <div class="reactive-status o-flex-column o-gap-8">
+
+          <div class="status-title">Validity of the bound control</div>
+
+          <div class="status-line">
+            <span class="status-label">form.valid</span>
+            <span class="status-flag" [class.status-flag--valid]="form.valid"
+              [class.status-flag--invalid]="!form.valid">{{ form.valid }}</span>
+          </div>
+          <div class="status-line">
+            <span class="status-label">sections.status</span>
+            <span class="status-flag">{{ form.get('sections')?.status }}</span>
+          </div>
+          <div class="status-line">
+            <span class="status-label">sections.dirty</span>
+            <span class="status-flag">{{ form.get('sections')?.dirty }}</span>
+          </div>
+
+          <div class="status-title">form.get('sections')?.errors</div>
+          <pre class="status-json">{{ form.get('sections')?.errors | json }}</pre>
+
+          <div class="status-title">form.value</div>
+          <pre class="status-json">{{ form.value | json }}</pre>
+
+        </div>
+
+      </div>
+
+    </form>
+
+    <div class="reactive-log o-flex-column">
+      <div class="log-header o-flex-row">
+        <span>Outputs: onGroupAdded / onGroupRemoved / onGroupMoved</span>
+        <span class="log-spacer"></span>
+        <button type="button" mat-icon-button (click)="clearLog()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <mat-list class="log-list">
+        @for (event of events; track $index) {
+          <mat-list-item class="log-item">{{ event }}</mat-list-item>
+        }
+        @if (!events.length) {
+          <div class="log-empty">Add, remove or move a section to see its output payload here.</div>
+        }
+      </mat-list>
+    </div>
+
+  </div>
+
+</example-comp>
